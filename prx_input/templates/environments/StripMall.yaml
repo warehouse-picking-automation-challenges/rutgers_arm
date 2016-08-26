@@ -1,0 +1,787 @@
+building1:
+    type: obstacle
+    geometries:
+     -
+        name: NoName6
+        collision_geometry:
+         type: box
+         dims: [26.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-76.5, 15.0, 1.5]
+         orientation: [1.0, 0.0, 0.0, 0.0]
+     -
+        name: NoName8
+        collision_geometry:
+         type: box
+         dims: [29.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-90.0, 0.0, 1.5]
+         orientation: [0.7071067811865476, 0.7071067811865475, 0.0, 0.0]
+     -
+        name: NoName10
+        collision_geometry:
+         type: box
+         dims: [26.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-76.5, -15.0, 1.5]
+         orientation: [6.123233995736766E-17, 1.0, 0.0, 0.0]
+     -
+        name: NoName11
+        collision_geometry:
+         type: box
+         dims: [10.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-63.0, -9.5, 1.5]
+         orientation: [0.7071067811865476, -0.7071067811865475, 0.0, 0.0]
+     -
+        name: NoName12
+        collision_geometry:
+         type: box
+         dims: [10.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-63.0, 9.5, 1.5]
+         orientation: [0.7071067811865476, -0.7071067811865475, 0.0, 0.0]
+     -
+        name: NoName14
+        collision_geometry:
+         type: polygon
+         triangles: [ 
+                    -90.0,15.0, 0.0, -63.0,-4.0, 0.0, -63.0,4.0, 0.0
+                    -90.0,15.0, 0.0, -63.0,4.0, 0.0, -63.0,15.0, 0.0
+                    -90.0,15.0, 0.0, -63.0,-15.0, 0.0, -63.0,-4.0, 0.0
+                    -90.0,15.0, 0.0, -90.0,-15.0, 0.0, -63.0,-15.0, 0.0
+                    ]
+         material: off_white
+        config:
+         position: [0, 0, 0]
+         orientation: [0, 0, 0, 1]
+     -
+        name: NoName16
+        collision_geometry:
+         type: polygon
+         triangles: [ 
+                    -63.0,4.0, 0.0, 56.0,-4.0, 0.0, 59.0,-4.0, 0.0
+                    63.0,-4.0, 0.0, -63.0,4.0, 0.0, 59.0,-4.0, 0.0
+                    -63.0,4.0, 0.0, 52.0,-4.0, 0.0, 56.0,-4.0, 0.0
+                    -63.0,4.0, 0.0, 48.0,-4.0, 0.0, 52.0,-4.0, 0.0
+                    -63.0,4.0, 0.0, 44.0,-4.0, 0.0, 48.0,-4.0, 0.0
+                    -63.0,4.0, 0.0, 40.0,-4.0, 0.0, 44.0,-4.0, 0.0
+                    -63.0,4.0, 0.0, 13.0,-4.0, 0.0, 40.0,-4.0, 0.0
+                    -63.0,4.0, 0.0, 9.0,-4.0, 0.0, 13.0,-4.0, 0.0
+                    -63.0,4.0, 0.0, 5.0,-4.0, 0.0, 9.0,-4.0, 0.0
+                    -63.0,4.0, 0.0, -5.0,-4.0, 0.0, 5.0,-4.0, 0.0
+                    -63.0,4.0, 0.0, -9.0,-4.0, 0.0, -5.0,-4.0, 0.0
+                    -63.0,4.0, 0.0, -13.0,-4.0, 0.0, -9.0,-4.0, 0.0
+                    -63.0,4.0, 0.0, -44.0,-4.0, 0.0, -13.0,-4.0, 0.0
+                    -63.0,4.0, 0.0, -47.0,-4.0, 0.0, -44.0,-4.0, 0.0
+                    -63.0,4.0, 0.0, -51.0,-4.0, 0.0, -47.0,-4.0, 0.0
+                    -63.0,4.0, 0.0, -56.0,-4.0, 0.0, -51.0,-4.0, 0.0
+                    -63.0,4.0, 0.0, -60.0,-4.0, 0.0, -56.0,-4.0, 0.0
+                    -63.0,4.0, 0.0, -63.0,-4.0, 0.0, -60.0,-4.0, 0.0
+                    63.0,-4.0, 0.0, -60.0,4.0, 0.0, -63.0,4.0, 0.0
+                    63.0,-4.0, 0.0, -56.0,4.0, 0.0, -60.0,4.0, 0.0
+                    63.0,-4.0, 0.0, -53.0,4.0, 0.0, -56.0,4.0, 0.0
+                    63.0,-4.0, 0.0, -49.0,4.0, 0.0, -53.0,4.0, 0.0
+                    63.0,-4.0, 0.0, -45.0,4.0, 0.0, -49.0,4.0, 0.0
+                    63.0,-4.0, 0.0, -41.0,4.0, 0.0, -45.0,4.0, 0.0
+                    63.0,-4.0, 0.0, -34.0,4.0, 0.0, -41.0,4.0, 0.0
+                    63.0,-4.0, 0.0, -31.0,4.0, 0.0, -34.0,4.0, 0.0
+                    63.0,-4.0, 0.0, -28.0,4.0, 0.0, -31.0,4.0, 0.0
+                    63.0,-4.0, 0.0, -25.0,4.0, 0.0, -28.0,4.0, 0.0
+                    63.0,-4.0, 0.0, -22.0,4.0, 0.0, -25.0,4.0, 0.0
+                    63.0,-4.0, 0.0, -19.0,4.0, 0.0, -22.0,4.0, 0.0
+                    63.0,-4.0, 0.0, -14.0,4.0, 0.0, -19.0,4.0, 0.0
+                    63.0,-4.0, 0.0, -11.0,4.0, 0.0, -14.0,4.0, 0.0
+                    63.0,-4.0, 0.0, 63.0,4.0, 0.0, -11.0,4.0, 0.0
+                    ]
+         material: off_white
+        config:
+         position: [0, 0, 0]
+         orientation: [0, 0, 0, 1]
+     -
+        name: NoName18
+        collision_geometry:
+         type: box
+         dims: [10.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [63.0, 9.5, 1.5]
+         orientation: [0.7071067811865476, -0.7071067811865475, 0.0, 0.0]
+     -
+        name: NoName20
+        collision_geometry:
+         type: box
+         dims: [26.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [76.5, 15.0, 1.5]
+         orientation: [6.123233995736766E-17, 1.0, 0.0, 0.0]
+     -
+        name: NoName22
+        collision_geometry:
+         type: box
+         dims: [29.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [90.0, 0.0, 1.5]
+         orientation: [0.7071067811865476, 0.7071067811865475, 0.0, 0.0]
+     -
+        name: NoName24
+        collision_geometry:
+         type: box
+         dims: [26.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [76.5, -15.0, 1.5]
+         orientation: [1.0, 0.0, 0.0, 0.0]
+     -
+        name: NoName25
+        collision_geometry:
+         type: box
+         dims: [10.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [63.0, -9.5, 1.5]
+         orientation: [0.7071067811865476, 0.7071067811865475, 0.0, 0.0]
+     -
+        name: NoName26
+        collision_geometry:
+         type: polygon
+         triangles: [ 
+                    90.0,-15.0, 0.0, 63.0,4.0, 0.0, 63.0,-4.0, 0.0
+                    90.0,-15.0, 0.0, 63.0,-4.0, 0.0, 63.0,-15.0, 0.0
+                    90.0,-15.0, 0.0, 63.0,15.0, 0.0, 63.0,4.0, 0.0
+                    90.0,-15.0, 0.0, 90.0,15.0, 0.0, 63.0,15.0, 0.0
+                    ]
+         material: off_white
+        config:
+         position: [0, 0, 0]
+         orientation: [0, 0, 0, 1]
+     -
+        name: NoName28
+        collision_geometry:
+         type: box
+         dims: [9.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-58.0, 15.0, 1.5]
+         orientation: [6.123233995736766E-17, 1.0, 0.0, 0.0]
+     -
+        name: NoName30
+        collision_geometry:
+         type: box
+         dims: [10.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-53.0, 9.5, 1.5]
+         orientation: [0.7071067811865476, -0.7071067811865475, 0.0, 0.0]
+     -
+        name: Hot_Topic31
+        collision_geometry:
+         type: polygon
+         triangles: [ 
+                    -63.0,15.0, 0.0, -56.0,4.0, 0.0, -53.0,4.0, 0.0
+                    -63.0,15.0, 0.0, -53.0,4.0, 0.0, -53.0,15.0, 0.0
+                    -63.0,15.0, 0.0, -60.0,4.0, 0.0, -56.0,4.0, 0.0
+                    -63.0,15.0, 0.0, -63.0,4.0, 0.0, -60.0,4.0, 0.0
+                    ]
+         material: off_white
+        config:
+         position: [0, 0, 0]
+         orientation: [0, 0, 0, 1]
+     -
+        name: NoName33
+        collision_geometry:
+         type: box
+         dims: [2.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-61.5, 4.0, 1.5]
+         orientation: [1.0, 0.0, 0.0, 0.0]
+     -
+        name: NoName36
+        collision_geometry:
+         type: box
+         dims: [2.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-54.5, 4.0, 1.5]
+         orientation: [6.123233995736766E-17, 1.0, 0.0, 0.0]
+     -
+        name: NoName38
+        collision_geometry:
+         type: box
+         dims: [18.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-53.5, -15.0, 1.5]
+         orientation: [6.123233995736766E-17, 1.0, 0.0, 0.0]
+     -
+        name: NoName40
+        collision_geometry:
+         type: box
+         dims: [10.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-44.0, -9.5, 1.5]
+         orientation: [0.7071067811865476, 0.7071067811865475, 0.0, 0.0]
+     -
+        name: Hudson_News41
+        collision_geometry:
+         type: polygon
+         triangles: [ 
+                    -44.0,-15.0, 0.0, -60.0,-4.0, 0.0, -63.0,-4.0, 0.0
+                    -44.0,-15.0, 0.0, -63.0,-4.0, 0.0, -63.0,-15.0, 0.0
+                    -44.0,-15.0, 0.0, -56.0,-4.0, 0.0, -60.0,-4.0, 0.0
+                    -44.0,-15.0, 0.0, -51.0,-4.0, 0.0, -56.0,-4.0, 0.0
+                    -44.0,-15.0, 0.0, -47.0,-4.0, 0.0, -51.0,-4.0, 0.0
+                    -44.0,-15.0, 0.0, -44.0,-4.0, 0.0, -47.0,-4.0, 0.0
+                    ]
+         material: off_white
+        config:
+         position: [0, 0, 0]
+         orientation: [0, 0, 0, 1]
+     -
+        name: NoName43
+        collision_geometry:
+         type: box
+         dims: [2.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-61.5, -4.0, 1.5]
+         orientation: [1.0, 0.0, 0.0, 0.0]
+     -
+        name: NoName45
+        collision_geometry:
+         type: box
+         dims: [2.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-45.5, -4.0, 1.5]
+         orientation: [6.123233995736766E-17, 1.0, 0.0, 0.0]
+     -
+        name: NoName49
+        collision_geometry:
+         type: box
+         dims: [4.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-53.5, -4.0, 1.5]
+         orientation: [6.123233995736766E-17, 1.0, 0.0, 0.0]
+     -
+        name: NoName53
+        collision_geometry:
+         type: box
+         dims: [10.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-41.0, 9.5, 1.5]
+         orientation: [0.7071067811865476, -0.7071067811865475, 0.0, 0.0]
+     -
+        name: NoName55
+        collision_geometry:
+         type: box
+         dims: [3.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-51.0, 15.0, 1.5]
+         orientation: [1.0, 0.0, 0.0, 0.0]
+     -
+        name: NoName57
+        collision_geometry:
+         type: box
+         dims: [3.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-51.0, 4.0, 1.5]
+         orientation: [1.0, 0.0, 0.0, 0.0]
+     -
+        name: Men_1_158
+        collision_geometry:
+         type: polygon
+         triangles: [ 
+                    -53.0,15.0, 0.0, -49.0,4.0, 0.0, -49.0,7.0, 0.0
+                    -53.0,15.0, 0.0, -49.0,7.0, 0.0, -49.0,15.0, 0.0
+                    -53.0,15.0, 0.0, -53.0,4.0, 0.0, -49.0,4.0, 0.0
+                    ]
+         material: off_white
+        config:
+         position: [0, 0, 0]
+         orientation: [0, 0, 0, 1]
+     -
+        name: NoName60
+        collision_geometry:
+         type: box
+         dims: [3.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-47.0, 15.0, 1.5]
+         orientation: [1.0, 0.0, 0.0, 0.0]
+     -
+        name: NoName61
+        collision_geometry:
+         type: box
+         dims: [3.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-43.0, 15.0, 1.5]
+         orientation: [6.123233995736766E-17, 1.0, 0.0, 0.0]
+     -
+        name: NoName64
+        collision_geometry:
+         type: box
+         dims: [3.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-43.0, 4.0, 1.5]
+         orientation: [6.123233995736766E-17, 1.0, 0.0, 0.0]
+     -
+        name: Women_1_165
+        collision_geometry:
+         type: polygon
+         triangles: [ 
+                    -45.0,15.0, 0.0, -45.0,12.0, 0.0, -41.0,4.0, 0.0
+                    -45.0,15.0, 0.0, -41.0,4.0, 0.0, -41.0,15.0, 0.0
+                    -45.0,12.0, 0.0, -45.0,4.0, 0.0, -41.0,4.0, 0.0
+                    ]
+         material: off_white
+        config:
+         position: [0, 0, 0]
+         orientation: [0, 0, 0, 1]
+     -
+        name: NoName68
+        collision_geometry:
+         type: box
+         dims: [7.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-49.0, 11.0, 1.5]
+         orientation: [0.7071067811865476, -0.7071067811865475, 0.0, 0.0]
+     -
+        name: NoName70
+        collision_geometry:
+         type: box
+         dims: [7.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-45.0, 8.0, 1.5]
+         orientation: [0.7071067811865476, 0.7071067811865475, 0.0, 0.0]
+     -
+        name: NoName72
+        collision_geometry:
+         type: polygon
+         triangles: [ 
+                    -49.0,15.0, 0.0, -45.0,4.0, 0.0, -45.0,12.0, 0.0
+                    -49.0,15.0, 0.0, -45.0,12.0, 0.0, -45.0,15.0, 0.0
+                    -49.0,15.0, 0.0, -49.0,7.0, 0.0, -45.0,4.0, 0.0
+                    -49.0,7.0, 0.0, -49.0,4.0, 0.0, -45.0,4.0, 0.0
+                    ]
+         material: off_white
+        config:
+         position: [0, 0, 0]
+         orientation: [0, 0, 0, 1]
+     -
+        name: NoName74
+        collision_geometry:
+         type: box
+         dims: [12.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-34.5, 15.0, 1.5]
+         orientation: [6.123233995736766E-17, 1.0, 0.0, 0.0]
+     -
+        name: NoName76
+        collision_geometry:
+         type: box
+         dims: [10.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-28.0, 9.5, 1.5]
+         orientation: [0.7071067811865476, -0.7071067811865475, 0.0, 0.0]
+     -
+        name: Dominos77
+        collision_geometry:
+         type: polygon
+         triangles: [ 
+                    -41.0,15.0, 0.0, -31.0,4.0, 0.0, -28.0,4.0, 0.0
+                    -41.0,15.0, 0.0, -28.0,4.0, 0.0, -28.0,15.0, 0.0
+                    -41.0,15.0, 0.0, -34.0,4.0, 0.0, -31.0,4.0, 0.0
+                    -41.0,15.0, 0.0, -41.0,4.0, 0.0, -34.0,4.0, 0.0
+                    ]
+         material: off_white
+        config:
+         position: [0, 0, 0]
+         orientation: [0, 0, 0, 1]
+     -
+        name: NoName79
+        collision_geometry:
+         type: box
+         dims: [6.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-37.5, 4.0, 1.5]
+         orientation: [1.0, 0.0, 0.0, 0.0]
+     -
+        name: NoName82
+        collision_geometry:
+         type: box
+         dims: [2.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-29.5, 4.0, 1.5]
+         orientation: [6.123233995736766E-17, 1.0, 0.0, 0.0]
+     -
+        name: NoName84
+        collision_geometry:
+         type: box
+         dims: [5.5001333318518855, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-25.0, 15.02, 1.5]
+         orientation: [0.0033332777793723175, -0.9999944446141916, 0.0, 0.0]
+     -
+        name: NoName86
+        collision_geometry:
+         type: box
+         dims: [10.54, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-22.0, 9.52, 1.5]
+         orientation: [0.7071067811865476, -0.7071067811865475, 0.0, 0.0]
+     -
+        name: Spencers87
+        collision_geometry:
+         type: polygon
+         triangles: [ 
+                    -28.0,15.0, 0.0, -25.0,4.0, 0.0, -22.0,4.0, 0.0
+                    -28.0,15.0, 0.0, -22.0,4.0, 0.0, -22.0,15.04, 0.0
+                    -28.0,15.0, 0.0, -28.0,4.0, 0.0, -25.0,4.0, 0.0
+                    ]
+         material: off_white
+        config:
+         position: [0, 0, 0]
+         orientation: [0, 0, 0, 1]
+     -
+        name: NoName90
+        collision_geometry:
+         type: box
+         dims: [2.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-26.5, 4.0, 1.5]
+         orientation: [1.0, 0.0, 0.0, 0.0]
+     -
+        name: NoName92
+        collision_geometry:
+         type: box
+         dims: [10.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [57.5, -15.0, 1.5]
+         orientation: [1.0, 0.0, 0.0, 0.0]
+     -
+        name: NoName94
+        collision_geometry:
+         type: box
+         dims: [10.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [52.0, -9.5, 1.5]
+         orientation: [0.7071067811865476, 0.7071067811865475, 0.0, 0.0]
+     -
+        name: Sharper_Image95
+        collision_geometry:
+         type: polygon
+         triangles: [ 
+                    63.0,-15.0, 0.0, 56.0,-4.0, 0.0, 52.0,-4.0, 0.0
+                    63.0,-15.0, 0.0, 52.0,-4.0, 0.0, 52.0,-15.0, 0.0
+                    63.0,-15.0, 0.0, 59.0,-4.0, 0.0, 56.0,-4.0, 0.0
+                    63.0,-15.0, 0.0, 63.0,-4.0, 0.0, 59.0,-4.0, 0.0
+                    ]
+         material: off_white
+        config:
+         position: [0, 0, 0]
+         orientation: [0, 0, 0, 1]
+     -
+        name: NoName97
+        collision_geometry:
+         type: box
+         dims: [3.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [54.0, -4.0, 1.5]
+         orientation: [1.0, 0.0, 0.0, 0.0]
+     -
+        name: NoName100
+        collision_geometry:
+         type: box
+         dims: [3.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [61.0, -4.0, 1.5]
+         orientation: [6.123233995736766E-17, 1.0, 0.0, 0.0]
+     -
+        name: NoName102
+        collision_geometry:
+         type: box
+         dims: [10.500072727032308, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-16.5, 15.02, 1.5]
+         orientation: [0.0018181728024810736, 0.9999983471224642, 0.0, 0.0]
+     -
+        name: NoName104
+        collision_geometry:
+         type: box
+         dims: [73.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [26.0, 4.0, 1.5]
+         orientation: [6.123233995736766E-17, 1.0, 0.0, 0.0]
+     -
+        name: NoName105
+        collision_geometry:
+         type: box
+         dims: [10.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-11.0, 9.5, 1.5]
+         orientation: [0.7071067811865476, -0.7071067811865475, 0.0, 0.0]
+     -
+        name: Starbucks106
+        collision_geometry:
+         type: polygon
+         triangles: [ 
+                    -22.0,15.04, 0.0, -14.0,4.0, 0.0, -11.0,4.0, 0.0
+                    -22.0,15.04, 0.0, -11.0,4.0, 0.0, -11.0,15.0, 0.0
+                    -22.0,15.04, 0.0, -19.0,4.0, 0.0, -14.0,4.0, 0.0
+                    -22.0,15.04, 0.0, -22.0,4.0, 0.0, -19.0,4.0, 0.0
+                    ]
+         material: off_white
+        config:
+         position: [0, 0, 0]
+         orientation: [0, 0, 0, 1]
+     -
+        name: NoName108
+        collision_geometry:
+         type: box
+         dims: [2.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-12.5, 4.0, 1.5]
+         orientation: [6.123233995736766E-17, 1.0, 0.0, 0.0]
+     -
+        name: NoName111
+        collision_geometry:
+         type: box
+         dims: [2.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-20.5, 4.0, 1.5]
+         orientation: [1.0, 0.0, 0.0, 0.0]
+     -
+        name: NoName114
+        collision_geometry:
+         type: box
+         dims: [10.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [40.0, -9.5, 1.5]
+         orientation: [0.7071067811865476, 0.7071067811865475, 0.0, 0.0]
+     -
+        name: NoName116
+        collision_geometry:
+         type: box
+         dims: [3.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [42.0, -4.0, 1.5]
+         orientation: [1.0, 0.0, 0.0, 0.0]
+     -
+        name: NoName118
+        collision_geometry:
+         type: box
+         dims: [3.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [42.0, -15.0, 1.5]
+         orientation: [1.0, 0.0, 0.0, 0.0]
+     -
+        name: Women_1_2119
+        collision_geometry:
+         type: polygon
+         triangles: [ 
+                    40.0,-4.0, 0.0, 44.0,-15.0, 0.0, 44.0,-12.0, 0.0
+                    40.0,-4.0, 0.0, 44.0,-12.0, 0.0, 44.0,-4.0, 0.0
+                    40.0,-4.0, 0.0, 40.0,-15.0, 0.0, 44.0,-15.0, 0.0
+                    ]
+         material: off_white
+        config:
+         position: [0, 0, 0]
+         orientation: [0, 0, 0, 1]
+     -
+        name: NoName122
+        collision_geometry:
+         type: box
+         dims: [3.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [50.0, -4.0, 1.5]
+         orientation: [6.123233995736766E-17, 1.0, 0.0, 0.0]
+     -
+        name: NoName124
+        collision_geometry:
+         type: box
+         dims: [3.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [46.0, -15.0, 1.5]
+         orientation: [1.0, 0.0, 0.0, 0.0]
+     -
+        name: NoName125
+        collision_geometry:
+         type: box
+         dims: [3.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [50.0, -15.0, 1.5]
+         orientation: [6.123233995736766E-17, 1.0, 0.0, 0.0]
+     -
+        name: Men_1_2126
+        collision_geometry:
+         type: polygon
+         triangles: [ 
+                    48.0,-4.0, 0.0, 48.0,-7.0, 0.0, 52.0,-15.0, 0.0
+                    48.0,-4.0, 0.0, 52.0,-15.0, 0.0, 52.0,-4.0, 0.0
+                    48.0,-7.0, 0.0, 48.0,-15.0, 0.0, 52.0,-15.0, 0.0
+                    ]
+         material: off_white
+        config:
+         position: [0, 0, 0]
+         orientation: [0, 0, 0, 1]
+     -
+        name: NoName129
+        collision_geometry:
+         type: box
+         dims: [7.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [44.0, -8.0, 1.5]
+         orientation: [0.7071067811865476, -0.7071067811865475, 0.0, 0.0]
+     -
+        name: NoName131
+        collision_geometry:
+         type: box
+         dims: [7.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [48.0, -11.0, 1.5]
+         orientation: [0.7071067811865476, 0.7071067811865475, 0.0, 0.0]
+     -
+        name: NoName133
+        collision_geometry:
+         type: polygon
+         triangles: [ 
+                    44.0,-4.0, 0.0, 48.0,-15.0, 0.0, 48.0,-7.0, 0.0
+                    44.0,-4.0, 0.0, 48.0,-7.0, 0.0, 48.0,-4.0, 0.0
+                    44.0,-4.0, 0.0, 44.0,-12.0, 0.0, 48.0,-15.0, 0.0
+                    44.0,-12.0, 0.0, 44.0,-15.0, 0.0, 48.0,-15.0, 0.0
+                    ]
+         material: off_white
+        config:
+         position: [0, 0, 0]
+         orientation: [0, 0, 0, 1]
+     -
+        name: NoName135
+        collision_geometry:
+         type: box
+         dims: [30.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-28.5, -4.0, 1.5]
+         orientation: [1.0, 0.0, 0.0, 0.0]
+     -
+        name: NoName137
+        collision_geometry:
+         type: box
+         dims: [15.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-13.0, -12.0, 1.5]
+         orientation: [0.7071067811865476, 0.7071067811865475, 0.0, 0.0]
+     -
+        name: NoName139
+        collision_geometry:
+         type: box
+         dims: [25.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [0.0, -20.0, 1.5]
+         orientation: [6.123233995736766E-17, 1.0, 0.0, 0.0]
+     -
+        name: NoName141
+        collision_geometry:
+         type: box
+         dims: [26.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [26.5, -4.0, 1.5]
+         orientation: [6.123233995736766E-17, 1.0, 0.0, 0.0]
+     -
+        name: NoName142
+        collision_geometry:
+         type: box
+         dims: [15.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [13.0, -12.0, 1.5]
+         orientation: [0.7071067811865476, 0.7071067811865475, 0.0, 0.0]
+     -
+        name: NoName144
+        collision_geometry:
+         type: box
+         dims: [3.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [-11.0, -4.0, 1.5]
+         orientation: [1.0, 0.0, 0.0, 0.0]
+     -
+        name: ROSS145
+        collision_geometry:
+         type: polygon
+         triangles: [ 
+                    13.0,-20.0, 0.0, -9.0,-4.0, 0.0, -13.0,-4.0, 0.0
+                    13.0,-20.0, 0.0, -13.0,-4.0, 0.0, -13.0,-20.0, 0.0
+                    13.0,-20.0, 0.0, -5.0,-4.0, 0.0, -9.0,-4.0, 0.0
+                    13.0,-20.0, 0.0, 5.0,-4.0, 0.0, -5.0,-4.0, 0.0
+                    13.0,-20.0, 0.0, 9.0,-4.0, 0.0, 5.0,-4.0, 0.0
+                    13.0,-20.0, 0.0, 13.0,-4.0, 0.0, 9.0,-4.0, 0.0
+                    ]
+         material: off_white
+        config:
+         position: [0, 0, 0]
+         orientation: [0, 0, 0, 1]
+     -
+        name: NoName149
+        collision_geometry:
+         type: box
+         dims: [9.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [0.0, -4.0, 1.5]
+         orientation: [1.0, 0.0, 0.0, 0.0]
+     -
+        name: NoName152
+        collision_geometry:
+         type: box
+         dims: [3.5, 0.3, 2.99]
+         material: grey
+        config:
+         position: [11.0, -4.0, 1.5]
+         orientation: [6.123233995736766E-17, 1.0, 0.0, 0.0]
+

@@ -1,0 +1,198 @@
+<launch>
+
+  <!-- This file is meant to store the query to use in the application.  -->
+
+
+  <!-- Load template files -->       
+
+  <!-- Specify the query parameters --> 
+
+  <rosparam ns="queries">
+  query1:
+    type: pebble_test_query
+    initial_state:
+      -
+        name: disk0
+        node_id: 0
+      -
+        name: disk1
+        node_id: 1
+      -
+        name: disk2
+        node_id: 7
+      -
+        name: disk3
+        node_id: 3
+      -
+        name: disk4
+        node_id: 5
+      -
+        name: disk5
+        node_id: 6
+      -
+        name: disk6
+        node_id: 4
+      -
+        name: disk7
+        node_id: 9
+      -
+        name: disk8
+        node_id: 10
+      -
+        name: disk9
+        node_id: 11
+      -
+        name: disk10
+        node_id: 12
+      -
+        name: disk11
+        node_id: 13
+      -
+        name: disk12
+        node_id: 15
+      -
+        name: disk13
+        node_id: 16
+      -
+        name: disk14
+        node_id: 20
+      -
+        name: disk15
+        node_id: 21
+      -
+        name: disk16
+        node_id: 19
+      -
+        name: disk17
+        node_id: 24
+      -
+        name: disk18
+        node_id: 23
+      -
+        name: disk19
+        node_id: 26
+      -
+        name: disk20
+        node_id: 25
+      -
+        name: disk21
+        node_id: 22
+      -
+        name: disk22
+        node_id: 31
+      -
+        name: disk23
+        node_id: 32
+      -
+        name: disk24
+        node_id: 33
+      -
+        name: disk25
+        node_id: 28
+      -
+        name: disk26
+        node_id: 29
+      -
+        name: disk27
+        node_id: 27
+      -
+        name: disk28
+        node_id: 30
+      -
+        name: disk29
+        node_id: 34
+    target_state:
+      -
+        name: disk0
+        node_id: 2
+      -
+        name: disk1
+        node_id: 3
+      -
+        name: disk2
+        node_id: 7
+      -
+        name: disk3
+        node_id: 0
+      -
+        name: disk4
+        node_id: 4
+      -
+        name: disk5
+        node_id: 5
+      -
+        name: disk6
+        node_id: 6
+      -
+        name: disk7
+        node_id: 10
+      -
+        name: disk8
+        node_id: 16
+      -
+        name: disk9
+        node_id: 13
+      -
+        name: disk10
+        node_id: 11
+      -
+        name: disk11
+        node_id: 12
+      -
+        name: disk12
+        node_id: 17
+      -
+        name: disk13
+        node_id: 15
+      -
+        name: disk14
+        node_id: 24
+      -
+        name: disk15
+        node_id: 18
+      -
+        name: disk16
+        node_id: 22
+      -
+        name: disk17
+        node_id: 20
+      -
+        name: disk18
+        node_id: 19
+      -
+        name: disk19
+        node_id: 25
+      -
+        name: disk20
+        node_id: 26
+      -
+        name: disk21
+        node_id: 23
+      -
+        name: disk22
+        node_id: 34
+      -
+        name: disk23
+        node_id: 30
+      -
+        name: disk24
+        node_id: 35
+      -
+        name: disk25
+        node_id: 29
+      -
+        name: disk26
+        node_id: 31
+      -
+        name: disk27
+        node_id: 28
+      -
+        name: disk28
+        node_id: 33
+      -
+        name: disk29
+        node_id: 32
+  </rosparam>
+
+</launch>
+

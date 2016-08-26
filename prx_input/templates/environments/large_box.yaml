@@ -1,0 +1,12 @@
+building1:
+    type: obstacle
+    geometries:
+    -
+        name: large_box
+        collision_geometry: 
+            type: box
+            dims: [33, 33, 2.6]      
+            material: red    
+        config:
+            position: [0, 0, 1]
+            orientation: [0,0,0,1]

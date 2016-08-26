@@ -1,0 +1,81 @@
+balls:
+  type: obstacle
+  geometries:
+    -
+      name: ball_1
+      collision_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      visualization_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      config:
+        position: [0.45, 0.45, 3.73]
+        orientation: [0, 0, 0, 1]
+    -
+      name: ball_2
+      collision_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      visualization_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      config:
+        position: [0.4, 0.4, 3.73]
+        orientation: [0, 0, 0, 1]
+    -
+      name: ball_3
+      collision_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      visualization_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      config:
+        position: [0.3, 0.3, 3.9]
+        orientation: [0, 0, 0, 1]
+    -
+      name: ball_4
+      collision_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      visualization_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      config:
+        position: [0.55, 0.9, 3.9]
+        orientation: [0, 0, 0, 1]
+    -
+      name: ball_5
+      collision_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      visualization_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      config:
+        position: [0.35, 0.6, 3.9]
+        orientation: [0, 0, 0, 1]
+    -
+      name: ball_6
+      collision_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      visualization_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      config:
+        position: [0.35, 0.9, 3.9]
+        orientation: [0, 0, 0, 1]

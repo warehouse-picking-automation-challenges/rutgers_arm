@@ -1,0 +1,31 @@
+boxes:
+    type: obstacle
+    geometries:
+    -
+        name: spike1_a
+        collision_geometry: 
+            type: box
+            dims: [4, 4 , 2.9]
+            material: red    
+        config:
+            position: [5, -4, 1.45]
+            orientation: [0,0,0,1]
+    -
+        name: spike1_b
+        collision_geometry: 
+            type: box
+            dims: [4, 4 , 4.3]
+            material: yellow    
+        config:
+            position: [5, 0, 2.15]
+            orientation: [0,0,0,1]
+    -
+        name: spike1_c
+        collision_geometry: 
+            type: box
+            dims: [4, 4 , 1.4]
+            material: green    
+        config:
+            position: [5, 4, 0.7]
+            orientation: [0,0,0,1]
+    

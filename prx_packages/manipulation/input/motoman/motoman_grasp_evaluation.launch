@@ -1,0 +1,248 @@
+<launch>  
+<!--
+  <rosparam>
+  yaml_input: /home/zak/repos/pracsys_ws/src/pracsys/prx_input/params.yaml
+  </rosparam>
+-->
+
+  <rosparam file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <rosparam ns="simulation" file="$(find prx_input)/templates/applications/empty_application.yaml" />
+  <rosparam ns="simulation" file="$(find manipulation)/input/manipulation_simulator.yaml"/>  
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manipulator" file="$(find manipulation)/input/motoman/motoman_complete_kinect_reflex.yaml"/>
+
+  <rosparam ns="simulation/simulator/obstacles">
+    table:
+      type: obstacle
+      geometries:
+        -
+          name: foundation
+          collision_geometry:
+            type: box
+            dims: [0.5, 1.11, 1.4]
+            material: shelf_grey
+          config:
+            position: [0.9, 0.3, 0]
+            orientation: [0, 0, 0, 1]
+  </rosparam>
+
+    <rosparam ns="planning/world_model/simulator/obstacles">
+    table:
+      type: obstacle
+      geometries:
+        -
+          name: foundation
+          collision_geometry:
+            type: box
+            dims: [0.5, 1.11, 1.4]
+            material: shelf_grey
+          config:
+            position: [0.9, 0.3, 0]
+            orientation: [0, 0, 0, 1]
+  </rosparam>
+
+  <rosparam ns="simulation/application">
+  start_simulation: true
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/subsystems/consumer">
+  type: apc_controller
+  real_robot: false
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manipulator">
+    # initial_state: [-1.70,-2.17,-0.70,-2.19,-0.26,-0.90,-1.92,-0.56,0.03,0.31,-1.09,0.67,-0.57,1.75,-1.90,-2.27,1.00,2.00]
+  </rosparam>
+
+  <rosparam ns="planning">
+    random_seed: 14391835
+    simulate: false
+    visualize: true
+    persistent: true
+    world_model:
+      type: manipulation_world_model
+      num_ik_seeds: 100
+      # IK_databases:
+      #   motoman_database:
+      #     distance_metric:
+      #       type: graph_distance_metric
+      #     manipulator: manipulator
+      #     samples: 500
+      #     deserialize_file: motoman[1000].database
+    type: apc_planning_application
+    full_manipulator_context_name: manipulator_pc
+  </rosparam>
+
+  <rosparam ns="planning" file="$(find prx_input)/templates/spaces/space_types.yaml"/>  
+  <rosparam ns="planning/world_model" file="$(find manipulation)/input/manipulation_simulator.yaml"/>  
+  <rosparam ns="planning/world_model/simulator/subsystems/manipulator" file="$(find manipulation)/input/motoman/motoman_complete_kinect_reflex.yaml"/>
+
+  <rosparam ns="planning/world_model/planning_contexts">
+    manipulator_pc:
+      default:
+        type: "hide_mapping"
+    left_full_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_arm"
+        end_effector_context_name: "left_end_effector"
+        start_link: "base_link"
+        end_link: "head_sponge"
+        ik_database: motoman_database
+        left_arm_ik: true
+    left_arm:
+      default:
+       type: "obstacle_mapping"
+    left_arm_planning:
+      default:
+        type: "hide_mapping"
+    left_end_effector:
+      default:
+       type: "hide_mapping"
+    right_full_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "right_full_arm"
+        arm_context_name: "right_arm"
+        end_effector_context_name: "right_end_effector"
+        start_link: "base_link"
+        end_link: "arm_right_reflex_virtual"
+        ik_database: motoman_database
+        left_arm_ik: false
+    right_arm:
+      default:
+       type: "obstacle_mapping"
+    right_arm_planning:
+      default:
+        type: "hide_mapping"
+    right_end_effector:
+      default:
+       type: "hide_mapping"
+  </rosparam>
+
+  <rosparam ns="planning/world_model/simulator/subsystems/manipulator">
+    planning_contexts:
+      manipulator_pc:
+        type: "full_mapping"
+      left_full_arm:
+        type: "motoman_left_full_with_torso_state_mapping"
+      left_arm:
+        type: "motoman_left_torso_state_mapping"
+      left_end_effector:
+        type: "motoman_left_gripper_state_mapping"
+      left_arm_planning:
+        type: "motoman_left_torso_state_mapping"
+      right_full_arm:
+        type: "motoman_right_full_with_torso_state_mapping"
+      right_arm:
+        type: "motoman_right_torso_state_mapping"
+      right_end_effector:
+        type: "motoman_right_gripper_state_mapping"
+      right_arm_planning:
+        type: "motoman_right_torso_state_mapping"
+  </rosparam>
+
+  <rosparam ns="planning/world_model/simulator/subsystems/box1">
+    type: movable_body
+    object_type: crayola
+    max_step: 0.01
+    state_space: 
+      min: [-5, -5, -100, -1, -1, -1, -1]
+      max: [5, 5, 100, 1, 1, 1, 1]
+      scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+    input_control_space: 
+      none: 4
+    root_geom: body
+    # initial_state: [.8,0.000,0.75,-0.707,0.000,-0.000,0.707]
+    initial_state: [.8,0.000,0.85,0,0,0,1]
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: box
+          dims: [0.145, 0.035, 0.125]
+          material: blue
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/box1">
+    type: movable_body
+    object_type: crayola
+    max_step: 0.01
+    state_space: 
+      min: [-5, -5, -100, -1, -1, -1, -1]
+      max: [5, 5, 100, 1, 1, 1, 1]
+      scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+    input_control_space: 
+      none: 4
+    root_geom: body
+    # initial_state: [.8,0.000,.75,-0.707,0.000,-0.000,0.707]
+    initial_state: [.8,0.000,0.85,0,0,0,1]
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: box
+          dims: [0.145, 0.035, 0.125]
+          material: red
+    
+  </rosparam>
+
+  <rosparam ns="planning/task_planner/">
+    type: grasp_evaluation_tp
+    left_context_name: "left_full_arm"
+    right_context_name: "left_full_arm"
+    grasping_planner:
+      # type: face_hidden_grasping_planner
+      type: grasping_planner
+      validity_checker: 
+        type: world_model_validity_checker
+      sampler:
+        type: uniform_sampler
+      data_folders: 
+        left_full_arm: "prx_packages/manipulation/input/grasp_data/unigripper/"
+        # left_full_arm: "prx_packages/manipulation/input/grasp_data/unigripper_split/"
+        # right_full_arm: "prx_packages/manipulation/input/grasp_data/reflex/"
+  </rosparam>
+
+  <node name="planning" pkg="prx_planning" type="prx_planning" required="true" launch-prefix="" output="screen" args="planning"/>
+
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation" required="true" launch-prefix="" output="screen" args="simulation"/>
+
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+
+  <rosparam ns="visualization/viewer/">
+    windows:
+      window_1:
+        xpos: 920
+        ypos: 100
+        width: 1000
+        height: 1000
+        cameras:
+          perspective:
+            ortho: false
+            camera_type: 0
+            eye: [0, 0, 1.8]
+            center: [1, 0, 0]
+            speed: {move: 0.1, rotate: 0.001}
+          orthographic:
+            ortho: true
+            ortho_param:
+              left: -300
+              right: 300
+              bottom: -300
+              top: 300
+              zNear: 0
+              zFar: 1000
+            speed: {move: 0.2, rotate: 0.001}
+          smooth:
+            ortho: false
+            camera_type: 2
+            eye: [0, -20, 15]
+            center: [0, 1, 18]
+            speed: {move: 0.2, rotate: 0.001}
+  </rosparam>
+
+</launch>

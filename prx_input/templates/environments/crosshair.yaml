@@ -1,0 +1,40 @@
+building1:
+    type: obstacle
+    geometries:
+      -
+        name: box1
+        collision_geometry: 
+          type: box
+
+          dims: [4, 180, 4]      
+          material: black       
+        config:
+          position: [0, 100, 2]
+          orientation: [0, 0, 0, 1]
+      -
+        name: box2
+        collision_geometry: 
+          type: box
+          dims: [4, 180, 4]       
+          material: black       
+        config:
+          position: [0, -100, 2]
+          orientation: [0, 0, 0, 1]
+      -
+        name: box3
+        collision_geometry: 
+          type: box
+          dims: [180, 4, 4]      
+          material: black       
+        config:
+          position: [100, 0, 2]
+          orientation: [0, 0, 0, 1]
+      -
+        name: box4
+        collision_geometry: 
+          type: box
+          dims: [180, 4, 4]       
+          material: black       
+        config:
+          position: [-100, 0, 2]
+          orientation: [0, 0, 0, 1]

@@ -1,0 +1,18 @@
+type: parallel_grasp_generator
+default_ee_normal: [0,0,1]
+end_effector_name: parallel_gripper
+grasp_entire_mesh: false
+save_grasps_to_file: true
+hand_long_axis: [0,0,1]
+limiting_normal: true
+restricted_normals:
+-
+  normal: [0,0,-1]
+-
+  normal: [1,0,0]
+preferred_normals:
+-
+  normal: [-1,0,0]
+manual_grasp_mode: 2
+manual_release_mode: 3
+total_nr_grasps: 1

@@ -1,0 +1,77 @@
+<launch>
+
+  <!--  PLANNING  -->
+  <include ns="planning" file="$(find labeled_rearrangement)/input/planning/world_models/world_model_3k.launch"/>
+  
+  <rosparam command="load" ns="planning/problems/rearrangement_manipulation_problem/specification">
+    k: 3
+    b: 3
+    initial_poses:
+      -
+        pose: [0.95,0.55,3.2675,0,0,0,1]
+      -
+        pose: [1.03,0.55,3.2675,0,0,0,1]
+      -
+        pose: [1.11,0.55,3.2675,0,0,0,1]
+    target_poses:
+      -
+        pose: [1.11,-0.05,3.2675,0,0,0,1]
+      -
+        pose: [1.03,-0.05,3.2675,0,0,0,1]
+      -
+        pose: [0.95,-0.05,3.2675,0,0,0,1]
+  </rosparam>
+
+  <!--  SIMULATION  -->
+  <rosparam command="load" ns="simulation/cup" file="$(find manipulation)/input/simulation/plants/cups.yaml"/>               
+  <rosparam command="load" ns="simulation/cup">
+    state_space: 
+        min: [-10, -10, -100, -1, -1, -1, -1]
+        max: [10, 10, 100, 1, 1, 1, 1]
+        scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  </rosparam>
+
+  <!-- Set up concrete system tree -->
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/cup1">
+    template: "cup"
+    initial_state: [0.95,0.55,3.2675,0,0,0,1]
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 0.02
+          height: 0.14
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/cup2">
+    template: "cup"
+    initial_state: [1.03,0.55,3.2675,0,0,0,1]
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 0.02
+          height: 0.14
+          material: green
+  </rosparam>
+
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/cup3">
+    template: "cup"
+    initial_state: [1.11,0.55,3.2675,0,0,0,1]
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 0.02
+          height: 0.14
+          material: blue
+  </rosparam>
+
+</launch>
+

@@ -1,0 +1,404 @@
+building1:
+    type: obstacle
+    geometries:
+      -
+        name: circle1
+        collision_geometry: 
+          type: box
+          dims: [40, 40, 3]     
+          material: red      
+        config:
+          position: [-131.25, 262.5, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle2
+        collision_geometry: 
+          type: box
+	  dims: [40, 40, 3]     
+          material: red      
+        config:
+          position: [131.25, 262.5, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle3
+        collision_geometry: 
+          type: box
+	  dims: [40, 40, 3]     
+          material: red      
+        config:
+          position: [-262.5, 131.25, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle4
+        collision_geometry: 
+          type: box
+	  dims: [40, 40, 3]     
+          material: red    
+        config:
+          position: [-262.5, -131.25, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle5
+        collision_geometry: 
+          type: box
+	  dims: [40, 40, 3]     
+          material: red     
+        config:
+          position: [-131.25, -262.5, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle6
+        collision_geometry: 
+          type: box
+	  dims: [40, 40, 3]     
+          material: red     
+        config:
+          position: [131.25, -262.5, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle7
+        collision_geometry: 
+          type: box
+	  dims: [40, 40, 3]     
+          material: red       
+        config:
+          position: [262.5, 131.25, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle8
+        collision_geometry: 
+          type: box
+	  dims: [40, 40, 3]     
+          material: red       
+        config:
+          position: [262.5, -131.25, 0]
+          orientation: [0, 0, 0, 1]
+
+###########################
+      -
+        name: circle9
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [98.4375, -98.4375, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle10
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [98.4375, 98.4375, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle11
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [-98.4375, -98.4375, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle12
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [-98.4375, 98.4375, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle13
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [0, 196.875, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle14
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [0, -196.875, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle15
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [196.875, 0, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle16
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [-196.875, 0, 0]
+          orientation: [0, 0, 0, 1]
+########
+#      -
+#        name: circleX
+#        collision_geometry: 
+#          type: cylinder
+#          radius: 10
+#          height: 3.0      
+#          material: black       
+#        config:
+#          position: [0, 0, 0]
+#          orientation: [0, 0, 0, 1]
+##################
+      -
+        name: circle17
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [-196.875, 196.875, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle18
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [196.875, 196.875, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle19
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [196.875, -196.875, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle20
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [-196.875, -196.875, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle21
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [262.5, 0, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle22
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [-262.5, 0, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle23
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [0, 262.5, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle24
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [0, -262.5, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle25
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [328.125, 0, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle26
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [-328.125, 0, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle27
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [0, 328.125, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle28
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [0, -328.125, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle29
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [262.5, 65.625, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle30
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [262.5, -65.625, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle31
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [-262.5, -65.625, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle32
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [-262.5, 65.625, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle33
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [65.625, 262.5, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle34
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [-65.625, 262.5, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle35
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [-65.625, -262.5, 0]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: circle36
+        collision_geometry: 
+          type: cylinder
+          radius: 20
+          height: 3.0      
+          material: black       
+        config:
+          position: [65.625, -262.5, 0]
+          orientation: [0, 0, 0, 1]
+
+

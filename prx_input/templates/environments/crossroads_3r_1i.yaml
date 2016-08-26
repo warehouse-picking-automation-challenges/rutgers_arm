@@ -1,0 +1,248 @@
+building1:
+    type: obstacle
+    geometries:
+      -
+        name: top_left
+        collision_geometry: 
+          type: box
+
+          dims: [10, 180, 40]      
+          material: black       
+        config:
+          position: [-20, 110, 20]
+          orientation: [0, 0, 0, 1]
+      -
+        name: top_right
+        collision_geometry: 
+          type: box
+
+          dims: [10, 180, 40]      
+          material: black       
+        config:
+          position: [20, 110, 20]
+          orientation: [0, 0, 0, 1]
+      -
+        name: top_divider
+        collision_geometry: 
+          type: box
+          dims: [2, 180, 4]       
+          material: black       
+        config:
+          position: [0, 110, 2]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: bottom_left
+        collision_geometry: 
+          type: box
+
+          dims: [10, 180, 40]      
+          material: black       
+        config:
+          position: [-20, -110, 20]
+          orientation: [0, 0, 0, 1]
+      -
+        name: bottom_right
+        collision_geometry: 
+          type: box
+
+          dims: [10, 180, 40]      
+          material: black       
+        config:
+          position: [20, -110, 20]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: bottom_divider
+        collision_geometry: 
+          type: box
+          dims: [2, 180, 4]       
+          material: black       
+        config:
+          position: [0, -110, 2]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: right_bottom
+        collision_geometry: 
+          type: box
+
+          dims: [180, 10, 40]      
+          material: black       
+        config:
+          position: [110, -20, 20]
+          orientation: [0, 0, 0, 1]
+      -
+        name: right_bottom5
+        collision_geometry: 
+          type: box
+
+          dims: [180, 10, 40]      
+          material: black       
+        config:
+          position: [110, 20, 20]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: right_divider
+        collision_geometry: 
+          type: box
+          dims: [180, 2, 4]      
+          material: black       
+        config:
+          position: [110, 0, 2]
+          orientation: [0, 0, 0, 1]
+      -
+        name: left_bottom
+        collision_geometry: 
+          type: box
+
+          dims: [180, 10, 40]      
+          material: black       
+        config:
+          position: [-110, -20, 20]
+          orientation: [0, 0, 0, 1]
+      -
+        name: left_top
+        collision_geometry: 
+          type: box
+
+          dims: [180, 10, 40]      
+          material: black       
+        config:
+          position: [-110, 20, 20]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: left_divider
+        collision_geometry: 
+          type: box
+          dims: [180, 2, 4]      
+          material: black       
+        config:
+          position: [-110, 0, 2]
+          orientation: [0, 0, 0, 1]
+      -
+        name: left_bottom2
+        collision_geometry: 
+          type: box
+
+          dims: [180, 10, 40]      
+          material: black       
+        config:
+          position: [-110, 200, 20]
+          orientation: [0, 0, 0, 1]
+      -
+        name: left_top2
+        collision_geometry: 
+          type: box
+
+          dims: [180, 10, 40]      
+          material: black       
+        config:
+          position: [-110, 240, 20]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: left_divider2
+        collision_geometry: 
+          type: box
+          dims: [180, 2, 4]      
+          material: black       
+        config:
+          position: [-110, 220, 2]
+          orientation: [0, 0, 0, 1]
+                  
+      -
+        name: right_bottom2
+        collision_geometry: 
+          type: box
+
+          dims: [180, 10, 40]      
+          material: black       
+        config:
+          position: [110, 200, 20]
+          orientation: [0, 0, 0, 1]
+      -
+        name: right_top2
+        collision_geometry: 
+          type: box
+
+          dims: [180, 10, 40]      
+          material: black       
+        config:
+          position: [110, 240, 20]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: right_divider2
+        collision_geometry: 
+          type: box
+          dims: [180, 2, 4]      
+          material: black       
+        config:
+          position: [110, 220, 2]
+          orientation: [0, 0, 0, 1]
+                  
+                 
+      -
+        name: left_bottom3
+        collision_geometry: 
+          type: box
+
+          dims: [180, 10, 40]      
+          material: black       
+        config:
+          position: [-110, -200, 20]
+          orientation: [0, 0, 0, 1]
+      -
+        name: left_top3
+        collision_geometry: 
+          type: box
+
+          dims: [180, 10, 40]      
+          material: black       
+        config:
+          position: [-110, -240, 20]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: left_divider3
+        collision_geometry: 
+          type: box
+          dims: [180, 2, 4]      
+          material: black       
+        config:
+          position: [-110, -220, 2]
+          orientation: [0, 0, 0, 1]
+                  
+      -
+        name: right_bottom3
+        collision_geometry: 
+          type: box
+
+          dims: [180, 10, 40]      
+          material: black       
+        config:
+          position: [110, -200, 20]
+          orientation: [0, 0, 0, 1]
+      -
+        name: right_top3
+        collision_geometry: 
+          type: box
+
+          dims: [180, 10, 40]      
+          material: black       
+        config:
+          position: [110, -240, 20]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: right_divider3
+        collision_geometry: 
+          type: box
+          dims: [180, 2, 4]      
+          material: black       
+        config:
+          position: [110, -220, 2]
+          orientation: [0, 0, 0, 1]

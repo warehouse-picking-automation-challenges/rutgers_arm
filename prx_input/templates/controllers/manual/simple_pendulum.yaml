@@ -1,0 +1,11 @@
+type: manual
+input_keys:
+  -
+    input_key: LEFT
+    control_name: a
+    value: -20
+  -
+    input_key: RIGHT
+    control_name: a
+    value: 20
+    

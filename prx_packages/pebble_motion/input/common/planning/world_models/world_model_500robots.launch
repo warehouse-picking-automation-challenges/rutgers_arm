@@ -1,0 +1,1533 @@
+<launch>
+ <rosparam>
+  system_mapping:
+  -
+    pair: [simulator/consumer/router, world_model/simulator/router]
+  -
+    pair: [simulator/consumer/router/disk000, world_model/simulator/router/disk000]
+  -
+    pair: [simulator/consumer/router/disk001, world_model/simulator/router/disk001]
+  -
+    pair: [simulator/consumer/router/disk002, world_model/simulator/router/disk002]
+  -
+    pair: [simulator/consumer/router/disk003, world_model/simulator/router/disk003]
+  -
+    pair: [simulator/consumer/router/disk004, world_model/simulator/router/disk004]
+  -
+    pair: [simulator/consumer/router/disk005, world_model/simulator/router/disk005]
+  -
+    pair: [simulator/consumer/router/disk006, world_model/simulator/router/disk006]
+  -
+    pair: [simulator/consumer/router/disk007, world_model/simulator/router/disk007]
+  -
+    pair: [simulator/consumer/router/disk008, world_model/simulator/router/disk008]
+  -
+    pair: [simulator/consumer/router/disk009, world_model/simulator/router/disk009]
+  -
+    pair: [simulator/consumer/router/disk010, world_model/simulator/router/disk010]
+  -
+    pair: [simulator/consumer/router/disk011, world_model/simulator/router/disk011]
+  -
+    pair: [simulator/consumer/router/disk012, world_model/simulator/router/disk012]
+  -
+    pair: [simulator/consumer/router/disk013, world_model/simulator/router/disk013]
+  -
+    pair: [simulator/consumer/router/disk014, world_model/simulator/router/disk014]
+  -
+    pair: [simulator/consumer/router/disk015, world_model/simulator/router/disk015]
+  -
+    pair: [simulator/consumer/router/disk016, world_model/simulator/router/disk016]
+  -
+    pair: [simulator/consumer/router/disk017, world_model/simulator/router/disk017]
+  -
+    pair: [simulator/consumer/router/disk018, world_model/simulator/router/disk018]
+  -
+    pair: [simulator/consumer/router/disk019, world_model/simulator/router/disk019]
+  -
+    pair: [simulator/consumer/router/disk020, world_model/simulator/router/disk020]
+  -
+    pair: [simulator/consumer/router/disk021, world_model/simulator/router/disk021]
+  -
+    pair: [simulator/consumer/router/disk022, world_model/simulator/router/disk022]
+  -
+    pair: [simulator/consumer/router/disk023, world_model/simulator/router/disk023]
+  -
+    pair: [simulator/consumer/router/disk024, world_model/simulator/router/disk024]
+  -
+    pair: [simulator/consumer/router/disk025, world_model/simulator/router/disk025]
+  -
+    pair: [simulator/consumer/router/disk026, world_model/simulator/router/disk026]
+  -
+    pair: [simulator/consumer/router/disk027, world_model/simulator/router/disk027]
+  -
+    pair: [simulator/consumer/router/disk028, world_model/simulator/router/disk028]
+  -
+    pair: [simulator/consumer/router/disk029, world_model/simulator/router/disk029]
+  -
+    pair: [simulator/consumer/router/disk030, world_model/simulator/router/disk030]
+  -
+    pair: [simulator/consumer/router/disk031, world_model/simulator/router/disk031]
+  -
+    pair: [simulator/consumer/router/disk032, world_model/simulator/router/disk032]
+  -
+    pair: [simulator/consumer/router/disk033, world_model/simulator/router/disk033]
+  -
+    pair: [simulator/consumer/router/disk034, world_model/simulator/router/disk034]
+  -
+    pair: [simulator/consumer/router/disk035, world_model/simulator/router/disk035]
+  -
+    pair: [simulator/consumer/router/disk036, world_model/simulator/router/disk036]
+  -
+    pair: [simulator/consumer/router/disk037, world_model/simulator/router/disk037]
+  -
+    pair: [simulator/consumer/router/disk038, world_model/simulator/router/disk038]
+  -
+    pair: [simulator/consumer/router/disk039, world_model/simulator/router/disk039]
+  -
+    pair: [simulator/consumer/router/disk040, world_model/simulator/router/disk040]
+  -
+    pair: [simulator/consumer/router/disk041, world_model/simulator/router/disk041]
+  -
+    pair: [simulator/consumer/router/disk042, world_model/simulator/router/disk042]
+  -
+    pair: [simulator/consumer/router/disk043, world_model/simulator/router/disk043]
+  -
+    pair: [simulator/consumer/router/disk044, world_model/simulator/router/disk044]
+  -
+    pair: [simulator/consumer/router/disk045, world_model/simulator/router/disk045]
+  -
+    pair: [simulator/consumer/router/disk046, world_model/simulator/router/disk046]
+  -
+    pair: [simulator/consumer/router/disk047, world_model/simulator/router/disk047]
+  -
+    pair: [simulator/consumer/router/disk048, world_model/simulator/router/disk048]
+  -
+    pair: [simulator/consumer/router/disk049, world_model/simulator/router/disk049]
+  -
+    pair: [simulator/consumer/router/disk050, world_model/simulator/router/disk050]
+  -
+    pair: [simulator/consumer/router/disk051, world_model/simulator/router/disk051]
+  -
+    pair: [simulator/consumer/router/disk052, world_model/simulator/router/disk052]
+  -
+    pair: [simulator/consumer/router/disk053, world_model/simulator/router/disk053]
+  -
+    pair: [simulator/consumer/router/disk054, world_model/simulator/router/disk054]
+  -
+    pair: [simulator/consumer/router/disk055, world_model/simulator/router/disk055]
+  -
+    pair: [simulator/consumer/router/disk056, world_model/simulator/router/disk056]
+  -
+    pair: [simulator/consumer/router/disk057, world_model/simulator/router/disk057]
+  -
+    pair: [simulator/consumer/router/disk058, world_model/simulator/router/disk058]
+  -
+    pair: [simulator/consumer/router/disk059, world_model/simulator/router/disk059]
+  -
+    pair: [simulator/consumer/router/disk060, world_model/simulator/router/disk060]
+  -
+    pair: [simulator/consumer/router/disk061, world_model/simulator/router/disk061]
+  -
+    pair: [simulator/consumer/router/disk062, world_model/simulator/router/disk062]
+  -
+    pair: [simulator/consumer/router/disk063, world_model/simulator/router/disk063]
+  -
+    pair: [simulator/consumer/router/disk064, world_model/simulator/router/disk064]
+  -
+    pair: [simulator/consumer/router/disk065, world_model/simulator/router/disk065]
+  -
+    pair: [simulator/consumer/router/disk066, world_model/simulator/router/disk066]
+  -
+    pair: [simulator/consumer/router/disk067, world_model/simulator/router/disk067]
+  -
+    pair: [simulator/consumer/router/disk068, world_model/simulator/router/disk068]
+  -
+    pair: [simulator/consumer/router/disk069, world_model/simulator/router/disk069]
+  -
+    pair: [simulator/consumer/router/disk070, world_model/simulator/router/disk070]
+  -
+    pair: [simulator/consumer/router/disk071, world_model/simulator/router/disk071]
+  -
+    pair: [simulator/consumer/router/disk072, world_model/simulator/router/disk072]
+  -
+    pair: [simulator/consumer/router/disk073, world_model/simulator/router/disk073]
+  -
+    pair: [simulator/consumer/router/disk074, world_model/simulator/router/disk074]
+  -
+    pair: [simulator/consumer/router/disk075, world_model/simulator/router/disk075]
+  -
+    pair: [simulator/consumer/router/disk076, world_model/simulator/router/disk076]
+  -
+    pair: [simulator/consumer/router/disk077, world_model/simulator/router/disk077]
+  -
+    pair: [simulator/consumer/router/disk078, world_model/simulator/router/disk078]
+  -
+    pair: [simulator/consumer/router/disk079, world_model/simulator/router/disk079]
+  -
+    pair: [simulator/consumer/router/disk080, world_model/simulator/router/disk080]
+  -
+    pair: [simulator/consumer/router/disk081, world_model/simulator/router/disk081]
+  -
+    pair: [simulator/consumer/router/disk082, world_model/simulator/router/disk082]
+  -
+    pair: [simulator/consumer/router/disk083, world_model/simulator/router/disk083]
+  -
+    pair: [simulator/consumer/router/disk084, world_model/simulator/router/disk084]
+  -
+    pair: [simulator/consumer/router/disk085, world_model/simulator/router/disk085]
+  -
+    pair: [simulator/consumer/router/disk086, world_model/simulator/router/disk086]
+  -
+    pair: [simulator/consumer/router/disk087, world_model/simulator/router/disk087]
+  -
+    pair: [simulator/consumer/router/disk088, world_model/simulator/router/disk088]
+  -
+    pair: [simulator/consumer/router/disk089, world_model/simulator/router/disk089]
+  -
+    pair: [simulator/consumer/router/disk090, world_model/simulator/router/disk090]
+  -
+    pair: [simulator/consumer/router/disk091, world_model/simulator/router/disk091]
+  -
+    pair: [simulator/consumer/router/disk092, world_model/simulator/router/disk092]
+  -
+    pair: [simulator/consumer/router/disk093, world_model/simulator/router/disk093]
+  -
+    pair: [simulator/consumer/router/disk094, world_model/simulator/router/disk094]
+  -
+    pair: [simulator/consumer/router/disk095, world_model/simulator/router/disk095]
+  -
+    pair: [simulator/consumer/router/disk096, world_model/simulator/router/disk096]
+  -
+    pair: [simulator/consumer/router/disk097, world_model/simulator/router/disk097]
+  -
+    pair: [simulator/consumer/router/disk098, world_model/simulator/router/disk098]
+  -
+    pair: [simulator/consumer/router/disk099, world_model/simulator/router/disk099]
+  -
+    pair: [simulator/consumer/router/disk100, world_model/simulator/router/disk100]
+  -
+    pair: [simulator/consumer/router/disk101, world_model/simulator/router/disk101]
+  -
+    pair: [simulator/consumer/router/disk102, world_model/simulator/router/disk102]
+  -
+    pair: [simulator/consumer/router/disk103, world_model/simulator/router/disk103]
+  -
+    pair: [simulator/consumer/router/disk104, world_model/simulator/router/disk104]
+  -
+    pair: [simulator/consumer/router/disk105, world_model/simulator/router/disk105]
+  -
+    pair: [simulator/consumer/router/disk106, world_model/simulator/router/disk106]
+  -
+    pair: [simulator/consumer/router/disk107, world_model/simulator/router/disk107]
+  -
+    pair: [simulator/consumer/router/disk108, world_model/simulator/router/disk108]
+  -
+    pair: [simulator/consumer/router/disk109, world_model/simulator/router/disk109]
+  -
+    pair: [simulator/consumer/router/disk110, world_model/simulator/router/disk110]
+  -
+    pair: [simulator/consumer/router/disk111, world_model/simulator/router/disk111]
+  -
+    pair: [simulator/consumer/router/disk112, world_model/simulator/router/disk112]
+  -
+    pair: [simulator/consumer/router/disk113, world_model/simulator/router/disk113]
+  -
+    pair: [simulator/consumer/router/disk114, world_model/simulator/router/disk114]
+  -
+    pair: [simulator/consumer/router/disk115, world_model/simulator/router/disk115]
+  -
+    pair: [simulator/consumer/router/disk116, world_model/simulator/router/disk116]
+  -
+    pair: [simulator/consumer/router/disk117, world_model/simulator/router/disk117]
+  -
+    pair: [simulator/consumer/router/disk118, world_model/simulator/router/disk118]
+  -
+    pair: [simulator/consumer/router/disk119, world_model/simulator/router/disk119]
+  -
+    pair: [simulator/consumer/router/disk120, world_model/simulator/router/disk120]
+  -
+    pair: [simulator/consumer/router/disk121, world_model/simulator/router/disk121]
+  -
+    pair: [simulator/consumer/router/disk122, world_model/simulator/router/disk122]
+  -
+    pair: [simulator/consumer/router/disk123, world_model/simulator/router/disk123]
+  -
+    pair: [simulator/consumer/router/disk124, world_model/simulator/router/disk124]
+  -
+    pair: [simulator/consumer/router/disk125, world_model/simulator/router/disk125]
+  -
+    pair: [simulator/consumer/router/disk126, world_model/simulator/router/disk126]
+  -
+    pair: [simulator/consumer/router/disk127, world_model/simulator/router/disk127]
+  -
+    pair: [simulator/consumer/router/disk128, world_model/simulator/router/disk128]
+  -
+    pair: [simulator/consumer/router/disk129, world_model/simulator/router/disk129]
+  -
+    pair: [simulator/consumer/router/disk130, world_model/simulator/router/disk130]
+  -
+    pair: [simulator/consumer/router/disk131, world_model/simulator/router/disk131]
+  -
+    pair: [simulator/consumer/router/disk132, world_model/simulator/router/disk132]
+  -
+    pair: [simulator/consumer/router/disk133, world_model/simulator/router/disk133]
+  -
+    pair: [simulator/consumer/router/disk134, world_model/simulator/router/disk134]
+  -
+    pair: [simulator/consumer/router/disk135, world_model/simulator/router/disk135]
+  -
+    pair: [simulator/consumer/router/disk136, world_model/simulator/router/disk136]
+  -
+    pair: [simulator/consumer/router/disk137, world_model/simulator/router/disk137]
+  -
+    pair: [simulator/consumer/router/disk138, world_model/simulator/router/disk138]
+  -
+    pair: [simulator/consumer/router/disk139, world_model/simulator/router/disk139]
+  -
+    pair: [simulator/consumer/router/disk140, world_model/simulator/router/disk140]
+  -
+    pair: [simulator/consumer/router/disk141, world_model/simulator/router/disk141]
+  -
+    pair: [simulator/consumer/router/disk142, world_model/simulator/router/disk142]
+  -
+    pair: [simulator/consumer/router/disk143, world_model/simulator/router/disk143]
+  -
+    pair: [simulator/consumer/router/disk144, world_model/simulator/router/disk144]
+  -
+    pair: [simulator/consumer/router/disk145, world_model/simulator/router/disk145]
+  -
+    pair: [simulator/consumer/router/disk146, world_model/simulator/router/disk146]
+  -
+    pair: [simulator/consumer/router/disk147, world_model/simulator/router/disk147]
+  -
+    pair: [simulator/consumer/router/disk148, world_model/simulator/router/disk148]
+  -
+    pair: [simulator/consumer/router/disk149, world_model/simulator/router/disk149]
+  -
+    pair: [simulator/consumer/router/disk150, world_model/simulator/router/disk150]
+  -
+    pair: [simulator/consumer/router/disk151, world_model/simulator/router/disk151]
+  -
+    pair: [simulator/consumer/router/disk152, world_model/simulator/router/disk152]
+  -
+    pair: [simulator/consumer/router/disk153, world_model/simulator/router/disk153]
+  -
+    pair: [simulator/consumer/router/disk154, world_model/simulator/router/disk154]
+  -
+    pair: [simulator/consumer/router/disk155, world_model/simulator/router/disk155]
+  -
+    pair: [simulator/consumer/router/disk156, world_model/simulator/router/disk156]
+  -
+    pair: [simulator/consumer/router/disk157, world_model/simulator/router/disk157]
+  -
+    pair: [simulator/consumer/router/disk158, world_model/simulator/router/disk158]
+  -
+    pair: [simulator/consumer/router/disk159, world_model/simulator/router/disk159]
+  -
+    pair: [simulator/consumer/router/disk160, world_model/simulator/router/disk160]
+  -
+    pair: [simulator/consumer/router/disk161, world_model/simulator/router/disk161]
+  -
+    pair: [simulator/consumer/router/disk162, world_model/simulator/router/disk162]
+  -
+    pair: [simulator/consumer/router/disk163, world_model/simulator/router/disk163]
+  -
+    pair: [simulator/consumer/router/disk164, world_model/simulator/router/disk164]
+  -
+    pair: [simulator/consumer/router/disk165, world_model/simulator/router/disk165]
+  -
+    pair: [simulator/consumer/router/disk166, world_model/simulator/router/disk166]
+  -
+    pair: [simulator/consumer/router/disk167, world_model/simulator/router/disk167]
+  -
+    pair: [simulator/consumer/router/disk168, world_model/simulator/router/disk168]
+  -
+    pair: [simulator/consumer/router/disk169, world_model/simulator/router/disk169]
+  -
+    pair: [simulator/consumer/router/disk170, world_model/simulator/router/disk170]
+  -
+    pair: [simulator/consumer/router/disk171, world_model/simulator/router/disk171]
+  -
+    pair: [simulator/consumer/router/disk172, world_model/simulator/router/disk172]
+  -
+    pair: [simulator/consumer/router/disk173, world_model/simulator/router/disk173]
+  -
+    pair: [simulator/consumer/router/disk174, world_model/simulator/router/disk174]
+  -
+    pair: [simulator/consumer/router/disk175, world_model/simulator/router/disk175]
+  -
+    pair: [simulator/consumer/router/disk176, world_model/simulator/router/disk176]
+  -
+    pair: [simulator/consumer/router/disk177, world_model/simulator/router/disk177]
+  -
+    pair: [simulator/consumer/router/disk178, world_model/simulator/router/disk178]
+  -
+    pair: [simulator/consumer/router/disk179, world_model/simulator/router/disk179]
+  -
+    pair: [simulator/consumer/router/disk180, world_model/simulator/router/disk180]
+  -
+    pair: [simulator/consumer/router/disk181, world_model/simulator/router/disk181]
+  -
+    pair: [simulator/consumer/router/disk182, world_model/simulator/router/disk182]
+  -
+    pair: [simulator/consumer/router/disk183, world_model/simulator/router/disk183]
+  -
+    pair: [simulator/consumer/router/disk184, world_model/simulator/router/disk184]
+  -
+    pair: [simulator/consumer/router/disk185, world_model/simulator/router/disk185]
+  -
+    pair: [simulator/consumer/router/disk186, world_model/simulator/router/disk186]
+  -
+    pair: [simulator/consumer/router/disk187, world_model/simulator/router/disk187]
+  -
+    pair: [simulator/consumer/router/disk188, world_model/simulator/router/disk188]
+  -
+    pair: [simulator/consumer/router/disk189, world_model/simulator/router/disk189]
+  -
+    pair: [simulator/consumer/router/disk190, world_model/simulator/router/disk190]
+  -
+    pair: [simulator/consumer/router/disk191, world_model/simulator/router/disk191]
+  -
+    pair: [simulator/consumer/router/disk192, world_model/simulator/router/disk192]
+  -
+    pair: [simulator/consumer/router/disk193, world_model/simulator/router/disk193]
+  -
+    pair: [simulator/consumer/router/disk194, world_model/simulator/router/disk194]
+  -
+    pair: [simulator/consumer/router/disk195, world_model/simulator/router/disk195]
+  -
+    pair: [simulator/consumer/router/disk196, world_model/simulator/router/disk196]
+  -
+    pair: [simulator/consumer/router/disk197, world_model/simulator/router/disk197]
+  -
+    pair: [simulator/consumer/router/disk198, world_model/simulator/router/disk198]
+  -
+    pair: [simulator/consumer/router/disk199, world_model/simulator/router/disk199]
+  -
+    pair: [simulator/consumer/router/disk200, world_model/simulator/router/disk200]
+  -
+    pair: [simulator/consumer/router/disk201, world_model/simulator/router/disk201]
+  -
+    pair: [simulator/consumer/router/disk202, world_model/simulator/router/disk202]
+  -
+    pair: [simulator/consumer/router/disk203, world_model/simulator/router/disk203]
+  -
+    pair: [simulator/consumer/router/disk204, world_model/simulator/router/disk204]
+  -
+    pair: [simulator/consumer/router/disk205, world_model/simulator/router/disk205]
+  -
+    pair: [simulator/consumer/router/disk206, world_model/simulator/router/disk206]
+  -
+    pair: [simulator/consumer/router/disk207, world_model/simulator/router/disk207]
+  -
+    pair: [simulator/consumer/router/disk208, world_model/simulator/router/disk208]
+  -
+    pair: [simulator/consumer/router/disk209, world_model/simulator/router/disk209]
+  -
+    pair: [simulator/consumer/router/disk210, world_model/simulator/router/disk210]
+  -
+    pair: [simulator/consumer/router/disk211, world_model/simulator/router/disk211]
+  -
+    pair: [simulator/consumer/router/disk212, world_model/simulator/router/disk212]
+  -
+    pair: [simulator/consumer/router/disk213, world_model/simulator/router/disk213]
+  -
+    pair: [simulator/consumer/router/disk214, world_model/simulator/router/disk214]
+  -
+    pair: [simulator/consumer/router/disk215, world_model/simulator/router/disk215]
+  -
+    pair: [simulator/consumer/router/disk216, world_model/simulator/router/disk216]
+  -
+    pair: [simulator/consumer/router/disk217, world_model/simulator/router/disk217]
+  -
+    pair: [simulator/consumer/router/disk218, world_model/simulator/router/disk218]
+  -
+    pair: [simulator/consumer/router/disk219, world_model/simulator/router/disk219]
+  -
+    pair: [simulator/consumer/router/disk220, world_model/simulator/router/disk220]
+  -
+    pair: [simulator/consumer/router/disk221, world_model/simulator/router/disk221]
+  -
+    pair: [simulator/consumer/router/disk222, world_model/simulator/router/disk222]
+  -
+    pair: [simulator/consumer/router/disk223, world_model/simulator/router/disk223]
+  -
+    pair: [simulator/consumer/router/disk224, world_model/simulator/router/disk224]
+  -
+    pair: [simulator/consumer/router/disk225, world_model/simulator/router/disk225]
+  -
+    pair: [simulator/consumer/router/disk226, world_model/simulator/router/disk226]
+  -
+    pair: [simulator/consumer/router/disk227, world_model/simulator/router/disk227]
+  -
+    pair: [simulator/consumer/router/disk228, world_model/simulator/router/disk228]
+  -
+    pair: [simulator/consumer/router/disk229, world_model/simulator/router/disk229]
+  -
+    pair: [simulator/consumer/router/disk230, world_model/simulator/router/disk230]
+  -
+    pair: [simulator/consumer/router/disk231, world_model/simulator/router/disk231]
+  -
+    pair: [simulator/consumer/router/disk232, world_model/simulator/router/disk232]
+  -
+    pair: [simulator/consumer/router/disk233, world_model/simulator/router/disk233]
+  -
+    pair: [simulator/consumer/router/disk234, world_model/simulator/router/disk234]
+  -
+    pair: [simulator/consumer/router/disk235, world_model/simulator/router/disk235]
+  -
+    pair: [simulator/consumer/router/disk236, world_model/simulator/router/disk236]
+  -
+    pair: [simulator/consumer/router/disk237, world_model/simulator/router/disk237]
+  -
+    pair: [simulator/consumer/router/disk238, world_model/simulator/router/disk238]
+  -
+    pair: [simulator/consumer/router/disk239, world_model/simulator/router/disk239]
+  -
+    pair: [simulator/consumer/router/disk240, world_model/simulator/router/disk240]
+  -
+    pair: [simulator/consumer/router/disk241, world_model/simulator/router/disk241]
+  -
+    pair: [simulator/consumer/router/disk242, world_model/simulator/router/disk242]
+  -
+    pair: [simulator/consumer/router/disk243, world_model/simulator/router/disk243]
+  -
+    pair: [simulator/consumer/router/disk244, world_model/simulator/router/disk244]
+  -
+    pair: [simulator/consumer/router/disk245, world_model/simulator/router/disk245]
+  -
+    pair: [simulator/consumer/router/disk246, world_model/simulator/router/disk246]
+  -
+    pair: [simulator/consumer/router/disk247, world_model/simulator/router/disk247]
+  -
+    pair: [simulator/consumer/router/disk248, world_model/simulator/router/disk248]
+  -
+    pair: [simulator/consumer/router/disk249, world_model/simulator/router/disk249]
+  -
+    pair: [simulator/consumer/router/disk250, world_model/simulator/router/disk250]
+  -
+    pair: [simulator/consumer/router/disk251, world_model/simulator/router/disk251]
+  -
+    pair: [simulator/consumer/router/disk252, world_model/simulator/router/disk252]
+  -
+    pair: [simulator/consumer/router/disk253, world_model/simulator/router/disk253]
+  -
+    pair: [simulator/consumer/router/disk254, world_model/simulator/router/disk254]
+  -
+    pair: [simulator/consumer/router/disk255, world_model/simulator/router/disk255]
+  -
+    pair: [simulator/consumer/router/disk256, world_model/simulator/router/disk256]
+  -
+    pair: [simulator/consumer/router/disk257, world_model/simulator/router/disk257]
+  -
+    pair: [simulator/consumer/router/disk258, world_model/simulator/router/disk258]
+  -
+    pair: [simulator/consumer/router/disk259, world_model/simulator/router/disk259]
+  -
+    pair: [simulator/consumer/router/disk260, world_model/simulator/router/disk260]
+  -
+    pair: [simulator/consumer/router/disk261, world_model/simulator/router/disk261]
+  -
+    pair: [simulator/consumer/router/disk262, world_model/simulator/router/disk262]
+  -
+    pair: [simulator/consumer/router/disk263, world_model/simulator/router/disk263]
+  -
+    pair: [simulator/consumer/router/disk264, world_model/simulator/router/disk264]
+  -
+    pair: [simulator/consumer/router/disk265, world_model/simulator/router/disk265]
+  -
+    pair: [simulator/consumer/router/disk266, world_model/simulator/router/disk266]
+  -
+    pair: [simulator/consumer/router/disk267, world_model/simulator/router/disk267]
+  -
+    pair: [simulator/consumer/router/disk268, world_model/simulator/router/disk268]
+  -
+    pair: [simulator/consumer/router/disk269, world_model/simulator/router/disk269]
+  -
+    pair: [simulator/consumer/router/disk270, world_model/simulator/router/disk270]
+  -
+    pair: [simulator/consumer/router/disk271, world_model/simulator/router/disk271]
+  -
+    pair: [simulator/consumer/router/disk272, world_model/simulator/router/disk272]
+  -
+    pair: [simulator/consumer/router/disk273, world_model/simulator/router/disk273]
+  -
+    pair: [simulator/consumer/router/disk274, world_model/simulator/router/disk274]
+  -
+    pair: [simulator/consumer/router/disk275, world_model/simulator/router/disk275]
+  -
+    pair: [simulator/consumer/router/disk276, world_model/simulator/router/disk276]
+  -
+    pair: [simulator/consumer/router/disk277, world_model/simulator/router/disk277]
+  -
+    pair: [simulator/consumer/router/disk278, world_model/simulator/router/disk278]
+  -
+    pair: [simulator/consumer/router/disk279, world_model/simulator/router/disk279]
+  -
+    pair: [simulator/consumer/router/disk280, world_model/simulator/router/disk280]
+  -
+    pair: [simulator/consumer/router/disk281, world_model/simulator/router/disk281]
+  -
+    pair: [simulator/consumer/router/disk282, world_model/simulator/router/disk282]
+  -
+    pair: [simulator/consumer/router/disk283, world_model/simulator/router/disk283]
+  -
+    pair: [simulator/consumer/router/disk284, world_model/simulator/router/disk284]
+  -
+    pair: [simulator/consumer/router/disk285, world_model/simulator/router/disk285]
+  -
+    pair: [simulator/consumer/router/disk286, world_model/simulator/router/disk286]
+  -
+    pair: [simulator/consumer/router/disk287, world_model/simulator/router/disk287]
+  -
+    pair: [simulator/consumer/router/disk288, world_model/simulator/router/disk288]
+  -
+    pair: [simulator/consumer/router/disk289, world_model/simulator/router/disk289]
+  -
+    pair: [simulator/consumer/router/disk290, world_model/simulator/router/disk290]
+  -
+    pair: [simulator/consumer/router/disk291, world_model/simulator/router/disk291]
+  -
+    pair: [simulator/consumer/router/disk292, world_model/simulator/router/disk292]
+  -
+    pair: [simulator/consumer/router/disk293, world_model/simulator/router/disk293]
+  -
+    pair: [simulator/consumer/router/disk294, world_model/simulator/router/disk294]
+  -
+    pair: [simulator/consumer/router/disk295, world_model/simulator/router/disk295]
+  -
+    pair: [simulator/consumer/router/disk296, world_model/simulator/router/disk296]
+  -
+    pair: [simulator/consumer/router/disk297, world_model/simulator/router/disk297]
+  -
+    pair: [simulator/consumer/router/disk298, world_model/simulator/router/disk298]
+  -
+    pair: [simulator/consumer/router/disk299, world_model/simulator/router/disk299]
+  -
+    pair: [simulator/consumer/router/disk300, world_model/simulator/router/disk300]
+  -
+    pair: [simulator/consumer/router/disk301, world_model/simulator/router/disk301]
+  -
+    pair: [simulator/consumer/router/disk302, world_model/simulator/router/disk302]
+  -
+    pair: [simulator/consumer/router/disk303, world_model/simulator/router/disk303]
+  -
+    pair: [simulator/consumer/router/disk304, world_model/simulator/router/disk304]
+  -
+    pair: [simulator/consumer/router/disk305, world_model/simulator/router/disk305]
+  -
+    pair: [simulator/consumer/router/disk306, world_model/simulator/router/disk306]
+  -
+    pair: [simulator/consumer/router/disk307, world_model/simulator/router/disk307]
+  -
+    pair: [simulator/consumer/router/disk308, world_model/simulator/router/disk308]
+  -
+    pair: [simulator/consumer/router/disk309, world_model/simulator/router/disk309]
+  -
+    pair: [simulator/consumer/router/disk310, world_model/simulator/router/disk310]
+  -
+    pair: [simulator/consumer/router/disk311, world_model/simulator/router/disk311]
+  -
+    pair: [simulator/consumer/router/disk312, world_model/simulator/router/disk312]
+  -
+    pair: [simulator/consumer/router/disk313, world_model/simulator/router/disk313]
+  -
+    pair: [simulator/consumer/router/disk314, world_model/simulator/router/disk314]
+  -
+    pair: [simulator/consumer/router/disk315, world_model/simulator/router/disk315]
+  -
+    pair: [simulator/consumer/router/disk316, world_model/simulator/router/disk316]
+  -
+    pair: [simulator/consumer/router/disk317, world_model/simulator/router/disk317]
+  -
+    pair: [simulator/consumer/router/disk318, world_model/simulator/router/disk318]
+  -
+    pair: [simulator/consumer/router/disk319, world_model/simulator/router/disk319]
+  -
+    pair: [simulator/consumer/router/disk320, world_model/simulator/router/disk320]
+  -
+    pair: [simulator/consumer/router/disk321, world_model/simulator/router/disk321]
+  -
+    pair: [simulator/consumer/router/disk322, world_model/simulator/router/disk322]
+  -
+    pair: [simulator/consumer/router/disk323, world_model/simulator/router/disk323]
+  -
+    pair: [simulator/consumer/router/disk324, world_model/simulator/router/disk324]
+  -
+    pair: [simulator/consumer/router/disk325, world_model/simulator/router/disk325]
+  -
+    pair: [simulator/consumer/router/disk326, world_model/simulator/router/disk326]
+  -
+    pair: [simulator/consumer/router/disk327, world_model/simulator/router/disk327]
+  -
+    pair: [simulator/consumer/router/disk328, world_model/simulator/router/disk328]
+  -
+    pair: [simulator/consumer/router/disk329, world_model/simulator/router/disk329]
+  -
+    pair: [simulator/consumer/router/disk330, world_model/simulator/router/disk330]
+  -
+    pair: [simulator/consumer/router/disk331, world_model/simulator/router/disk331]
+  -
+    pair: [simulator/consumer/router/disk332, world_model/simulator/router/disk332]
+  -
+    pair: [simulator/consumer/router/disk333, world_model/simulator/router/disk333]
+  -
+    pair: [simulator/consumer/router/disk334, world_model/simulator/router/disk334]
+  -
+    pair: [simulator/consumer/router/disk335, world_model/simulator/router/disk335]
+  -
+    pair: [simulator/consumer/router/disk336, world_model/simulator/router/disk336]
+  -
+    pair: [simulator/consumer/router/disk337, world_model/simulator/router/disk337]
+  -
+    pair: [simulator/consumer/router/disk338, world_model/simulator/router/disk338]
+  -
+    pair: [simulator/consumer/router/disk339, world_model/simulator/router/disk339]
+  -
+    pair: [simulator/consumer/router/disk340, world_model/simulator/router/disk340]
+  -
+    pair: [simulator/consumer/router/disk341, world_model/simulator/router/disk341]
+  -
+    pair: [simulator/consumer/router/disk342, world_model/simulator/router/disk342]
+  -
+    pair: [simulator/consumer/router/disk343, world_model/simulator/router/disk343]
+  -
+    pair: [simulator/consumer/router/disk344, world_model/simulator/router/disk344]
+  -
+    pair: [simulator/consumer/router/disk345, world_model/simulator/router/disk345]
+  -
+    pair: [simulator/consumer/router/disk346, world_model/simulator/router/disk346]
+  -
+    pair: [simulator/consumer/router/disk347, world_model/simulator/router/disk347]
+  -
+    pair: [simulator/consumer/router/disk348, world_model/simulator/router/disk348]
+  -
+    pair: [simulator/consumer/router/disk349, world_model/simulator/router/disk349]
+  -
+    pair: [simulator/consumer/router/disk350, world_model/simulator/router/disk350]
+  -
+    pair: [simulator/consumer/router/disk351, world_model/simulator/router/disk351]
+  -
+    pair: [simulator/consumer/router/disk352, world_model/simulator/router/disk352]
+  -
+    pair: [simulator/consumer/router/disk353, world_model/simulator/router/disk353]
+  -
+    pair: [simulator/consumer/router/disk354, world_model/simulator/router/disk354]
+  -
+    pair: [simulator/consumer/router/disk355, world_model/simulator/router/disk355]
+  -
+    pair: [simulator/consumer/router/disk356, world_model/simulator/router/disk356]
+  -
+    pair: [simulator/consumer/router/disk357, world_model/simulator/router/disk357]
+  -
+    pair: [simulator/consumer/router/disk358, world_model/simulator/router/disk358]
+  -
+    pair: [simulator/consumer/router/disk359, world_model/simulator/router/disk359]
+  -
+    pair: [simulator/consumer/router/disk360, world_model/simulator/router/disk360]
+  -
+    pair: [simulator/consumer/router/disk361, world_model/simulator/router/disk361]
+  -
+    pair: [simulator/consumer/router/disk362, world_model/simulator/router/disk362]
+  -
+    pair: [simulator/consumer/router/disk363, world_model/simulator/router/disk363]
+  -
+    pair: [simulator/consumer/router/disk364, world_model/simulator/router/disk364]
+  -
+    pair: [simulator/consumer/router/disk365, world_model/simulator/router/disk365]
+  -
+    pair: [simulator/consumer/router/disk366, world_model/simulator/router/disk366]
+  -
+    pair: [simulator/consumer/router/disk367, world_model/simulator/router/disk367]
+  -
+    pair: [simulator/consumer/router/disk368, world_model/simulator/router/disk368]
+  -
+    pair: [simulator/consumer/router/disk369, world_model/simulator/router/disk369]
+  -
+    pair: [simulator/consumer/router/disk370, world_model/simulator/router/disk370]
+  -
+    pair: [simulator/consumer/router/disk371, world_model/simulator/router/disk371]
+  -
+    pair: [simulator/consumer/router/disk372, world_model/simulator/router/disk372]
+  -
+    pair: [simulator/consumer/router/disk373, world_model/simulator/router/disk373]
+  -
+    pair: [simulator/consumer/router/disk374, world_model/simulator/router/disk374]
+  -
+    pair: [simulator/consumer/router/disk375, world_model/simulator/router/disk375]
+  -
+    pair: [simulator/consumer/router/disk376, world_model/simulator/router/disk376]
+  -
+    pair: [simulator/consumer/router/disk377, world_model/simulator/router/disk377]
+  -
+    pair: [simulator/consumer/router/disk378, world_model/simulator/router/disk378]
+  -
+    pair: [simulator/consumer/router/disk379, world_model/simulator/router/disk379]
+  -
+    pair: [simulator/consumer/router/disk380, world_model/simulator/router/disk380]
+  -
+    pair: [simulator/consumer/router/disk381, world_model/simulator/router/disk381]
+  -
+    pair: [simulator/consumer/router/disk382, world_model/simulator/router/disk382]
+  -
+    pair: [simulator/consumer/router/disk383, world_model/simulator/router/disk383]
+  -
+    pair: [simulator/consumer/router/disk384, world_model/simulator/router/disk384]
+  -
+    pair: [simulator/consumer/router/disk385, world_model/simulator/router/disk385]
+  -
+    pair: [simulator/consumer/router/disk386, world_model/simulator/router/disk386]
+  -
+    pair: [simulator/consumer/router/disk387, world_model/simulator/router/disk387]
+  -
+    pair: [simulator/consumer/router/disk388, world_model/simulator/router/disk388]
+  -
+    pair: [simulator/consumer/router/disk389, world_model/simulator/router/disk389]
+  -
+    pair: [simulator/consumer/router/disk390, world_model/simulator/router/disk390]
+  -
+    pair: [simulator/consumer/router/disk391, world_model/simulator/router/disk391]
+  -
+    pair: [simulator/consumer/router/disk392, world_model/simulator/router/disk392]
+  -
+    pair: [simulator/consumer/router/disk393, world_model/simulator/router/disk393]
+  -
+    pair: [simulator/consumer/router/disk394, world_model/simulator/router/disk394]
+  -
+    pair: [simulator/consumer/router/disk395, world_model/simulator/router/disk395]
+  -
+    pair: [simulator/consumer/router/disk396, world_model/simulator/router/disk396]
+  -
+    pair: [simulator/consumer/router/disk397, world_model/simulator/router/disk397]
+  -
+    pair: [simulator/consumer/router/disk398, world_model/simulator/router/disk398]
+  -
+    pair: [simulator/consumer/router/disk399, world_model/simulator/router/disk399]
+  -
+    pair: [simulator/consumer/router/disk400, world_model/simulator/router/disk400]
+  -
+    pair: [simulator/consumer/router/disk401, world_model/simulator/router/disk401]
+  -
+    pair: [simulator/consumer/router/disk402, world_model/simulator/router/disk402]
+  -
+    pair: [simulator/consumer/router/disk403, world_model/simulator/router/disk403]
+  -
+    pair: [simulator/consumer/router/disk404, world_model/simulator/router/disk404]
+  -
+    pair: [simulator/consumer/router/disk405, world_model/simulator/router/disk405]
+  -
+    pair: [simulator/consumer/router/disk406, world_model/simulator/router/disk406]
+  -
+    pair: [simulator/consumer/router/disk407, world_model/simulator/router/disk407]
+  -
+    pair: [simulator/consumer/router/disk408, world_model/simulator/router/disk408]
+  -
+    pair: [simulator/consumer/router/disk409, world_model/simulator/router/disk409]
+  -
+    pair: [simulator/consumer/router/disk410, world_model/simulator/router/disk410]
+  -
+    pair: [simulator/consumer/router/disk411, world_model/simulator/router/disk411]
+  -
+    pair: [simulator/consumer/router/disk412, world_model/simulator/router/disk412]
+  -
+    pair: [simulator/consumer/router/disk413, world_model/simulator/router/disk413]
+  -
+    pair: [simulator/consumer/router/disk414, world_model/simulator/router/disk414]
+  -
+    pair: [simulator/consumer/router/disk415, world_model/simulator/router/disk415]
+  -
+    pair: [simulator/consumer/router/disk416, world_model/simulator/router/disk416]
+  -
+    pair: [simulator/consumer/router/disk417, world_model/simulator/router/disk417]
+  -
+    pair: [simulator/consumer/router/disk418, world_model/simulator/router/disk418]
+  -
+    pair: [simulator/consumer/router/disk419, world_model/simulator/router/disk419]
+  -
+    pair: [simulator/consumer/router/disk420, world_model/simulator/router/disk420]
+  -
+    pair: [simulator/consumer/router/disk421, world_model/simulator/router/disk421]
+  -
+    pair: [simulator/consumer/router/disk422, world_model/simulator/router/disk422]
+  -
+    pair: [simulator/consumer/router/disk423, world_model/simulator/router/disk423]
+  -
+    pair: [simulator/consumer/router/disk424, world_model/simulator/router/disk424]
+  -
+    pair: [simulator/consumer/router/disk425, world_model/simulator/router/disk425]
+  -
+    pair: [simulator/consumer/router/disk426, world_model/simulator/router/disk426]
+  -
+    pair: [simulator/consumer/router/disk427, world_model/simulator/router/disk427]
+  -
+    pair: [simulator/consumer/router/disk428, world_model/simulator/router/disk428]
+  -
+    pair: [simulator/consumer/router/disk429, world_model/simulator/router/disk429]
+  -
+    pair: [simulator/consumer/router/disk430, world_model/simulator/router/disk430]
+  -
+    pair: [simulator/consumer/router/disk431, world_model/simulator/router/disk431]
+  -
+    pair: [simulator/consumer/router/disk432, world_model/simulator/router/disk432]
+  -
+    pair: [simulator/consumer/router/disk433, world_model/simulator/router/disk433]
+  -
+    pair: [simulator/consumer/router/disk434, world_model/simulator/router/disk434]
+  -
+    pair: [simulator/consumer/router/disk435, world_model/simulator/router/disk435]
+  -
+    pair: [simulator/consumer/router/disk436, world_model/simulator/router/disk436]
+  -
+    pair: [simulator/consumer/router/disk437, world_model/simulator/router/disk437]
+  -
+    pair: [simulator/consumer/router/disk438, world_model/simulator/router/disk438]
+  -
+    pair: [simulator/consumer/router/disk439, world_model/simulator/router/disk439]
+  -
+    pair: [simulator/consumer/router/disk440, world_model/simulator/router/disk440]
+  -
+    pair: [simulator/consumer/router/disk441, world_model/simulator/router/disk441]
+  -
+    pair: [simulator/consumer/router/disk442, world_model/simulator/router/disk442]
+  -
+    pair: [simulator/consumer/router/disk443, world_model/simulator/router/disk443]
+  -
+    pair: [simulator/consumer/router/disk444, world_model/simulator/router/disk444]
+  -
+    pair: [simulator/consumer/router/disk445, world_model/simulator/router/disk445]
+  -
+    pair: [simulator/consumer/router/disk446, world_model/simulator/router/disk446]
+  -
+    pair: [simulator/consumer/router/disk447, world_model/simulator/router/disk447]
+  -
+    pair: [simulator/consumer/router/disk448, world_model/simulator/router/disk448]
+  -
+    pair: [simulator/consumer/router/disk449, world_model/simulator/router/disk449]
+  -
+    pair: [simulator/consumer/router/disk450, world_model/simulator/router/disk450]
+  -
+    pair: [simulator/consumer/router/disk451, world_model/simulator/router/disk451]
+  -
+    pair: [simulator/consumer/router/disk452, world_model/simulator/router/disk452]
+  -
+    pair: [simulator/consumer/router/disk453, world_model/simulator/router/disk453]
+  -
+    pair: [simulator/consumer/router/disk454, world_model/simulator/router/disk454]
+  -
+    pair: [simulator/consumer/router/disk455, world_model/simulator/router/disk455]
+  -
+    pair: [simulator/consumer/router/disk456, world_model/simulator/router/disk456]
+  -
+    pair: [simulator/consumer/router/disk457, world_model/simulator/router/disk457]
+  -
+    pair: [simulator/consumer/router/disk458, world_model/simulator/router/disk458]
+  -
+    pair: [simulator/consumer/router/disk459, world_model/simulator/router/disk459]
+  -
+    pair: [simulator/consumer/router/disk460, world_model/simulator/router/disk460]
+  -
+    pair: [simulator/consumer/router/disk461, world_model/simulator/router/disk461]
+  -
+    pair: [simulator/consumer/router/disk462, world_model/simulator/router/disk462]
+  -
+    pair: [simulator/consumer/router/disk463, world_model/simulator/router/disk463]
+  -
+    pair: [simulator/consumer/router/disk464, world_model/simulator/router/disk464]
+  -
+    pair: [simulator/consumer/router/disk465, world_model/simulator/router/disk465]
+  -
+    pair: [simulator/consumer/router/disk466, world_model/simulator/router/disk466]
+  -
+    pair: [simulator/consumer/router/disk467, world_model/simulator/router/disk467]
+  -
+    pair: [simulator/consumer/router/disk468, world_model/simulator/router/disk468]
+  -
+    pair: [simulator/consumer/router/disk469, world_model/simulator/router/disk469]
+  -
+    pair: [simulator/consumer/router/disk470, world_model/simulator/router/disk470]
+  -
+    pair: [simulator/consumer/router/disk471, world_model/simulator/router/disk471]
+  -
+    pair: [simulator/consumer/router/disk472, world_model/simulator/router/disk472]
+  -
+    pair: [simulator/consumer/router/disk473, world_model/simulator/router/disk473]
+  -
+    pair: [simulator/consumer/router/disk474, world_model/simulator/router/disk474]
+  -
+    pair: [simulator/consumer/router/disk475, world_model/simulator/router/disk475]
+  -
+    pair: [simulator/consumer/router/disk476, world_model/simulator/router/disk476]
+  -
+    pair: [simulator/consumer/router/disk477, world_model/simulator/router/disk477]
+  -
+    pair: [simulator/consumer/router/disk478, world_model/simulator/router/disk478]
+  -
+    pair: [simulator/consumer/router/disk479, world_model/simulator/router/disk479]
+  -
+    pair: [simulator/consumer/router/disk480, world_model/simulator/router/disk480]
+  -
+    pair: [simulator/consumer/router/disk481, world_model/simulator/router/disk481]
+  -
+    pair: [simulator/consumer/router/disk482, world_model/simulator/router/disk482]
+  -
+    pair: [simulator/consumer/router/disk483, world_model/simulator/router/disk483]
+  -
+    pair: [simulator/consumer/router/disk484, world_model/simulator/router/disk484]
+  -
+    pair: [simulator/consumer/router/disk485, world_model/simulator/router/disk485]
+  -
+    pair: [simulator/consumer/router/disk486, world_model/simulator/router/disk486]
+  -
+    pair: [simulator/consumer/router/disk487, world_model/simulator/router/disk487]
+  -
+    pair: [simulator/consumer/router/disk488, world_model/simulator/router/disk488]
+  -
+    pair: [simulator/consumer/router/disk489, world_model/simulator/router/disk489]
+  -
+    pair: [simulator/consumer/router/disk490, world_model/simulator/router/disk490]
+  -
+    pair: [simulator/consumer/router/disk491, world_model/simulator/router/disk491]
+  -
+    pair: [simulator/consumer/router/disk492, world_model/simulator/router/disk492]
+  -
+    pair: [simulator/consumer/router/disk493, world_model/simulator/router/disk493]
+  -
+    pair: [simulator/consumer/router/disk494, world_model/simulator/router/disk494]
+  -
+    pair: [simulator/consumer/router/disk495, world_model/simulator/router/disk495]
+  -
+    pair: [simulator/consumer/router/disk496, world_model/simulator/router/disk496]
+  -
+    pair: [simulator/consumer/router/disk497, world_model/simulator/router/disk497]
+  -
+    pair: [simulator/consumer/router/disk498, world_model/simulator/router/disk498]
+  -
+    pair: [simulator/consumer/router/disk499, world_model/simulator/router/disk499]
+
+
+  consumer: simulator/consumer
+  </rosparam>
+
+
+  <rosparam ns="world_model/embeddings">
+  single_robot_space:
+    default:
+      type: "hide_mapping"
+  </rosparam>
+
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <rosparam ns="world_model" command="load" file="$(find prx_input)/templates/simulators/no_collision_simulator.yaml"/>
+
+  <rosparam ns="world_model/simulator/">
+    simulation_step: 0.08
+  </rosparam>
+
+  <rosparam command="load" ns="world_model/simulator/subsystems/router" file="$(find prx_input)/templates/controllers/router.yaml"/>   
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk000" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk001" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk002" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk003" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk004" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk005" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk006" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk007" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk008" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk009" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk010" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk011" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk012" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk013" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk014" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk015" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk016" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk017" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk018" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk019" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk020" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk021" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk022" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk023" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk024" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk025" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk026" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk027" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk028" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk029" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk030" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk031" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk032" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk033" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk034" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk035" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk036" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk037" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk038" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk039" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk040" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk041" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk042" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk043" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk044" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk045" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk046" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk047" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk048" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk049" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk050" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk051" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk052" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk053" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk054" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk055" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk056" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk057" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk058" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk059" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk060" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk061" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk062" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk063" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk064" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk065" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk066" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk067" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk068" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk069" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk070" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk071" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk072" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk073" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk074" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk075" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk076" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk077" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk078" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk079" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk080" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk081" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk082" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk083" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk084" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk085" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk086" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk087" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk088" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk089" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk090" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk091" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk092" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk093" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk094" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk095" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk096" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk097" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk098" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk099" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk100" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk101" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk102" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk103" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk104" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk105" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk106" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk107" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk108" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk109" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk110" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk111" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk112" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk113" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk114" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk115" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk116" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk117" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk118" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk119" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk120" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk121" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk122" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk123" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk124" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk125" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk126" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk127" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk128" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk129" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk130" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk131" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk132" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk133" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk134" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk135" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk136" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk137" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk138" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk139" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk140" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk141" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk142" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk143" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk144" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk145" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk146" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk147" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk148" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk149" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk150" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk151" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk152" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk153" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk154" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk155" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk156" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk157" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk158" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk159" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk160" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk161" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk162" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk163" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk164" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk165" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk166" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk167" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk168" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk169" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk170" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk171" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk172" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk173" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk174" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk175" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk176" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk177" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk178" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk179" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk180" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk181" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk182" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk183" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk184" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk185" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk186" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk187" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk188" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk189" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk190" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk191" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk192" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk193" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk194" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk195" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk196" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk197" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk198" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk199" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk200" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk201" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk202" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk203" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk204" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk205" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk206" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk207" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk208" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk209" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk210" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk211" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk212" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk213" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk214" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk215" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk216" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk217" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk218" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk219" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk220" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk221" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk222" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk223" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk224" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk225" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk226" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk227" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk228" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk229" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk230" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk231" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk232" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk233" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk234" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk235" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk236" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk237" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk238" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk239" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk240" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk241" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk242" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk243" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk244" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk245" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk246" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk247" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk248" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk249" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk250" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk251" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk252" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk253" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk254" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk255" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk256" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk257" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk258" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk259" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk260" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk261" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk262" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk263" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk264" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk265" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk266" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk267" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk268" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk269" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk270" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk271" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk272" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk273" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk274" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk275" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk276" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk277" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk278" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk279" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk280" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk281" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk282" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk283" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk284" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk285" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk286" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk287" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk288" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk289" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk290" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk291" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk292" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk293" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk294" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk295" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk296" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk297" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk298" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk299" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk300" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk301" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk302" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk303" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk304" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk305" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk306" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk307" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk308" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk309" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk310" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk311" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk312" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk313" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk314" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk315" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk316" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk317" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk318" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk319" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk320" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk321" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk322" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk323" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk324" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk325" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk326" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk327" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk328" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk329" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk330" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk331" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk332" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk333" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk334" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk335" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk336" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk337" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk338" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk339" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk340" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk341" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk342" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk343" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk344" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk345" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk346" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk347" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk348" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk349" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk350" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk351" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk352" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk353" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk354" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk355" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk356" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk357" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk358" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk359" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk360" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk361" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk362" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk363" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk364" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk365" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk366" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk367" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk368" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk369" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk370" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk371" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk372" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk373" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk374" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk375" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk376" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk377" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk378" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk379" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk380" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk381" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk382" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk383" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk384" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk385" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk386" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk387" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk388" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk389" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk390" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk391" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk392" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk393" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk394" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk395" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk396" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk397" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk398" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk399" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk400" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk401" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk402" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk403" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk404" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk405" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk406" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk407" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk408" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk409" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk410" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk411" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk412" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk413" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk414" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk415" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk416" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk417" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk418" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk419" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk420" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk421" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk422" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk423" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk424" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk425" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk426" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk427" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk428" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk429" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk430" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk431" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk432" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk433" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk434" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk435" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk436" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk437" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk438" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk439" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk440" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk441" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk442" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk443" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk444" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk445" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk446" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk447" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk448" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk449" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk450" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk451" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk452" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk453" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk454" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk455" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk456" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk457" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk458" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk459" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk460" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk461" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk462" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk463" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk464" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk465" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk466" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk467" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk468" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk469" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk470" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk471" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk472" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk473" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk474" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk475" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk476" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk477" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk478" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk479" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk480" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk481" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk482" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk483" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk484" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk485" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk486" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk487" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk488" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk489" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk490" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk491" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk492" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk493" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk494" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk495" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk496" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk497" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk498" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk499" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+
+  <rosparam ns="world_model/simulator/subsystems/router/subsystems/disk499">
+    embeddings:
+      single_robot_space:
+        type: "full_mapping"
+  </rosparam>
+</launch>

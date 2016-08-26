@@ -1,0 +1,7 @@
+simulator:
+  type: pabt_simulator
+  collision_detection: false
+  collision_response: false
+  simulation_step: 0.02
+  collision_checker:
+    type: pqp

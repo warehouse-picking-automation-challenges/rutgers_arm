@@ -1,0 +1,43 @@
+maze:
+    type: ode_obstacle
+    geometries:
+      -
+        name: leftplate
+        collision_geometry: 
+          type: box
+          dims: [46, 100, 1]      
+          material: grey   
+        config:
+          position: [-27, 0, 50]
+          orientation: [ 0, 0, 0, 1]
+        dims: [46, 100, 1]
+      -
+        name: rightplate
+        collision_geometry: 
+          type: box
+          dims: [46, 100, 1]      
+          material: grey   
+        config:
+          position: [27, 0, 50]
+          orientation: [ 0, 0, 0, 1]
+        dims: [46, 100, 1]
+      -
+        name: topplate
+        collision_geometry: 
+          type: box
+          dims: [8, 46, 1]      
+          material: grey   
+        config:
+          position: [0, 27, 50]
+          orientation: [ 0, 0, 0, 1]
+        dims: [8, 46, 1] 
+      -
+        name: bottomplate
+        collision_geometry: 
+          type: box
+          dims: [8, 46, 1]      
+          material: grey   
+        config:
+          position: [0, -27, 50]
+          orientation: [ 0, 0, 0, 1]
+        dims: [8, 46, 1]

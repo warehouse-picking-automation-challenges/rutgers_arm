@@ -1,0 +1,27 @@
+<launch>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  
+  <rosparam command="load" ns="prx/obstacles/" file="/home/tdk/research/pracsys/src/prx_packages/crowd_simulation/input/exports/full_model/full_model.yaml" />
+
+
+  <include ns="simulation_node1" file="$(find crowd_simulation)/input/exports/parallel_node.launch"/>
+
+  <rosparam command="load" ns="simulation_node1" file="/home/tdk/research/pracsys/src/prx_packages/crowd_simulation/input/exports/full_model/full_model_semantics.yaml"/> 
+  <rosparam ns="simulation_node1">
+    folder_path: "/home/tdk/research/pracsys/src/prx_packages/crowd_simulation/input/exports/full_model"
+    paths_filename: "/full_model_paths.csv"
+    navigation_graph: "/full_model_navmesh.txt"
+    semantic_filename: "/full_model_semantics.yaml"
+    queue_filename: "/full_model_queue_hinting.csv"
+    node_id: 0
+    num_of_nodes: 1
+    simulator:
+      simulation_step: 0.05
+  </rosparam>
+
+
+  <!-- Nodes -->
+  <node name="simulation_node1" pkg="prx_simulation" type="PABT" required="true" launch-prefix="gdb --args" args="simulation_node1" output="screen" />
+
+</launch>

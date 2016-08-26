@@ -1,0 +1,120 @@
+<class name="prx_simulation/VO_application"
+    type="prx::packages::crowd::VO_application_t"
+    base_class_type="prx::sim::application_t">
+    <description>
+        An application that handles VO experiments
+    </description>
+</class>
+
+<class name="prx_simulation/pabt_simulator"
+    type="prx::packages::crowd::pabt_simulator_t"
+    base_class_type="prx::sim::simulator_t">
+    <description>
+        A simulator to replay paths. 
+    </description>
+</class>
+
+<class name="prx_simulation/replay_simulator"
+    type="prx::packages::crowd::replay_simulator_t"
+    base_class_type="prx::sim::simulator_t">
+    <description>
+        A simulator to replay paths. 
+    </description>
+</class>
+
+<class name="prx_simulation/advanced_replay_simulator"
+    type="prx::packages::crowd::advanced_replay_simulator_t"
+    base_class_type="prx::sim::simulator_t">
+    <description>
+        A simulator to replay paths. 
+    </description>
+</class>
+
+<class name="prx_simulation/behavior_controller"
+    type="prx::packages::crowd::behavior_controller_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        Controller which implements high-level behavior.
+    </description>
+</class>
+
+<class name="prx_simulation/path_follow_controller"
+    type="prx::packages::crowd::path_follow_controller_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        Controller that robustly follows a set of waypoints.
+    </description>
+</class>
+
+<class name="prx_simulation/VO_controller"
+    type="prx::packages::crowd::VO_controller_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        Velocity Obstacles (VO) based controller.
+    </description>
+</class>
+
+<class name="prx_simulation/collision_avoidance_controller"
+    type="prx::packages::crowd::collision_avoidance_controller_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        Velocity Obstacles (VO)-based collision-avoidance algorithm.
+    </description>
+</class>
+
+<class name="prx_simulation/VO_sensing_model"
+    type="prx::packages::crowd::VO_sensing_model_t"
+    base_class_type="prx::sim::sensing_model_t">
+    <description>
+        A sensing model used in conjunction with Velocity Obstacles.
+    </description>
+</class>
+
+<class name="prx_simulation/PABT_sensing_model"
+    type="prx::packages::crowd::PABT_sensing_model_t"
+    base_class_type="prx::sim::sensing_model_t">
+    <description>
+        A sensing model for doing sensing within the PABT experiments.
+    </description>
+</class>
+
+<class name="prx_simulation/VO_sensing_info"
+    type="prx::packages::crowd::VO_sensing_info_t"
+    base_class_type="prx::sim::sensing_info_t">
+    <description>
+        Sensing information for VOs
+    </description>
+</class>
+
+<class name="prx_simulation/node_sensing_info"
+    type="prx::packages::crowd::node_sensing_info_t"
+    base_class_type="prx::sim::sensing_info_t">
+    <description>
+        Sensing info which reports information about nodes agents are near
+    </description>
+</class>
+
+<class name="prx_simulation/neighbor_sensing_info"
+    type="prx::packages::crowd::neighbor_sensing_info_t"
+    base_class_type="prx::sim::sensing_info_t">
+    <description>
+        Sensing information which reports about nearby neighbors to a VO-based controller
+    </description>
+</class>
+
+<class name="prx_simulation/navigation_graph_sensor"
+    type="prx::packages::crowd::navigation_graph_sensor_t"
+    base_class_type="prx::sim::sensor_t">
+    <description>
+        A sensor designed to work over the nagivation graph provided in PABT scenarios
+    </description>
+</class>
+
+<class name="prx_simulation/pedestrian"
+    type="prx::packages::crowd::pedestrian_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        A two dimensional disk
+    </description>
+</class>
+

@@ -1,0 +1,65 @@
+type: manual_controller
+input_keys:
+  - 
+    input_key: UP
+    control_index: 0
+    value: .1
+    action: add
+  -
+    input_key: DOWN
+    control_index: 0
+    value: -.1
+    action: add
+  - 
+    input_key: LEFT
+    control_index: 17
+    value: 2
+    action: replace
+  -
+    input_key: RIGHT
+    control_index: 17
+    value: 1
+    action: replace
+  -
+    input_key: LOWER_L
+    control_index: 9
+    value: -0.1
+    action: add
+  -
+    input_key: LOWER_J
+    control_index: 9
+    value: 0.1
+    action: add    
+  -
+    input_key: LOWER_I
+    control_index: 10
+    value: -0.1
+    action: add
+  -
+    input_key: LOWER_K
+    control_index: 10
+    value: 0.1
+    action: add
+  -
+    input_key: LEFT_BRACKET
+    control_index: 5
+    value: -0.1
+    action: add
+  -
+    input_key: RIGHT_BRACKET
+    control_index: 5
+    value: 0.1
+    action: add
+  -
+    input_key: HOME
+    control_index: 16
+    value: 2
+    action: replace
+  -
+    input_key: DELETE
+    control_index: 16
+    value: 1
+    action: replace
+
+
+

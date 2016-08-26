@@ -1,0 +1,5 @@
+-
+  relative_config: [ 0, -0.0227637, 0, 0.0467086, 0, 0.998918, 0 ]
+  grasp_mode:  2
+  release_mode:  3
+  grasp_score:  0.0227637

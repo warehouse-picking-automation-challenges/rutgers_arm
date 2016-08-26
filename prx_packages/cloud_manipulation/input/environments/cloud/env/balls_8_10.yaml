@@ -1,0 +1,107 @@
+balls:
+  type: obstacle
+  geometries:
+    -
+      name: ball_1
+      collision_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      visualization_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      config:
+        position: [0.602711956333, 1.25554161278, 4.22389805581]
+        orientation: [0, 0, 0, 1]
+    -
+      name: ball_2
+      collision_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      visualization_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      config:
+        position: [0.699068621396, 0.571679958948, 4.75326137966]
+        orientation: [0, 0, 0, 1]
+    -
+      name: ball_3
+      collision_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      visualization_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      config:
+        position: [0.833881729652, 0.732988410297, 4.25274290406]
+        orientation: [0, 0, 0, 1]
+    -
+      name: ball_4
+      collision_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      visualization_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      config:
+        position: [0.720712400645, 0.353848428704, 4.31318141058]
+        orientation: [0, 0, 0, 1]
+    -
+      name: ball_5
+      collision_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      visualization_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      config:
+        position: [0.844392818626, 0.738749811398, 4.71872536318]
+        orientation: [0, 0, 0, 1]
+    -
+      name: ball_6
+      collision_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      visualization_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      config:
+        position: [0.591616525712, 1.24581923715, 4.35760458083]
+        orientation: [0, 0, 0, 1]
+    -
+      name: ball_7
+      collision_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      visualization_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      config:
+        position: [0.411612691885, 0.570887416052, 4.17765404328]
+        orientation: [0, 0, 0, 1]
+    -
+      name: ball_8
+      collision_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      visualization_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      config:
+        position: [0.896928621562, 1.22773100807, 4.04539849375]
+        orientation: [0, 0, 0, 1]

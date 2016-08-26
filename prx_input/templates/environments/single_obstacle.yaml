@@ -1,0 +1,13 @@
+building1:
+    type: obstacle
+    geometries:
+      -
+        name: obstacle
+        collision_geometry: 
+          type: cylinder
+          radius: 10
+          height: 3
+          material: black       
+        config:
+          position: [0, 0, 0]
+          orientation: [0, 0, 0, 1]

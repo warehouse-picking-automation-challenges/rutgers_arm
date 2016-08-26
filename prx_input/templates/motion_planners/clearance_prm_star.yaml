@@ -1,0 +1,12 @@
+type: prm_star
+validity_checker: 
+  type: near_collision_validity_checker
+  clearance: 15.0
+  ignore_list:
+    type: vector_collision_list
+sampler:
+  type: uniform_sampler
+distance_metric:
+  type: linear_distance_metric
+local_planner:
+  type: bvp_local_planner

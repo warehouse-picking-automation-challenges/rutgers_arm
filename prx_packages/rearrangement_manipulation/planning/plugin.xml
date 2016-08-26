@@ -1,0 +1,74 @@
+ <!-- Search Algorithms -->
+<class name="prx_planning/single_search"
+    type="prx::packages::rearrangement_manipulation::rearrangement_search_algorithm_t"
+    base_class_type="prx::plan::planner_t"> 
+    <description>
+        A task planner for the monotone Rearrangement Search algorithm.
+    </description>        
+</class>
+
+<!-- Primitives -->
+
+<class name="prx_planning/pap"
+    type="prx::packages::rearrangement_manipulation::pap_t"
+    base_class_type="prx::plan::planner_t"> 
+    <description>
+        A task planner for the monotone Rearrangement Search algorithm.
+    </description>        
+</class>
+
+<!-- Path Planner / Smoother -->
+
+<class name="prx_planning/rearrangement_path_planner"
+    type="prx::packages::rearrangement_manipulation::rearrangement_path_planner_t"
+    base_class_type="prx::plan::planner_t"> 
+    <description>
+        A task planner for the path_planner/smoother of the rearrangement problem.
+    </description>        
+</class>
+
+<!-- Specificaitons -->
+
+<class name="prx_planning/rearrangement_search_specification"
+    type="prx::packages::rearrangement_manipulation::rearrangement_search_specification_t"
+    base_class_type="prx::plan::specification_t">
+    <description>
+        The problem specification for the search task planner.
+    </description>        
+</class>
+
+<class name="prx_planning/rearrangement_primitive_specification"
+    type="prx::packages::rearrangement_manipulation::rearrangement_primitive_specification_t"
+    base_class_type="prx::plan::specification_t">
+    <description>
+        The problem specification for the search task planner.
+    </description>        
+</class>
+
+<!-- Queries -->
+
+<class name="prx_planning/rearrangement_search_query"
+    type="prx::packages::rearrangement_manipulation::rearrangement_search_query_t"
+    base_class_type="prx::plan::query_t">
+    <description>
+        The query for the search task planner.
+    </description>        
+</class>
+
+<class name="prx_planning/rearrangement_query"
+    type="prx::packages::rearrangement_manipulation::rearrangement_query_t"
+    base_class_type="prx::plan::query_t">
+    <description>
+        The query for the primitive of the search algorithm. 
+    </description>        
+</class>
+
+ <!-- Extra -->
+<class name="prx_planning/pose_generation_tp"
+    type="prx::packages::rearrangement_manipulation::pose_generation_tp_t"
+    base_class_type="prx::plan::planner_t"> 
+    <description>
+        A task planner for generating poses and grasp for different objects.
+    </description>        
+</class>
+

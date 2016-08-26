@@ -1,0 +1,5002 @@
+type: bullet_plant
+geometries:
+  -
+    name: ball0
+    collision_geometry:
+      type: sphere
+      radius: 0.222172529101
+      material: brown
+    config:
+      position: [-8.05745522068 -7.43063980459 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball1
+    collision_geometry:
+      type: sphere
+      radius: 0.111446099831
+      material: brown
+    config:
+      position: [-7.06139577111 7.22157980313 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball2
+    collision_geometry:
+      type: sphere
+      radius: 0.355625985679
+      material: brown
+    config:
+      position: [0.651636720611 -3.02044142683 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball3
+    collision_geometry:
+      type: sphere
+      radius: 0.200138918389
+      material: brown
+    config:
+      position: [-6.126076859 -2.93010017203 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball4
+    collision_geometry:
+      type: sphere
+      radius: 0.230882738025
+      material: brown
+    config:
+      position: [-4.58705965468 -8.96993003557 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball5
+    collision_geometry:
+      type: sphere
+      radius: 0.120963088438
+      material: brown
+    config:
+      position: [-7.42295700449 1.75679036078 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball6
+    collision_geometry:
+      type: sphere
+      radius: 0.371619595685
+      material: brown
+    config:
+      position: [-3.32173847275 -0.930209250475 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball7
+    collision_geometry:
+      type: sphere
+      radius: 0.337021553308
+      material: brown
+    config:
+      position: [-7.33023789519 -6.44084884023 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball8
+    collision_geometry:
+      type: sphere
+      radius: 0.272022425704
+      material: brown
+    config:
+      position: [-8.61775245329 7.40070986563 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball9
+    collision_geometry:
+      type: sphere
+      radius: 0.330638424244
+      material: brown
+    config:
+      position: [-4.22420930529 6.08107759551 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball10
+    collision_geometry:
+      type: sphere
+      radius: 0.1620587412
+      material: brown
+    config:
+      position: [-2.81768115319 5.42693864326 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball11
+    collision_geometry:
+      type: sphere
+      radius: 0.342801557393
+      material: brown
+    config:
+      position: [1.96024547143 0.487349138906 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball12
+    collision_geometry:
+      type: sphere
+      radius: 0.330783726974
+      material: brown
+    config:
+      position: [-3.32526326011 -1.83171327358 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball13
+    collision_geometry:
+      type: sphere
+      radius: 0.291505979292
+      material: brown
+    config:
+      position: [0.229538409553 3.3270699359 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball14
+    collision_geometry:
+      type: sphere
+      radius: 0.245840941043
+      material: brown
+    config:
+      position: [2.99983735932 7.02177426966 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball15
+    collision_geometry:
+      type: sphere
+      radius: 0.109552392022
+      material: brown
+    config:
+      position: [3.03246399426 -2.2586106272 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball16
+    collision_geometry:
+      type: sphere
+      radius: 0.34605705533
+      material: brown
+    config:
+      position: [4.57511709346 -5.73363151353 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball17
+    collision_geometry:
+      type: sphere
+      radius: 0.151038066301
+      material: brown
+    config:
+      position: [7.44562641356 2.84533483322 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball18
+    collision_geometry:
+      type: sphere
+      radius: 0.121987233437
+      material: brown
+    config:
+      position: [-2.93550924975 -1.95852047272 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball19
+    collision_geometry:
+      type: sphere
+      radius: 0.200831829793
+      material: brown
+    config:
+      position: [-0.778192736374 1.31703326119 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball20
+    collision_geometry:
+      type: sphere
+      radius: 0.288495256819
+      material: brown
+    config:
+      position: [-5.59688634759 -7.41316869133 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball21
+    collision_geometry:
+      type: sphere
+      radius: 0.168738929344
+      material: brown
+    config:
+      position: [-8.76907603345 -2.66555370423 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball22
+    collision_geometry:
+      type: sphere
+      radius: 0.372745982691
+      material: brown
+    config:
+      position: [0.575954832272 4.02594032015 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball23
+    collision_geometry:
+      type: sphere
+      radius: 0.389217751691
+      material: brown
+    config:
+      position: [2.49841510638 8.85227579553 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball24
+    collision_geometry:
+      type: sphere
+      radius: 0.245143444793
+      material: brown
+    config:
+      position: [2.33983277504 -4.79928268645 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball25
+    collision_geometry:
+      type: sphere
+      radius: 0.233349976045
+      material: brown
+    config:
+      position: [-5.80338484967 8.8552399103 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball26
+    collision_geometry:
+      type: sphere
+      radius: 0.140418280191
+      material: brown
+    config:
+      position: [4.5297028445 -8.20566259188 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball27
+    collision_geometry:
+      type: sphere
+      radius: 0.205614259135
+      material: brown
+    config:
+      position: [-5.52281453924 -4.38547774866 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball28
+    collision_geometry:
+      type: sphere
+      radius: 0.226107195021
+      material: brown
+    config:
+      position: [-4.10526265812 -1.18316549497 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball29
+    collision_geometry:
+      type: sphere
+      radius: 0.206518434078
+      material: brown
+    config:
+      position: [-7.04482497933 -7.87304205309 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball30
+    collision_geometry:
+      type: sphere
+      radius: 0.102568364432
+      material: brown
+    config:
+      position: [-7.40179971239 -1.20239435021 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball31
+    collision_geometry:
+      type: sphere
+      radius: 0.30826177441
+      material: brown
+    config:
+      position: [0.644418334918 -7.67728813113 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball32
+    collision_geometry:
+      type: sphere
+      radius: 0.178762005916
+      material: brown
+    config:
+      position: [-1.72426919248 8.73626714799 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball33
+    collision_geometry:
+      type: sphere
+      radius: 0.200449162157
+      material: brown
+    config:
+      position: [-0.494806672673 4.51466894231 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball34
+    collision_geometry:
+      type: sphere
+      radius: 0.39090582318
+      material: brown
+    config:
+      position: [-2.72939362803 2.50430287011 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball35
+    collision_geometry:
+      type: sphere
+      radius: 0.315315372206
+      material: brown
+    config:
+      position: [6.90984248621 -1.45731925103 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball36
+    collision_geometry:
+      type: sphere
+      radius: 0.17048903125
+      material: brown
+    config:
+      position: [3.22293512964 -2.30202685268 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball37
+    collision_geometry:
+      type: sphere
+      radius: 0.117147764023
+      material: brown
+    config:
+      position: [-7.58922339346 6.82036086392 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball38
+    collision_geometry:
+      type: sphere
+      radius: 0.143841770098
+      material: brown
+    config:
+      position: [0.336530245615 0.675654795102 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball39
+    collision_geometry:
+      type: sphere
+      radius: 0.332839890947
+      material: brown
+    config:
+      position: [2.80677090514 7.48481748433 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball40
+    collision_geometry:
+      type: sphere
+      radius: 0.392478869865
+      material: brown
+    config:
+      position: [-1.99333320087 -6.72354074099 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball41
+    collision_geometry:
+      type: sphere
+      radius: 0.340682993656
+      material: brown
+    config:
+      position: [0.30786275977 2.3331172541 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball42
+    collision_geometry:
+      type: sphere
+      radius: 0.140804737333
+      material: brown
+    config:
+      position: [-2.04756906793 -7.8829962362 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball43
+    collision_geometry:
+      type: sphere
+      radius: 0.361323162329
+      material: brown
+    config:
+      position: [3.03204846659 -2.70828565884 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball44
+    collision_geometry:
+      type: sphere
+      radius: 0.300650306309
+      material: brown
+    config:
+      position: [4.32296115877 8.64790464042 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball45
+    collision_geometry:
+      type: sphere
+      radius: 0.108477410283
+      material: brown
+    config:
+      position: [-3.53149597554 5.23996484233 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball46
+    collision_geometry:
+      type: sphere
+      radius: 0.254415742062
+      material: brown
+    config:
+      position: [0.388633890803 6.6851040222 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball47
+    collision_geometry:
+      type: sphere
+      radius: 0.263637322321
+      material: brown
+    config:
+      position: [-6.52731303733 0.00220519219335 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball48
+    collision_geometry:
+      type: sphere
+      radius: 0.202024255155
+      material: brown
+    config:
+      position: [-2.35799013042 7.08180408376 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball49
+    collision_geometry:
+      type: sphere
+      radius: 0.160981615379
+      material: brown
+    config:
+      position: [-4.10847500908 0.113426762658 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball50
+    collision_geometry:
+      type: sphere
+      radius: 0.381478746609
+      material: brown
+    config:
+      position: [-3.20296991794 -1.83293674309 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball51
+    collision_geometry:
+      type: sphere
+      radius: 0.159849803354
+      material: brown
+    config:
+      position: [-7.55348736636 -5.45229235968 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball52
+    collision_geometry:
+      type: sphere
+      radius: 0.158248988394
+      material: brown
+    config:
+      position: [8.91477024584 7.03455662957 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball53
+    collision_geometry:
+      type: sphere
+      radius: 0.195108460822
+      material: brown
+    config:
+      position: [1.16324082134 -7.46819947063 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball54
+    collision_geometry:
+      type: sphere
+      radius: 0.378812296444
+      material: brown
+    config:
+      position: [-2.85940358056 0.678275960702 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball55
+    collision_geometry:
+      type: sphere
+      radius: 0.335824016262
+      material: brown
+    config:
+      position: [5.56234975784 0.61530144839 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball56
+    collision_geometry:
+      type: sphere
+      radius: 0.333086332742
+      material: brown
+    config:
+      position: [-0.288737320444 4.15008590497 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball57
+    collision_geometry:
+      type: sphere
+      radius: 0.273383252026
+      material: brown
+    config:
+      position: [-4.37666871512 5.98998679897 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball58
+    collision_geometry:
+      type: sphere
+      radius: 0.167244942129
+      material: brown
+    config:
+      position: [-0.249840750326 -1.87536032154 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball59
+    collision_geometry:
+      type: sphere
+      radius: 0.290434826179
+      material: brown
+    config:
+      position: [0.0226359564756 -6.73008786905 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball60
+    collision_geometry:
+      type: sphere
+      radius: 0.282747335666
+      material: brown
+    config:
+      position: [7.16882851935 5.22946853058 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball61
+    collision_geometry:
+      type: sphere
+      radius: 0.136694896276
+      material: brown
+    config:
+      position: [-0.0994604216434 3.524079133 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball62
+    collision_geometry:
+      type: sphere
+      radius: 0.208552322442
+      material: brown
+    config:
+      position: [-8.05616332224 6.50964731197 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball63
+    collision_geometry:
+      type: sphere
+      radius: 0.207601167001
+      material: brown
+    config:
+      position: [3.04105127904 -1.42628994823 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball64
+    collision_geometry:
+      type: sphere
+      radius: 0.32611418782
+      material: brown
+    config:
+      position: [4.86514741244 -2.8254009142 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball65
+    collision_geometry:
+      type: sphere
+      radius: 0.393169132932
+      material: brown
+    config:
+      position: [5.76860627493 -5.74783104 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball66
+    collision_geometry:
+      type: sphere
+      radius: 0.250142439303
+      material: brown
+    config:
+      position: [-7.87604058423 -1.53490760359 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball67
+    collision_geometry:
+      type: sphere
+      radius: 0.267709140576
+      material: brown
+    config:
+      position: [5.92843923449 -5.85218379338 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball68
+    collision_geometry:
+      type: sphere
+      radius: 0.136698037181
+      material: brown
+    config:
+      position: [-2.3666905668 7.59029119705 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball69
+    collision_geometry:
+      type: sphere
+      radius: 0.196670203779
+      material: brown
+    config:
+      position: [-4.22251079194 5.75644656195 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball70
+    collision_geometry:
+      type: sphere
+      radius: 0.216525446546
+      material: brown
+    config:
+      position: [7.99597894289 -8.07112948189 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball71
+    collision_geometry:
+      type: sphere
+      radius: 0.388937373548
+      material: brown
+    config:
+      position: [-7.06561372891 1.32354579703 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball72
+    collision_geometry:
+      type: sphere
+      radius: 0.179774295928
+      material: brown
+    config:
+      position: [-3.15548757934 2.64304506792 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball73
+    collision_geometry:
+      type: sphere
+      radius: 0.174523992722
+      material: brown
+    config:
+      position: [-1.0940100839 1.28737990702 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball74
+    collision_geometry:
+      type: sphere
+      radius: 0.371638958729
+      material: brown
+    config:
+      position: [3.42842886 0.0179246094022 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball75
+    collision_geometry:
+      type: sphere
+      radius: 0.154661750324
+      material: brown
+    config:
+      position: [-4.04961709627 8.18738334535 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball76
+    collision_geometry:
+      type: sphere
+      radius: 0.320128755566
+      material: brown
+    config:
+      position: [-8.64157997291 2.88368388218 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball77
+    collision_geometry:
+      type: sphere
+      radius: 0.399440268893
+      material: brown
+    config:
+      position: [-0.408208402754 -8.23031873654 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball78
+    collision_geometry:
+      type: sphere
+      radius: 0.367459788788
+      material: brown
+    config:
+      position: [-6.45206835966 6.66841060412 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball79
+    collision_geometry:
+      type: sphere
+      radius: 0.239021896208
+      material: brown
+    config:
+      position: [-5.0245738867 6.55090231135 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball80
+    collision_geometry:
+      type: sphere
+      radius: 0.332289233682
+      material: brown
+    config:
+      position: [7.19248548423 6.97542137522 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball81
+    collision_geometry:
+      type: sphere
+      radius: 0.394394066961
+      material: brown
+    config:
+      position: [-3.80321564746 1.44188688857 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball82
+    collision_geometry:
+      type: sphere
+      radius: 0.306396792578
+      material: brown
+    config:
+      position: [-3.22877941178 -2.04298426139 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball83
+    collision_geometry:
+      type: sphere
+      radius: 0.150406112512
+      material: brown
+    config:
+      position: [-7.87255840236 -4.43948490075 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball84
+    collision_geometry:
+      type: sphere
+      radius: 0.28211756426
+      material: brown
+    config:
+      position: [-1.51097921701 -1.35042343452 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball85
+    collision_geometry:
+      type: sphere
+      radius: 0.113986321396
+      material: brown
+    config:
+      position: [-0.0574256023179 -6.03414829397 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball86
+    collision_geometry:
+      type: sphere
+      radius: 0.378068170394
+      material: brown
+    config:
+      position: [0.445899568399 4.74942032441 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball87
+    collision_geometry:
+      type: sphere
+      radius: 0.359701972923
+      material: brown
+    config:
+      position: [6.11348983268 -3.55044952782 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball88
+    collision_geometry:
+      type: sphere
+      radius: 0.127647618435
+      material: brown
+    config:
+      position: [-0.586952194315 -3.91595347598 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball89
+    collision_geometry:
+      type: sphere
+      radius: 0.183789810853
+      material: brown
+    config:
+      position: [-1.03117651469 0.809304476032 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball90
+    collision_geometry:
+      type: sphere
+      radius: 0.120332475682
+      material: brown
+    config:
+      position: [-5.48462115696 7.93602842538 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball91
+    collision_geometry:
+      type: sphere
+      radius: 0.337455337007
+      material: brown
+    config:
+      position: [7.90906062024 -1.68456676334 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball92
+    collision_geometry:
+      type: sphere
+      radius: 0.328508867295
+      material: brown
+    config:
+      position: [-7.00293511836 1.2601375266 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball93
+    collision_geometry:
+      type: sphere
+      radius: 0.247965643111
+      material: brown
+    config:
+      position: [-1.15178889549 -2.58360763811 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball94
+    collision_geometry:
+      type: sphere
+      radius: 0.172393458275
+      material: brown
+    config:
+      position: [-5.49972153654 -5.19065903436 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball95
+    collision_geometry:
+      type: sphere
+      radius: 0.12203197644
+      material: brown
+    config:
+      position: [-8.32398016452 7.3804343473 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball96
+    collision_geometry:
+      type: sphere
+      radius: 0.296864034955
+      material: brown
+    config:
+      position: [7.68848616232 -8.80278958812 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball97
+    collision_geometry:
+      type: sphere
+      radius: 0.382440031871
+      material: brown
+    config:
+      position: [0.844697360241 -8.24684939799 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball98
+    collision_geometry:
+      type: sphere
+      radius: 0.230699151826
+      material: brown
+    config:
+      position: [4.15384669573 6.824361543 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball99
+    collision_geometry:
+      type: sphere
+      radius: 0.133815847969
+      material: brown
+    config:
+      position: [-3.75510295712 -5.65329686198 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball100
+    collision_geometry:
+      type: sphere
+      radius: 0.163603333046
+      material: brown
+    config:
+      position: [3.07709732335 5.79234225934 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball101
+    collision_geometry:
+      type: sphere
+      radius: 0.145862402318
+      material: brown
+    config:
+      position: [-8.53260673973 -2.49240936228 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball102
+    collision_geometry:
+      type: sphere
+      radius: 0.298726423651
+      material: brown
+    config:
+      position: [-4.95118840443 -5.00310563155 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball103
+    collision_geometry:
+      type: sphere
+      radius: 0.217026046836
+      material: brown
+    config:
+      position: [-1.17714222497 1.08873843701 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball104
+    collision_geometry:
+      type: sphere
+      radius: 0.112778381899
+      material: brown
+    config:
+      position: [8.70607507433 -0.0551992086177 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball105
+    collision_geometry:
+      type: sphere
+      radius: 0.373788226635
+      material: brown
+    config:
+      position: [-6.49399220525 4.16197537607 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball106
+    collision_geometry:
+      type: sphere
+      radius: 0.358645259633
+      material: brown
+    config:
+      position: [-6.7323816255 -0.718120972242 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball107
+    collision_geometry:
+      type: sphere
+      radius: 0.256261678084
+      material: brown
+    config:
+      position: [0.93240379589 -8.68639378242 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball108
+    collision_geometry:
+      type: sphere
+      radius: 0.380985299603
+      material: brown
+    config:
+      position: [-3.80238152645 -5.15927793808 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball109
+    collision_geometry:
+      type: sphere
+      radius: 0.325902923409
+      material: brown
+    config:
+      position: [-7.09691496824 5.9346087123 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball110
+    collision_geometry:
+      type: sphere
+      radius: 0.124831141786
+      material: brown
+    config:
+      position: [1.67081715137 -3.15244374238 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball111
+    collision_geometry:
+      type: sphere
+      radius: 0.153938996238
+      material: brown
+    config:
+      position: [3.03741277536 8.2660634437 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball112
+    collision_geometry:
+      type: sphere
+      radius: 0.355407168409
+      material: brown
+    config:
+      position: [-6.72935451736 -0.447045098764 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball113
+    collision_geometry:
+      type: sphere
+      radius: 0.125891983504
+      material: brown
+    config:
+      position: [-8.90432464386 5.19900657454 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball114
+    collision_geometry:
+      type: sphere
+      radius: 0.237281891175
+      material: brown
+    config:
+      position: [-8.4187601971 -6.36463466329 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball115
+    collision_geometry:
+      type: sphere
+      radius: 0.11788764087
+      material: brown
+    config:
+      position: [7.86528064024 2.90350137117 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball116
+    collision_geometry:
+      type: sphere
+      radius: 0.127086205336
+      material: brown
+    config:
+      position: [-6.26944562749 -0.695977356117 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball117
+    collision_geometry:
+      type: sphere
+      radius: 0.386823077825
+      material: brown
+    config:
+      position: [3.03029296354 -2.53920751877 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball118
+    collision_geometry:
+      type: sphere
+      radius: 0.17053991061
+      material: brown
+    config:
+      position: [5.75460959758 5.70433011878 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball119
+    collision_geometry:
+      type: sphere
+      radius: 0.126820920427
+      material: brown
+    config:
+      position: [-1.2365846772 3.08854814302 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball120
+    collision_geometry:
+      type: sphere
+      radius: 0.22021347287
+      material: brown
+    config:
+      position: [-8.8282535579 -3.10712514784 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball121
+    collision_geometry:
+      type: sphere
+      radius: 0.11738654051
+      material: brown
+    config:
+      position: [5.16406187505 5.6637395553 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball122
+    collision_geometry:
+      type: sphere
+      radius: 0.186420392769
+      material: brown
+    config:
+      position: [-7.83714690815 7.64599718522 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball123
+    collision_geometry:
+      type: sphere
+      radius: 0.33549640451
+      material: brown
+    config:
+      position: [-6.74794052517 5.26722684513 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball124
+    collision_geometry:
+      type: sphere
+      radius: 0.357879326964
+      material: brown
+    config:
+      position: [1.88448463458 4.81357204567 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball125
+    collision_geometry:
+      type: sphere
+      radius: 0.22626160974
+      material: brown
+    config:
+      position: [6.35643887353 -4.26127361886 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball126
+    collision_geometry:
+      type: sphere
+      radius: 0.287826588296
+      material: brown
+    config:
+      position: [8.72001245613 -2.3805924157 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball127
+    collision_geometry:
+      type: sphere
+      radius: 0.280796132138
+      material: brown
+    config:
+      position: [6.23705654967 6.78259192853 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball128
+    collision_geometry:
+      type: sphere
+      radius: 0.100985961707
+      material: brown
+    config:
+      position: [-2.70260462431 3.42417519651 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball129
+    collision_geometry:
+      type: sphere
+      radius: 0.29398121229
+      material: brown
+    config:
+      position: [-2.6902372009 4.65932898262 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball130
+    collision_geometry:
+      type: sphere
+      radius: 0.283002832515
+      material: brown
+    config:
+      position: [-7.56207131733 3.95314789791 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball131
+    collision_geometry:
+      type: sphere
+      radius: 0.278898949079
+      material: brown
+    config:
+      position: [-0.995072338865 -7.11687218248 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball132
+    collision_geometry:
+      type: sphere
+      radius: 0.290471665587
+      material: brown
+    config:
+      position: [4.42037494192 -5.42294176531 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball133
+    collision_geometry:
+      type: sphere
+      radius: 0.207480150671
+      material: brown
+    config:
+      position: [-7.72904730253 -5.30383434146 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball134
+    collision_geometry:
+      type: sphere
+      radius: 0.367094828679
+      material: brown
+    config:
+      position: [5.00437069428 -3.90060760258 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball135
+    collision_geometry:
+      type: sphere
+      radius: 0.108014447824
+      material: brown
+    config:
+      position: [8.69576260302 -6.05959747008 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball136
+    collision_geometry:
+      type: sphere
+      radius: 0.370276673046
+      material: brown
+    config:
+      position: [4.11697251022 4.758705217 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball137
+    collision_geometry:
+      type: sphere
+      radius: 0.209656029606
+      material: brown
+    config:
+      position: [3.10438726026 5.04179592034 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball138
+    collision_geometry:
+      type: sphere
+      radius: 0.281407983828
+      material: brown
+    config:
+      position: [-7.18536018986 8.99844012305 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball139
+    collision_geometry:
+      type: sphere
+      radius: 0.122077638718
+      material: brown
+    config:
+      position: [-4.13189388676 7.06973566455 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball140
+    collision_geometry:
+      type: sphere
+      radius: 0.139027353195
+      material: brown
+    config:
+      position: [-7.97794145 -4.4126807712 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball141
+    collision_geometry:
+      type: sphere
+      radius: 0.255825853629
+      material: brown
+    config:
+      position: [-1.60654179998 2.17940885335 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball142
+    collision_geometry:
+      type: sphere
+      radius: 0.260480410131
+      material: brown
+    config:
+      position: [0.966899048936 -6.85119576758 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball143
+    collision_geometry:
+      type: sphere
+      radius: 0.339774225953
+      material: brown
+    config:
+      position: [8.55290109288 -3.06379183259 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball144
+    collision_geometry:
+      type: sphere
+      radius: 0.297384242658
+      material: brown
+    config:
+      position: [2.48374792632 4.71707077095 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball145
+    collision_geometry:
+      type: sphere
+      radius: 0.128070705024
+      material: brown
+    config:
+      position: [-1.08885965331 -4.77041293609 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball146
+    collision_geometry:
+      type: sphere
+      radius: 0.330204981806
+      material: brown
+    config:
+      position: [-6.96158449987 -7.18332817568 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball147
+    collision_geometry:
+      type: sphere
+      radius: 0.365439148757
+      material: brown
+    config:
+      position: [6.07163961968 5.71710342698 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball148
+    collision_geometry:
+      type: sphere
+      radius: 0.346083986546
+      material: brown
+    config:
+      position: [-2.54216673245 3.13358632658 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball149
+    collision_geometry:
+      type: sphere
+      radius: 0.162896753639
+      material: brown
+    config:
+      position: [-6.61852369477 -8.99372880551 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball150
+    collision_geometry:
+      type: sphere
+      radius: 0.138892703063
+      material: brown
+    config:
+      position: [7.48374925611 5.5381058716 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball151
+    collision_geometry:
+      type: sphere
+      radius: 0.180004567105
+      material: brown
+    config:
+      position: [6.24913315109 -5.85626870654 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball152
+    collision_geometry:
+      type: sphere
+      radius: 0.348420276431
+      material: brown
+    config:
+      position: [-5.97333543008 6.91091381775 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball153
+    collision_geometry:
+      type: sphere
+      radius: 0.33737011232
+      material: brown
+    config:
+      position: [-7.83146642352 -8.57110738608 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball154
+    collision_geometry:
+      type: sphere
+      radius: 0.291432933527
+      material: brown
+    config:
+      position: [-1.91360388108 1.23161017123 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball155
+    collision_geometry:
+      type: sphere
+      radius: 0.193099741589
+      material: brown
+    config:
+      position: [0.784751958084 -5.61608287878 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball156
+    collision_geometry:
+      type: sphere
+      radius: 0.20146542786
+      material: brown
+    config:
+      position: [1.75403562079 5.11715371842 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball157
+    collision_geometry:
+      type: sphere
+      radius: 0.185465500981
+      material: brown
+    config:
+      position: [-8.59210471823 -6.38520276885 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball158
+    collision_geometry:
+      type: sphere
+      radius: 0.249248199265
+      material: brown
+    config:
+      position: [8.30112136602 -1.31443433601 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball159
+    collision_geometry:
+      type: sphere
+      radius: 0.340190525289
+      material: brown
+    config:
+      position: [-1.39100257172 6.58982636321 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball160
+    collision_geometry:
+      type: sphere
+      radius: 0.26496390154
+      material: brown
+    config:
+      position: [-6.22876777453 2.9893175278 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball161
+    collision_geometry:
+      type: sphere
+      radius: 0.273487131965
+      material: brown
+    config:
+      position: [7.15525010919 -7.87084251581 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball162
+    collision_geometry:
+      type: sphere
+      radius: 0.345152345736
+      material: brown
+    config:
+      position: [-5.5832482784 1.24819221296 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball163
+    collision_geometry:
+      type: sphere
+      radius: 0.209538271445
+      material: brown
+    config:
+      position: [-1.18751321137 0.626376933609 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball164
+    collision_geometry:
+      type: sphere
+      radius: 0.126907255737
+      material: brown
+    config:
+      position: [8.00702568111 6.52338139632 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball165
+    collision_geometry:
+      type: sphere
+      radius: 0.193437656093
+      material: brown
+    config:
+      position: [-8.23082882985 0.628797759598 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball166
+    collision_geometry:
+      type: sphere
+      radius: 0.146855584954
+      material: brown
+    config:
+      position: [-8.43776484021 3.15373224498 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball167
+    collision_geometry:
+      type: sphere
+      radius: 0.314177684599
+      material: brown
+    config:
+      position: [2.5888267715 -7.2249914586 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball168
+    collision_geometry:
+      type: sphere
+      radius: 0.364885685159
+      material: brown
+    config:
+      position: [6.07410470703 5.34910030039 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball169
+    collision_geometry:
+      type: sphere
+      radius: 0.154732121474
+      material: brown
+    config:
+      position: [2.07476691096 -2.99234215979 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball170
+    collision_geometry:
+      type: sphere
+      radius: 0.29742287624
+      material: brown
+    config:
+      position: [2.84134587113 8.53669485238 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball171
+    collision_geometry:
+      type: sphere
+      radius: 0.145670982428
+      material: brown
+    config:
+      position: [-7.12921203992 -8.21690625036 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball172
+    collision_geometry:
+      type: sphere
+      radius: 0.311777502286
+      material: brown
+    config:
+      position: [5.45209724897 -6.55310523453 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball173
+    collision_geometry:
+      type: sphere
+      radius: 0.226240480034
+      material: brown
+    config:
+      position: [1.50712926265 -2.43376477672 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball174
+    collision_geometry:
+      type: sphere
+      radius: 0.155208582133
+      material: brown
+    config:
+      position: [-4.2625123478 -1.60246044991 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball175
+    collision_geometry:
+      type: sphere
+      radius: 0.264922854509
+      material: brown
+    config:
+      position: [0.524517351486 2.89472122995 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball176
+    collision_geometry:
+      type: sphere
+      radius: 0.367084303305
+      material: brown
+    config:
+      position: [8.84389125845 7.65069611402 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball177
+    collision_geometry:
+      type: sphere
+      radius: 0.327667485021
+      material: brown
+    config:
+      position: [1.87033032452 -6.40753373984 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball178
+    collision_geometry:
+      type: sphere
+      radius: 0.236213892498
+      material: brown
+    config:
+      position: [7.98365651033 1.81119169161 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball179
+    collision_geometry:
+      type: sphere
+      radius: 0.348303328196
+      material: brown
+    config:
+      position: [2.79443119789 2.28457834105 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball180
+    collision_geometry:
+      type: sphere
+      radius: 0.342400472804
+      material: brown
+    config:
+      position: [-0.370788167938 -2.31005475422 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball181
+    collision_geometry:
+      type: sphere
+      radius: 0.185264985636
+      material: brown
+    config:
+      position: [-0.622817868571 2.66202763708 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball182
+    collision_geometry:
+      type: sphere
+      radius: 0.275950299916
+      material: brown
+    config:
+      position: [0.693092433696 1.12813550203 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball183
+    collision_geometry:
+      type: sphere
+      radius: 0.150754788607
+      material: brown
+    config:
+      position: [5.14973683263 -2.90475669819 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball184
+    collision_geometry:
+      type: sphere
+      radius: 0.247248915886
+      material: brown
+    config:
+      position: [-2.25190771414 1.54669718253 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball185
+    collision_geometry:
+      type: sphere
+      radius: 0.153160685087
+      material: brown
+    config:
+      position: [-2.29586889164 -1.4152501975 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball186
+    collision_geometry:
+      type: sphere
+      radius: 0.121851215284
+      material: brown
+    config:
+      position: [-7.11501981628 2.83154175524 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball187
+    collision_geometry:
+      type: sphere
+      radius: 0.251944082259
+      material: brown
+    config:
+      position: [1.3287210681 8.55542119178 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball188
+    collision_geometry:
+      type: sphere
+      radius: 0.246433334648
+      material: brown
+    config:
+      position: [3.83067621134 4.74368793411 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball189
+    collision_geometry:
+      type: sphere
+      radius: 0.288140846332
+      material: brown
+    config:
+      position: [0.462287676388 -4.82887411242 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball190
+    collision_geometry:
+      type: sphere
+      radius: 0.381333120774
+      material: brown
+    config:
+      position: [0.45389420506 -2.96553634349 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball191
+    collision_geometry:
+      type: sphere
+      radius: 0.370791411917
+      material: brown
+    config:
+      position: [2.36932944652 -1.50734771686 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball192
+    collision_geometry:
+      type: sphere
+      radius: 0.201352792254
+      material: brown
+    config:
+      position: [4.74171714242 8.46154550324 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball193
+    collision_geometry:
+      type: sphere
+      radius: 0.318638753994
+      material: brown
+    config:
+      position: [-0.344009107529 -4.76499620201 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball194
+    collision_geometry:
+      type: sphere
+      radius: 0.31335279742
+      material: brown
+    config:
+      position: [6.1313666027 3.43539496723 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball195
+    collision_geometry:
+      type: sphere
+      radius: 0.142090945275
+      material: brown
+    config:
+      position: [-6.41319161175 7.79929881341 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball196
+    collision_geometry:
+      type: sphere
+      radius: 0.305767585485
+      material: brown
+    config:
+      position: [5.53026714685 -5.9896699612 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball197
+    collision_geometry:
+      type: sphere
+      radius: 0.267448764028
+      material: brown
+    config:
+      position: [4.39834331398 -5.78109829213 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball198
+    collision_geometry:
+      type: sphere
+      radius: 0.154794176903
+      material: brown
+    config:
+      position: [-4.51755458746 8.15064252743 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball199
+    collision_geometry:
+      type: sphere
+      radius: 0.101572289625
+      material: brown
+    config:
+      position: [8.69321986099 0.00240013029372 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball200
+    collision_geometry:
+      type: sphere
+      radius: 0.303010011103
+      material: brown
+    config:
+      position: [-6.19620252415 -2.69672271782 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball201
+    collision_geometry:
+      type: sphere
+      radius: 0.228063079148
+      material: brown
+    config:
+      position: [2.49227340443 -4.95353900489 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball202
+    collision_geometry:
+      type: sphere
+      radius: 0.195574029641
+      material: brown
+    config:
+      position: [6.27581077682 -0.497137865919 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball203
+    collision_geometry:
+      type: sphere
+      radius: 0.309164175588
+      material: brown
+    config:
+      position: [2.48164555228 6.56622555476 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball204
+    collision_geometry:
+      type: sphere
+      radius: 0.104340344172
+      material: brown
+    config:
+      position: [8.64538022795 -1.01860703268 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball205
+    collision_geometry:
+      type: sphere
+      radius: 0.209541264892
+      material: brown
+    config:
+      position: [-8.31589444841 8.49275194368 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball206
+    collision_geometry:
+      type: sphere
+      radius: 0.264473717723
+      material: brown
+    config:
+      position: [5.0096083454 8.47125891303 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball207
+    collision_geometry:
+      type: sphere
+      radius: 0.318847146113
+      material: brown
+    config:
+      position: [3.12056845867 1.11743797786 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball208
+    collision_geometry:
+      type: sphere
+      radius: 0.299672023729
+      material: brown
+    config:
+      position: [5.79918863322 3.51338070736 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball209
+    collision_geometry:
+      type: sphere
+      radius: 0.234635495847
+      material: brown
+    config:
+      position: [-8.41209717599 -6.71992792367 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball210
+    collision_geometry:
+      type: sphere
+      radius: 0.228570186286
+      material: brown
+    config:
+      position: [5.6824900224 6.05637692243 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball211
+    collision_geometry:
+      type: sphere
+      radius: 0.294708128115
+      material: brown
+    config:
+      position: [6.08268718613 -2.7325984759 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball212
+    collision_geometry:
+      type: sphere
+      radius: 0.206938154722
+      material: brown
+    config:
+      position: [-6.74937983718 8.18069443727 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball213
+    collision_geometry:
+      type: sphere
+      radius: 0.161748036284
+      material: brown
+    config:
+      position: [-3.40631335873 -7.71312206814 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball214
+    collision_geometry:
+      type: sphere
+      radius: 0.393032111638
+      material: brown
+    config:
+      position: [-8.15565359499 1.05130712922 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball215
+    collision_geometry:
+      type: sphere
+      radius: 0.226130437254
+      material: brown
+    config:
+      position: [-8.81905367375 -0.250778695364 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball216
+    collision_geometry:
+      type: sphere
+      radius: 0.156530738287
+      material: brown
+    config:
+      position: [3.67694947863 -7.84593815823 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball217
+    collision_geometry:
+      type: sphere
+      radius: 0.224409856805
+      material: brown
+    config:
+      position: [-2.71637737662 -3.07638541934 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball218
+    collision_geometry:
+      type: sphere
+      radius: 0.207722414679
+      material: brown
+    config:
+      position: [-0.210555805971 -1.87345687063 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball219
+    collision_geometry:
+      type: sphere
+      radius: 0.177147875182
+      material: brown
+    config:
+      position: [7.88815990657 -7.15477803702 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball220
+    collision_geometry:
+      type: sphere
+      radius: 0.157006376421
+      material: brown
+    config:
+      position: [3.46348971262 -2.37260173896 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball221
+    collision_geometry:
+      type: sphere
+      radius: 0.293592024568
+      material: brown
+    config:
+      position: [6.57960154993 -1.39947945829 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball222
+    collision_geometry:
+      type: sphere
+      radius: 0.231031247861
+      material: brown
+    config:
+      position: [7.58623196239 7.72366637846 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball223
+    collision_geometry:
+      type: sphere
+      radius: 0.115464540036
+      material: brown
+    config:
+      position: [-0.947208070283 -8.27323837978 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball224
+    collision_geometry:
+      type: sphere
+      radius: 0.217773652918
+      material: brown
+    config:
+      position: [7.85126168567 8.04045347225 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball225
+    collision_geometry:
+      type: sphere
+      radius: 0.210334139353
+      material: brown
+    config:
+      position: [5.99773060675 4.16862009452 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball226
+    collision_geometry:
+      type: sphere
+      radius: 0.13632792613
+      material: brown
+    config:
+      position: [-7.8640649915 1.90243347986 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball227
+    collision_geometry:
+      type: sphere
+      radius: 0.109890926984
+      material: brown
+    config:
+      position: [-1.00092954149 0.00157047647465 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball228
+    collision_geometry:
+      type: sphere
+      radius: 0.310878407107
+      material: brown
+    config:
+      position: [-5.31685176142 -3.83394120865 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball229
+    collision_geometry:
+      type: sphere
+      radius: 0.208209599316
+      material: brown
+    config:
+      position: [-6.26927782777 1.88945082195 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball230
+    collision_geometry:
+      type: sphere
+      radius: 0.284690172533
+      material: brown
+    config:
+      position: [0.619075801774 6.58201754555 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball231
+    collision_geometry:
+      type: sphere
+      radius: 0.17221686326
+      material: brown
+    config:
+      position: [6.09076440933 -5.25618401212 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball232
+    collision_geometry:
+      type: sphere
+      radius: 0.19364656488
+      material: brown
+    config:
+      position: [-0.434406339779 -5.01052846552 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball233
+    collision_geometry:
+      type: sphere
+      radius: 0.244692549383
+      material: brown
+    config:
+      position: [4.97809573209 -5.45605711383 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball234
+    collision_geometry:
+      type: sphere
+      radius: 0.238972580003
+      material: brown
+    config:
+      position: [-3.04525881582 2.27596786652 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball235
+    collision_geometry:
+      type: sphere
+      radius: 0.374051072359
+      material: brown
+    config:
+      position: [7.38033658902 -1.14556091313 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball236
+    collision_geometry:
+      type: sphere
+      radius: 0.239796335958
+      material: brown
+    config:
+      position: [-7.57215410677 -1.91424122755 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball237
+    collision_geometry:
+      type: sphere
+      radius: 0.353296664332
+      material: brown
+    config:
+      position: [-7.22621187332 6.68780743324 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball238
+    collision_geometry:
+      type: sphere
+      radius: 0.259117704919
+      material: brown
+    config:
+      position: [-2.1101569221 1.14841710797 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball239
+    collision_geometry:
+      type: sphere
+      radius: 0.308848804421
+      material: brown
+    config:
+      position: [-4.80332876789 -7.96748871432 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball240
+    collision_geometry:
+      type: sphere
+      radius: 0.282854226841
+      material: brown
+    config:
+      position: [5.21899180983 -1.00537633756 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball241
+    collision_geometry:
+      type: sphere
+      radius: 0.152490486
+      material: brown
+    config:
+      position: [1.93315805667 4.9873680117 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball242
+    collision_geometry:
+      type: sphere
+      radius: 0.225172981191
+      material: brown
+    config:
+      position: [0.364897670403 7.3447453421 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball243
+    collision_geometry:
+      type: sphere
+      radius: 0.215673602107
+      material: brown
+    config:
+      position: [4.25692721902 -7.50785794483 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball244
+    collision_geometry:
+      type: sphere
+      radius: 0.289802012452
+      material: brown
+    config:
+      position: [-7.86280944475 -0.615783866525 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball245
+    collision_geometry:
+      type: sphere
+      radius: 0.309881455275
+      material: brown
+    config:
+      position: [-6.5723035202 -5.97175513061 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball246
+    collision_geometry:
+      type: sphere
+      radius: 0.339514334435
+      material: brown
+    config:
+      position: [-6.68959743891 8.36380187724 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball247
+    collision_geometry:
+      type: sphere
+      radius: 0.180468026437
+      material: brown
+    config:
+      position: [-1.51284606173 -6.1144349562 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball248
+    collision_geometry:
+      type: sphere
+      radius: 0.189011037777
+      material: brown
+    config:
+      position: [-4.8238766563 5.69674013206 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball249
+    collision_geometry:
+      type: sphere
+      radius: 0.360185021853
+      material: brown
+    config:
+      position: [1.58546361844 -8.11465379966 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball250
+    collision_geometry:
+      type: sphere
+      radius: 0.283333810674
+      material: brown
+    config:
+      position: [7.73027402606 4.82203556189 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball251
+    collision_geometry:
+      type: sphere
+      radius: 0.199911531708
+      material: brown
+    config:
+      position: [-8.53652176815 -6.14768518589 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball252
+    collision_geometry:
+      type: sphere
+      radius: 0.111853962616
+      material: brown
+    config:
+      position: [2.98457977494 -6.09708604318 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball253
+    collision_geometry:
+      type: sphere
+      radius: 0.125070985797
+      material: brown
+    config:
+      position: [-4.61923196358 -2.74626603812 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball254
+    collision_geometry:
+      type: sphere
+      radius: 0.128351114648
+      material: brown
+    config:
+      position: [7.43018694455 -1.16770074444 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball255
+    collision_geometry:
+      type: sphere
+      radius: 0.297121390485
+      material: brown
+    config:
+      position: [1.01271046277 -8.08695518293 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball256
+    collision_geometry:
+      type: sphere
+      radius: 0.146731866682
+      material: brown
+    config:
+      position: [2.78036071238 -1.53989993008 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball257
+    collision_geometry:
+      type: sphere
+      radius: 0.329450075614
+      material: brown
+    config:
+      position: [3.09423793497 -5.92511914588 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball258
+    collision_geometry:
+      type: sphere
+      radius: 0.387124882689
+      material: brown
+    config:
+      position: [1.47421172737 4.28221165535 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball259
+    collision_geometry:
+      type: sphere
+      radius: 0.229561839384
+      material: brown
+    config:
+      position: [2.07871164959 -3.4035614446 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball260
+    collision_geometry:
+      type: sphere
+      radius: 0.143112907244
+      material: brown
+    config:
+      position: [1.81826253887 7.45966939815 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball261
+    collision_geometry:
+      type: sphere
+      radius: 0.337183106186
+      material: brown
+    config:
+      position: [-4.88111249068 4.39212606919 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball262
+    collision_geometry:
+      type: sphere
+      radius: 0.276263452401
+      material: brown
+    config:
+      position: [0.103856627886 8.80836913161 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball263
+    collision_geometry:
+      type: sphere
+      radius: 0.258830154319
+      material: brown
+    config:
+      position: [7.98665698058 -5.44784811989 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball264
+    collision_geometry:
+      type: sphere
+      radius: 0.135610618653
+      material: brown
+    config:
+      position: [-4.81692398358 7.13086157596 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball265
+    collision_geometry:
+      type: sphere
+      radius: 0.104893277955
+      material: brown
+    config:
+      position: [-3.55230707447 -5.81009928424 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball266
+    collision_geometry:
+      type: sphere
+      radius: 0.300538936418
+      material: brown
+    config:
+      position: [3.94221100055 2.28682443996 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball267
+    collision_geometry:
+      type: sphere
+      radius: 0.169522095009
+      material: brown
+    config:
+      position: [-4.83655868511 2.47873594174 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball268
+    collision_geometry:
+      type: sphere
+      radius: 0.398539860995
+      material: brown
+    config:
+      position: [2.16738708148 7.55284962747 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball269
+    collision_geometry:
+      type: sphere
+      radius: 0.268498773792
+      material: brown
+    config:
+      position: [-7.59607657619 -4.171463426 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball270
+    collision_geometry:
+      type: sphere
+      radius: 0.285199693302
+      material: brown
+    config:
+      position: [-4.21175503545 8.37655835395 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball271
+    collision_geometry:
+      type: sphere
+      radius: 0.31352869696
+      material: brown
+    config:
+      position: [8.67312538194 -8.84067803708 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball272
+    collision_geometry:
+      type: sphere
+      radius: 0.393136161167
+      material: brown
+    config:
+      position: [-7.37052081987 0.232858296073 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball273
+    collision_geometry:
+      type: sphere
+      radius: 0.251426946533
+      material: brown
+    config:
+      position: [-7.72193032995 -0.631529824305 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball274
+    collision_geometry:
+      type: sphere
+      radius: 0.328199360037
+      material: brown
+    config:
+      position: [-1.15085561721 -3.41774165835 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball275
+    collision_geometry:
+      type: sphere
+      radius: 0.200242488371
+      material: brown
+    config:
+      position: [2.46796770721 -6.45436487517 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball276
+    collision_geometry:
+      type: sphere
+      radius: 0.240330745691
+      material: brown
+    config:
+      position: [-1.06104985906 4.4722832231 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball277
+    collision_geometry:
+      type: sphere
+      radius: 0.243949021379
+      material: brown
+    config:
+      position: [-3.55673922528 3.53828959846 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball278
+    collision_geometry:
+      type: sphere
+      radius: 0.169235447737
+      material: brown
+    config:
+      position: [-2.68586320647 6.32053329229 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball279
+    collision_geometry:
+      type: sphere
+      radius: 0.176348693521
+      material: brown
+    config:
+      position: [-2.54856433511 7.66304040431 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball280
+    collision_geometry:
+      type: sphere
+      radius: 0.102757645348
+      material: brown
+    config:
+      position: [1.33495682096 -7.33918246729 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball281
+    collision_geometry:
+      type: sphere
+      radius: 0.235062946634
+      material: brown
+    config:
+      position: [3.84616103948 -2.26464018963 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball282
+    collision_geometry:
+      type: sphere
+      radius: 0.15383150052
+      material: brown
+    config:
+      position: [-2.02681403823 -5.78906412181 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball283
+    collision_geometry:
+      type: sphere
+      radius: 0.235934982648
+      material: brown
+    config:
+      position: [3.15369339274 -5.27423308059 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball284
+    collision_geometry:
+      type: sphere
+      radius: 0.264521015235
+      material: brown
+    config:
+      position: [-6.41446345532 5.00465020653 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball285
+    collision_geometry:
+      type: sphere
+      radius: 0.213279477122
+      material: brown
+    config:
+      position: [4.2626419105 -1.2904237159 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball286
+    collision_geometry:
+      type: sphere
+      radius: 0.350772069871
+      material: brown
+    config:
+      position: [-4.34925757438 1.31468949163 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball287
+    collision_geometry:
+      type: sphere
+      radius: 0.310737198069
+      material: brown
+    config:
+      position: [8.50074685977 -1.88100990934 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball288
+    collision_geometry:
+      type: sphere
+      radius: 0.376326309661
+      material: brown
+    config:
+      position: [3.37096161948 -8.89812544939 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball289
+    collision_geometry:
+      type: sphere
+      radius: 0.279341842747
+      material: brown
+    config:
+      position: [8.70762305368 -4.94177810751 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball290
+    collision_geometry:
+      type: sphere
+      radius: 0.233442200287
+      material: brown
+    config:
+      position: [-6.21421292922 1.78323479138 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball291
+    collision_geometry:
+      type: sphere
+      radius: 0.313380637028
+      material: brown
+    config:
+      position: [3.83864431834 -3.23420401326 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball292
+    collision_geometry:
+      type: sphere
+      radius: 0.394729699943
+      material: brown
+    config:
+      position: [2.74663788373 -2.93807761241 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball293
+    collision_geometry:
+      type: sphere
+      radius: 0.139982855626
+      material: brown
+    config:
+      position: [-8.02517993544 -8.58864700294 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball294
+    collision_geometry:
+      type: sphere
+      radius: 0.300917213641
+      material: brown
+    config:
+      position: [-4.12443036376 -0.152447750558 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball295
+    collision_geometry:
+      type: sphere
+      radius: 0.259207000118
+      material: brown
+    config:
+      position: [2.75992533886 -6.13453934822 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball296
+    collision_geometry:
+      type: sphere
+      radius: 0.220393228264
+      material: brown
+    config:
+      position: [-5.8845924169 -4.02283933686 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball297
+    collision_geometry:
+      type: sphere
+      radius: 0.225814229085
+      material: brown
+    config:
+      position: [-0.460574440561 -2.1298472871 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball298
+    collision_geometry:
+      type: sphere
+      radius: 0.197515597478
+      material: brown
+    config:
+      position: [8.52608689713 3.49205195822 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball299
+    collision_geometry:
+      type: sphere
+      radius: 0.330696237322
+      material: brown
+    config:
+      position: [-6.56779270358 -4.82062459491 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball300
+    collision_geometry:
+      type: sphere
+      radius: 0.127684109454
+      material: brown
+    config:
+      position: [8.99367007379 -3.56083592714 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball301
+    collision_geometry:
+      type: sphere
+      radius: 0.183330415802
+      material: brown
+    config:
+      position: [-2.40413432551 8.36052964266 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball302
+    collision_geometry:
+      type: sphere
+      radius: 0.244402135057
+      material: brown
+    config:
+      position: [4.78208731287 0.782289962307 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball303
+    collision_geometry:
+      type: sphere
+      radius: 0.239291136939
+      material: brown
+    config:
+      position: [-8.27496724578 -4.69493166604 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball304
+    collision_geometry:
+      type: sphere
+      radius: 0.248297333808
+      material: brown
+    config:
+      position: [-1.29560321478 -7.14714979144 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball305
+    collision_geometry:
+      type: sphere
+      radius: 0.286548173232
+      material: brown
+    config:
+      position: [7.37121501155 2.18110703743 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball306
+    collision_geometry:
+      type: sphere
+      radius: 0.139379007998
+      material: brown
+    config:
+      position: [5.13407600464 8.58238593648 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball307
+    collision_geometry:
+      type: sphere
+      radius: 0.387831291704
+      material: brown
+    config:
+      position: [-5.52558429541 -8.64229488079 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball308
+    collision_geometry:
+      type: sphere
+      radius: 0.244084324399
+      material: brown
+    config:
+      position: [-7.69675158568 0.681508608717 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball309
+    collision_geometry:
+      type: sphere
+      radius: 0.379743902069
+      material: brown
+    config:
+      position: [2.27835208876 -3.76090662564 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball310
+    collision_geometry:
+      type: sphere
+      radius: 0.288335241338
+      material: brown
+    config:
+      position: [-3.16277801684 -1.93891983848 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball311
+    collision_geometry:
+      type: sphere
+      radius: 0.347962539328
+      material: brown
+    config:
+      position: [-5.4214495026 2.19965389254 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball312
+    collision_geometry:
+      type: sphere
+      radius: 0.36451204388
+      material: brown
+    config:
+      position: [-8.37159656028 3.1974441357 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball313
+    collision_geometry:
+      type: sphere
+      radius: 0.35824737654
+      material: brown
+    config:
+      position: [2.27371513515 -3.61237103467 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball314
+    collision_geometry:
+      type: sphere
+      radius: 0.217326743128
+      material: brown
+    config:
+      position: [-3.83514393519 0.699606185748 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball315
+    collision_geometry:
+      type: sphere
+      radius: 0.384938382444
+      material: brown
+    config:
+      position: [-6.72503946386 -6.25268035095 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball316
+    collision_geometry:
+      type: sphere
+      radius: 0.131906884798
+      material: brown
+    config:
+      position: [2.40967059275 8.22686228578 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball317
+    collision_geometry:
+      type: sphere
+      radius: 0.325410930114
+      material: brown
+    config:
+      position: [-1.11557098196 -7.98887308819 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball318
+    collision_geometry:
+      type: sphere
+      radius: 0.269374248479
+      material: brown
+    config:
+      position: [-2.3410314094 4.64160036492 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball319
+    collision_geometry:
+      type: sphere
+      radius: 0.317711324484
+      material: brown
+    config:
+      position: [2.66629300427 -1.96675846578 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball320
+    collision_geometry:
+      type: sphere
+      radius: 0.151384565909
+      material: brown
+    config:
+      position: [4.48827570753 2.80312140221 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball321
+    collision_geometry:
+      type: sphere
+      radius: 0.357825360786
+      material: brown
+    config:
+      position: [-5.47358556968 4.83051372628 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball322
+    collision_geometry:
+      type: sphere
+      radius: 0.232841997418
+      material: brown
+    config:
+      position: [-3.54347107147 -1.58500913957 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball323
+    collision_geometry:
+      type: sphere
+      radius: 0.199172173325
+      material: brown
+    config:
+      position: [2.26248626101 -5.35181733519 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball324
+    collision_geometry:
+      type: sphere
+      radius: 0.329775940648
+      material: brown
+    config:
+      position: [7.60581598181 1.50325848628 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball325
+    collision_geometry:
+      type: sphere
+      radius: 0.21073207224
+      material: brown
+    config:
+      position: [-4.41995082501 2.27007023052 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball326
+    collision_geometry:
+      type: sphere
+      radius: 0.24912043331
+      material: brown
+    config:
+      position: [1.51907569623 -6.15230144388 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball327
+    collision_geometry:
+      type: sphere
+      radius: 0.291927071888
+      material: brown
+    config:
+      position: [-7.83133153897 -6.60825247618 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball328
+    collision_geometry:
+      type: sphere
+      radius: 0.2180131391
+      material: brown
+    config:
+      position: [4.32676497765 2.99877356359 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball329
+    collision_geometry:
+      type: sphere
+      radius: 0.198561757859
+      material: brown
+    config:
+      position: [-0.125677231005 -5.20291575964 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball330
+    collision_geometry:
+      type: sphere
+      radius: 0.361759438994
+      material: brown
+    config:
+      position: [-5.2287189535 -4.89095862895 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball331
+    collision_geometry:
+      type: sphere
+      radius: 0.141039878693
+      material: brown
+    config:
+      position: [-6.71456771554 -4.54455076279 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball332
+    collision_geometry:
+      type: sphere
+      radius: 0.324600744673
+      material: brown
+    config:
+      position: [1.48081668651 -2.11527661373 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball333
+    collision_geometry:
+      type: sphere
+      radius: 0.391163097247
+      material: brown
+    config:
+      position: [7.58287860527 -7.85074575769 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball334
+    collision_geometry:
+      type: sphere
+      radius: 0.369576416672
+      material: brown
+    config:
+      position: [1.66604379843 3.70717772028 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball335
+    collision_geometry:
+      type: sphere
+      radius: 0.174061302961
+      material: brown
+    config:
+      position: [8.20659236882 3.02642590464 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball336
+    collision_geometry:
+      type: sphere
+      radius: 0.161131823075
+      material: brown
+    config:
+      position: [6.53138836452 -2.85638733153 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball337
+    collision_geometry:
+      type: sphere
+      radius: 0.372762549813
+      material: brown
+    config:
+      position: [-1.95039116478 1.12249320248 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball338
+    collision_geometry:
+      type: sphere
+      radius: 0.332358918444
+      material: brown
+    config:
+      position: [0.676177110909 -3.40246519689 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball339
+    collision_geometry:
+      type: sphere
+      radius: 0.35190355683
+      material: brown
+    config:
+      position: [8.61858799419 3.4747378324 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball340
+    collision_geometry:
+      type: sphere
+      radius: 0.207331668292
+      material: brown
+    config:
+      position: [-1.37867096703 -3.10876658515 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball341
+    collision_geometry:
+      type: sphere
+      radius: 0.111222365167
+      material: brown
+    config:
+      position: [4.0362995156 1.49538566369 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball342
+    collision_geometry:
+      type: sphere
+      radius: 0.333198769669
+      material: brown
+    config:
+      position: [4.66005994285 2.50536726527 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball343
+    collision_geometry:
+      type: sphere
+      radius: 0.10553262494
+      material: brown
+    config:
+      position: [8.69566540473 3.87660582347 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball344
+    collision_geometry:
+      type: sphere
+      radius: 0.117106345448
+      material: brown
+    config:
+      position: [-8.66826752388 7.81868738316 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball345
+    collision_geometry:
+      type: sphere
+      radius: 0.128623044042
+      material: brown
+    config:
+      position: [-7.87167511175 3.8845521147 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball346
+    collision_geometry:
+      type: sphere
+      radius: 0.176653048192
+      material: brown
+    config:
+      position: [-2.955395269 -5.57299842053 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball347
+    collision_geometry:
+      type: sphere
+      radius: 0.106904399476
+      material: brown
+    config:
+      position: [-5.58487257713 -4.56657867162 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball348
+    collision_geometry:
+      type: sphere
+      radius: 0.198874399556
+      material: brown
+    config:
+      position: [-7.73978534994 -5.08741457324 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball349
+    collision_geometry:
+      type: sphere
+      radius: 0.386080053816
+      material: brown
+    config:
+      position: [-6.51783299102 -6.03399104447 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball350
+    collision_geometry:
+      type: sphere
+      radius: 0.301085461576
+      material: brown
+    config:
+      position: [4.35392146273 1.45600551183 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball351
+    collision_geometry:
+      type: sphere
+      radius: 0.238413380228
+      material: brown
+    config:
+      position: [-4.7184191043 -1.38913185924 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball352
+    collision_geometry:
+      type: sphere
+      radius: 0.361026123154
+      material: brown
+    config:
+      position: [2.8820057911 -2.68163531086 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball353
+    collision_geometry:
+      type: sphere
+      radius: 0.235332806225
+      material: brown
+    config:
+      position: [6.76217643396 -6.43191107754 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball354
+    collision_geometry:
+      type: sphere
+      radius: 0.141969535311
+      material: brown
+    config:
+      position: [0.601047397834 5.77752791348 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball355
+    collision_geometry:
+      type: sphere
+      radius: 0.361235206508
+      material: brown
+    config:
+      position: [-4.98664977838 -6.04673953703 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball356
+    collision_geometry:
+      type: sphere
+      radius: 0.128492163663
+      material: brown
+    config:
+      position: [-4.21626724448 2.23282639321 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball357
+    collision_geometry:
+      type: sphere
+      radius: 0.211797679031
+      material: brown
+    config:
+      position: [-4.7702326918 3.26459494701 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball358
+    collision_geometry:
+      type: sphere
+      radius: 0.171718269246
+      material: brown
+    config:
+      position: [-2.4692833314 6.81422939956 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball359
+    collision_geometry:
+      type: sphere
+      radius: 0.119038593849
+      material: brown
+    config:
+      position: [7.50531774471 -8.74601669263 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball360
+    collision_geometry:
+      type: sphere
+      radius: 0.331630263486
+      material: brown
+    config:
+      position: [4.29141690398 -3.96658707098 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball361
+    collision_geometry:
+      type: sphere
+      radius: 0.254930678896
+      material: brown
+    config:
+      position: [3.45092388512 2.72733152116 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball362
+    collision_geometry:
+      type: sphere
+      radius: 0.374283407925
+      material: brown
+    config:
+      position: [-4.58581199781 6.31842765226 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball363
+    collision_geometry:
+      type: sphere
+      radius: 0.231059535188
+      material: brown
+    config:
+      position: [6.4836768443 -5.23177427051 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball364
+    collision_geometry:
+      type: sphere
+      radius: 0.1165436972
+      material: brown
+    config:
+      position: [-8.30310120188 5.08260983101 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball365
+    collision_geometry:
+      type: sphere
+      radius: 0.21722503125
+      material: brown
+    config:
+      position: [-7.05678045888 7.20410877858 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball366
+    collision_geometry:
+      type: sphere
+      radius: 0.315204817955
+      material: brown
+    config:
+      position: [0.420445226902 3.58908380217 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball367
+    collision_geometry:
+      type: sphere
+      radius: 0.299029162981
+      material: brown
+    config:
+      position: [-8.8111880532 0.889405317984 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball368
+    collision_geometry:
+      type: sphere
+      radius: 0.145797581515
+      material: brown
+    config:
+      position: [8.31570576314 4.09833824844 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball369
+    collision_geometry:
+      type: sphere
+      radius: 0.270115622499
+      material: brown
+    config:
+      position: [8.1642220212 6.42891636371 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball370
+    collision_geometry:
+      type: sphere
+      radius: 0.308829908004
+      material: brown
+    config:
+      position: [2.2148187881 1.42404251947 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball371
+    collision_geometry:
+      type: sphere
+      radius: 0.381549112939
+      material: brown
+    config:
+      position: [6.39043301847 -7.86656110898 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball372
+    collision_geometry:
+      type: sphere
+      radius: 0.1823449206
+      material: brown
+    config:
+      position: [-0.956087884842 6.57569209948 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball373
+    collision_geometry:
+      type: sphere
+      radius: 0.299717836966
+      material: brown
+    config:
+      position: [0.0248886301379 -4.28695463093 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball374
+    collision_geometry:
+      type: sphere
+      radius: 0.136846620872
+      material: brown
+    config:
+      position: [5.41526676712 -0.6635865115 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball375
+    collision_geometry:
+      type: sphere
+      radius: 0.397096177912
+      material: brown
+    config:
+      position: [-0.637401267574 -6.51823289621 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball376
+    collision_geometry:
+      type: sphere
+      radius: 0.278449367621
+      material: brown
+    config:
+      position: [2.18582116393 0.667833556327 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball377
+    collision_geometry:
+      type: sphere
+      radius: 0.370655324292
+      material: brown
+    config:
+      position: [-3.43152627648 4.32868000943 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball378
+    collision_geometry:
+      type: sphere
+      radius: 0.360930943347
+      material: brown
+    config:
+      position: [6.91175939861 2.38873909094 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball379
+    collision_geometry:
+      type: sphere
+      radius: 0.159535026054
+      material: brown
+    config:
+      position: [1.35410650773 -3.80079851265 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball380
+    collision_geometry:
+      type: sphere
+      radius: 0.194380310339
+      material: brown
+    config:
+      position: [-4.96390819473 2.66386021812 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball381
+    collision_geometry:
+      type: sphere
+      radius: 0.174422624213
+      material: brown
+    config:
+      position: [-7.31589869796 6.75616919683 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball382
+    collision_geometry:
+      type: sphere
+      radius: 0.192842882102
+      material: brown
+    config:
+      position: [-1.8877731396 3.58850201224 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball383
+    collision_geometry:
+      type: sphere
+      radius: 0.311522132043
+      material: brown
+    config:
+      position: [0.655530107361 7.43914754393 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball384
+    collision_geometry:
+      type: sphere
+      radius: 0.277436131721
+      material: brown
+    config:
+      position: [-3.9402743873 6.7997342639 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball385
+    collision_geometry:
+      type: sphere
+      radius: 0.132260001688
+      material: brown
+    config:
+      position: [4.19743703567 4.05817412957 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball386
+    collision_geometry:
+      type: sphere
+      radius: 0.365816062902
+      material: brown
+    config:
+      position: [3.29375054161 -6.50162992888 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball387
+    collision_geometry:
+      type: sphere
+      radius: 0.238322416818
+      material: brown
+    config:
+      position: [-6.50226340142 3.08031937277 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball388
+    collision_geometry:
+      type: sphere
+      radius: 0.18224955754
+      material: brown
+    config:
+      position: [8.2271145149 6.49762342705 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball389
+    collision_geometry:
+      type: sphere
+      radius: 0.283685867405
+      material: brown
+    config:
+      position: [5.43285704003 -7.4674808399 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball390
+    collision_geometry:
+      type: sphere
+      radius: 0.201360357114
+      material: brown
+    config:
+      position: [6.09472971047 7.78832579455 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball391
+    collision_geometry:
+      type: sphere
+      radius: 0.188697198955
+      material: brown
+    config:
+      position: [-3.31424730497 3.35859566827 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball392
+    collision_geometry:
+      type: sphere
+      radius: 0.270071063376
+      material: brown
+    config:
+      position: [-4.554459315 8.60637347202 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball393
+    collision_geometry:
+      type: sphere
+      radius: 0.211285861042
+      material: brown
+    config:
+      position: [-8.02813014413 0.439944424331 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball394
+    collision_geometry:
+      type: sphere
+      radius: 0.178579275749
+      material: brown
+    config:
+      position: [4.90115598392 2.35740732124 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball395
+    collision_geometry:
+      type: sphere
+      radius: 0.301036441791
+      material: brown
+    config:
+      position: [6.19889029876 -3.70882177121 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball396
+    collision_geometry:
+      type: sphere
+      radius: 0.165365292591
+      material: brown
+    config:
+      position: [-5.12425337563 -7.71689997778 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball397
+    collision_geometry:
+      type: sphere
+      radius: 0.305350678341
+      material: brown
+    config:
+      position: [3.22397355014 0.220313411688 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball398
+    collision_geometry:
+      type: sphere
+      radius: 0.124276808807
+      material: brown
+    config:
+      position: [-6.63422911134 -5.67909300999 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball399
+    collision_geometry:
+      type: sphere
+      radius: 0.385309840135
+      material: brown
+    config:
+      position: [-2.58314848842 -4.76293635723 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball400
+    collision_geometry:
+      type: sphere
+      radius: 0.10233626505
+      material: brown
+    config:
+      position: [5.65798077047 4.54055984958 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball401
+    collision_geometry:
+      type: sphere
+      radius: 0.314855687071
+      material: brown
+    config:
+      position: [0.0676533066497 -8.86127268184 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball402
+    collision_geometry:
+      type: sphere
+      radius: 0.188855058653
+      material: brown
+    config:
+      position: [-1.11495801922 -5.9213056665 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball403
+    collision_geometry:
+      type: sphere
+      radius: 0.116767761989
+      material: brown
+    config:
+      position: [-3.61056074608 8.18020705916 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball404
+    collision_geometry:
+      type: sphere
+      radius: 0.365135282521
+      material: brown
+    config:
+      position: [7.10263233073 8.61214050261 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball405
+    collision_geometry:
+      type: sphere
+      radius: 0.209283535838
+      material: brown
+    config:
+      position: [-4.93872222303 6.39321350096 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball406
+    collision_geometry:
+      type: sphere
+      radius: 0.395797576211
+      material: brown
+    config:
+      position: [6.15825225002 -6.43655063395 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball407
+    collision_geometry:
+      type: sphere
+      radius: 0.349100025486
+      material: brown
+    config:
+      position: [7.07569042725 4.42061917487 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball408
+    collision_geometry:
+      type: sphere
+      radius: 0.237916227795
+      material: brown
+    config:
+      position: [1.33861596254 -5.51871293953 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball409
+    collision_geometry:
+      type: sphere
+      radius: 0.144329697914
+      material: brown
+    config:
+      position: [-5.96985469462 5.63275527908 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball410
+    collision_geometry:
+      type: sphere
+      radius: 0.266074451478
+      material: brown
+    config:
+      position: [-6.38525495525 8.3272515247 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball411
+    collision_geometry:
+      type: sphere
+      radius: 0.255459864452
+      material: brown
+    config:
+      position: [0.861564282383 0.615623139455 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball412
+    collision_geometry:
+      type: sphere
+      radius: 0.239464220285
+      material: brown
+    config:
+      position: [-7.93421286474 -7.38008828193 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball413
+    collision_geometry:
+      type: sphere
+      radius: 0.390537615355
+      material: brown
+    config:
+      position: [-0.375542163575 5.77003615384 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball414
+    collision_geometry:
+      type: sphere
+      radius: 0.154558897824
+      material: brown
+    config:
+      position: [6.0808811894 0.212439719262 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball415
+    collision_geometry:
+      type: sphere
+      radius: 0.10743157829
+      material: brown
+    config:
+      position: [-1.40992973961 -0.238361197026 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball416
+    collision_geometry:
+      type: sphere
+      radius: 0.177327994732
+      material: brown
+    config:
+      position: [3.47684454623 8.8004863776 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball417
+    collision_geometry:
+      type: sphere
+      radius: 0.289418488763
+      material: brown
+    config:
+      position: [7.0537154632 -2.0933345049 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball418
+    collision_geometry:
+      type: sphere
+      radius: 0.260754963417
+      material: brown
+    config:
+      position: [4.38201666677 1.37417775647 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball419
+    collision_geometry:
+      type: sphere
+      radius: 0.335812087755
+      material: brown
+    config:
+      position: [-5.88006986975 7.26217857942 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball420
+    collision_geometry:
+      type: sphere
+      radius: 0.141769603596
+      material: brown
+    config:
+      position: [-0.0083137725276 -1.75626797031 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball421
+    collision_geometry:
+      type: sphere
+      radius: 0.368605614164
+      material: brown
+    config:
+      position: [1.97856480589 5.1202906045 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball422
+    collision_geometry:
+      type: sphere
+      radius: 0.14256004945
+      material: brown
+    config:
+      position: [-0.721767329056 -3.90984282592 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball423
+    collision_geometry:
+      type: sphere
+      radius: 0.275428410929
+      material: brown
+    config:
+      position: [-6.9820994895 -4.93685932126 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball424
+    collision_geometry:
+      type: sphere
+      radius: 0.366944172691
+      material: brown
+    config:
+      position: [3.63382476461 6.84215400638 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball425
+    collision_geometry:
+      type: sphere
+      radius: 0.160958330253
+      material: brown
+    config:
+      position: [-2.32018902835 3.99827885936 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball426
+    collision_geometry:
+      type: sphere
+      radius: 0.222586735417
+      material: brown
+    config:
+      position: [-0.00105652800067 8.34297810411 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball427
+    collision_geometry:
+      type: sphere
+      radius: 0.346354020176
+      material: brown
+    config:
+      position: [4.76535480706 4.59664772979 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball428
+    collision_geometry:
+      type: sphere
+      radius: 0.386535472746
+      material: brown
+    config:
+      position: [1.75579572263 4.5579795614 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball429
+    collision_geometry:
+      type: sphere
+      radius: 0.214454995365
+      material: brown
+    config:
+      position: [-0.82724472886 -5.28131583791 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball430
+    collision_geometry:
+      type: sphere
+      radius: 0.20374927991
+      material: brown
+    config:
+      position: [1.22136701591 1.85271514042 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball431
+    collision_geometry:
+      type: sphere
+      radius: 0.165832856727
+      material: brown
+    config:
+      position: [2.76796784568 -5.44221254592 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball432
+    collision_geometry:
+      type: sphere
+      radius: 0.342730288451
+      material: brown
+    config:
+      position: [5.02045715546 2.54732271569 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball433
+    collision_geometry:
+      type: sphere
+      radius: 0.15202907754
+      material: brown
+    config:
+      position: [0.556541596701 4.38060591834 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball434
+    collision_geometry:
+      type: sphere
+      radius: 0.324153731039
+      material: brown
+    config:
+      position: [-1.57698839045 4.57937778428 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball435
+    collision_geometry:
+      type: sphere
+      radius: 0.193601252644
+      material: brown
+    config:
+      position: [-5.63185081987 -7.14511285654 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball436
+    collision_geometry:
+      type: sphere
+      radius: 0.104266688957
+      material: brown
+    config:
+      position: [-4.30945138759 2.98372552897 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball437
+    collision_geometry:
+      type: sphere
+      radius: 0.345936380078
+      material: brown
+    config:
+      position: [3.00289317262 -1.67615680785 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball438
+    collision_geometry:
+      type: sphere
+      radius: 0.270529440739
+      material: brown
+    config:
+      position: [2.69849895197 6.36459785893 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball439
+    collision_geometry:
+      type: sphere
+      radius: 0.387441885086
+      material: brown
+    config:
+      position: [8.21314266634 8.781238599 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball440
+    collision_geometry:
+      type: sphere
+      radius: 0.332888488876
+      material: brown
+    config:
+      position: [-2.0179753546 8.35919890797 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball441
+    collision_geometry:
+      type: sphere
+      radius: 0.30158514251
+      material: brown
+    config:
+      position: [7.96448185791 7.50860494209 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball442
+    collision_geometry:
+      type: sphere
+      radius: 0.116133117756
+      material: brown
+    config:
+      position: [-2.46543017235 7.22184840746 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball443
+    collision_geometry:
+      type: sphere
+      radius: 0.221982842664
+      material: brown
+    config:
+      position: [6.3342166768 -8.90458243842 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball444
+    collision_geometry:
+      type: sphere
+      radius: 0.379847502189
+      material: brown
+    config:
+      position: [-5.87351328936 2.73467194056 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball445
+    collision_geometry:
+      type: sphere
+      radius: 0.276746887157
+      material: brown
+    config:
+      position: [-5.00876471713 2.93362002513 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball446
+    collision_geometry:
+      type: sphere
+      radius: 0.260802948107
+      material: brown
+    config:
+      position: [-4.21444994003 -6.07996376194 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball447
+    collision_geometry:
+      type: sphere
+      radius: 0.264735052823
+      material: brown
+    config:
+      position: [0.374839846671 8.95891336641 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball448
+    collision_geometry:
+      type: sphere
+      radius: 0.108926969737
+      material: brown
+    config:
+      position: [-3.57767987869 -3.88523375239 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball449
+    collision_geometry:
+      type: sphere
+      radius: 0.318741447669
+      material: brown
+    config:
+      position: [-7.84650682116 -7.92236266707 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball450
+    collision_geometry:
+      type: sphere
+      radius: 0.262318843344
+      material: brown
+    config:
+      position: [7.97733288016 7.32497617081 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball451
+    collision_geometry:
+      type: sphere
+      radius: 0.39864884827
+      material: brown
+    config:
+      position: [-8.21883136342 8.37890458264 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball452
+    collision_geometry:
+      type: sphere
+      radius: 0.255528234045
+      material: brown
+    config:
+      position: [0.145494508584 2.00250418688 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball453
+    collision_geometry:
+      type: sphere
+      radius: 0.200761306762
+      material: brown
+    config:
+      position: [-6.70752986438 -4.22619086572 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball454
+    collision_geometry:
+      type: sphere
+      radius: 0.267491253146
+      material: brown
+    config:
+      position: [-1.52237392289 2.23602464234 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball455
+    collision_geometry:
+      type: sphere
+      radius: 0.273324018997
+      material: brown
+    config:
+      position: [7.09903931818 -5.13048287615 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball456
+    collision_geometry:
+      type: sphere
+      radius: 0.150692672853
+      material: brown
+    config:
+      position: [8.56632239658 -4.57380218545 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball457
+    collision_geometry:
+      type: sphere
+      radius: 0.115709331595
+      material: brown
+    config:
+      position: [-4.13380867632 2.12074387811 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball458
+    collision_geometry:
+      type: sphere
+      radius: 0.10945563435
+      material: brown
+    config:
+      position: [-2.91387297866 0.351840607002 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball459
+    collision_geometry:
+      type: sphere
+      radius: 0.209688724638
+      material: brown
+    config:
+      position: [-0.344066244218 7.10753452283 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball460
+    collision_geometry:
+      type: sphere
+      radius: 0.264986346625
+      material: brown
+    config:
+      position: [-2.59306641907 -3.18059780025 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball461
+    collision_geometry:
+      type: sphere
+      radius: 0.320034216449
+      material: brown
+    config:
+      position: [-2.44606252274 1.77081222444 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball462
+    collision_geometry:
+      type: sphere
+      radius: 0.371344552008
+      material: brown
+    config:
+      position: [-6.91455263256 3.11399915326 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball463
+    collision_geometry:
+      type: sphere
+      radius: 0.176316531428
+      material: brown
+    config:
+      position: [-5.79165263247 8.58718286359 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball464
+    collision_geometry:
+      type: sphere
+      radius: 0.300027124734
+      material: brown
+    config:
+      position: [0.221649800502 -2.97301466435 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball465
+    collision_geometry:
+      type: sphere
+      radius: 0.312312768117
+      material: brown
+    config:
+      position: [2.91175035014 -0.495226672734 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball466
+    collision_geometry:
+      type: sphere
+      radius: 0.271493444349
+      material: brown
+    config:
+      position: [4.50026270353 1.10322809086 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball467
+    collision_geometry:
+      type: sphere
+      radius: 0.247932733813
+      material: brown
+    config:
+      position: [6.70736547176 -3.17684796173 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball468
+    collision_geometry:
+      type: sphere
+      radius: 0.22731614865
+      material: brown
+    config:
+      position: [2.0466717054 6.53166090875 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball469
+    collision_geometry:
+      type: sphere
+      radius: 0.35621168626
+      material: brown
+    config:
+      position: [-2.59902636974 -0.108951935206 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball470
+    collision_geometry:
+      type: sphere
+      radius: 0.369148128582
+      material: brown
+    config:
+      position: [1.55391226031 2.60323366391 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball471
+    collision_geometry:
+      type: sphere
+      radius: 0.187390124702
+      material: brown
+    config:
+      position: [0.98083007725 0.581381660904 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball472
+    collision_geometry:
+      type: sphere
+      radius: 0.182212351159
+      material: brown
+    config:
+      position: [7.50211553606 -0.114374479385 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball473
+    collision_geometry:
+      type: sphere
+      radius: 0.248148793781
+      material: brown
+    config:
+      position: [-6.87940463248 -5.80496965893 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball474
+    collision_geometry:
+      type: sphere
+      radius: 0.208372973735
+      material: brown
+    config:
+      position: [-6.40000016019 3.12634938436 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball475
+    collision_geometry:
+      type: sphere
+      radius: 0.356265339735
+      material: brown
+    config:
+      position: [-7.769320612 5.29874329236 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball476
+    collision_geometry:
+      type: sphere
+      radius: 0.389301725311
+      material: brown
+    config:
+      position: [-2.58775729395 -1.12828314309 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball477
+    collision_geometry:
+      type: sphere
+      radius: 0.311888221144
+      material: brown
+    config:
+      position: [2.98972168392 -1.23046418291 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball478
+    collision_geometry:
+      type: sphere
+      radius: 0.37300281054
+      material: brown
+    config:
+      position: [8.22700877927 -5.86608908122 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball479
+    collision_geometry:
+      type: sphere
+      radius: 0.256906764567
+      material: brown
+    config:
+      position: [-4.69999662727 8.83878961092 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball480
+    collision_geometry:
+      type: sphere
+      radius: 0.101265531019
+      material: brown
+    config:
+      position: [-5.76795878385 2.61380875414 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball481
+    collision_geometry:
+      type: sphere
+      radius: 0.333529163418
+      material: brown
+    config:
+      position: [8.13279697188 8.79881302146 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball482
+    collision_geometry:
+      type: sphere
+      radius: 0.318584298688
+      material: brown
+    config:
+      position: [-4.57837638193 -8.34928019589 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball483
+    collision_geometry:
+      type: sphere
+      radius: 0.214345273402
+      material: brown
+    config:
+      position: [7.22460042114 -0.392751734264 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball484
+    collision_geometry:
+      type: sphere
+      radius: 0.228734304592
+      material: brown
+    config:
+      position: [-5.68600291168 -8.14218152677 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball485
+    collision_geometry:
+      type: sphere
+      radius: 0.343908306821
+      material: brown
+    config:
+      position: [-4.73793006343 0.334675730959 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball486
+    collision_geometry:
+      type: sphere
+      radius: 0.290262290817
+      material: brown
+    config:
+      position: [1.99958170665 -7.83267705234 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball487
+    collision_geometry:
+      type: sphere
+      radius: 0.319348971429
+      material: brown
+    config:
+      position: [0.646738672309 -8.68100588084 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball488
+    collision_geometry:
+      type: sphere
+      radius: 0.364615305708
+      material: brown
+    config:
+      position: [-7.40490406519 -6.22218569964 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball489
+    collision_geometry:
+      type: sphere
+      radius: 0.222995589944
+      material: brown
+    config:
+      position: [3.76093667674 5.75588972447 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball490
+    collision_geometry:
+      type: sphere
+      radius: 0.288790802284
+      material: brown
+    config:
+      position: [-8.0220966269 -4.88886330144 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball491
+    collision_geometry:
+      type: sphere
+      radius: 0.352148537112
+      material: brown
+    config:
+      position: [-8.67763363216 -1.9923973244 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball492
+    collision_geometry:
+      type: sphere
+      radius: 0.358790540277
+      material: brown
+    config:
+      position: [-5.59150695974 0.312888634554 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball493
+    collision_geometry:
+      type: sphere
+      radius: 0.116368438454
+      material: brown
+    config:
+      position: [-7.52157338043 -3.67205000806 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball494
+    collision_geometry:
+      type: sphere
+      radius: 0.237834202835
+      material: brown
+    config:
+      position: [-0.568972870462 0.706840649952 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball495
+    collision_geometry:
+      type: sphere
+      radius: 0.22624616359
+      material: brown
+    config:
+      position: [-3.39203833268 -7.34096492538 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball496
+    collision_geometry:
+      type: sphere
+      radius: 0.279670940155
+      material: brown
+    config:
+      position: [4.39288959884 -4.77898526195 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball497
+    collision_geometry:
+      type: sphere
+      radius: 0.214137786612
+      material: brown
+    config:
+      position: [-1.36803799635 0.0321708444566 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball498
+    collision_geometry:
+      type: sphere
+      radius: 0.292169388521
+      material: brown
+    config:
+      position: [-2.65977178216 -2.62893067416 5]
+      orientation: [0,0,0,1]
+    mass: 1.0
+  -
+    name: ball499
+    collision_geometry:
+      type: sphere
+      radius: 0.214527662271
+      material: brown
+    config:
+      position: [4.56789016665 5.86343615254 5]
+      orientation: [0,0,0,1]
+    mass: 1.0

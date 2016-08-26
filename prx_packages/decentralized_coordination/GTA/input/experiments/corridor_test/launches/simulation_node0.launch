@@ -1,0 +1,7 @@
+<launch>
+
+  <include file="$(find GTA)/input/experiments/corridor_test/simulation/simulation0.launch"/>
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation" required="true" launch-prefix="" output="screen" /> 
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+</launch>
+

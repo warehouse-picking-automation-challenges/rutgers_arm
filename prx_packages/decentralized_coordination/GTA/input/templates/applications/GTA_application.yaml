@@ -1,0 +1,4 @@
+application:
+  type: GTA_application
+  automatic: false
+  timeout: 500

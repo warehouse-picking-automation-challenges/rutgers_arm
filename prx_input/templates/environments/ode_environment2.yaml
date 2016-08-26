@@ -1,0 +1,73 @@
+building1:
+    type: ode_obstacle
+    geometries:
+      -
+        name: box1
+        collision_geometry: 
+          type: box
+          dims: [10, 10, 1.6]      
+          material: light_blue       
+        config:
+          position: [100, 40, 1]
+          orientation: [0, 0, 0, 1]
+        dims: [10, 10, 1.6]      
+      -
+        name: box2
+        collision_geometry: 
+          type: box
+          dims: [10, 10, 1.6]      
+          material: orange       
+        config:
+          position: [40, 40, 1]
+          orientation: [0, 0, 0, 1]
+        dims: [10, 10, 1.6]      
+      -
+        name: box3
+        collision_geometry: 
+          type: box
+          dims: [10, 10, 1.6]      
+          material: red       
+        config:
+          position: [20, 40, 1]
+          orientation: [0, 0, 0, 1]
+        dims: [10, 10, 1.6]      
+      -
+        name: box4
+        collision_geometry: 
+          type: box
+          dims: [10, 10, 1.6]      
+          material: green       
+        config:
+          position: [80, 40, 1]
+          orientation: [0, 0, 0, 1]
+        dims: [10, 10, 1.6]    
+      -
+        name: box5
+        collision_geometry: 
+          type: box
+          dims: [10, 10, 1.6]      
+          material: yellow       
+        config:
+          position: [60, 40, 1]
+          orientation: [0, 0, 0, 1]
+        dims: [10, 10, 1.6]      
+      -
+        name: box6
+        collision_geometry: 
+          type: box
+          dims: [10, 10, 1.6]      
+          material: blue
+        config:
+          position: [120, 40, 1]
+          orientation: [0, 0, 0, 1]
+        dims: [10, 10, 1.6]      
+      -
+        name: box7
+        collision_geometry: 
+          type: box
+          dims: [10, 10, 1.6]      
+          material: purple      
+        config:
+          position: [140, 40, 1]
+          orientation: [0, 0, 0, 1]
+        dims: [10, 10, 1.6]      

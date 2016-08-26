@@ -1,0 +1,164 @@
+<launch>
+
+  <!-- Load independent files -->
+        
+  <rosparam command="load" file="$(find prx_input)/templates/applications/empty_application.yaml"/>
+  <rosparam command="load" file="$(find prx_input)/templates/simulators/null_response_simulator.yaml"/>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <!-- Load template files -->
+        
+  <rosparam command="load" ns="controller" file="$(find prx_input)/templates/controllers/consumer.yaml"/>
+  <rosparam command="load" ns="router_template" file="$(find prx_input)/templates/controllers/router.yaml"/>
+  <rosparam command="load" ns="plant" file="$(find prx_input)/experiments/pebble_tests/common/pebble.yaml"/>
+  
+  <!-- Override template parameters -->
+        
+  <rosparam ns="controller">
+  </rosparam>
+
+  <rosparam ns="router_template">
+  </rosparam>
+        
+  <rosparam ns="plant">
+    initial_state: [0,0,0]
+  </rosparam>
+       
+  <!-- Set up concrete system tree -->
+   
+  <rosparam command="load" ns="simulator/subsystems/consumer">
+    template: "controller"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router">
+    template: "router_template"
+  </rosparam>
+
+
+prx = '\\prx\\'
+
+class front_appender:
+    def __init__(self, fname, mode='w'):
+        self.__f = open(fname,'r')
+        allFile = self.__f.read()
+        print fname , "\n" , allFile
+        print type(allFile)
+        self.__f.close()       
+        self.__f = open(fname, mode)
+        self.__write_queue = []
+        self.__write_queue.insert(0,allFile)
+
+    def write(self, s):
+        self.__write_queue.insert(0, s)
+
+    def close(self):
+        self.__f.writelines(self.__write_queue)
+        self.__f.close()
+
+def open_dir(path):
+    global license
+    files = os.listdir(path)
+    for f in files:
+        new_path = path +'/'+ f
+        if os.path.isdir(new_path):            
+            open_dir(new_path)
+        else:
+            n = f.split('.')
+            if n[1] == 'hpp' or n[1] == 'cpp':
+                
+                print n, path, new_path
+                code_file = front_appender(new_path)
+                code_file.write(license)
+                code_file.close()
+                #print n , license
+
+license_file = open('License.txt','r')
+license = license_file.read()
+
+prx = '/prx/'
+
+files = os.listdir ('.')
+for f in files:
+    n = f.split('_')
+    if n == 'prx_utilities':
+        path = f+prx+n[1]+'/interpolation'
+        open_dir(path)
+    if n[0] == 'prx' and n[1] != 'input' and n[1]!='external' and n[1]!='games':
+        path = f+prx+n[1]   
+        open_dir(path)
+
+
+
+
+
+def is_in_the_filelist(name, filelist):     
+    n = name.split('.')
+    for f in filelist:
+        if f == n[0]:
+            return True        
+    return False
+
+def makedir(path, name):
+    file = path + name
+    print '\n in make dir : ', file
+    if not os.path.exists(file):
+        print 'mkdir the file : ', file
+        os.mkdir(file)
+    return file
+      
+def read(fileName,filePath,newDirName, dirs_to_visit, files_to_visit, to_visit_dirs, to_visit_files):
+    if os.path.isdir(filePath):             
+        if is_in_the_filelist(fileName, dirs_to_visit) == to_visit_dirs:   
+            print '\n dir to visit:', newDirName, '  new dir to mkdir:', newDirName+fileName
+            dirNewName = makedir(newDirName,fileName+'\\')       
+            dirfiles = os.listdir(filePath)           
+            for file in dirfiles:
+                dirPath = filePath+'\\'+file
+                read(file, dirPath, dirNewName, dirs_to_visit, files_to_visit, to_visit_dirs, to_visit_files)
+#                if is_in_the_filelist(file, files_to_visit) == to_visit_files:
+#                    shutil.copy(filepath+'\\'+file,newdir+file)
+    else:
+        if is_in_the_filelist(fileName, files_to_visit) == to_visit_files:
+#            newnamefile = prx+fileName
+#            print '\n\n'
+#            print prx
+#            print fileName
+#            print newDirName
+#            print 'else  filePath to visit: ',filePath, ' : ', n ewnamefile , '\n\n'
+            shutil.copy(filePath,newDirName+fileName)
+
+def visit_folder(dir_path, dirs_to_visit, files_to_visit, name_new_dir, to_visit_dirs, to_visit_files):
+    new_dir = makedir(prx, name_new_dir)
+    if not os.path.exists(new_dir):
+        os.mkdir(new_dir)
+        
+    files = os.listdir (dir_path)
+    
+    for f in files:
+        filepath = dir_path+f 
+        read(f,filepath, new_dir, dirs_to_visit, files_to_visit, to_visit_dirs, to_visit_files)
+        
+    
+
+
+<rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk00">
+<rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk00">
+<rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk01">
+<rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk00">
+<rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk01">
+<rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk02">
+<rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk03">
+<rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk00">
+<rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk01">
+<rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk02">
+<rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk03">
+<rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk04">
+<rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk00">
+<rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk01">
+<rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk02">
+<rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk03">
+<rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk04">
+<rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk05">
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation"
+        required="true" launch-prefix="" output="screen" />
+</launch>

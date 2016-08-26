@@ -1,0 +1,447 @@
+type: baxter
+state_space:
+  min: [-1.70167993878, -2.147, -3.05417993878, -0.05, -3.059, -1.57079632679, -3.059, -1.70167993878, -2.147, -3.05417993878, -0.05, -3.059, -1.57079632679, -3.059, 1, 1]
+  max: [1.70167993878, 1.047, 3.05417993878, 2.618, 3.059, 2.094, 3.059, 1.70167993878, 1.047, 3.05417993878, 2.618, 3.059, 2.094, 3.059, 2, 2]
+  scale: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.0, 0.0]
+input_control_space:
+  # min: [-1.5,-1.5,-1.5,-1.5, -4, -4, -4, -1.5,-1.5,-1.5,-1.5, -4, -4, -4, 0, 0]
+  # max: [1.5,1.5,1.5,1.5, 4, 4, 4, 1.5,1.5,1.5,1.5, 4, 4, 4, 2, 2]
+  min: [-.8,-.8,-.8,-.8, -2, -2, -2, -.8,-.8,-.8,-.8, -2, -2, -2, 0, 0]
+  max: [.8,.8,.8,.8, 2, 2, 2, .8,.8,.8,.8, 2, 2, 2, 2, 2]
+  scale: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.0, 0.0]
+initial_state: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1]
+initial_control: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+max_step: 0.05
+urdf_file: baxter.urdf
+end_effectors: 
+  -
+    name: "end_effector_left"
+    local_config:
+      position: [0.0, 0.0, 0.0]
+      orientation: [0.0, 0.0, 0.0, 1.0]
+  -
+    name: "end_effector_right"
+    local_config:
+      position: [0.0, 0.0, 0.0]
+      orientation: [0.0, 0.0, 0.0, 1.0]
+integrator: 
+  type: euler
+root_frame: 
+  position: [0, 0, 1]
+  orientation: [0, 0, 0, 1]
+ignored_dofs:
+  head: 0
+ignored_geoms:
+  base: 0
+  left_torso_itb: 0
+  right_torso_itb: 0
+  display: 0
+  head_camera: 0
+  dummyhead1: 0
+  right_arm_mount: 0
+  right_arm_itb: 0
+  right_hand_camera: 0
+  right_hand_camera_axis: 0
+  right_hand_range: 0
+  right_hand_accelerometer: 0
+  right_gripper: 0
+  left_arm_mount: 0
+  left_arm_itb: 0
+  left_hand_camera: 0
+  left_hand_camera_axis: 0
+  left_hand_range: 0
+  left_hand_accelerometer: 0
+  left_gripper: 0
+config_offsets:
+  left_upper_forearm_visual:
+    offset: [0.0, 0.0, 0.092]
+  right_upper_forearm_visual:
+    offset: [0.0, 0.0, 0.092]
+  left_upper_elbow_visual:
+    offset: [0.0, 0.0, 0.092]
+  right_upper_elbow_visual:
+    offset: [0.0, 0.0, 0.092]
+  left_upper_shoulder:
+    offset: [0.0, 0.0, 0.092]
+  right_upper_shoulder:
+    offset: [0.0, 0.0, 0.092]
+geometries:
+  -
+    name: collision_head_link_2
+    collision_geometry: 
+      radius: 0.22
+      material: baxter_red
+      type: sphere
+    visualization_geometry: 
+      radius: 0.001
+      material: baxter_red
+      type: sphere
+  -
+    name: left_upper_forearm
+    collision_geometry: 
+      radius: 0.06
+      material: baxter_red
+      type: cylinder
+      height: 0.088
+    visualization_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/upper_forearm/W0.3ds
+  -
+    name: right_lower_forearm
+    collision_geometry: 
+      radius: 0.06
+      material: baxter_red
+      type: cylinder
+      height: 0.10
+    visualization_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/lower_forearm/W1.3ds
+  -
+    name: sonar_ring
+    collision_geometry: 
+      radius: 0.001
+      material: baxter_red
+      type: sphere
+    visualization_geometry: 
+      radius: 0.085
+      material: baxter_red
+      type: cylinder
+      height: 0.01
+      local_transform:
+        position: [-.0347 0 .00953]
+        orientation: [0,0,0,1]
+  -
+    name: right_upper_elbow_visual
+    collision_geometry: 
+      radius: 0.06
+      material: baxter_red
+      type: cylinder
+      height: 0.273
+    visualization_geometry: 
+      radius: 0.001
+      material: baxter_red
+      type: sphere
+  -
+    name: right_upper_forearm
+    collision_geometry: 
+      radius: 0.06
+      material: baxter_red
+      type: cylinder
+      height: 0.088
+    visualization_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/upper_forearm/W0.3ds
+  -
+    name: pedestal
+    collision_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/base/pedestal_link_collision.STL
+    visualization_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/base/PEDESTAL.3ds
+  -
+    name: left_hand
+    collision_geometry: 
+      radius: 0.04
+      material: baxter_red
+      type: cylinder
+      height: 0.0464
+    visualization_geometry: 
+      radius: 0.001
+      material: baxter_red
+      type: sphere
+  -
+    name: collision_head_link_1
+    collision_geometry: 
+      radius: 0.22
+      material: baxter_red
+      type: sphere
+    visualization_geometry: 
+      radius: 0.001
+      material: baxter_red
+      type: sphere
+  -
+    name: right_wrist
+    collision_geometry: 
+      radius: 0.06
+      material: baxter_red
+      type: cylinder
+      height: 0.165
+    visualization_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/wrist/W2.3ds
+  -
+    name: right_upper_elbow
+    collision_geometry: 
+      radius: 0.06
+      material: baxter_red
+      type: cylinder
+      height: 0.107
+    visualization_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/upper_elbow/E0.3ds
+  -
+    name: left_upper_shoulder
+    collision_geometry: 
+      radius: 0.06
+      material: baxter_red
+      type: cylinder
+      height: 0.2722
+    visualization_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/upper_shoulder/S0.3ds
+      local_transform:
+        position: [0,0,-0.092]
+        orientation: [0,0,0,1]
+  -
+    name: left_upper_forearm_visual
+    collision_geometry: 
+      radius: 0.06
+      material: baxter_red
+      type: cylinder
+      height: 0.272
+    visualization_geometry: 
+      radius: 0.001
+      material: baxter_red
+      type: sphere
+  -
+    name: left_lower_shoulder
+    collision_geometry: 
+      radius: 0.06
+      material: baxter_red
+      type: cylinder
+      height: 0.12
+    visualization_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/lower_shoulder/S1.3ds
+  -
+    name: head
+    collision_geometry: 
+      radius: 0.001
+      material: baxter_red
+      type: sphere
+    visualization_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/head/H0.3ds
+  -
+    name: screen
+    collision_geometry: 
+      radius: 0.001
+      material: baxter_red
+      type: sphere
+    visualization_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/head/H1.3ds
+      local_transform:
+        position: [0 -.00953 -.0347]
+        orientation: [0 0.7071067811865476 0 -0.7071067811865476]
+  -
+    name: prx_screen
+    collision_geometry: 
+      radius: 0.001
+      material: baxter_red
+      type: sphere
+    visualization_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/head/prx_screen.3ds
+      local_transform:
+        position: [-0.12 0 0.01]
+        orientation: [0.1305261922200516 0 0 0.9914448613738104]
+  -
+    name: end_effector_left
+    collision_geometry: 
+      radius: 0.02
+      material: green
+      type: sphere
+    visualization_geometry: 
+      radius: 0.001
+      material: baxter_red
+      type: sphere
+  -
+    name: right_gripper_base
+    collision_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/electric_gripper/electric_gripper_w_fingers.STL
+    visualization_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/electric_gripper/electric_gripper_w_fingers.3ds
+  -
+    name: right_lower_elbow
+    collision_geometry: 
+      radius: 0.06
+      material: baxter_red
+      type: cylinder
+      height: 0.10
+    visualization_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/lower_elbow/E1.3ds
+  -
+    name: left_lower_forearm
+    collision_geometry: 
+      radius: 0.06
+      material: baxter_red
+      type: cylinder
+      height: 0.10
+    visualization_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/lower_forearm/W1.3ds
+  -
+    name: right_lower_shoulder
+    collision_geometry: 
+      radius: 0.06
+      material: baxter_red
+      type: cylinder
+      height: 0.12
+    visualization_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/lower_shoulder/S1.3ds
+  -
+    name: left_lower_elbow
+    collision_geometry: 
+      radius: 0.06
+      material: baxter_red
+      type: cylinder
+      height: 0.10
+    visualization_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/lower_elbow/E1.3ds
+  -
+    name: end_effector_right
+    collision_geometry: 
+      radius: 0.02
+      material: green
+      type: sphere
+    visualization_geometry: 
+      radius: 0.001
+      material: baxter_red
+      type: sphere
+  -
+    name: left_gripper_base
+    collision_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/electric_gripper/electric_gripper_w_fingers.STL
+    visualization_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/electric_gripper/electric_gripper_w_fingers.3ds
+  -
+    name: left_upper_elbow
+    collision_geometry: 
+      radius: 0.06
+      material: baxter_red
+      type: cylinder
+      height: 0.107
+    visualization_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/upper_elbow/E0.3ds
+  -
+    name: left_upper_elbow_visual
+    collision_geometry: 
+      radius: 0.06
+      material: baxter_red
+      type: cylinder
+      height: 0.273
+    visualization_geometry: 
+      radius: 0.001
+      material: baxter_red
+      type: sphere
+  -
+    name: right_upper_forearm_visual
+    collision_geometry: 
+      radius: 0.06
+      material: baxter_red
+      type: cylinder
+      height: 0.272
+    visualization_geometry: 
+      radius: 0.001
+      material: baxter_red
+      type: sphere
+  -
+    name: right_hand
+    collision_geometry: 
+      radius: 0.04
+      material: baxter_red
+      type: cylinder
+      height: 0.0464
+    visualization_geometry: 
+      radius: 0.001
+      material: baxter_red
+      type: sphere
+  -
+    name: left_wrist
+    collision_geometry: 
+      radius: 0.06
+      material: baxter_red
+      type: cylinder
+      height: 0.165
+    visualization_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/wrist/W2.3ds
+  -
+    name: torso
+    collision_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/torso/base_link_collision.STL
+    visualization_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/torso/base_link.3ds
+  -
+    name: right_upper_shoulder
+    collision_geometry: 
+      radius: 0.06
+      material: baxter_red
+      type: cylinder
+      height: 0.2722
+    visualization_geometry: 
+      material: baxter_red
+      type: mesh
+      filename: meshes/upper_shoulder/S0.3ds
+      local_transform:
+        position: [0,0,-0.092]
+        orientation: [0,0,0,1]
+white_list:
+  - [ right_wrist, [ collision_head_link_2, left_upper_forearm, sonar_ring, pedestal, left_hand, collision_head_link_1, left_upper_shoulder, left_upper_forearm_visual, left_lower_shoulder, head, screen, end_effector_left, left_lower_forearm, left_lower_elbow, left_gripper_base, left_upper_elbow, left_upper_elbow_visual, left_wrist, torso, right_upper_shoulder]]
+  - [ left_upper_shoulder, [ collision_head_link_2, right_lower_forearm, sonar_ring, right_upper_elbow_visual, right_upper_forearm, pedestal, collision_head_link_1, right_wrist, right_upper_elbow, head, screen, right_gripper_base, right_lower_elbow, right_lower_shoulder, end_effector_right, right_upper_forearm_visual, right_hand, right_upper_shoulder]]
+  - [ left_upper_forearm, [ collision_head_link_2, right_lower_forearm, sonar_ring, right_upper_elbow_visual, right_upper_forearm, pedestal, collision_head_link_1, right_wrist, right_upper_elbow, head, screen, right_gripper_base, right_lower_elbow, right_lower_shoulder, end_effector_right, right_upper_forearm_visual, right_hand, torso, right_upper_shoulder]]
+  - [ right_lower_forearm, [ collision_head_link_2, left_upper_forearm, sonar_ring, pedestal, left_hand, collision_head_link_1, left_upper_shoulder, left_upper_forearm_visual, left_lower_shoulder, head, screen, end_effector_left, left_lower_forearm, left_lower_elbow, left_gripper_base, left_upper_elbow, left_upper_elbow_visual, left_wrist, torso]]
+  - [ left_upper_elbow_visual, [ collision_head_link_2, right_lower_forearm, sonar_ring, right_upper_elbow_visual, right_upper_forearm, pedestal, collision_head_link_1, right_wrist, right_upper_elbow, head, screen, right_gripper_base, right_lower_elbow, right_lower_shoulder, end_effector_right, right_upper_forearm_visual, right_hand, torso, right_upper_shoulder]]
+  - [ right_upper_forearm, [ collision_head_link_2, left_upper_forearm, sonar_ring, pedestal, left_hand, collision_head_link_1, left_upper_shoulder, left_upper_forearm_visual, left_lower_shoulder, head, screen, end_effector_left, left_lower_forearm, left_lower_elbow, left_gripper_base, left_upper_elbow, left_upper_elbow_visual, left_wrist, torso]]
+  - [ left_hand, [ collision_head_link_2, right_lower_forearm, sonar_ring, right_upper_elbow_visual, right_upper_forearm, pedestal, collision_head_link_1, right_wrist, right_upper_elbow, head, screen, right_gripper_base, right_lower_elbow, right_lower_shoulder, end_effector_right, right_upper_forearm_visual, right_hand, torso, right_upper_shoulder, left_upper_shoulder]]
+  - [ left_gripper_base, [ collision_head_link_2, right_lower_forearm, sonar_ring, right_upper_elbow_visual, right_upper_forearm, pedestal, collision_head_link_1, right_wrist, right_upper_elbow, head, screen, right_gripper_base, right_lower_elbow, right_lower_shoulder, end_effector_right, right_upper_forearm_visual, right_hand, torso, right_upper_shoulder, left_upper_shoulder]]
+  - [ right_upper_elbow, [ collision_head_link_2, left_upper_forearm, sonar_ring, pedestal, left_hand, collision_head_link_1, left_upper_shoulder, left_upper_forearm_visual, left_lower_shoulder, head, screen, end_effector_left, left_lower_forearm, left_lower_elbow, left_gripper_base, left_upper_elbow, left_upper_elbow_visual, left_wrist, torso]]
+  - [ left_lower_elbow, [ collision_head_link_2, right_lower_forearm, sonar_ring, right_upper_elbow_visual, right_upper_forearm, pedestal, collision_head_link_1, right_wrist, right_upper_elbow, head, screen, right_gripper_base, right_lower_elbow, right_lower_shoulder, end_effector_right, right_upper_forearm_visual, right_hand, torso, right_upper_shoulder]]
+  - [ left_upper_forearm_visual, [ collision_head_link_2, right_lower_forearm, sonar_ring, right_upper_elbow_visual, right_upper_forearm, pedestal, collision_head_link_1, right_wrist, right_upper_elbow, head, screen, right_gripper_base, right_lower_elbow, right_lower_shoulder, end_effector_right, right_upper_forearm_visual, right_hand, torso, right_upper_shoulder]]
+  - [ left_lower_shoulder, [ collision_head_link_2, right_lower_forearm, sonar_ring, right_upper_elbow_visual, right_upper_forearm, pedestal, collision_head_link_1, right_wrist, right_upper_elbow, head, screen, right_gripper_base, right_lower_elbow, right_lower_shoulder, end_effector_right, right_upper_forearm_visual, right_hand, torso, right_upper_shoulder]]
+  - [ left_wrist, [ collision_head_link_2, right_lower_forearm, sonar_ring, right_upper_elbow_visual, right_upper_forearm, pedestal, collision_head_link_1, right_wrist, right_upper_elbow, head, screen, right_gripper_base, right_lower_elbow, right_lower_shoulder, end_effector_right, right_upper_forearm_visual, right_hand, torso, right_upper_shoulder, left_upper_shoulder]]
+  - [ right_gripper_base, [ collision_head_link_2, left_upper_forearm, sonar_ring, pedestal, left_hand, collision_head_link_1, left_upper_shoulder, left_upper_forearm_visual, left_lower_shoulder, head, screen, end_effector_left, left_lower_forearm, left_lower_elbow, left_gripper_base, left_upper_elbow, left_upper_elbow_visual, left_wrist, torso, right_upper_shoulder]]
+  - [ right_lower_elbow, [ collision_head_link_2, left_upper_forearm, sonar_ring, pedestal, left_hand, collision_head_link_1, left_upper_shoulder, left_upper_forearm_visual, left_lower_shoulder, head, screen, end_effector_left, left_lower_forearm, left_lower_elbow, left_gripper_base, left_upper_elbow, left_upper_elbow_visual, left_wrist, torso]]
+  - [ left_lower_forearm, [ collision_head_link_2, right_lower_forearm, sonar_ring, right_upper_elbow_visual, right_upper_forearm, pedestal, collision_head_link_1, right_wrist, right_upper_elbow, head, screen, right_gripper_base, right_lower_elbow, right_lower_shoulder, end_effector_right, right_upper_forearm_visual, right_hand, torso, right_upper_shoulder]]
+  - [ right_lower_shoulder, [ collision_head_link_2, left_upper_forearm, sonar_ring, pedestal, left_hand, collision_head_link_1, left_upper_shoulder, left_upper_forearm_visual, left_lower_shoulder, head, screen, end_effector_left, left_lower_forearm, left_lower_elbow, left_gripper_base, left_upper_elbow, left_upper_elbow_visual, left_wrist, torso]]
+  - [ left_upper_elbow, [ collision_head_link_2, right_lower_forearm, sonar_ring, right_upper_elbow_visual, right_upper_forearm, pedestal, collision_head_link_1, right_wrist, right_upper_elbow, head, screen, right_gripper_base, right_lower_elbow, right_lower_shoulder, end_effector_right, right_upper_forearm_visual, right_hand, torso, right_upper_shoulder]]
+  - [ right_upper_elbow_visual, [ collision_head_link_2, left_upper_forearm, sonar_ring, pedestal, left_hand, collision_head_link_1, left_upper_shoulder, left_upper_forearm_visual, left_lower_shoulder, head, screen, end_effector_left, left_lower_forearm, left_lower_elbow, left_gripper_base, left_upper_elbow, left_upper_elbow_visual, left_wrist, torso]]
+  - [ right_upper_forearm_visual, [ collision_head_link_2, left_upper_forearm, sonar_ring, pedestal, left_hand, collision_head_link_1, left_upper_shoulder, left_upper_forearm_visual, left_lower_shoulder, head, screen, end_effector_left, left_lower_forearm, left_lower_elbow, left_gripper_base, left_upper_elbow, left_upper_elbow_visual, left_wrist, torso]]
+  - [ right_hand, [ collision_head_link_2, left_upper_forearm, sonar_ring, pedestal, left_hand, collision_head_link_1, left_upper_shoulder, left_upper_forearm_visual, left_lower_shoulder, head, screen, end_effector_left, left_lower_forearm, left_lower_elbow, left_gripper_base, left_upper_elbow, left_upper_elbow_visual, left_wrist, torso, right_upper_shoulder]]
+  - [ right_upper_shoulder, [ collision_head_link_2, left_upper_forearm, sonar_ring, pedestal, left_hand, collision_head_link_1, left_upper_shoulder, left_upper_forearm_visual, left_lower_shoulder, head, screen, end_effector_left, left_lower_forearm, left_lower_elbow, left_gripper_base, left_upper_elbow, left_upper_elbow_visual, left_wrist]]

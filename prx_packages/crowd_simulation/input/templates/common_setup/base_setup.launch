@@ -1,0 +1,60 @@
+<launch>
+  <rosparam ns="simulation">
+    random_seed: 2451358
+    autostart: true
+    display_graph: true
+    display_triangles: false
+    display_segments: false
+    agent_radius: 0.28
+    distance_metric:
+      type: linear_distance_metric
+      distance_function: floor_aware_euclidean
+    obstacle_metric:
+      type: linear_distance_metric
+      distance_function: floor_aware_euclidean
+  </rosparam>
+
+  <rosparam ns="simulation/simulator">
+    display_grid: false
+    collision_detection: false
+    collision_response: false
+  </rosparam>
+
+  <rosparam ns="simulation/vo_controller">
+    input_control_space:
+      min: [-800, -800]
+      max: [800, 800]
+    minimally_invasive: true
+    sensing_info:
+      type: neighbor_sensing_info
+      sources: ["graph_sensor"]
+      update_delay: 0.02
+    num_samples: 30
+  </rosparam>
+
+  <rosparam ns="simulation/path_follower">
+    sensing_info:
+      type: node_sensing_info
+      sources: ["graph_sensor"]
+      update_delay: 0.02
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/sensing">
+    type: PABT_sensing_model
+    sensors:
+        graph_sensor:
+          type: navigation_graph_sensor
+          source: "graph_sensor"
+          sensor_delay: 0.02
+          maximum_neighbors: 16
+          agent_radius: 0.28
+          sensing_radius: 8
+  </rosparam>
+
+  <rosparam ns="simulation/agent">
+    state_space:
+      min: [-800, -800]
+      max: [800, 800]
+  </rosparam>
+
+</launch>

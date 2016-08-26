@@ -1,0 +1,157 @@
+<launch>  
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+
+  <rosparam command="load" ns="planning" file="$(find prx_input)/templates/planning_applications/single_query_application.yaml" />
+  <rosparam command="load" ns="planning">
+    random_seed: 1121663599
+    simulate: false
+    visualize: false
+    persistent: false
+    world_model:
+      type: manipulation_world_model
+      num_ik_seeds: 10
+  </rosparam>
+  <rosparam command="load" ns="planning/world_model" file="$(find manipulation)/input/manipulation_simulator.yaml"/>  
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/manipulator" file="$(find manipulation)/input/motoman/unigripper.yaml"/>
+  
+  <rosparam ns="planning/world_model/planning_contexts">
+    manipulator_pc:
+      default:
+        type: "hide_mapping"
+    left_full_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_arm"
+        end_effector_context_name: "left_end_effector"
+        start_link: "head_base"
+        end_link: "head_sponge"
+    left_arm:
+      default:
+       type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_arm"
+        end_effector_context_name: "left_end_effector"
+        start_link: "head_base"
+        end_link: "head_sponge"
+    left_arm_planning:
+      default:
+        type: "hide_mapping"
+    left_end_effector:
+      default:
+       type: "hide_mapping"
+  </rosparam>
+
+  <rosparam ns="planning/world_model/simulator/subsystems/manipulator">
+    planning_contexts:
+      manipulator_pc:
+        type: "full_mapping"
+      left_full_arm:
+        type: "floating_hand_full_state_mapping"
+      left_arm:
+        type: "floating_hand_state_mapping"
+      left_end_effector:
+        type: "floating_hand_gripper_state_mapping"
+      left_arm_planning:
+        type: "floating_hand_state_mapping"
+  </rosparam>
+
+  <rosparam ns="planning/world_model/simulator/obstacles" command="load" file="$(find manipulation)/input/motoman/grasp_visualization/database_fusion_constraints.yaml" />
+
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/box1" file="$(find manipulation)/input/objects/apc_items/feline_greenies_dental_treats.yaml" /><!-- CHANGE THIS -->
+
+   <rosparam ns="planning/task_planner/">
+    type: simple_pap_tp
+    full_manipulator_context_name: "manipulator_pc"
+    manipulation_context_name: "left_full_arm"
+    manipulation_task_planner_name: "manipulation_task_planner"
+    object_name: box1
+    object_target: [0.8, 0.5, 0.77, 0, 0, 0, 1]
+    specification:
+      type: simple_pap_specification
+      validity_checker: 
+        type: world_model_validity_checker
+    query:
+      type: motion_planning_query
+      query_type: add_query_points_collisions
+      query_collision_type: lazy_collisions
+      goal:
+        type: multiple_goal_states
+        distance_metric:
+          type: ann_distance_metric
+    planners:
+      manipulation_task_planner:
+        use_ee_dist_in_planners: false
+        type: manipulation_tp
+        serialize_flag: true
+        num_candidate_connections: 10
+        constraints: 
+          type: object_collision_constraints
+        specification:
+          type: manipulation_specification
+          validity_checker:
+            type: world_model_validity_checker
+        query:
+          type: manipulation_query
+          search_mode: lazy_search
+          goal:
+            type: multiple_goal_states
+            distance_metric:
+              type: ann_distance_metric
+        planners:
+          left_arm_motion_planner:
+            type: "prm_star"
+            visualization_bodies: ["simulator/manipulator/head_sponge"]
+            visualize_graph: true
+            visualize_solutions: false 
+            visualize: false
+            serialize_file: "left_arm_graph.roadmap"
+            space_name: "left_arm_planning"
+            planning_context_name: "left_arm"
+            query:
+              type: motion_planning_query
+              goal:
+                type: multiple_goal_states
+                distance_metric:
+                  type: ann_distance_metric
+            specification:
+              type: motion_planning_specification
+              validity_checker: 
+                type: world_model_validity_checker
+              sampler:
+                type: uniform_sampler
+              distance_metric:
+                type: graph_distance_metric
+              local_planner:
+                type: bvp_local_planner
+              stopping_criteria:
+                elements:
+                  criterion1:
+                    type: iteration_criterion
+                    condition: 10
+              heuristic_search:
+                type: constraints_astar_search             
+          grasping_planner:
+            type: grasp_db_fusion_tp
+            back_plane: 0
+            bottom_plane: 0
+            back_plane_offset: 0.04
+            bottom_plane_offset: 0.04
+            bounding_box: [0.115, 0.015, 0.16] #CHANGE THIS
+            output_data_folder: "/prx_packages/manipulation/input/grasp_data/fused_unigripper/"
+            specification:
+              type: grasping_specification
+              validity_checker:
+                type: world_model_validity_checker
+            data_folders: 
+              left_full_arm: "prx_packages/manipulation/input/grasp_data/final_unigripper_24/"
+  </rosparam>
+
+  
+
+  <node name="planning" pkg="prx_planning" type="prx_planning" required="false" launch-prefix="" output="screen" args="planning"/>
+
+</launch>

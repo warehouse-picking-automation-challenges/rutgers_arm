@@ -1,0 +1,114 @@
+building2:
+  type: bullet_obstacle
+  geometries:
+    -
+      name: right_wall
+      collision_geometry:
+        type: box
+        dims: [10,50,80]
+        material: baxter_red
+      config:
+        position: [250,0,1]
+        orientation: [0,0,0,1]
+    -
+      name: upper_wall
+      collision_geometry:
+        type: box
+        dims: [300,10,80]
+        material: baxter_red
+      config:
+        position: [100,25,1]
+        orientation: [0,0,0,1]
+    -
+      name: lower_wall
+      collision_geometry:
+        type: box
+        dims: [300,10,80]
+        material: baxter_red
+      config:
+        position: [100,-25,1]
+        orientation: [0,0,0,1]
+    -
+      name: left_wall
+      collision_geometry:
+        type: box
+        dims: [10,50,80]
+        material: baxter_red
+      config:
+        position: [-20,0,1]
+        orientation: [0,0,0,1]
+    # -
+    #   name: block1
+    #   collision_geometry:
+    #     type: box
+    #     dims: [1,50,12]
+    #     material: baxter_red
+    #   config:
+    #     position: [100,0,0]
+    #     orientation: [0,0,0,1]
+    # -
+    #   name: block2
+    #   collision_geometry:
+    #     type: box
+    #     dims: [1,50,18]
+    #     material: baxter_red
+    #   config:
+    #     position: [150,0,0]
+    #     orientation: [0,0,0,1]
+obs:
+  type: bullet_obstacle
+  geometries:
+    # -
+    #   name: pillar
+    #   collision_geometry:
+    #     type: box
+    #     dims: [5,5,30]
+    #     material: baxter_red
+    #   config:
+    #     position: [80,0,15]
+    #     orientation: [0,0,0,1]
+    # -
+    #   name: pillar2
+    #   collision_geometry:
+    #     type: box
+    #     dims: [5,5,30]
+    #     material: baxter_red
+    #   config:
+    #     position: [180,0,15]
+    #     orientation: [0,0,0,1]
+    -
+      name: ground_block
+      collision_geometry:
+        type: box
+        dims: [460,100,1]
+        material: baxter_red
+      config:
+        position: [0,0,.1]
+        orientation: [0,0,0,1]
+    -
+      name: slope
+      collision_geometry:
+        type: box
+        dims: [10,40,1]
+        material: baxter_red
+      config:
+        position: [110,0,7]
+        orientation: [0,0,0,1]
+    -
+      name: slope2
+      collision_geometry:
+        type: box
+        dims: [100,50,1]
+        material: baxter_red
+      config:
+        position: [50,0,0]
+        orientation: [0,-0.08715574274765817,0,0.9961946980917455]
+    -
+      name: slope3
+      collision_geometry:
+        type: box
+        dims: [100,50,1]
+        material: baxter_red
+      config:
+        position: [165,0,0]
+        orientation: [0,0.08715574274765817,0,0.9961946980917455]

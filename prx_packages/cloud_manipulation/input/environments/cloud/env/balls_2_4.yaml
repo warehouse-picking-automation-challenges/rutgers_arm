@@ -1,0 +1,29 @@
+balls:
+  type: obstacle
+  geometries:
+    -
+      name: ball_1
+      collision_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      visualization_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      config:
+        position: [0.854241937561, 0.451676228671, 4.45660484521]
+        orientation: [0, 0, 0, 1]
+    -
+      name: ball_2
+      collision_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      visualization_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      config:
+        position: [0.890148476175, 0.795759181324, 3.88456636065]
+        orientation: [0, 0, 0, 1]

@@ -1,0 +1,12 @@
+type: bullet_plant
+geometries:
+  -
+    name: ball
+    collision_geometry:
+      type: box
+      dims: [1.5 .5 .3]
+      material: green
+    config: 
+      position: [-8 -8 11.32]
+      orientation: [0,0,0,1]
+    mass: 8.0

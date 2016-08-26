@@ -1,0 +1,26 @@
+<!-- This file has been tested on PRACSYS revision  -->
+
+<launch>
+        
+  <rosparam ns="planning" >
+   random_seed: 7567856
+  </rosparam>        
+  <rosparam ns="planning2" >
+   random_seed: 123456
+  </rosparam>
+              
+  <!-- Define simulation parameters -->      
+  <include file="$(find GTA)/input/experiments/replanning/simulation/main_example.launch"/>
+           
+  <!-- Define the simulation node -->
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation"
+        required="true" launch-prefix="" output="screen" />
+
+
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+        
+  <rosparam ns="visualization/viewer/scene" >
+   line_thickness: 3
+  </rosparam>
+
+</launch>

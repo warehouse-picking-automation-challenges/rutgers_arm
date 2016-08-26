@@ -1,0 +1,81 @@
+balls:
+  type: obstacle
+  geometries:
+    -
+      name: ball_1
+      collision_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      visualization_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      config:
+        position: [0.715523046734, 0.953287888839, 4.47211222614]
+        orientation: [0, 0, 0, 1]
+    -
+      name: ball_2
+      collision_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      visualization_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      config:
+        position: [0.934203451474, 0.738365991534, 4.72378285099]
+        orientation: [0, 0, 0, 1]
+    -
+      name: ball_3
+      collision_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      visualization_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      config:
+        position: [0.543621194771, 1.12187279393, 4.00827966513]
+        orientation: [0, 0, 0, 1]
+    -
+      name: ball_4
+      collision_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      visualization_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      config:
+        position: [0.738370925202, 1.06937305142, 4.35890958811]
+        orientation: [0, 0, 0, 1]
+    -
+      name: ball_5
+      collision_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      visualization_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      config:
+        position: [0.813630846539, 1.15245777744, 3.94930822026]
+        orientation: [0, 0, 0, 1]
+    -
+      name: ball_6
+      collision_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      visualization_geometry:
+        type: sphere
+        radius: 0.05
+        material: baxter_red
+      config:
+        position: [0.944806110505, 0.391634190754, 4.72642652327]
+        orientation: [0, 0, 0, 1]

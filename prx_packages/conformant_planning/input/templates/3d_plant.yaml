@@ -1,0 +1,36 @@
+type: 3d_plant
+integrator: 
+  type: euler
+state_space: 
+  min: [-2, -2,0,-3.14,-3.14,-3.14]
+  max: [2, 2,3,3.14,3.14,3.14]
+input_control_space:
+  min: [-1,-1,-1,-1,-1,-1]
+  max: [1,1,1,1,1,1]
+root_geom: body
+initial_state: [-2 -2 2 0 0 0]
+geometries:
+  -
+    name: body
+    collision_geometry:
+      type: box
+      dims: [.1, .1, .1]
+      material: blue
+  # -
+  #   name: body2
+  #   collision_geometry:
+  #     type: box
+  #     dims: [.25, 1, .25]
+  #     material: blue
+  #   relative_configuration:
+  #     position: [.5, -.375, 0]
+  #     orientation: [0,0,0,1]
+  # -
+  #   name: body3
+  #   collision_geometry:
+  #     type: box
+  #     dims: [.25, .25, 1]
+  #     material: blue
+  #   relative_configuration:
+  #     position: [-.5, 0, .375]
+  #     orientation: [0,0,0,1]

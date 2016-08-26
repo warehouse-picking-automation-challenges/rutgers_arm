@@ -1,0 +1,117 @@
+type: ode_plant
+
+geometries:
+  -
+    name: chassis
+    collision_geometry:
+      type: box
+      dims: [10, 6, 3]
+      material: green
+    config:
+      position: [0, 0, 3]
+      orientation: [0.0, 0.0, 0.0, 1]
+    dims: [10, 6, 3]
+  -
+    name: frwheel
+    collision_geometry:
+      type: cylinder
+      radius: 1.5
+      height: 0.5
+      material: black
+    config:
+      position: [3, -3, 1.5]
+      orientation: [0.7071067812, 0.0, 0.0, 0.7071067812]
+    dims: [1.5, 0.5]
+  -
+    name: flwheel
+    collision_geometry:
+      type: cylinder
+      radius: 1.5
+      height: 0.5
+      material: black
+    config:
+      position: [3, 3, 1.5]
+      orientation: [0.7071067812, 0.0, 0.0, 0.7071067812]
+    dims: [1.5, 0.5]
+  -
+    name: brwheel
+    collision_geometry:
+      type: cylinder
+      radius: 1.5
+      height: 0.5
+      material: black
+    config:
+      position: [-3, -3, 1.5]
+      orientation: [0.7071067812, 0.0, 0.0, 0.7071067812]
+    dims: [1.5, 0.5]
+  -
+    name: blwheel
+    collision_geometry:
+      type: cylinder
+      radius: 1.5
+      height: 0.5
+      material: black
+    config:
+      position: [-3, 3, 1.5]
+      orientation: [0.7071067812, 0.0, 0.0, 0.7071067812]
+    dims: [1.5, 0.5]
+
+joints:
+  -
+    name: frjoint
+    type: hinge2
+    parent: chassis
+    child: frwheel
+    params: [3, -3, 1.5, 0, 0, 1, 0, -1, 0]
+    joint_limits_1: [-0.3, 0.3]
+    suspension: 0.1
+  -
+    name: fljoint
+    type: hinge2
+    parent: chassis
+    child: flwheel
+    params: [3, 3, 1.5, 0, 0, 1, 0, -1, 0]
+    joint_limits_1: [-0.3, 0.3]
+    suspension: 0.1
+  -
+    name: brjoint
+    type: hinge2
+    parent: chassis
+    child: brwheel
+    params: [-3, -3, 1.5, 0, 0, 1, 0, -1, 0]
+    joint_limits_1: [0.0, 0.0]
+    suspension: 0.03
+  -
+    name: bljoint
+    type: hinge2
+    parent: chassis
+    child: blwheel
+    params: [-3, 3, 1.5 , 0, 0, 1, 0, -1, 0]
+    joint_limits_1: [0.0, 0.0]
+    suspension: 0.03
+
+controls:
+  -
+    name: left_forward_torque
+    bounds: [-40, 120]
+    type: joint
+    ode_object: bljoint
+    component: 1
+  -
+    name: right_forward_torque
+    bounds: [-40, 120]
+    type: joint
+    ode_object: brjoint
+    component: 1
+  -
+    name: left_turning_torque
+    bounds: [-10, 10]
+    type: joint
+    ode_object: fljoint
+    component: 0
+  -
+    name: right_turning_torque
+    bounds: [-10, 10]
+    type: joint
+    ode_object: frjoint
+    component: 0

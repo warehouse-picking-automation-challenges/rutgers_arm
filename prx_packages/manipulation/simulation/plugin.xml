@@ -1,0 +1,114 @@
+<class name="prx_simulation/manipulation_simulator"
+    type="prx::packages::manipulation::manipulation_simulator_t"
+    base_class_type="prx::sim::simulator_t">
+    <description>
+        A simulator which deals with the manipulation problems.
+    </description>        
+</class>
+
+<class name="prx_simulation/manipulation_simulator_system"
+    type="prx::packages::manipulation::manipulation_simulator_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        A simulator which deals with the manipulation problems.
+    </description>        
+</class>
+
+<class name="prx_simulation/manipulator"
+    type="prx::packages::manipulation::manipulator_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        A plant that represent a manipulator.
+    </description>        
+</class>
+
+<class name="prx_simulation/motoman"
+    type="prx::packages::manipulation::motoman_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        Motoman plant for use in PRACSYS.
+    </description>        
+</class>
+
+<class name="prx_simulation/motoman_parallel_unigripper"
+    type="prx::packages::manipulation::motoman_parallel_unigripper_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        Motoman plant for use in PRACSYS, with the parallel unigripper.
+    </description>        
+</class>
+
+
+<class name="prx_simulation/ff_end_effector"
+    type="prx::packages::manipulation::ff_end_effector_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        Free-flying end-effector manipulator plant
+    </description>        
+</class>
+
+
+<class name="prx_simulation/reflex"
+    type="prx::packages::manipulation::reflex_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        Free-flying Reflex hand 
+    </description>        
+</class>
+
+
+
+<class name="prx_simulation/baxter"
+    type="prx::packages::manipulation::baxter_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        Baxter plant for use in PRACSYS.
+    </description>        
+</class>
+
+<class name="prx_simulation/movable_body"
+    type="prx::packages::manipulation::movable_body_plant_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        A plant that represent a movable body that is not controllable.
+    </description>        
+</class>
+<class name="prx_simulation/grasp_visualizer"
+    type="prx::packages::manipulation::grasp_visualizer_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        Loops over a database and places manipulator grasping an object.
+    </description>        
+</class>
+
+<class name="prx_simulation/grasp_sensing_info"
+    type="prx::packages::manipulation::grasp_sensing_info_t"
+    base_class_type="prx::sim::sensing_info_t">
+    <description>
+        Sensing info for grasping.
+    </description>        
+</class>
+
+<class name="prx_simulation/simulated_grasp_sensor"
+    type="prx::packages::manipulation::simulated_grasp_sensor_t"
+    base_class_type="prx::sim::sensor_t">
+    <description>
+        Simulated grasp sensor.
+    </description>        
+</class>
+
+<class name="prx_simulation/collidable_movable_bodies_list"
+    type="prx::packages::manipulation::collidable_movable_bodies_list_t"
+    base_class_type="prx::sim::collision_list_t">
+    <description>
+        Allows collisions between movable bodies and static obstacles
+    </description>
+</class>
+
+<class name="prx_simulation/apc_shelf"
+    type="prx::packages::manipulation::apc_shelf_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        APC Shelf obstacle.
+    </description>        
+</class>

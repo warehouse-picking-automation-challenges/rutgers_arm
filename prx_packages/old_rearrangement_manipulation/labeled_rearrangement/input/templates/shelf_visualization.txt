@@ -1,0 +1,63 @@
+
+  <arg name="visualize" default="true"/>
+  <group if="$(arg visualize)">
+    <arg name="vis_params" default="OSG_single_window.yaml"/>
+    <rosparam command="load" file="$(find prx_input)/templates/visualization/$(arg vis_params)"/>
+
+    <rosparam ns="/visualization/viewer/scene/texture">
+      -
+        terrain:
+          terrain_image: "terrain/cement.jpg"
+          terrain_plane: {x: 10000, y: 10000, z: 0, divisor: 10}
+    </rosparam>
+
+    <rosparam command="load" ns="/visualization/viewer/scene"
+        file="$(find prx_input)/templates/visualization/basic_light.yaml"/>
+    <rosparam command="load" ns="/visualization/viewer/scene"
+        file="$(find prx_input)/templates/visualization/basic_materials.yaml"/>
+
+    
+    <node name="visualization" pkg="prx_visualization" type="prx_visualization"
+    required="true" launch-prefix="" output="screen" args="visualization"/>
+    
+  </group>
+
+  <rosparam command="load" ns="/visualization/viewer/scene" file="$(find labeled_rearrangement)/input/templates/rss_materials.yaml"/>
+  <rosparam ns="visualization/viewer/">
+    windows:
+      window_1:
+        xpos: 920
+        ypos: 100
+        width: 1000
+        height: 1000
+        cameras:
+          perspective:
+            ortho: false
+            camera_type: 0
+            eye: [-0.30, 0.2, 1.75]
+            center: [-0.05, 1, 1.25]
+            speed: {move: 0.1, rotate: 0.001}
+          orthographic:
+            ortho: true
+            ortho_param:
+              left: -300
+              right: 300
+              bottom: -300
+              top: 300
+              zNear: 0
+              zFar: 1000
+            speed: {move: 0.2, rotate: 0.001}
+          smooth:
+            ortho: false
+            camera_type: 2
+            eye: [0, -20, 15]
+            center: [0, 1, 18]
+            speed: {move: 0.2, rotate: 0.001}
+  </rosparam>
+
+<rosparam ns="visualization/viewer/scene">
+    line_thickness: 3
+  </rosparam>
+
+
+

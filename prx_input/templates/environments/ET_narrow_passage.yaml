@@ -1,0 +1,22 @@
+building1:
+    type: obstacle
+    geometries:
+      -
+        name: bar1
+        collision_geometry: 
+          type: box
+          dims: [150, 2, 4]    
+          material: black       
+        config:
+          position: [0, 10, 0]
+          orientation: [0, 0, 0, 1]
+      -
+        name: bar2
+        collision_geometry:
+          type: box
+          dims: [150, 2, 4]
+          material: black
+        config:
+          position: [0, -10, 0]
+          orientation: [0, 0, 0, 1]
+

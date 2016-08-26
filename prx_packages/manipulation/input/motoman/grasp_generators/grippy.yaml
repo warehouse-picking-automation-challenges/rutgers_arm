@@ -1,0 +1,23 @@
+type: unigripper_grasp_generator
+default_ee_normal: [0,0,1]
+end_effector_name: head_sponge
+grasp_entire_mesh: false
+save_grasps_to_file: true
+limiting_normal: false
+ee_dof_check: true
+hand_long_axis: [0,0,1]
+minimum_overlap_area: 0.0019242255
+restricted_normals:
+-
+  normal: [0,0,-1]
+-
+  normal: [1,0,0]
+preferred_normals:
+-
+  normal: [0,0,1]
+-
+  normal: [-1,0,0]
+manual_grasp_mode: 2
+manual_release_mode: 1
+nr_grasps_to_sample: 300
+total_nr_grasps: 30

@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -std=c++11   -shared -Wl,-soname,libPRXCLIPPER.so -o lib/libPRXCLIPPER.so CMakeFiles/PRXCLIPPER.dir/clipper/clipper.cpp.o 

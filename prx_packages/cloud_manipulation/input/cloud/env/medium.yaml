@@ -1,0 +1,71 @@
+shelf:
+  type: obstacle
+  geometries:
+    -
+      name: foundation
+      collision_geometry:
+        type: box
+        dims: [1.11, 0.5,  1.36]
+        material: shelf_grey
+      config:
+        position: [1.25, 0.27, 2.5575]
+        orientation: [0 0 0.70710678118 0.70710678118]
+    -
+      name: left_wall
+      collision_geometry:
+        type: box
+        dims: [0.15, 0.48, 0.295]
+        material: shelf_grey
+      config:
+        position: [1.25, 0.75, 3.365]
+        orientation: [0 0 0.70710678118 0.70710678118]
+    -
+      name: left_mid_wall
+      collision_geometry:
+        type: box
+        dims: [0.08, 0.48, 0.295]
+        material: shelf_grey
+      config:
+        position: [1.25, 0.398, 3.365]
+        orientation: [0 0 0.70710678118 0.70710678118]
+    -
+      name: right_mid_wall
+      collision_geometry:
+        type: box
+        dims: [0.08, 0.48, 0.295]
+        material: shelf_grey
+      config:
+        position: [1.25, 0.12, 3.365]
+        orientation: [0 0 0.70710678118 0.70710678118]
+    -
+      name: right_wall
+      collision_geometry:
+        type: box
+        dims: [0.15, 0.48, 0.295]
+        material: shelf_grey
+      config:
+        position: [1.25, -0.22, 3.365]
+        orientation: [0 0 0.70710678118 0.70710678118]
+    -
+      name: back_wall
+      collision_geometry:
+        type: box
+        dims: [1.11, 0.03, 0.295]
+        material: off_white
+      config:
+        position: [1.5, 0.27, 3.365]
+        orientation: [0 0 0.70710678118 0.70710678118]
+    -
+      name: roof
+      collision_geometry:
+        type: box
+        dims: [1.11, 0.5, 0.25]
+        material: shelf_grey
+      config:
+        position: [1.25, 0.27, 3.6375]
+        orientation: [0 0 0.70710678118 0.70710678118]
+
+    
+
+
+      

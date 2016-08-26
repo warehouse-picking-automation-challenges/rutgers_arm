@@ -1,0 +1,84 @@
+shelf:
+  type: obstacle
+  geometries:
+    -
+      name: back
+      collision_geometry:
+        type: box
+        dims: [0.91, 0.02, 1.61]
+        material: shelf_grey
+      config:
+        position: [0, 1.0376, 2.92000]
+        orientation: [0, 0, 0, 1]
+    -
+      name: bottom
+      collision_geometry:
+        type: box
+        dims: [0.91, 0.335, 0.03]
+        material: shelf_grey
+      config:
+        position: [0, 0.8601, 2.13000]
+        orientation: [0, 0, 0, 1]
+    -
+      name: top
+      collision_geometry:
+        type: box
+        dims: [0.91, 0.335, 0.03]
+        material: shelf_grey
+      config:
+        position: [0, 0.8601, 3.71000]
+        orientation: [0, 0, 0, 1]
+    -
+      name: leftside
+      collision_geometry:
+        type: box
+        dims: [0.02, 0.335, 1.55]
+        material: shelf_grey
+      config:
+        position: [-0.445, 0.8601, 2.92000]
+        orientation: [0, 0, 0, 1]
+    -
+      name: rightside
+      collision_geometry:
+        type: box
+        dims: [0.02, 0.335, 1.55]
+        material: shelf_grey
+      config:
+        position: [0.445, 0.8601, 2.92000]
+        orientation: [0, 0, 0, 1]
+    -
+      name: shelf1
+      collision_geometry:
+        type: box
+        dims: [0.87, 0.335, 0.015]
+        material: shelf_grey
+      config:
+        position: [0, 0.8601, 2.44500]
+        orientation: [0, 0, 0, 1]
+    -
+      name: shelf2
+      collision_geometry:
+        type: box
+        dims: [0.87, 0.335, 0.015]
+        material: shelf_grey
+      config:
+        position: [0, 0.8601, 2.75500]
+        orientation: [0, 0, 0, 1]
+    -
+      name: shelf3
+      collision_geometry:
+        type: box
+        dims: [0.87, 0.335, 0.015]
+        material: shelf_grey
+      config:
+        position: [0, 0.8601, 3.07500]
+        orientation: [0, 0, 0, 1]
+    -
+      name: shelf4
+      collision_geometry:
+        type: box
+        dims: [0.87, 0.335, 0.015]
+        material: shelf_grey
+      config:
+        position: [0, 0.8601, 3.38500]
+        orientation: [0, 0, 0, 1]

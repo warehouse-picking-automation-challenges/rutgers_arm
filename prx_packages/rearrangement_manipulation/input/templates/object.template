@@ -1,0 +1,4 @@
+  <rosparam command="load" ns="#NODE#/world_model/simulator/subsystems/#OBJECT_NAME#">
+    template: "#OBJECT_TYPE#"
+    initial_state: [#XYZ#, 0, 0, 0, 1]
+  </rosparam>

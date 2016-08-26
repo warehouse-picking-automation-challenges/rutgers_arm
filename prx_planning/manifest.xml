@@ -1,0 +1,26 @@
+<package>
+  <description brief="prx_planning">
+
+     prx_planning
+
+  </description>
+  <author>Kostas Bekris</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://redmine.cse.unr.edu/projects/show/pracsys</url>
+
+  <depend package="prx_utilities"/>
+  <depend package="prx_simulation"/>
+  <depend package="geometry_msgs"/>
+<!--
+  <depend package="ompl"/>
+-->
+  <rosdep name="pqp"/>
+    <export>
+        <cpp cflags="-I${prefix}/" lflags="-L${prefix}/lib -lprx_planning_lib"/>
+        <prx_planning plugin="${prefix}/planning_plugin.xml"/>
+    </export>
+  
+</package>
+
+

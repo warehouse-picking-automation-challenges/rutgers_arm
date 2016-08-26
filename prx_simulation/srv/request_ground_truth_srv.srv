@@ -1,0 +1,5 @@
+float64 timestamp_request
+string node_name
+string consumer_name
+---
+prx_simulation/state_msg full_state

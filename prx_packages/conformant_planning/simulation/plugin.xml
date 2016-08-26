@@ -1,0 +1,21 @@
+<class name="prx_simulation/particle_controller"
+    type="prx::packages::conformant::particle_controller_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        A controller that augments state to simulate particles.
+    </description>        
+</class>
+<class name="prx_simulation/3d_plant"
+    type="prx::packages::conformant::threed_plant_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        3d plant
+    </description>        
+</class>
+<class name="prx_simulation/pushing_plant"
+    type="prx::packages::conformant::pushing_plant_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        pushing_plant
+    </description>        
+</class>

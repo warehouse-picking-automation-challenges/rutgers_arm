@@ -1,0 +1,30 @@
+test_all_geoms:
+    type: obstacle
+    geometries:
+    -
+        name: box1
+        collision_geometry: 
+            type: box
+            dims: [20, 20, 10]      
+            material: red    
+        config:
+            position: [100, -100, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box2
+        collision_geometry: 
+            type: box
+            dims: [20, 20, 10]      
+            material: red    
+        config:
+            position: [0, 141.42, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box3
+        collision_geometry: 
+            type: box
+            dims: [20, 20, 10]      
+            material: red    
+        config:
+            position: [-100, -100, 0]
+            orientation: [0,0,0,1]

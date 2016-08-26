@@ -1,0 +1,35 @@
+<class name="prx_planning/esst_validity_checker"
+    type="prx::packages::conformant::esst_validity_checker_t"
+    base_class_type="prx::plan::validity_checker_t">
+    <description>
+        Performs probabilistic collision checking.
+    </description>        
+</class>
+<class name="prx_planning/esst_local_planner"
+    type="prx::plan::esst_local_planner_t"
+    base_class_type="prx::plan::local_planner_t">
+    <description>
+        Particle local planner
+    </description>        
+</class>
+<class name="prx_planning/esst_sampler"
+    type="prx::packages::conformant::esst_sampler_t"
+    base_class_type="prx::plan::sampler_t">
+    <description>
+        Samples a set of particles.
+    </description>        
+</class>
+<class name="prx_planning/esst"
+    type="prx::packages::conformant::esst_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        Implements eSST.
+    </description>        
+</class>
+<class name="prx_planning/parallel_propagation_application"
+    type="prx::plan::parallel_propagation_application_t"
+    base_class_type="prx::plan::planning_application_t">
+    <description>
+        Parallel propagation
+    </description>        
+</class>

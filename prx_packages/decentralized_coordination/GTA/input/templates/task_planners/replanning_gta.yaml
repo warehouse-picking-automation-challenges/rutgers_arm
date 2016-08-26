@@ -1,0 +1,11 @@
+type: replanning_gta
+action_limit: 2
+prm_max_iterations: 1200
+d_prox: 50
+online_planning: false
+visualize_actions: true
+compare_actions: false
+max_exploratory_actions: 15
+randomized: false
+turn_off_regret: false
+velocity: 25

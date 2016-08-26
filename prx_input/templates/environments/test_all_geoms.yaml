@@ -1,0 +1,87 @@
+test_all_geoms:
+    type: obstacle
+    geometries:
+    -
+        name: box1
+        collision_geometry: 
+            type: box
+            dims: [20, 20, 10]      
+            material: red    
+        config:
+            position: [0, 200, 5]
+            orientation: [0,0,0,1]
+    -
+        name: box2
+        collision_geometry: 
+            type: box
+            dims: [20, 20, 10]      
+            material: red    
+        config:
+            position: [200, 200, 5]
+            orientation: [0,0,0,1]
+    -
+        name: box3
+        collision_geometry: 
+            type: box
+            dims: [20, 20, 10]      
+            material: red    
+        config:
+            position: [100, 100, 5]
+            orientation: [0,0,0,1]
+    -
+        name: box4
+        collision_geometry: 
+            type: box
+            dims: [20, 20, 10]      
+            material: red    
+        config:
+            position: [0, 200, 5]
+            orientation: [0,0,0,1]
+    -
+        name: box5
+        collision_geometry: 
+            type: box
+            dims: [20, 20, 10]      
+            material: red    
+        config:
+            position: [200, 0, 5]
+            orientation: [0,0,0,1]
+    -
+        name: sphere1
+        collision_geometry: 
+            type: sphere
+            radius: 20
+            material: blue    
+        config:
+            position: [200, 100, 10]
+            orientation: [0,0,0,1]
+    -
+        name: cone1
+        collision_geometry: 
+            type: cone
+            radius: 20
+            height: 30
+            material: yellow    
+        config:
+            position: [100, 200, 0]
+            orientation: [0,0,0,1]
+    -
+        name: open_cylinder1
+        collision_geometry: 
+            type: open_cylinder
+            radius: 20
+            height: 12
+            material: yellow    
+        config:
+            position: [100, 0, 0]
+            orientation: [0,0,0,1]
+    -
+        name: capsule1
+        collision_geometry: 
+            type: capsule
+            radius: 20
+            height: 60
+            material: pink    
+        config:
+            position: [0, 100, 10]
+            orientation: [0.7071067811865476,0,0,0.7071067811865476]

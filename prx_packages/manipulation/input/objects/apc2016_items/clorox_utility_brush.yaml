@@ -1,0 +1,183 @@
+type: movable_body
+max_step: 0.01
+object_type: clorox_utility_brush
+state_space:
+  min: [-100 -100 -100 -1 -1 -1 -1]
+  max: [100 100 100 1 1 1 1]
+  scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+initial_state: [0 0 -99 0 0 0 1]
+input_control_space:
+  none: 4
+root_geom: body
+geometries:
+  -
+    name: body
+    collision_geometry:
+      type: mesh
+      filename: objects/apc_2016/clorox_utility_brush.stl
+      material: blue
+    # visualization_geometry:
+    #   type: mesh
+    #   filename: objects/apc_2016/clorox_utility_brush.3ds
+
+
+grasp_descriptor:
+  surfaces:
+    -
+      triangles:  [ 0.03, -0.00575, 0.02, 0.03, -0.0475, 0.02, 0.03, -0.00575, -0.08, 0.03, -0.0475, 0.02, 0.03, -0.0475, -0.08, 0.03, -0.00575, -0.08]
+      valid_end_effectors: ["head_sponge","upper_vacuum", "front_vacuum"]
+    -
+      triangles:  [ -0.03, -0.0475, 0.02, -0.03, -0.00575, 0.02, -0.03, -0.0475, -0.08, -0.03, -0.00575, 0.02, -0.03, -0.00575, -0.08, -0.03, -0.0475, -0.08]
+      valid_end_effectors: ["head_sponge","upper_vacuum", "front_vacuum"]
+    -
+      triangles:  [ -0.035, -0.04085, 0.1, 0.035, -0.04085, 0.1, 0.035, -0.04085, 0.06, -0.035, -0.04085, 0.1, 0.035, -0.04085, 0.06, -0.035, -0.04085, 0.06]
+      valid_end_effectors: ["head_sponge"]
+    -
+      triangles:  [ -0.035, -0.0485, 0.1, -0.035, -0.0485, -0.1, 0.035, -0.0485, 0.1, -0.035, -0.0485, -0.1, 0.035, -0.0485, -0.1, 0.035, -0.0485, 0.1]
+      valid_end_effectors: ["head_sponge","upper_vacuum", "front_vacuum"]
+  volumes:
+#Axis aligned diagonal
+    -
+      height: 0.07
+      radius: 0.003
+      position: [0, -0.02, -0.02]
+      orientation: [1.1922803784382033e-17, 0.19471416236392655, -0.0, 0.98086002822773566]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.07
+      radius: 0.003
+      position: [0, -0.02, -0.02]
+      orientation: [-0.050395733570968652, 0.18807943817155953, 0.0, 0.98086002822773566]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.07
+      radius: 0.003
+      position: [0, -0.02, -0.02]
+      orientation: [-0.097357081181963276, 0.16862741108376822, 0.0, 0.98086002822773566]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.07
+      radius: 0.003
+      position: [0, -0.02, -0.02]
+      orientation: [-0.13768370460059087, 0.1376837046005909, 0.0, 0.98086002822773566]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.07
+      radius: 0.003
+      position: [0, -0.02, -0.02]
+      orientation: [-0.16862741108376819, 0.097357081181963318, 0.0, 0.98086002822773566]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.07
+      radius: 0.003
+      position: [0, -0.02, -0.02]
+      orientation: [-0.18807943817155953, 0.050395733570968639, 0.0, 0.98086002822773566]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.07
+      radius: 0.003
+      position: [0, -0.02, -0.02]
+      orientation: [-0.19471416236392655, 2.3845607568764066e-17, 0.0, 0.98086002822773566]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.07
+      radius: 0.003
+      position: [0, -0.02, -0.02]
+      orientation: [-0.18807943817155953, -0.050395733570968618, 0.0, 0.98086002822773566]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.07
+      radius: 0.003
+      position: [0, -0.02, -0.02]
+      orientation: [-0.16862741108376822, -0.097357081181963248, 0.0, 0.98086002822773566]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.07
+      radius: 0.003
+      position: [0, -0.02, -0.02]
+      orientation: [-0.1376837046005909, -0.13768370460059087, 0.0, 0.98086002822773566]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.07
+      radius: 0.003
+      position: [0, -0.02, -0.02]
+      orientation: [-0.097357081181963304, -0.16862741108376819, 0.0, 0.98086002822773566]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.07
+      radius: 0.003
+      position: [0, -0.02, -0.02]
+      orientation: [-0.050395733570968673, -0.18807943817155953, 0.0, 0.98086002822773566]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.07
+      radius: 0.003
+      position: [0, -0.02, -0.02]
+      orientation: [-1.1922803784382033e-17, -0.19471416236392655, 0.0, 0.98086002822773566]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.07
+      radius: 0.003
+      position: [0, -0.02, -0.02]
+      orientation: [0.050395733570968652, -0.18807943817155953, 0.0, 0.98086002822773566]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.07
+      radius: 0.003
+      position: [0, -0.02, -0.02]
+      orientation: [0.097357081181963276, -0.16862741108376822, 0.0, 0.98086002822773566]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.07
+      radius: 0.003
+      position: [0, -0.02, -0.02]
+      orientation: [0.13768370460059087, -0.1376837046005909, 0.0, 0.98086002822773566]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.07
+      radius: 0.003
+      position: [0, -0.02, -0.02]
+      orientation: [0.16862741108376819, -0.097357081181963318, 0.0, 0.98086002822773566]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.07
+      radius: 0.003
+      position: [0, -0.02, -0.02]
+      orientation: [0.18807943817155953, -0.050395733570968639, 0.0, 0.98086002822773566]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.07
+      radius: 0.003
+      position: [0, -0.02, -0.02]
+      orientation: [0.19471416236392655, -2.3845607568764066e-17, 0.0, 0.98086002822773566]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.07
+      radius: 0.003
+      position: [0, -0.02, -0.02]
+      orientation: [0.18807943817155953, 0.050395733570968618, -0.0, 0.98086002822773566]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.07
+      radius: 0.003
+      position: [0, -0.02, -0.02]
+      orientation: [0.16862741108376822, 0.097357081181963248, -0.0, 0.98086002822773566]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.07
+      radius: 0.003
+      position: [0, -0.02, -0.02]
+      orientation: [0.1376837046005909, 0.13768370460059087, -0.0, 0.98086002822773566]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.07
+      radius: 0.003
+      position: [0, -0.02, -0.02]
+      orientation: [0.097357081181963304, 0.16862741108376819, -0.0, 0.98086002822773566]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.07
+      radius: 0.003
+      position: [0, -0.02, -0.02]
+      orientation: [0.050395733570968673, 0.18807943817155953, -0.0, 0.98086002822773566]
+      valid_end_effectors: ["parallel_gripper"]

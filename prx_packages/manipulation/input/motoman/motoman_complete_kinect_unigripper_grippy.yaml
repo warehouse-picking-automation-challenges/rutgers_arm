@@ -1,0 +1,690 @@
+type: motoman_parallel_unigripper
+max_step: 0.01
+max_ik_step: 0.02
+urdf_file: sda10f_uni_kin_ref_kin_macro_grippy.urdf
+ignored_dofs:
+  right_movable_pipe: 0 
+  left_movable_pipe: 0 
+  torso_link_b2: 0
+ignored_geoms:
+  torso_link_b2: 0
+  arm_left_link_tool0: 0
+  arm_right_link_tool0: 0
+end_effectors: 
+  -
+    name: "head_sponge"
+    local_config:
+      position: [0,0,0]
+      orientation: [0, 0, 0, 1 ]
+  -
+    name: "front_vacuum"
+    local_config:
+      position: [0,0,0.01]
+      orientation: [0, 0, 0, 1 ]
+  -
+    name: "upper_vacuum"
+    local_config:
+      position: [0,0,0]
+      orientation: [0, 0, 0, 1 ]
+  -
+    name: "parallel_gripper"
+    local_config:
+      position: [0,0,0]
+      orientation: [0, 0, 0, 1 ]
+integrator: 
+  type: euler
+initial_state: [0    1.57 0 0 -1.70 0 0 0   0   1.57 0 0 -1.70 0 0 0  1 1 1 1]
+# initial_state: [1.48106,    1.57 0 0 -1.70 0 0 0, 1.48106,-1.57262,0.98826,1.86538,-1.21119,1.16994,1.16550,-1.75202 ,1 1 1 1]
+# 1.3554638718805076536000342,-1.0630027318799615265731973,0.8385740265943865123787759,0.7163765232148529005229420,-0.6682405101706915262482767,0.7666967913900225584100667,1.6016427804619104424688203,-2.3132887189076924983055505,1.0000000000000000000000000,1.0000000000000000000000000,1.0000000000000000000000000
+
+# initial_state: [2.038    1.57 0 0 -1.70 0 0 0   0   2.273 0.455 2.195 -1.659 -0.151 1.341 -1.687  1 1 1 1]
+# 2.038,2.273,0.455,2.195,-1.659,-0.151,1.341,-1.687,3.000,1.000,2.000
+# initial_state: [1.5700000,1.5699953,0.0000170,0.0000000,-1.6999999,0.0000000,0.0000000,0.0000000,0.0000000,1.5000000,0.5000000,0.0000000,-1.1201850,0.0000000,-0.1656690,0.0000000,1.0000000,1.0000000,1.0000000,1.0000000]
+ 
+initial_control: [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+root_frame: 
+  position: [0, 0, 0]
+  orientation: [0, 0, 0, 1]
+  # min: [-2.9470, -3.141, -1.918, -2.965, -2.355, -3.141, -1.918, -3.141, 0
+  #                -3.141, -1.918, -2.965, -2.355, -3.141, -1.918, -3.141, 1, 1]
+  # max: [2.9470, 3.141, 1.918, 2.965, 2.355, 3.141, 1.918, 3.141, 1.56
+  #               3.141, 1.918, 2.965, 2.355, 3.141, 1.918, 3.141, 2, 5]
+state_space: 
+  min: [-2.6, -3.0, -1.8, -2.8, -2.2, -3.0, -1.8, -3.0, 0
+                 -3.0, -1.8, -2.8, -2.2, -3.0, -1.8, -3.0, 1, 1, 1, 1]
+  max: [2.6, 3.0, 1.8, 2.8, 2.2, 3.0, 1.8, 3.0, 1.4
+                3.0, 1.8, 2.8, 2.2, 3.0, 1.8, 3.0, 3, 3, 3, 3]
+# input_control_space:
+#   min: [-.565,  -0.7375, -0.7375, -0.7375, -0.7375, -0.87, -0.87, -1.7425, -1
+#               -0.7375, -0.7375, -0.7375, -0.7375, -0.87, -0.87, -1.7425, 0, 0]
+#   max: [.565,  0.7375, 0.7375, 0.7375, 0.7375, 0.87, 0.87, 1.7425, 1
+#                0.7375, 0.7375, 0.7375, 0.7375, 0.87, 0.87, 1.7425, 2, 5]
+input_control_space:
+  min: [-0.2,  -0.4, -0.4, -0.4, -0.4, -0.4, -0.4, -0.4, -0.1
+              -0.4, -0.4, -0.4, -0.4, -0.4, -0.4, -0.4, 0, 0, 0, 0]
+  max: [0.2,  0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, .1
+               0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 3, 3, 3, 3]
+  # input_control_space:
+  #   min: [-.565,  -0.7375, -0.7375, -0.7375, -0.7375, -0.87, -0.87, -1.7425, -1
+  #               -0.7375, -0.7375, -0.7375, -0.7375, -0.87, -0.87, -1.7425, 0, 0, 0, 0]
+  #   max: [.565,  0.7375, 0.7375, 0.7375, 0.7375, 0.87, 0.87, 1.7425, 1
+  #                0.7375, 0.7375, 0.7375, 0.7375, 0.87, 0.87, 1.7425, 3, 3, 3, 3]
+config_offsets:
+  #TEST
+  pre_front_vacuum:
+    offset: [0.0, 0.0, .0055]
+  front_vacuum:
+    offset: [0.00, 0.0, -0.012]
+  # Base
+  base_link:
+    offset: [0.0, 0.0, 0.45]
+  torso_link_b1:
+    offset: [0.00, 0.0, 0.04]
+  # Left arm
+  arm_left_link_1_s:
+    offset: [0.0, 0.0, -0.21]
+  arm_left_link_2_l:
+    offset: [0.0, 0.06, -0.03]
+  arm_left_link_3_e:
+    offset: [0.0, 0.011, -0.128]    
+  arm_left_link_4_u:
+    offset: [0.0, 0.062, 0.003]
+  # arm_left_link_5_r:
+  #   offset: [0.0, -0.012, -0.105]
+  # arm_left_link_6_b:
+  #   offset: [0.0, 0.055, -0.007]
+  arm_left_link_7_t:
+    offset: [0.0, 0.0, -0.0055]
+  # Right arm
+  arm_right_link_1_s:
+    offset: [0.0, 0.0, -0.21]
+  arm_right_link_2_l:
+    offset: [0.0, 0.06, -0.03]
+  arm_right_link_3_e:
+    offset: [0.0, 0.011, -0.128]    
+  arm_right_link_4_u:
+    offset: [0.0, 0.062, 0.003]
+  # arm_right_link_5_r:
+  #   offset: [0.0, -0.012, -0.105]
+  # arm_right_link_6_b:
+  #   offset: [0.0, 0.055, -0.007]
+  arm_right_link_7_t:
+    offset: [0.0, 0.0, -0.0055]
+  # Unigripper
+  head_connector: 
+    offset: [-0.01, 0.0, -0.004]
+  head_plate:
+    offset: [-0.01, 0.0, -0.004]
+  # Kinects
+  # left_kinect_head:
+  #   offset: [ 0.0, 0.0, 0.03 ]
+  # right_kinect_head:
+  #   offset: [ 0.0, 0.0, 0.03 ]
+  # head_kinect_head:
+  #   offset: [ 0.0, 0.0, 0.03 ]
+geometries:
+#base of robot
+  -
+    name: base_link
+    collision_geometry:
+      type: cylinder
+      radius: 0.23
+      height: 0.9
+      # type: mesh
+      # filename: meshes/motoman/sda10f/collision/motoman_base.stl
+      material: white
+  -
+    name: torso_link_b1
+    collision_geometry:
+      # type: cylinder
+      # radius: 0.20
+      # height: 0.46
+      type: mesh
+      filename: meshes/motoman/sda10f/collision/motoman_axis_b1.stl
+      material: white
+#left arm
+  -
+    name: arm_left_link_1_s
+    collision_geometry:
+      type: cylinder
+      radius: 0.115
+      height: 0.21
+      # type: mesh
+      # filename: meshes/motoman/sda10f/collision/motoman_axis_s.stl
+      material: blue
+  -
+    name: arm_left_link_2_l
+    collision_geometry:
+      type: box
+      dims: [0.19, 0.22, 0.17]
+      # type: mesh
+      # filename: meshes/motoman/sda10f/collision/motoman_axis_l.stl
+      material: white
+  -
+    name: arm_left_link_3_e
+    collision_geometry:
+      type: cylinder
+      radius: 0.082
+      height: 0.25
+      # type: mesh
+      # filename: meshes/motoman/sda10f/collision/motoman_axis_e.stl
+      material: blue
+  -
+    name: arm_left_link_4_u
+    collision_geometry:
+      type: box
+      dims: [0.14, 0.26, 0.135]
+      # type: mesh
+      # filename: meshes/motoman/sda10f/collision/motoman_axis_u.stl
+      material: white
+  -
+    name: arm_left_link_5_r
+    collision_geometry:
+      # type: cylinder
+      # radius: 0.071
+      # height: 0.21
+      type: mesh
+      filename: meshes/motoman/sda10f/collision/motoman_axis_r.stl
+      material: blue
+  -
+    name: arm_left_link_6_b
+    collision_geometry:
+      # type: box
+      # dims: [0.12, 0.225, 0.129]
+      type: mesh
+      filename: meshes/motoman/sda10f/collision/motoman_axis_b.stl
+      material: white
+  -
+    name: arm_left_link_7_t
+    collision_geometry:
+      type: cylinder
+      radius: 0.04
+      height: 0.01
+      # type: mesh
+      # filename: meshes/motoman/sda10f/collision/motoman_axis_t.stl
+      material: yellow
+#right arm
+  -
+    name: arm_right_link_1_s
+    collision_geometry:
+      type: cylinder
+      radius: 0.115
+      height: 0.21
+      material: blue
+  -
+    name: arm_right_link_2_l
+    collision_geometry:
+      type: box
+      dims: [0.19, 0.22, 0.17]
+      # type: mesh
+      # filename: meshes/motoman/sda10f/collision/motoman_axis_l.stl
+      material: white
+  -
+    name: arm_right_link_3_e
+    collision_geometry:
+      type: cylinder
+      radius: 0.082
+      height: 0.25
+      # type: mesh
+      # filename: meshes/motoman/sda10f/collision/motoman_axis_e.stl
+      material: blue
+  -
+    name: arm_right_link_4_u
+    collision_geometry:
+      type: box
+      dims: [0.14, 0.26, 0.135]
+      # type: mesh
+      # filename: meshes/motoman/sda10f/collision/motoman_axis_u.stl
+      material: white
+  -
+    name: arm_right_link_5_r
+    collision_geometry:
+      # type: cylinder
+      # radius: 0.071
+      # height: 0.21
+      type: mesh
+      filename: meshes/motoman/sda10f/collision/motoman_axis_r.stl
+      material: blue
+  -
+    name: arm_right_link_6_b
+    collision_geometry:
+      # type: box
+      # dims: [0.12, 0.225, 0.129]
+      type: mesh
+      filename: meshes/motoman/sda10f/collision/motoman_axis_b.stl
+      material: white
+  -
+    name: arm_right_link_7_t
+    collision_geometry:
+      type: cylinder
+      radius: 0.04
+      height: 0.01
+      # type: mesh
+      # filename: meshes/motoman/sda10f/collision/motoman_axis_t.stl
+      material: yellow
+#left hand unigripper
+  -
+    name: base_plate
+    collision_geometry:
+      type: cylinder
+      radius: 0.04
+      height: 0.008
+      material: silver
+  -
+    name: main_beam
+    collision_geometry:
+      type: box
+      dims: [0.015, 0.040, 0.180]
+      material: silver
+  -
+    name: head_connector
+    collision_geometry:
+      type: box
+      dims: [0.035, 0.015, 0.039]
+      material: silver
+  -
+    name: head_plate
+    collision_geometry:
+      type: box
+      dims: [0.045, 0.045, 0.005]
+      material: silver
+  -
+    name: head_base
+    collision_geometry:
+      type: mesh
+      filename: meshes/unigripper/grippy.stl
+      material: orange
+  -
+    name: pre_suction_cup_right
+    collision_geometry:
+      type: cylinder
+      radius: 0.01
+      height: 0.03
+      material: green
+  -
+    name: pre_suction_cup_left
+    collision_geometry:
+      type: cylinder
+      radius: 0.01
+      height: 0.03
+      material: green 
+  -
+    name: suction_cup_right
+    collision_geometry:
+      type: cylinder
+      radius: 0.0175
+      height: 0.005
+      material: green
+  -
+    name: suction_cup_left
+    collision_geometry:
+      type: cylinder
+      radius: 0.0175
+      height: 0.005
+      material: green 
+  -
+    name: head_sponge
+    collision_geometry:
+      type: box
+      dims: [0.07, 0.03, 0.005]
+      material: red
+  -
+    name: tube_port
+    collision_geometry:
+      type: cylinder
+      radius: 0.01
+      height: 0.023
+      material: blue
+  -
+    name: actuator
+    collision_geometry:
+      type: box
+      dims: [0.03, 0.035, 0.180]
+      material: dark_grey
+#Right Hand Parallel Unigripper
+  -
+    name: base_uni
+    collision_geometry:
+      type: mesh
+      filename: meshes/unigripper_ps/unigripper_v2_body1.stl
+      material: dark_grey
+  -
+    name: left_movable_pipe
+    collision_geometry:
+      type: cylinder
+      radius: 0.006
+      height: 0.092
+      material: silver
+  -
+    name: right_movable_pipe
+    collision_geometry:
+      type: cylinder
+      radius: 0.006
+      height: 0.104
+      material: silver
+  -
+    name: parallel_gripper
+    collision_geometry:
+      type: box
+      # dims: [0.055 0.025 0.11]
+      dims: [0.05 .02 .05]
+      material: red
+    visualization_geometry:
+      type: box
+      # dims: [0.055 0.025 0.11]
+      dims: [0.01 .01 .05]
+      material: red
+  -
+    name: passive_finger
+    collision_geometry:
+      type: mesh
+      filename: meshes/unigripper_ps/unigripper_v2_passive_finger1.stl
+      material: silver
+  -
+    name: vacuum_finger
+    collision_geometry:
+      type: mesh
+      filename: meshes/unigripper_ps/unigripper_v2_vacuum_finger7.stl
+      material: silver
+  -
+    name: upper_jaw
+    collision_geometry:
+      type: box
+      dims: [0.294 0.035 0.028]
+      material: silver
+  -
+    name: upper_vacuum
+    collision_geometry:
+      type: box
+      dims: [0.095 0.035 0.011]
+      material: dark_grey
+  -
+    name: sponge_upper_jaw
+    collision_geometry:
+      type: box
+      dims: [0.132 0.035 0.005]
+      material: silver
+  -
+    name: vacuum_base
+    collision_geometry:
+      type: box
+      dims: [0.005 0.035 0.028]
+      material: silver
+  -
+    name: pre_front_vacuum
+    collision_geometry:
+      type: cylinder
+      radius: 0.0095
+      height: 0.04
+      material: silver
+  -
+    name: front_vacuum
+    collision_geometry:
+      type: cylinder
+      radius: 0.019
+      height: 0.02
+      material: green
+  -
+    name: air_feed_plate
+    collision_geometry:
+      type: mesh
+      filename: meshes/unigripper_ps/air_feed_plate.stl
+      material: red
+
+#Left Kinect
+  -
+    name: left_kinect_base_1
+    collision_geometry:
+      material: black
+      type: mesh
+      filename: meshes/kinect_bases/kinect_base_1.stl
+  -
+    name: left_kinect_base_2
+    collision_geometry:
+      material: black
+      type: mesh
+      filename: meshes/kinect_bases/kinect_base_2.stl
+  -
+    name: left_kinect_head
+    collision_geometry:
+      type: box
+      dims: [0.076, 0.26, 0.053]
+      material: black
+  -
+    name: left_RGB_camera
+    collision_geometry:
+      type: cylinder
+      radius: 0.0145
+      height: 0.011
+      material: dark_grey
+  -
+    name: left_IR_camera
+    collision_geometry:
+      type: cylinder
+      radius: 0.009
+      height: 0.011
+      material: dark_grey
+#Right Kinect
+  -
+    name: right_kinect_base_1
+    collision_geometry:
+      material: black
+      type: mesh
+      filename: meshes/kinect_bases/kinect_base_1.stl
+  -
+    name: right_kinect_base_2
+    collision_geometry:
+      material: black
+      type: mesh
+      filename: meshes/kinect_bases/kinect_base_2.stl
+  -
+    name: right_kinect_head
+    collision_geometry:
+      type: box
+      dims: [0.076, 0.26, 0.053]
+      material: black
+  -
+    name: right_RGB_camera
+    collision_geometry:
+      type: cylinder
+      radius: 0.0145
+      height: 0.011
+      material: dark_grey
+  -
+    name: right_IR_camera
+    collision_geometry:
+      type: cylinder
+      radius: 0.009
+      height: 0.011
+      material: dark_grey
+#Head Kinect
+  -
+    name: head_kinect_base
+    collision_geometry:
+      type: box
+      dims: [0.086, 0.151, 0.038]
+      material: black
+  -
+    name: head_kinect_head
+    collision_geometry:
+      type: box
+      dims:  [0.076, 0.26, 0.053]
+      material: black
+  -
+    name: head_RGB_camera
+    collision_geometry:
+      type: cylinder
+      radius: 0.0145
+      height: 0.011
+      material: dark_grey
+  -
+    name: head_IR_camera
+    collision_geometry:
+      type: cylinder
+      radius: 0.009
+      height: 0.011
+      material: dark_grey
+white_list:
+  - [base_link, [arm_left_link_3_e, arm_left_link_4_u, arm_left_link_5_r, arm_left_link_6_b, arm_left_link_7_t,
+                            arm_right_link_3_e, arm_right_link_4_u, arm_right_link_5_r, arm_right_link_6_b, arm_right_link_7_t,
+                            left_kinect_base_1, left_kinect_base_2, left_kinect_head, 
+                            right_kinect_base_1, right_kinect_base_2, right_kinect_head, 
+                            base_plate, main_beam, actuator,  tube_port, head_base, pre_suction_cup_left, pre_suction_cup_right, suction_cup_left, suction_cup_right,
+                            air_feed_plate, base_uni, left_movable_pipe, right_movable_pipe, parallel_gripper, passive_finger, vacuum_finger, upper_jaw, upper_vacuum, sponge_upper_jaw, vacuum_base, pre_front_vacuum, front_vacuum]
+                            ]
+  - [torso_link_b1, [arm_left_link_3_e, arm_left_link_4_u, arm_left_link_5_r, arm_left_link_6_b, arm_left_link_7_t,
+                            arm_right_link_3_e, arm_right_link_4_u, arm_right_link_5_r, arm_right_link_6_b, arm_right_link_7_t,
+                            left_kinect_base_1, left_kinect_base_2, left_kinect_head, 
+                            right_kinect_base_1, right_kinect_base_2, right_kinect_head, 
+                            base_plate, main_beam, actuator,  tube_port, head_base, pre_suction_cup_left, pre_suction_cup_right, suction_cup_left, suction_cup_right,
+                            air_feed_plate, base_uni, left_movable_pipe, right_movable_pipe, parallel_gripper, passive_finger, vacuum_finger, upper_jaw, upper_vacuum, sponge_upper_jaw, vacuum_base, pre_front_vacuum, front_vacuum ]
+                            ]
+# LEFT ARM
+  - [arm_left_link_1_s, [arm_left_link_4_u, arm_left_link_5_r, arm_left_link_6_b, arm_left_link_7_t,
+                            arm_right_link_3_e, arm_right_link_4_u, arm_right_link_5_r, arm_right_link_6_b, arm_right_link_7_t,
+                           left_kinect_base_1, left_kinect_base_2, left_kinect_head, 
+                            right_kinect_base_1, right_kinect_base_2, right_kinect_head, 
+                            base_plate, main_beam, actuator,  tube_port, head_base, pre_suction_cup_left, pre_suction_cup_right, suction_cup_left, suction_cup_right,
+                            air_feed_plate, base_uni, left_movable_pipe, right_movable_pipe, parallel_gripper, passive_finger, vacuum_finger, upper_jaw, upper_vacuum, sponge_upper_jaw, vacuum_base, pre_front_vacuum, front_vacuum]
+                            ]
+  - [arm_left_link_2_l, [arm_left_link_5_r, arm_left_link_6_b, arm_left_link_7_t,
+                            arm_right_link_3_e, arm_right_link_4_u, arm_right_link_5_r, arm_right_link_6_b, arm_right_link_7_t,
+                            left_kinect_base_1, left_kinect_base_2, left_kinect_head, 
+                            right_kinect_base_1, right_kinect_base_2, right_kinect_head, 
+                            base_plate, main_beam, actuator,  tube_port, head_base, pre_suction_cup_left, pre_suction_cup_right, suction_cup_left, suction_cup_right,
+                            air_feed_plate, base_uni, left_movable_pipe, right_movable_pipe, parallel_gripper, passive_finger, vacuum_finger, upper_jaw, upper_vacuum, sponge_upper_jaw, vacuum_base, pre_front_vacuum, front_vacuum]
+                            ]
+  - [arm_left_link_3_e, [arm_left_link_6_b, arm_left_link_7_t,
+                            arm_right_link_3_e, arm_right_link_4_u, arm_right_link_5_r, arm_right_link_6_b, arm_right_link_7_t,
+                            left_kinect_base_1, left_kinect_base_2, left_kinect_head, 
+                            right_kinect_base_1, right_kinect_base_2, right_kinect_head, 
+                            base_plate, main_beam, actuator,  tube_port, head_base, pre_suction_cup_left, pre_suction_cup_right, suction_cup_left, suction_cup_right,
+                            air_feed_plate, base_uni, left_movable_pipe, right_movable_pipe, parallel_gripper, passive_finger, vacuum_finger, upper_jaw, upper_vacuum, sponge_upper_jaw, vacuum_base, pre_front_vacuum, front_vacuum]
+                            ]
+  - [arm_left_link_4_u, [arm_left_link_7_t,
+                            arm_right_link_3_e, arm_right_link_4_u, arm_right_link_5_r, arm_right_link_6_b, arm_right_link_7_t,
+                           left_kinect_base_1, left_kinect_base_2, left_kinect_head, 
+                            right_kinect_base_1, right_kinect_base_2, right_kinect_head, 
+                            base_plate, main_beam, actuator,  tube_port, head_base, pre_suction_cup_left, pre_suction_cup_right, suction_cup_left, suction_cup_right,
+                            air_feed_plate, base_uni, left_movable_pipe, right_movable_pipe, parallel_gripper, passive_finger, vacuum_finger, upper_jaw, upper_vacuum, sponge_upper_jaw, vacuum_base, pre_front_vacuum, front_vacuum]
+                            ]
+  - [arm_left_link_5_r, [arm_right_link_3_e, arm_right_link_4_u, arm_right_link_5_r, arm_right_link_6_b, arm_right_link_7_t,
+                            left_kinect_head, 
+                            right_kinect_base_1, right_kinect_base_2, right_kinect_head, 
+                            base_plate, main_beam, actuator,  tube_port, head_base, pre_suction_cup_left, pre_suction_cup_right, suction_cup_left, suction_cup_right,
+                            air_feed_plate, base_uni, left_movable_pipe, right_movable_pipe, parallel_gripper, passive_finger, vacuum_finger, upper_jaw, upper_vacuum, sponge_upper_jaw, vacuum_base, pre_front_vacuum, front_vacuum]
+                            ]
+  - [arm_left_link_6_b, [arm_right_link_3_e, arm_right_link_4_u, arm_right_link_5_r, arm_right_link_6_b, arm_right_link_7_t,
+                            right_kinect_base_1, right_kinect_base_2, right_kinect_head, 
+                            tube_port, head_base, pre_suction_cup_left, pre_suction_cup_right, suction_cup_left, suction_cup_right,
+                            air_feed_plate, base_uni, left_movable_pipe, right_movable_pipe, parallel_gripper, passive_finger, vacuum_finger, upper_jaw, upper_vacuum, sponge_upper_jaw, vacuum_base, pre_front_vacuum, front_vacuum]
+                            ]
+  - [arm_left_link_7_t, [arm_right_link_3_e, arm_right_link_4_u, arm_right_link_5_r, arm_right_link_6_b, arm_right_link_7_t,
+                            right_kinect_base_1, right_kinect_base_2, right_kinect_head, tube_port, head_base, pre_suction_cup_left, pre_suction_cup_right, suction_cup_left, suction_cup_right,
+                            air_feed_plate, base_uni, left_movable_pipe, right_movable_pipe, parallel_gripper, passive_finger, vacuum_finger, upper_jaw, upper_vacuum, sponge_upper_jaw, vacuum_base, pre_front_vacuum, front_vacuum]
+                            ]
+# RIGHT ARM
+  - [arm_right_link_1_s, [arm_left_link_3_e, arm_left_link_4_u, arm_left_link_5_r, arm_left_link_6_b, arm_left_link_7_t,
+                            arm_right_link_3_e, arm_right_link_4_u, arm_right_link_5_r, arm_right_link_6_b, arm_right_link_7_t,
+                            left_kinect_base_1, left_kinect_base_2, left_kinect_head, 
+                            right_kinect_base_1, right_kinect_base_2, right_kinect_head, 
+                            base_plate, main_beam, actuator,  tube_port, head_base, pre_suction_cup_left, pre_suction_cup_right, suction_cup_left, suction_cup_right]
+                            ]
+  - [arm_right_link_2_l, [arm_left_link_3_e, arm_left_link_4_u, arm_left_link_5_r, arm_left_link_6_b, arm_left_link_7_t,
+                            arm_right_link_5_r, arm_right_link_6_b, arm_right_link_7_t,
+                            left_kinect_base_1, left_kinect_base_2, left_kinect_head, 
+                            right_kinect_base_1, right_kinect_base_2, right_kinect_head, 
+                            base_plate, main_beam, actuator,  tube_port, head_base, pre_suction_cup_left, pre_suction_cup_right, suction_cup_left, suction_cup_right]
+                            ]
+  - [arm_right_link_3_e, [arm_left_link_3_e, arm_left_link_4_u, arm_left_link_5_r, arm_left_link_6_b, arm_left_link_7_t,
+                            arm_right_link_6_b, arm_right_link_7_t,
+                            left_kinect_base_1, left_kinect_base_2, left_kinect_head, 
+                            right_kinect_base_1, right_kinect_base_2, right_kinect_head, 
+                            base_plate, main_beam, actuator,  tube_port, head_base, pre_suction_cup_left, pre_suction_cup_right, suction_cup_left, suction_cup_right]
+                            ]
+  - [arm_right_link_4_u, [arm_left_link_3_e, arm_left_link_4_u, arm_left_link_5_r, arm_left_link_6_b, arm_left_link_7_t,
+                            arm_right_link_7_t,
+                            left_kinect_base_1, left_kinect_base_2, left_kinect_head, 
+                            right_kinect_base_1, right_kinect_base_2, right_kinect_head, 
+                            base_plate, main_beam, actuator,  tube_port, head_base, pre_suction_cup_left, pre_suction_cup_right, suction_cup_left, suction_cup_right]
+                            ]
+  - [arm_right_link_5_r, [arm_left_link_3_e, arm_left_link_4_u, arm_left_link_5_r, arm_left_link_6_b, arm_left_link_7_t,
+                            left_kinect_base_1, left_kinect_base_2, left_kinect_head, 
+                            right_kinect_head, 
+                            base_plate, main_beam, actuator,  tube_port, head_base, pre_suction_cup_left, pre_suction_cup_right, suction_cup_left, suction_cup_right]
+                            ]
+  - [arm_right_link_6_b, [arm_left_link_3_e, arm_left_link_4_u, arm_left_link_5_r, arm_left_link_6_b, arm_left_link_7_t,
+                            left_kinect_base_1, left_kinect_base_2, left_kinect_head, 
+                            base_plate, main_beam, actuator,  tube_port, head_base, pre_suction_cup_left, pre_suction_cup_right, suction_cup_left, suction_cup_right]
+                            ]
+  - [arm_right_link_7_t, [arm_left_link_3_e, arm_left_link_4_u, arm_left_link_5_r, arm_left_link_6_b, arm_left_link_7_t,
+                            left_kinect_base_1, left_kinect_base_2, left_kinect_head, 
+                            base_plate, main_beam, actuator,  tube_port, head_base, pre_suction_cup_left, pre_suction_cup_right, suction_cup_left, suction_cup_right]
+                            ]
+# LEFT KINECT
+  - [left_kinect_base_1, [arm_right_link_3_e, arm_right_link_4_u, arm_right_link_5_r, arm_right_link_6_b, arm_right_link_7_t,
+                            right_kinect_base_1, right_kinect_base_2, right_kinect_head, 
+                            air_feed_plate, base_uni, left_movable_pipe, right_movable_pipe, parallel_gripper, passive_finger, vacuum_finger, upper_jaw, upper_vacuum, sponge_upper_jaw, vacuum_base, pre_front_vacuum, front_vacuum]
+                            ]
+  - [left_kinect_base_2, [arm_right_link_3_e, arm_right_link_4_u, arm_right_link_5_r, arm_right_link_6_b, arm_right_link_7_t,
+                            right_kinect_base_1, right_kinect_base_2, right_kinect_head, 
+                            air_feed_plate, base_uni, left_movable_pipe, right_movable_pipe, parallel_gripper, passive_finger, vacuum_finger, upper_jaw, upper_vacuum, sponge_upper_jaw, vacuum_base, pre_front_vacuum, front_vacuum]
+                            ]
+  - [left_kinect_head, [arm_right_link_3_e, arm_right_link_4_u, arm_right_link_5_r, arm_right_link_6_b, arm_right_link_7_t,
+                            right_kinect_base_1, right_kinect_base_2, right_kinect_head, 
+                            air_feed_plate, base_uni, left_movable_pipe, right_movable_pipe, parallel_gripper, passive_finger, vacuum_finger, upper_jaw, upper_vacuum, sponge_upper_jaw, vacuum_base, pre_front_vacuum, front_vacuum]
+                            ]
+# RIGHT KINECT
+  - [right_kinect_base_1, [arm_left_link_3_e, arm_left_link_4_u, arm_left_link_5_r, arm_left_link_6_b, arm_left_link_7_t,
+                            left_kinect_base_1, left_kinect_base_2, left_kinect_head, 
+                            base_plate, main_beam, actuator,  tube_port, head_base, pre_suction_cup_left, pre_suction_cup_right, suction_cup_left, suction_cup_right]
+                            ]
+  - [right_kinect_base_2, [arm_left_link_3_e, arm_left_link_4_u, arm_left_link_5_r, arm_left_link_6_b, arm_left_link_7_t,
+                            left_kinect_base_1, left_kinect_base_2, left_kinect_head, 
+                            base_plate, main_beam, actuator,  tube_port, head_base, pre_suction_cup_left, pre_suction_cup_right, suction_cup_left, suction_cup_right]
+                            ]
+  - [right_kinect_head, [arm_left_link_3_e, arm_left_link_4_u, arm_left_link_5_r, arm_left_link_6_b, arm_left_link_7_t,
+                            left_kinect_base_1, left_kinect_base_2, left_kinect_head, 
+                            base_plate, main_beam, actuator,  tube_port, head_base, pre_suction_cup_left, pre_suction_cup_right, suction_cup_left, suction_cup_right]
+                            ]
+# UNIGRIPPER
+  - [base_plate, [ right_kinect_base_1, right_kinect_base_2, right_kinect_head,
+  air_feed_plate, base_uni, left_movable_pipe, right_movable_pipe, parallel_gripper, passive_finger, vacuum_finger, upper_jaw, upper_vacuum, sponge_upper_jaw, vacuum_base, pre_front_vacuum, front_vacuum]]
+  - [main_beam, [ right_kinect_base_1, right_kinect_base_2, right_kinect_head,
+  air_feed_plate, base_uni, left_movable_pipe, right_movable_pipe, parallel_gripper, passive_finger, vacuum_finger, upper_jaw, upper_vacuum, sponge_upper_jaw, vacuum_base, pre_front_vacuum, front_vacuum]]
+  - [actuator, [ right_kinect_base_1, right_kinect_base_2, right_kinect_head,
+  air_feed_plate, base_uni, left_movable_pipe, right_movable_pipe, parallel_gripper, passive_finger, vacuum_finger, upper_jaw, upper_vacuum, sponge_upper_jaw, vacuum_base, pre_front_vacuum, front_vacuum]]
+  - [tube_port, [ right_kinect_base_1, right_kinect_base_2, right_kinect_head,
+  air_feed_plate, base_uni, left_movable_pipe, right_movable_pipe, parallel_gripper, passive_finger, vacuum_finger, upper_jaw, upper_vacuum, sponge_upper_jaw, vacuum_base, pre_front_vacuum, front_vacuum]]
+  - [head_base, [ right_kinect_base_1, right_kinect_base_2, right_kinect_head,
+  air_feed_plate, base_uni, left_movable_pipe, right_movable_pipe, parallel_gripper, passive_finger, vacuum_finger, upper_jaw, upper_vacuum, sponge_upper_jaw, vacuum_base, pre_front_vacuum, front_vacuum ]]
+#HEAD KINECT                          
+  - [head_kinect_base, [arm_left_link_2_l, arm_left_link_3_e, arm_left_link_4_u, arm_left_link_5_r, arm_left_link_6_b, arm_left_link_7_t,
+                        arm_right_link_2_l, arm_right_link_3_e, arm_right_link_4_u, arm_right_link_5_r, arm_right_link_6_b, arm_right_link_7_t,
+                        left_kinect_base_1, left_kinect_base_2, left_kinect_head, 
+                            right_kinect_base_1, right_kinect_base_2, right_kinect_head, 
+                        base_plate, main_beam, actuator,  tube_port, head_base, pre_suction_cup_left, pre_suction_cup_right, suction_cup_left, suction_cup_right,
+                        air_feed_plate, base_uni, left_movable_pipe, right_movable_pipe, parallel_gripper, passive_finger, vacuum_finger, upper_jaw, upper_vacuum, sponge_upper_jaw, vacuum_base, pre_front_vacuum, front_vacuum]
+                       ]                         
+  - [head_kinect_head, [arm_left_link_2_l, arm_left_link_3_e, arm_left_link_4_u, arm_left_link_5_r, arm_left_link_6_b, arm_left_link_7_t,
+                        arm_right_link_2_l, arm_right_link_3_e, arm_right_link_4_u, arm_right_link_5_r, arm_right_link_6_b, arm_right_link_7_t,
+                        left_kinect_base_1, left_kinect_base_2, left_kinect_head, 
+                            right_kinect_base_1, right_kinect_base_2, right_kinect_head, 
+                        base_plate, main_beam, actuator,  tube_port, head_base, pre_suction_cup_left, pre_suction_cup_right, suction_cup_left, suction_cup_right,
+                        air_feed_plate, base_uni, left_movable_pipe, right_movable_pipe, parallel_gripper, passive_finger, vacuum_finger, upper_jaw, upper_vacuum, sponge_upper_jaw, vacuum_base, pre_front_vacuum, front_vacuum]
+                       ]
+#PARALLEL_UNIGRIPPER
+  # - [base_uni, [] ]
+  # - [left_movable_pipe, [] ]
+  # - [right_movable_pipe, [] ]
+  # - [passive_finger, [] ]
+  # - [vaccum_finger, [] ]
+  # - [upper_jaw, [] ]
+  # - [upper_vacuum, [] ]
+  # - [sponge_upper_jaw, [] ]
+  # - [vaccum_base, [] ]
+  # - [air_suck_1, [] ]
+  # - [front_vacuum , [] ]
+
+
+

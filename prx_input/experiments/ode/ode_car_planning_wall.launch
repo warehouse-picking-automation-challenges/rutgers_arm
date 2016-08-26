@@ -1,0 +1,146 @@
+<launch>  
+<rosparam command="load" ns="planning" file="$(find prx_input)/templates/planning_applications/single_query_application.yaml"/>
+<rosparam>
+planning:
+  simulate: true
+  visualize: true
+  random_seed: 9849
+  persistent: false
+</rosparam>
+<rosparam command="load" ns="planning/motion_planner" file="$(find sparse_rrt)/input/templates/sparse_rrt.yaml"/>
+<rosparam command="load" ns="planning/task_planner" file="$(find prx_input)/templates/task_planners/single_shot.yaml"/>
+<rosparam ns="planning/task_planner/planners/planner" >
+template: motion_planner
+space_name: space1
+validity_checker:
+  type: world_model_validity_checker
+sampler:
+  type: uniform_sampler
+local_planner:
+  type: time_varying_local_planner
+  lower_multiple: 100
+  upper_multiple: 500
+  learning_rate: .05
+  accepted_radius: 2
+  num_controls: 1
+  max_multiple: 500
+distance_metric:
+  type: graph_distance_metric
+  distance_function: default
+max_points: 30000
+near_threshold: 2
+drain: true
+radius_nearest: true
+delta_drain: 0
+delta_near: 0
+radius_solution: true
+collision_checking: false
+visualize: true
+visualize_tree: false
+visualize_solution: true
+visualization_body: simulator/converter1/car1/chassis
+</rosparam>
+<rosparam command="load" ns="planning/task_planner" >
+stats_criteria:
+  elements:
+    criterion1:
+      type: timed_criterion
+      condition: 10
+</rosparam>
+<rosparam command="load" ns="planning/query_type" file="$(find prx_input)/templates/queries/motion_planning_query.yaml"/>
+<rosparam command="load" ns="planning/query_type" >
+start_state: [200,0.2,0,0]
+goal:
+  type: radial_goal_region
+  distance_metric:
+    type: linear_distance_metric
+    distance_function: default
+  goal_state: [200,70,0,0]
+  radius: 20
+stopping_criteria:
+  elements:
+    criterion1:
+      type: timed_criterion
+      condition: 60
+</rosparam>
+<rosparam command="load" ns="planning/queries/query1" >
+template: query_type
+</rosparam>
+<rosparam command="load" ns="planning/world_model/embeddings" >
+space1:
+  default:
+    type: mako_to_xytheta
+</rosparam>
+<rosparam command="load" ns="planning/world_model" file="$(find prx_input)/templates/simulators/ode_simulator.yaml"/>
+
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/converter1/subsystems/car1"
+    file="$(find mako)/input/plants/mako.yaml"/>
+
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/converter1"
+	file="$(find mako)/input/controllers/mako_converter.yaml" />
+
+  <rosparam ns="planning/world_model/simulator/subsystems/converter1">
+  embeddings:
+    space1: 
+      type: full_mapping
+  fuel: 200
+  </rosparam>
+
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/wall"
+    file="$(find prx_input)/templates/plants/ode/falling_spheres.yaml"/>
+
+  <rosparam ns="planning/world_model/simulator/subsystems/wall">
+  embeddings:
+    space1: 
+      type: obstacle_mapping
+  </rosparam>
+
+ <rosparam ns="planning">
+  <!-- First define the mapping between simulation and world model plants -->
+  system_mapping:
+  - 
+    pair: [simulator/consumer/converter1/car1, world_model/simulator/converter1/car1]
+  - 
+    pair: [simulator/consumer/converter1, world_model/simulator/converter1]
+
+  consumer: simulator/consumer
+  </rosparam>
+
+  <rosparam command="load" ns="planning/world_model/simulator/obstacles"
+     file="$(find prx_input)/templates/environments/ode_car_tunnel.yaml"/>
+
+  <node name="planning" pkg="prx_planning" type="prx_planning"
+        required="false" launch-prefix="gdb --args" output="screen" args="planning" />
+
+
+<!-- SIM SIM SIM SIM SIM SIM SIM SIM SIM SIM SIM SIM SIM SIM SIM SIM SIM SIM SIM SIM SIM SIM SIM SIM -->
+  <rosparam command="load" file="$(find prx_input)/templates/applications/empty_application.yaml" />
+  <rosparam command="load" file="$(find prx_input)/templates//simulators/ode_simulator.yaml"/>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+  <rosparam command="load" ns="controller" file="$(find prx_input)/templates/controllers/consumer.yaml"/>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer">
+    template: "controller"
+  </rosparam>
+  <rosparam command="load" ns="/simulator/subsystems/consumer/subsystems/converter1"
+	file="$(find mako)/input/controllers/mako_converter.yaml" />
+  <rosparam ns="simulator/subsystems/consumer/subsystems/converter1">
+  fuel: 200
+  </rosparam>
+
+  <rosparam command="load" ns="/simulator/subsystems/wall"
+    file="$(find prx_input)/templates/plants/ode/falling_spheres.yaml"/>
+
+  <rosparam command="load" ns="/simulator/subsystems/consumer/subsystems/converter1/subsystems/car1"
+    file="$(find mako)/input/plants/mako.yaml"/>
+
+  <rosparam command="load" ns="simulator/obstacles"
+     file="$(find prx_input)/templates/environments/ode_car_tunnel.yaml"/>
+
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation"
+        required="true"   launch-prefix="" output="screen" />
+
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+
+
+</launch>

@@ -1,0 +1,437 @@
+<launch>  
+  <rosparam file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <rosparam ns="simulation" file="$(find prx_input)/templates/applications/empty_application.yaml" />
+  <rosparam ns="simulation" file="$(find manipulation)/input/manipulation_simulator.yaml"/>  
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manipulator" file="$(find manipulation)/input/motoman/motoman_complete_kinect_reflex.yaml"/>
+
+  <rosparam ns="simulation/simulator/obstacles" file="$(find manipulation)/input/shelf.yaml"/>
+  <rosparam ns="simulation/simulator/obstacles" file="$(find apc)/input/bounding_boxes.yaml"/>
+
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/champion_copper_plus_spark_plug" file="$(find manipulation)/input/objects/apc_items/champion_copper_plus_spark_plug.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/cheezit_big_original" file="$(find manipulation)/input/objects/apc_items/cheezit_big_original.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/crayola_64_ct" file="$(find manipulation)/input/objects/apc_items/crayola_64_ct.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/dr_browns_bottle_brush" file="$(find manipulation)/input/objects/apc_items/dr_browns_bottle_brush.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/elmers_washable_no_run_school_glue" file="$(find manipulation)/input/objects/apc_items/elmers_washable_no_run_school_glue.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/feline_greenies_dental_treats" file="$(find manipulation)/input/objects/apc_items/feline_greenies_dental_treats.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/highland_6539_self_stick_notes" file="$(find manipulation)/input/objects/apc_items/highland_6539_self_stick_notes.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/kong_duck_dog_toy" file="$(find manipulation)/input/objects/apc_items/kong_duck_dog_toy.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/kyjen_squeakin_eggs_plush_puppies" file="$(find manipulation)/input/objects/apc_items/kyjen_squeakin_eggs_plush_puppies.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/mark_twain_huckleberry_finn" file="$(find manipulation)/input/objects/apc_items/mark_twain_huckleberry_finn.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/mommys_helper_outlet_plugs" file="$(find manipulation)/input/objects/apc_items/mommys_helper_outlet_plugs.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/munchkin_white_hot_duck_bath_toy" file="$(find manipulation)/input/objects/apc_items/munchkin_white_hot_duck_bath_toy.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/oreo_mega_stuf" file="$(find manipulation)/input/objects/apc_items/oreo_mega_stuf.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/rolodex_jumbo_pencil_cup" file="$(find manipulation)/input/objects/apc_items/rolodex_jumbo_pencil_cup.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/stanley_66_052" file="$(find manipulation)/input/objects/apc_items/stanley_66_052.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/crayola" file="$(find manipulation)/input/objects/crayola.yaml" />
+
+
+  <rosparam ns="planning/world_model/simulator/subsystems/champion_copper_plus_spark_plug" file="$(find manipulation)/input/objects/apc_items/champion_copper_plus_spark_plug.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/cheezit_big_original" file="$(find manipulation)/input/objects/apc_items/cheezit_big_original.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/crayola_64_ct" file="$(find manipulation)/input/objects/apc_items/crayola_64_ct.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/dr_browns_bottle_brush" file="$(find manipulation)/input/objects/apc_items/dr_browns_bottle_brush.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/elmers_washable_no_run_school_glue" file="$(find manipulation)/input/objects/apc_items/elmers_washable_no_run_school_glue.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/feline_greenies_dental_treats" file="$(find manipulation)/input/objects/apc_items/feline_greenies_dental_treats.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/highland_6539_self_stick_notes" file="$(find manipulation)/input/objects/apc_items/highland_6539_self_stick_notes.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/kong_duck_dog_toy" file="$(find manipulation)/input/objects/apc_items/kong_duck_dog_toy.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/kyjen_squeakin_eggs_plush_puppies" file="$(find manipulation)/input/objects/apc_items/kyjen_squeakin_eggs_plush_puppies.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/mark_twain_huckleberry_finn" file="$(find manipulation)/input/objects/apc_items/mark_twain_huckleberry_finn.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/mommys_helper_outlet_plugs" file="$(find manipulation)/input/objects/apc_items/mommys_helper_outlet_plugs.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/munchkin_white_hot_duck_bath_toy" file="$(find manipulation)/input/objects/apc_items/munchkin_white_hot_duck_bath_toy.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/oreo_mega_stuf" file="$(find manipulation)/input/objects/apc_items/oreo_mega_stuf.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/rolodex_jumbo_pencil_cup" file="$(find manipulation)/input/objects/apc_items/rolodex_jumbo_pencil_cup.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/stanley_66_052" file="$(find manipulation)/input/objects/apc_items/stanley_66_052.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/crayola" file="$(find manipulation)/input/objects/crayola.yaml" />
+
+  <rosparam ns="simulator">
+    simulation_step: 0.005
+  </rosparam>
+  <rosparam ns="simulation/application">
+  start_simulation: true
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/subsystems/consumer">
+  type: apc_controller
+  real_robot: false
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manipulator">
+    # initial_state: [-1.6856626520499373711459157,1.6670304739099091051457435,-1.7691098223388985744009005,0.4136146066310486535400059,-1.8568473148596029709267441,-2.4265580693602153417032241,0.0457015585617164127318901,-2.2354548801969826854474377,0.0318390965677904508313034,1.570 0 0 -1.70 0 0 0  1 3] 
+    # initial_state: [0    1.57 0 0 -1.70 0 0 0   0   1.57 0 0 -1.70 0 0 0  1 3]
+  </rosparam>
+
+  <rosparam ns="planning">
+    # random_seed: 14391835
+    random_seed: 353116750
+    simulate: false
+    visualize: true
+    persistent: true
+    world_model:
+      type: manipulation_world_model
+      num_ik_seeds: 45
+      IK_databases:
+        motoman_database:
+          distance_metric:
+            type: graph_distance_metric
+          manipulator: manipulator
+          samples: 1000
+          serialize_file: motoman[1000].database
+    type: apc_planning_application
+    full_manipulator_context_name: manipulator_pc
+  </rosparam>
+
+  <rosparam ns="planning" file="$(find prx_input)/templates/spaces/space_types.yaml"/>  
+  <rosparam ns="planning/world_model" file="$(find manipulation)/input/manipulation_simulator.yaml"/>  
+  <rosparam ns="planning/world_model/simulator/subsystems/manipulator" file="$(find manipulation)/input/motoman/motoman_complete_kinect_reflex.yaml"/>
+  <rosparam ns="planning/world_model/simulator/subsystems/manipulator">
+   initial_state: [0    1.57 0 0 -1.70 0 0 0   0   1.57 0 0 -1.70 0 0 0  1 3]
+  </rosparam>
+
+  <rosparam ns="planning/world_model/simulator/obstacles" file="$(find manipulation)/input/shelf.yaml"/>
+  <rosparam ns="planning/world_model/simulator/obstacles" file="$(find apc)/input/bounding_boxes.yaml"/>
+
+
+  <rosparam ns="planning/world_model/planning_contexts">
+    manipulator_pc:
+      default:
+        type: "hide_mapping"
+    left_camera:  
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_arm"
+        end_effector_context_name: "left_end_effector"
+        start_link: "base_link"
+        end_link: "left_IR_camera"
+    left_full_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_arm"
+        end_effector_context_name: "left_end_effector"
+        start_link: "base_link"
+        end_link: "head_sponge"
+        ik_database: motoman_database
+        left_arm_ik: true
+    left_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_arm"
+        end_effector_context_name: "left_end_effector"
+        start_link: "base_link"
+        end_link: "head_sponge"
+    left_arm_planning:
+      default:
+        type: "hide_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_arm"
+        end_effector_context_name: "left_end_effector"
+        start_link: "base_link"
+        end_link: "head_sponge"
+    left_end_effector:
+      default:
+        type: "hide_mapping"
+    right_camera:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "right_full_arm"
+        arm_context_name: "right_arm"
+        end_effector_context_name: "right_end_effector"
+        start_link: "base_link"
+        end_link: "right_IR_camera"
+    right_full_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "right_full_arm"
+        arm_context_name: "right_arm"
+        end_effector_context_name: "right_end_effector"
+        start_link: "base_link"
+        end_link: "arm_right_reflex_virtual"
+        ik_database: motoman_database
+        left_arm_ik: false
+    right_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "right_full_arm"
+        arm_context_name: "right_arm"
+        end_effector_context_name: "right_end_effector"
+        start_link: "base_link"
+        end_link: "arm_right_reflex_virtual"
+    right_arm_planning:
+      default:
+        type: "hide_mapping"
+    right_end_effector:
+      default:
+        type: "hide_mapping"
+  </rosparam>
+
+  <rosparam ns="planning/world_model/simulator/subsystems/manipulator">
+    ik_timeout: .02
+    planning_contexts:
+      manipulator_pc:
+        type: "full_mapping"
+      left_full_arm:
+        type: "motoman_left_full_with_torso_state_mapping"
+      left_camera:
+        type: "motoman_left_full_with_torso_state_mapping"
+      left_arm:
+        type: "motoman_left_torso_state_mapping"
+      left_end_effector:
+        type: "motoman_left_gripper_state_mapping"
+      left_arm_planning:
+        type: "motoman_left_torso_state_mapping"
+      right_full_arm:
+        type: "motoman_right_full_with_torso_state_mapping"
+      right_camera:
+        type: "motoman_right_full_with_torso_state_mapping"
+      right_arm:
+        type: "motoman_right_torso_state_mapping"
+      right_end_effector:
+        type: "motoman_right_gripper_state_mapping"
+      right_arm_planning:
+        type: "motoman_right_torso_state_mapping"
+  </rosparam>
+
+
+  <rosparam ns="planning/graph_query_template">
+    type: manipulation_query
+    search_mode: standard_search
+    goal:
+      type: multiple_goal_states
+      distance_metric:
+        type: ann_distance_metric
+  </rosparam>
+  <rosparam ns="planning/motion_query_template">
+    type: motion_planning_query
+    search_mode: standard_search
+    goal:
+      type: multiple_goal_states
+      distance_metric:
+        type: ann_distance_metric
+  </rosparam>
+
+  <rosparam ns="planning/graph_specification_template">
+    type: motion_planning_specification
+    validity_checker: 
+      type: world_model_validity_checker
+    sampler:
+      type: rrg_sampler
+      rejection_sampling: true
+      default_orientation: [0,1,0,1]
+      # min: [.95,-.43,.59]
+      # max: [1.38,.43,1.59]
+      #BIN B
+      initial_sample: [0.95, 0, 1.47]
+      min: [1.00,-.10,1.32]
+      max: [1.30,0.10,1.55]
+      # BIN E
+      #initial_sample: [1.10, 0, 1.21]
+      #min: [0.90,-.14,1.10]
+      #max: [1.40,0.14,1.33]
+      #FRONT OF SHELF
+      # initial_sample: [0.80, 0, 1.32]
+      # min: [0.65,-.14,1.32]
+      # max: [1.15,0.14,1.62]
+      #END EFFECTOR ORIENTATION
+      euler_min: [-.5708, 1.0472, -.5708]
+      euler_max: [.5708, 2.0944, .5708]
+    distance_metric:
+      type: graph_distance_metric
+      distance_function: l_infinite_norm
+    local_planner:
+      type: bvp_local_planner
+      max_prop_length: .2
+    stopping_criteria:
+      elements:
+        criterion1:
+          type: succeeded_criterion
+    heuristic_search:
+      type: constraints_astar_search
+  </rosparam>
+
+  <rosparam ns="planning/task_planner/">
+    type: apc_tp
+    specification:
+      type: apc_driver_stress_specification
+      sampler:
+        type: uniform_sampler
+      validity_checker:
+            type: world_model_validity_checker
+    left_context_name: "left_full_arm"
+    right_context_name: "right_full_arm"
+    left_camera_context_name: "left_camera"
+    right_camera_context_name: "right_camera"
+    manipulation_task_planner_name: "manipulation_task_planner"
+    planners:
+      manipulation_task_planner:
+        type: manipulation_tp
+        num_candidate_connections: 20
+        use_ee_dist_in_planners: false
+        constraints: 
+          type: null_constraints
+        specification:
+          type: manipulation_specification
+          validity_checker: 
+            type: world_model_validity_checker
+          sampler:
+            type: uniform_sampler
+          distance_metric:
+            type: graph_distance_metric
+          local_planner:
+            type: bvp_local_planner
+          stopping_criteria:
+            elements:
+              criterion1:
+                type: iteration_criterion
+                condition: 100
+          heuristic_search:
+            type: constraints_astar_search
+        serialize_flag: true
+        IK_steer_grasping: false
+        planners:
+          left_arm_motion_planner:
+            type: "rrg"
+            expand: true
+            using_rrg_sampler: true
+            number_of_nodes: 2
+            deserialize_file: "left_arm_graph[5k_euclid].roadmap"
+            serialize_file: "left_rrg_B[1].roadmap"
+            # deserialize_folder: "left_arm"
+            visualization_bodies: ["simulator/manipulator/head_sponge"]
+            visualization_graph_name: left_graph_vis
+            visualize_graph: true
+            visualize: true
+            visualize_solutions: false 
+            space_name: "left_arm_planning"
+            planning_context_name: "left_arm"
+            query:
+              template: motion_query_template
+            specification:
+              template: graph_specification_template
+              sampler:
+                manipulation_context: left_full_arm
+          left_rrt_motion_planner:
+            type: rrt
+            goal_bias_rate: 0.5
+            visualization_bodies: ["simulator/manipulator/head_sponge"]
+            visualize_tree: false
+            visualize: false
+            visualize_solutions: false 
+            space_name: "left_arm_planning"
+            planning_context_name: "left_arm"
+            is_connection_planner: true
+            query:
+              type: motion_planning_query
+              query_type: add_query_points_colalisions
+              query_collision_type: lazy_collisions
+              goal:
+                type: multiple_goal_states
+                distance_metric:
+                  type: ann_distance_metric
+            specification:
+              template: tree_specification_template
+              sampler:
+                manipulation_context: left_full_arm
+          right_arm_motion_planner:
+            type: "rrg"
+            using_rrg_sampler: true
+            expand: true
+            number_of_nodes: 2500
+            visualization_bodies: ["simulator/manipulator/arm_right_reflex_virtual"]
+            visualization_graph_name: right_graph_vis
+            visualize_graph: true
+            visualize: true
+            visualize_solutions: false 
+            deserialize_file: "right_arm_graph[5k_euclid].roadmap"
+            serialize_file: "right_rrg_B[5k_2.5k_euclid].roadmap"
+            space_name: "right_arm_planning"
+            planning_context_name: "right_arm"
+            query:
+              template: motion_query_template
+            specification:
+              template: graph_specification_template
+              sampler:
+                manipulation_context: right_full_arm
+          grasping_planner:
+            type: grasping_planner
+            data_folders: 
+              left_full_arm: "prx_packages/manipulation/input/grasp_data/unigripper/"
+              right_full_arm: "prx_packages/manipulation/input/grasp_data/reflex/"
+            max_ik_tries: 50
+            specification:
+              type: grasping_specification
+              validity_checker:
+                type: world_model_validity_checker
+  </rosparam>
+
+
+<rosparam ns="planning/tree_specification_template">
+    type: motion_planning_specification
+    validity_checker: 
+      type: world_model_validity_checker
+    sampler:
+      type: uniform_sampler
+    distance_metric:
+      type: graph_distance_metric
+      distance_function: l_infinite_norm
+    local_planner:
+      type: bvp_local_planner
+      # max_prop_length: 0.1
+    stopping_criteria:
+      criteria_check_type: 2
+      elements:
+        criterion1:
+          type: iteration_criterion
+          condition: 5000
+        criterion2:
+          type: goal_criterion
+          criterion_type: goal
+  </rosparam>
+
+  <node name="planning" pkg="prx_planning" type="prx_planning" required="true" launch-prefix="" output="screen" args="planning"/>
+
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation" required="true" launch-prefix="" output="screen" args="simulation"/>
+
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+
+  <rosparam ns="visualization/viewer/">
+    windows:
+      window_1:
+        xpos: 920
+        ypos: 100
+        width: 800
+        height: 800
+        cameras:
+          perspective:
+            ortho: false
+            camera_type: 0
+            eye: [0, 0, 1.8]
+            center: [1, 0, 0]
+            speed: {move: 0.1, rotate: 0.001}
+          orthographic:
+            ortho: true
+            ortho_param:
+              left: -300
+              right: 300
+              bottom: -300
+              top: 300
+              zNear: 0
+              zFar: 1000
+            speed: {move: 0.2, rotate: 0.001}
+          smooth:
+            ortho: false
+            camera_type: 2
+            eye: [0, -20, 15]
+            center: [0, 1, 18]
+            speed: {move: 0.2, rotate: 0.001}
+  </rosparam>
+
+</launch>

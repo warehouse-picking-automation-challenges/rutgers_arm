@@ -1,0 +1,32 @@
+type: manual
+input_keys:
+  - 
+    input_key: LEFT
+    control_name: torque
+    value: 5
+    action: add
+  -
+    input_key: RIGHT
+    control_name: torque
+    value: -5
+    action: add
+  -
+    input_key: UP
+    control_name: torque2
+    value: -5
+    action: add
+  -
+    input_key: DOWN
+    control_name: torque2
+    value: 5
+    action: add
+  -
+    input_key: 0
+    control_name: torque
+    value: 0
+    action: replace
+  -
+    input_key: 9
+    control_name: torque2
+    value: 0
+    action: replace

@@ -1,0 +1,6 @@
+<launch>
+	<include ns="planning" file="$(find prx_input)/experiments/planar_manipulator/planning/world_model.launch" />
+	<include ns="planning" file="$(find prx_input)/experiments/planar_manipulator/planning/planner_structure.launch" />
+	<include ns="planning" file="$(find prx_input)/experiments/planar_manipulator/planning/query.launch" />
+	<node name="planning" pkg="prx_planning" type="prx_planning" required="false" launch-prefix="" output="screen" args="planning" />
+</launch>

@@ -1,0 +1,39 @@
+<launch>
+  <rosparam ns="queries">
+  query1:
+    type: pebble_test_query
+    initial_state:
+      -
+        name: disk0
+        node_id: 8
+      -
+        name: disk1
+        node_id: 0
+      -
+        name: disk2
+        node_id: 9
+      -
+        name: disk3
+        node_id: 1
+      -
+        name: disk4
+        node_id: 10
+    target_state:
+      -
+        name: disk0
+        node_id: 0
+      -
+        name: disk1
+        node_id: 9
+      -
+        name: disk2
+        node_id: 1
+      -
+        name: disk3
+        node_id: 10
+      -
+        name: disk4
+        node_id: 8
+
+  </rosparam>
+</launch>

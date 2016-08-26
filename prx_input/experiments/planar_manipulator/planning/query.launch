@@ -1,0 +1,24 @@
+<launch>
+  <rosparam command="load" ns="query_type" file="$(find prx_input)/templates/queries/motion_planning_query.yaml" />
+  
+  <rosparam ns="problems">
+  problem1:
+    specification:
+      type: motion_planning_specification
+      stopping_criteria:
+        elements:
+          criterion1:
+            type: iteration_criterion
+            condition: 20
+    query:
+      template: "query_type"
+      start_state: [10, 10, 0, 0, 0]
+      goal:
+        type: "radial_goal_region"
+        distance_metric:
+          type: linear_distance_metric
+          distance_function: default
+        goal_state: [-70, 80, 1.57, 0, -0.717]
+        radius: 10
+  </rosparam>
+</launch>

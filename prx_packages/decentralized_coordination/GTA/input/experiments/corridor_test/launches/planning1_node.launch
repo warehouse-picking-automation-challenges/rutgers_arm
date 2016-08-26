@@ -1,0 +1,30 @@
+<launch>
+
+  <rosparam ns="planning1">
+    state_mapping:
+      - 
+        pair: [simulator/consumer01/vo_controller01/disk01, world_model/simulator/disk]
+    control_mapping:
+      - 
+        pair: [simulator/consumer01/vo_controller01, world_model/simulator/disk]
+      - 
+        pair: [simulator/consumer01/vo_controller01/disk01, world_model/simulator/disk]
+    consumer_mapping:
+      - 
+        pair: [simulator/consumer01, space1]
+    consumer: simulator/consumer01
+    my_plant: simulator/consumer01/vo_controller01/disk01
+    planning_duration: 0.5
+    rrandom_seed: 123456
+    visualize: true
+  </rosparam>
+
+  <include ns="planning1" file="$(find GTA)/input/experiments/corridor_test/planning/world_models/world_model.launch"/>
+  <include ns="planning1" file="$(find GTA)/input/experiments/corridor_test/planning/planner_structure/planner_structure.launch"/>
+  <rosparam ns="planning1/task_planner" >
+    greedy: false
+  </rosparam>
+  <node name="planning1"  pkg="prx_planning" type="prx_planning" required="true" launch-prefix="" output="screen" args="planning1"/>
+
+</launch>
+

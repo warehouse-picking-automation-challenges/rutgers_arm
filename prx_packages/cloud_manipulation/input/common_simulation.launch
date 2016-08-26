@@ -1,0 +1,43 @@
+<launch>
+  
+  <!--       SIMULATION        -->          <!--       SIMULATION        -->       <!--       SIMULATION        -->
+
+  <!--rosparam command="load" file="$(find prx_input)/templates/applications/empty_application.yaml"/--> 
+  <rosparam command="load" file="$(find cloud_manipulation)/input/simulation/cloud_simulation_application.yaml"/> 
+  <rosparam command="load" file="$(find cloud_manipulation)/input/simulation/manipulation_simulator.yaml"/>  
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>  
+
+  <rosparam command="load" ns="baxter" file="$(find baxter)/input/urdf/baxter.yaml"/>
+  <rosparam command="load" ns="simulator/obstacles" file="$(find baxter)/input/simulation/baxter_torso.yaml" />
+
+  <rosparam command="load" ns="simulator">
+    manipulator_names: 
+      -
+        simulator/consumer/manipulator
+    sensing_info:
+      type: grasp_sensing_info
+      sources: ["grasp_sensor_sim"]
+      update_delay: 0.02
+    grasp_sensor_source: "grasp_sensor_sim"
+    fake_planning: false
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer" file="$(find prx_input)/templates/controllers/consumer.yaml"/>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/manipulator">
+    template: "baxter"
+    hand: left
+  </rosparam>
+
+  <rosparam ns="simulator/sensing">
+    type: sensing_model
+    sensors:
+      grasp_sensor1:
+        type: simulated_grasp_sensor
+        source: "grasp_sensor_sim"
+        sensor_delay: 0.02
+  </rosparam>
+
+  
+
+</launch> 

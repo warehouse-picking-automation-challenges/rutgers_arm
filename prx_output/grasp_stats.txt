@@ -1,0 +1,228 @@
+
+
+
+********************************************************************
+Planning statistics for execution on Tue Jun 21 23:07:24 2016
+
+********************************************************************
+
+Resolved the grasp query in...0.0015199999999999999
+   ---Pick
+       Retracting with object
+     ___IK.Steering
+   Connection plan Success.
+       Retracting without object
+     ___IK.Steering
+   Connection plan Success.
+motion plan success time for expo_dry_erase_board_eraser using right_full_arm: 0.38400799999999996
+Total Time for expo_dry_erase_board_eraser using right_full_arm: 0.38578899999999999
+Total grasp_ik_fail: 0, total grasp_coliision_counter: 0, total motion_plan_fail: 0
+ grasp planning succeeded
+
+expo_dry_erase_board_eraser using right_full_arm
+
+
+
+********************************************************************
+Planning statistics for execution on Tue Jun 21 23:10:29 2016
+
+********************************************************************
+
+Resolved the grasp query in...0.0015219999999999999
+   ---Pick
+
+
+********************************************************************
+Planning statistics for execution on Tue Jun 21 23:11:58 2016
+
+********************************************************************
+
+
+
+********************************************************************
+Planning statistics for execution on Tue Jun 21 23:12:45 2016
+
+********************************************************************
+
+Resolved the grasp query in...0.0015279999999999998
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 1.497471
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.8686350000000003
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 2.5753750000000002
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.1190639999999998
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.6350420000000003
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.3495929999999996
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.8375170000000001
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.371397
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 3.533064
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.1509039999999997
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 5.2940570000000005
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 3.7908900000000001
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 5.235557
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.8433159999999997
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 5.0997130000000004
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.3111860000000002
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 1.2978229999999999
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.0743830000000001
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.4540689999999996
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 21.110469999999999
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.165591
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 5.2559069999999997
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 1.388207
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.6947000000000001
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 5.1924070000000002
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.1862599999999999
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.065569
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.4532080000000001
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 5.1821270000000004
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 0.76959299999999997
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 2.6422629999999998
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 1.0245120000000001
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 5.0462730000000002
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 2.8111250000000001
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.678706
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.1237579999999996
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 2.93824
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 5.1491369999999996
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 3.193092
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 5.1104099999999999
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.8752409999999999
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 1.4757940000000001
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.7397539999999996
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 5.1372429999999998
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 5.0769989999999998
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.9013980000000004
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.0366330000000001
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 3.3505199999999999
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.9600410000000004
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 1.289013
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 5.3144670000000005
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.152469
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 1.526411
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 5.1301769999999998
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 2.4102830000000002
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 5.1078359999999998
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 1.314624
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 5.2344799999999996
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 3.9822090000000001
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 0.83119699999999996
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 1.467875
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.9803449999999998
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.6666990000000004
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.690016
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 0.81545900000000004
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 0.84395100000000001
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 5.1174150000000003
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 3.8861289999999999
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.4005919999999996
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 3.456804
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.442755
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.1648430000000003
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.5002740000000001
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.7563180000000003
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.2846929999999999
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 5.0029349999999999
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.8732509999999998
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.3352649999999997
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 1.5840640000000001
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 2.935924
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.0019530000000003
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 0.82484599999999997
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 1.4147799999999999
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 5.0552440000000001
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 5.3288080000000004
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 3.701473
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.1383640000000002
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.1179430000000004
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 3.4512040000000002
+   ---Pick
+motion plan fail time for expo_dry_erase_board_eraser using right_full_arm: 4.3251299999999997
+   ---Pick

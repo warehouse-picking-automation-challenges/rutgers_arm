@@ -1,0 +1,178 @@
+planning:
+  consumer: simulator/consumer
+  consumer_mapping:
+  - pair: [simulator/consumer, full_space]
+  debug: true
+  motion_planner:
+    heuristic_search: {type: prm_astar}
+    type: prm_star
+  problems:
+    problem1:
+      query:
+        goal:
+          distance_metric: {type: ann_distance_metric}
+          goal_state: [26, 19, 0]
+          type: goal_state
+        start_state: [-80, -80, 0]
+        template: query_type
+      specification:
+        seeds:
+        - state: [25, 19, 0]
+        - state: [24, 19, 0]
+        - state: [25, 19, 0]
+        - state: [26, 18, 0]
+        - state: [25, 18, 0]
+        - state: [25, 17, 0]
+        - state: [25, 16, 0]
+        stopping_criteria:
+          elements:
+            criterion1: {condition: 100, type: iteration_criterion}
+        template: specification_type
+  prx:
+    spaces: {AirControl: EEE, Airplane: EEEREEE, Baxter_Arm_Left: EEEEEEED, ConstructionDiskControl: ERDD,
+      ConstructionDiskState: EEERRD, D: D, DynamicRigidBody: EEEQQQQEEEEEE, EMPTY: '',
+      FixedWing: EEEERRRRE, HeliControl: EERR, ManipulationSampler: EEERR, ManipulationSamplerNear: ERR,
+      ODE_B: E, ODE_J: E, OneLink: RE, PointRollPitchYaw: EEERRR, Pushing: EERER,
+      R: R, RR: RR, RallyCar: EEEEREEE, RallyCarTask: EEER, Rd: E, Rdd: E, SE2: EER,
+      SE3: EEEQQQQ, SOCar: EEREE, SimpleManipulator: EEERRRD, TWO_D_BODY: EEEE, ThreeLink: RRREEE,
+      Time: E, TwoLink: RREE, Vector: ER, WheelControl: REE, X: E, XR: ER, XXXXXX: EEEEEE,
+      XXd: EE, XXdRRd: EERE, XY: EE, XYZ: EEE, Xd: E, XdRd: EE, XdYd: EE, Xdd: E,
+      XddRdd: EE, XddYdd: EE, bomb_state: EEE}
+  query_type: {type: motion_planning_query}
+  random_seed: 34378
+  simulate: true
+  specification_type:
+    distance_metric: {type: linear_distance_metric}
+    local_planner: {type: bvp_local_planner}
+    sampler: {type: uniform_sampler}
+    type: motion_planning_specification
+    validity_checker: {type: world_model_validity_checker}
+  system_mapping:
+  - pair: [simulator/consumer/disk, world_model/simulator/disk]
+  task_planner:
+    planners:
+      planner1:
+        delta_prm: false
+        space_name: full_space
+        template: motion_planner
+        visualization_bodies: [simulator/disk/body]
+        visualize_graph: true
+        visualize_solutions: false
+    type: single_shot
+  type: single_query_application
+  visualize: true
+  world_model:
+    planning_contexts:
+      full_space:
+        default: {type: full_mapping}
+    simulator:
+      sensing_info:
+        type: point_cloud_sensing_info
+        sources: ["point_cloud"]
+        update_delay: .1
+      sensing:
+        type: sensing_model
+        sensors:
+          point_cloud_sensor:
+            type: point_cloud_sensor
+            source: "point_cloud"
+            topic_name: "/point_cloud"
+            obstacle_geometry: "simulator/obstacles/obstacle1/point_cloud"
+            sensor_delay: 0.1
+      collision_checker: {type: fcl}
+      obstacles:
+        obstacle1:
+          geometries:
+          - collision_geometry: {material: white,
+              type: point_cloud}
+            config:
+              orientation: [0, 0, 0, 1]
+              position: [0,0,0]
+            name: point_cloud
+          type: obstacle
+      simulation_step: 0.02
+      subsystems:
+        disk:
+          geometries:
+          - collision_geometry: {height: 1.0, material: white, radius: 0.6, type: cylinder}
+            name: body
+          input_control_space:
+            max: [100, 100, 4]
+            min: [-100, -100, -4]
+            scale: [1, 1, 0.0]
+          integrator: rk4
+          max_step: 0.35
+          root_geom: body
+          state_space:
+            max: [100, 100, 4]
+            min: [-100, -100, -4]
+            scale: [1, 1, 0.0]
+          type: rigid_body
+          z: 2
+      type: collision_stop_simulator
+prx:
+  spaces: {AirControl: EEE, Airplane: EEEREEE, Baxter_Arm_Left: EEEEEEED, ConstructionDiskControl: ERDD,
+    ConstructionDiskState: EEERRD, D: D, DynamicRigidBody: EEEQQQQEEEEEE, EMPTY: '',
+    FixedWing: EEEERRRRE, HeliControl: EERR, ManipulationSampler: EEERR, ManipulationSamplerNear: ERR,
+    ODE_B: E, ODE_J: E, OneLink: RE, PointRollPitchYaw: EEERRR, Pushing: EERER, R: R,
+    RR: RR, RallyCar: EEEEREEE, RallyCarTask: EEER, Rd: E, Rdd: E, SE2: EER, SE3: EEEQQQQ,
+    SOCar: EEREE, SimpleManipulator: EEERRRD, TWO_D_BODY: EEEE, ThreeLink: RRREEE,
+    Time: E, TwoLink: RREE, Vector: ER, WheelControl: REE, X: E, XR: ER, XXXXXX: EEEEEE,
+    XXd: EE, XXdRRd: EERE, XY: EE, XYZ: EEE, Xd: E, XdRd: EE, XdYd: EE, Xdd: E, XddRdd: EE,
+    XddYdd: EE, bomb_state: EEE}
+simulation:
+  application: {type: empty_application}
+  controller: {active_queries: false, keep_last_control: true, planning_node: /planning,
+    smooth: false, type: consumer_controller}
+  plant:
+    geometries:
+    - collision_geometry: {height: 1.0, material: red, radius: 0.6, type: cylinder}
+      name: body
+    initial_state: [-80, 0, 0]
+    input_control_space:
+      max: [100, 100, 4]
+      min: [-100, -100, -4]
+      scale: [1, 1, 0.0]
+    integrator: rk4
+    max_step: 0.35
+    root_geom: body
+    state_space:
+      max: [100, 100, 4]
+      min: [-100, -100, -4]
+      scale: [1, 1, 0.0]
+    type: rigid_body
+    z: 2
+  simulator:
+    # sensing_info:
+    #   type: point_cloud_sensing_info
+    #   sources: ["point_cloud"]
+    #   update_delay: .1
+    # sensing:
+    #   type: sensing_model
+    #   sensors:
+    #     point_cloud_sensor:
+    #       type: point_cloud_sensor
+    #       source: "point_cloud"
+    #       topic_name: "/point_cloud"
+    #       obstacle_geometry: "simulator/obstacles/obstacle1/point_cloud"
+    #       sensor_delay: 0.1
+    collision_checker: {type: fcl}
+    obstacles:
+      obstacle1:
+        geometries:
+        - collision_geometry: {material: white,
+            type: point_cloud}
+          config:
+            orientation: [0, 0, 0, 1]
+            position: [0,0,0]
+          name: point_cloud
+        type: obstacle
+    simulation_step: 0.02
+    subsystems:
+      consumer:
+        subsystems:
+          disk:
+            initial_state: [-80, -80, 0]
+            template: plant
+        template: controller
+    type: collision_stop_simulator

@@ -1,0 +1,12 @@
+type: gta
+action_limit: 2
+neighbor_limit: 10
+prm_max_iterations: 300
+d_prox: 10
+online_planning: false
+my_compute_action_type: 0
+neighbor_compute_action_type: 0
+my_radius: 3.5
+neighbor_radius: 3.5
+visualize_actions: true
+compare_actions: false

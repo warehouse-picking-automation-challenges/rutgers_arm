@@ -1,0 +1,33 @@
+<launch>
+
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>  
+  <include ns="planning" file="$(find cloud_manipulation)/input/common_planning.launch"/>
+
+
+  <include ns="planning" file="$(find cloud_manipulation)/input/planning/world_models/world_model_baxter.launch"/>  
+  <rosparam command="load" ns="planning/world_model/simulator/obstacles" file="$(find cloud_manipulation)/input/environments/shelf.yaml" />  
+  <rosparam command="load" ns="planning/world_model/simulator/obstacles" file="$(find cloud_manipulation)/input/environments/table.yaml" />
+  
+  <rosparam ns="planning/" >
+    random_seed: 143918341
+<!--
+    graph_builder: "/graph_builder"
+    deserialize: true    
+    graphs_filenames:
+      ungrasped_file: ungrasped_2000
+      grasped_file: grasped_2000
+      -->
+  </rosparam>
+
+  <rosparam ns="planning/task_planner/" >
+    smooths_query: false
+    goal_biasing: 6
+    replay_plan: false
+    dummy_algorithm: false
+  </rosparam>
+  
+  <include ns="planning" file="$(find cloud_manipulation)/input/planning/queries/query_easy.launch"/>
+
+
+
+</launch>

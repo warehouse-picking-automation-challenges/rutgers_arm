@@ -1,0 +1,28 @@
+<!-- This file has been tested on PRACSYS revision  -->
+
+<launch>
+        
+  <!-- Define planning parameters -->           
+  <include ns="planning2" file="$(find GTA)/input/experiments/tests/1corridor_4agents/planning/world_models/main_example_1.launch"/>
+  <include ns="planning2" file="$(find GTA)/input/experiments/tests/1corridor_4agents/planning/planner_structures/main_example_1.launch"/>
+  <rosparam ns="planning2">
+    consumer_mapping:
+      - 
+        pair: [simulator/consumer2, space1]
+    my_plant: simulator/consumer2/vo_controller2/disk2
+    state_mapping:
+      - 
+        pair: [simulator/consumer2/vo_controller2/disk2, world_model/simulator/disk]
+    control_mapping:
+      - 
+        pair: [simulator/consumer2/vo_controller2, world_model/simulator/disk]
+      - 
+        pair: [simulator/consumer2/vo_controller2/disk2, world_model/simulator/disk]
+    consumer: simulator/consumer2
+  </rosparam>
+  <!-- Define the planning node -->
+  <machine name="arianne" address="arianne.cs.rutgers.edu" env-loader="~/remote_ros/remote_robb.sh" user="pracsys" password="r0b0t1cs"/>
+  <node name="planning2" pkg="prx_planning" type="prx_planning"
+        required="true" launch-prefix="" output="screen" args="planning2"/>   
+
+</launch>

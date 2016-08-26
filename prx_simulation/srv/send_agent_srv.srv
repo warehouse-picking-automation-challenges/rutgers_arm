@@ -1,0 +1,8 @@
+int64 origin_node
+int64 destination_node
+float64 maximum_speed
+float64[] attraction_strengths
+bool has_luggage
+bool is_disabled
+---
+bool successful_add

@@ -1,0 +1,72 @@
+type: ode_plant
+geometries:
+  -
+    name: link0
+    collision_geometry:
+      type: box
+      dims: [2, 10, 1]
+      material: red
+    config:
+      position: [0, 5, 2]
+      orientation: [0.0, 0.0, 0, 1]
+    dims: [2, 10, 1]
+    mass_type: true
+    weight: 5
+  -
+    name: link1
+    collision_geometry:
+      type: box
+      dims: [2, 10, 1]
+      material: white
+    config:
+      position: [0, 15, 2]
+      orientation: [0.0, 0.0, 0, 1]
+    dims: [2, 10, 1]
+    mass_type: true
+    weight: 5
+  -
+    name: ball
+    collision_geometry:
+      type: sphere
+      radius: 1
+      material: green
+    config:
+      position: [0, 21, 2]
+      orientation: [0.0, 0.0, 0.0, 1.0]
+    dims: [1]
+    mass_type: true
+    weight: 0.1
+
+joints:
+  -
+    name: root
+    type: hinge
+    parent: _world
+    child: link0
+    params: [0, 0, 0, 0, 0, 1]
+  -
+    name: joint0
+    type: hinge
+    parent: link0
+    child: link1
+    params: [0, 10, 0, 0, 0, 1]
+  -
+    name: actuator
+    type: fixed
+    parent: link1
+    child: ball
+
+controls:
+  -
+    name: torque3
+    bounds: [-100, 100]
+    type: joint
+    ode_object: root
+    component: 0
+  -
+    name: torque
+    bounds: [-100, 100]
+    type: joint
+    ode_object: joint0
+    component: 0
+

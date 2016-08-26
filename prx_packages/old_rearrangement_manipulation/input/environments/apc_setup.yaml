@@ -1,0 +1,64 @@
+apc_setup:
+  type: obstacle
+  geometries:
+    -
+      name: shelf
+      collision_geometry:
+        type: mesh
+        filename: meshes/kiva_pod2.stl
+        material: white
+      visualization_geometry:
+        type: mesh
+        filename: meshes/kiva_pod2.osg
+        material: black
+      config:
+        position: [1.2,0.25,2.1]
+        orientation: [0.5 -0.5 -0.5 0.5]
+    -
+      name: foundation
+      collision_geometry:
+        type: box
+        dims: [1.91, 0.5, 0.7]
+        material: shelf_grey
+      config:
+        position: [0.1, 0.85, 2.4575]
+        orientation: [0, 0, 0, 1]
+    -
+      name: box_left_wall
+      collision_geometry:
+        type: box
+        dims: [0.3, 0.03, 0.15]
+        material: off_white
+      config:
+        position: [0.4, 0.8, 2.8825]
+        orientation: [0 0 0.70710678118 0.70710678118]
+    -
+      name: box_right_wall
+      collision_geometry:
+        type: box
+        dims: [0.3, 0.03, 0.15]
+        material: off_white
+      config:
+        position: [-0.2, 0.8, 2.8825]
+        orientation: [0 0 0.70710678118 0.70710678118]
+    -
+      name: box_front_wall
+      collision_geometry:
+        type: box
+        dims: [0.03, 0.6, 0.15]
+        material: off_white
+      config:
+        position: [0.1, 0.65, 2.8825]
+        orientation: [0 0 0.70710678118 0.70710678118]
+    -
+      name: box_back_wall
+      collision_geometry:
+        type: box
+        dims: [0.03, 0.6, 0.15]
+        material: off_white
+      config:
+        position: [0.1, 0.95, 2.8825]
+        orientation: [0 0 0.70710678118 0.70710678118]
+
+
+      

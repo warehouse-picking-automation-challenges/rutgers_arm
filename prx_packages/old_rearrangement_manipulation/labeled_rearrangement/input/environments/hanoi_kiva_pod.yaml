@@ -1,0 +1,142 @@
+kiva_shelf1:
+  type: obstacle
+  geometries:
+    -
+      name: shelf
+      collision_geometry:
+        type: mesh
+        filename: meshes/kiva_pod2.stl
+        material: white
+      # visualization_geometry:
+      #   type: mesh
+      #   filename: meshes/kiva_pod.osg
+      #   material: brown
+      config:
+        position: [1.36,0.255,-0.44]
+        orientation: [0.5 -0.5 -0.5 0.5]
+    -
+      name: box1
+      collision_geometry:
+        type: box
+        dims: [0.2, 0.2, 0.2]
+        material: black
+      config:
+        position: [1.05, 0.25, 1.303]
+        orientation: [0, 0, 0, 1]
+    -
+      name: box2
+      collision_geometry:
+        type: box
+        dims: [0.2, 0.2, 0.2]
+        material: black
+      config:
+        position: [1.05, -0.03, 1.303]
+        orientation: [0, 0, 0, 1]
+    -
+      name: box3
+      collision_geometry:
+        type: box
+        dims: [0.2, 0.2, 0.2]
+        material: black
+      config:
+        position: [1.05, -0.03, 1.075]
+        orientation: [0, 0, 0, 1]        
+    -
+      name: box4
+      collision_geometry:
+        type: box
+        dims: [0.2, 0.2, 0.2]
+        material: black
+      config:
+        position: [1.05, 0.55, 0.847]
+        orientation: [0, 0, 0, 1]
+    -
+      name: box5
+      collision_geometry:
+        type: box
+        dims: [0.2, 0.2, 0.2]
+        material: black
+      config:
+        position: [1.05, 0.25, 0.847]
+        orientation: [0, 0, 0, 1]
+    -
+      name: box6
+      collision_geometry:
+        type: box
+        dims: [0.2, 0.2, 0.2]
+        material: black
+      config:
+        position: [1.05, -0.03, 0.847]
+        orientation: [0, 0, 0, 1]        
+    -
+      name: box7
+      collision_geometry:
+        type: box
+        dims: [0.2, 0.2, 0.2]
+        material: black
+      config:
+        position: [1.05, 0.55, 1.531]
+        orientation: [0, 0, 0, 1]
+    -
+      name: box8
+      collision_geometry:
+        type: box
+        dims: [0.2, 0.2, 0.2]
+        material: black
+      config:
+        position: [1.05, 0.25, 1.531]
+        orientation: [0, 0, 0, 1]
+    -
+      name: box9
+      collision_geometry:
+        type: box
+        dims: [0.2, 0.2, 0.2]
+        material: black
+      config:
+        position: [1.05, -0.03, 1.531]
+        orientation: [0, 0, 0, 1]    
+    -
+      name: box10
+      collision_geometry:
+        type: box
+        dims: [0.2, 0.2, 0.2]
+        material: black
+      config:
+        position: [1.05, 0.55, 1.8]
+        orientation: [0, 0, 0, 1]
+    -
+      name: box11
+      collision_geometry:
+        type: box
+        dims: [0.2, 0.2, 0.2]
+        material: black
+      config:
+        position: [1.05, 0.25, 1.8]
+        orientation: [0, 0, 0, 1]
+    -
+      name: box12
+      collision_geometry:
+        type: box
+        dims: [0.2, 0.2, 0.2]
+        material: black
+      config:
+        position: [1.05, -0.03, 1.8]
+        orientation: [0, 0, 0, 1]  
+    -
+      name: box13
+      collision_geometry:
+        type: box
+        dims: [0.2, 0.35, 0.25]
+        material: black
+      config:
+        position: [1.05, 0.45, 0.55]
+        orientation: [0, 0, 0, 1]        
+    -
+      name: box14
+      collision_geometry:
+        type: box
+        dims: [0.2, 0.35, 0.25]
+        material: black
+      config:
+        position: [1.05, 0.05, 0.55]
+        orientation: [0, 0, 0, 1]

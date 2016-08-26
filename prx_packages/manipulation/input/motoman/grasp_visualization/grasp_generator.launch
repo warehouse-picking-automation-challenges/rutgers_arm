@@ -1,0 +1,31 @@
+
+<launch>  
+  
+  <!-- Grippy -->
+  <!-- <include file="$(find manipulation)/input/motoman/test_cases/motoman_left_grippy.launch"/> -->
+  
+  <!-- Front Vacuum -->
+  <include file="$(find manipulation)/input/motoman/test_cases/motoman_right_parallel_unigripper_front.launch"/>
+  
+  <!-- Upper Vacuum -->
+  <!-- <include file="$(find manipulation)/input/motoman/test_cases/motoman_right_parallel_unigripper.launch"/> -->
+  
+  <!-- Parallel Gripper -->
+  <!-- <include file="$(find manipulation)/input/motoman/test_cases/motoman_right_parallel_gripper.launch"/> -->
+
+
+  <!-- Object type -->
+  <rosparam command="load" ns="simulation/simulator/subsystems/box1" file="$(find manipulation)/input/objects/apc2016_items/expo_dry_erase_board_eraser.yaml" />
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/box1" file="$(find manipulation)/input/objects/apc2016_items/expo_dry_erase_board_eraser.yaml" />
+  
+
+  <!-- Initial State -->
+  <rosparam command="load" ns="simulation/simulator/subsystems/box1">
+    initial_state: [1.1125 0.04 1.4025 0 0.707107 0.707107 0  ]
+  </rosparam>
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/box1">
+    initial_state: [1.1125 0.04 1.4025 0 0.707107 0.707107 0  ]
+  </rosparam>
+
+
+</launch>

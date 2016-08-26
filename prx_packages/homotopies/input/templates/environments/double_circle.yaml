@@ -1,0 +1,23 @@
+building1:
+    type: obstacle
+    geometries:
+      -
+        name: left_circle
+        collision_geometry:
+          type: cylinder
+          radius: 30
+          height: 2.0
+          material: red
+        config:
+          position: [-60,0,1]
+          orientation: [0,0,0,1]
+      -
+        name: right_circle
+        collision_geometry:
+          type: cylinder
+          radius: 30
+          height: 2.0
+          material: red
+        config:
+          position: [60,0,1]
+          orientation: [0,0,0,1]

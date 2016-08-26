@@ -1,0 +1,186 @@
+type: ff_end_effector
+input_path: "/prx_packages/manipulation/input/motoman/"
+max_step: 0.01
+max_ik_step: 0.02
+urdf_file: unigripper_parallel.urdf
+integrator: 
+  type: euler
+initial_state: [0, 0, 0, 0, 0, 0, 1]
+# initial_control: [0, 0, 0, 0, 0, 0, 1]
+root_frame: 
+  position: [0, 0, 0]
+  orientation: [0, 0, 0, 1]
+state_space: 
+  min: [-2, -2, -2, -3.2, -3.2 ,-3.2, 1]
+  max: [2, 2, 2, 3.2, 3.2 ,3.2, 5]
+input_control_space:
+  min: [-2, -2, -2, -3.14159, -3.14159 ,-3.14159, 0]
+  max: [2, 2, 2, 3.14159, 3.14159 ,3.14159, 3]
+end_effectors: 
+  # -
+  #   name: "front_vacuum"
+  #   local_config:
+  #     position: [0,0,0]
+  #     orientation: [0, 0, 0, 1 ]
+  -
+    name: "upper_vacuum"
+    local_config:
+      position: [0,0,0]
+      orientation: [0, 0, 0, 1 ]
+  # -
+  #   name: "parallel_gripper"
+  #   local_config:
+  #     position: [0,0,0]
+  #     orientation: [0, 0, 0, 1 ]
+config_offsets:
+  pre_front_vacuum:
+    offset: [0.0,0.0,0.007]
+  front_vacuum:
+    offset: [0.004,0.0,0.002]
+  # Unigripper
+  # passive_finger: 
+  #   offset: [-0.05, 0.0, -0.004]
+  # vacuum_finger:
+  #   offset: [0, 0.0, -0.004]
+geometries:
+  #left hand unigripper
+  # -
+  #   name: base
+  #   collision_geometry:
+  #     type: cylinder
+  #     radius: 0.04
+  #     height: 0.008
+  #     material: silver
+  # -
+  #   name: main_beam
+  #   collision_geometry:
+  #     type: box
+  #     dims: [0.015, 0.040, 0.180]
+  #     material: silver
+  # -
+  #   name: head_connector
+  #   collision_geometry:
+  #     type: box
+  #     dims: [0.035, 0.015, 0.039]
+  #     material: silver
+  # -
+  #   name: head_plate
+  #   collision_geometry:
+  #     type: box
+  #     dims: [0.045, 0.045, 0.005]
+  #     material: silver
+  # -
+  #   name: head_base
+  #   collision_geometry:
+  #     type: box
+  #     dims: [0.062, 0.121, 0.038]
+  #     material: silver
+  # -
+  #   name: head_sponge
+  #   collision_geometry:
+  #     type: box
+  #     dims: [0.06, 0.12, 0.008]
+  #     material: black
+  # -
+  #   name: tube_port
+  #   collision_geometry:
+  #     type: cylinder
+  #     radius: 0.01
+  #     height: 0.025
+  #     material: blue
+  # -
+  #   name: actuator
+  #   collision_geometry:
+  #     type: box
+  #     dims: [0.03, 0.035, 0.180]
+  #     material: dark_grey
+
+  #Right Hand Parallel Unigripper
+  -
+    name: base_uni
+    collision_geometry:
+      type: mesh
+      filename: meshes/unigripper_ps/unigripper_v2_body1.stl
+      material: dark_grey
+  -
+    name: left_movable_pipe
+    collision_geometry:
+      type: cylinder
+      radius: 0.006
+      height: 0.092
+      material: silver
+  -
+    name: right_movable_pipe
+    collision_geometry:
+      type: cylinder
+      radius: 0.006
+      height: 0.104
+      material: silver
+  -
+    name: parallel_gripper
+    collision_geometry:
+      type: box
+      # dims: [0.055 0.025 0.11]
+      dims: [0.05 .02 .11]
+      material: red
+    visualization_geometry:
+      type: box
+      # dims: [0.055 0.025 0.11]
+      dims: [0.01 .01 .11]
+      material: red
+  -
+    name: passive_finger
+    collision_geometry:
+      type: mesh
+      filename: meshes/unigripper_ps/unigripper_v2_passive_finger1.stl
+      material: silver
+  -
+    name: vacuum_finger
+    collision_geometry:
+      type: mesh
+      filename: meshes/unigripper_ps/unigripper_v2_vacuum_finger7.stl
+      material: silver
+  -
+    name: upper_jaw
+    collision_geometry:
+      type: box
+      dims: [0.294 0.035 0.028]
+      material: silver
+  -
+    name: upper_vacuum
+    collision_geometry:
+      type: box
+      dims: [0.095 0.035 0.011]
+      material: dark_grey
+  -
+    name: sponge_upper_jaw
+    collision_geometry:
+      type: box
+      dims: [0.132 0.035 0.005]
+      material: silver
+  -
+    name: vacuum_base
+    collision_geometry:
+      type: box
+      dims: [0.005 0.035 0.028]
+      material: silver
+  -
+    name: pre_front_vacuum
+    collision_geometry:
+      type: cylinder
+      radius: 0.0095
+      height: 0.04
+      material: silver
+  -
+    name: front_vacuum
+    collision_geometry:
+      type: cylinder
+      radius: 0.019
+      height: 0.02
+      material: green
+  -
+    name: air_feed_plate
+    collision_geometry:
+      type: mesh
+      filename: meshes/unigripper_ps/air_feed_plate.stl
+      material: red

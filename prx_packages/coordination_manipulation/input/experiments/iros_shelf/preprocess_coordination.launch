@@ -1,0 +1,204 @@
+<!-- Auto generated launch file for Baxter: 2 1 1 -->
+<launch>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <!-- = = = = = = = -->
+  <!--    Planning   -->
+  <!-- = = = = = = = -->
+
+  <rosparam command="load" ns="planning" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+  <rosparam command="load" ns="planning/world_model" file="$(find manipulation)/input/simulation/manipulation_simulator.yaml"/>
+  <rosparam command="load" ns="planning" file="$(find prx_input)/templates/planning_applications/single_query_application.yaml"/>
+  <rosparam command="load" ns="planning/task_planner/" file="$(find coordination_manipulation)/input/templates/preprocess_coord_tp.yaml"/>
+  <rosparam command="load" ns="planning/world_model/simulator/obstacles" file="$(find coordination_manipulation)/input/templates/baxter_torso_shifted_nomesh.yaml" />
+  <rosparam command="load" ns="planning/world_model/simulator/obstacles" file="$(find coordination_manipulation)/input/environments/iros_shelf.yaml" />
+
+  <!-- Load template files -->
+  <rosparam command="load" ns="planning/plant" file="$(find coordination_manipulation)/input/templates/baxter_nomesh.yaml"/>
+
+  <rosparam ns="planning">
+    simulate: false
+    visualize: false
+    persistent: false
+  </rosparam>
+
+  <rosparam ns="planning/world_model/planning_contexts">
+    both_arms:
+      default:
+        type: "hide_mapping"
+    baxter_1_left:
+      default:
+        type: "hide_mapping"
+    baxter_1_right:
+      default:
+        type: "hide_mapping"
+    imaginary_cup_left:
+      default:
+        type: "hide_mapping"
+    imaginary_cup_right:
+      default:
+        type: "hide_mapping"
+    left_armcup:
+      default:
+        type: "hide_mapping"
+    right_armcup:
+      default:
+        type: "hide_mapping"
+  </rosparam>
+
+  <rosparam ns="planning/task_planner">
+    experiment: "IROS_SHELF"
+    num_left_arm_plans: 12
+    num_right_arm_plans: 12
+    left_arm_plans: "plans/left/"
+    right_arm_plans: "plans/right/"
+    plans_directory: "/prx_packages/coordination_manipulation/input/experiments/iros_shelf/plans/"
+    planners:
+      coordination_planner:
+        type: preprocess_coord_mp
+        preprocess_graph: true
+  </rosparam>
+
+  <rosparam ns="planning/problems">
+    benchmark_problem:
+      specification:
+        type: "motion_planning_specification"
+        sampler:
+          type: uniform_sampler
+        validity_checker:
+          type: world_model_validity_checker
+        distance_metric:
+          type: linear_distance_metric
+          distance_function: manhattan_distance
+        local_planner:
+          type: bvp_local_planner
+        stopping_criteria:
+          elements:
+            criterion1:
+              type: iteration_criterion
+              condition: 100
+      query:
+        type: "preprocess_mp_query"
+        query_type: "add_query_points_no_collisions"
+        query_collision_type: "no_collisions"
+        goal:
+          type: "goal_state"
+          distance_metric:
+            type: linear_distance_metric
+  </rosparam>
+
+  <rosparam command="load" ns="planning/world_model/simulator">
+    manipulator_names:
+      -
+        simulator/baxter_1_left
+      -
+        simulator/baxter_1_right
+    sensing_info:
+      type: grasp_sensing_info
+      sources: ["planner_grasp_sensor"]
+      update_delay: 0.02
+    grasp_sensor_source: "planner_grasp_sensor"
+  </rosparam>
+  <rosparam ns="planning/world_model/simulator/sensing">
+    type: sensing_model
+    sensors:
+      grasp_sensor2:
+        type: simulated_grasp_sensor
+        source: "planner_grasp_sensor"
+        sensor_delay: 0.02
+  </rosparam>
+
+                
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/baxter_1_left">
+    template: "plant"
+    planning_contexts:
+      baxter_1_left:
+        type: "full_mapping"
+      left_armcup:
+        type: "full_mapping"
+      both_arms:
+        type: "full_mapping"
+    initial_state: [1.5681561256801836989893673,-0.6933267886173464233934283,-0.8849957765343199334040492,1.9000335039215263677192524,-2.2107340224187499444497007,-0.8368545446250841290947164,0.9573491235931878007292539,0.0000000000000000000000000]
+    hand: left
+    forward_transform_rotation: [1.0,0,0,0,1.0,0,0,0,1]
+    forward_transform_translation: [0,0.255,0.785]  
+  </rosparam>
+
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/baxter_1_right">
+    template: "plant"
+    planning_contexts:
+      baxter_1_right:
+        type: "full_mapping"
+      right_armcup:
+        type: "full_mapping"
+      both_arms:
+        type: "full_mapping"
+    initial_state:  [-1.6812774859126198290226739,-0.5125644883535177553923745,1.0773961507954412653020881,1.8738453488311539452126908,1.9879612960600967497271085,-0.9987250827246928475133814,-0.8436528393489071131483570,0.000000000000]
+    hand: right
+    forward_transform_rotation: [1.0,0,0,0,1.0,0,0,0,1]
+    forward_transform_translation: [0,0.255,0.785]  
+  </rosparam>
+
+  <!-- = = = = = = = -->
+  <!--  Environment  -->
+  <!-- = = = = = = = -->
+
+
+<rosparam command="load" ns="planning/world_model/simulator/subsystems/imaginary_cup_left">
+  type: movable_body
+  planning_contexts:
+    imaginary_cup_left:
+      type: "full_mapping"
+    left_armcup:
+      type: "full_mapping"
+  integrator: rk4
+  max_step: 0.01
+  state_space: 
+    min: [-5.5, -5.5, -100, -1, -1, -1, -1]
+    max: [5.5, 5.5, 100, 1, 1, 1, 1]
+    scale: [1.0, 1.0, 1.0, 0.05, 0.05, 0.05, 0.05]
+  input_control_space: 
+    none: 4
+  root_geom: body
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: red
+  initial_state: [-5.0,-5.0,-5.0,0,0,0,1]
+</rosparam>
+
+<rosparam command="load" ns="planning/world_model/simulator/subsystems/imaginary_cup_right">
+  type: movable_body
+  planning_contexts:
+    imaginary_cup_right:
+      type: "full_mapping"
+    right_armcup:
+      type: "full_mapping"
+  integrator: rk4
+  max_step: 0.01
+  state_space: 
+    min: [-5.5, -5.5, -100, -1, -1, -1, -1]
+    max: [5.5, 5.5, 100, 1, 1, 1, 1]
+    scale: [1.0, 1.0, 1.0, 0.05, 0.05, 0.05, 0.05]
+  input_control_space: 
+    none: 4
+  root_geom: body
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: red
+  initial_state: [5.0,5.0,5.0,0,0,0,1]
+</rosparam>
+
+  <node name="planning" pkg="prx_planning" type="prx_planning" required="true" launch-prefix="gdb --args" output="screen" args="planning" />
+
+</launch>
+

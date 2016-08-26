@@ -1,0 +1,36 @@
+<launch>
+
+  <rosparam ns="world_model/embeddings">
+    space1:
+      default:
+        type: "full_mapping"
+  </rosparam>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+  <rosparam ns="world_model" command="load" file="$(find prx_input)/templates/simulators/null_response_simulator.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/">
+    simulation_step: 0.02
+  </rosparam>
+
+  <rosparam command="load" ns="world_model/simulator/subsystems/disk" file="$(find prx_input)/templates/plants/sliding_disk_rigid_body.yaml"/>
+  <rosparam ns="world_model/simulator/subsystems/disk">
+    state_space: 
+      min: [-250,-250]
+      max: [250,250]
+    input_control_space: 
+      min: [-250,-250]
+      max: [250,250]
+    max_step: 0.5
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 18.3
+          height: 2.0
+          material:  blue
+  </rosparam>
+
+  <rosparam command="load" ns="world_model/simulator/obstacles" file="$(find prx_input)/templates/environments/grid.yaml"/>
+
+</launch>
+

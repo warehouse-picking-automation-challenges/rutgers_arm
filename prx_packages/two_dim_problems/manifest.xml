@@ -1,0 +1,8 @@
+<package>
+  <description brief="Two dimensional problems package">
+    This package deals with two dimensional problems
+  </description>
+  <author>PRACSYS</author>
+  <license>BSD</license>
+  <url>http://www.pracsyslab.org</url>
+</package>

@@ -1,0 +1,226 @@
+<launch>
+
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>  
+  
+  <!--       WORLD MODEL        -->          <!--       WORLD MODEL        -->       <!--       WORLD MODEL        -->
+  <rosparam ns="#PLANNING_NODE#/world_model/planning_contexts">
+    manipulator_pc:
+      default:
+        type: "hide_mapping"
+  </rosparam>
+
+  <rosparam command="load" ns="#PLANNING_NODE#/world_model" file="$(find #PACKAGE#)/input/simulation/manipulation_simulator.yaml"/> 
+  <rosparam command="load" ns="#PLANNING_NODE#/baxter" file="$(find baxter)/input/urdf/baxter.yaml"/>
+  <rosparam command="load" ns="#PLANNING_NODE#/world_model/simulator/obstacles" file="$(find #PACKAGE#)/input/templates/baxter_torso#BAXTER#.yaml" />
+  <rosparam command="load" ns="#PLANNING_NODE#/world_model/simulator/obstacles" file="$(find #PACKAGE#)/input/environments/#ENVIRONMENT#.yaml" />
+  
+  <rosparam command="load" ns="#PLANNING_NODE#/world_model/simulator/">
+    simulation_step: 0.02
+    manipulator_names:
+      -
+        simulator/manipulator
+    manipulation_sensing_info:
+      type: grasp_sensing_info
+      sources: ["grasp_sensor1"]
+      update_delay: 0.02
+    grasp_sensor_source: "grasp_sensor1"
+    sensing:
+      type: sensing_model
+      sensors:
+        grasp_sensor1:
+          type: simulated_grasp_sensor
+          source: "grasp_sensor1"
+          sensor_delay: 0.02
+          single_object: simulator/cup
+  </rosparam>
+  
+  <rosparam ns="#PLANNING_NODE#/world_model/simulator/subsystems/manipulator">
+    template: "baxter"
+    planning_contexts:
+      manipulator_pc:
+        type: "full_mapping"
+    hand: #BAXTER_ARM#
+    forward_transform_rotation: #BAXTER_ROTATION#
+    forward_transform_translation: #BAXTER_TRASLATION#    
+  </rosparam>
+
+  <!--       PLANNING        -->          <!--       PLANNING        -->       <!--       PLANNING        -->
+  <rosparam command="load" ns="#PLANNING_NODE#" file="$(find prx_input)/templates/planning_applications/single_query_application.yaml"/>
+  
+  <rosparam ns="#PLANNING_NODE#">
+    random_seed: 14391835
+    simulate: false 
+    visualize: false 
+    persistent: false
+  </rosparam> 
+
+  <rosparam command="load" ns="#PLANNING_NODE#/builder_planner/" file="$(find prx_input)/templates/motion_planners/prm_star.yaml"/>
+
+  <rosparam ns="#PLANNING_NODE#/builder_planner/">
+    visualization_bodies: ["simulator/manipulator/end_effector"]
+    visualize_graph: false
+    visualize_solutions: false        
+    delta_prm: false
+  </rosparam>
+
+  <rosparam ns="#PLANNING_NODE#/informer_planner/">
+    type: manipulation_mp
+    heuristic_search:
+      type: obstacle_aware_astar
+      minimum_conflict: true
+      collision_penalty: 2000
+    visualization_bodies: ["simulator/manipulator/end_effector"]
+    visualize_graph: false
+    visualize_solutions: false        
+    delta_prm: false  
+  </rosparam>
+
+  <rosparam ns="#PLANNING_NODE#/manip_spec_template">
+    type: manipulation_mp_specification
+    is_builder: true
+    sampler:
+      type: manip_sampler
+      min_theta: #MIN_GRASP_THETA#
+      max_theta: #MAX_GRASP_THETA#
+      max_tries: #MAX_GRASP_TRIES#
+      grasp_z: #GRASP_Z#
+    distance_metric:
+      type: linear_distance_metric
+      distance_function: l_infinite_norm
+    local_planner:
+      type: bvp_local_planner
+    stopping_criteria:
+      elements:
+        criterion1:
+          type: iteration_criterion
+          condition: #ITERATIONS#
+  </rosparam>
+
+  <rosparam ns="#PLANNING_NODE#/mp_spec_template">
+    type: motion_planning_specification
+    validity_checker: 
+      type: world_model_validity_checker
+    sampler:
+      type: manip_sampler
+      min_theta: #MIN_GRASP_THETA#
+      max_theta: #MAX_GRASP_THETA#
+      max_tries: #MAX_GRASP_TRIES#
+      grasp_z: #GRASP_Z#
+    distance_metric:
+      type: linear_distance_metric
+      distance_function: l_infinite_norm
+    local_planner:
+      type: bvp_local_planner
+    stopping_criteria:
+      elements:
+        criterion1:
+          type: iteration_criterion
+          condition: #ITERATIONS#
+  </rosparam>
+        
+  <rosparam command="load" ns="#PLANNING_NODE#/task_planner/fix_poses" file="$(find #PACKAGE#)/input/poses/#FIX_POSES#.yaml" />
+
+  <rosparam ns="#PLANNING_NODE#/problems">
+    preprocess_manipulation_problem:
+      specification:
+        type: rearrangement_manipulation_specification
+        validity_checker: 
+          type: world_model_validity_checker
+        sampler:
+          type: uniform_sampler
+        distance_metric:
+          type: linear_distance_metric
+        local_planner:
+          type: bvp_local_planner
+        z_on_table: #ON_TABLE#
+        object_orientation: #OBJECT_ORIENTATION#
+        max_tries: 10
+        max_different_grasps: #DIFFERENT_GRASPS#
+        retract_distance: #RETRACT_DIST#
+        num_poses: #NUM_POSES#
+        num_extra_poses: #NUM_EXTRA_POSES#
+        #BOXES_ENV#
+        safe_position: [0.25684,-1.34394,0.42624,2.61800,2.84100,2.09400,-0.06762,0]
+        k: 0
+        b: 0
+      query:
+        type: motion_planning_query
+  </rosparam>  
+ 
+  <rosparam ns="#PLANNING_NODE#/task_planner/" >
+    type: preprocess_manipulation_tp
+    pc_name_manipulator_only: manipulator_pc
+    transit_manipulation_mp_name: transit_graph_informer
+    transfer_manipulation_mp_name: transfer_graph_informer
+    transit_motion_planner_name: transit_graph_builder
+    transfer_motion_planner_name: transfer_graph_builder
+    visualization_body: "simulator/manipulator/end_effector"
+    transit_graph_file: transit_graph.txt
+    transfer_graph_file: transfer_graph.txt
+    informed_transit_graph_file: #TEST_NAME#informed_transit.txt
+    informed_transfer_graph_file: #TEST_NAME#informed_transfer.txt    
+    poses_file: #TEST_NAME#poses.txt
+    poses_constraints_file: #TEST_NAME#poses_constraints.txt
+    store_poses_file: #TEST_NAME#all_poses.txt
+    object_name: "simulator/cup"
+    min_theta: #MIN_GRASP_THETA#
+    max_theta: #MAX_GRASP_THETA#
+    stable_pose_space:
+      min: [#MIN_POSES#]
+      max: [#MAX_POSES#]
+      scale: [0.5, 0.5]    
+    extra_pose_space:
+      min: [#MIN_EXTRA_POSES#]
+      max: [#MAX_EXTRA_POSES#]
+      scale: [0.33, 0.33, 0.34]  
+    manip_sampler:
+      type: manip_sampler
+      min_theta: #MIN_GRASP_THETA#
+      max_theta: #MAX_GRASP_THETA#
+      max_tries: #MAX_GRASP_TRIES#
+      grasp_z: #GRASP_Z#
+    transit_manipulation_specification:
+      template: manip_spec_template 
+      sampler:
+        mode: transit
+    transfer_manipulation_specification:
+      template: manip_spec_template 
+      transfer_mode: true
+      sampler:
+        mode: transfer
+    transit_motion_planner_specification:
+      template: mp_spec_template 
+      sampler:
+        mode: transit
+    transfer_motion_planner_specification:
+      template: mp_spec_template
+      sampler:
+        mode: transfer
+    manip_validity_checker:
+      type: system_name_validity_checker       
+#IGNORE_LIST#
+    planners:
+      transit_graph_builder:
+        template: "builder_planner"
+        space_name: "manipulator_pc"
+      transfer_graph_builder:
+        template: "builder_planner"
+        space_name: "manip_object_pc"
+      transit_graph_informer:
+        template: "informer_planner"
+        space_name: "manipulator_pc" 
+      transfer_graph_informer:
+        template: "informer_planner"
+        space_name: "manip_object_pc" 
+  </rosparam>
+
+  #CUP#
+
+  #ADDITIONAL_OBJECTS#
+   
+  <!-- Define the planning node -->
+  <node name="#PLANNING_NODE#" pkg="prx_planning" type="prx_planning" 
+    required="true" launch-prefix="gdb --args" output="screen" args="#PLANNING_NODE#" />
+
+
+</launch>

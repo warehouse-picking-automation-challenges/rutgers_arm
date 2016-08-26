@@ -1,0 +1,5 @@
+interval_msg[] workspace_bounds
+
+---
+
+int64[] nodes_taken

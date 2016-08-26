@@ -1,0 +1,25 @@
+<class name="prx_planning/pebble_test_tp"
+    type="prx::packages::pebble_motion::pebble_test_tp_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        Testing the pebble motion feasibility.
+    </description>        
+</class>
+
+<class name="prx_planning/pebble_solver_tp"
+    type="prx::packages::pebble_motion::pebble_solver_tp_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        Task planner for solving pebble motion problems.
+    </description>        
+</class>
+
+<class name="prx_planning/pebble_test_query"
+    type="prx::packages::pebble_motion::pebble_test_query_t"
+    base_class_type="prx::plan::query_t">
+    <description>
+        A query for results from a pebble test task planner.
+    </description>        
+</class>
+    
+    

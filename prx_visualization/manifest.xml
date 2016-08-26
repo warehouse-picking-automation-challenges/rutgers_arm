@@ -1,0 +1,26 @@
+<package>
+  <description brief="prx_visualization">
+
+     prx_visualization
+
+  </description>
+  <author>Kostas Bekris/bekris@cse.unr.edu</author>
+  <license>All rights reserved</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://redmine.cse.unr.edu/projects/show/pracsys</url>
+
+  <depend package="prx_utilities"/>
+  <depend package="geometry_msgs"/>
+  <depend package="sensor_msgs"/>
+  <depend package="tf"/>
+  <depend package="pluginlib"/>
+
+  <export>
+      <cpp cflags="-I${prefix}/" lflags="-L${prefix}/lib -lprx_visualization_lib"/>
+      <prx_visualization plugin="${prefix}/visualization_plugin.xml"/>
+  </export>
+
+  <rosdep name="osg" />
+</package>
+
+

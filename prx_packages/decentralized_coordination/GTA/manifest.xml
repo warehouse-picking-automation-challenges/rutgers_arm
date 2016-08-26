@@ -1,0 +1,8 @@
+<package>
+  <description brief="Game Theoretic Approach">
+    Game Theoretic Approach(GTA)
+  </description>
+  <author>Andrew Kimmel</author>
+  <license>BSD</license>
+  <url>http://www.pracsyslab.org</url>
+</package>

@@ -1,0 +1,16 @@
+type: ping_pong_ball
+integrator: 
+  type: euler
+initial_state: [.1,.6,5,0,0,0]
+state_space: 
+  min: [-10 -10 0 -10 -10 -10]
+  max: [ 10 10 10 10 10 10]
+  scale: [1 1 1 1 1 1]
+root_geom: ball
+geometries:
+  -
+    name: ball
+    collision_geometry:
+      type: sphere
+      radius: 0.02
+      material: white

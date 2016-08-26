@@ -1,0 +1,64 @@
+<class name="prx_planning/naive_coord_manip_tp"
+    type="prx::packages::coordination_manipulation::naive_coord_manip_tp_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A task planner for naive multi-manipulator path coordination
+    </description>
+</class>
+
+<class name="prx_planning/coordination_constraint_tp"
+    type="prx::packages::coordination_manipulation::coordination_constraint_tp_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A task planner for using precomputed coordination constraints
+    </description>
+</class>
+
+<class name="prx_planning/coordination_prm"
+    type="prx::packages::coordination_manipulation::coordination_prm_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        Coordination prm
+    </description>
+</class>
+
+<class name="prx_planning/coordination_prm_query"
+    type="prx::packages::coordination_manipulation::coordination_prm_query_t"
+    base_class_type="prx::plan::query_t">
+    <description>
+        Coordination prm query
+    </description>
+</class>
+
+<class name="prx_planning/coordination_astar"
+    type="prx::packages::coordination_manipulation::coordination_astar_t"
+    base_class_type="prx::plan::astar_module_t">
+    <description>
+        Coordination prm astar
+    </description>
+</class>
+
+
+<class name="prx_planning/preprocess_coord_tp"
+    type="prx::packages::coordination_manipulation::preprocess_coordination_tp_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A task planner to preprocess plans for collision checks
+    </description>
+</class>
+
+<class name="prx_planning/preprocess_coord_mp"
+    type="prx::packages::coordination_manipulation::preprocess_coordination_mp_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A motion planner to build coordination graphs offline and save them
+    </description>
+</class>
+
+<class name="prx_planning/preprocess_mp_query"
+    type="prx::packages::coordination_manipulation::preprocess_mp_query_t"
+    base_class_type="prx::plan::query_t">
+    <description>
+        Preprocess mp query
+    </description>
+</class>

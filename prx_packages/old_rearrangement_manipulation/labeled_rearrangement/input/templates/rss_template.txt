@@ -1,0 +1,544 @@
+<launch>
+
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>  
+
+  <!-- SIMULATION -->
+
+  <rosparam command="load" ns="simulation" file="$(find prx_input)/templates/applications/empty_application.yaml"/> 
+  <rosparam command="load" ns="simulation" file="$(find labeled_rearrangement)/input/simulation/manipulation_simulator.yaml"/>  
+  <rosparam command="load" ns="simulation" file="$(find prx_input)/templates/spaces/space_types.yaml"/>    
+
+  <rosparam command="load" ns="simulation/baxter" file="$(find baxter)/input/urdf/baxter.yaml"/>
+  <rosparam command="load" ns="simulation/simulator/obstacles" file="$(find labeled_rearrangement)/input/baxter_torso#BAXTER#.yaml" />
+  <rosparam command="load" ns="simulation/simulator/obstacles" file="$(find labeled_rearrangement)/input/environments/rss_table.yaml" />
+
+  <rosparam command="load" ns="simulation/simulator">
+    fake_planning: false
+    manipulator_names:
+      -
+        simulator/consumer/manipulator
+    sensing_info:
+      type: grasp_sensing_info
+      sources: ["grasp_sensor1"]
+      update_delay: 0.02
+    grasp_sensor_source: "grasp_sensor1"
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/sensing">
+    type: sensing_model
+    sensors:
+      grasp_sensor1:
+        type: simulated_grasp_sensor
+        source: "grasp_sensor1"
+        sensor_delay: 0.02
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer" file="$(find prx_input)/templates/controllers/consumer.yaml"/>
+  
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer/subsystems/manipulator">
+    template: "baxter"
+    planning_contexts:
+      manipulator_pc:
+        type: "full_mapping"
+    hand: left
+    forward_transform_rotation: [0,1.0,0,-1.0,0,0,0,0,1]
+    forward_transform_translation: [0,0,0.785]    
+  </rosparam>
+
+  <!--  SIMULATION  -->
+  <rosparam command="load" ns="simulation/cup">
+    type: movable_body
+    integrator: rk4
+    max_step: 0.01
+    state_space: 
+      min: [-10, -10, -100, -1, -1, -1, -1]
+      max: [10, 10, 100, 1, 1, 1, 1]
+      scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+    input_control_space: 
+      none: 4
+    root_geom: body
+  </rosparam>
+
+  <!-- Set up concrete system tree -->
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/cup1">
+    template: "cup"
+    initial_state: #INIT1#
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: box
+          dims: [0.055, 0.04 0.14]
+          material: red1
+  </rosparam>
+
+ <rosparam command="load" ns="simulation/simulator/subsystems/cup2">
+    template: "cup"
+    initial_state: #INIT2#
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: box
+          dims: [0.055, 0.04 0.14]
+          material: red2
+  </rosparam>
+
+ <rosparam command="load" ns="simulation/simulator/subsystems/cup3">
+    template: "cup"
+    initial_state: #INIT3#
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: box
+          dims: [0.055, 0.04 0.14]
+          material: red3
+  </rosparam>
+ 
+  <rosparam command="load" ns="simulation/simulator/subsystems/cup4">
+    template: "cup"
+    initial_state: #INIT4#
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: box
+          dims: [0.055, 0.04 0.14]
+          material: red4
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/cup5">
+    template: "cup"
+    initial_state: #INIT5#
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: box
+          dims: [0.055, 0.04 0.14]
+          material: red5
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/cup6">
+    template: "cup"
+    initial_state: #INIT6#
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: box
+          dims: [0.055, 0.04 0.14]
+          material: red6
+  </rosparam>
+
+
+ <!--  S  -->
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/cup7">
+    template: "cup"
+    initial_state: #INIT7#
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: box
+          dims: [0.055, 0.04 0.14]
+          material: green1
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/cup8">
+    template: "cup"
+    initial_state: #INIT8#
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: box
+          dims: [0.055, 0.04 0.14]
+          material: green2
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/cup9">
+    template: "cup"
+    initial_state: #INIT9#
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: box
+          dims: [0.055, 0.04 0.14]
+          material: green3
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/cup10">
+    template: "cup"
+    initial_state: #INIT10#
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: box
+          dims: [0.055, 0.04 0.14]
+          material: green4
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/cup11">
+    template: "cup"
+    initial_state: #INIT11#
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: box
+          dims: [0.055, 0.04 0.14]
+          material: green5
+  </rosparam>
+
+  <!--  S  -->
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/cup12">
+    template: "cup"
+    initial_state: #INIT12#
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: box
+          dims: [0.055, 0.04 0.14]
+          material: blue1
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/cup13">
+    template: "cup"
+    initial_state: #INIT13#
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: box
+          dims: [0.055, 0.04 0.14]
+          material: blue2
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/cup14">
+    template: "cup"
+    initial_state: #INIT14#
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: box
+          dims: [0.055, 0.04 0.14]
+          material: blue3
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/cup15">
+    template: "cup"
+    initial_state: #INIT15#
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: box
+          dims: [0.055, 0.04 0.14]
+          material: blue4
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/cup16">
+    template: "cup"
+    initial_state: #INIT16#
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: box
+          dims: [0.055, 0.04 0.14]
+          material: blue5
+  </rosparam>
+
+  <!-- PLANNING -->
+  
+  <include ns="planning" file="$(find labeled_rearrangement)/input/planning/world_models/world_model_16k.launch"/>
+
+  <rosparam ns="planning/world_model/planning_contexts">
+    manipulator_pc:
+     default:
+      type: "hide_mapping"
+  </rosparam>
+
+  <rosparam command="load" ns="planning/world_model" file="$(find labeled_rearrangement)/input/simulation/manipulation_simulator.yaml"/> 
+
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/manipulator" file="$(find baxter)/input/urdf/baxter.yaml"/>
+  <rosparam command="load" ns="planning/world_model/simulator/obstacles" file="$(find baxter)/input/simulation/baxter_torso.yaml" /> 
+
+  <rosparam ns="planning/world_model/simulator">
+    simulation_step: 0.02
+    manipulator_names:
+      -
+        simulator/manipulator
+    sensing_info:
+      type: grasp_sensing_info
+      sources: ["grasp_sensor1"]
+      update_delay: 0.02
+    grasp_sensor_source: "grasp_sensor1"
+  </rosparam>
+
+  <rosparam ns="planning/world_model/simulator/sensing">
+    type: sensing_model
+    sensors:
+      grasp_sensor1:
+        type: simulated_grasp_sensor
+        source: "grasp_sensor1"
+        sensor_delay: 0.02
+  </rosparam>
+
+  <rosparam ns="planning/world_model/simulator/subsystems/manipulator">
+    planning_contexts:
+      manipulator_pc:
+        type: "full_mapping"
+    hand: left
+  </rosparam>
+
+  <!--       PLANNING        -->          <!--       PLANNING        -->       <!--       PLANNING        -->
+  
+  
+  <rosparam ns="planning/">
+    random_seed: 14391835
+    simulate: true ##
+    visualize: true ##
+    persistent: true ##
+    consumer_mapping:
+      - 
+        pair: [simulator/consumer, manipulator_pc]
+  </rosparam> 
+
+
+  <rosparam ns="planning/motion_planner">
+    type: manipulation_mp
+    visualization_bodies: ["simulator/manipulator/end_effector"]
+    visualize_graph: false
+    visualize_solutions: false        
+    delta_prm: false
+  </rosparam>
+
+  <rosparam ns="planning/manip_spec_template">
+    type: manipulation_mp_specification
+    distance_metric:
+      type: ann_distance_metric
+    local_planner:
+      type: bvp_local_planner
+    stopping_criteria:
+      elements:
+        criterion1:
+          type: iteration_criterion
+          condition: 100
+    heuristic_search:
+      type: obstacle_aware_astar
+      minimum_conflict: true
+      shortest_path: false
+      collision_penalty: 1000 ##
+      new_constraint_penalty: 300 #only for cnmrs#
+      max_length: 40
+  </rosparam>
+
+  <rosparam ns="planning/spec_template">
+    type: motion_planning_specification
+    distance_metric:
+      type: ann_distance_metric
+    stopping_criteria:
+      elements:
+        criterion1:
+          type: iteration_criterion
+          condition: 100
+  </rosparam>
+
+  <rosparam ns="planning/graph_query_template">
+    type: manipulator_mp_query
+    query_type: add_query_points_collisions
+    query_collision_type: active_collisions_reuse_edges
+    goal:
+        type: multiple_goal_states
+        distance_metric:
+          type: ann_distance_metric
+  </rosparam>
+
+  <rosparam ns="planning/manipulator_query_template">
+    type: manipulator_query
+    goal:
+      type: multiple_goal_states
+      distance_metric:
+        type: ann_distance_metric
+  </rosparam>
+
+  <rosparam ns="planning/task_planner/" >
+    type: #ALGORITHM#
+    pc_name_manipulator_only: manipulator_pc
+    pc_name_object_only: object_pc
+    pc_name_manipulator_with_object: manip_object_pc
+    pc_name_manipulator_with_active_object: manip_active_object_pc
+    pc_name_all_objects: all_object_pc
+    pc_name_real_world: real_world_pc
+    pc_name_grasp_planning: grasp_planning_pc
+    manipulation_tp_name: manipulation_planner
+    visualization_body: "simulator/manipulator/end_effector"
+    manip_specification:
+      type: manipulator_specification
+      distance_metric:
+        type: ann_distance_metric
+    stable_pose_space:
+      min: [-0.455, 0.95]
+      max: [0.455, 1.17]
+      scale: [0.5, 0.5]    
+    manip_sampler:
+      type: manip_sampler
+    manip_validity_checker:
+      type: system_name_validity_checker
+    manipulator_query:
+      template: manipulator_query_template
+    navigation_path_query:
+      template: manipulator_query_template
+    planners_specifications:
+      transit:
+        template: manip_spec_template      
+      transfer:
+        template: manip_spec_template
+    planners:
+      manipulation_planner:
+        type: manipulator_tp
+        ungrasped_name: ungrasped
+        grasped_name: grasped
+        face_queries:
+          reach_face:
+            template: graph_query_template
+          transfer_face:
+            template: graph_query_template
+          retract_face:
+            template: graph_query_template
+          smoothing_face:
+            template: graph_query_template
+        planners:
+          ungrasped:
+            template: "motion_planner"
+            space_name: "manipulator_pc"          
+          grasped:
+            template: "motion_planner"
+            space_name: "manip_object_pc"  
+ </rosparam>
+
+  <rosparam ns="planning/problems">
+    rearrangement_manipulation_problem:
+      specification:
+        type: rearrangement_manipulation_specification
+        validity_checker: 
+          type: world_model_validity_checker
+        sampler:
+          type: uniform_sampler
+        distance_metric:
+          type: graph_distance_metric ##
+          distance_function: poses_distance ##
+        transfer_metric:
+          type: linear_distance_metric
+        local_planner:
+          type: bvp_local_planner
+        heuristic_search:
+          type: super_graph_astar
+        safe_position: [0.25684,-1.34394,0.42624,2.61800,2.84100,2.09400,-0.06762,0]
+        poses_file: poses_rss.txt
+        transit_graph_file: informed_transit_graph_rss.txt
+        transfer_graph_file: informed_transfer_graph_rss.txt
+        apply_smoothing: true ##
+      query:
+        type: motion_planning_query
+  </rosparam>
+
+  <rosparam command="load" ns="planning/problems/rearrangement_manipulation_problem/specification">
+    k: 16
+    b: 0
+    initial_poses:
+      -
+        pose: [#INIT1#]
+      -
+        pose: [#INIT2#]
+      -
+        pose: [#INIT3#]
+      -
+        pose: [#INIT4#]
+      -
+        pose: [#INIT5#]
+      -
+        pose: [#INIT6#]
+      -
+        pose: [#INIT7#]
+      -
+        pose: [#INIT8#]
+      -
+        pose: [#INIT9#]
+      -
+        pose: [#INIT10#]
+      -
+        pose: [#INIT11#]
+      -
+        pose: [#INIT12#]
+      -
+        pose: [#INIT13#]
+      -
+        pose: [#INIT14#]
+      -
+        pose: [#INIT15#]
+      -
+        pose: [#INIT16#]
+    target_poses:
+      -
+        pose: [0.80,0.35,1.86,0.7071067811865476,0,-0.7071067811865475,0]
+      -
+        pose: [0.95,0.35,1.86,0.7071067811865476,0,-0.7071067811865475,0]
+      -
+        pose: [1.00,0.25,1.86,0.5,-0.5,-0.5,-0.5]
+      -
+        pose: [0.95,0.15,1.86,0.7071067811865476,0,-0.7071067811865475,0]
+      -
+        pose: [0.90,0.25,1.86,0.5,-0.5,-0.5,-0.5]
+      -
+        pose: [0.80,0.25,1.86,0.6532814824381883,0.27059805007309845,-0.6532814824381882,0.27059805007309845]
+      -
+        pose: [1.00,-0.06,1.86,0.5,-0.5,-0.5,-0.5]
+      -
+        pose: [0.95,0.04,1.86,0.7071067811865476,0,-0.7071067811865475,0]
+      -
+        pose: [0.90,-0.06,1.86,0.5,-0.5,-0.5,-0.5]
+      -
+        pose: [0.80,-0.11,1.86,0.7071067811865476,0,-0.7071067811865475,0]
+      -
+        pose: [0.75,-0.01,1.86,0.5,-0.5,-0.5,-0.5]
+      -
+        pose: [1.00,-0.31,1.86,0.5,-0.5,-0.5,-0.5]
+      -
+        pose: [0.95,-0.21,1.86,0.7071067811865476,0,-0.7071067811865475,0]
+      -
+        pose: [0.90,-0.31,1.86,0.5,-0.5,-0.5,-0.5]
+      -
+        pose: [0.80,-0.36,1.86,0.7071067811865476,0,-0.7071067811865475,0]
+      -
+        pose: [0.75,-0.26,1.86,0.5,-0.5,-0.5,-0.5]
+  </rosparam>
+
+  <rosparam command="load" ns="planning/world_model/simulator/obstacles" file="$(find labeled_rearrangement)/input/environments/rss_table.yaml" />  
+
+  <!-- VISUALIZATION  -->
+  <rosparam command="load" ns="/visualization/viewer/scene" file="$(find labeled_rearrangement)/input/rss/rss_materials.yaml"/>
+
+  <!-- Define the planning node -->
+
+  <node name="planning" pkg="prx_planning" type="prx_planning" 
+    required="true" launch-prefix="gdb --args" output="screen" args="planning" />
+
+  <!-- Define the simulation node -->
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation" 
+    required="true" launch-prefix="" output="screen" args="simulation"/>
+
+  <include file="$(find labeled_rearrangement)/input/visualization.launch"/>
+
+</launch>
+

@@ -1,0 +1,40 @@
+type: ode_plant
+
+geometries:
+  -
+    name: body
+    collision_geometry:
+      type: box
+      dims: [3, 3, 3]
+      material: blue
+    config:
+      position: [0, 0, 1.5]
+      orientation: [0.0, 0.0, 0.0, 1.0]
+    dims: [3, 3, 3]
+
+controls:
+  -
+    name: thrust_x
+    bounds: [-50, 50]
+    type: body
+    ode_object: body
+    direction: [1, 0, 0]
+    point: [0,0,0]
+    is_torque: false
+  -
+    name: thrust_y
+    bounds: [-50, 50]
+    type: body
+    ode_object: body
+    direction: [0, 1, 0]
+    point: [0,0,0]
+    is_torque: false
+  -
+    name: thrust_z
+    bounds: [-50, 50]
+    type: body
+    ode_object: body
+    direction: [0, 0, 1]
+    point: [0,0,0]
+    is_torque: false
+

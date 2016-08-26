@@ -1,0 +1,232 @@
+<launch>  
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <rosparam ns="simulation" command="load" file="$(find prx_input)/templates/applications/empty_application.yaml" />
+  <rosparam ns="simulation" command="load" file="$(find manipulation)/input/manipulation_simulator.yaml"/>  
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer" file="$(find prx_input)/templates/controllers/consumer.yaml"/>
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer/subsystems/manipulator" file="$(find manipulation)/input/motoman/motoman_complete_kinect_reflex.yaml"/>
+
+
+  <rosparam ns="simulation/simulator/obstacles" command="load" file="$(find manipulation)/input/motoman/test_cases/enclosed_cubby.yaml" />
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/box1" file="$(find manipulation)/input/motoman/test_cases/target_box.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/box2" file="$(find manipulation)/input/motoman/test_cases/blocking_box.yaml" />
+
+  <!-- Let's move around some boxes -->
+  <rosparam ns="simulation/simulator/subsystems/box2">
+    initial_state: [0.86, 0.10, 0.77, 0, 0, 0, 1]
+  </rosparam>
+
+
+  <rosparam ns="simulation/simulator/subsystems/consumer">
+    keep_last_control: false
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manipulator">
+    test_config:
+      position: [0.5, 0, 1]
+      orientation: [0, 0.70710678, 0, 0.70710678]
+    planning_contexts:
+        manipulator_pc:
+          type: "full_mapping"
+    #initial_state: [2.9234537,-0.7730271,-1.4947291,-2.5676208,-0.4267970,2.9984588,0.6226088,-0.5795841,1.0961177,1.5700000,0.0000000,0.0000000,-1.7000000,0.0000000,0.0000000,0.0000000,2.0000000,1.0000000]
+    #initial_state: [-0.7820094,0.2026489,1.8718351,1.5303483,-1.3975889,-1.6790639,-1.6713680,3.1410000,1.1812222,1.5700000,0.0000000,0.0000000,-1.7000000,0.0000000,0.0000000,0.0000000,2.0000000,1.0000000]
+  </rosparam>
+
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation" required="true" launch-prefix="" output="screen" args="simulation"/>
+
+
+  <rosparam command="load" ns="planning">
+    system_mapping:
+      -
+        pair: [simulator/consumer/manipulator, world_model/simulator/manipulator]
+      -
+        pair: [simulator/box1, world_model/simulator/box1]
+      -
+        pair: [simulator/box2, world_model/simulator/box2]
+    consumer: simulator/consumer
+    # random_seed: 5646
+    random_seed: 14391835
+    simulate: true
+    visualize: true
+    persistent: false
+    consumer_mapping:
+      - 
+        pair: [simulator/consumer, manipulator_pc]
+    world_model:
+      type: manipulation_world_model
+      num_ik_seeds: 10
+  </rosparam>
+
+  <rosparam command="load" ns="planning" file="$(find prx_input)/templates/spaces/space_types.yaml"/>  
+  <rosparam command="load" ns="planning" file="$(find prx_input)/templates/planning_applications/single_query_application.yaml" />
+  <rosparam command="load" ns="planning/world_model" file="$(find manipulation)/input/manipulation_simulator.yaml"/>  
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/manipulator" file="$(find manipulation)/input/motoman/motoman_complete_kinect_reflex.yaml"/>
+  
+
+
+  <rosparam ns="planning/world_model/planning_contexts">
+    manipulator_pc:
+      default:
+        type: "hide_mapping"
+    left_full_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_arm"
+        end_effector_context_name: "left_end_effector"
+        start_link: "base_link"
+        end_link: "head_sponge"
+    left_arm:
+      default:
+       type: "obstacle_mapping"
+    left_arm_planning:
+      default:
+        type: "hide_mapping"
+    left_end_effector:
+      default:
+       type: "hide_mapping"
+  </rosparam>
+
+  <rosparam ns="planning/world_model/simulator/subsystems/manipulator">
+    planning_contexts:
+      manipulator_pc:
+        type: "full_mapping"
+      left_full_arm:
+        type: "motoman_left_full_with_torso_state_mapping"
+      left_arm:
+        type: "motoman_left_torso_state_mapping"
+      left_end_effector:
+        type: "motoman_left_gripper_state_mapping"
+      left_arm_planning:
+        type: "motoman_left_torso_state_mapping"
+  </rosparam>
+
+  <rosparam ns="planning/world_model/simulator/obstacles" command="load" file="$(find manipulation)/input/motoman/test_cases/enclosed_cubby.yaml" />
+
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/box1" file="$(find manipulation)/input/motoman/test_cases/target_box.yaml" />
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/box2" file="$(find manipulation)/input/motoman/test_cases/blocking_box.yaml" />
+
+  <!-- Let's move around some boxes -->
+  <rosparam ns="planning/world_model/simulator/subsystems/box2">
+    initial_state: [0.86, 0.10, .77, 0, 0, 0, 1]
+  </rosparam>
+
+  <rosparam ns="planning/task_planner/">
+    type: simple_pap_tp
+    full_manipulator_context_name: "manipulator_pc"
+    manipulation_context_name: "left_full_arm"
+    manipulation_task_planner_name: "manipulation_task_planner"
+    object_name: box1
+    object_target: [0.8, 0.5, 0.77, 0, 0, 0, 1]
+    specification:
+      type: simple_pap_specification
+      validity_checker: 
+        type: object_constraints_checker
+    query:
+      type: motion_planning_query
+      goal:
+        type: multiple_goal_states
+        distance_metric:
+          type: ann_distance_metric
+    planners:
+      manipulation_task_planner:
+        type: manipulation_tp
+        serialize_flag: true
+        constraints: 
+          type: object_collision_constraints
+        specification:
+          type: manipulation_specification
+          validity_checker:
+            type: object_constraints_checker
+        query:
+          type: manipulation_query
+          search_mode: untrusted_mcr
+          goal:
+            type: multiple_goal_states
+            distance_metric:
+              type: ann_distance_metric
+        planners:
+          left_arm_motion_planner:
+            type: "prm_star"
+            visualization_bodies: ["simulator/manipulator/head_sponge"]
+            visualize_graph: true
+            visualize_solutions: false 
+            visualize: false
+            serialize_file: "left_arm_graph.roadmap"
+            space_name: "left_arm_planning"
+            planning_context_name: "left_arm"
+            query:
+              type: motion_planning_query
+              goal:
+                type: multiple_goal_states
+                distance_metric:
+                  type: ann_distance_metric
+            specification:
+              type: motion_planning_specification
+              validity_checker: 
+                type: object_constraints_checker
+              sampler:
+                type: uniform_sampler
+              distance_metric:
+                type: graph_distance_metric
+              local_planner:
+                type: bvp_local_planner
+              stopping_criteria:
+                elements:
+                  criterion1:
+                    type: iteration_criterion
+                    condition: 150
+              heuristic_search:
+                type: constraints_astar_search
+          grasping_planner:
+            type: grasping_planner
+            specification:
+              type: grasping_specification
+              validity_checker:
+                type: object_constraints_checker
+            data_folders: 
+              left_full_arm: "prx_packages/manipulation/input/grasp_data/unigripper/"
+  </rosparam>
+
+
+  <node name="planning" pkg="prx_planning" type="prx_planning" required="false" launch-prefix="" output="screen" args="planning"/>
+
+
+
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+
+  <rosparam ns="visualization/viewer/">
+    windows:
+      window_1:
+        xpos: 900
+        ypos: 10
+        width: 1000
+        height: 1000
+        cameras:
+          perspective:
+            ortho: false
+            camera_type: 0
+            eye: [0, 0, 1.8]
+            center: [1, 0, 0]
+            speed: {move: 0.1, rotate: 0.001}
+          orthographic:
+            ortho: true
+            ortho_param:
+              left: -2
+              right: 2
+              bottom: -2
+              top: 2
+              zNear: 0
+              zFar: 1000
+            speed: {move: 0.2, rotate: 0.001}
+          smooth:
+            ortho: false
+            camera_type: 2
+            eye: [0, -20, 15]
+            center: [0, 1, 18]
+            speed: {move: 0.2, rotate: 0.001}
+  </rosparam>
+
+</launch>

@@ -1,0 +1,774 @@
+maze:
+    type: obstacle
+    geometries:
+      -
+        name: level1box1
+        collision_geometry: 
+          type: box
+          dims: [20, 160, 20]      
+          material: purple    
+        config:
+          position: [10, 80, 10]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level1box2
+        collision_geometry: 
+          type: box
+          dims: [140, 20, 20]      
+          material: purple    
+        config:
+          position: [90, 150, 10]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level1box3
+        collision_geometry: 
+          type: box
+          dims: [20, 60, 20]      
+          material: purple    
+        config:
+          position: [50, 90, 10]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level1box4
+        collision_geometry: 
+          type: box
+          dims: [20, 60, 20]      
+          material: purple    
+        config:
+          position: [90, 90, 10]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level1box5
+        collision_geometry: 
+          type: box
+          dims: [20, 20, 20]      
+          material: purple    
+        config:
+          position: [110, 110, 10]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level1box6
+        collision_geometry: 
+          type: box
+          dims: [20, 100, 20]      
+          material: purple    
+        config:
+          position: [130, 70, 10]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level1box7
+        collision_geometry: 
+          type: box
+          dims: [60, 20, 20]      
+          material: purple    
+        config:
+          position: [70, 30, 10]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+
+
+      -
+        name: level2box1
+        collision_geometry: 
+          type: box
+          dims: [20, 160, 20]      
+          material: blue    
+        config:
+          position: [10, 80, 30]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level2box2
+        collision_geometry: 
+          type: box
+          dims: [20, 140, 20]      
+          material: blue    
+        config:
+          position: [30, 90, 30]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level2box3
+        collision_geometry: 
+          type: box
+          dims: [60, 160, 20]      
+          material: blue    
+        config:
+          position: [70, 80, 30]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level2box4
+        collision_geometry: 
+          type: box
+          dims: [20, 60, 20]      
+          material: blue    
+        config:
+          position: [110, 130, 30]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level2box5
+        collision_geometry: 
+          type: box
+          dims: [20, 80, 20]      
+          material: blue    
+        config:
+          position: [110, 40, 30]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level2box6
+        collision_geometry: 
+          type: box
+          dims: [20, 160, 20]      
+          material: blue    
+        config:
+          position: [130, 80, 30]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level2box7
+        collision_geometry: 
+          type: box
+          dims: [20, 20, 20]      
+          material: blue    
+        config:
+          position: [150, 150, 30]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level2box8
+        collision_geometry: 
+          type: box
+          dims: [20, 120, 20]      
+          material: blue    
+        config:
+          position: [150, 60, 30]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+
+
+      -
+        name: level3box1
+        collision_geometry: 
+          type: box
+          dims: [20, 160, 20]      
+          material: teal    
+        config:
+          position: [10, 80, 50]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level3box2
+        collision_geometry: 
+          type: box
+          dims: [140, 20, 20]      
+          material: teal    
+        config:
+          position: [90, 150, 50]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level3box3
+        collision_geometry: 
+          type: box
+          dims: [20, 100, 20]      
+          material: teal    
+        config:
+          position: [50, 70, 50]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level3box4
+        collision_geometry: 
+          type: box
+          dims: [20, 100, 20]      
+          material: teal    
+        config:
+          position: [130, 70, 50]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level3box5
+        collision_geometry: 
+          type: box
+          dims: [40, 20, 20]      
+          material: teal    
+        config:
+          position: [100, 110, 50]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level3box6
+        collision_geometry: 
+          type: box
+          dims: [40, 20, 20]      
+          material: teal    
+        config:
+          position: [100, 70, 50]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level3box7
+        collision_geometry: 
+          type: box
+          dims: [40, 20, 20]      
+          material: teal    
+        config:
+          position: [100, 30, 50]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+
+
+      -
+        name: level4box1
+        collision_geometry: 
+          type: box
+          dims: [20, 160, 20]
+          material: green    
+        config:
+          position: [10, 80, 70]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level4box2
+        collision_geometry: 
+          type: box
+          dims: [20, 60, 20]
+          material: green    
+        config:
+          position: [30, 30, 70]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level4box3
+        collision_geometry: 
+          type: box
+          dims: [20, 80, 20]
+          material: green    
+        config:
+          position: [30, 120, 70]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level4box4
+        collision_geometry: 
+          type: box
+          dims: [60, 160, 20]
+          material: green    
+        config:
+          position: [70, 80, 70]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level4box5
+        collision_geometry: 
+          type: box
+          dims: [20, 40, 20]
+          material: green    
+        config:
+          position: [110, 20, 70]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level4box6
+        collision_geometry: 
+          type: box
+          dims: [20, 100, 20]
+          material: green    
+        config:
+          position: [110, 110, 70]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level4box7
+        collision_geometry: 
+          type: box
+          dims: [20, 160, 20]
+          material: green    
+        config:
+          position: [130, 80, 70]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level4box8
+        collision_geometry: 
+          type: box
+          dims: [20, 60, 20]
+          material: green    
+        config:
+          position: [150, 30, 70]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level4box9
+        collision_geometry: 
+          type: box
+          dims: [20, 80, 20]
+          material: green    
+        config:
+          position: [150, 120, 70]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+
+
+      -
+        name: level5box1
+        collision_geometry: 
+          type: box
+          dims: [20, 160, 20]
+          material: yellow    
+        config:
+          position: [10, 80, 90]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level5box2
+        collision_geometry: 
+          type: box
+          dims: [140, 20, 20]      
+          material: yellow    
+        config:
+          position: [90, 150, 90]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level5box3
+        collision_geometry: 
+          type: box
+          dims: [20, 120, 20]      
+          material: yellow    
+        config:
+          position: [90, 60, 90]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level5box4
+        collision_geometry: 
+          type: box
+          dims: [40, 20, 20]      
+          material: yellow    
+        config:
+          position: [40, 90, 90]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level5box5
+        collision_geometry: 
+          type: box
+          dims: [40, 20, 20]      
+          material: yellow    
+        config:
+          position: [40, 50, 90]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level5box6
+        collision_geometry: 
+          type: box
+          dims: [40, 20, 20]      
+          material: yellow    
+        config:
+          position: [140, 90, 90]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level5box7
+        collision_geometry: 
+          type: box
+          dims: [40, 20, 20]      
+          material: yellow    
+        config:
+          position: [140, 50, 90]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level5box8
+        collision_geometry: 
+          type: box
+          dims: [20, 20, 20]      
+          material: yellow    
+        config:
+          position: [50, 30, 90]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level5box9
+        collision_geometry: 
+          type: box
+          dims: [20, 20, 20]      
+          material: yellow    
+        config:
+          position: [130, 30, 90]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+
+
+      -
+        name: level6box1
+        collision_geometry: 
+          type: box
+          dims: [20, 160, 20]
+          material: gold
+        config:
+          position: [10, 80, 110]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level6box2
+        collision_geometry: 
+          type: box
+          dims: [20, 100, 20]
+          material: gold
+        config:
+          position: [30, 50, 110]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level6box3
+        collision_geometry: 
+          type: box
+          dims: [20, 40, 20]
+          material: gold
+        config:
+          position: [30, 140, 110]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level6box4
+        collision_geometry: 
+          type: box
+          dims: [20, 160, 20]
+          material: gold
+        config:
+          position: [50, 80, 110]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level6box5
+        collision_geometry: 
+          type: box
+          dims: [20, 80, 20]
+          material: gold
+        config:
+          position: [70, 40, 110]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level6box6
+        collision_geometry: 
+          type: box
+          dims: [20, 60, 20]
+          material: gold
+        config:
+          position: [70, 130, 110]
+          orientation: [ 0, 0, 0, 1]          
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level6box7
+        collision_geometry: 
+          type: box
+          dims: [60, 160, 20]
+          material: gold
+        config:
+          position: [110, 80, 110]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level6box8
+        collision_geometry: 
+          type: box
+          dims: [20, 20, 20]
+          material: gold
+        config:
+          position: [150, 10, 110]
+          orientation: [ 0, 0, 0, 1]          
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level6box9
+        collision_geometry: 
+          type: box
+          dims: [20, 120, 20]
+          material: gold
+        config:
+          position: [150, 100, 110]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+          
+          
+      -
+        name: level7box1
+        collision_geometry: 
+          type: box
+          dims: [20, 160, 20]
+          material: orange    
+        config:
+          position: [10, 80, 130]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level7box2
+        collision_geometry: 
+          type: box
+          dims: [140, 20, 20]      
+          material: orange    
+        config:
+          position: [90, 150, 130]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level7box3
+        collision_geometry: 
+          type: box
+          dims: [20, 60, 20]
+          material: orange    
+        config:
+          position: [50, 90, 130]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level7box4
+        collision_geometry: 
+          type: box
+          dims: [80, 20, 20]
+          material: orange    
+        config:
+          position: [100, 110, 130]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level7box5
+        collision_geometry: 
+          type: box
+          dims: [80, 20, 20]
+          material: orange    
+        config:
+          position: [120, 70, 130]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: level7box6
+        collision_geometry: 
+          type: box
+          dims: [100, 20, 20]
+          material: orange    
+        config:
+          position: [90, 30, 130]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+          
+          
+      -
+        name: level8box1
+        collision_geometry: 
+          type: box
+          dims: [160, 160, 20]
+          material: red    
+        config:
+          position: [80, 80, 150]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+
+
+      -
+        name: sidewall1
+        collision_geometry: 
+          type: box
+          dims: [180, 20, 160]
+          material: black    
+        config:
+          position: [90, -10, 80]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: sidewall2
+        collision_geometry: 
+          type: box
+          dims: [20, 160, 160]
+          material: black    
+        config:
+          position: [170, 80, 80]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+          

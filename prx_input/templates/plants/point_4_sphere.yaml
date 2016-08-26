@@ -1,0 +1,19 @@
+type: euclidean_point
+dimension: 4
+integrator: rk4
+max_step: 0.1
+state_space: 
+  min: [-4, -4, -4, -4]
+  max: [4, 4, 4, 4]
+input_control_space:
+  min: [-4, -4, -4, -4]
+  max: [4, 4, 4, 4]
+root_geom: body
+geometries:
+  -
+    name: body
+    collision_geometry:
+      type: sphere
+      radius: 0.5
+      material: gold
+      

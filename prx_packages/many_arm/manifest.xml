@@ -1,0 +1,8 @@
+<package>
+  <description brief="Many-Arm Manipulation Problems">
+    This package includes the problem of manipulating an object with multiple manipulators.
+  </description>
+  <author>Andrew Dobson</author>
+  <license>BSD</license>
+  <url>http://www.pracsyslab.org</url>
+</package>

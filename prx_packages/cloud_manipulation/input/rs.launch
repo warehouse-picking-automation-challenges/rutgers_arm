@@ -1,0 +1,175 @@
+<launch>
+
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>  
+  <include ns="simulation" file="$(find cloud_manipulation)/input/common_simulation.launch"/>
+  <include ns="planning" file="$(find cloud_manipulation)/input/common_planning_manip.launch"/>
+
+  <include ns="simulation" file="$(find cloud_manipulation)/input/environments/cup_real_world.launch"/>
+  <!--rosparam command="load" ns="simulation/simulator/obstacles" file="$(find cloud_manipulation)/input/environments/shelf.yaml" /-->
+  <!--rosparam command="load" ns="simulation/simulator/obstacles" file="$(find cloud_manipulation)/input/cloud/env/shelf_real_world.yaml" /-->  
+  <rosparam command="load" ns="simulation/simulator/obstacles" file="$(find cloud_manipulation)/input/environments/table.yaml" />
+  <!--rosparam command="load" ns="simulation/simulator/obstacles" file="$(find cloud_manipulation)/input/cloud/env/balls_16_2.yaml" /-->
+
+  <include ns="planning" file="$(find cloud_manipulation)/input/planning/world_models/world_model_baxter.launch"/>  
+  <!--rosparam command="load" ns="planning/world_model/simulator/obstacles" file="$(find cloud_manipulation)/input/environments/shelf.yaml" /-->    
+  <!--rosparam command="load" ns="planning/world_model/simulator/obstacles" file="$(find cloud_manipulation)/input/cloud/env/shelf_real_world.yaml" /-->  
+  <rosparam command="load" ns="planning/world_model/simulator/obstacles" file="$(find cloud_manipulation)/input/environments/table.yaml" />
+  <!--rosparam command="load" ns="planning/world_model/simulator/obstacles" file="$(find cloud_manipulation)/input/cloud/env/balls_16_2.yaml" /-->
+  
+    
+  <rosparam ns="simulation/simulator/obstacles">
+    kiva_shelf1:
+      type: obstacle
+      geometries:
+        -
+          name: shelf
+          collision_geometry:
+            type: mesh
+            filename: meshes/kiva_pod2.stl
+            material: white
+          visualization_geometry:
+            type: mesh
+            filename: meshes/kiva_pod2.osg
+            material: black
+          config:
+            position: [1.2,0.25,2.1]
+            orientation: [0.5 -0.5 -0.5 0.5]
+  </rosparam>
+
+  <rosparam ns="planning/world_model/simulator/obstacles">
+    kiva_shelf1:
+      type: obstacle
+      geometries:
+        -
+          name: shelf
+          collision_geometry:
+            type: mesh
+            filename: meshes/kiva_pod2.stl
+            material: blue
+          visualization_geometry:
+            type: mesh
+            filename: meshes/kiva_pod2.osg
+            material: black
+          config:
+            position: [1.2,0.25,2.1]
+            orientation: [0.5 -0.5 -0.5 0.5]
+  </rosparam>
+
+
+
+
+
+  <rosparam ns="planning/" >
+    random_seed: 14391835
+<!--
+    graph_builder: "/graph_builder"
+    deserialize: true    
+    graphs_filenames:
+      ungrasped_file: ungrasped_2000
+      grasped_file: grasped_2000
+      -->
+  </rosparam>
+
+  <!-- 
+  <rosparam command="load" ns="planning/motion_planner/" file="$(find SPARS)/input/spars.yaml"/>
+  -->
+  
+  <rosparam command="load" ns="planning/motion_planner/" file="$(find prx_input)/templates/motion_planners/prm_star.yaml"/>
+  
+  <!--
+  <rosparam command="load" ns="planning/motion_planner/" file="$(find fast_IRS)/input/firs.yaml"/>
+  -->
+  <rosparam ns="planning/task_planner/planners/" >
+    ungrasped:
+      template: "motion_planner"
+      space_name: "manipulator_pc"
+      visualization_bodies: ["simulator/manipulator/end_effector"]
+      visualize_graph: false
+      visualize_solution: false        
+      delta_prm: false
+      deserialize_file: ungrasped_10000_10__prm_star
+      serialize_file: ungrasped_20000_1_irs_n
+      collision_checking: true
+      visualize_tree: false
+    grasped:
+      template: "motion_planner"
+      space_name: "manip_object_pc"
+      visualization_bodies: ["simulator/manipulator/end_effector"]
+      visualize_graph: false
+      visualize_solution: false        
+      delta_prm: false
+      deserialize_file: grasped_10000_10__prm_star
+      serialize_file: grasped_20000_1_irs_n
+      collision_checking: true
+      visualize_tree: false
+  </rosparam>
+
+  <rosparam ns="planning/spec_template">
+    type: motion_planning_specification
+    distance_metric:
+      type: ann_distance_metric
+    stopping_criteria:
+      elements:
+        criterion1:
+          type: iteration_criterion
+          condition: 5000
+    validity_checker:
+      type: world_model_validity_checker
+  </rosparam>
+
+
+  <!--rosparam command="load" ns="planning/query_type" file="$(find cloud_manipulation)/input/planning/queries/query1cup.yaml"/-->
+
+  <rosparam command="load" ns="planning/query_type" file="$(find cloud_manipulation)/input/cloud/input/query_medium.yaml"/>
+  
+
+  <rosparam ns="planning/problems">
+  manipulation_problem:
+    specification:
+      type: cloud_manipulation_specification
+      validity_checker: 
+        type: world_model_validity_checker
+      sampler:
+        type: uniform_sampler
+      distance_metric:
+        type: linear_distance_metric
+      local_planner:
+        type: bvp_local_planner
+        max_prop_length: 0.06
+      z_on_table: 3.4775
+      max_tries: 20
+      max_different_grasps: 3
+      retract_distance: 0.05
+      raise_distance: 0.03
+      num_poses: 1
+      safe_position: [0.25684,-1.34394,0.42624,2.61800,2.84100,2.09400,-0.06762,0]
+    query:
+      template: query_type      
+  </rosparam>
+
+
+  <rosparam ns="planning/task_planner/" >
+    smooths_query: false
+    goal_biasing: 6
+    replay_plan: false
+    dummy_algorithm: false
+    statistics_file_name: statistics_tdk.txt 
+    cloud_robotics_stat_file: cloud_robotics_irs_both_kickass
+    tree_based_planning_mode: false
+    best_manipulation_combination: false
+    graph_generation_mode: 0
+  </rosparam>
+  
+  
+
+  <!-- Define the planning node -->
+  <node name="planning" pkg="prx_planning" type="prx_planning" 
+    required="true" launch-prefix="gdb --args" output="screen" args="planning" />
+  
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation" 
+    required="true" launch-prefix="" output="screen" args="simulation"/>
+
+  <include file="$(find cloud_manipulation)/input/visualization.launch"/>
+
+
+</launch>

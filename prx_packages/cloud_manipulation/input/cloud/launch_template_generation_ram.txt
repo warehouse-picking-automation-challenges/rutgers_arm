@@ -1,0 +1,71 @@
+<launch>
+
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+  <include ns="planning_#RM#RM_#RN#RN_#EN#EN_#PL#PL" file="$(find cloud_manipulation)/input/common_planning_single.launch"/>
+  <include ns="planning_#RM#RM_#RN#RN_#EN#EN_#PL#PL" file="$(find cloud_manipulation)/input/planning/world_models/world_model_baxter.launch"/>  
+  <rosparam command="load" ns="planning_#RM#RM_#RN#RN_#EN#EN_#PL#PL/world_model/simulator/obstacles" file="$(find cloud_manipulation)/input/environments/shelf.yaml" />  
+  <rosparam command="load" ns="planning_#RM#RM_#RN#RN_#EN#EN_#PL#PL/world_model/simulator/obstacles" file="$(find cloud_manipulation)/input/environments/table.yaml" />
+  
+  <rosparam ns="planning_#RM#RM_#RN#RN_#EN#EN_#PL#PL/" >
+    random_seed: #RN#
+  </rosparam>
+
+  <rosparam command="load" ns="planning_#RM#RM_#RN#RN_#EN#EN_#PL#PL/motion_planner/" file="#PATH#"/>
+
+  <rosparam ns="planning_#RM#RM_#RN#RN_#EN#EN_#PL#PL/task_planner/planners/" >
+    ungrasped:
+      template: "motion_planner"
+      space_name: "manipulator_pc"
+      visualization_bodies: ["simulator/manipulator/end_effector"]
+      visualize_graph: false
+      visualize_solutions: false        
+      delta_prm: false
+      deserialize_file: ungrasped_#RM#_#RN#_#PL#
+      serialize_file: ungrasped_#RM#_#RN#_#PL#
+      collision_checking: true
+      visualize_tree: false
+      serialize_plan: false
+    grasped:
+      template: "motion_planner"
+      space_name: "manip_object_pc"
+      visualization_bodies: ["simulator/manipulator/end_effector"]
+      visualize_graph: false
+      visualize_solutions: false        
+      delta_prm: false    
+      deserialize_file: grasped_#RM#_#RN#_#PL#
+      serialize_file: grasped_#RM#_#RN#_#PL#
+      collision_checking: true
+      visualize_tree: false
+      serialize_plan: false
+  </rosparam>
+
+  <rosparam ns="planning_#RM#RM_#RN#RN_#EN#EN_#PL#PL/spec_template">
+    type: motion_planning_specification
+    distance_metric:
+      type: ann_distance_metric
+    stopping_criteria:
+      elements:
+        criterion1:
+          type: iteration_criterion
+          condition: #RM#
+      criteria_check_type: 2
+    validity_checker:
+      type: world_model_validity_checker
+  </rosparam>
+
+
+
+  <rosparam ns="planning_#RM#RM_#RN#RN_#EN#EN_#PL#PL/task_planner/" >
+    smooths_query: false
+    goal_biasing: 6
+    replay_plan: false
+    dummy_algorithm: false
+    statistics_file_name: statistics_tdk.txt 
+    cloud_robotics_stat_file: cloud_ram_#RM#RM_#RN#RN_#EN#EN_#PL#PL
+    tree_based_planning_mode: false
+    best_manipulation_combination: false
+  </rosparam>
+  <include ns="planning_#RM#RM_#RN#RN_#EN#EN_#PL#PL" file="$(find cloud_manipulation)/input/planning/queries/query_easy.launch"/>
+	
+
+</launch>

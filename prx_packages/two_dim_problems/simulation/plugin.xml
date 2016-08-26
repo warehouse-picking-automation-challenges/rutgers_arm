@@ -1,0 +1,15 @@
+<class name="prx_simulation/homing_controller"
+    type="prx::packages::two_dim_problems::homing_controller_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        A controller for computing homing controls for a first-order car
+    </description>        
+</class>
+
+<class name="prx_simulation/homing_application"
+    type="prx::packages::two_dim_problems::homing_application_t"
+    base_class_type="prx::sim::application_t">
+    <description>
+        An application for handling homing controllers
+    </description>        
+</class>

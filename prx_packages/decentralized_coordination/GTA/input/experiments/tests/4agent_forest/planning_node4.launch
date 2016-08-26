@@ -1,0 +1,20 @@
+<!-- This file has been tested on PRACSYS revision  -->
+
+<launch>
+        
+  <!-- Define planning parameters -->           
+  <include ns="planning4" file="$(find GTA)/input/experiments/tests/4agent_forest/planning/world_models/main_example_4.launch"/>
+  <include ns="planning4" file="$(find GTA)/input/experiments/tests/4agent_forest/planning/planner_structures/main_example_4.launch"/>
+  <rosparam ns="planning4">
+    consumer_mapping:
+      - 
+        pair: [simulator/consumer4, space1]
+    my_plant: simulator/consumer4/vo_controller4/disk4
+    random_seed: 123456789
+  </rosparam>
+  <!-- Define the planning node -->
+  <node name="planning4" pkg="prx_planning" type="prx_planning"
+        required="true" launch-prefix="" output="screen" args="planning4"/>   
+
+
+</launch>

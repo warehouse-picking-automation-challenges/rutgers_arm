@@ -1,0 +1,8 @@
+<package>
+  <description brief="dynamic stuff">
+    A package for all of the dynamics stuff for a library where physics aware is in the title.
+  </description>
+  <author>Zakary Littlefield</author>
+  <license>BSD</license>
+  <url>http://www.pracsyslab.org</url>
+</package>

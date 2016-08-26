@@ -1,0 +1,28 @@
+<launch>
+
+  <rosparam ns="planning3">
+    state_mapping:
+      - 
+        pair: [simulator/consumer03/vo_controller03/disk03, world_model/simulator/disk]
+    control_mapping:
+      - 
+        pair: [simulator/consumer03/vo_controller03, world_model/simulator/disk]
+      - 
+        pair: [simulator/consumer03/vo_controller03/disk03, world_model/simulator/disk]
+    consumer_mapping:
+      - 
+        pair: [simulator/consumer03, space1]
+    consumer: simulator/consumer03
+    my_plant: simulator/consumer03/vo_controller03/disk03
+    planning_duration: 0.5
+    visualize: false
+    rxandom_seed: 1495654930
+    simulation_node_name: generic_name
+  </rosparam>
+
+  <include ns="planning3" file="$(find GTA)/input/experiments/test/4_experiment/planning/world_models/world_model.launch"/>
+  <include ns="planning3" file="$(find GTA)/input/experiments/test/4_experiment/planning/planner_structure/planner_structure.launch"/>
+  <node name="planning3"  pkg="prx_planning" type="prx_planning" required="true" launch-prefix="" output="log" args="planning3"/>
+
+</launch>
+

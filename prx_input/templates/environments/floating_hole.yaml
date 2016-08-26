@@ -1,0 +1,55 @@
+maze:
+    type: obstacle
+    geometries:
+      -
+        name: leftplate
+        collision_geometry: 
+          type: box
+          dims: [46, 100, 1]      
+          material: grey   
+        config:
+          position: [23, 50, 50]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: rightplate
+        collision_geometry: 
+          type: box
+          dims: [46, 100, 1]      
+          material: grey   
+        config:
+          position: [77, 50, 50]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: topplate
+        collision_geometry: 
+          type: box
+          dims: [8, 46, 1]      
+          material: grey   
+        config:
+          position: [50, 77, 50]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black
+      -
+        name: bottomplate
+        collision_geometry: 
+          type: box
+          dims: [8, 46, 1]      
+          material: grey   
+        config:
+          position: [50, 23, 50]
+          orientation: [ 0, 0, 0, 1]
+        visualization_geometry:
+          type: box
+          dims: [0.0001, 0.0001, 0.0001]
+          material: black

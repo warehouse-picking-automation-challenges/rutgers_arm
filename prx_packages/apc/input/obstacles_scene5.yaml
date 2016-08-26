@@ -1,0 +1,71 @@
+obstacles:
+  type: obstacle
+  root_configuration:
+    position: [0.0, 0, 0.8]
+    orientation: [-0.49960152,  0.50079585, -0.49960152,  0.50000016]
+  geometries:
+  -
+    name: mark_twain
+    collision_geometry:
+      type: box
+      dims: [.04 .10 .04 ]
+      material: green
+    visualization_geometry:
+      type: mesh
+      filename: objects/apc/mark_twain_huckleberry_finn.3ds
+      material: white
+    config:
+      position: [-0.354552792817 -0.0456451531251 0.767505610839 ]
+      orientation: [ 0.993397409851 0.012888747769 -0.113753578573 0.00745584629271 ]
+  -
+    name: highland
+    collision_geometry:
+      type: box
+      dims: [0.115, 0.050, 0.040]
+      material: yellow
+    visualization_geometry:
+      type: mesh
+      filename: objects/apc/highland_6539_self_stick_notes.3ds
+      material: white
+    config:
+      position: [ 0.124372582906 0.0105272029299 0.602291781089 ]
+      orientation: [ 0.710764515375 -0.697858555543 -0.0363190960462 -0.0805491365694 ]
+  -
+  #   name: cheezit
+  #   collision_geometry:
+  #     type: box
+  #     dims: [0.16, 0.23, 0.06]
+  #     material: blue
+  #   visualization_geometry:
+  #     type: mesh  
+  #     filename: /objects/apc/cheezit_big_original.3ds
+  #     material: white      
+  #   config:
+  #     position: [-0.086545071016 -0.0182795646508 0.80956960585   ] 
+  #     orientation: [0.694158429328 0.718192189363 -0.0172536082661 -0.0452367895933  ]
+  # -
+    name: crayola
+    collision_geometry:
+      type: box
+      dims: [0.145, 0.035, 0.125]
+      material: baxter_red
+    visualization_geometry:
+      type: mesh
+      filename: objects/apc/crayola_64_ct.3ds
+      material: white
+    config:
+      position: [-0.0768834520926 0.00577281279539 0.546023795645  ]
+      orientation: [0.00842246234902 0.728439717645 -0.684963527087 0.0113844826567 ]
+  - 
+    name: munchkin
+    collision_geometry:
+      type: mesh
+      filename: objects/apc/munchkin_white_hot_duck_bath_toy.stl
+      material: blue
+    visualization_geometry:
+      type: mesh
+      filename: objects/apc/munchkin_white_hot_duck_bath_toy.stl
+      material: blue
+    config:
+      position: [0.0573336751803 0.00477849331773 0.753197518618 ]
+      orientation: [0.989946295838 0.0539879113837 -0.0626993240749 -0.114718924082 ]

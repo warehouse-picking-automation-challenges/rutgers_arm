@@ -1,0 +1,20 @@
+<launch>  
+  <rosparam command="load" file="$(find prx_input)/templates/applications/manual_application.yaml" />
+  <rosparam command="load" file="$(find prx_input)/templates//simulators/ode_simulator.yaml"/>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <rosparam ns="manual_controllers">
+    system_paths: [simulator/manual1]
+  </rosparam>
+
+  <rosparam command="load" ns="/simulator/subsystems/manual1"
+	file="$(find prx_input)/templates/controllers/manual/ode_manipulator.yaml"/>
+
+  <rosparam command="load" ns="/simulator/subsystems/manual1/subsystems/car1"
+    file="$(find prx_input)/templates/plants/ode/manipulator.yaml"/>
+
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation"
+        required="true"   launch-prefix="" output="screen" />
+
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+</launch>

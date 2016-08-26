@@ -1,0 +1,58 @@
+obstacles:
+  type: obstacle
+  root_configuration:
+    position: [0.0, 0, 0.8]
+    orientation: [-0.49960152,  0.50079585, -0.49960152,  0.50000016]
+  geometries:
+  -
+    name: mark_twain
+    collision_geometry:
+      type: box
+      dims: [.04 .10 .04 ]
+      material: green
+    visualization_geometry:
+      type: mesh
+      filename: objects/apc/mark_twain_huckleberry_finn.3ds
+      material: white
+    config:
+      position: [-0.288311127092 -0.0391519787211 0.575938248457 ]
+      orientation: [ 0.994742211516, 0.00160750408074, 0.101319999101, 0.0148191207863 ]
+  -
+    name: highland
+    collision_geometry:
+      type: box
+      dims: [0.115, 0.050, 0.040]
+      material: yellow
+    visualization_geometry:
+      type: mesh
+      filename: objects/apc/highland_6539_self_stick_notes.3ds
+      material: white
+    config:
+      position: [ -0.291071734563 0.0378916162132 0.534821049145 ]
+      orientation: [ 0.992245484581 0.0113854545915 0.0837534548566 -0.0911297347273 ]
+  -
+    name: cheezit
+    collision_geometry:
+      type: box
+      dims: [0.16, 0.23, 0.06]
+      material: blue
+    visualization_geometry:
+      type: mesh  
+      filename: /objects/apc/cheezit_big_original.3ds
+      material: white      
+    config:
+      position: [-0.164527827379 -0.0496341705097 0.721770150165] 
+      orientation: [0.99764138779 0.0282498250116 -0.0438165736694 -0.0446510540454]
+  -
+    name: crayola
+    collision_geometry:
+      type: box
+      dims: [0.145, 0.035, 0.125]
+      material: baxter_red
+    visualization_geometry:
+      type: mesh
+      filename: objects/apc/crayola_64_ct.3ds
+      material: white
+    config:
+      position: [0.0250631212335 0.00553678245332 0.699341809858 ]
+      orientation: [0.671072523871 0.264294446342 -0.254859093918 0.64409390277 ]      

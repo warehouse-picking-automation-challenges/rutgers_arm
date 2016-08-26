@@ -1,0 +1,7 @@
+simulator:
+  type: manipulation_simulator
+  collision_detection: true
+  collision_response: false
+  simulation_step: 0.02
+  collision_checker:
+    type: pqp

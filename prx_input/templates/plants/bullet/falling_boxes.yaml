@@ -1,0 +1,12 @@
+type: bullet_plant
+geometries:
+  -
+    name: ball
+    collision_geometry:
+      type: sphere
+      radius: .2
+      material: green
+    config: 
+      position: [80 -80 40.7]
+      orientation: [0,0,0,1]
+    mass: 5.0

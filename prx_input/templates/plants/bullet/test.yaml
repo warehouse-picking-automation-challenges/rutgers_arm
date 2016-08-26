@@ -1,0 +1,30 @@
+type: bullet_plant
+geometries:
+  -
+    name: chassis
+    collision_geometry:
+      type: box
+      dims: [3,1,1]
+      material: red
+    config: 
+      position: [0,0,1]
+      orientation: [0,0,0,1]
+    mass: 4
+    state_space:
+      min: [-150,-150,-5,-1,-1,-1,-1,-100,-100,-100,-100,-100,-100]
+      max: [150,150,5,1,1,1,1,100,100,100,100,100,100]
+controls:
+  -
+    name: chassis
+    bounds: [-60, 60]
+    direction: [1,0,0]
+    relative_position: [0,0,0]
+    type: body_force
+    object: chassis
+  -
+    name: chassis2
+    bounds: [-60, 60]
+    direction: [0,1,0]
+    relative_position: [0,0,0]
+    type: body_force
+    object: chassis

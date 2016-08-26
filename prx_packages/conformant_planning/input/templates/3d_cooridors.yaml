@@ -1,0 +1,98 @@
+environment:
+    type: obstacle
+    geometries:
+      # -
+      #   name: box1
+      #   collision_geometry: 
+      #     type: box
+      #     material: black 
+      #     dims: [1,13,4.625]      
+      #   config:
+      #     position: [0,3.5,7.9875]
+      #     orientation: [0, 0, 0, 1]
+      # -
+      #   name: box2
+      #   collision_geometry: 
+      #     type: box
+      #     material: black 
+      #     dims: [1,13,4.625]      
+      #   config:
+      #     position: [0,-3.5,2.0125]
+      #     orientation: [0, 0, 0, 1]
+      -
+        name: upbox1
+        collision_geometry: 
+          type: box
+          material: black 
+          dims: [1,20,1.5]      
+        config:
+          position: [0,0,7.5]
+          orientation: [0, 0, 0, 1]
+      -
+        name: downbox1
+        collision_geometry: 
+          type: box
+          material: black 
+          dims: [1,20,1]      
+        config:
+          position: [0,0,3.5]
+          orientation: [0, 0, 0, 1]
+      -
+        name: leftbox1
+        collision_geometry: 
+          type: box
+          material: black 
+          dims: [1,8,4]      
+        config:
+          position: [0,6,5]
+          orientation: [0, 0, 0, 1]
+      -
+        name: rightbox1
+        collision_geometry: 
+          type: box
+          material: black 
+          dims: [1,8,4]      
+        config:
+          position: [0,-6,5]
+          orientation: [0, 0, 0, 1]
+      -
+        name: box2
+        collision_geometry: 
+          type: box
+          material: black 
+          dims: [1,5,2]      
+        config:
+          position: [0,0,9]
+          orientation: [0, 0, 0, 1]
+      -
+        name: box3
+        collision_geometry: 
+          type: box
+          material: black 
+          dims: [.5,.5,.5]      
+        config:
+          position: [0,0,2]
+          orientation: [0, 0, 0, 1]
+      -
+        name: box4
+        collision_geometry: 
+          type: box
+          material: black 
+          dims: [.5,.5,.5]      
+        config:
+          position: [0,-4,2]
+          orientation: [0, 0, 0, 1]
+      -
+        name: box5
+        collision_geometry: 
+          type: box
+          material: black 
+          dims: [.5,.5,.5]      
+        config:
+          position: [0,4,2]
+          orientation: [0, 0, 0, 1]
+
+
+
+
+

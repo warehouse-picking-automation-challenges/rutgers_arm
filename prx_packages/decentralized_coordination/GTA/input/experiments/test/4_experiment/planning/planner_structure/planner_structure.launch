@@ -1,0 +1,96 @@
+<launch>
+
+  <rosparam command="load" file="$(find GTA)/input/templates/planning_applications/replanning_gta_application.yaml"/>
+  
+  <rosparam command="load" ns="h_graph_planner" file="$(find homotopies)/input/templates/motion_planners/h_graph_planner.yaml"/>
+  <rosparam command="load" ns="irs_motion_planner" file="$(find GTA)/input/templates/motion_planners/special_irs.yaml"/>
+  <rosparam command="load" ns="prm_motion_planner" file="$(find GTA)/input/templates/motion_planners/special_prm.yaml"/>
+  <rosparam command="load" ns="task_planner" file="$(find GTA)/input/templates/task_planners/replanning_gta.yaml"/>
+  <rosparam ns="">
+    planning_duration: 0.5
+  </rosparam>
+
+  <rosparam ns="task_planner" >
+    prm_max_iterations: 5000
+    max_exploratory_actions: 6                                                         
+    action_limit: 6
+    visualize_actions: true
+    visualize_neighbors: false
+    compute_action_type: h_graph
+    disk_radius: 18.4
+    horizon_factor: 800
+    alpha: 1.0
+    eta: 0.2
+    use_min_conflict: true
+    interaction_factor: 2.0
+    the_one_method: true
+    waiting: true
+    k_greedy_actions: 6
+    num_greedy_actions: 1
+    num_safety_actions: 1
+    validity_checker:
+        type: world_model_validity_checker
+  </rosparam>  
+
+  <rosparam ns="h_graph_planner" >
+    local_planner:
+      type: bvp_local_planner
+  </rosparam>  
+
+  <rosparam ns="irs_motion_planner" > 
+    local_planner:
+      type: bvp_local_planner
+    weight_factor: 1000
+  </rosparam>  
+  <rosparam ns="task_planner/planners/" >
+    irs_motion_planner:
+      template: "irs_motion_planner" 
+      space_name: "space1"
+      visualization_body: ["simulator/disk/body"]
+      visualize_graph: true 
+      graph_color: green
+      visualize_solution: false
+      store_interpolated_edges: false
+      distance_metric: 
+        type: graph_distance_metric
+      radius_solution: false
+      deserialize_file: "roadmaps/[8k][delta_irs][grid].roadmap"
+      delta_prm: false
+      resolve_query_connection: false
+    h_graph_planner:
+      template: "h_graph_planner"
+      space_name: "space1"
+      visualization_body: ["simulator/disk/body"]
+      visualize: true
+      visualize_graph: false
+      visualize_solutions: false
+      visualize_homotopies: true
+      distance_metric:
+        type: graph_distance_metric
+      representative_points:
+        - point: [45,45]
+        - point: [45,-45]
+        - point: [45,135]
+        - point: [45,-135]
+        - point: [-45,45]
+        - point: [-45,-45]
+        - point: [-45,135]
+        - point: [-45,-135]
+        - point: [135,45]
+        - point: [135,-45]
+        - point: [135,135]
+        - point: [135,-135]
+        - point: [-135,45]
+        - point: [-135,-45]
+        - point: [-135,135]
+        - point: [-135,-135]
+      number_explored_homotopies: 7
+      homotopy_threshold: 10
+      custom_graph: 0
+      deserialize_file: "roadmaps/[8k][delta_irs][grid].roadmap"
+      weight_factor: 1000
+      split_edge_length: 7
+      max_step_length: 0.5
+  </rosparam>
+
+</launch>

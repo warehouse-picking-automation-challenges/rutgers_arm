@@ -1,0 +1,128 @@
+<!-- This file has been tested on PRACSYS revision XXXX -->
+
+<launch>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <rosparam command="load" ns="simulation" file="$(find crowd_simulation)/input/templates/applications/vo_application.yaml"/>
+  <rosparam command="load" ns="simulation" file="$(find prx_input)/templates/simulators/default_simulator.yaml"/>
+
+  <rosparam command="load" ns="simulation/vo_controller" file="$(find crowd_simulation)/input/templates/controllers/vo_controller.yaml"/>
+  <rosparam command="load" ns="simulation/path_follower" file="$(find crowd_simulation)/input/templates/controllers/path_follower_controller.yaml"/>
+  <rosparam command="load" ns="simulation/behavior_controller" file="$(find crowd_simulation)/input/templates/controllers/behavior_controller.yaml"/>
+
+  <rosparam command="load" ns="simulation/simulator/obstacles/" file="$(find prx_input)/templates/environments/coverballs.yaml" />
+  <rosparam command="load" ns="simulation/agent" file="$(find crowd_simulation)/input/templates/plants/pedestrian.yaml"/>
+
+  <rosparam ns="simulation">
+    random_seed: 2451358
+    navigation_graph: simple_diamond_nav_graph.txt
+    agent_radius: 0.35
+    distance_metric:
+      type: graph_distance_metric
+      distance_function: floor_aware_euclidean
+    obstacle_metric:
+      type: graph_distance_metric
+      distance_function: floor_aware_euclidean
+  </rosparam>
+
+  <rosparam ns="simulation/simulator">
+    display_grid: false
+    collision_detection: false
+    collision_response: false
+  </rosparam>
+
+  <rosparam ns="simulation/vo_controller">
+    input_control_space:
+      min: [-800, -800]
+      max: [800, 800]
+    vanish: false
+    minimally_invasive: false
+    sensing_info:
+      type: VO_sensing_info
+      sources: ["geom_sensor1", "vel_sensor1"]
+      update_delay: 0.02
+      max_num_neighbors: 8
+      sensing_radius: 2.2
+      obstacle_sensing_radius: 2.5
+      distance_metric:
+        type: ann_distance_metric
+        distance_function: floor_aware_euclidean
+    num_samples: 50
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/sensing">
+    type: VO_sensing_model
+    sensors:
+        geom_sensor1:
+          type: geom_sensor
+          source: "geom_sensor1"
+          sensor_delay: 0.02
+        vel_sensor1:
+          type: velocity_sensor
+          source: "vel_sensor1"
+          sensor_delay: 0.02
+  </rosparam>
+
+  <rosparam ns="simulation/agent">
+    state_space:
+      min: [-800, -800]
+      max: [800, 800]
+  </rosparam>
+
+  <!-- Agent 1 -->
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/behavior1">
+    template: "behavior_controller"
+    goal: [0, -20, 1.02]
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/behavior1/subsystems/follower1">
+    template: "path_follower"
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/behavior1/subsystems/follower1/subsystems/vo1">
+    template: "vo_controller"
+    sensing_info:
+        system_path: "simulator/behavior1/follower1/vo1/agent1/body"
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/behavior1/subsystems/follower1/subsystems/vo1/subsystems/agent1">
+    template: "agent"
+    initial_state: [0, 20, 1.02]
+    input_control_space:
+      min: [0, -3.1416]
+      max: [2.56312178294719, 3.1416]
+  </rosparam>
+
+  <!-- Agent 2 -->
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/behavior2">
+    template: "behavior_controller"
+    goal: [0, 20, 1.02]
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/behavior2/subsystems/follower2">
+    template: "path_follower"
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/behavior2/subsystems/follower2/subsystems/vo2">
+    template: "vo_controller"
+    sensing_info:
+        system_path: "simulator/behavior2/follower2/vo2/agent2/body"
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/behavior2/subsystems/follower2/subsystems/vo2/subsystems/agent2">
+    template: "agent"
+    initial_state: [0, -20, 1.02]
+    input_control_space:
+      min: [0, -3.1416]
+      max: [2.46063011007314, 3.1416]
+  </rosparam>
+
+  <!-- Nodes -->
+
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation" required="true" launch-prefix="" args="simulation" output="screen" />
+
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+
+</launch>

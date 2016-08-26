@@ -1,0 +1,12 @@
+table:
+  type: bullet_obstacle
+  geometries:
+    -
+      name: foundation
+      collision_geometry:
+        type: box
+        dims: [0.5, .6, 1.36]
+        material: shelf_grey
+      config:
+        position: [0.7, 0, 0]
+        orientation: [0, 0, 0, 1]

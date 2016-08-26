@@ -1,0 +1,129 @@
+building1:
+  type: obstacle
+  geometries:
+    -
+      name: box1
+      collision_geometry:
+        type: box
+        dims: [20,440,2]
+        material: black
+      config:
+        position: [-290,0,1]
+        orientation: [0,0,0,1]
+    -
+      name: box2
+      collision_geometry:
+        type: box
+        dims: [600,20,2]
+        material: black
+      config:
+        position: [0,230,1]
+        orientation: [0,0,0,1]
+    -
+      name: box3
+      collision_geometry:
+        type: box
+        dims: [20,440,2]
+        material: black
+      config:
+        position: [290,0,1]
+        orientation: [0,0,0,1]
+    -
+      name: box4
+      collision_geometry:
+        type: box
+        dims: [600,20,2]
+        material: black
+      config:
+        position: [0,-230,1]
+        orientation: [0,0,0,1]
+    -
+      name: box6
+      collision_geometry:
+        type: box
+        dims: [40,40,2]
+        material: black
+      config:
+        position: [-260,60,1]
+        orientation: [0,0,0,1]
+    -
+      name: box8
+      collision_geometry:
+        type: box
+        dims: [60,60,2]
+        material: black
+      config:
+        position: [-250,-190,1]
+        orientation: [0,0,0,1]
+    -
+      name: box10
+      collision_geometry:
+        type: box
+        dims: [60,60,2]
+        material: black
+      config:
+        position: [-170,-70,1]
+        orientation: [0,0,0,1]
+    -
+      name: box12
+      collision_geometry:
+        type: box
+        dims: [60,220,2]
+        material: black
+      config:
+        position: [-110,110,1]
+        orientation: [0,0,0,1]
+    -
+      name: box13
+      collision_geometry:
+        type: box
+        dims: [40,60,2]
+        material: black
+      config:
+        position: [-60,190,1]
+        orientation: [0,0,0,1]
+    -
+      name: box15
+      collision_geometry:
+        type: box
+        dims: [100,80,2]
+        material: black
+      config:
+        position: [10,-80,1]
+        orientation: [0,0,0,1]
+    -
+      name: box17
+      collision_geometry:
+        type: box
+        dims: [220,20,2]
+        material: black
+      config:
+        position: [-30,-170,1]
+        orientation: [0,0,0,1]
+    -
+      name: box18
+      collision_geometry:
+        type: box
+        dims: [60,240,2]
+        material: black
+      config:
+        position: [170,-100,1]
+        orientation: [0,0,0,1]
+    -
+      name: box19
+      collision_geometry:
+        type: box
+        dims: [60,160,2]
+        material: black
+      config:
+        position: [70,160,1]
+        orientation: [0,0,0,1]
+    -
+      name: box21
+      collision_geometry:
+        type: box
+        dims: [60,60,2]
+        material: black
+      config:
+        position: [170,150,0,1]
+        orientation: [0,0,0,1]

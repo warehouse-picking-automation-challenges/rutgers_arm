@@ -1,0 +1,74 @@
+
+<launch>  
+  <rosparam file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <!-- SIMULATION SETUP -->
+  <rosparam ns="simulation" file="$(find prx_input)/templates/applications/empty_application.yaml" />
+  <rosparam ns="simulation" file="$(find prx_input)/templates/simulators/default_simulator.yaml"/>  
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manipulator" file="$(find manipulation)/input/motoman/reflex.yaml"/>
+
+  <!-- OBSTACLES -->
+  <rosparam ns="simulation/simulator/obstacles" file="$(find apc)/input/obstacles_scene2.yaml"/>
+  <rosparam ns="simulation/simulator/obstacles" file="$(find apc)/input/table.yaml"/>
+
+  <!-- GRASPING TARGET -->
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/crayola_64_ct" file="$(find manipulation)/input/objects/apc_items/crayola_64_ct_rls1.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/crayola_64_ct">
+    initial_state: [ 0.62777413,  0.13008531,  0.79653187,  0.03048531, -0.01422967, -0.78949424,  0.61283523]
+  </rosparam>
+
+  <!-- SIMULATION AND APPLICATION PARAMS -->
+  <rosparam ns="simulation/application">
+  start_simulation: false
+  </rosparam>
+  <rosparam ns="simulation/simulator">
+  collision_detection: true
+  collision_response: false
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/subsystems/consumer">
+  type: grasp_visualizer
+  grasp_file: "prx_packages/manipulation/input/grasp_data/fused_reflex/dummy_data.yaml"
+  </rosparam>
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manipulator">
+    initial_state: [-0.182,-0.118,0.133,-0.287,0.708,0.230,0.603,1.000]
+  </rosparam>
+
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation" required="true" launch-prefix="" output="screen" args="simulation"/>
+
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+
+  <rosparam ns="visualization/viewer/">
+    windows:
+      window_1:
+        xpos: 920
+        ypos: 100
+        width: 800
+        height: 800
+        cameras:
+          perspective:
+            ortho: false
+            camera_type: 0
+            eye: [0, 0, 1.8]
+            center: [1, 0, 0]
+            speed: {move: 0.1, rotate: 0.001}
+          orthographic:
+            ortho: true
+            ortho_param:
+              left: -300
+              right: 300
+              bottom: -300
+              top: 300
+              zNear: 0
+              zFar: 1000
+            speed: {move: 0.2, rotate: 0.001}
+          smooth:
+            ortho: false
+            camera_type: 2
+            eye: [0, -20, 15]
+            center: [0, 1, 18]
+            speed: {move: 0.2, rotate: 0.001}
+  </rosparam>
+
+</launch>
+

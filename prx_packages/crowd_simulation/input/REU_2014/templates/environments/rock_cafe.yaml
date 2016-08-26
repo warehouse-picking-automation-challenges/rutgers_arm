@@ -1,0 +1,369 @@
+test_all_geoms:
+    type: obstacle
+    geometries:
+    -
+        name: backwall
+        collision_geometry: 
+            type: box
+            dims: [260, 5, 35]      
+            material: black    
+        config:
+            position: [0, 212.5, 0]
+            orientation: [0,0,0,1]
+    -
+        name: frontwall
+        collision_geometry: 
+            type: box
+            dims: [260, 5, 35]      
+            material: black    
+        config:
+            position: [0, -212.5, 0]
+            orientation: [0,0,0,1]
+    -
+        name: rightmidwall
+        collision_geometry: 
+            type: box
+            dims: [104, 5, 35]      
+            material: black    
+        config:
+            position: [75, 0, 0]
+            orientation: [0,0,0,1]
+    -
+        name: leftmidwall
+        collision_geometry: 
+            type: box
+            dims: [52, 5, 35]      
+            material: black    
+        config:
+            position: [-103, 0, 0]
+            orientation: [0,0,0,1]
+    -
+        name: rightwall
+        collision_geometry: 
+            type: box
+            dims: [5, 420, 35]      
+            material: black    
+        config:
+            position: [127.5, 0, 0]
+            orientation: [0,0,0,1]
+    -
+        name: leftwall
+        collision_geometry: 
+            type: box
+            dims: [5, 370, 35]      
+            material: black    
+        config:
+            position: [-127.5, 27, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: leftenttop
+        collision_geometry: 
+            type: box
+            dims: [40, 5, 35]      
+            material: black    
+        config:
+            position: [-145, -160, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: leftentbot
+        collision_geometry: 
+            type: box
+            dims: [40, 5, 35]      
+            material: black    
+        config:
+            position: [-145, -212.5, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: longtable
+        collision_geometry: 
+            type: box
+            dims: [250, 20, 24]      
+            material: pink    
+        config:
+            position: [5, -205, 0]
+            orientation: [0,0,0,1] 
+    -       
+        name: counterlong
+        collision_geometry: 
+            type: box
+            dims: [30, 90, 24]      
+            material: pink    
+        config:
+            position: [-90, -100, 0]
+            orientation: [0,0,0,1] 
+    -       
+        name: countershort
+        collision_geometry: 
+            type: box
+            dims: [50, 30, 24]      
+            material: pink    
+        config:
+            position: [-100, -140, 0]
+            orientation: [0,0,0,1]       
+    -       
+        name: fruitstand
+        collision_geometry: 
+            type: box
+            dims: [30, 25, 20]      
+            material: blue    
+        config:
+            position: [-70, -40, 0]
+            orientation: [0,0,0,1]       
+    -       
+        name: drinkfridgerm1
+        collision_geometry: 
+            type: box
+            dims: [25, 40, 32]      
+            material: blue    
+        config:
+            position: [-115, -20, 0]
+            orientation: [0,0,0,1]       
+    -       
+        name: hotfoodstand
+        collision_geometry: 
+            type: box
+            dims: [20, 25, 28]      
+            material: blue    
+        config:
+            position: [10, 0, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: cereal1
+        collision_geometry: 
+            type: cylinder
+            radius: 5
+            height: 25
+            material: yellow    
+        config:
+            position: [5, -60, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: cereal2
+        collision_geometry: 
+            type: cylinder
+            radius: 5
+            height: 25
+            material: yellow    
+        config:
+            position: [5, -70, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: cereal3
+        collision_geometry: 
+            type: cylinder
+            radius: 5
+            height: 26
+            material: yellow    
+        config:
+            position: [-15, -125, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: cereal4
+        collision_geometry: 
+            type: cylinder
+            radius: 5
+            height: 26
+            material: yellow    
+        config:
+            position: [-15, -135, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: excessstock1
+        collision_geometry: 
+            type: box
+            dims: [45, 35, 26]      
+            material: red    
+        config:
+            position: [15, -130, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: excessstock2
+        collision_geometry: 
+            type: box
+            dims: [45, 35, 26]      
+            material: red    
+        config:
+            position: [65, -130, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: condiments
+        collision_geometry: 
+            type: box
+            dims: [45, 15, 32]      
+            material: blue    
+        config:
+            position: [35, -65, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: waterholder
+        collision_geometry: 
+            type: box
+            dims: [5, 15, 24]      
+            material: blue    
+        config:
+            position: [65, -65, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: poptarts
+        collision_geometry: 
+            type: box
+            dims: [30, 5, 24]      
+            material: blue    
+        config:
+            position: [40, -5, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: deepriverchips
+        collision_geometry: 
+            type: box
+            dims: [20, 15, 32]      
+            material: blue    
+        config:
+            position: [70, -10, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: waterfridge1
+        collision_geometry: 
+            type: box
+            dims: [25, 25, 33]      
+            material: red    
+        config:
+            position: [100, -25, 0]
+            orientation: [0.9238795325112867, 0.3826834323650897, 0, 0]
+   
+    -       
+        name: waterfridge2
+        collision_geometry: 
+            type: box
+            dims: [25, 25, 33]      
+            material: red    
+        config:
+            position: [106, -127, 0]
+            orientation: [0.9238795325112867, -0.3826834323650897, 0, 0]
+    -       
+        name: hotfriesetc
+        collision_geometry: 
+            type: box
+            dims: [20, 65, 32]      
+            material: blue    
+        config:
+            position: [115, -75, 0]
+            orientation: [0,0,0,1]
+
+    -       
+        name: grapesfridge
+        collision_geometry: 
+            type: box
+            dims: [25, 30, 33]      
+            material: blue    
+        config:
+            position: [-110, 145, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: chipsrack
+        collision_geometry: 
+            type: box
+            dims: [20, 15, 27]      
+            material: red    
+        config:
+            position: [-110, 120, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: frapfridge
+        collision_geometry: 
+            type: box
+            dims: [25, 45, 32]      
+            material: red    
+        config:
+            position: [-110, 85, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: sodafridge
+        collision_geometry: 
+            type: box
+            dims: [25, 45, 32]      
+            material: red    
+        config:
+            position: [-110, 35, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: counter
+        collision_geometry: 
+            type: box
+            dims: [160, 30, 25]      
+            material: red    
+        config:
+            position: [-50, 175, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: hotcoffee
+        collision_geometry: 
+            type: box
+            dims: [35, 105, 34]      
+            material: red    
+        config:
+            position: [105, 120, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: foodfridge
+        collision_geometry: 
+            type: box
+            dims: [25, 45, 32]      
+            material: red    
+        config:
+            position: [105, 30, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: vlinedivider1
+        collision_geometry: 
+            type: box
+            dims: [1, 60, 25]      
+            material: red    
+        config:
+            position: [-60, 90, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: vlinedivider2
+        collision_geometry: 
+            type: box
+            dims: [1, 60, 25]      
+            material: red    
+        config:
+            position: [-20, 90, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: vlinedivider3
+        collision_geometry: 
+            type: box
+            dims: [1, 60, 25]      
+            material: red    
+        config:
+            position: [45, 90, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: hlinedivider1
+        collision_geometry: 
+            type: box
+            dims: [40, 1, 25]      
+            material: red    
+        config:
+            position: [0, 90, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: hlinedivider2
+        collision_geometry: 
+            type: box
+            dims: [30, 1, 25]      
+            material: red    
+        config:
+            position: [30, 60, 0]
+            orientation: [0,0,0,1]    
+    -       
+        name: hlinedivider3
+        collision_geometry: 
+            type: box
+            dims: [30, 1, 25]      
+            material: red    
+        config:
+            position: [30, 120, 0]
+            orientation: [0,0,0,1]

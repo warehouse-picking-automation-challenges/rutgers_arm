@@ -1,0 +1,41 @@
+int32 MOVE=0
+int32 MOVE_AND_DETECT=1
+int32 PERFORM_GRASP=2
+int32 MOVE_TO_ORDER_BIN=3
+int32 TEST_BIN_ROADMAP=4
+int32 EXECUTE_SAVED_TRAJ=5
+int32 ADJUST_EE=6
+int32 MOVE_TO_OTHER_BIN=7
+int32 MOVE_OUTSIDE_BIN=8
+int32 THREE_STAGE_TRAJECTORY_SECOND=9
+int32 THREE_STAGE_TRAJECTORY_THIRD=10
+int32 MOVE_AND_DETECT_TOTE=11
+int32 REMOVE_FROM_TOTE=12
+int32 RETRY_GRASP=13
+int32 LIFT=14
+
+int32 stage
+string hand
+string object
+string saved_plan_path
+int32 pose
+int32 grasp_id
+string bin
+int32 bin_tries
+float64[] goal_state
+float64[] object_state
+float64[] final_obj_state
+
+---
+bool move_to_home
+bool success
+prx_simulation/control_msg[] plan
+prx_simulation/control_msg[] reaching
+prx_simulation/control_msg[] grasping
+prx_simulation/control_msg[] retracting
+float64 duration
+float64 reaching_duration
+float64 grasping_duration
+float64 retracting_duration
+---
+float64 progress

@@ -1,0 +1,30 @@
+building1:
+    type: obstacle
+    geometries:
+      -
+        name: middle
+        collision_geometry: 
+          type: box
+          dims: [280, 20, 4]      
+          material: black       
+        config:
+          position: [0, 0, 2]
+          orientation: [0, 0, 0, 1]
+      -
+        name: top
+        collision_geometry: 
+          type: box
+          dims: [300, 20, 4]      
+          material: black       
+        config:
+          position: [0, 80, 2]
+          orientation: [0, 0, 0, 1]
+      -
+        name: bottom
+        collision_geometry: 
+          type: box
+          dims: [300, 20, 4]      
+          material: black       
+        config:
+          position: [0, -80, 2]
+          orientation: [0, 0, 0, 1]

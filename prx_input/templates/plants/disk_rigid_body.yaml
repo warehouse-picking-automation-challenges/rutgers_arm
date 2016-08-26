@@ -1,0 +1,21 @@
+type: rigid_body
+integrator: rk4
+max_step: 0.35
+z: 2
+state_space: 
+  min: [-100, -100, -4]
+  max: [100, 100, 4]
+  scale: [1, 1, 0.0]
+input_control_space:
+  min: [-100, -100, -4]
+  max: [100, 100, 4]
+  scale: [1, 1, 0.0]
+root_geom: body
+geometries:
+  -
+    name: body
+    collision_geometry:
+      type: cylinder
+      radius: 2
+      height: 1.0
+      material: white

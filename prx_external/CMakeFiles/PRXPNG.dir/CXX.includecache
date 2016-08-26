@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zhusj/Github/pracsys/src/prx_external/PNGCreator/lodepng.cpp
+lodepng.hpp
+/home/zhusj/Github/pracsys/src/prx_external/PNGCreator/lodepng.hpp
+stdio.h
+-
+stdlib.h
+-
+fstream
+-
+
+/home/zhusj/Github/pracsys/src/prx_external/PNGCreator/lodepng.hpp
+string.h
+-
+vector
+-
+string
+-
+lodepng.h
+/home/zhusj/Github/pracsys/src/prx_external/PNGCreator/lodepng.h
+iostream
+-
+lodepng.h
+/home/zhusj/Github/pracsys/src/prx_external/PNGCreator/lodepng.h
+

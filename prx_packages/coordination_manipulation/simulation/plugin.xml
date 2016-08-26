@@ -1,0 +1,16 @@
+<class name="prx_simulation/coord_manip_application"
+    type="prx::packages::coordination_manipulation::coord_manip_application_t"
+    base_class_type="prx::sim::application_t">
+    <description>
+        An application that handles coordination manipulation experiments
+    </description>       
+</class>
+
+<class name="prx_simulation/place_objects_application"
+    type="prx::packages::coordination_manipulation::place_objects_application_t"
+    base_class_type="prx::sim::application_t">
+    <description>
+        An application that places objects in random poses and makes sure
+        there are no collisions.
+    </description>         
+</class>

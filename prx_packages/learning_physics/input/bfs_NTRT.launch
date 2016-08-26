@@ -1,0 +1,111 @@
+
+<launch>  
+ <rosparam file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <rosparam ns="planning/world_model" command="load" >  
+  simulator:
+    type: ntrt_simulator
+    simulation_step: 0.001
+    collision_checker:
+      type: bullet
+  </rosparam>
+
+  <rosparam ns="planning" file="$(find prx_input)/templates/planning_applications/single_query_application.yaml"/>
+<rosparam ns="planning">
+random_seed: 5165
+simulate: false
+consumer_mapping:
+  - 
+    pair: [simulator/consumer, space1]
+world_model:
+  type: default_world_model
+visualize: false
+persistent: false
+</rosparam>
+       
+  <rosparam ns="planning/motion_planner/" file="$(find prx_input)/templates/motion_planners/sst.yaml"/>
+ 
+  <rosparam ns="planning/task_planner/" file="$(find prx_input)/templates/task_planners/single_shot.yaml"/>
+  <rosparam ns="planning/query_type" file="$(find prx_input)/templates/queries/motion_planning_query.yaml"/>
+
+  <rosparam ns="planning/task_planner/" >
+    specification: 
+      type: single_shot_specification
+    query:
+      type: single_shot_query
+  </rosparam>
+
+<rosparam ns="planning/task_planner/planners/" >
+planner1:
+  template: "motion_planner"
+  type: bfs_tree_planner
+  space_name: "space1"
+  visualization_body: "simulator/rover/rod0"
+  visualize_tree: false
+  visualize_solution: false
+  max_points: 20000
+  steering: false
+  branches: 5
+  specification:
+    type: motion_planning_specification
+    validity_checker: 
+      type: temporal_validity_checker
+      cost_function: duration_cost
+    sampler:
+      type: uniform_sampler
+    distance_metric:
+      type: graph_distance_metric
+    local_planner:
+      type: time_varying_local_planner
+      lower_multiple: 500
+      upper_multiple: 900
+    seeds:
+      -
+        state: [0.717,0.393,8.125]
+    stopping_criteria:
+      elements:
+        criterion1:
+          type: iteration_criterion
+          condition: 2000
+  query:
+    template: "query_type"
+    start_state: [0.717,0.393,8.125]
+    goal:
+      type: radial_goal_region
+      distance_metric:
+        type: ann_distance_metric
+      radius: 1
+      accepted_threshold: .6
+      state_size: 5
+      goal_state: [80,0,8]
+</rosparam>
+       <!-- 
+  <rosparam ns="planning/task_planner/" >
+    stats_criteria:
+      elements:
+        criterion1:
+          condition: 100
+          type: iteration_criterion
+  </rosparam> -->
+
+<rosparam command="load" ns="planning/world_model/planning_contexts" >
+space1:
+  use_embedded_space: true
+  default:
+    type: superball_center
+</rosparam>
+   
+  <rosparam ns="planning/world_model/simulator/subsystems/rover" file="$(find NTRT_interface)/input/ntrt_plant.yaml"/>
+
+<!--
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation"
+        required="true"   launch-prefix="" output="screen" />
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+-->
+  <node name="planning" pkg="prx_planning" type="prx_planning"
+        required="true" launch-prefix="" output="screen" args="planning" />
+
+
+</launch>
+
+

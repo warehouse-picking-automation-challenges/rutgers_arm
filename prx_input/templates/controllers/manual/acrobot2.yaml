@@ -1,0 +1,18 @@
+type: manual
+input_keys:
+  - 
+    input_key: LEFT
+    control_name: acrobot/torque
+    value: 5
+    action: add
+  -
+    input_key: RIGHT
+    control_name: acrobot/torque
+    value: -5
+    action: add
+  -
+    input_key: 0
+    control_name: acrobot/torque
+    value: 0
+    action: replace
+

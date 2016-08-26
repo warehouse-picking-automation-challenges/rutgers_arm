@@ -1,0 +1,23 @@
+building1:
+    type: obstacle
+    geometries:
+ #     -
+ #       name: pole
+ #       collision_geometry: 
+ #         type: cylinder
+ #         radius: 10
+ #         height: 3.0      
+ #         material: black       
+ #       config:
+ #         position: [0, 0, 0]
+ #         orientation: [0, 0, 0, 1]
+
+    -
+        name: square
+        collision_geometry: 
+            type: box
+            dims: [20, 20, 3]      
+            material: black    
+        config:
+            position: [0, 0, 1]
+            orientation: [0,0,0,1]

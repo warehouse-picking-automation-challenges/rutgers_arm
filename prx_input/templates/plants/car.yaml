@@ -1,0 +1,18 @@
+type: first_order_car
+z: .4
+integrator:
+  type: rk4
+state_space: 
+  min: [-500, -500, -4]
+  max: [500, 500, 4]
+input_control_space: 
+  min: [50, -0.5]
+  max: [50, 0.5]
+root_geom: chassis
+geometries:
+  -
+    name: chassis
+    collision_geometry:
+      type: box
+      dims: [15, 6, 2]
+      material: black

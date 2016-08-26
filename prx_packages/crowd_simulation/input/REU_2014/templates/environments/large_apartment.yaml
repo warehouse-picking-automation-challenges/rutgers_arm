@@ -1,0 +1,94 @@
+test_all_geoms:
+    type: obstacle
+    geometries:
+    -
+        name: topframe
+        collision_geometry: 
+            type: box
+            dims: [190, 5, 30]      
+            material: red    
+        config:
+            position: [0, 218, 0]
+            orientation: [0,0,0,1]
+    -         
+        name: leftframe
+        collision_geometry: 
+            type: box
+            dims: [5, 220, 30]      
+            material: red    
+        config:
+            position: [-95, 110, 0]
+            orientation: [0,0,0,1]
+    - 
+        name: rightframe
+        collision_geometry: 
+            type: box
+            dims: [5, 220, 30]      
+            material: red    
+        config:
+            position: [95, 110, 0]
+            orientation: [0,0,0,1]
+    - 
+        name: botframe1
+        collision_geometry: 
+            type: box
+            dims: [85, 5, 30]      
+            material: red    
+        config:
+            position: [-55, 0, 0]
+            orientation: [0,0,0,1]
+    -
+        name: botframe2
+        collision_geometry: 
+            type: box
+            dims: [80, 5, 30]      
+            material: red    
+        config:
+          
+            position: [57.5, 0, 0]
+            orientation: [0,0,0,1]
+    -
+        name: vert_livingroom_wall
+        collision_geometry: 
+            type: box
+            dims: [5, 90, 30]      
+            material: red    
+        config:
+            position: [0, 175, 0]
+            orientation: [0,0,0,1]
+    -
+        name: vert_office_wall
+        collision_geometry: 
+            type: box
+            dims: [5, 80, 30]      
+            material: red    
+        config:
+            position: [15, 37.5, 0]
+            orientation: [0,0,0,1]
+    -
+        name: horiz_office_wall
+        collision_geometry: 
+            type: box
+            dims: [50, 5, 30]      
+            material: red    
+        config:
+            position: [67.5, 80, 0]
+            orientation: [0,0,0,1]
+    -
+        name: horiz_bathroom_wall
+        collision_geometry: 
+            type: box
+            dims: [50, 5, 30]      
+            material: red    
+        config:
+            position: [67.5,115, 0]
+            orientation: [0,0,0,1]
+    -
+        name: horiz_kitchen_wall
+        collision_geometry: 
+            type: box
+            dims: [80, 5, 30]      
+            material: red    
+        config:
+            position: [-57.5, 85, 0]
+            orientation: [0,0,0,1]

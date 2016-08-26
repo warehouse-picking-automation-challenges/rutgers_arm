@@ -1,0 +1,22 @@
+<!-- <class name="prx_simulation/cloud_simulation_application"
+    type="prx::packages::cloud_manipulation::cloud_simulation_application_t"
+    base_class_type="prx::sim::application_t">
+    <description>
+        An application for the manipulation simulation problems.
+    </description>        
+</class>
+ -->
+<class name="prx_simulation/baxter_master_application"
+    type="prx::packages::manipulation::baxter_master_application_t"
+    base_class_type="prx::sim::application_t">
+    <description>
+        An application for the manipulation simulation problems of randomizing object positions.
+    </description>        
+</class>
+<class name="prx_simulation/baxter_slave_application"
+    type="prx::packages::manipulation::baxter_slave_application_t"
+    base_class_type="prx::sim::application_t">
+    <description>
+        An application for the manipulation simulation problems of randomizing object positions.
+    </description>        
+</class>

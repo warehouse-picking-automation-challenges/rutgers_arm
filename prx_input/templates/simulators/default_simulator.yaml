@@ -1,0 +1,8 @@
+simulator:
+  type: default_simulator
+  collision_detection: true
+  collision_response: true
+  simulation_step: 0.02
+  collision_checker:
+    type: pqp
+    # type: parallel_pqp

@@ -1,0 +1,171 @@
+<launch>
+
+  <!-- Load independent files -->
+        
+  <rosparam command="load" file="$(find VO)/input/templates/vo_application.yaml"/>
+  <rosparam command="load" file="$(find prx_input)/templates/simulators/null_response_simulator.yaml"/>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <!-- Load template files -->
+        
+  <rosparam command="load" ns="consumer_controller" file="$(find GTA)/input/templates/controllers/replanning_waypoints.yaml"/>
+  <rosparam command="load" ns="plant" file="$(find prx_input)/templates/plants/disk.yaml"/>
+  <rosparam command="load" ns="vo_controller" file="$(find VO)/input/templates/vo_controller.yaml"/>
+  
+  <!-- Override template parameters -->
+        
+  <rosparam ns="consumer_controller">
+    offline_planning: true
+    planning_cycle: 0.5
+  </rosparam>
+        
+  <rosparam ns="plant">
+    initial_state: [0,0]
+    state_space: 
+      min: [-200, -200]
+      max: [200, 200]
+    input_control_space:
+      min: [0, -4]
+      max: [25, 4]
+  </rosparam>
+       
+  <rosparam ns="vo_controller"> 
+    state_space: 
+      min: [-200, -200]
+      max: [200, 200]
+    inactive: false
+  </rosparam>
+              
+  <!-- Set up concrete system tree -->
+              
+  <rosparam command="load" ns="simulator">
+    simulation_step: 0.02
+  </rosparam>
+   
+  <rosparam command="load" ns="simulator/subsystems/consumer">
+    template: consumer_controller
+    planning_node: /planning
+    keep_last_control: false
+    goals:
+      -
+        goal:
+            type: "radial_goal_region"
+            distance_metric:
+                type: linear_distance_metric
+            goal_state: [115,0]
+            radius: 1                    
+  </rosparam>
+                    
+                    
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/vo_controller/">
+    template: vo_controller
+  </rosparam>
+        
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/vo_controller/subsystems/disk">
+    template: plant
+    initial_state: [-110,0]
+  </rosparam>
+            
+  <rosparam command="load" ns="simulator/subsystems/consumer2">
+    template: consumer_controller
+    planning_node: /planning2
+    keep_last_control: false
+    goals:
+      -
+        goal:
+            type: "radial_goal_region"
+            distance_metric:
+                type: linear_distance_metric
+            goal_state: [-105,0]
+            radius: 1
+                        
+  </rosparam>
+                    
+  <rosparam command="load" ns="simulator/subsystems/consumer2/subsystems/vo_controller2/">
+    template: vo_controller
+  </rosparam>
+        
+  <rosparam command="load" ns="simulator/subsystems/consumer2/subsystems/vo_controller2/subsystems/disk2">
+    template: plant
+    initial_state: [80,-10]
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 3.5
+          height: 2.0
+          material: bronze
+  </rosparam>
+         
+  <rosparam command="load" ns="simulator/subsystems/consumer3">
+    template: consumer_controller
+    planning_node: /planning3
+    keep_last_control: false
+    goals:
+      -
+        goal:
+            type: "radial_goal_region"
+            distance_metric:
+                type: linear_distance_metric
+            goal_state: [0,-105]
+            radius: 1
+                        
+  </rosparam>
+                    
+  <rosparam command="load" ns="simulator/subsystems/consumer3/subsystems/vo_controller3/">
+    template: vo_controller
+  </rosparam>
+        
+  <rosparam command="load" ns="simulator/subsystems/consumer3/subsystems/vo_controller3/subsystems/disk3">
+    template: plant
+    initial_state: [-10,80]
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 3.5
+          height: 2.0
+          material: green
+  </rosparam>         
+                  
+  <rosparam command="load" ns="simulator/subsystems/consumer4">
+    template: consumer_controller
+    planning_node: /planning4
+    keep_last_control: false
+    goals:
+      -
+        goal:
+            type: "radial_goal_region"
+            distance_metric:
+                type: linear_distance_metric
+            goal_state: [0,115]
+            radius: 1
+                        
+  </rosparam>
+                    
+  <rosparam command="load" ns="simulator/subsystems/consumer4/subsystems/vo_controller4/">
+    template: vo_controller
+  </rosparam>
+        
+  <rosparam command="load" ns="simulator/subsystems/consumer4/subsystems/vo_controller4/subsystems/disk4">
+    template: plant
+    initial_state: [0,-110]
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 3.5
+          height: 2.0
+          material: purple
+  </rosparam>    
+                  
+  <rosparam command="load" ns="/simulator/obstacles"
+     file="$(find prx_input)/templates/environments/forest.yaml"/>
+ <!--<rosparam command="load" ns="/simulator/obstacles"
+     file="/Users/akimmel/GTA_scripts/forest.yaml"/>   -->             
+                  
+            
+</launch>

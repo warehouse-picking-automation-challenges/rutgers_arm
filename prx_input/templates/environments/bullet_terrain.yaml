@@ -1,0 +1,15 @@
+building2:
+  type: bullet_obstacle
+  geometries:
+    -
+      name: left_wall2
+      collision_geometry:
+        type: box
+        dims: [1,1,1]
+        material: black
+      visualization_geometry:
+        type: mesh
+        filename: meshes/whole.osg
+      config:
+        position: [0,0,20]
+        orientation: [0,0,0,1]

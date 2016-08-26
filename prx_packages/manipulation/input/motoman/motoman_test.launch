@@ -1,0 +1,83 @@
+<launch>  
+  <rosparam ns="simulation" command="load" file="$(find prx_input)/templates/applications/manual_application.yaml" />
+  <rosparam ns="simulation" command="load" file="$(find manipulation)/input/manipulation_simulator.yaml"/>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+<rosparam ns="simulation/controller" file="$(find manipulation)/input/motoman/motoman_manual.yaml" />
+<rosparam ns="simulation/manual_controllers">
+  system_paths: [simulator/consumer]
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer/subsystems/manip" file="$(find manipulation)/input/motoman/motoman_complete_kinect.yaml"/>
+
+<rosparam ns="simulation/simulator/subsystems/consumer">
+  template: "controller"
+</rosparam>
+
+<rosparam command="load" ns="simulation/simulator/subsystems/cup1">
+  type: movable_body
+  max_step: 0.01
+  state_space: 
+    min: [-5, -5, -100, -1, -1, -1, -1]
+    max: [5, 5, 100, 1, 1, 1, 1]
+    scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  input_control_space: 
+    none: 4
+  root_geom: body
+  initial_state: [0.5, 0, 1, 0, 0, 0, 1]
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: red
+  
+</rosparam>
+
+
+<rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manip">
+  test_config:
+    position: [0.5, 0, 1]
+    orientation: [0, 0.70710678, 0, 0.70710678]
+</rosparam>
+
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation"
+        required="true"   launch-prefix="gdb --args" output="screen" args="simulation"/>
+
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+
+
+  <rosparam ns="visualization/viewer/">
+    windows:
+      window_1:
+        xpos: 920
+        ypos: 100
+        width: 1000
+        height: 1000
+        cameras:
+          perspective:
+            ortho: false
+            camera_type: 0
+            eye: [0, 0, 1.8]
+            center: [1, 0, 0]
+            speed: {move: 0.1, rotate: 0.001}
+          orthographic:
+            ortho: true
+            ortho_param:
+              left: -300
+              right: 300
+              bottom: -300
+              top: 300
+              zNear: 0
+              zFar: 1000
+            speed: {move: 0.2, rotate: 0.001}
+          smooth:
+            ortho: false
+            camera_type: 2
+            eye: [0, -20, 15]
+            center: [0, 1, 18]
+            speed: {move: 0.2, rotate: 0.001}
+  </rosparam>
+
+</launch>

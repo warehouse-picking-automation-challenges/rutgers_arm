@@ -1,0 +1,6040 @@
+<launch>
+
+  <!-- Load independent files -->
+        
+  <rosparam command="load" file="$(find prx_input)/templates/applications/empty_application.yaml"/>
+  <rosparam command="load" file="$(find prx_input)/templates/simulators/null_response_simulator.yaml"/>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <!-- Load template files -->
+        
+  <rosparam command="load" ns="controller" file="$(find prx_input)/templates/controllers/consumer.yaml"/>
+  <rosparam command="load" ns="router_template" file="$(find prx_input)/templates/controllers/router.yaml"/>
+  <rosparam command="load" ns="plant" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  
+  <!-- Override template parameters -->
+        
+  <rosparam ns="controller">
+  </rosparam>
+
+  <rosparam ns="router_template">
+  </rosparam>
+        
+  <rosparam ns="plant">
+    initial_state: [0,0,0]
+  </rosparam>
+       
+  <!-- Set up concrete system tree -->
+   
+  <rosparam command="load" ns="simulator/subsystems/consumer">
+    template: "controller"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router">
+    template: "router_template"
+  </rosparam>
+
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk000">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk001">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk002">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk003">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk004">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk005">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk006">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk007">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk008">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk009">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk010">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk011">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk012">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk013">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk014">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk015">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk016">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk017">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk018">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk019">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk020">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk021">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk022">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk023">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk024">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk025">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk026">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk027">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk028">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk029">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk030">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk031">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk032">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk033">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk034">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk035">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk036">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk037">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk038">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk039">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk040">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk041">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk042">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk043">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk044">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk045">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk046">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk047">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk048">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk049">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk050">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk051">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk052">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk053">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk054">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk055">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk056">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk057">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk058">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk059">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk060">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk061">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk062">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk063">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk064">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk065">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk066">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk067">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk068">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk069">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk070">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk071">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk072">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk073">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk074">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk075">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk076">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk077">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk078">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk079">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk080">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk081">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk082">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk083">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk084">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk085">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk086">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk087">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk088">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk089">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk090">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk091">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk092">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk093">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk094">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk095">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk096">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk097">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk098">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk099">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk100">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk101">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk102">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk103">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk104">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk105">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk106">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk107">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk108">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk109">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk110">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk111">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk112">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk113">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk114">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk115">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk116">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk117">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk118">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk119">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk120">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk121">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk122">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk123">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk124">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk125">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk126">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk127">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk128">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk129">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk130">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk131">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk132">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk133">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk134">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk135">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk136">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk137">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk138">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk139">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk140">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk141">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk142">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk143">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk144">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk145">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk146">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk147">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk148">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk149">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk150">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk151">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk152">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk153">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk154">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk155">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk156">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk157">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk158">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk159">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk160">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk161">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk162">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk163">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk164">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk165">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk166">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk167">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk168">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk169">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk170">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk171">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk172">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk173">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk174">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk175">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk176">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk177">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk178">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk179">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk180">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk181">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk182">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk183">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk184">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk185">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk186">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk187">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk188">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk189">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk190">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk191">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk192">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk193">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk194">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk195">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk196">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk197">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk198">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk199">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk200">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk201">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk202">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk203">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk204">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk205">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk206">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk207">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk208">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk209">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk210">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk211">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk212">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk213">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk214">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk215">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk216">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk217">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk218">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk219">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk220">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk221">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk222">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk223">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk224">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk225">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk226">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk227">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk228">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk229">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk230">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk231">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk232">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk233">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk234">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk235">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk236">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk237">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk238">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk239">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk240">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk241">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk242">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk243">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk244">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk245">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk246">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk247">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk248">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk249">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk250">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk251">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk252">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk253">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk254">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk255">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk256">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk257">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk258">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk259">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk260">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk261">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk262">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk263">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk264">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk265">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk266">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk267">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk268">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk269">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk270">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk271">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk272">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk273">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk274">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk275">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk276">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk277">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk278">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk279">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk280">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk281">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk282">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk283">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk284">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk285">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk286">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk287">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk288">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk289">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk290">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk291">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk292">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk293">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk294">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk295">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk296">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk297">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk298">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk299">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk300">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk301">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk302">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk303">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk304">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk305">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk306">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk307">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk308">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk309">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk310">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk311">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk312">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk313">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk314">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk315">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk316">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk317">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk318">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk319">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk320">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk321">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk322">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk323">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk324">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk325">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk326">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk327">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk328">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk329">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk330">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk331">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk332">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk333">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk334">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk335">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk336">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk337">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk338">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk339">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk340">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk341">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk342">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk343">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk344">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk345">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk346">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk347">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk348">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk349">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk350">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk351">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk352">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk353">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk354">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk355">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk356">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk357">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk358">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk359">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk360">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk361">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk362">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk363">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk364">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk365">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk366">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk367">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk368">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk369">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk370">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk371">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk372">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk373">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk374">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk375">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk376">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk377">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk378">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk379">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk380">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk381">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk382">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk383">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk384">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk385">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk386">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk387">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk388">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk389">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk390">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk391">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk392">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk393">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk394">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk395">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk396">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk397">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk398">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk399">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk400">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk401">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk402">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk403">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk404">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk405">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk406">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk407">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk408">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk409">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk410">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk411">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk412">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk413">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk414">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk415">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk416">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk417">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk418">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk419">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk420">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk421">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk422">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk423">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk424">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk425">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk426">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk427">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk428">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk429">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk430">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk431">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk432">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk433">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk434">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk435">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk436">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk437">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk438">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk439">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk440">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk441">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk442">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk443">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk444">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk445">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk446">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk447">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk448">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk449">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk450">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk451">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk452">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk453">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk454">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk455">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk456">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk457">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk458">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk459">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk460">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk461">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk462">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk463">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk464">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk465">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk466">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk467">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk468">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk469">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk470">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk471">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk472">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk473">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk474">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk475">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk476">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk477">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk478">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk479">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk480">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk481">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk482">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk483">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk484">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk485">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk486">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk487">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk488">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk489">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk490">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: red
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk491">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk492">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk493">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: yellow
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk494">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: pink
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk495">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: dark_green
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk496">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: light_blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk497">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: purple
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk498">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: teal
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/router/subsystems/disk499">
+    template: "plant"
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 4
+          height: 2.0
+          material: orange
+  </rosparam>
+
+  <!--node name="simulation" pkg="prx_simulation" type="prx_simulation"
+        required="true" launch-prefix="" output="screen" /-->
+</launch>

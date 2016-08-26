@@ -1,0 +1,296 @@
+  building1:
+    type: obstacle
+    geometries:
+      -
+        name: spike1_a
+        collision_geometry: 
+          type: box
+          dims: [202, 2.6, 2.6]      
+          material: red    
+        config:
+          position: [-50, -100, 1]
+          orientation: [0,0,0.5,0.8666]
+      -
+        name: spike1_b
+        collision_geometry: 
+          type: box
+          dims: [202, 2.6, 2.6]      
+          material: red    
+        config:
+          position: [50, -100, 1]
+          orientation: [0,0,0.8666,0.5]
+      -
+        name: filler1
+        collision_geometry: 
+          type: box
+          dims: [60, 60, 2.6]      
+          material: red    
+        config:
+          position: [0, -100, 1]
+          orientation: [0,0,0,1]
+      -
+        name: filler2
+        collision_geometry: 
+          type: box
+          dims: [100, 80, 2.6]      
+          material: red    
+        config:
+          position: [0, -140, 1]
+          orientation: [0,0,0,1] 
+      -
+        name: filler3
+        collision_geometry: 
+          type: box
+          dims: [35, 35, 2.6]      
+          material: red    
+        config:
+          position: [0, -70, 1]
+          orientation: [0,0,0,1] 
+      -
+        name: filler4
+        collision_geometry: 
+          type: box
+          dims: [15, 25, 2.6]      
+          material: red    
+        config:
+          position: [0, -40, 1]
+          orientation: [0,0,0,1]
+      -
+        name: filler5
+        collision_geometry: 
+          type: box
+          dims: [140, 50, 2.6]      
+          material: red    
+        config:
+          position: [0, -163, 1]
+          orientation: [0,0,0,1]
+          
+          
+      -
+        name: spike2_a
+        collision_geometry: 
+          type: box
+          dims: [202, 2.6, 2.6]      
+          material: red    
+        config:
+          position: [-300, -100, 1]
+          orientation: [0,0,0.5,0.8666]
+      -
+        name: spike2_b
+        collision_geometry: 
+          type: box
+          dims: [202, 2.6, 2.6]      
+          material: red    
+        config:
+          position: [-200, -100, 1]
+          orientation: [0,0,0.8666,0.5]
+      -
+        name: filler6
+        collision_geometry: 
+          type: box
+          dims: [60, 60, 2.6]      
+          material: red    
+        config:
+          position: [-250, -100, 1]
+          orientation: [0,0,0,1]
+      -
+        name: filler7
+        collision_geometry: 
+          type: box
+          dims: [100, 80, 2.6]      
+          material: red    
+        config:
+          position: [-250, -140, 1]
+          orientation: [0,0,0,1] 
+      -
+        name: filler8
+        collision_geometry: 
+          type: box
+          dims: [35, 35, 2.6]      
+          material: red    
+        config:
+          position: [-250, -70, 1]
+          orientation: [0,0,0,1] 
+      -
+        name: filler9
+        collision_geometry: 
+          type: box
+          dims: [15, 25, 2.6]      
+          material: red    
+        config:
+          position: [-250, -40, 1]
+          orientation: [0,0,0,1]
+      -
+        name: filler10
+        collision_geometry: 
+          type: box
+          dims: [140, 50, 2.6]      
+          material: red    
+        config:
+          position: [-250, -163, 1]
+          orientation: [0,0,0,1]
+
+      -
+        name: spike3_a
+        collision_geometry: 
+          type: box
+          dims: [202, 2.6, 2.6]      
+          material: red    
+        config:
+          position: [-150, 100, 1]
+          orientation: [0,0,-0.5,0.8666]
+      -
+        name: spike3_b
+        collision_geometry: 
+          type: box
+          dims: [202, 2.6, 2.6]      
+          material: red    
+        config:
+          position: [-50, 100, 1]
+          orientation: [0,0,-0.8666,0.5]
+      -
+        name: filler11
+        collision_geometry: 
+          type: box
+          dims: [60, 60, 2.6]      
+          material: red    
+        config:
+          position: [-100, 100, 1]
+          orientation: [0,0,0,1]
+      -
+        name: filler12
+        collision_geometry: 
+          type: box
+          dims: [100, 80, 2.6]      
+          material: red    
+        config:
+          position: [-100, 140, 1]
+          orientation: [0,0,0,1] 
+      -
+        name: filler13
+        collision_geometry: 
+          type: box
+          dims: [35, 35, 2.6]      
+          material: red    
+        config:
+          position: [-100, 70, 1]
+          orientation: [0,0,0,1] 
+      -
+        name: filler14
+        collision_geometry: 
+          type: box
+          dims: [15, 25, 2.6]      
+          material: red    
+        config:
+          position: [-100, 40, 1]
+          orientation: [0,0,0,1]
+      -
+        name: filler15
+        collision_geometry: 
+          type: box
+          dims: [140, 50, 2.6]      
+          material: red    
+        config:
+          position: [-100, 163, 1]
+          orientation: [0,0,0,1]          
+      -
+        name: spike4_a
+        collision_geometry: 
+          type: box
+          dims: [202, 2.6, 2.6]      
+          material: red    
+        config:
+          position: [100, 100, 1]
+          orientation: [0,0,-0.5,0.8666]
+      -
+        name: spike4_b
+        collision_geometry: 
+          type: box
+          dims: [202, 2.6, 2.6]      
+          material: red    
+        config:
+          position: [200, 100, 1]
+          orientation: [0,0,-0.8666,0.5]
+      -
+        name: filler16
+        collision_geometry: 
+          type: box
+          dims: [60, 60, 2.6]      
+          material: red    
+        config:
+          position: [150, 100, 1]
+          orientation: [0,0,0,1]
+      -
+        name: filler17
+        collision_geometry: 
+          type: box
+          dims: [100, 80, 2.6]      
+          material: red    
+        config:
+          position: [150, 140, 1]
+          orientation: [0,0,0,1] 
+      -
+        name: filler18
+        collision_geometry: 
+          type: box
+          dims: [35, 35, 2.6]      
+          material: red    
+        config:
+          position: [150, 70, 1]
+          orientation: [0,0,0,1] 
+      -
+        name: filler19
+        collision_geometry: 
+          type: box
+          dims: [15, 25, 2.6]      
+          material: red    
+        config:
+          position: [150, 40, 1]
+          orientation: [0,0,0,1]
+      -
+        name: filler20
+        collision_geometry: 
+          type: box
+          dims: [140, 50, 2.6]      
+          material: red    
+        config:
+          position: [150, 163, 1]
+          orientation: [0,0,0,1]  
+          
+          
+      -
+        name: left_bound
+        collision_geometry: 
+          type: box
+          dims: [2.6, 382, 2.6]      
+          material: blue  
+        config:
+          position: [-364, 0, 1]
+          orientation: [0,0,0,1]
+      -
+        name: right_bound
+        collision_geometry: 
+          type: box
+          dims: [2.6, 382, 2.6]      
+          material: blue  
+        config:
+          position: [264, 0, 1]
+          orientation: [0,0,0,1]
+      -
+        name: top_bound
+        collision_geometry: 
+          type: box
+          dims: [630, 2.6, 2.6]      
+          material: blue  
+        config:
+          position: [-50, 189, 1]
+          orientation: [0,0,0,1]
+      -
+        name: bottom_bound
+        collision_geometry: 
+          type: box
+          dims: [630, 2.6, 2.6]      
+          material: blue  
+        config:
+          position: [-50, -189, 1]
+          orientation: [0,0,0,1]

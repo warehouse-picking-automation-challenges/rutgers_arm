@@ -1,0 +1,9 @@
+<package>
+  <description brief="Pebble Motion Problems">
+    This package includes all the pebble motion problems on 
+    graphs and trees, as well as the feasibility tests for trees and graphs.
+  </description>
+  <author>Athanasios Krontiris</author>
+  <license>BSD</license>
+  <url>http://www.pracsyslab.org</url>
+</package>

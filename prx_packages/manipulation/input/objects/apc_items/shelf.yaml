@@ -1,0 +1,172 @@
+type: movable_body
+max_step: 0.01
+object_type: shelf
+state_space:
+  min: [-100 -100 -100 -1 -1 -1 -1]
+  max: [100 100 100 1 1 1 1]
+  scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+initial_state: [1.165, 0, 1.09 0 0 0 1]
+input_control_space:
+  none: 4
+root_geom: body
+geometries:
+  -
+    name: body
+    collision_geometry: 
+      type: box
+      dims: [0.001,0.001,0.001]
+      material: silver
+  -
+    name: bottom
+    collision_geometry: 
+      type: box
+      dims: [0.86, 0.86, 0.782]
+      material: silver
+    relative_configuration:
+      position: [0.225, 0, -0.886]
+      orientation: [0, 0, 0, 1]
+  -
+    name: top
+    collision_geometry: 
+      type: box
+      dims: [0.86, 0.86, 1.0]
+      material: silver
+    relative_configuration:
+      position: [0.225, 0, 0.991]
+      orientation: [0, 0, 0, 1]
+  -
+    name: middle_shelf
+    collision_geometry: 
+      type: box
+      dims: [0.86, 0.86, 0.004]
+      material: silver
+    relative_configuration:
+      position: [0.225, 0, -0.002]
+      orientation: [0, 0, 0, 1]
+  -
+    name: top_shelf
+    collision_geometry: 
+      type: box
+      dims: [0.86, 0.86, 0.004]
+      material: silver
+    relative_configuration:
+      position: [0.225, 0, 0.228]
+      orientation: [0, 0, 0, 1]
+  -
+    name: bottom_shelf
+    collision_geometry: 
+      type: box
+      dims: [0.86, 0.86, 0.004]
+      material: silver
+    relative_configuration:
+      position: [0.225, 0, -0.232]
+      orientation: [0, 0, 0, 1]
+  -
+    name: left_divider
+    collision_geometry: 
+      type: box
+      dims: [0.86, 0.005, 0.986]
+      material: brown
+    relative_configuration:
+      position: [0.225, 0.155, -0.002]
+      orientation: [0, 0, 0, 1]
+  -
+    name: right_divider
+    collision_geometry: 
+      type: box
+      dims: [0.86, 0.005, 0.986]
+      material: brown
+    relative_configuration:
+      position: [0.225, -0.155, -0.002]
+      orientation: [0, 0, 0, 1]
+  -
+    name: left_side
+    collision_geometry: 
+      type: box
+      dims: [0.86, 0.005, 0.986]
+      material: brown
+    relative_configuration:
+      position: [0.225, 0.425, -0.002]
+      orientation: [0, 0, 0, 1]
+  -
+    name: right_side
+    collision_geometry: 
+      type: box
+      dims: [0.86, 0.005, 0.986]
+      material: brown
+    relative_configuration:
+      position: [0.225, -0.425, -0.002]
+      orientation: [0, 0, 0, 1]
+  -
+    name: mid_divider
+    collision_geometry: 
+      type: box
+      dims: [0.005, 0.86, 0.986]
+      material: brown
+    relative_configuration:
+      position: [0.225, 0.0, -0.002]
+      orientation: [0, 0, 0, 1]
+  -
+    name: left_leg
+    collision_geometry: 
+      type: box
+      dims: [0.01, 0.04, 2.0]
+      material: dark_grey
+    relative_configuration:
+      position: [-0.21, 0.42, -0.277]
+      orientation: [0, 0, 0, 1]
+  -
+    name: right_leg
+    collision_geometry: 
+      type: box
+      dims: [0.01, 0.04, 2.0]
+      material: dark_grey
+    relative_configuration:
+      position: [-0.21, -0.42, -0.277]
+      orientation: [0, 0, 0, 1]
+  -
+    name: bottom_lip
+    collision_geometry: 
+      type: box
+      dims: [0.015, 0.86, 0.045]
+      material: dark_grey
+    relative_configuration:
+      position: [-0.214, 0.0, -0.4775]
+      orientation: [0, 0, 0, 1]
+  -
+    name: second_lip
+    collision_geometry: 
+      type: box
+      dims: [0.015, 0.86, 0.045]
+      material: dark_grey
+    relative_configuration:
+      position: [-0.214, 0.0, -0.2125]
+      orientation: [0, 0, 0, 1]
+  -
+    name: middle_lip
+    collision_geometry: 
+      type: box
+      dims: [0.015, 0.86, 0.045]
+      material: dark_grey
+    relative_configuration:
+      position: [-0.214, 0.0, 0.008]
+      orientation: [0, 0, 0, 1]
+  -
+    name: third_lip
+    collision_geometry: 
+      type: box
+      dims: [0.015, 0.86, 0.045]
+      material: dark_grey
+    relative_configuration:
+      position: [-0.214, 0.0, 0.25]
+      orientation: [0, 0, 0, 1]
+  -
+    name: top_lip
+    collision_geometry: 
+      type: box
+      dims: [0.015, 0.86, 0.045]
+      material: dark_grey
+    relative_configuration:
+      position: [-0.214, 0.0, 0.5125]
+      orientation: [0, 0, 0, 1]
+      

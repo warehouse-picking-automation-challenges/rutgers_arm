@@ -1,0 +1,8 @@
+<package>
+	<description brief="Parallel Search">
+		Development testbed for parallelized versions of search algorithms, focusing on PRM (roadmap generation + A*).
+	</description>
+	<author>Justin Cardoza</author>
+	<license>BSD</license>
+	<url>http://www.pracsyslab.org</url>
+</package>

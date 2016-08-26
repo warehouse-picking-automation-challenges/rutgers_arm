@@ -1,0 +1,7 @@
+    <class name="prx_utilities/floor_aware_euclidean"
+        type="prx::packages::crowd::floor_aware_euclidean_t"
+        base_class_type="prx::util::distance_function_t">
+        <description>
+            Default euclidean distance plus floor awareness.
+        </description>
+    </class>

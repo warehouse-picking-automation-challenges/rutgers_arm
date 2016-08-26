@@ -1,0 +1,73 @@
+
+<launch>  
+  <include file="$(find manipulation)/input/motoman/grasp_visualization/grasp_visualizer_template.launch"/>
+
+  <!-- Uncomment the hand and gripper lines -->
+
+  <!-- Left hand-grippy -->
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manipulator" file="$(find manipulation)/input/motoman/grippy.yaml"/>
+  
+  <!-- Right hand -->
+
+<!--   <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manipulator" file="$(find manipulation)/input/motoman/new_unigripper.yaml"/> 
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manipulator2" file="$(find manipulation)/input/motoman/motoman_complete_kinect_unigripper_grippy.yaml"/> -->
+  <rosparam ns="simulation/simulator/obstacles" file="$(find manipulation)/input/shelf.yaml"/>
+
+  <!-- Front vacuum -->
+<!-- 
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manipulator">
+  initial_state: [0.0,-0.5,0.0,0.0,0.0,0.0,1.0]
+  end_effectors: 
+    -
+      name: "front_vacuum"
+      local_config:
+        position: [0,0,0]
+        orientation: [0, 0, 0, 1 ]
+  </rosparam> -->
+
+  <!-- Upper Vacuum -->
+
+<!--   <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manipulator">
+    initial_state: [0, 0, 0, 0, 0, 0, 1]
+    end_effectors: 
+      -
+        name: "upper_vacuum"
+        local_config:
+          position: [0,0,0]
+          orientation: [0, 0, 0, 1 ]
+  </rosparam> -->
+
+
+  <!-- Parallel Gripper -->
+
+  <!-- <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manipulator">
+  end_effectors: 
+    -
+      name: "parallel_gripper"
+      local_config:
+        position: [0,0,0]
+        orientation: [0, 0, 0, 1 ]
+  config_offsets:
+    passive_finger: 
+      offset: [0.05, 0.0, 0]
+    vacuum_finger:
+      offset: [-0.05, 0.0, 0]
+    upper_jaw:
+      offset: [0, 0.0, -0.05]
+  </rosparam> -->
+
+
+  <!-- Object model -->
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/object" file="$(find manipulation)/input/objects/apc2016_items/up_glucose_bottle.yaml" />
+
+
+  <!-- Grasp file and position of the object -->
+  <rosparam ns="simulation/simulator/subsystems/consumer">
+    type: grasp_visualizer
+    grasp_file: "prx_output/head_sponge_up_glucose_bottle.yaml"
+    object_poses:
+     - pose: [ 1.43168,-0.0013386,1.41828,-0.396931,0.606456,0.614891,-0.310751]
+
+  </rosparam>
+  
+</launch>

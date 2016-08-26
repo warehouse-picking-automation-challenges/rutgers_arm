@@ -1,0 +1,2 @@
+type: path_follow_controller
+initial_control: [0.0, 0.0, 0.0]

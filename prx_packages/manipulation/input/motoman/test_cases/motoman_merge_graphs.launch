@@ -1,0 +1,210 @@
+<launch>  
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <rosparam ns="simulation" command="load" file="$(find prx_input)/templates/applications/empty_application.yaml" />
+  <rosparam ns="simulation" command="load" file="$(find manipulation)/input/manipulation_simulator.yaml"/>  
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer" file="$(find prx_input)/templates/controllers/consumer.yaml"/>
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer/subsystems/manipulator" file="$(find manipulation)/input/motoman/motoman_complete_kinect_reflex.yaml"/>
+
+  <rosparam ns="simulation/simulator/obstacles" file="$(find manipulation)/input/shelf.yaml"/>
+  <rosparam ns="simulation/simulator/obstacles" file="$(find apc)/input/bounding_boxes.yaml"/>
+
+  <rosparam ns="simulation/simulator/subsystems/consumer">
+    keep_last_control: false
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manipulator">
+    test_config:
+      position: [0.5, 0, 1]
+      orientation: [0, 0.70710678, 0, 0.70710678]
+    planning_contexts:
+        manipulator_pc:
+          type: "full_mapping"
+    #initial_state: [-0.7820094,0.2026489,1.8718351,1.5303483,-1.3975889,-1.6790639,-1.6713680,3.1410000,1.1812222,1.5700000,0.0000000,0.0000000,-1.7000000,0.0000000,0.0000000,0.0000000,2.0000000,1.0000000]
+  </rosparam>
+
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation" clear_params="true" required="true" launch-prefix="" output="screen" args="simulation"/>
+
+  <rosparam command="load" ns="planning">
+    system_mapping:
+      -
+        pair: [simulator/consumer/manipulator, world_model/simulator/manipulator]
+      -
+        pair: [simulator/box1, world_model/simulator/box1]
+    consumer: simulator/consumer
+    simulate: true
+    visualize: true
+    persistent: false
+    #random_seed: 987543
+    consumer_mapping:
+      - 
+        pair: [simulator/consumer, manipulator_pc]
+    world_model:
+      type: manipulation_world_model
+      num_ik_seeds: 10
+  </rosparam>
+
+  <rosparam command="load" ns="planning" file="$(find prx_input)/templates/spaces/space_types.yaml"/>  
+  <rosparam command="load" ns="planning" file="$(find prx_input)/templates/planning_applications/single_query_application.yaml" />
+  <rosparam command="load" ns="planning/world_model" file="$(find manipulation)/input/manipulation_simulator.yaml"/>  
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/manipulator" file="$(find manipulation)/input/motoman/motoman_complete_kinect_reflex.yaml"/>
+
+  <rosparam ns="planning/world_model/simulator/obstacles" file="$(find manipulation)/input/shelf.yaml"/>
+  <rosparam ns="planning/world_model/simulator/obstacles" file="$(find apc)/input/bounding_boxes.yaml"/>
+
+  <rosparam ns="planning/world_model/planning_contexts">
+    manipulator_pc:
+      default:
+        type: "hide_mapping"
+    left_full_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_arm"
+        end_effector_context_name: "left_end_effector"
+        start_link: "base_link"
+        end_link: "head_sponge"
+    left_arm:
+      default:
+       type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_arm"
+        end_effector_context_name: "left_end_effector"
+        start_link: "base_link"
+        end_link: "head_sponge"
+    left_arm_planning:
+      default:
+        type: "hide_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_arm"
+        end_effector_context_name: "left_end_effector"
+        start_link: "base_link"
+        end_link: "head_sponge"
+    left_end_effector:
+      default:
+       type: "hide_mapping"
+  </rosparam>
+
+  <rosparam ns="planning/world_model/simulator/subsystems/manipulator">
+    planning_contexts:
+      manipulator_pc:
+        type: "full_mapping"
+      left_full_arm:
+        type: "motoman_left_full_with_torso_state_mapping"
+      left_arm:
+        type: "motoman_left_torso_state_mapping"
+      left_end_effector:
+        type: "motoman_left_gripper_state_mapping"
+      left_arm_planning:
+        type: "motoman_left_torso_state_mapping"
+  </rosparam>
+
+  <rosparam ns="planning/task_planner/">
+    type: single_shot
+    serialize_flag: true
+    num_candidate_connections: 30
+    append_statistics: true
+    visualize: true
+    specification:
+      type: single_shot_specification
+    query:
+      type: single_shot_query
+      search_mode: lazy_search
+      goal:
+        type: multiple_goal_states
+        distance_metric:
+          type: ann_distance_metric
+    planners:
+      left_arm_motion_planner:
+        type: "rrg"
+        visualization_bodies: ["simulator/manipulator/head_sponge"]
+        visualize_graph: true
+        visualize_solutions: false 
+        visualize: true
+        deserialize_folder: left_arm
+        serialize_flag: true
+        serialize_file: "left_shelf.roadmap"
+        space_name: "left_arm_planning"
+        planning_context_name: "left_arm"
+        query:
+          type: motion_planning_query
+          lazy_astar_iterations: 4
+          goal:
+            type: multiple_goal_states
+            distance_metric:
+              type: ann_distance_metric
+        specification:
+          type: motion_planning_specification
+          validity_checker: 
+            type: manipulation_validity_checker
+            use_bounds: true
+            # INTERFACE
+            min: [0.82,-0.7,0.4]
+            max: [0.96,0.7,1.7]
+          sampler:
+            type: ee_bound_sampler
+            rejection_sampling: true
+            default_orientation: [0,0,0,1]
+            euler_min: [-3.1416,-3.1416,-3.1416]
+            euler_max: [3.1416,3.1416,3.1416]
+            manipulation_context: left_arm
+            # INTERFACE
+            min: [0.82,-0.7,0.4]
+            max: [0.96,0.7,1.7]
+          distance_metric:
+            type: graph_distance_metric
+          local_planner:
+            type: bvp_local_planner
+          stopping_criteria:
+            elements:
+              criterion1:
+                type: iteration_criterion
+                condition: 3000
+          heuristic_search:
+            type: constraints_astar_search
+            mode: repropagate_info
+            mcr_mode: shortest
+  </rosparam>
+
+
+  <node name="planning" pkg="prx_planning" clear_params="true" type="prx_planning" required="false" launch-prefix="" output="screen" args="planning"/>
+
+
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+
+  <rosparam ns="visualization/viewer/">
+    windows:
+      window_1:
+        xpos: 900
+        ypos: 10
+        width: 1000
+        height: 1000
+        cameras:
+          perspective:
+            ortho: false
+            camera_type: 0
+            eye: [0, 0, 1.8]
+            center: [1, 0, 0]
+            speed: {move: 0.1, rotate: 0.001}
+          orthographic:
+            ortho: true
+            ortho_param:
+              left: -10
+              right: 10
+              bottom: -10
+              top: 10
+              zNear: 0
+              zFar: 1000
+            speed: {move: 0.2, rotate: 0.001}
+          smooth:
+            ortho: false
+            camera_type: 2
+            eye: [0, -20, 15]
+            center: [0, 1, 18]
+            speed: {move: 0.2, rotate: 0.001}
+  </rosparam>
+
+</launch>

@@ -1,0 +1,162 @@
+type: ode_2Dbipedal_plant
+
+geometries:
+  -
+    name: torso
+    collision_geometry:
+      type: box
+      dims: [8, 4, 16]
+      material: green
+    config:
+      position: [40, 0, 20]
+      orientation: [0.0, 0.0, 0.0, 1.0]
+    dims: [8, 4, 16]
+  -
+    name: left_femur
+    collision_geometry:
+      type: box
+      dims: [4, 2, 5]
+      material: blue
+    config:
+      position: [44, 0, 10]
+      orientation: [0.0, 0.0, 0.0, 1.0]
+    dims: [4, 2, 5]
+  -
+    name: right_femur
+    collision_geometry:
+      type: box
+      dims: [4, 2, 5]
+      material: red
+    config:
+      position: [36, 0, 10]
+      orientation: [0.0, 0.0, 0.0, 1.0]
+    dims: [4, 2, 5]
+  -
+    name: left_tibia
+    collision_geometry:
+      type: box
+      dims: [3, 2, 5]
+      material: blue
+    config:
+      position: [44, 0, 4]
+      orientation: [0.0, 0.0, 0.0, 1.0]
+    dims: [4, 2, 5]
+  -
+    name: right_tibia
+    collision_geometry:
+      type: box
+      dims: [3, 2, 5]
+      material: red
+    config:
+      position: [36, 0, 4]
+      orientation: [0.0, 0.0, 0.0, 1.0]
+    dims: [4, 2, 5]
+  -
+    name: left_foot
+    collision_geometry:
+      type: box
+      dims: [4, 7, 1]
+      material: blue
+    config:
+      position: [44, -1.25, 0]
+      orientation: [0.0, 0.0, 0.0, 1.0]
+    dims: [4, 7, 1]
+  -
+    name: right_foot
+    collision_geometry:
+      type: box
+      dims: [4, 7, 1]
+      material: red
+    config:
+      position: [36, -1.25, 0]
+      orientation: [0.0, 0.0, 0.0, 1.0]
+    dims: [4, 7, 1]
+
+joints:
+  -
+    name: left_hip
+    type: hinge
+    parent: torso
+    child: left_femur
+    params: [42, 0, 12, 1, 0, 0]
+    joint_limits_1: [-.6, 1.2]
+  -
+    name: right_hip
+    type: hinge
+    parent: torso
+    child: right_femur
+    params: [38, 0, 12, 1, 0, 0]
+    joint_limits_1: [-.6, 1.2]
+  -
+    name: left_knee
+    type: hinge
+    parent: left_femur
+    child: left_tibia
+    params: [42, 0, 8, 1, 0, 0]
+    joint_limits_1: [-2.0, .1]
+  -
+    name: right_knee
+    type: hinge
+    parent: right_femur
+    child: right_tibia
+    params: [38, 0, 8, 1, 0, 0]
+    joint_limits_1: [-2.0, .1]
+  -
+    name: left_ankle
+    type: hinge
+    parent: left_tibia
+    child: left_foot
+    params: [42, 0, 1, 1, 0, 0]
+    joint_limits_1: [-.941, .1141]
+  -
+    name: right_ankle
+    type: hinge
+    parent: right_tibia
+    child: right_foot
+    params: [38, 0, 1, 1, 0, 0]
+    joint_limits_1: [-.941, .1141]
+    
+controls:
+  -
+    name: torso_torque
+    bounds: [-.2, .2]
+    type: body
+    ode_object: torso
+    direction: [0,1,0]
+    
+  -
+    name: lhip_coronal_torque
+    bounds: [-500, 500]
+    type: joint
+    ode_object: left_hip
+    component: 0
+  -
+    name: rhip_coronal_torque
+    bounds: [-500, 500]
+    type: joint
+    ode_object: right_hip
+    component: 0
+  -
+    name: lknee_coronal_torque
+    bounds: [-120, 120]
+    type: joint
+    ode_object: left_knee
+    component: 0
+  -
+    name: rknee_coronal_torque
+    bounds: [-120, 120]
+    type: joint
+    ode_object: right_knee
+    component: 0
+  -
+    name: lankle_coronal_torque
+    bounds: [-10, 10]
+    type: joint
+    ode_object: left_ankle
+    component: 0
+  -
+    name: rankle_coronal_torque
+    bounds: [-10, 10]
+    type: joint
+    ode_object: right_ankle
+    component: 0

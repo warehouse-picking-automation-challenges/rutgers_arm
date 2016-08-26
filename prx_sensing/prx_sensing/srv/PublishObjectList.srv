@@ -1,0 +1,3 @@
+bool publish_objects
+---
+ObjectPose[] object_list

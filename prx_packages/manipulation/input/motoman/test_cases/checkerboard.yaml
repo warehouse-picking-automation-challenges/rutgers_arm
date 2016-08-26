@@ -1,0 +1,40 @@
+checkerboard:
+  type: obstacle
+  geometries:
+    -
+      name: box1
+      collision_geometry:
+        type: box
+        dims: [1.0, 1.0, 0.04]
+        material: light_grey
+      config:
+        position: [0.5, 0.5, 0]
+        orientation: [0, 0, 0, 1]
+    -
+      name: box2
+      collision_geometry:
+        type: box
+        dims: [1.0, 1.0, 0.04]
+        material: shelf_grey
+      config:
+        position: [1.5, 0.5, 0]
+        orientation: [0, 0, 0, 1]
+    -
+      name: box4
+      collision_geometry:
+        type: box
+        dims: [1.0, 1.0, 0.04]
+        material: shelf_grey
+      config:
+        position: [0.5, 1.5, 0]
+        orientation: [0, 0, 0, 1]
+    -
+      name: box5
+      collision_geometry:
+        type: box
+        dims: [1.0, 1.0, 0.04]
+        material: light_grey
+      config:
+        position: [1.5, 1.5, 0]
+        orientation: [0, 0, 0, 1]
+

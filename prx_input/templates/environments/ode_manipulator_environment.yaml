@@ -1,0 +1,33 @@
+building1:
+    type: ode_obstacle
+    geometries:
+      -
+        name: block1
+        collision_geometry: 
+          type: box
+          dims: [2, 40, 2]      
+          material: light_blue       
+        config:
+          position: [-10, 0, 2]
+          orientation: [0, 0, 0, 1]
+        dims: [2, 40, 2] 
+      -
+        name: block2
+        collision_geometry: 
+          type: box
+          dims: [2, 10, 2]      
+          material: light_blue       
+        config:
+          position: [13, 10, 2]
+          orientation: [0, 0, 0, 1]
+        dims: [2, 10, 2] 
+      -
+        name: block3
+        collision_geometry: 
+          type: box
+          dims: [2, 10, 2]      
+          material: light_blue       
+        config:
+          position: [13, -10, 2]
+          orientation: [0, 0, 0, 1]
+        dims: [2, 10, 2] 

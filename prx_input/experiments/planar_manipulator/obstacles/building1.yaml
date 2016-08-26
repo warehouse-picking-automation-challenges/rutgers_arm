@@ -1,0 +1,12 @@
+building1:
+  type: obstacle
+  geometries:
+    -
+      name: box1
+      collision_geometry:
+        type: box
+        dims: [15, 10, 10]
+        material: black
+      config:
+        position: [-4.5, 20.5, 0]
+        orientation: [0, 0, 0, 1]

@@ -1,0 +1,305 @@
+type: bullet_plant
+geometries:
+  -
+    name: rod1
+    collision_geometry:
+      type: cylinder
+      radius: .5
+      height: 10
+      material: white
+    config:
+      position: [0,0,10]
+      orientation: [0,0.38268343236508967,0,0.9238795325112867]
+    mass: 4
+  -
+    name: rod2
+    collision_geometry:
+      type: cylinder
+      radius: .5
+      height: 10
+      material: white
+    config:
+      position: [-3,0,13]
+      orientation: [0,0.38268343236508967,0,0.9238795325112867]
+    mass: 4
+  -
+    name: rod3
+    collision_geometry:
+      type: cylinder
+      radius: .5
+      height: 10
+      material: white
+    config:
+      position: [-1.5,3,11.5]
+      orientation: [0,-0.38268343236508967,0,0.9238795325112867]
+  -
+    name: rod4
+    collision_geometry:
+      type: cylinder
+      radius: .5
+      height: 10
+      material: white
+    config:
+      position: [-1.5,-3,11.5]
+      orientation: [0,-0.38268343236508967,0,0.9238795325112867]
+  -
+    name: rod5
+    collision_geometry:
+      type: cylinder
+      radius: .5
+      height: 10
+      material: white
+    config:
+      position: [0,0,13]
+      orientation: [.707,0,0,0.707]
+  -
+    name: rod6
+    collision_geometry:
+      type: cylinder
+      radius: .5
+      height: 10
+      material: white
+    config:
+      position: [-3,0,10]
+      orientation: [.707,0,0,0.707]
+    mass: 4
+  -
+    name: tension1
+    collision_geometry:
+      type: box
+      dims: [6.12372435696,.05,.05] 
+      material: blue
+    config:
+      position: [1.75, 2.5, 13.25]
+      orientation: [-0.0, 0.08820396049372867, 0.8820396049372867, 0.46284575905510467]
+    mass: 4
+  -
+    name: tension2
+    collision_geometry:
+      type: box
+      dims: [6.12372435696,.05,.05] 
+      material: blue
+    config:
+      position: [1.75, -2.5, 13.25]
+      orientation: [-0.0, 0.08820396049372867, -0.8820396049372867, 0.46284575905510467]
+    mass: 4
+  -
+    name: tension3
+    collision_geometry:
+      type: box
+      dims: [6.44204936336,.05,.05] 
+      material: blue
+    config:
+      position: [2.75, 1.5, 10.75]
+      orientation: [-0.0, 0.6892584958853442, 0.3759591795738241, 0.6193362746877097]
+    mass: 4
+  -
+    name: tension4
+    collision_geometry:
+      type: box
+      dims: [6.44204936336,.05,.05] 
+      material: blue
+    config:
+      position: [2.75, -1.5, 10.75]
+      orientation: [-0.0, 0.6892584958853442, -0.3759591795738241, 0.6193362746877097]
+    mass: 4
+  -
+    name: tension5
+    collision_geometry:
+      type: box
+      dims: [6.12372435696,.05,.05] 
+      material: blue
+    config:
+      position: [-3.25, 2.5, 8.25]
+      orientation: [0.0, -0.3885922223617547, 0.5551317462310782, 0.735407933766278]
+    mass: 4
+  -
+    name: tension6
+    collision_geometry:
+      type: box
+      dims: [6.12372435696,.05,.05] 
+      material: blue
+    config:
+      position: [-3.25, -2.5, 8.25]
+      orientation: [0.0, -0.3885922223617547, -0.5551317462310782, 0.735407933766278]
+    mass: 4
+  -
+    name: tension7
+    collision_geometry:
+      type: box
+      dims: [6.44204936336,.05,.05] 
+      material: blue
+    config:
+      position: [-0.75, 1.5, 7.25]
+      orientation: [0.0, -0.12092742522812347, 0.24185485045624694, 0.9627475209723902]
+    mass: 4
+  -
+    name: tension8
+    collision_geometry:
+      type: box
+      dims: [6.44204936336,.05,.05] 
+      material: blue
+    config:
+      position: [-0.75, -1.5, 7.25]
+      orientation: [0.0, -0.12092742522812347, -0.24185485045624694, 0.9627475209723902]
+    mass: 4
+  -
+    name: tension9
+    collision_geometry:
+      type: box
+      dims: [6.12372435696,.05,.05] 
+      material: blue
+    config:
+      position: [-4.75, 2.5, 9.75]
+      orientation:  [0.0, -0.04605487435908009, 0.4605487435908009, 0.8864388322522339]
+    mass: 4
+  -
+    name: tension10
+    collision_geometry:
+      type: box
+      dims: [6.12372435696,.05,.05] 
+      material: blue
+    config:
+      position: [-4.75, -2.5, 9.75]
+      orientation: [0.0, -0.04605487435908009, -0.4605487435908009, 0.8864388322522339]
+    mass: 4
+  -
+    name: tension11
+    collision_geometry:
+      type: box
+      dims: [5.61248608016,.05,.05] 
+      material: blue
+    config:
+      position: [-5.75, 1.5, 12.25]
+      orientation: [0.0, -0.5437125736936274, 0.29657049474197855, 0.7851258363192171]
+    mass: 4
+  -
+    name: tension12
+    collision_geometry:
+      type: box
+      dims: [5.61248608016,.05,.05] 
+      material: blue
+    config:
+      position: [-5.75, -1.5, 12.25]
+      orientation: [0.0, -0.5437125736936274, -0.29657049474197855, 0.7851258363192171]
+    mass: 4
+  -
+    name: tension13
+    collision_geometry:
+      type: box
+      dims: [6.12372435696,.05,.05] 
+      material: blue
+    config:
+      position: [0.25, 2.5, 14.75]
+      orientation: [-0.0, 0.42172875776100105, 0.6024696539442872, 0.6776246534429026]
+    mass: 4
+  -
+    name: tension14
+    collision_geometry:
+      type: box
+      dims: [6.12372435696,.05,.05] 
+      material: blue
+    config:
+      position: [0.25, -2.5, 14.75]
+      orientation: [-0.0, 0.42172875776100105, -0.6024696539442872, 0.6776246534429026]
+    mass: 4
+  -
+    name: tension15
+    collision_geometry:
+      type: box
+      dims: [6.74536878162,.05,.05] 
+      material: blue
+    config:
+      position: [-2.25, 1.5, 15.75]
+      orientation: [-0.0, 0.4305537804127338, 0.8611075608254676, 0.270401943154107]
+    mass: 4
+  -
+    name: tension16
+    collision_geometry:
+      type: box
+      dims: [6.74536878162,.05,.05] 
+      material: blue
+    config:
+      position: [-2.25, -1.5, 15.75] 
+      orientation: [-0.0, 0.4305537804127338, -0.8611075608254676, 0.270401943154107]
+    mass: 4
+  -
+    name: tension17
+    collision_geometry:
+      type: box
+      dims: [5.47722557505,.05,.05] 
+      material: blue
+    config:
+      position: [-2.5, 4.0, 14.0]
+      orientation: [0.0, 0.18000813885871297, 0.18000813885871297, 0.9670543624270792]
+    mass: 4
+  -
+    name: tension18
+    collision_geometry:
+      type: box
+      dims: [4.89897948557,.05,.05] 
+      material: blue
+    config:
+      position: [-4.0, 4.0, 12.5]
+      orientation: [0.0, 0.5300637112359476, 0.21202548449437902, 0.8210223236646479]
+    mass: 4
+  -
+    name: tension19
+    collision_geometry:
+      type: box
+      dims: [5.74456264654,.05,.05] 
+      material: blue
+    config:
+      position: [1.0, 4.0, 10.5]
+      orientation: [0.0, -0.7623000902190786, 0.30492003608763146, 0.5708960886573862]
+    mass: 4
+  -
+    name: tension20
+    collision_geometry:
+      type: box
+      dims: [5.74456264654,.05,.05] 
+      material: blue
+    config:
+      position: [-0.5, 4.0, 9.0]
+      orientation: [0.0, -0.6838106974482209, 0.6838106974482209, 0.2545699513115313]
+    mass: 4
+  -
+    name: tension21
+    collision_geometry:
+      type: box
+      dims: [5.47722557505,.05,.05] 
+      material: blue
+    config:
+      position: [-2.5, -4.0, 14.0]
+      orientation: [0.0, 0.18000813885871297, -0.18000813885871297, 0.9670543624270792]
+    mass: 4
+  -
+    name: tension22
+    collision_geometry:
+      type: box
+      dims: [4.89897948557,.05,.05] 
+      material: blue
+    config:
+      position: [-4.0, -4.0, 12.5]
+      orientation:  [0.0, 0.5300637112359476, -0.21202548449437902, 0.8210223236646479]
+    mass: 4
+  -
+    name: tension23
+    collision_geometry:
+      type: box
+      dims: [5.74456264654,.05,.05] 
+      material: blue
+    config:
+      position: [1.0, -4.0, 10.5]
+      orientation: [0.0, -0.7623000902190786, -0.30492003608763146, 0.5708960886573862]
+    mass: 4
+  -
+    name: tension24
+    collision_geometry:
+      type: box
+      dims: [5.74456264654,.05,.05] 
+      material: blue
+    config:
+      position: [-0.5, -4.0, 9.0]
+      orientation: [0.0, -0.6838106974482209, -0.6838106974482209, 0.2545699513115313]
+    mass: 4

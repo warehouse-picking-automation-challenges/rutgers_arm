@@ -1,0 +1,68 @@
+type: ntrt_plant
+geometries:
+  -
+    name: rod0
+    collision_geometry:
+      type: bullet_cylinder
+      radius: .41
+      height: 17.4
+      material: red
+    visualization_geometry:
+      type: box
+      dims: [.001 .001 .001]
+      material: blue
+  -
+    name: rod1
+    collision_geometry:
+      type: bullet_cylinder
+      radius: .41
+      height: 17.4
+      material: red
+    visualization_geometry:
+      type: box
+      dims: [.001 .001 .001]
+      material: blue
+  -
+    name: rod2
+    collision_geometry:
+      type: bullet_cylinder
+      radius: .41
+      height: 17.4
+      material: red
+    visualization_geometry:
+      type: box
+      dims: [.001 .001 .001]
+      material: blue
+  -
+    name: rod3
+    collision_geometry:
+      type: bullet_cylinder
+      radius: .41
+      height: 17.4
+      material: red
+    visualization_geometry:
+      type: box
+      dims: [.001 .001 .001]
+      material: blue
+  -
+    name: rod4
+    collision_geometry:
+      type: bullet_cylinder
+      radius: .41
+      height: 17.4
+      material: red
+    visualization_geometry:
+      type: box
+      dims: [.001 .001 .001]
+      material: blue
+  -
+    name: rod5
+    collision_geometry:
+      type: bullet_cylinder
+      radius: .41
+      height: 17.4
+      material: red
+    visualization_geometry:
+      type: box
+      dims: [.001 .001 .001]
+      material: blue

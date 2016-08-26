@@ -1,0 +1,288 @@
+<launch>  
+<!--
+  <rosparam>
+  yaml_input: /home/zak/repos/pracsys_ws/src/pracsys/prx_input/params.yaml
+  </rosparam>
+-->
+
+  <rosparam file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <rosparam ns="simulation" file="$(find prx_input)/templates/applications/empty_application.yaml" />
+  <rosparam ns="simulation" file="$(find manipulation)/input/manipulation_simulator.yaml"/>  
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manipulator" file="$(find manipulation)/input/baxter/baxter.yaml"/>
+
+  <rosparam ns="simulation/simulator/obstacles" file="$(find manipulation)/input/shelf.yaml"/>
+
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/box1">
+    type: movable_body
+    object_type: crayola
+    max_step: 0.01
+    state_space: 
+      min: [-5, -5, -100, -1, -1, -1, -1]
+      max: [5, 5, 100, 1, 1, 1, 1]
+      scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+    input_control_space: 
+      none: 4
+    root_geom: body
+    initial_state: [1.112,0.000,1.372,0.707,0.000,-0.000,0.707]
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: box
+          dims: [0.145, 0.035, 0.125]
+          material: red
+    
+  </rosparam>
+  <rosparam ns="simulation/application">
+  start_simulation: true
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/subsystems/consumer">
+  type: apc_controller
+  real_robot: true
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manipulator">
+    # initial_state: [1.85145, 1.57,0,0,-1.70,0,0,0,0, -1.96754,0.69703,-0.22386,-0.98409,2.71441,-1.83541,-2.67347,3]
+  </rosparam>
+
+  <rosparam ns="planning">
+    random_seed: 14391835
+    simulate: false
+    visualize: true
+    persistent: true
+    world_model:
+      type: manipulation_world_model
+    type: apc_planning_application
+    full_manipulator_context_name: manipulator_pc
+  </rosparam>
+
+  <rosparam ns="planning" file="$(find prx_input)/templates/spaces/space_types.yaml"/>  
+  <rosparam ns="planning/world_model" file="$(find manipulation)/input/manipulation_simulator.yaml"/>  
+  <rosparam ns="planning/world_model/simulator/subsystems/manipulator" file="$(find manipulation)/input/baxter/baxter.yaml"/>
+
+  <rosparam ns="planning/world_model/simulator/obstacles" file="$(find manipulation)/input/shelf.yaml"/>
+
+
+  <rosparam ns="planning/world_model/planning_contexts">
+    manipulator_pc:
+      default:
+        type: "hide_mapping"
+    left_full_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_arm"
+        end_effector_context_name: "left_end_effector"
+        start_link: "base"
+        end_link: "end_effector_left"
+    left_arm:
+      default:
+       type: "obstacle_mapping"
+    left_arm_planning:
+      default:
+        type: "hide_mapping"
+    left_end_effector:
+      default:
+       type: "hide_mapping"
+    right_full_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "right_full_arm"
+        arm_context_name: "right_arm"
+        end_effector_context_name: "right_end_effector"
+        start_link: "base"
+        end_link: "end_effector_right"
+    right_arm:
+      default:
+       type: "obstacle_mapping"
+    right_arm_planning:
+      default:
+        type: "hide_mapping"
+    right_end_effector:
+      default:
+       type: "hide_mapping"
+  </rosparam>
+
+  <rosparam ns="planning/world_model/simulator/subsystems/manipulator">
+    planning_contexts:
+      manipulator_pc:
+        type: "full_mapping"
+      left_full_arm:
+        type: "baxter_left_full_arm_state_mapping"
+      left_arm:
+        type: "baxter_left_arm_state_mapping"
+      left_end_effector:
+        type: "baxter_left_gripper_state_mapping"
+      left_arm_planning:
+        type: "baxter_left_arm_state_mapping"
+      right_full_arm:
+        type: "baxter_right_full_arm_state_mapping"
+      right_arm:
+        type: "baxter_right_arm_state_mapping"
+      right_end_effector:
+        type: "baxter_right_gripper_state_mapping"
+      right_arm_planning:
+        type: "baxter_right_arm_state_mapping"
+  </rosparam>
+
+  <rosparam ns="planning/world_model/simulator/subsystems/box1">
+    type: movable_body
+    object_type: crayola
+    max_step: 0.01
+    state_space: 
+      min: [-5, -5, -100, -1, -1, -1, -1]
+      max: [5, 5, 100, 1, 1, 1, 1]
+      scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+    input_control_space: 
+      none: 4
+    root_geom: body
+    initial_state: [1.112,0.000,1.372,0.707,0.000,-0.000,0.707]
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: box
+          dims: [0.145, 0.035, 0.125]
+          material: blue
+  </rosparam>
+
+  <rosparam ns="planning/graph_query_template">
+    type: manipulation_query
+    query_type: add_query_points_collisions
+    query_collision_type: lazy_collisions
+    goal:
+      type: multiple_goal_states
+      distance_metric:
+        type: ann_distance_metric
+  </rosparam>
+  <rosparam ns="planning/motion_query_template">
+    type: motion_planning_query
+    query_type: add_query_points_collisions
+    query_collision_type: lazy_collisions
+    goal:
+      type: multiple_goal_states
+      distance_metric:
+        type: ann_distance_metric
+  </rosparam>
+
+  <rosparam ns="planning/graph_specification_template">
+    type: motion_planning_specification
+    validity_checker: 
+      type: world_model_validity_checker
+    sampler:
+      type: apc_sampler
+      default_orientation: [0,1,0,1]
+      # min: [.95,-.43,.59]
+      # max: [1.38,.43,1.59]
+      min: [.50,-.14,1.37]
+      max: [1.38,.14,1.55]
+    distance_metric:
+      type: graph_distance_metric
+      distance_function: l_infinite_norm
+    local_planner:
+      type: bvp_local_planner
+    stopping_criteria:
+      elements:
+        criterion1:
+          type: iteration_criterion
+          condition: 100
+    heuristic_search:
+      type: prm_astar
+  </rosparam>
+
+  <rosparam ns="planning/task_planner/">
+    type: apc_tp
+    left_context_name: "left_full_arm"
+    right_context_name: "right_full_arm"
+    manipulation_task_planner_name: "manipulation_task_planner"
+    planners:
+      manipulation_task_planner:
+        type: manipulation_tp
+        # serialize_flag: true
+        IK_steer_grasping: false
+        planners:
+          left_arm_motion_planner:
+            type: "prm_star"
+            visualization_bodies: ["simulator/manipulator/head_sponge"]
+            visualize_graph: true
+            visualize: false
+            visualize_solutions: false 
+            # deserialize_file: "left_arm_graph2.roadmap"
+            space_name: "left_arm_planning"
+            planning_context_name: "left_arm"
+            query:
+              template: motion_query_template
+            specification:
+              template: graph_specification_template
+              sampler:
+                manipulation_context: left_full_arm
+          right_arm_motion_planner:
+            type: "prm_star"
+            visualization_bodies: ["simulator/manipulator/arm_right_reflex_virtual"]
+            visualize_graph: true
+            visualize_solutions: false 
+            visualize: false
+            # deserialize_file: "right_arm_graph2.roadmap"
+            space_name: "right_arm_planning"
+            planning_context_name: "right_arm"
+            query:
+              template: motion_query_template
+            specification:
+              template: graph_specification_template
+              sampler:
+                manipulation_context: right_full_arm
+        grasping_planner:
+          type: grasping_planner
+          validity_checker: 
+            type: world_model_validity_checker
+          sampler:
+            type: uniform_sampler
+          data_folders: 
+            left_full_arm: "prx_packages/manipulation/input/grasp_data/reflex/"
+            right_full_arm: "prx_packages/manipulation/input/grasp_data/reflex/"
+          max_ik_tries: 50
+  </rosparam>
+
+  <node name="planning" pkg="prx_planning" type="prx_planning" required="true" launch-prefix="gdb --args" output="screen" args="planning"/>
+
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation" required="true" launch-prefix="" output="screen" args="simulation"/>
+
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+
+  <rosparam ns="visualization/viewer/">
+    windows:
+      window_1:
+        xpos: 920
+        ypos: 100
+        width: 1000
+        height: 1000
+        cameras:
+          perspective:
+            ortho: false
+            camera_type: 0
+            eye: [0, 0, 1.8]
+            center: [1, 0, 0]
+            speed: {move: 0.1, rotate: 0.001}
+          orthographic:
+            ortho: true
+            ortho_param:
+              left: -300
+              right: 300
+              bottom: -300
+              top: 300
+              zNear: 0
+              zFar: 1000
+            speed: {move: 0.2, rotate: 0.001}
+          smooth:
+            ortho: false
+            camera_type: 2
+            eye: [0, -20, 15]
+            center: [0, 1, 18]
+            speed: {move: 0.2, rotate: 0.001}
+  </rosparam>
+
+</launch>

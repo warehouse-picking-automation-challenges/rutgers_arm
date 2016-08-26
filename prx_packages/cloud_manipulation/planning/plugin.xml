@@ -1,0 +1,31 @@
+<!-- <class name="prx_planning/cloud_manipulation_application"
+    type="prx::packages::cloud_manipulation::cloud_manipulation_application_t"
+    base_class_type="prx::plan::planning_application_t">
+    <description>
+        An application for the manipulation problems.
+    </description>        
+</class>
+
+<class name="prx_planning/cloud_manipulation_tp"
+    type="prx::packages::cloud_manipulation::cloud_manipulation_tp_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A task planner for a simple manipulation problem.
+    </description>        
+</class>
+
+<class name="prx_planning/cloud_manipulation_query"
+    type="prx::packages::cloud_manipulation::cloud_manipulation_query_t"
+    base_class_type="prx::plan::query_t">
+    <description>
+        The query for the manipulation problem.
+    </description>        
+</class>
+
+<class name="prx_planning/cloud_manipulation_specification"
+    type="prx::packages::cloud_manipulation::cloud_manipulation_specification_t"
+    base_class_type="prx::plan::specification_t">
+    <description>
+        The problem specification for the manipulation problem.
+    </description>        
+</class> -->

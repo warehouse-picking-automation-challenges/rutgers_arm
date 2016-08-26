@@ -1,0 +1,122 @@
+.={}
+.bin_contents={}
+.bin_contents.bin_A=[]
+.bin_contents.bin_A[0]="kleenex_tissue_box"
+.bin_contents.bin_A[1]="creativity_chenille_stems"
+.bin_contents.bin_B=[]
+.bin_contents.bin_B[0]="elmers_washable_no_run_school_glue"
+.bin_contents.bin_B[1]="scotch_bubble_mailer"
+.bin_contents.bin_B[2]="elmers_washable_no_run_school_glue"
+.bin_contents.bin_B[3]="scotch_bubble_mailer"
+.bin_contents.bin_B[4]="dasani_water_bottle"
+.bin_contents.bin_B[5]="womens_knit_gloves"
+.bin_contents.bin_B[6]="up_glucose_bottle"
+.bin_contents.bin_C=[]
+.bin_contents.bin_C[0]="folgers_classic_roast_coffee"
+.bin_contents.bin_C[1]="kyjen_squeakin_eggs_plush_puppies"
+.bin_contents.bin_C[2]="i_am_a_bunny_book"
+.bin_contents.bin_C[3]="cherokee_easy_tee_shirt"
+.bin_contents.bin_D=[]
+.bin_contents.bin_D[0]="kleenex_paper_towels"
+.bin_contents.bin_E=[]
+.bin_contents.bin_E[0]="easter_turtle_sippy_cup"
+.bin_contents.bin_E[1]="jane_eyre_dvd"
+.bin_contents.bin_E[2]="safety_first_outlet_plugs"
+.bin_contents.bin_E[3]="laugh_out_loud_joke_book"
+.bin_contents.bin_F=[]
+.bin_contents.bin_F[0]="oral_b_toothbrush_red"
+.bin_contents.bin_F[1]="rolodex_jumbo_pencil_cup"
+.bin_contents.bin_F[2]="scotch_duct_tape"
+.bin_contents.bin_G=[]
+.bin_contents.bin_G[0]="platinum_pets_dog_bowl"
+.bin_contents.bin_G[1]="barkely_hide_bones"
+.bin_contents.bin_H=[]
+.bin_contents.bin_H[0]="rawlings_baseball"
+.bin_contents.bin_H[1]="fiskars_scissors_red"
+.bin_contents.bin_H[2]="fitness_gear_3lb_dumbbell"
+.bin_contents.bin_H[3]="oral_b_toothbrush_green"
+.bin_contents.bin_H[4]="cool_shot_glue_sticks"
+.bin_contents.bin_H[5]="staples_index_cards"
+.bin_contents.bin_H[6]="dove_beauty_bar"
+.bin_contents.bin_H[7]="staples_index_cards"
+.bin_contents.bin_H[8]="crayola_24_ct"
+.bin_contents.bin_I=[]
+.bin_contents.bin_I[0]="dasani_water_bottle"
+.bin_contents.bin_I[1]="command_hooks"
+.bin_contents.bin_I[2]="creativity_chenille_stems"
+.bin_contents.bin_I[3]="woods_extension_cord"
+.bin_contents.bin_I[4]="soft_white_lightbulb"
+.bin_contents.bin_J=[]
+.bin_contents.bin_J[0]="cloud_b_plush_bear"
+.bin_contents.bin_J[1]="peva_shower_curtain_liner"
+.bin_contents.bin_K=[]
+.bin_contents.bin_K[0]="scotch_duct_tape"
+.bin_contents.bin_K[1]="hanes_tube_socks"
+.bin_contents.bin_K[2]="clorox_utility_brush"
+.bin_contents.bin_L=[]
+.bin_contents.bin_L[0]="ticonderoga_12_pencils"
+.bin_contents.bin_L[1]="expo_dry_erase_board_eraser"
+.bin_contents.bin_L[2]="expo_dry_erase_board_eraser"
+.bin_contents.bin_L[3]="dr_browns_bottle_brush"
+.tote_contents=[]
+.work_order=[]
+// {
+//     "bin": "bin_B",
+//     "item": "elmers_washable_no_run_school_glue"
+// },
+// {
+//     "bin": "bin_B",
+//     "item": "scotch_bubble_mailer"
+// },
+// {
+//     "bin": "bin_B",
+//     "item": "up_glucose_bottle"
+// },
+.work_order[0]={}
+.work_order[0].bin="bin_B"
+.work_order[0].item="expo_dry_erase_board_eraser"
+.work_order[1]={}
+.work_order[1].bin="bin_J"
+.work_order[1].item="peva_shower_curtain_liner"
+.work_order[2]={}
+.work_order[2].bin="bin_D"
+.work_order[2].item="kleenex_paper_towels"
+.work_order[3]={}
+.work_order[3].bin="bin_A"
+.work_order[3].item="kleenex_tissue_box"
+.work_order[4]={}
+.work_order[4].bin="bin_C"
+.work_order[4].item="folgers_classic_roast_coffee"
+.work_order[5]={}
+.work_order[5].bin="bin_C"
+.work_order[5].item="i_am_a_bunny_book"
+.work_order[6]={}
+.work_order[6].bin="bin_A"
+.work_order[6].item="dr_browns_bottle_brush"
+.work_order[7]={}
+.work_order[7].bin="bin_C"
+.work_order[7].item="jane_eyre_dvd"
+.work_order[8]={}
+.work_order[8].bin="bin_C"
+.work_order[8].item="ticonderoga_12_pencils"
+.work_order[9]={}
+.work_order[9].bin="bin_D"
+.work_order[9].item="crayola_24_ct"
+.work_order[10]={}
+.work_order[10].bin="bin_F"
+.work_order[10].item="woods_extension_cord"
+.work_order[11]={}
+.work_order[11].bin="bin_F"
+.work_order[11].item="laugh_out_loud_joke_book"
+.work_order[12]={}
+.work_order[12].bin="bin_F"
+.work_order[12].item="command_hooks"
+.work_order[13]={}
+.work_order[13].bin="bin_F"
+.work_order[13].item="soft_white_lightbulb"
+.work_order[14]={}
+.work_order[14].bin="bin_F"
+.work_order[14].item="rawlings_baseball"
+.work_order[15]={}
+.work_order[15].bin="bin_F"
+.work_order[15].item="staples_index_cards"

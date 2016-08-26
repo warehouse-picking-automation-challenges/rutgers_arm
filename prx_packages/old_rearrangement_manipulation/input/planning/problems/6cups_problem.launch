@@ -1,0 +1,165 @@
+<launch>
+
+  <!--  PLANNING  -->
+  <include ns="planning" file="$(find rearrangement_manipulation)/input/planning/world_models/world_model_6k.launch"/>
+  
+  <rosparam command="load" ns="planning/problems/rearrangement_manipulation_problem/specification">
+    k: 6
+    b: 6
+    initial_poses:
+      -
+        pose: [0.0239723943308798870255316,1.0053702573642926410002474,3.4775000000000000355271368,0.0000000000000000000000000,0.0000000000000000000000000,0.7071067811800000324495841,0.7071067811800000324495841]
+      -
+        pose: [0.3482752686987050094735707,1.1427879386920425375251398,3.4775000000000000355271368,0.0000000000000000000000000,0.0000000000000000000000000,0.7071067811800000324495841,0.7071067811800000324495841]
+      -
+        pose: [-0.3437913935672451959391083,1.1562314608442743057992175,3.4775000000000000355271368,0.0000000000000000000000000,0.0000000000000000000000000,0.7071067811800000324495841,0.7071067811800000324495841]
+      -
+        pose: [-0.3769069694876238107994482,1.0200044403644299428890463,3.4775000000000000355271368,0.0000000000000000000000000,0.0000000000000000000000000,0.7071067811800000324495841,0.7071067811800000324495841]
+      -
+        pose: [0.2031484869300148043969045,1.0591828167108738867341344,3.4775000000000000355271368,0.0000000000000000000000000,0.0000000000000000000000000,0.7071067811800000324495841,0.7071067811800000324495841]
+      -
+        pose: [-0.1809860404469008088312876,1.1319516549082246914537109,3.4775000000000000355271368,0.0000000000000000000000000,0.0000000000000000000000000,0.7071067811800000324495841,0.7071067811800000324495841]
+    target_poses:
+      -
+        pose: [0.0159598720916360181654170,1.0086433557228386970194833,3.4775000000000000355271368,0.0000000000000000000000000,0.0000000000000000000000000,0.7071067811800000324495841,0.7071067811800000324495841]
+      -
+        pose: [-0.3219645779798573359542502,0.9636201498441491208879484,3.4775000000000000355271368,0.0000000000000000000000000,0.0000000000000000000000000,0.7071067811800000324495841,0.7071067811800000324495841]
+      -
+        pose: [-0.2578345348885443533148987,1.0587844705622571073178051,3.4775000000000000355271368,0.0000000000000000000000000,0.0000000000000000000000000,0.7071067811800000324495841,0.7071067811800000324495841]
+      -
+        pose: [0.1265592421272579426450022,1.1594067420016074265731731,3.4775000000000000355271368,0.0000000000000000000000000,0.0000000000000000000000000,0.7071067811800000324495841,0.7071067811800000324495841]
+      -
+        pose: [-0.2007623695189889589940435,1.0761628667666403025293675,3.4775000000000000355271368,0.0000000000000000000000000,0.0000000000000000000000000,0.7071067811800000324495841,0.7071067811800000324495841]
+      -
+        pose: [-0.0877806649044066134024433,1.0069014168795669128542158,3.4775000000000000355271368,0.0000000000000000000000000,0.0000000000000000000000000,0.7071067811800000324495841,0.7071067811800000324495841]
+  </rosparam>
+
+  <!--  SIMULATION  -->
+  <rosparam command="load" ns="simulation/cup" file="$(find manipulation)/input/simulation/plants/cups.yaml"/>               
+  <rosparam command="load" ns="simulation/cup">
+    state_space: 
+        min: [-10, -10, -100, -1, -1, -1, -1]
+        max: [10, 10, 100, 1, 1, 1, 1]
+        scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  </rosparam>
+
+  <!-- Set up concrete system tree -->
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/cup1">
+    template: "cup"
+    initial_state: [0.0239723943308798870255316,1.0053702573642926410002474,3.4775000000000000355271368,0.0000000000000000000000000,0.0000000000000000000000000,0.7071067811800000324495841,0.7071067811800000324495841]
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 0.02
+          height: 0.14
+          material: red
+        visualization_geometry:
+            type: mesh
+            filename: meshes/cans/duff_taller.osg
+            local_transform:
+              position: [0,0,-0.08]
+              orientation: [0,0,0,1]
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/cup2">
+    template: "cup"
+    initial_state: [0.3482752686987050094735707,1.1427879386920425375251398,3.4775000000000000355271368,0.0000000000000000000000000,0.0000000000000000000000000,0.7071067811800000324495841,0.7071067811800000324495841]
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 0.02
+          height: 0.14
+          material: green
+        visualization_geometry:
+            type: mesh
+            filename: meshes/cans/duff_taller.osg
+            local_transform:
+              position: [0,0,-0.08]
+              orientation: [0,0,0,1]
+  </rosparam>
+
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/cup3">
+    template: "cup"
+    initial_state: [-0.3437913935672451959391083,1.1562314608442743057992175,3.4775000000000000355271368,0.0000000000000000000000000,0.0000000000000000000000000,0.7071067811800000324495841,0.7071067811800000324495841]
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 0.02
+          height: 0.14
+          material: blue
+        visualization_geometry:
+            type: mesh
+            filename: meshes/cans/duff_taller.osg
+            local_transform:
+              position: [0,0,-0.08]
+              orientation: [0,0,0,1]
+  </rosparam>
+
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/cup4">
+    template: "cup"
+    initial_state: [-0.3769069694876238107994482,1.0200044403644299428890463,3.4775000000000000355271368,0.0000000000000000000000000,0.0000000000000000000000000,0.7071067811800000324495841,0.7071067811800000324495841]
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 0.02
+          height: 0.14
+          material: pink
+        visualization_geometry:
+            type: mesh
+            filename: meshes/cans/duff_taller.osg
+            local_transform:
+              position: [0,0,-0.08]
+              orientation: [0,0,0,1]
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/cup5">
+    template: "cup"
+    initial_state: [0.2031484869300148043969045,1.0591828167108738867341344,3.4775000000000000355271368,0.0000000000000000000000000,0.0000000000000000000000000,0.7071067811800000324495841,0.7071067811800000324495841]
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 0.02
+          height: 0.14
+          material: gold
+        visualization_geometry:
+            type: mesh
+            filename: meshes/cans/duff_taller.osg
+            local_transform:
+              position: [0,0,-0.08]
+              orientation: [0,0,0,1]
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/cup6">
+    template: "cup"
+    initial_state: [-0.1809860404469008088312876,1.1319516549082246914537109,3.4775000000000000355271368,0.0000000000000000000000000,0.0000000000000000000000000,0.7071067811800000324495841,0.7071067811800000324495841]
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 0.02
+          height: 0.14
+          material: black
+        visualization_geometry:
+            type: mesh
+            filename: meshes/cans/duff_taller.osg
+            local_transform:
+              position: [0,0,-0.08]
+              orientation: [0,0,0,1]
+  </rosparam>
+
+</launch>
+

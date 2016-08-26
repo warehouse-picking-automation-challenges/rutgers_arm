@@ -1,0 +1,201 @@
+type: ode_plant
+
+geometries:
+  -
+    name: torso
+    collision_geometry:
+      type: box
+      dims: [8, 4, 16]
+      material: green
+    config:
+      position: [0, 0, 25]
+      orientation: [0.0, 0.0, 0.0, 1.0]
+    dims: [8, 4, 16]
+  -
+    name: left_femur
+    collision_geometry:
+      type: box
+      dims: [4, 2, 5]
+      material: blue
+    config:
+      position: [-4, 0, 15]
+      orientation: [0.0, 0.0, 0.0, 1.0]
+    dims: [4, 2, 5]
+  -
+    name: right_femur
+    collision_geometry:
+      type: box
+      dims: [4, 2, 5]
+      material: red
+    config:
+      position: [4, 0, 15]
+      orientation: [0.0, 0.0, 0.0, 1.0]
+    dims: [4, 2, 5]
+  -
+    name: left_tibia
+    collision_geometry:
+      type: box
+      dims: [4, 2, 5]
+      material: blue
+    config:
+      position: [-4, 0, 9]
+      orientation: [0.0, 0.0, 0.0, 1.0]
+    dims: [4, 2, 5]
+  -
+    name: right_tibia
+    collision_geometry:
+      type: box
+      dims: [4, 2, 5]
+      material: red
+    config:
+      position: [4, 0, 9]
+      orientation: [0.0, 0.0, 0.0, 1.0]
+    dims: [4, 2, 5]
+  -
+    name: left_foot
+    collision_geometry:
+      type: box
+      dims: [3, 5, 1]
+      material: blue
+    config:
+      position: [-4, -5, 5]
+      orientation: [0.0, 0.0, 0.0, 1.0]
+    dims: [3, 5, 1]
+  -
+    name: right_foot
+    collision_geometry:
+      type: box
+      dims: [3, 5, 1]
+      material: red
+    config:
+      position: [4, -5, 5]
+      orientation: [0.0, 0.0, 0.0, 1.0]
+    dims: [3, 5, 1]
+
+joints:
+  -
+    name: left_hip
+    type: hinge2
+    parent: torso
+    child: left_femur
+    params: [-2, 0, 17, 1, 0, 0, 0, 1, 0]
+    joint_limits_1: [-1, 1]
+    joint_limits_2: [-.1,.1]
+  -
+    name: right_hip
+    type: hinge2
+    parent: torso
+    child: right_femur
+    params: [2, 0, 17, 1, 0, 0, 0, 1, 0]
+    joint_limits_1: [-1, 1]
+    joint_limits_2: [-.1,.1]
+  -
+    name: left_knee
+    type: hinge
+    parent: left_femur
+    child: left_tibia
+    params: [-2, 0, 13, 1, 0, 0]
+    joint_limits_1: [-1.2, 0]
+  -
+    name: right_knee
+    type: hinge
+    parent: right_femur
+    child: right_tibia
+    params: [2, 0, 13, 1, 0, 0]
+    joint_limits_1: [-1.2, 0]
+  -
+    name: left_ankle
+    type: hinge
+    parent: left_tibia
+    child: left_foot
+    params: [-2, 0, 9, 1, 0, 0]
+    joint_limits_1: [-1, 0.5]
+  -
+    name: right_ankle
+    type: hinge
+    parent: right_tibia
+    child: right_foot
+    params: [2, 0, 9, 1, 0, 0]
+    joint_limits_1: [-1, 0.5]
+    
+controls:
+  -
+    name: torso_push
+    bounds: [0, 50]
+    type: body
+    ode_object: torso
+    direction: [0, 0, 1]
+    is_torque: false
+    
+  -
+    name: lhip_coronal_torque
+    bounds: [-40, 60]
+    type: joint
+    ode_object: left_hip
+    component: 0
+  -
+    name: lhip_sagittal_torque
+    bounds: [-40, 60]
+    type: joint
+    ode_object: left_hip
+    component: 1
+  -
+    name: rhip_coronal_torque
+    bounds: [-40, 60]
+    type: joint
+    ode_object: right_hip
+    component: 0
+  -
+    name: rhip_sagittal_torque
+    bounds: [-40, 60]
+    type: joint
+    ode_object: right_hip
+    component: 1
+  -
+    name: lknee_coronal_torque
+    bounds: [-40, 60]
+    type: joint
+    ode_object: left_knee
+    component: 0
+  -
+    name: lknee_sagittal_torque
+    bounds: [-40, 60]
+    type: joint
+    ode_object: left_knee
+    component: 1
+  -
+    name: rknee_coronal_torque
+    bounds: [-40, 60]
+    type: joint
+    ode_object: right_knee
+    component: 0
+  -
+    name: rknee_sagittal_torque
+    bounds: [-40, 60]
+    type: joint
+    ode_object: right_knee
+    component: 1
+  -
+    name: lankle_coronal_torque
+    bounds: [-40, 60]
+    type: joint
+    ode_object: left_ankle
+    component: 0
+  -
+    name: lankle_sagittal_torque
+    bounds: [-40, 60]
+    type: joint
+    ode_object: left_ankle
+    component: 1
+  -
+    name: rankle_coronal_torque
+    bounds: [-40, 60]
+    type: joint
+    ode_object: right_ankle
+    component: 0
+  -
+    name: rankle_sagittal_torque
+    bounds: [-40, 60]
+    type: joint
+    ode_object: right_ankle
+    component: 1

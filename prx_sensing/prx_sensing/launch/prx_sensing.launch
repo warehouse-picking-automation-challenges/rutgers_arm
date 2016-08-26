@@ -1,0 +1,25 @@
+<launch>
+
+<node name="prx_sensing" pkg="prx_sensing" type="prx_sensing"  launch-prefix="" output="screen" args="sensing" />
+
+<rosparam command="load" file="$(find simtrack_nodes)/config/prx_camera_topics.yaml"/>
+
+<rosparam ns="sensing">
+  object_names: ['expo_dry_erase_board_eraser','i_am_a_bunny_book','soft_white_lightbulb','dove_beauty_bar','kleenex_paper_towels','kleenex_tissue_box','crayola_24_ct','rawlings_baseball','jane_eyre_dvd','laugh_out_loud_joke_book','ticonderoga_12_pencils','staples_index_cards','folgers_classic_roast_coffee','woods_extension_cord','elmers_washable_no_run_school_glue','up_glucose_bottle','hanes_tube_socks','creativity_chenille_stems_1','creativity_chenille_stems_2','safety_first_outlet_plugs','fitness_gear_3lb_dumbbell','command_hooks','scotch_bubble_mailer','peva_shower_curtain_liner','cherokee_easy_tee_shirt','barkely_hide_bones','scotch_duct_tape','cool_shot_glue_sticks','oral_b_toothbrush_red','dr_browns_bottle_brush','kyjen_squeakin_eggs_plush_puppies']<!-- , 'cheezit_big_original', 'expo_dry_erase_board_eraser', 'highland_6539_self_stick_notes', 'mark_twain_huckleberry_finn', 'munchkin_white_hot_duck_bath_toy', 'genuine_joe_plastic_stir_sticks'] -->
+  simtrack_main_node_name: 'simtrack_left'
+  simtrack_head_node_name: 'simtrack_head'
+  current_camera_frame: 'kinect2_left_rgb_optical_frame'
+  tf_namespace: "simulator/consumer/manipulator"
+</rosparam>
+
+<!-- <node pkg="tf" type="static_transform_publisher" name="kinect2_right_rgb_optical_frame" args = "-0.00399884	0.0009384862 0.0022325002 0.005786472698 0.003036849614 0.01031462707 0.9999254486 simulator/consumer/manipulator/right_RGB_camera kinect2_right_rgb_optical_frame 100" />
+
+<node pkg="tf" type="static_transform_publisher" name="kinect2_head_rgb_optical_frame" args = "0.0121328 0.0058047 -0.00261686 0.00310873 0.00261475 0.00441386 0.999982 simulator/consumer/manipulator/head_RGB_camera kinect2_head_rgb_optical_frame 100" /> -->
+ -->
+<!-- <node pkg="tf" type="static_transform_publisher" name="right_RGB_camera_corrected"   args = " 0 0 0 0 0 0 1   simulator/consumer/manipulator/right_RGB_camera right_RGB_camera_corrected 100" />
+
+<node pkg="tf" type="static_transform_publisher" name="left_RGB_camera_corrected"    args = " 0 0 0 0 0 0 1   simulator/consumer/manipulator/left_RGB_camera  left_RGB_camera_corrected  100" />
+
+<node pkg="tf" type="static_transform_publisher" name="head_RGB_camera_corrected"    args = " 0.0176    0.0214   -0.0059   0.0263    0.0017    0.0009    0.9997 simulator/consumer/manipulator/head_RGB_camera  head_RGB_camera_corrected  100" /> -->
+
+</launch>

@@ -1,0 +1,890 @@
+<launch>
+
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>  
+ 
+   <rosparam command="load" ns="simulation" file="$(find prx_input)/templates/applications/empty_application.yaml"/> 
+  <rosparam command="load" ns="simulation" file="$(find labeled_rearrangement)/input/simulation/manipulation_simulator.yaml"/>  
+  <rosparam command="load" ns="simulation" file="$(find prx_input)/templates/spaces/space_types.yaml"/>    
+
+  <rosparam command="load" ns="simulation/baxter" file="$(find baxter)/input/urdf/baxter.yaml"/>
+  <rosparam command="load" ns="simulation/simulator/obstacles" file="$(find labeled_rearrangement)/input/templates/baxter_torso_nomesh.yaml" />
+  <rosparam command="load" ns="simulation/simulator/obstacles" file="$(find labeled_rearrangement)/input/environments/shelf_wood.yaml" />
+
+  <rosparam command="load" ns="simulation/simulator">
+    simulation_step: 0.02
+    manipulator_names:
+      -
+        simulator/consumer/manipulator
+    sensing_info:
+      type: grasp_sensing_info
+      sources: ["grasp_sensor1"]
+      update_delay: 0.02
+    grasp_sensor_source: "grasp_sensor1"
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/sensing">
+    type: sensing_model
+    sensors:
+      grasp_sensor1:
+        type: simulated_grasp_sensor
+        source: "grasp_sensor1"
+        sensor_delay: 0.02
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer" file="$(find prx_input)/templates/controllers/consumer.yaml"/>
+  
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer/subsystems/manipulator">
+    template: "baxter"
+    planning_contexts:
+      manipulator_pc:
+        type: "full_mapping"
+    hand: left
+    forward_transform_rotation: [1.0,0,0,0,1.0,0,0,0,1]
+    forward_transform_translation: [0,0,0.785]  
+    #initial_state: [0.4248924440,-0.6721681562,1.7537056979,1.5025652686,-2.3668365267,1.0473731978,1.3588242812,1]
+    #initial_state: [1.0025534755,0.2467281875,-2.6578856076,1.7139395246,-0.4895936778,-1.2225383216,2.7953924074,1]
+  </rosparam>
+
+  <!-- Define the simulation node -->
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation" 
+    required="true" launch-prefix="" output="screen" args="simulation"/>
+
+
+  <rosparam command="load" ns="planning">
+    system_mapping:
+      -
+        pair: [simulator/consumer/manipulator, world_model/simulator/manipulator]
+      -
+        pair: [simulator/cup1, world_model/simulator/cup1]
+      -
+        pair: [simulator/cup2, world_model/simulator/cup2]
+      -
+        pair: [simulator/cup3, world_model/simulator/cup3]
+      -
+        pair: [simulator/cup4, world_model/simulator/cup4]
+      -
+        pair: [simulator/cup5, world_model/simulator/cup5]
+      -
+        pair: [simulator/cup6, world_model/simulator/cup6]
+      -
+        pair: [simulator/cup7, world_model/simulator/cup7]
+      -
+        pair: [simulator/cup8, world_model/simulator/cup8]
+      -
+        pair: [simulator/cup9, world_model/simulator/cup9]
+      -
+        pair: [simulator/cup10, world_model/simulator/cup10]
+
+
+    consumer: simulator/consumer
+  </rosparam>
+
+
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/cup1">
+  type: movable_body
+  integrator: rk4
+  max_step: 0.01
+  state_space: 
+    min: [-5, -5, -100, -1, -1, -1, -1]
+    max: [5, 5, 100, 1, 1, 1, 1]
+    scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  input_control_space: 
+    none: 4
+  root_geom: body
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: red
+  
+</rosparam>
+
+<rosparam command="load" ns="planning/world_model/simulator/subsystems/cup2">
+  type: movable_body
+  integrator: rk4
+  max_step: 0.01
+  state_space: 
+    min: [-5, -5, -100, -1, -1, -1, -1]
+    max: [5, 5, 100, 1, 1, 1, 1]
+    scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  input_control_space: 
+    none: 4
+  root_geom: body
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: green
+  
+</rosparam>
+
+<rosparam command="load" ns="planning/world_model/simulator/subsystems/cup3">
+  type: movable_body
+  integrator: rk4
+  max_step: 0.01
+  state_space: 
+    min: [-5, -5, -100, -1, -1, -1, -1]
+    max: [5, 5, 100, 1, 1, 1, 1]
+    scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  input_control_space: 
+    none: 4
+  root_geom: body
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: blue
+  
+</rosparam>
+
+<rosparam command="load" ns="planning/world_model/simulator/subsystems/cup4">
+  type: movable_body
+  integrator: rk4
+  max_step: 0.01
+  state_space: 
+    min: [-5, -5, -100, -1, -1, -1, -1]
+    max: [5, 5, 100, 1, 1, 1, 1]
+    scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  input_control_space: 
+    none: 4
+  root_geom: body
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: yellow
+  
+</rosparam>
+
+<rosparam command="load" ns="planning/world_model/simulator/subsystems/cup5">
+  type: movable_body
+  integrator: rk4
+  max_step: 0.01
+  state_space: 
+    min: [-5, -5, -100, -1, -1, -1, -1]
+    max: [5, 5, 100, 1, 1, 1, 1]
+    scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  input_control_space: 
+    none: 4
+  root_geom: body
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: pink
+  
+</rosparam>
+
+<rosparam command="load" ns="planning/world_model/simulator/subsystems/cup6">
+  type: movable_body
+  integrator: rk4
+  max_step: 0.01
+  state_space: 
+    min: [-5, -5, -100, -1, -1, -1, -1]
+    max: [5, 5, 100, 1, 1, 1, 1]
+    scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  input_control_space: 
+    none: 4
+  root_geom: body
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: grey
+  
+</rosparam>
+
+<rosparam command="load" ns="planning/world_model/simulator/subsystems/cup7">
+  type: movable_body
+  integrator: rk4
+  max_step: 0.01
+  state_space: 
+    min: [-5, -5, -100, -1, -1, -1, -1]
+    max: [5, 5, 100, 1, 1, 1, 1]
+    scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  input_control_space: 
+    none: 4
+  root_geom: body
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: black
+  
+</rosparam>
+
+<rosparam command="load" ns="planning/world_model/simulator/subsystems/cup8">
+  type: movable_body
+  integrator: rk4
+  max_step: 0.01
+  state_space: 
+    min: [-5, -5, -100, -1, -1, -1, -1]
+    max: [5, 5, 100, 1, 1, 1, 1]
+    scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  input_control_space: 
+    none: 4
+  root_geom: body
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: purple
+  
+</rosparam>
+
+<rosparam command="load" ns="planning/world_model/simulator/subsystems/cup9">
+  type: movable_body
+  integrator: rk4
+  max_step: 0.01
+  state_space: 
+    min: [-5, -5, -100, -1, -1, -1, -1]
+    max: [5, 5, 100, 1, 1, 1, 1]
+    scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  input_control_space: 
+    none: 4
+  root_geom: body
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: orange
+  
+</rosparam>
+
+<rosparam command="load" ns="planning/world_model/simulator/subsystems/cup10">
+  type: movable_body
+  integrator: rk4
+  max_step: 0.01
+  state_space: 
+    min: [-5, -5, -100, -1, -1, -1, -1]
+    max: [5, 5, 100, 1, 1, 1, 1]
+    scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  input_control_space: 
+    none: 4
+  root_geom: body
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: light_blue
+  
+</rosparam>
+
+
+
+  <rosparam ns="planning/world_model/planning_contexts">
+    manipulator_pc:
+     default:
+      type: "hide_mapping"
+  </rosparam>
+
+  <rosparam command="load" ns="planning/" file="$(find prx_input)/templates/planning_applications/single_query_application.yaml"/>
+  <rosparam command="load" ns="planning/world_model" file="$(find labeled_rearrangement)/input/simulation/manipulation_simulator.yaml"/> 
+  <rosparam command="load" ns="planning/" file="$(find prx_input)/templates/spaces/space_types.yaml"/>  
+
+  <rosparam command="load" ns="planning/baxter" file="$(find baxter)/input/urdf/baxter.yaml"/>
+  <rosparam command="load" ns="planning/world_model/simulator/obstacles" file="$(find labeled_rearrangement)/input/templates/baxter_torso_nomesh.yaml" />
+  <rosparam command="load" ns="planning/world_model/simulator/obstacles" file="$(find labeled_rearrangement)/input/environments/shelf.yaml" />
+
+  <rosparam ns="planning/world_model/simulator">
+    simulation_step: 0.02
+    manipulator_names:
+      -
+        simulator/manipulator
+    sensing_info:
+      type: grasp_sensing_info
+      sources: ["grasp_sensor1"]
+      update_delay: 0.02
+    grasp_sensor_source: "grasp_sensor1"
+  </rosparam>
+
+  <rosparam ns="planning/world_model/simulator/sensing">
+    type: sensing_model
+    sensors:
+      grasp_sensor1:
+        type: simulated_grasp_sensor
+        source: "grasp_sensor1"
+        sensor_delay: 0.02
+  </rosparam>
+
+  <rosparam ns="planning/world_model/simulator/subsystems/manipulator">
+    template: "baxter"
+    planning_contexts:
+      manipulator_pc:
+        type: "full_mapping"
+    hand: left
+    forward_transform_rotation: [1.0,0,0,0,1.0,0,0,0,1]
+    forward_transform_translation: [0,0,0.785]  
+  </rosparam>
+
+  <rosparam ns="planning/">
+    random_seed: 14391835
+    simulate: true
+    visualize: true
+    persistent: true
+    consumer_mapping:
+      - 
+        pair: [simulator/consumer, manipulator_pc]
+  </rosparam> 
+
+
+  <rosparam ns="planning/motion_planner">
+    type: manipulation_mp
+    visualization_bodies: ["simulator/manipulator/end_effector"]
+    visualize_graph: false
+    visualize_solutions: false        
+    delta_prm: false
+  </rosparam>
+
+  <rosparam ns="planning/manip_spec_template">
+    type: manipulation_mp_specification
+    distance_metric:
+      type: ann_distance_metric
+    local_planner:
+      type: bvp_local_planner
+    stopping_criteria:
+      elements:
+        criterion1:
+          type: iteration_criterion
+          condition: 100
+    heuristic_search:
+      type: obstacle_aware_astar
+      minimum_conflict: true
+      shortest_path: false
+      collision_penalty: 100000   
+      new_constraint_penalty: 300
+      max_length: 40
+  </rosparam>
+
+  <rosparam ns="planning/spec_template">
+    type: motion_planning_specification
+    distance_metric:
+      type: ann_distance_metric
+    stopping_criteria:
+      elements:
+        criterion1:
+          type: iteration_criterion
+          condition: 100
+  </rosparam>
+
+  <rosparam ns="planning/graph_query_template">
+    type: manipulator_mp_query
+    query_type: add_query_points_collisions
+    query_collision_type: active_collisions_reuse_edges
+    goal:
+        type: multiple_goal_states
+        distance_metric:
+          type: ann_distance_metric
+  </rosparam>
+
+  <rosparam ns="planning/manipulator_query_template">
+    type: manipulator_query
+    goal:
+      type: multiple_goal_states
+      distance_metric:
+        type: ann_distance_metric
+  </rosparam>
+
+  <rosparam ns="planning/primitive_template">
+    
+  </rosparam>
+
+  <rosparam ns="planning/task_planner/" >
+    type: mcr    
+    visualization_body: "simulator/manipulator/end_effector"  
+    pc_name_manipulator_only: manipulator_pc  
+    rearrangement_query:
+      type: rearrangement_query
+      goal:
+        type: multiple_goal_states
+        distance_metric:
+          type: ann_distance_metric
+    primitive_specification:
+      type: rearrangement_primitive_specification
+    target_metric:
+      type: graph_distance_metric
+      distance_function: poses_distance
+    primitive_timer: 20
+    planners:
+      primitive:
+        type: mcr_test
+        pc_name_manipulator_only: manipulator_pc
+        pc_name_object_only: object_pc
+        pc_name_manipulator_with_object: manip_object_pc
+        pc_name_manipulator_with_active_object: manip_active_object_pc
+        pc_name_all_objects: all_object_pc
+        pc_name_real_world: real_world_pc
+        pc_name_grasp_planning: grasp_planning_pc 
+        manipulation_tp_name: manipulation_planner
+        manip_specification:
+          type: manipulator_specification
+          distance_metric:
+            type: ann_distance_metric
+        manip_sampler:
+          type: manip_sampler
+        manip_validity_checker:
+          type: system_name_validity_checker
+        transfer_query:
+          template: manipulator_query_template
+        transit_query:
+          template: manipulator_query_template
+        planners_specifications:
+          transit:
+            template: manip_spec_template      
+          transfer:
+            template: manip_spec_template
+        planners:
+          manipulation_planner:
+            type: manipulator_tp
+            ungrasped_name: ungrasped
+            grasped_name: grasped
+            phase_queries:
+              reach_phase:
+                template: graph_query_template
+              transfer_phase:
+                template: graph_query_template
+              retract_phase:
+                template: graph_query_template
+              smoothing_phase:
+                template: graph_query_template
+            planners:
+              ungrasped:
+                template: "motion_planner"
+                space_name: "manipulator_pc"          
+              grasped:
+                template: "motion_planner"
+                space_name: "manip_object_pc" 
+        multipliers: [1.3, 1.6]
+        multipliers: [1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 2]
+        index_from: 2
+      path_planner:
+        type: rearrangement_path_planner
+        pc_name_manipulator_only: manipulator_pc
+        pc_name_object_only: object_pc
+        pc_name_manipulator_with_object: manip_object_pc
+        pc_name_manipulator_with_active_object: manip_active_object_pc
+        pc_name_all_objects: all_object_pc
+        pc_name_real_world: real_world_pc
+        pc_name_grasp_planning: grasp_planning_pc 
+        manipulation_tp_name: manipulation_planner
+        manip_specification:
+          type: manipulator_specification
+          distance_metric:
+            type: ann_distance_metric
+        manip_sampler:
+          type: manip_sampler
+        manip_validity_checker:
+          type: system_name_validity_checker
+        transfer_query:
+          template: manipulator_query_template
+        transit_query:
+          template: manipulator_query_template
+        planners_specifications:
+          transit:
+            template: manip_spec_template      
+          transfer:
+            template: manip_spec_template
+        planners:
+          manipulation_planner:
+            type: manipulator_tp
+            ungrasped_name: ungrasped
+            grasped_name: grasped
+            phase_queries:
+              reach_phase:
+                template: graph_query_template
+              transfer_phase:
+                template: graph_query_template
+              retract_phase:
+                template: graph_query_template
+              smoothing_phase:
+                template: graph_query_template
+            planners:
+              ungrasped:
+                template: "motion_planner"
+                space_name: "manipulator_pc"          
+              grasped:
+                template: "motion_planner"
+                space_name: "manip_object_pc" 
+        apply_smoothing: false
+ </rosparam>
+
+  <rosparam ns="planning/problems">
+    rearrangement_search_problem:
+      specification:
+        type: rearrangement_search_specification
+        validity_checker: 
+          type: world_model_validity_checker
+        sampler:
+          type: uniform_sampler
+        distance_metric:
+          type: graph_distance_metric
+          distance_function: poses_distance
+        transfer_metric:
+          type: linear_distance_metric
+        local_planner:
+          type: bvp_local_planner
+        heuristic_search:
+          type: super_graph_astar
+        k: 10
+        safe_position: [0.25684,-1.34394,0.42624,2.61800,2.84100,2.09400,-0.06762,0] 
+        goal_biasing: 10
+        time_limit: 1200
+        poses_constraints_file: shelf_poses_constraints.txt
+        poses_file: shelf_poses.txt
+        transit_graph_file: shelf_informed_transit.txt
+        transfer_graph_file: shelf_informed_transfer.txt        
+        gather_statistics: true
+        statistics_file: shelf_planning_statistics.txt        
+      query:
+        type: rearrangement_search_query
+        initial_poses:
+          -
+            pose: [0.30000000,0.90000000,1.47750000,0.00000000,0.00000000,0.70710678,0.70710678]
+          -
+            pose: [0.00000000,0.90000000,1.47750000,0.00000000,0.00000000,0.70710678,0.70710678]
+          -
+            pose: [0.15000000,0.90000000,1.4775000000,0.0000000000,0.0000000000,0.7071067800,0.7071067800]
+          -
+            pose: [-0.0277502000,0.9730962500,1.4775000000,0.0000000000,0.0000000000,0.7071067800,0.7071067800]
+          -
+            pose: [0.0967114900,1.1689354900,1.4775000000,0.0000000000,0.0000000000,0.7071067800,0.7071067800]
+          -
+            pose: [0.1067371200,1.0816900900,1.4775000000,0.0000000000,0.0000000000,0.7071067800,0.7071067800]
+          -
+            pose: [0.0014013300,1.1284609200,1.4775000000,0.0000000000,0.0000000000,0.7071067800,0.7071067800]
+          -
+            pose: [-0.1070118100,1.0481420400,1.4775000000,0.0000000000,0.0000000000,0.7071067800,0.7071067800]
+          -
+            pose: [-0.0595829100,1.1016063500,1.4775000000,0.0000000000,0.0000000000,0.7071067800,0.7071067800]
+          -
+            pose: [-0.30000000,1.05000000,1.47750000,0.00000000,0.00000000,0.70710678,0.70710678]
+
+        target_poses:
+          -
+            pose: [0.30000000,0.90000000,1.47750000,0.00000000,0.00000000,0.70710678,0.70710678]
+          -
+            pose: [0.00000000,0.90000000,1.47750000,0.00000000,0.00000000,0.70710678,0.70710678]
+          -
+            pose: [0.15000000,0.90000000,1.4775000000,0.0000000000,0.0000000000,0.7071067800,0.7071067800]
+          -
+            pose: [-0.0277502000,0.9730962500,1.4775000000,0.0000000000,0.0000000000,0.7071067800,0.7071067800]
+          -
+            pose: [0.0967114900,1.1689354900,1.4775000000,0.0000000000,0.0000000000,0.7071067800,0.7071067800]
+          -
+            pose: [0.1067371200,1.0816900900,1.4775000000,0.0000000000,0.0000000000,0.7071067800,0.7071067800]
+          -
+            pose: [0.0014013300,1.1284609200,1.4775000000,0.0000000000,0.0000000000,0.7071067800,0.7071067800]
+          -
+            pose: [-0.1070118100,1.0481420400,1.4775000000,0.0000000000,0.0000000000,0.7071067800,0.7071067800]
+          -
+            pose: [-0.0595829100,1.1016063500,1.4775000000,0.0000000000,0.0000000000,0.7071067800,0.7071067800]
+          -
+            pose: [0.30000000,1.05000000,1.47750000,0.00000000,0.00000000,0.70710678,0.70710678]
+
+  </rosparam>
+
+  <!--  SIMULATION  -->
+<rosparam command="load" ns="simulation/simulator/subsystems/cup1">
+  type: movable_body
+  integrator: rk4
+  max_step: 0.01
+  state_space: 
+    min: [-5, -5, -100, -1, -1, -1, -1]
+    max: [5, 5, 100, 1, 1, 1, 1]
+    scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  input_control_space: 
+    none: 4
+  root_geom: body
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: red
+  initial_state: [0.30000000,0.90000000,1.47750000,0.00000000,0.00000000,0.70710678,0.70710678]
+</rosparam>
+
+<rosparam command="load" ns="simulation/simulator/subsystems/cup2">
+  type: movable_body
+  integrator: rk4
+  max_step: 0.01
+  state_space: 
+    min: [-5, -5, -100, -1, -1, -1, -1]
+    max: [5, 5, 100, 1, 1, 1, 1]
+    scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  input_control_space: 
+    none: 4
+  root_geom: body
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: green
+  initial_state: [0.00000000,0.90000000,1.47750000,0.00000000,0.00000000,0.70710678,0.70710678]
+</rosparam>
+
+<rosparam command="load" ns="simulation/simulator/subsystems/cup3">
+  type: movable_body
+  integrator: rk4
+  max_step: 0.01
+  state_space: 
+    min: [-5, -5, -100, -1, -1, -1, -1]
+    max: [5, 5, 100, 1, 1, 1, 1]
+    scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  input_control_space: 
+    none: 4
+  root_geom: body
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: blue
+  initial_state: [0.15000000,0.90000000,1.4775000000,0.0000000000,0.0000000000,0.7071067800,0.7071067800]
+</rosparam>
+
+<rosparam command="load" ns="simulation/simulator/subsystems/cup4">
+  type: movable_body
+  integrator: rk4
+  max_step: 0.01
+  state_space: 
+    min: [-5, -5, -100, -1, -1, -1, -1]
+    max: [5, 5, 100, 1, 1, 1, 1]
+    scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  input_control_space: 
+    none: 4
+  root_geom: body
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: yellow
+  initial_state: [-0.0277502000,0.9730962500,1.4775000000,0.0000000000,0.0000000000,0.7071067800,0.7071067800]
+</rosparam>
+
+<rosparam command="load" ns="simulation/simulator/subsystems/cup5">
+  type: movable_body
+  integrator: rk4
+  max_step: 0.01
+  state_space: 
+    min: [-5, -5, -100, -1, -1, -1, -1]
+    max: [5, 5, 100, 1, 1, 1, 1]
+    scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  input_control_space: 
+    none: 4
+  root_geom: body
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: pink
+  initial_state: [0.0967114900,1.1689354900,1.4775000000,0.0000000000,0.0000000000,0.7071067800,0.7071067800]
+</rosparam>
+
+<rosparam command="load" ns="simulation/simulator/subsystems/cup6">
+  type: movable_body
+  integrator: rk4
+  max_step: 0.01
+  state_space: 
+    min: [-5, -5, -100, -1, -1, -1, -1]
+    max: [5, 5, 100, 1, 1, 1, 1]
+    scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  input_control_space: 
+    none: 4
+  root_geom: body
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: grey
+  initial_state: [0.1067371200,1.0816900900,1.4775000000,0.0000000000,0.0000000000,0.7071067800,0.7071067800]
+</rosparam>
+
+<rosparam command="load" ns="simulation/simulator/subsystems/cup7">
+  type: movable_body
+  integrator: rk4
+  max_step: 0.01
+  state_space: 
+    min: [-5, -5, -100, -1, -1, -1, -1]
+    max: [5, 5, 100, 1, 1, 1, 1]
+    scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  input_control_space: 
+    none: 4
+  root_geom: body
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: black
+  initial_state: [0.0014013300,1.1284609200,1.4775000000,0.0000000000,0.0000000000,0.7071067800,0.7071067800]
+</rosparam>
+
+<rosparam command="load" ns="simulation/simulator/subsystems/cup8">
+  type: movable_body
+  integrator: rk4
+  max_step: 0.01
+  state_space: 
+    min: [-5, -5, -100, -1, -1, -1, -1]
+    max: [5, 5, 100, 1, 1, 1, 1]
+    scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  input_control_space: 
+    none: 4
+  root_geom: body
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: purple
+  initial_state: [-0.1070118100,1.0481420400,1.4775000000,0.0000000000,0.0000000000,0.7071067800,0.7071067800]
+</rosparam>
+
+<rosparam command="load" ns="simulation/simulator/subsystems/cup9">
+  type: movable_body
+  integrator: rk4
+  max_step: 0.01
+  state_space: 
+    min: [-5, -5, -100, -1, -1, -1, -1]
+    max: [5, 5, 100, 1, 1, 1, 1]
+    scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  input_control_space: 
+    none: 4
+  root_geom: body
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: orange
+  initial_state: [-0.0595829100,1.1016063500,1.4775000000,0.0000000000,0.0000000000,0.7071067800,0.7071067800]
+</rosparam>
+
+<rosparam command="load" ns="simulation/simulator/subsystems/cup10">
+  type: movable_body
+  integrator: rk4
+  max_step: 0.01
+  state_space: 
+    min: [-5, -5, -100, -1, -1, -1, -1]
+    max: [5, 5, 100, 1, 1, 1, 1]
+    scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  input_control_space: 
+    none: 4
+  root_geom: body
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: light_blue
+      visualization_geometry:
+        type: mesh
+        filename: meshes/cans/duff_taller.osg
+        local_transform:
+          position: [0,0,-0.08]
+          orientation: [0,0,0,1]
+  initial_state: [-0.30000000,1.05000000,1.47750000,0.00000000,0.00000000,0.70710678,0.70710678]
+</rosparam>
+
+
+
+<node name="planning" pkg="prx_planning" type="prx_planning" required="true" launch-prefix="gdb --args" output="screen" args="planning"/>
+
+
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+
+  <rosparam ns="visualization/viewer/">
+    windows:
+      window_1:
+        xpos: 920
+        ypos: 100
+        width: 1000
+        height: 1000
+        cameras:
+          perspective:
+            ortho: false
+            camera_type: 0
+            eye: [0.0, 0.65, 2.2]
+            center: [0.0, 1.2, 1.2]
+            speed: {move: 0.1, rotate: 0.001}
+          orthographic:
+            ortho: true
+            ortho_param:
+              left: -300
+              right: 300
+              bottom: -300
+              top: 300
+              zNear: 0
+              zFar: 1000
+            speed: {move: 0.2, rotate: 0.001}
+          smooth:
+            ortho: false
+            camera_type: 2
+            eye: [0, -20, 15]
+            center: [0, 1, 18]
+            speed: {move: 0.2, rotate: 0.001}
+  </rosparam>
+
+<rosparam ns="visualization/viewer/scene">
+    line_thickness: 3
+  </rosparam>
+
+
+
+
+
+</launch>

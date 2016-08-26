@@ -1,0 +1,55 @@
+  <rosparam command="load" ns="simulation" file="$(find prx_input)/templates/applications/empty_application.yaml"/> 
+  <rosparam command="load" ns="simulation" file="$(find #PACKAGE#)/input/simulation/manipulation_simulator.yaml"/>  
+  <rosparam command="load" ns="simulation" file="$(find prx_input)/templates/spaces/space_types.yaml"/>    
+
+  <rosparam command="load" ns="simulation/baxter" file="$(find baxter)/input/urdf/baxter.yaml"/>
+  <rosparam command="load" ns="simulation/simulator/obstacles" file="$(find #PACKAGE#)/input/templates/baxter_torso#BAXTER##BAXTER_VIDEO#.yaml" />
+  <rosparam command="load" ns="simulation/simulator/obstacles" file="$(find #PACKAGE#)/input/environments/#ENVIRONMENT#.yaml" />
+
+  <rosparam command="load" ns="simulation/simulator">
+    simulation_step: 0.02
+    simulation_node: true
+    manipulator_names:
+      -
+        simulator/consumer/manipulator
+    sensing_info:
+      type: grasp_sensing_info
+      sources: ["grasp_sensor1"]
+      update_delay: 0.02
+    grasp_sensor_source: "grasp_sensor1"
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/sensing">
+    type: sensing_model
+    sensors:
+      grasp_sensor1:
+        type: simulated_grasp_sensor
+        source: "grasp_sensor1"
+        sensor_delay: 0.02
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer" file="$(find prx_input)/templates/controllers/consumer.yaml"/>
+  
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer/subsystems/manipulator">
+    template: "baxter"
+    planning_contexts:
+      manipulator_pc:
+        type: "full_mapping"
+    hand: left
+    forward_transform_rotation: #BAXTER_ROTATION#
+    forward_transform_translation: #BAXTER_TRANSLATION#  
+  </rosparam>
+
+  <!-- Define the simulation node -->
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation" 
+    required="true" launch-prefix="" output="screen" args="simulation"/>
+
+
+  <rosparam command="load" ns="planning">
+    system_mapping:
+      -
+        pair: [simulator/consumer/manipulator, world_model/simulator/manipulator]
+#MAPPING_LIST#
+
+    consumer: simulator/consumer
+  </rosparam>

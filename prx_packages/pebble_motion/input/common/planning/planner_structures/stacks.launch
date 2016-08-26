@@ -1,0 +1,191 @@
+<launch>
+  <rosparam command="load" file="$(find prx_input)/templates/planning_applications/single_query_application.yaml"/>
+  <rosparam ns="task_planner/" >
+
+  </rosparam>
+  <rosparam ns="task_planner/" >
+    template: "task_planner"
+    visualization_body: "simulator/router/disk01/body"
+    visualize_graph: true
+    points:
+      -
+        point: [0,0,0]
+        id: 0
+      -
+        point: [10,0,0]
+        id: 1
+      -
+        point: [20,0,0]
+        id: 2
+      -
+        point: [30,0,0]
+        id: 3
+      -
+        point: [0,10,0]
+        id: 4
+      -
+        point: [10,10,0]
+        id: 5
+      -
+        point: [20,10,0]
+        id: 6
+      -
+        point: [30,10,0]
+        id: 7
+      -
+        point: [0,20,0]
+        id: 8
+      -
+        point: [10,20,0]
+        id: 9
+      -
+        point: [20,20,0]
+        id: 10
+      -
+        point: [30,20,0]
+        id: 11
+      -
+        point: [0,30,0]
+        id: 12
+      -
+        point: [10,30,0]
+        id: 13
+      -
+        point: [20,30,0]
+        id: 14
+      -
+        point: [30,30,0]
+        id: 15
+      -
+        point: [0,40,0]
+        id: 16
+      -
+        point: [10,40,0]
+        id: 17
+      -
+        point: [20,40,0]
+        id: 18
+      -
+        point: [30,40,0]
+        id: 19
+      -
+        point: [40,40,0]
+        id: 20
+      -
+        point: [50,40,0]
+        id: 21
+      -
+        point: [60,40,0]
+        id: 22
+      -
+        point: [30,50,0]
+        id: 23
+    edges:
+      -
+        source: 0
+        target: 4
+      -
+        source: 1
+        target: 5
+      -
+        source: 2
+        target: 6
+      -
+        source: 3
+        target: 7
+      -
+        source: 4
+        target: 8
+      -
+        source: 5
+        target: 9
+      -
+        source: 6
+        target: 10
+      -
+        source: 7
+        target: 11
+      -
+        source: 8
+        target: 12
+      -
+        source: 9
+        target: 13
+      -
+        source: 10
+        target: 14
+      -
+        source: 11
+        target: 15
+      -
+        source: 12
+        target: 16
+      -
+        source: 13
+        target: 17
+      -
+        source: 14
+        target: 18
+      -
+        source: 15
+        target: 19
+      -
+        source: 16
+        target: 17
+      -
+        source: 19
+        target: 23
+      -
+        source: 17
+        target: 18
+      -
+        source: 18
+        target: 19
+      -
+        source: 19
+        target: 20
+      -
+        source: 20
+        target: 21
+      -
+        source: 21
+        target: 22
+      -
+        source: 0
+        target: 1
+      -
+        source: 1
+        target: 2
+      -
+        source: 2
+        target: 3
+      -
+        source: 4
+        target: 5
+      -
+        source: 5
+        target: 6
+      -
+        source: 6
+        target: 7
+      -
+        source: 8
+        target: 9
+      -
+        source: 9
+        target: 10
+      -
+        source: 10
+        target: 11
+      -
+        source: 12
+        target: 13
+      -
+        source: 13
+        target: 14
+      -
+        source: 14
+        target: 15
+  </rosparam>
+
+</launch>

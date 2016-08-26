@@ -1,0 +1,125 @@
+<!-- -->
+<launch>
+
+  <rosparam command="load" file="$(find VO)/input/templates/vo_application.yaml"/>
+  <rosparam command="load" file="$(find prx_input)/templates/simulators/collision_stop_simulator.yaml"/>
+  <rosparam command="load" ns="simulator/obstacles" file="$(find REU_2014_VO)/input/templates/environments/rock_cafe_revised.yaml" />
+  <rosparam command="load" ns="controller" file="$(find prx_input)/templates/controllers/multigoal_controller.yaml"/>
+  <rosparam command="load" ns="vo_controller" file="$(find VO)/input/templates/vo_controller.yaml"/>
+  <rosparam command="load" ns="disk" file="$(find prx_input)/templates/plants/disk.yaml"/> 
+
+  <rosparam ns="vo_controller">
+    input_control_space:
+      min: [-500, -500]
+      max: [500, 500]
+    sensing_info:
+        type: VO_sensing_info
+        sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+        update_delay: 0.02
+        system_path: "simulator/controller1/vo1/disk1/body"
+        max_num_neighbors: 3
+        sensing_radius: 5
+    num_samples: 50
+  </rosparam>
+              
+  <rosparam ns="simulator/sensing">
+    type: VO_sensing_model
+    sensors:
+        conf_sensor1:
+          type: config_sensor
+          source: "conf_sensor1"
+          sensor_delay: 0.02
+        geom_sensor1:
+          type: geom_sensor
+          source: "geom_sensor1"
+          sensor_delay: 0.02
+        vel_sensor1:
+          type: velocity_sensor
+          source: "vel_sensor1"
+          sensor_delay: 0.02
+  </rosparam>
+        
+  <rosparam ns="disk"> 
+    initial_state: [350,480]
+    state_space:
+      min: [-550,-550]
+      max: [550, 550]
+    input_control_space:
+      min: [5, -4]
+      max: [85,4]
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 3.5
+          height: 2.0
+          material: green  
+  </rosparam>          
+
+  <rosparam command="load" ns="simulator/subsystems/controller1">
+    template: "controller"
+    goal_radius: 3
+    multigoals: 
+    -
+        state: [-112, -173.5]
+    -
+        state: [-113, -100]
+    -
+        state: [-113, 140]
+    -
+        state: [-18, 144]
+    -
+        state: [-7, -159]
+    -
+        state: [80, -155]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller1/subsystems/vo1">
+    template: "vo_controller"
+    
+  </rosparam>
+
+            
+  <rosparam command="load" ns="simulator/subsystems/controller1/subsystems/vo1/subsystems/disk1">
+    template: "disk"
+    initial_state: [-160,-185]
+  </rosparam>
+
+
+
+
+  <rosparam command="load" ns="simulator/subsystems/controller2">
+    template: "controller"
+    goal_radius: 3
+    multigoals: 
+    -
+        state: [-145, -200]
+    -
+        state: [-31, -170]
+    -
+        state: [-31, -95]
+    -
+        state: [-20, 80]
+    -
+        state: [80, 25]
+    -
+        state: [20, -145]
+    -
+        state: [70, -160]
+  </rosparam>     
+ 
+  <rosparam command="load" ns="simulator/subsystems/controller2/subsystems/vo2">
+    template: "vo_controller"
+    sensing_info:
+        system_path: "simulator/vo2/disk2/body"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller2/subsystems/vo2/subsystems/disk2">
+    template: "disk"
+    initial_state: [-145,-200]
+  </rosparam>
+
+
+
+</launch>

@@ -1,0 +1,11 @@
+type: VO_controller
+radius: 0.53
+vanish: false
+minimally_invasive: false
+input_control_space:
+    min: [-500, -500]
+    max: [500, 500]
+backtracking: true
+step_count: 50
+back_count: 20
+csc_mode: MIXED_CONTROL

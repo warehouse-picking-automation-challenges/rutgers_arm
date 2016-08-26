@@ -1,0 +1,51 @@
+ <!-- Planning Applications -->
+    <class name="prx_planning/gta_application"
+        type="prx::packages::gta::gta_application_t"
+        base_class_type="prx::plan::planning_application_t">
+        <description>
+            GTA application. Must be paired with gta task planners
+        </description>        
+    </class>
+    
+    <class name="prx_planning/replanning_gta_application"
+        type="prx::packages::gta::replanning_gta_application_t"
+        base_class_type="prx::plan::planning_application_t">
+        <description>
+            Replanning GTA application. Must be paired with replanning gta task planners
+        </description>        
+    </class>
+
+ <!-- Task Planners -->
+    <class name="prx_planning/gta"
+        type="prx::packages::gta::gta_planner_t"
+        base_class_type="prx::plan::planner_t">
+        <description>
+            Game theoretic approach planner
+        </description>        
+    </class>
+    
+    <class name="prx_planning/replanning_gta"
+        type="prx::packages::gta::replanning_gta_planner_t"
+        base_class_type="prx::plan::planner_t">
+        <description>
+            Replanning Game theoretic approach planner
+        </description>        
+    </class>
+
+<!-- Motion Planners -->
+    
+    <class name="prx_planning/special_prm"
+        type="prx::packages::gta::special_prm_t"
+        base_class_type="prx::plan::planner_t">
+        <description>
+           Andrew's Special Probabilistic Roadmap Method.
+        </description>        
+    </class>
+ 
+     <class name="prx_planning/special_irs"
+        type="prx::packages::gta::special_irs_t"
+        base_class_type="prx::plan::planner_t">
+        <description>
+           Andrew's Special IRS
+        </description>        
+    </class>

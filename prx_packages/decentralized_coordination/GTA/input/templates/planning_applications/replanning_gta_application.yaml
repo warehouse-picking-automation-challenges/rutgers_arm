@@ -1,0 +1,14 @@
+type: replanning_gta_application
+problems:
+    problem1:
+      specification:
+        type: motion_planning_specification
+        validity_checker: 
+          type: world_model_validity_checker
+        sampler:
+          type: uniform_sampler
+        distance_metric:
+          type: graph_distance_metric
+        local_planner:
+          type: bvp_local_planner
+

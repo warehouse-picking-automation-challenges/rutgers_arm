@@ -1,0 +1,132 @@
+type: ff_end_effector
+input_path: "/prx_packages/manipulation/input/motoman/"
+max_step: 0.01
+max_ik_step: 0.02
+urdf_file: grippy.urdf
+integrator: 
+  type: euler
+initial_state: [0, 0, 0, 0, 0, 0, 1]
+# initial_control: [0, 0, 0, 0, 0, 0, 1]
+root_frame: 
+  position: [0, 0, 0]
+  orientation: [0, 0, 0, 1]
+state_space: 
+  min: [-2, -2, -2, -3.2, -3.2 ,-3.2, 1]
+  max: [2, 2, 2, 3.2, 3.2 ,3.2, 5]
+input_control_space:
+  min: [-2, -2, -2, -3.14159, -3.14159 ,-3.14159, 0]
+  max: [2, 2, 2, 3.14159, 3.14159 ,3.14159, 3]
+end_effectors: 
+  -
+    name: "head_sponge"
+    local_config:
+      # position: [0, -.14, 0]
+      # orientation: [0, 0, 0, 1]
+      position: [0.01, 0.0, 0.004]
+      orientation: [0, 0, 0, 1 ]
+config_offsets:
+  # Unigripper
+  head_connector: 
+    offset: [-0.01, 0.0, -0.004]
+  head_plate:
+    offset: [-0.01, 0.0, -0.004]
+geometries:
+  #left hand unigripper
+  # -
+  #   name: base
+  #   collision_geometry:
+  #     type: cylinder
+  #     radius: 0.04
+  #     height: 0.008
+  #     material: silver
+  # -
+  #   name: main_beam
+  #   collision_geometry:
+  #     type: box
+  #     dims: [0.015, 0.040, 0.180]
+  #     material: silver
+  # -
+  #   name: head_connector
+  #   collision_geometry:
+  #     type: box
+  #     dims: [0.035, 0.015, 0.039]
+  #     material: silver
+  # -
+  #   name: main_beam
+  #   collision_geometry:
+  #     type: box
+  #     # dims: [0.015, 0.040, 0.180]
+  #     dims: [0.015, 0.040, 0.0360]
+  #     material: silver
+  -
+    name: head_connector
+    collision_geometry:
+      type: box
+      dims: [0.035, 0.015, 0.039]
+      material: silver
+  -
+    name: head_plate
+    collision_geometry:
+      type: box
+      dims: [0.045, 0.045, 0.005]
+      material: silver
+  -
+    name: head_base
+    collision_geometry:
+      type: mesh
+      filename: meshes/unigripper/grippy.stl
+      material: orange
+  -
+    name: pre_suction_cup_right
+    collision_geometry:
+      type: cylinder
+      radius: 0.01
+      height: 0.03
+      material: green
+  -
+    name: pre_suction_cup_left
+    collision_geometry:
+      type: cylinder
+      radius: 0.01
+      height: 0.03
+      material: green 
+  -
+    name: suction_cup_right
+    collision_geometry:
+      type: cylinder
+      radius: 0.0175
+      height: 0.005
+      material: green
+  -
+    name: suction_cup_left
+    collision_geometry:
+      type: cylinder
+      radius: 0.0175
+      height: 0.005
+      material: green 
+  -
+    name: head_sponge
+    collision_geometry:
+      type: box
+      dims: [0.07, 0.03, 0.005]
+      material: red
+  -
+    name: tube_port
+    collision_geometry:
+      type: cylinder
+      radius: 0.01
+      height: 0.023
+      material: blue
+  # -
+  #   name: actuator
+  #   collision_geometry:
+  #     type: box
+  #     # dims: [0.03, 0.035, 0.180]
+  #     dims: [0.03, 0.035, 0.0360]
+  #     material: dark_grey
+  # -
+  #   name: actuator
+  #   collision_geometry:
+  #     type: box
+  #     dims: [0.03, 0.035, 0.180]
+  #     material: dark_grey

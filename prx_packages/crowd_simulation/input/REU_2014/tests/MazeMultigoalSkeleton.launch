@@ -1,0 +1,297 @@
+<launch>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+  <rosparam command="load" file="$(find VO)/input/templates/vo_application.yaml"/>
+  <rosparam command="load" file="$(find prx_input)/templates/simulators/collision_stop_simulator.yaml"/>
+  <rosparam command="load" ns="controller" file="$(find prx_input)/templates/controllers/multigoal_controller.yaml"/>
+  <rosparam command="load" ns="vo_controller" file="$(find VO)/input/templates/vo_controller.yaml"/>
+  <rosparam command="load" ns="skeleton" file="$(find motion_capture_data)/input/skeleton/walk_new.yaml"/>
+
+  <rosparam ns="vo_controller">
+    input_control_space:
+      min: [-500, -500]
+      max: [500, 500]
+    radius: 10
+  </rosparam>
+
+  <rosparam ns="sensing">
+    type: VO_sensing_model
+    sensors:
+        conf_sensor1:
+          type: config_sensor
+          source: "conf_sensor1"
+          sensor_delay: 0.02
+        geom_sensor1:
+          type: geom_sensor
+          source: "geom_sensor1"
+          sensor_delay: 0.02
+        vel_sensor1:
+          type: velocity_sensor
+          source: "vel_sensor1"
+          sensor_delay: 0.02
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller1">
+    template: "controller"
+    goal_radius: 5
+    multigoals:
+     -
+        state: [241, 450]
+     -
+        state: [150, 350]
+     -
+        state: [35, 450]
+     -
+        state: [-55, 350]
+     -
+        state: [-180, 460]
+     -
+        state: [-158, 240]
+     -
+        state: [298, 209]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller1/subsystems/vo1">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller1/vo1/skeleton1/root"
+            max_num_neighbors: 15
+            sensing_radius: 25
+            obstacle_sensing_radius: 20
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller1/subsystems/vo1/subsystems/skeleton1">
+    template: "skeleton"
+    initial_state: [353,446]
+    state_space:
+      min: [-550, 0]
+      max: [550, 600]
+    input_control_space:
+      min: [0, -4]
+      max: [10, 4]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller2">
+    template: "controller"
+    goal_radius: 5
+    multigoals:
+     -
+        state: [241, 450]
+     -
+        state: [150, 350]
+     -
+        state: [35, 450]
+     -
+        state: [-55, 350]
+     -
+        state: [-190, 460]
+     -
+        state: [-158, 240]
+     -
+        state: [298, 209]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller2/subsystems/vo2">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller2/vo2/skeleton2/root"
+            max_num_neighbors: 15
+            sensing_radius: 25
+            obstacle_sensing_radius: 20
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller2/subsystems/vo2/subsystems/skeleton2">
+    template: "skeleton"
+    initial_state: [350,460]
+    state_space:
+      min: [-550, 0]
+      max: [550, 600]
+    input_control_space:
+      min: [0, -4]
+      max: [10, 4]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller3">
+    template: "controller"
+    goal_radius: 5
+    multigoals:
+     -
+        state: [241, 450]
+     -
+        state: [150, 350]
+     -
+        state: [35, 450]
+     -
+        state: [-55, 350]
+     -
+        state: [-180, 460]
+     -
+        state: [-158, 240]
+     -
+        state: [298, 209]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller3/subsystems/vo3">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller3/vo3/skeleton3/root"
+            max_num_neighbors: 15
+            sensing_radius: 25
+            obstacle_sensing_radius: 20
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller3/subsystems/vo3/subsystems/skeleton3">
+    template: "skeleton"
+    initial_state: [370,445]
+    state_space:
+      min: [-550, 0]
+      max: [550, 600]
+    input_control_space:
+      min: [0, -4]
+      max: [10, 4]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller4">
+    template: "controller"
+    goal_radius: 5
+    multigoals:
+     -
+        state: [241, 450]
+     -
+        state: [150, 350]
+     -
+        state: [35, 450]
+     -
+        state: [-55, 350]
+     -
+        state: [-180, 460]
+     -
+        state: [-158, 240]
+     -
+        state: [298, 209]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller4/subsystems/vo4">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller4/vo4/skeleton4/root"
+            max_num_neighbors: 15
+            sensing_radius: 25
+            obstacle_sensing_radius: 10
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller4/subsystems/vo4/subsystems/skeleton4">
+    template: "skeleton"
+    initial_state: [365,450]
+    state_space:
+      min: [-550, 0]
+      max: [550, 600]
+    input_control_space:
+      min: [0, -4]
+      max: [10, 4]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller5">
+    template: "controller"
+    goal_radius: 2
+    multigoals:
+     -
+        state: [241, 450]
+     -
+        state: [180, 350]
+     -
+        state: [35, 450]
+     -
+        state: [-55, 350]
+     -
+        state: [-150, 460]
+     -
+        state: [-158, 240]
+     -
+        state: [298, 209]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller5/subsystems/vo5">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller5/vo5/skeleton5/root"
+            max_num_neighbors: 15
+            sensing_radius: 25
+            obstacle_sensing_radius: 20
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller5/subsystems/vo5/subsystems/skeleton5">
+    template: "skeleton"
+    initial_state: [360,440]
+    state_space:
+      min: [-550, 0]
+      max: [550, 600]
+    input_control_space:
+      min: [0, -4]
+      max: [10, 4]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller6">
+    template: "controller"
+    goal_radius: 5
+    multigoals:
+     -
+        state: [241, 450]
+     -
+        state: [150, 350]
+     -
+        state: [35, 450]
+     -
+        state: [-55, 350]
+     -
+        state: [-180, 460]
+     -
+        state: [-158, 240]
+     -
+        state: [298, 209]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller6/subsystems/vo6">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller6/vo6/skeleton6/root"
+            max_num_neighbors: 15
+            sensing_radius: 40
+            obstacle_sensing_radius: 20
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller6/subsystems/vo6/subsystems/skeleton6">
+    template: "skeleton"
+    initial_state: [357,430]
+    state_space:
+      min: [-550, 0]
+      max: [550, 600]
+    input_control_space:
+      min: [0, -4]
+      max: [10, 4]
+  </rosparam>
+  <rosparam command="load" ns="simulator/obstacles" file="$(find REU_2014_VO)/input/templates/environments/large_maze.yaml" />
+</launch>

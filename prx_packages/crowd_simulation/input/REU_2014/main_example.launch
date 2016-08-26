@@ -1,0 +1,9 @@
+<!-- This file has been tested on PRACSYS revision 2835 -->
+
+<launch>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+  <include ns="simulation" file="$(find REU_2014_VO)/input/tests/video2.launch"/>
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation" required="true" launch-prefix="" args="simulation" output="screen"/>
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+
+</launch>

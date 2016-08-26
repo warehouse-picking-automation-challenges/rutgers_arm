@@ -1,0 +1,14 @@
+<!-- This file has been tested on PRACSYS revision  -->
+
+<launch>
+        
+  <!-- Define planning parameters -->           
+  <include ns="planning" file="$(find GTA)/input/experiments/tests/case5/planning/world_models/main_example_1.launch"/>
+  <include ns="planning" file="$(find GTA)/input/experiments/tests/case5/planning/planner_structures/main_example_1.launch"/>
+        
+  <!-- Define the planning node -->
+  <node name="planning" pkg="prx_planning" type="prx_planning"
+        required="true" launch-prefix="" output="screen" args="planning"/>
+
+
+</launch>

@@ -1,0 +1,16 @@
+
+<class name="prx_planning/ik_steering_local_planner"
+    type="prx::plan::ik_steering_local_planner_t"
+    base_class_type="prx::plan::local_planner_t">
+    <description>
+        Local Planning using IK steering
+    </description>        
+</class>
+
+<class name="prx_planning/bfs_tree_planner"
+    type="prx::plan::bfs_tree_planner_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A simple BFS style search tree
+    </description>        
+</class>

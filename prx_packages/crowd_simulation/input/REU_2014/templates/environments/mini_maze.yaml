@@ -1,0 +1,309 @@
+test_all_geoms:
+    type: obstacle
+    geometries:
+    -
+        name: bottomframe
+        collision_geometry: 
+            type: box
+            dims: [70, .5, 3]      
+            material: red    
+        config:
+            position: [0, -50, 0]
+            orientation: [0,0,0,1]
+
+    -         
+        name: topframe
+        collision_geometry: 
+            type: box
+            dims: [70, .5, 3]      
+            material: red    
+        config:
+            position: [0, 50.0, 0]
+            orientation: [0,0,0,1]
+    -         
+        name: rightframe
+        collision_geometry: 
+            type: box
+            dims: [.5, 90.5, 3.0]      
+            material: red    
+        config:
+            position: [35.25, -5.0, 0]
+            orientation: [0,0,0,1]
+ 
+    -
+        name: leftframe1
+        collision_geometry: 
+            type: box
+            dims: [.5, 80.5, 3.0]      
+            material: red    
+        config:
+            position: [-35.25, 10.0, 0]
+            orientation: [0,0,0,1]
+            
+    -
+        name: leftframe2
+        collision_geometry: 
+            type: box
+            dims: [.5, 10.5, 3.0]      
+            material: red    
+        config:
+            position: [-35.25, -45.0, 0]
+            orientation: [0,0,0,1]
+    
+    -
+        name: righttopent
+        collision_geometry: 
+            type: box
+            dims: [10.0, .5, 3.0]      
+            material: red    
+        config:
+            position: [-40.0, -30.0, 0]
+            orientation: [0,0,0,1]
+    -
+        name: rightbotent
+        collision_geometry: 
+            type: box
+            dims: [10.0, .5, 3.0]      
+            material: red    
+        config:
+            position: [-40.0, -40.0, 0]
+            orientation: [0,0,0,1]
+    
+    -
+        name: lefttopent
+        collision_geometry: 
+            type: box
+            dims: [10.0, .5, 3.0]      
+            material: red    
+        config:
+            position: [40.0, 40.0, 0]
+            orientation: [0,0,0,1]
+    -
+        name: leftbotent
+        collision_geometry: 
+            type: box
+            dims: [10.0, .5, 3.0]      
+            material: red    
+        config:
+            position: [40.0, 50.0, 0]
+            orientation: [0,0,0,1]
+    -
+     
+        name: horiz1
+        collision_geometry: 
+            type: box
+            dims: [50.0, .5, 3.0]      
+            material: red    
+        config:
+            position: [0, -40.0, 0]
+            orientation: [0,0,0,1]
+   
+    -
+        name: horiz2
+        collision_geometry: 
+            type: box
+            dims: [50.0, .5, 3.0]      
+            material: red    
+        config:
+            position: [-10.0, -20.0, 0]
+            orientation: [0,0,0,1]
+    -
+        name: horiz3
+        collision_geometry: 
+            type: box
+            dims: [50.0, .5, 3.0]      
+            material: red    
+        config:
+            position: [0, -10.0, 0]
+            orientation: [0,0,0,1]
+            
+    -
+        name: horiz4
+        collision_geometry: 
+            type: box
+            dims: [50.0, .5, 3.0]      
+            material: red    
+        config:
+            position: [10.0, 0, 0]
+            orientation: [0,0,0,1]
+    -
+        name: horiz5 
+        collision_geometry: 
+            type: box
+            dims: [50.0, .5, 3.0]      
+            material: red    
+        config:
+            position: [0, 20.0, 0]
+            orientation: [0,0,0,1]
+    -
+        name: horiz6 
+        collision_geometry: 
+            type: box
+            dims: [50.0, .5, 3.0]      
+            material: red    
+        config:
+            position: [10.0, 30.0, 0]
+            orientation: [0,0,0,1]
+    -
+        name: horiz7
+        collision_geometry: 
+            type: box
+            dims: [10.0, .5, 3.0]      
+            material: red    
+        config:
+            position: [-30.0, 40.0, 0]
+            orientation: [0,0,0,1]
+    -
+        name: vert1
+        collision_geometry: 
+            type: box
+            dims: [.5, 50.5, 3.0]      
+            material: red    
+        config:
+            position: [-24.75, 15.0, 0]
+            orientation: [0,0,0,1]
+    -
+        name: vert2
+        collision_geometry: 
+            type: box
+            dims: [.5, 10.5, 3.0]      
+            material: red    
+        config:
+            position: [-24.75, -35.0, 0]
+            orientation: [0,0,0,1]
+    -
+    
+        name: vert3
+        collision_geometry: 
+            type: box
+            dims: [.5, 10.5, 3.0]      
+            material: red    
+        config:
+            position: [-14.75, 35.0, 0]
+            orientation: [0,0,0,1]
+    -
+        
+        name: vert4
+        collision_geometry: 
+            type: box
+            dims: [.5, 10.5, 3.0]      
+            material: red    
+        config:
+            position: [-14.75, 5.0, 0]
+            orientation: [0,0,0,1]
+    -
+        name: vert5
+        collision_geometry: 
+            type: box
+            dims: [.5, 10.5, 3.0]      
+            material: red    
+        config:
+            position: [-14.75, -25.0, 0]
+            orientation: [0,0,0,1]
+    
+    - 
+        name: vert6
+        collision_geometry: 
+            type: box
+            dims: [.5, 10.5, 3.0]      
+            material: red    
+        config:
+            position: [-4.75, 45.0, 0]
+            orientation: [0,0,0,1]
+    -
+        name: vert7
+        collision_geometry: 
+            type: box
+            dims: [.5, 10.5, 3.0]      
+            material: red    
+        config:
+            position: [-4.75, 15.0, 0]
+            orientation: [0,0,0,1]
+    -
+        name: vert8
+        collision_geometry: 
+            type: box
+            dims: [.5, 10.5, 3.0]      
+            material: red    
+        config:
+            position: [-4.75, -35.0, 0]
+            orientation: [0,0,0,1]
+            
+    -
+        name: vert9
+        collision_geometry: 
+            type: box
+            dims: [.5, 10.5, 3.0]      
+            material: red    
+        config:
+            position: [5.25, 35.0, 0]
+            orientation: [0,0,0,1] 
+    -
+        name: vert10
+        collision_geometry: 
+            type: box
+            dims: [.5, 10.5, 3.0]      
+            material: red    
+        config:
+            position: [5.25, 5.0, 0]
+            orientation: [0,0,0,1] 
+    
+    -
+        name: vert11
+        collision_geometry: 
+            type: box
+            dims: [.5, 10.5, 3.0]      
+            material: red    
+        config:
+            position: [5.25, -25.0, 0]
+            orientation: [0,0,0,1] 
+    
+    -
+    
+        name: vert12
+        collision_geometry: 
+            type: box
+            dims: [.5, 10.5, 3.0]      
+            material: red    
+        config:
+            position: [15.25, 45.0, 0]
+            orientation: [0,0,0,1] 
+    -
+        name: vert13
+        collision_geometry: 
+            type: box
+            dims: [.5, 10.5, 3.0]      
+            material: red    
+        config:
+            position: [15.25, 15.0, 0]
+            orientation: [0,0,0,1] 
+    -
+        name: vert14
+        collision_geometry: 
+            type: box
+            dims: [.5, 10.5, 3.0]      
+            material: red    
+        config:
+            position: [15.25, -35.0, 0]
+            orientation: [0,0,0,1] 
+            
+    -
+        
+        name: vert15
+        collision_geometry: 
+            type: box
+            dims: [.5, 10.5, 3.0]      
+            material: red    
+        config:
+            position: [25.25, 35.0, 0]
+            orientation: [0,0,0,1] 
+    
+    -
+        name: vert16
+        collision_geometry: 
+            type: box
+            dims: [.5, 30.5, 3.0]      
+            material: red    
+        config:
+            position: [25.25, -25.0, 0]
+            orientation: [0,0,0,1] 

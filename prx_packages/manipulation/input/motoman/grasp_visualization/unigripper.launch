@@ -1,0 +1,74 @@
+
+<launch>  
+  <rosparam file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <rosparam ns="simulation" file="$(find prx_input)/templates/applications/empty_application.yaml" />
+  <rosparam ns="simulation" file="$(find prx_input)/templates/simulators/default_simulator.yaml"/>  
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manipulator" file="$(find manipulation)/input/motoman/unigripper.yaml"/>
+
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/up_glucose_bottle" file="$(find manipulation)/input/objects/apc_items/expo_dry_erase_board_eraser.yaml" />
+
+  <rosparam ns="simulation/application">
+  start_simulation: false
+  </rosparam>
+  <rosparam ns="simulation/simulator">
+  collision_detection: true
+  collision_response: false
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/subsystems/consumer">
+    type: grasp_visualizer
+    # grasp_path: "prx_packages/manipulation/input/grasp_data/fused_unigripper/"
+    grasp_file: "prx_output/expo_dry_erase_board_eraser.yaml"
+    object_poses:
+     - pose: [1.13216 0 1.35 -0.043579 0.0615899 -0.687666 0.722096]
+    #   - pose: [1.06 0 1.38 0 0 0.38268 0.92388]
+    #   - pose: [1.065 0 1.34 .707107 0 0 .707107]
+    #   - pose: [1.06 0 1.15 0 0 0 1]
+    #   - pose: [1.06 0 1.15 0 0 0.38268 0.92388]
+    #   - pose: [1.065 0 1.11 .707107 0 0 .707107]
+  </rosparam>
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manipulator">
+    initial_state: [-0.205,-0.000,0.028,0.0,0.0,0.0,1.000]
+  </rosparam>
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/up_glucose_bottle">
+    initial_state: [1.14 0 1.13 0 0 0 1]
+  </rosparam>
+
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation" required="true" launch-prefix="" output="screen" args="simulation"/>
+
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+
+  <rosparam ns="visualization/viewer/">
+    windows:
+      window_1:
+        xpos: 920
+        ypos: 100
+        width: 800
+        height: 800
+        cameras:
+          perspective:
+            ortho: false
+            camera_type: 0
+            eye: [0, 0, 1.8]
+            center: [1, 0, 0]
+            speed: {move: 0.1, rotate: 0.001}
+          orthographic:
+            ortho: true
+            ortho_param:
+              left: -300
+              right: 300
+              bottom: -300
+              top: 300
+              zNear: 0
+              zFar: 1000
+            speed: {move: 0.2, rotate: 0.001}
+          smooth:
+            ortho: false
+            camera_type: 2
+            eye: [0, -20, 15]
+            center: [0, 1, 18]
+            speed: {move: 0.2, rotate: 0.001}
+  </rosparam>
+
+</launch>

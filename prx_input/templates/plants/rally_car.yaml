@@ -1,0 +1,63 @@
+type: rally_car
+z: 0.5
+integrator:
+  type: rk4
+#x y xdot ydot theta thetadot wf wr
+state_space: 
+  #min: [-25, -40, -18, -18, -3.14, -17, -40, -40]
+  #max: [25, 25, 18, 18, 3.14, 17, 40, 40]
+  min: [-25, -40, -18, -18, -3.14, -17, -40, -40]
+  max: [25, 25, 18, 18, 3.14, 17, 40, 40]
+  scale: [1, 1, 0, 0, .3, 0, 0, 0]
+#steering angle, torque front, torque back
+input_control_space:
+  min: [-1.0472, 0, 0]
+  max: [1.0472, 0, 1200]
+root_geom: chassis
+geometries:
+  -
+    name: chassis
+    collision_geometry:
+      type: box
+      dims: [2.7, 2, 1]
+      material: blue
+  -
+    name: frwheel
+    collision_geometry:
+      type: cylinder
+      radius: 0.5
+      height: 0.25
+      material: black
+    relative_configuration:
+      position: [0.7, -1.1, 0]
+      orientation: [0.707106781, 0, 0, 0.707106781]
+  -
+    name: flwheel
+    collision_geometry:
+      type: cylinder
+      radius: 0.5
+      height: 0.25
+      material: black
+    relative_configuration:
+      position: [0.7, 1.1, 0]
+      orientation: [0.707106781, 0, 0, 0.707106781]
+  -
+    name: brwheel
+    collision_geometry:
+      type: cylinder
+      radius: 0.5
+      height: 0.25
+      material: black
+    relative_configuration:
+      position: [-0.7, -1.1, 0]
+      orientation: [0.707106781, 0, 0, 0.707106781]
+  -
+    name: blwheel
+    collision_geometry:
+      type: cylinder
+      radius: 0.5
+      height: 0.25
+      material: black
+    relative_configuration:
+      position: [-0.7, 1.1, 0]
+      orientation: [0.707106781, 0, 0, 0.707106781]

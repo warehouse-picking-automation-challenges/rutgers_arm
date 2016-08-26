@@ -1,0 +1,9 @@
+<stack>
+  <description brief="pracsys">pracsys's description...</description>
+  <author>Maintained by Kostas Bekris</author>
+  <license>All rights reserved</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://redmine.cse.unr.edu/projects/show/pracsys</url>
+  <depend stack="ros" />
+
+</stack>

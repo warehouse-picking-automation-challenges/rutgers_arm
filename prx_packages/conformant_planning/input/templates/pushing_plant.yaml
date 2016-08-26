@@ -1,0 +1,34 @@
+type: pushing_plant
+z: .1
+integrator: 
+  type: euler
+state_space: 
+  min: [-5,-5, -3.14, .6, -3.14]
+  max: [ 5, 5, 3.14, 2.5, 3.14]
+input_control_space:
+  min: [-3,-3]
+  max: [3,3]
+root_geom: body
+geometries:
+  -
+    name: body
+    collision_geometry:
+      type: box
+      dims: [.5, .5, .25]
+      material: red
+  -
+    name: ball
+    collision_geometry:
+      type: cylinder
+      height: .25
+      radius: .4
+      material: blue
+  -
+    name: body2
+    collision_geometry:
+      type: box
+      dims: [.1, .5, .25]
+      material: red
+    relative_configuration:
+      position: [.375, 0, 0]
+      orientation: [0,0,0,1]

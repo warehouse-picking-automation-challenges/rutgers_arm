@@ -1,0 +1,43 @@
+<!-- This file has been tested on PRACSYS revision  -->
+
+<launch>
+        
+  <rosparam ns="planning" >
+   random_seed: 123456
+  </rosparam>        
+  <rosparam ns="planning2" >
+   random_seed: 123456
+  </rosparam>
+              
+  <!-- Define simulation parameters -->      
+  <include file="$(find GTA)/input/experiments/offline/simulation/main_example.launch"/>
+
+  <!-- Define the simulation node -->
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation"
+        required="true"   launch-prefix="" output="screen" />
+        
+  <!-- Define planning parameters -->           
+  <include ns="planning" file="$(find GTA)/input/experiments/offline/planning/world_models/main_example_1.launch"/>
+  <include ns="planning" file="$(find GTA)/input/experiments/offline/planning/planner_structures/main_example_1.launch"/>
+  <include file="$(find GTA)/input/experiments/offline/planning/queries/query.launch"/>    
+        
+  <!-- Define the planning node -->
+  <node name="planning" pkg="prx_planning" type="prx_planning"
+        required="true" launch-prefix="" output="screen" args="planning"/>
+        
+  <!-- Define planning parameters -->           
+  <include ns="planning2" file="$(find GTA)/input/experiments/offline/planning/world_models/main_example_2.launch"/>
+  <include ns="planning2" file="$(find GTA)/input/experiments/offline/planning/planner_structures/main_example_2.launch"/>
+  <include file="$(find GTA)/input/experiments/offline/planning/queries/query_2.launch"/>    
+        
+  <!-- Define the planning node -->
+  <node name="planning2" pkg="prx_planning" type="prx_planning"
+        required="true" launch-prefix="" output="screen" args="planning2"/>
+
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+        
+  <rosparam ns="visualization/viewer/scene" >
+   line_thickness: 3
+  </rosparam>
+
+</launch>

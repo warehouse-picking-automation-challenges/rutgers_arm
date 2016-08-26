@@ -1,0 +1,15 @@
+      -
+        name: cheezit
+        orientations:
+          -
+            orientation: [0,0,0,1]
+            axis: [0,0,1]
+          -
+            orientation: [0,0.707106781180,0,0.70710678118]
+            axis: [1,0,0]
+          -
+            orientation: [0,-0.70710678118,0,0.70710678118]
+            axis: [1,0,0]
+          -
+            orientation: [1,0,0,0]
+            axis: [0,0,1]            

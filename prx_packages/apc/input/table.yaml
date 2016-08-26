@@ -1,0 +1,15 @@
+table:
+  type: obstacle
+  root_configuration:
+    position: [0, 0, 0]
+    orientation: [0, 0, 0, 1]
+  geometries:
+  -
+    name: table
+    collision_geometry:
+      type: box
+      dims: [ 0.5 1.0 0.715 ]
+      material: white
+    config:
+      position: [ 0.72 0 0.3575]
+      orientation: [ 0 0 0 1 ]

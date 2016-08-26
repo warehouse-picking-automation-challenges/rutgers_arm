@@ -1,0 +1,31 @@
+type: movable_body
+max_step: 0.01
+object_type: peva_shower_curtain_liner
+state_space:
+  min: [-100 -100 -100 -1 -1 -1 -1]
+  max: [100 100 100 1 1 1 1]
+  scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+initial_state: [0 0 -99 0 0 0 1]
+input_control_space:
+  none: 4
+root_geom: body
+grasp_descriptor:
+  surfaces:
+    -
+      triangles:  [ -0.0136, 0.031, 0.0725,  -0.0136, -0.054, -0.0725,  -0.0136, -0.054, 0.0725,
+                    -0.0136, 0.031, 0.0725,  -0.0136, 0.031, -0.0725,  -0.0136, -0.054, -0.0725 ]
+      valid_end_effectors: ["upper_vacuum", "front_vacuum", "head_sponge"]
+    -
+      triangles:  [ 0.0136, 0.031, 0.0725,  0.0136, -0.054, 0.0725,  0.0136, -0.054, -0.0725,
+                    0.0136, 0.031, 0.0725,  0.0136, -0.054, -0.0725,  0.0136, 0.031, -0.0725 ]
+      valid_end_effectors: ["upper_vacuum", "front_vacuum", "head_sponge"]
+geometries:
+  -
+    name: body
+    collision_geometry:
+      type: mesh
+      filename: objects/apc_2016/peva_shower_curtain_liner.stl
+      material: blue
+    # visualization_geometry:
+    #   type: mesh
+    #   filename: objects/apc_2016/peva_shower_curtain_liner.3ds

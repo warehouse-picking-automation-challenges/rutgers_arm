@@ -1,0 +1,58 @@
+<launch>
+  <!-- Load the planning application -->
+  <rosparam command="load" file="$(find prx_input)/templates/planning_applications/single_query_application.yaml"/>
+
+  <!-- Overwrite any parameters for the template or the task planner -->
+  <rosparam ns="task_planner/" >
+  </rosparam>
+
+  <!-- Set up the motion planners used in the task planner. 
+	 1) can either be from template or loading a yaml and rewriting the values
+	 2) the space name needs to correspond to the names in the world_model file -->
+  <rosparam ns="task_planner/" >
+    template: "task_planner"
+    visualization_body: "simulator/router/disk01/body"
+    visualize_graph: true
+    points: 
+      -
+        point: [-60,0,0]
+        id: 1
+      -          
+        point: [-40,40,0]
+        id: 2     
+      -
+        point: [-40,-40,0]
+        id: 3
+      -
+        point: [-20,0,0]
+        id: 4
+      -
+        point: [0,0,0]
+        id: 5
+      -
+        point: [0,40,0]
+        id: 6
+    edges:
+      -
+        source: 1
+        target: 2
+      -
+        source: 1
+        target: 3
+      -
+        source: 2
+        target: 4
+      -
+        source: 3
+        target: 4
+      -
+        source: 4
+        target: 5
+      -
+        source: 4
+        target: 6
+
+  </rosparam>
+
+
+</launch>

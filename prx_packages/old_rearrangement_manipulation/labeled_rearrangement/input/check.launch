@@ -1,0 +1,163 @@
+<launch>
+
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>  
+
+
+  <rosparam command="load" ns="simulation" file="$(find prx_input)/templates/applications/empty_application.yaml"/> 
+  <rosparam command="load" ns="simulation" file="$(find labeled_rearrangement)/input/simulation/manipulation_simulator.yaml"/>  
+  <rosparam command="load" ns="simulation" file="$(find prx_input)/templates/spaces/space_types.yaml"/>    
+
+  <rosparam command="load" ns="simulation/baxter" file="$(find baxter)/input/urdf/baxter.yaml"/>
+  <rosparam command="load" ns="simulation/simulator/obstacles" file="$(find labeled_rearrangement)/input/templates/baxter_torso.yaml" />
+
+  <rosparam command="load" ns="simulation/simulator">
+    fake_planning: false
+    manipulator_names:
+      -
+        simulator/consumer/manipulator
+    sensing_info:
+      type: grasp_sensing_info
+      sources: ["grasp_sensor1"]
+      update_delay: 0.02
+    grasp_sensor_source: "grasp_sensor1"
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/sensing">
+    type: sensing_model
+    sensors:
+      grasp_sensor1:
+        type: simulated_grasp_sensor
+        source: "grasp_sensor1"
+        sensor_delay: 0.02
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer" file="$(find prx_input)/templates/controllers/consumer.yaml"/>
+  
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer/subsystems/manipulator">
+    template: "baxter"
+    planning_contexts:
+      manipulator_pc:
+        type: "full_mapping"
+    hand: left
+    forward_transform_rotation: [1.0,0,0,0,1.0,0,0,0,1]
+    forward_transform_translation: [0,0,0.785]     
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/obstacles" file="$(find labeled_rearrangement)/input/environments/rss_table.yaml" />   
+
+
+
+  <!-- This is the file for different start and goal positions -->
+
+  <rosparam command="load" ns="simulation/cup">
+    type: movable_body
+    integrator: rk4
+    max_step: 0.01
+    state_space: 
+      min: [-10, -10, -100, -1, -1, -1, -1]
+      max: [10, 10, 100, 1, 1, 1, 1]
+      scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+    input_control_space: 
+      none: 4
+    root_geom: body
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/cup1">
+    template: "cup"
+    initial_state: [0.55,0.75,3.4775,0.5,0.5,-0.5,-0.5]
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 0.02
+          height: 0.14
+          material: red
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/" >
+    check_poses:
+      -
+        pose: [1.062,0.47185,0.86,0.63426,0.31259,-0.63426,0.31259]
+      -
+        pose: [0.95000000,-0.15000000,0.86000000,0.70710678,0.00000000,-0.70710678,0.00000000]
+      -
+        pose: [0.80000000,-0.45000000,0.86000000,0.70710678,0.00000000,-0.70710678,0.00000000]
+      -
+        pose: [0.95000000,-0.45000000,0.86000000,0.70710678,0.00000000,-0.70710678,0.00000000]
+      -
+        pose: [0.79430293,-0.15181712,0.86000000,0.67766337,0.20192166,-0.67766337,0.20192166]
+      -
+        pose: [0.85170625,-0.21900493,0.86000000,0.64243519,-0.29542685,-0.64243519,-0.29542685]
+      -
+        pose: [0.71660493,0.23727803,0.86000000,0.53459591,0.46282525,-0.53459591,0.46282525]
+      -
+        pose: [0.79723453,0.06233342,0.86000000,0.69373005,0.13688905,-0.69373005,0.13688905]
+    check_states:
+      -
+        state: [1.5956450058,-1.1871851971,0.2920253570,1.2253770970,-1.6809497040,1.6181895799,-1.5445452960,0.0000000000]
+     
+ 
+  </rosparam>
+
+  <include ns="planning" file="$(find labeled_rearrangement)/input/planning/world_models/world_model_1k.launch"/>
+  
+  <rosparam command="load" ns="planning/problems/rearrangement_manipulation_problem/specification">
+    k: 1
+    b: 0
+    initial_poses:
+      -
+        pose: [0.55,0.75,3.4775,0.5,0.5,-0.5,-0.5]
+    target_poses:
+      -
+        pose: [0.55,0.75,3.4775,0.5,0.5,-0.5,-0.5]
+  </rosparam>
+
+
+  <!-- Define the simulation node -->
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation" 
+    required="true" launch-prefix="" output="screen" args="simulation"/>
+
+  <node name="planning" pkg="prx_planning" type="prx_planning" required="true" launch-prefix="gdb --args" output="screen" args="planning"/>
+
+
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+  <rosparam command="load" ns="/visualization/viewer/scene" file="$(find labeled_rearrangement)/input/templates/rss_materials.yaml"/>
+
+  <rosparam ns="visualization/viewer/">
+    windows:
+      window_1:
+        xpos: 920
+        ypos: 100
+        width: 1000
+        height: 1000
+        cameras:
+          perspective:
+            ortho: false
+            camera_type: 0
+            eye: [0, 0, 1.8]
+            center: [1, 0, 0]
+            speed: {move: 0.1, rotate: 0.001}
+          orthographic:
+            ortho: true
+            ortho_param:
+              left: -300
+              right: 300
+              bottom: -300
+              top: 300
+              zNear: 0
+              zFar: 1000
+            speed: {move: 0.2, rotate: 0.001}
+          smooth:
+            ortho: false
+            camera_type: 2
+            eye: [0, -20, 15]
+            center: [0, 1, 18]
+            speed: {move: 0.2, rotate: 0.001}
+  </rosparam>
+
+  <rosparam ns="visualization/viewer/scene">
+    line_thickness: 3
+  </rosparam>
+
+</launch>

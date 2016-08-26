@@ -1,0 +1,32 @@
+building1:
+  type: obstacle
+  geometries:
+    -
+      name: box1
+      collision_geometry:
+        type: cylinder
+        radius: .6
+        height: 2
+        material: black
+      config:
+        position: [3,.9,0]
+        orientation: [0,0,0,1]
+    -
+      name: box2
+      collision_geometry:
+        type: cylinder
+        radius: .6
+        height: 2
+        material: black
+      config:
+        position: [3,-.9,0]
+        orientation: [0,0,0,1]
+    -
+      name: tick
+      collision_geometry:
+        type: box
+        dims: [.05,1,1]
+        material: black
+      config:
+        position: [6,2,0]
+        orientation: [0,0,0,1]

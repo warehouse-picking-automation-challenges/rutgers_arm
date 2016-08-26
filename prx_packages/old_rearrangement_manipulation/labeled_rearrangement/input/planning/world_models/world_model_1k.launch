@@ -1,0 +1,14 @@
+<launch>
+ <rosparam>
+  system_mapping:
+  -
+    pair: [simulator/consumer/manipulator, world_model/simulator/manipulator]
+  -
+    pair: [simulator/cup1, world_model/simulator/cup1]
+
+  consumer: simulator/consumer
+  </rosparam>
+
+  <!-- k cups -->
+  <rosparam command="load" ns="world_model/simulator/subsystems/cup1" file="$(find manipulation)/input/simulation/plants/cups.yaml"/>
+</launch>

@@ -1,0 +1,348 @@
+<launch>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior1">
+    template: "behavior_controller"
+    goal: [501, 1, 1.02]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior1/subsystems/follower1">
+    template: "path_follower"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior1/subsystems/follower1/subsystems/vo1">
+    template: "vo_controller"
+    sensing_info:
+      system_path: "simulator/behavior1/follower1/vo1/agent1/body"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior1/subsystems/follower1/subsystems/vo1/subsystems/agent1">
+    template: "agent"
+    initial_state: [500, 1, 1.02]
+    input_control_space:
+      min: [0, -3.1416]
+      max: [2.7, 3.1416]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior2">
+    template: "behavior_controller"
+    goal: [501, 2, 1.02]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior2/subsystems/follower2">
+    template: "path_follower"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior2/subsystems/follower2/subsystems/vo2">
+    template: "vo_controller"
+    sensing_info:
+      system_path: "simulator/behavior2/follower2/vo2/agent2/body"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior2/subsystems/follower2/subsystems/vo2/subsystems/agent2">
+    template: "agent"
+    initial_state: [500, 2, 1.02]
+    input_control_space:
+      min: [0, -3.1416]
+      max: [2.7, 3.1416]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior3">
+    template: "behavior_controller"
+    goal: [501, 3, 1.02]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior3/subsystems/follower3">
+    template: "path_follower"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior3/subsystems/follower3/subsystems/vo3">
+    template: "vo_controller"
+    sensing_info:
+      system_path: "simulator/behavior3/follower3/vo3/agent3/body"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior3/subsystems/follower3/subsystems/vo3/subsystems/agent3">
+    template: "agent"
+    initial_state: [500, 3, 1.02]
+    input_control_space:
+      min: [0, -3.1416]
+      max: [2.7, 3.1416]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior4">
+    template: "behavior_controller"
+    goal: [501, 4, 1.02]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior4/subsystems/follower4">
+    template: "path_follower"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior4/subsystems/follower4/subsystems/vo4">
+    template: "vo_controller"
+    sensing_info:
+      system_path: "simulator/behavior4/follower4/vo4/agent4/body"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior4/subsystems/follower4/subsystems/vo4/subsystems/agent4">
+    template: "agent"
+    initial_state: [500, 4, 1.02]
+    input_control_space:
+      min: [0, -3.1416]
+      max: [2.7, 3.1416]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior5">
+    template: "behavior_controller"
+    goal: [501, 5, 1.02]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior5/subsystems/follower5">
+    template: "path_follower"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior5/subsystems/follower5/subsystems/vo5">
+    template: "vo_controller"
+    sensing_info:
+      system_path: "simulator/behavior5/follower5/vo5/agent5/body"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior5/subsystems/follower5/subsystems/vo5/subsystems/agent5">
+    template: "agent"
+    initial_state: [500, 5, 1.02]
+    input_control_space:
+      min: [0, -3.1416]
+      max: [2.7, 3.1416]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior6">
+    template: "behavior_controller"
+    goal: [501, 6, 1.02]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior6/subsystems/follower6">
+    template: "path_follower"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior6/subsystems/follower6/subsystems/vo6">
+    template: "vo_controller"
+    sensing_info:
+      system_path: "simulator/behavior6/follower6/vo6/agent6/body"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior6/subsystems/follower6/subsystems/vo6/subsystems/agent6">
+    template: "agent"
+    initial_state: [500, 6, 1.02]
+    input_control_space:
+      min: [0, -3.1416]
+      max: [2.7, 3.1416]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior7">
+    template: "behavior_controller"
+    goal: [501, 7, 1.02]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior7/subsystems/follower7">
+    template: "path_follower"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior7/subsystems/follower7/subsystems/vo7">
+    template: "vo_controller"
+    sensing_info:
+      system_path: "simulator/behavior7/follower7/vo7/agent7/body"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior7/subsystems/follower7/subsystems/vo7/subsystems/agent7">
+    template: "agent"
+    initial_state: [500, 7, 1.02]
+    input_control_space:
+      min: [0, -3.1416]
+      max: [2.7, 3.1416]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior8">
+    template: "behavior_controller"
+    goal: [501, 8, 1.02]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior8/subsystems/follower8">
+    template: "path_follower"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior8/subsystems/follower8/subsystems/vo8">
+    template: "vo_controller"
+    sensing_info:
+      system_path: "simulator/behavior8/follower8/vo8/agent8/body"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior8/subsystems/follower8/subsystems/vo8/subsystems/agent8">
+    template: "agent"
+    initial_state: [500, 8, 1.02]
+    input_control_space:
+      min: [0, -3.1416]
+      max: [2.7, 3.1416]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior9">
+    template: "behavior_controller"
+    goal: [501, 9, 1.02]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior9/subsystems/follower9">
+    template: "path_follower"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior9/subsystems/follower9/subsystems/vo9">
+    template: "vo_controller"
+    sensing_info:
+      system_path: "simulator/behavior9/follower9/vo9/agent9/body"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior9/subsystems/follower9/subsystems/vo9/subsystems/agent9">
+    template: "agent"
+    initial_state: [500, 9, 1.02]
+    input_control_space:
+      min: [0, -3.1416]
+      max: [2.7, 3.1416]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior10">
+    template: "behavior_controller"
+    goal: [501, 10, 1.02]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior10/subsystems/follower10">
+    template: "path_follower"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior10/subsystems/follower10/subsystems/vo10">
+    template: "vo_controller"
+    sensing_info:
+      system_path: "simulator/behavior10/follower10/vo10/agent10/body"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior10/subsystems/follower10/subsystems/vo10/subsystems/agent10">
+    template: "agent"
+    initial_state: [500, 10, 1.02]
+    input_control_space:
+      min: [0, -3.1416]
+      max: [2.7, 3.1416]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior11">
+    template: "behavior_controller"
+    goal: [501, 11, 1.02]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior11/subsystems/follower11">
+    template: "path_follower"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior11/subsystems/follower11/subsystems/vo11">
+    template: "vo_controller"
+    sensing_info:
+      system_path: "simulator/behavior11/follower11/vo11/agent11/body"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior11/subsystems/follower11/subsystems/vo11/subsystems/agent11">
+    template: "agent"
+    initial_state: [500, 11, 1.02]
+    input_control_space:
+      min: [0, -3.1416]
+      max: [2.7, 3.1416]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior12">
+    template: "behavior_controller"
+    goal: [501, 12, 1.02]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior12/subsystems/follower12">
+    template: "path_follower"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior12/subsystems/follower12/subsystems/vo12">
+    template: "vo_controller"
+    sensing_info:
+      system_path: "simulator/behavior12/follower12/vo12/agent12/body"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior12/subsystems/follower12/subsystems/vo12/subsystems/agent12">
+    template: "agent"
+    initial_state: [500, 12, 1.02]
+    input_control_space:
+      min: [0, -3.1416]
+      max: [2.7, 3.1416]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior13">
+    template: "behavior_controller"
+    goal: [501, 13, 1.02]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior13/subsystems/follower13">
+    template: "path_follower"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior13/subsystems/follower13/subsystems/vo13">
+    template: "vo_controller"
+    sensing_info:
+      system_path: "simulator/behavior13/follower13/vo13/agent13/body"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior13/subsystems/follower13/subsystems/vo13/subsystems/agent13">
+    template: "agent"
+    initial_state: [500, 13, 1.02]
+    input_control_space:
+      min: [0, -3.1416]
+      max: [2.7, 3.1416]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior14">
+    template: "behavior_controller"
+    goal: [501, 14, 1.02]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior14/subsystems/follower14">
+    template: "path_follower"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior14/subsystems/follower14/subsystems/vo14">
+    template: "vo_controller"
+    sensing_info:
+      system_path: "simulator/behavior14/follower14/vo14/agent14/body"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior14/subsystems/follower14/subsystems/vo14/subsystems/agent14">
+    template: "agent"
+    initial_state: [500, 14, 1.02]
+    input_control_space:
+      min: [0, -3.1416]
+      max: [2.7, 3.1416]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior15">
+    template: "behavior_controller"
+    goal: [501, 15, 1.02]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior15/subsystems/follower15">
+    template: "path_follower"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior15/subsystems/follower15/subsystems/vo15">
+    template: "vo_controller"
+    sensing_info:
+      system_path: "simulator/behavior15/follower15/vo15/agent15/body"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/behavior15/subsystems/follower15/subsystems/vo15/subsystems/agent15">
+    template: "agent"
+    initial_state: [500, 15, 1.02]
+    input_control_space:
+      min: [0, -3.1416]
+      max: [2.7, 3.1416]
+  </rosparam>
+
+</launch>

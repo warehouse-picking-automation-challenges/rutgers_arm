@@ -1,0 +1,81 @@
+first_barrier:
+    type: obstacle
+    geometries:
+    -
+        name: wall1
+        collision_geometry:
+            type: box
+            dims: [0.5, 6,10]
+            material: blue
+        config:
+            position: [-2.5,2,5]
+            orientation: [0,0,0,1]
+    -
+        name: wall2
+        collision_geometry:
+            type: box
+            dims: [0.5, 2,10]
+            material: blue
+        config:
+            position: [-2.5,-4,5]
+            orientation: [0,0,0,1]
+    -
+        name: wall3
+        collision_geometry:
+            type: box
+            dims: [0.5, 2, 3]
+            material: blue
+        config:
+            position: [-2.5,-2,1.5]
+            orientation: [0,0,0,1]
+    -
+        name: wall4
+        collision_geometry:
+            type: box
+            dims: [0.5, 2, 5]
+            material: blue
+        config:
+            position: [-2.5,-2,7.5]
+            orientation: [0,0,0,1]
+
+
+second_barrier:
+    type: obstacle
+    geometries:
+    -
+        name: wall1
+        collision_geometry:
+            type: box
+            dims: [0.5,3,10]
+            material: teal
+        config:
+            position: [2.5,3.5,5]
+            orientation: [0,0,0,1]
+    -
+        name: wall2
+        collision_geometry:
+            type: box
+            dims: [0.5,5,10]
+            material: teal
+        config:
+            position: [2.5,-2.5,5]
+            orientation: [0,0,0,1]
+    -
+        name: wall3
+        collision_geometry:
+            type: box
+            dims: [0.5,2,6]
+            material: teal
+        config:
+            position: [2.5,1,3]
+            orientation: [0,0,0,1]
+    -
+        name: wall4
+        collision_geometry:
+            type: box
+            dims: [0.5,2,2]
+            material: teal
+        config:
+            position: [2.5,1,9]
+            orientation: [0,0,0,1]
+

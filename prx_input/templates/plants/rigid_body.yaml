@@ -1,0 +1,20 @@
+type: rigid_body
+integrator: rk4
+max_step: 0.01
+z: 2
+state_space: 
+  min: [-100, -100, -4]
+  max: [100, 100, 4]
+  scale: [0.2, 0.2, 1.0]
+input_control_space:
+  min: [-100, -100, -4]
+  max: [100, 100, 4]
+  scale: [0.2, 0.2, 1.0]
+root_geom: body
+geometries:
+  -
+    name: body
+    collision_geometry:
+      type: box
+      dims: [20.0, 80.0 , 4.0]      
+      material: blue

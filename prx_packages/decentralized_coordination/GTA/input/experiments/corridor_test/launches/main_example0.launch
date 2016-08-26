@@ -1,0 +1,9 @@
+<launch>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+  <include file="$(find GTA)/input/experiments/corridor_test/launches/simulation_node0.launch"/>
+  <include file="$(find GTA)/input/experiments/corridor_test/launches/planning0_node.launch"/>
+
+  <include file="$(find GTA)/input/experiments/corridor_test/launches/planning1_node.launch"/>
+
+</launch>
+

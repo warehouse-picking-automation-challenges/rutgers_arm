@@ -1,0 +1,1221 @@
+<launch>  
+  <rosparam file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <rosparam ns="simulation" file="$(find prx_input)/templates/applications/empty_application.yaml" />
+  <rosparam ns="simulation" file="$(find manipulation)/input/manipulation_simulator.yaml"/>  
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manipulator" file="$(find manipulation)/input/motoman/motoman_complete_kinect_unigripper_grippy.yaml"/>
+
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manipulator">
+    input_control_space:
+      min: [-.565,  -0.7375, -0.7375, -0.7375, -0.7375, -0.87, -0.87, -1.7425, -1
+                  -0.7375, -0.7375, -0.7375, -0.7375, -0.87, -0.87, -1.7425, 0, 0]
+      max: [.565,  0.7375, 0.7375, 0.7375, 0.7375, 0.87, 0.87, 1.7425, 1
+                   0.7375, 0.7375, 0.7375, 0.7375, 0.87, 0.87, 1.7425, 2, 5]
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/obstacles" file="$(find manipulation)/input/shelf.yaml"/>
+  <rosparam ns="simulation/simulator/obstacles" file="$(find manipulation)/input/tote.yaml"/>
+  <rosparam ns="simulation/simulator/obstacles" file="$(find apc)/input/bounding_boxes.yaml"/>
+
+   <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/jane_eyre_dvd" file="$(find manipulation)/input/objects/apc2016_items/jane_eyre_dvd.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/elmers_washable_no_run_school_glue" file="$(find manipulation)/input/objects/apc2016_items/elmers_washable_no_run_school_glue.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/expo_dry_erase_board_eraser" file="$(find manipulation)/input/objects/apc2016_items/expo_dry_erase_board_eraser.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/kleenex_tissue_box" file="$(find manipulation)/input/objects/apc2016_items/kleenex_tissue_box.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/dove_beauty_bar" file="$(find manipulation)/input/objects/apc2016_items/dove_beauty_bar.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/soft_white_lightbulb" file="$(find manipulation)/input/objects/apc2016_items/soft_white_lightbulb.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/crayola_24_ct" file="$(find manipulation)/input/objects/apc2016_items/crayola_24_ct.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/laugh_out_loud_joke_book" file="$(find manipulation)/input/objects/apc2016_items/laugh_out_loud_joke_book.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/ticonderoga_12_pencils" file="$(find manipulation)/input/objects/apc2016_items/ticonderoga_12_pencils.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/i_am_a_bunny_book" file="$(find manipulation)/input/objects/apc2016_items/i_am_a_bunny_book.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/staples_index_cards" file="$(find manipulation)/input/objects/apc2016_items/staples_index_cards.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/barkely_hide_bones" file="$(find manipulation)/input/objects/apc2016_items/barkely_hide_bones.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/cherokee_easy_tee_shirt" file="$(find manipulation)/input/objects/apc2016_items/cherokee_easy_tee_shirt.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/command_hooks" file="$(find manipulation)/input/objects/apc2016_items/command_hooks.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/cool_shot_glue_sticks" file="$(find manipulation)/input/objects/apc2016_items/cool_shot_glue_sticks.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/folgers_classic_roast_coffee" file="$(find manipulation)/input/objects/apc2016_items/folgers_classic_roast_coffee.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/hanes_tube_socks" file="$(find manipulation)/input/objects/apc2016_items/hanes_tube_socks.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/kleenex_paper_towels" file="$(find manipulation)/input/objects/apc2016_items/kleenex_paper_towels.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/oral_b_toothbrush_green" file="$(find manipulation)/input/objects/apc2016_items/oral_b_toothbrush_green.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/oral_b_toothbrush_red" file="$(find manipulation)/input/objects/apc2016_items/oral_b_toothbrush_red.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/peva_shower_curtain_liner" file="$(find manipulation)/input/objects/apc2016_items/peva_shower_curtain_liner.yaml" />
+ <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/rawlings_baseball" file="$(find manipulation)/input/objects/apc2016_items/rawlings_baseball.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/safety_first_outlet_plugs" file="$(find manipulation)/input/objects/apc2016_items/safety_first_outlet_plugs.yaml" />
+ <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/scotch_bubble_mailer" file="$(find manipulation)/input/objects/apc2016_items/scotch_bubble_mailer.yaml" />
+ <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/scotch_duct_tape" file="$(find manipulation)/input/objects/apc2016_items/scotch_duct_tape.yaml" />
+ <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/up_glucose_bottle" file="$(find manipulation)/input/objects/apc2016_items/up_glucose_bottle.yaml" />
+ <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/woods_extension_cord" file="$(find manipulation)/input/objects/apc2016_items/woods_extension_cord.yaml" />
+ <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/dr_browns_bottle_brush" file="$(find manipulation)/input/objects/apc2016_items/dr_browns_bottle_brush.yaml" />
+ <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/kyjen_squeakin_eggs_plush_puppies" file="$(find manipulation)/input/objects/apc2016_items/kyjen_squeakin_eggs_plush_puppies.yaml" />
+ <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/fitness_gear_3lb_dumbbell" file="$(find manipulation)/input/objects/apc2016_items/fitness_gear_3lb_dumbbell.yaml" />
+ <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/creativity_chenille_stems_2" file="$(find manipulation)/input/objects/apc2016_items/creativity_chenille_stems_2.yaml" />
+ <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/clorox_utility_brush" file="$(find manipulation)/input/objects/apc2016_items/clorox_utility_brush.yaml" />
+ <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/cloud_b_plush_bear" file="$(find manipulation)/input/objects/apc2016_items/cloud_b_plush_bear.yaml" />
+ <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/dasani_water_bottle" file="$(find manipulation)/input/objects/apc2016_items/dasani_water_bottle.yaml" />
+ <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/easter_turtle_sippy_cup" file="$(find manipulation)/input/objects/apc2016_items/easter_turtle_sippy_cup.yaml" />
+ <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/fiskars_scissors_red" file="$(find manipulation)/input/objects/apc2016_items/fiskars_scissors_red.yaml" />
+ <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/platinum_pets_dog_bowl" file="$(find manipulation)/input/objects/apc2016_items/platinum_pets_dog_bowl.yaml" />
+ <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/womens_knit_gloves" file="$(find manipulation)/input/objects/apc2016_items/womens_knit_gloves.yaml" />
+<rosparam ns="simulation/simulator/subsystems/consumer/subsystems/rolodex_jumbo_pencil_cup" file="$(find manipulation)/input/objects/apc2016_items/rolodex_jumbo_pencil_cup.yaml" />
+ 
+ 
+
+   
+
+  <rosparam ns="planning/world_model/simulator/subsystems/jane_eyre_dvd" file="$(find manipulation)/input/objects/apc2016_items/jane_eyre_dvd.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/elmers_washable_no_run_school_glue" file="$(find manipulation)/input/objects/apc2016_items/elmers_washable_no_run_school_glue.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/expo_dry_erase_board_eraser" file="$(find manipulation)/input/objects/apc2016_items/expo_dry_erase_board_eraser.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/kleenex_tissue_box" file="$(find manipulation)/input/objects/apc2016_items/kleenex_tissue_box.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/dove_beauty_bar" file="$(find manipulation)/input/objects/apc2016_items/dove_beauty_bar.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/soft_white_lightbulb" file="$(find manipulation)/input/objects/apc2016_items/soft_white_lightbulb.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/crayola_24_ct" file="$(find manipulation)/input/objects/apc2016_items/crayola_24_ct.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/laugh_out_loud_joke_book" file="$(find manipulation)/input/objects/apc2016_items/laugh_out_loud_joke_book.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/ticonderoga_12_pencils" file="$(find manipulation)/input/objects/apc2016_items/ticonderoga_12_pencils.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/i_am_a_bunny_book" file="$(find manipulation)/input/objects/apc2016_items/i_am_a_bunny_book.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/staples_index_cards" file="$(find manipulation)/input/objects/apc2016_items/staples_index_cards.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/barkely_hide_bones" file="$(find manipulation)/input/objects/apc2016_items/barkely_hide_bones.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/cherokee_easy_tee_shirt" file="$(find manipulation)/input/objects/apc2016_items/cherokee_easy_tee_shirt.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/command_hooks" file="$(find manipulation)/input/objects/apc2016_items/command_hooks.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/cool_shot_glue_sticks" file="$(find manipulation)/input/objects/apc2016_items/cool_shot_glue_sticks.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/folgers_classic_roast_coffee" file="$(find manipulation)/input/objects/apc2016_items/folgers_classic_roast_coffee.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/hanes_tube_socks" file="$(find manipulation)/input/objects/apc2016_items/hanes_tube_socks.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/kleenex_paper_towels" file="$(find manipulation)/input/objects/apc2016_items/kleenex_paper_towels.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/oral_b_toothbrush_green" file="$(find manipulation)/input/objects/apc2016_items/oral_b_toothbrush_green.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/oral_b_toothbrush_red" file="$(find manipulation)/input/objects/apc2016_items/oral_b_toothbrush_red.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/peva_shower_curtain_liner" file="$(find manipulation)/input/objects/apc2016_items/peva_shower_curtain_liner.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/rawlings_baseball" file="$(find manipulation)/input/objects/apc2016_items/rawlings_baseball.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/safety_first_outlet_plugs" file="$(find manipulation)/input/objects/apc2016_items/safety_first_outlet_plugs.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/scotch_bubble_mailer" file="$(find manipulation)/input/objects/apc2016_items/scotch_bubble_mailer.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/scotch_duct_tape" file="$(find manipulation)/input/objects/apc2016_items/scotch_duct_tape.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/up_glucose_bottle" file="$(find manipulation)/input/objects/apc2016_items/up_glucose_bottle.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/woods_extension_cord" file="$(find manipulation)/input/objects/apc2016_items/woods_extension_cord.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/dr_browns_bottle_brush" file="$(find manipulation)/input/objects/apc2016_items/dr_browns_bottle_brush.yaml" />   
+  <rosparam ns="planning/world_model/simulator/subsystems/kyjen_squeakin_eggs_plush_puppies" file="$(find manipulation)/input/objects/apc2016_items/kyjen_squeakin_eggs_plush_puppies.yaml" />   
+  <rosparam ns="planning/world_model/simulator/subsystems/fitness_gear_3lb_dumbbell" file="$(find manipulation)/input/objects/apc2016_items/fitness_gear_3lb_dumbbell.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/creativity_chenille_stems" file="$(find manipulation)/input/objects/apc2016_items/creativity_chenille_stems_2.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/clorox_utility_brush" file="$(find manipulation)/input/objects/apc2016_items/clorox_utility_brush.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/cloud_b_plush_bear" file="$(find manipulation)/input/objects/apc2016_items/cloud_b_plush_bear.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/dasani_water_bottle" file="$(find manipulation)/input/objects/apc2016_items/dasani_water_bottle.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/easter_turtle_sippy_cup" file="$(find manipulation)/input/objects/apc2016_items/easter_turtle_sippy_cup.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/fiskars_scissors_red" file="$(find manipulation)/input/objects/apc2016_items/fiskars_scissors_red.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/platinum_pets_dog_bowl" file="$(find manipulation)/input/objects/apc2016_items/platinum_pets_dog_bowl.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/womens_knit_gloves" file="$(find manipulation)/input/objects/apc2016_items/womens_knit_gloves.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/rolodex_jumbo_pencil_cup" file="$(find manipulation)/input/objects/apc2016_items/rolodex_jumbo_pencil_cup.yaml" />
+
+  
+
+
+  <rosparam ns="planning/object_priorities_template">
+    planning_budget_time: 5000.0
+    object_to_prioritized_end_effector_context:
+      rolodex_jumbo_pencil_cup: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm", "right_parallel_gripper_full_arm"]
+      jane_eyre_dvd: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm", "right_parallel_gripper_full_arm"]
+      elmers_washable_no_run_school_glue: ["right_full_arm","right_upper_vacuum_full_arm", "left_full_arm", "right_parallel_gripper_full_arm"]
+      expo_dry_erase_board_eraser: ["right_upper_vacuum_full_arm","left_full_arm", "right_full_arm"]
+      kleenex_tissue_box: ["left_full_arm", "right_full_arm",  "right_upper_vacuum_full_arm"]
+      dove_beauty_bar: ["right_upper_vacuum_full_arm", "left_full_arm","right_full_arm"]
+      soft_white_lightbulb: ["right_full_arm", "right_upper_vacuum_full_arm", "left_full_arm"]
+      crayola_24_ct: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm"]
+      laugh_out_loud_joke_book: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm", "right_parallel_gripper_full_arm"]
+      ticonderoga_12_pencils: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm", "right_parallel_gripper_full_arm"]
+      i_am_a_bunny_book: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm", "right_parallel_gripper_full_arm"]
+      staples_index_cards: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm", "right_parallel_gripper_full_arm"]
+      barkely_hide_bones: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm", "right_parallel_gripper_full_arm"]
+      cherokee_easy_tee_shirt: ["right_parallel_gripper_full_arm"]
+      command_hooks: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm", "right_parallel_gripper_full_arm"]
+      cool_shot_glue_sticks: ["right_upper_vacuum_full_arm", "right_parallel_gripper_full_arm"]
+      folgers_classic_roast_coffee: ["right_upper_vacuum_full_arm", "right_full_arm", "left_full_arm", "right_parallel_gripper_full_arm"]
+      hanes_tube_socks: ["right_upper_vacuum_full_arm", "left_full_arm", "right_parallel_gripper_full_arm"]
+      kleenex_paper_towels: ["left_full_arm", "right_upper_vacuum_full_arm", "right_parallel_gripper_full_arm"]
+      oral_b_toothbrush_green: ["right_upper_vacuum_full_arm", "left_full_arm", "right_parallel_gripper_full_arm"]
+      oral_b_toothbrush_red: ["right_upper_vacuum_full_arm", "left_full_arm", "right_parallel_gripper_full_arm"]
+      peva_shower_curtain_liner: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm"]
+      rawlings_baseball: ["right_full_arm", "right_parallel_gripper_full_arm"]
+      safety_first_outlet_plugs: ["right_upper_vacuum_full_arm", "left_full_arm","right_full_arm", "right_parallel_gripper_full_arm"]
+      scotch_bubble_mailer: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm"]
+      scotch_duct_tape: ["right_full_arm",  "right_parallel_gripper_full_arm"]
+      up_glucose_bottle: ["right_full_arm","right_upper_vacuum_full_arm", "left_full_arm", "right_parallel_gripper_full_arm"]
+      woods_extension_cord: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm", "right_parallel_gripper_full_arm"]
+      dr_browns_bottle_brush: ["right_full_arm","right_upper_vacuum_full_arm", "left_full_arm"]
+      kyjen_squeakin_eggs_plush_puppies: ["right_parallel_gripper_full_arm","right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm"]
+      fitness_gear_3lb_dumbbell: ["right_parallel_gripper_full_arm"]
+      creativity_chenille_stems: ["left_full_arm", "right_upper_vacuum_full_arm"]
+      clorox_utility_brush: ["right_upper_vacuum_full_arm", "right_full_arm","left_full_arm", "right_parallel_gripper_full_arm"]
+      cloud_b_plush_bear: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm", "right_parallel_gripper_full_arm"]
+      dasani_water_bottle: ["right_full_arm", "right_parallel_gripper_full_arm"]
+      easter_turtle_sippy_cup: ["right_full_arm","right_upper_vacuum_full_arm", "right_parallel_gripper_full_arm"]
+      fiskars_scissors_red: ["right_parallel_gripper_full_arm"]
+      platinum_pets_dog_bowl: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm","right_parallel_gripper_full_arm"]
+      womens_knit_gloves: ["right_parallel_gripper_full_arm"]
+  </rosparam>
+
+  <rosparam ns="simulation/object_priorities_template">
+    object_to_prioritized_end_effector_context:
+      rolodex_jumbo_pencil_cup: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm", "right_parallel_gripper_full_arm"]
+      jane_eyre_dvd: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm", "right_parallel_gripper_full_arm"]
+      elmers_washable_no_run_school_glue: ["right_full_arm","right_upper_vacuum_full_arm", "left_full_arm", "right_parallel_gripper_full_arm"]
+      expo_dry_erase_board_eraser: ["right_upper_vacuum_full_arm","left_full_arm", "right_full_arm"]
+      kleenex_tissue_box: ["left_full_arm", "right_full_arm", "right_upper_vacuum_full_arm"]
+      dove_beauty_bar: ["right_upper_vacuum_full_arm", "left_full_arm","right_full_arm"]
+      soft_white_lightbulb: ["right_full_arm", "right_upper_vacuum_full_arm", "left_full_arm"]
+      crayola_24_ct: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm"]
+      laugh_out_loud_joke_book: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm", "right_parallel_gripper_full_arm"]
+      ticonderoga_12_pencils: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm", "right_parallel_gripper_full_arm"]
+      i_am_a_bunny_book: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm", "right_parallel_gripper_full_arm"]
+      staples_index_cards: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm", "right_parallel_gripper_full_arm"]
+      barkely_hide_bones: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm", "right_parallel_gripper_full_arm"]
+      cherokee_easy_tee_shirt: ["right_parallel_gripper_full_arm"]
+      command_hooks: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm", "right_parallel_gripper_full_arm"]
+      cool_shot_glue_sticks: ["right_upper_vacuum_full_arm", "right_parallel_gripper_full_arm"]
+      folgers_classic_roast_coffee: ["right_upper_vacuum_full_arm", "right_full_arm", "left_full_arm", "right_parallel_gripper_full_arm"]
+      hanes_tube_socks: ["right_upper_vacuum_full_arm", "left_full_arm", "right_parallel_gripper_full_arm"]
+      kleenex_paper_towels: ["left_full_arm", "right_upper_vacuum_full_arm", "right_parallel_gripper_full_arm"]
+      oral_b_toothbrush_green: ["right_upper_vacuum_full_arm", "left_full_arm", "right_parallel_gripper_full_arm"]
+      oral_b_toothbrush_red: ["right_upper_vacuum_full_arm", "left_full_arm", "right_parallel_gripper_full_arm"]
+      peva_shower_curtain_liner: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm"]
+      rawlings_baseball: ["right_full_arm", "right_parallel_gripper_full_arm"]
+      safety_first_outlet_plugs: ["right_upper_vacuum_full_arm", "left_full_arm","right_full_arm", "right_parallel_gripper_full_arm"]
+      scotch_bubble_mailer: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm"]
+      scotch_duct_tape: ["right_full_arm",  "right_parallel_gripper_full_arm"]
+      up_glucose_bottle: ["right_full_arm","right_upper_vacuum_full_arm", "left_full_arm", "right_parallel_gripper_full_arm"]
+      woods_extension_cord: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm", "right_parallel_gripper_full_arm"]
+      dr_browns_bottle_brush: ["right_full_arm","right_upper_vacuum_full_arm", "left_full_arm"]
+      kyjen_squeakin_eggs_plush_puppies: ["right_parallel_gripper_full_arm","right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm"]
+      fitness_gear_3lb_dumbbell: ["right_parallel_gripper_full_arm"]
+      creativity_chenille_stems: ["left_full_arm", "right_upper_vacuum_full_arm"]
+      clorox_utility_brush: ["right_upper_vacuum_full_arm", "right_full_arm","left_full_arm", "right_parallel_gripper_full_arm"]
+      cloud_b_plush_bear: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm", "right_parallel_gripper_full_arm"]
+      dasani_water_bottle: ["right_full_arm", "right_parallel_gripper_full_arm"]
+      easter_turtle_sippy_cup: ["right_full_arm","right_upper_vacuum_full_arm", "right_parallel_gripper_full_arm"]
+      fiskars_scissors_red: ["right_parallel_gripper_full_arm"]
+      platinum_pets_dog_bowl: ["right_upper_vacuum_full_arm", "left_full_arm", "right_full_arm","right_parallel_gripper_full_arm"]
+      womens_knit_gloves: ["right_parallel_gripper_full_arm"]
+  </rosparam>
+
+
+
+  <rosparam ns="simulation/application">
+    type: apc_sim_application
+    start_simulation: false
+    has_dynamic_obstacles: true
+    real_robot: false
+    object_pose: [1.13216, 0, 1.35,0.0,0.0436,-1.57]
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/subsystems/consumer">
+    type: apc_controller
+  </rosparam>
+
+<!--   <rosparam ns="simulation/object_pose_template">
+    object_poses:
+      elmers_washable_no_run_school_glue: [1.16745 -0.132364 1.39293 0.193148 0.684967 0.659674 -0.241546]
+      scotch_bubble_mailer: [1.29085 0.12635 1.44936 0.726246 0.685725 -0.0384377 0.0295269]
+      up_glucose_bottle: [ 1.23848 0.0064589 1.43344 -0.124179 0.638218 0.73425 -0.19528 ]
+      expo_dry_erase_board_eraser: [1.13216 0 1.35 -0.043579 0.0615899 -0.687666 0.722096 ]
+      peva_shower_curtain_liner: [1.24393 0.211847 0.617068 0.508101 0.528505 -0.499691 0.46133 ]
+      kleenex_paper_towels: [ 1.1719 0.277417 1.17472 -0.559054 0.76101 -0.164988 -0.284782]
+      kleenex_tissue_box: [ 1.21852 0.290005 1.38587 0.0327662 0.701358 0.71145 -0.0293631]
+      folgers_classic_roast_coffee: [1.36732 -0.384846 1.40097 0.31231 0.650946 0.643814 0.253447 ]
+      i_am_a_bunny_book: [1.24789 -0.190148 1.42132 0.429895 -0.531162 -0.496151 0.535623 ]
+      kyjen_squeakin_eggs_plush_puppies: [ 1.28687 -0.402032 1.31219 -0.35061 0.345524 -0.616812 0.61419]
+      dr_browns_bottle_brush: [ 1.27765 0.24645 1.33423 -0.207154 0.184571 0.694875 0.663453]
+      jane_eyre_dvd: [1.33595 -0.191757 1.40564 0.539411 0.494137 0.549154 0.404098]
+      ticonderoga_12_pencils: [1.2538 -0.415774 1.43295 0.589154 0.424337 0.564324 0.392906]
+      crayola_24_ct: [1.11603 0.379779 1.13799 -0.00549373 0.0492341 -0.743589 0.666799]
+      woods_extension_cord: [1.20362 -0.217988 1.04209 -0.381796 0.381913 -0.614586 0.575029]
+      laugh_out_loud_joke_book: [1.2033 0.092623 1.22848 -0.361312 0.579921 0.599573 -0.416722]
+      command_hooks: [1.2065 -0.499998 1.03209 -0.381934 0.382482 -0.614463 0.57469]
+      soft_white_lightbulb: [1.30379 -0.410264 1.14818 0.533838 0.488035 0.464718 0.510761]
+      rawlings_baseball: [1.0479 -0.226924 1.16353 0.18538 -0.359249 -0.723099 0.560091]
+      staples_index_cards: [1.08886 -0.01172 0.91834 0.595897 0.43107 0.535307 0.41537]
+      barkely_hide_bones: [1.08886 -0.401172 1.14834 0.595897 0.43107 0.535307 0.41537]
+  </rosparam> -->
+
+  <rosparam ns="simulation/object_pose_template">
+    object_poses:
+      scotch_duct_tape: [1.24393 0.0 0.947068 0.508101 0.528505 -0.499691 0.46133 ]
+      safety_first_outlet_plugs: [1.24393 0.0 0.947068 0.508101 0.528505 -0.499691 0.46133 ]
+      clorox_utility_brush: [1.2065 -0.0 1.03209 -0.381934 0.382482 -0.614463 0.57469]
+      easter_turtle_sippy_cup: [1.1719 0.277417 1.17472 -0.559054 0.76101 -0.164988 -0.284782]
+      elmers_washable_no_run_school_glue: [1.16745 -0.232364 1.39293 0.193148 0.684967 0.659674 -0.241546]
+      scotch_bubble_mailer: [1.29085 -0.22635 1.44936 0.726246 0.685725 -0.0384377 0.0295269]
+      up_glucose_bottle: [ 1.23848 0.0064589 1.43344 -0.124179 0.638218 0.73425 -0.19528 ]
+      expo_dry_erase_board_eraser: [1.13216 0.34 1.37 0.0 0.0 0.0 1.0 ]
+      peva_shower_curtain_liner: [1.24393 0.0 0.917068 0.508101 0.528505 -0.499691 0.46133 ]
+      kleenex_paper_towels: [ 1.1719 0.277417 1.17472 -0.559054 0.76101 -0.164988 -0.284782]
+      kleenex_tissue_box: [ 1.21852 -0.290005 0.7 0.0327662 0.701358 0.71145 -0.0293631]
+      creativity_chenille_stems: [ 1.25999 0.0900292 1.03017 -0.350742 0.345054 -0.616951 0.614239]
+      folgers_classic_roast_coffee: [1.36732 0.384846 0.7 0.31231 0.650946 0.643814 0.253447 ]
+      hanes_tube_socks: [1.36732 0.384846 0.68 0.31231 0.650946 0.643814 0.253447 ]
+      i_am_a_bunny_book: [1.24789 -0.19 1.42132 0.429895 -0.531162 -0.496151 0.535623 ]
+      kyjen_squeakin_eggs_plush_puppies: [ 1.28687 -0.402032 1.31219 -0.35061 0.345524 -0.616812 0.61419]
+      dr_browns_bottle_brush: [ 1.27765 0.24645 1.33423 -0.207154 0.184571 0.694875 0.663453]
+      jane_eyre_dvd: [1.33595 -0.191757 1.40564 0.539411 0.494137 0.549154 0.404098]
+      platinum_pets_dog_bowl: [1.2538 -0.355774 1.16295 0.589154 0.424337 0.564324 0.392906]
+      ticonderoga_12_pencils: [1.2538 -0.415774 1.16295 0.589154 0.424337 0.564324 0.392906]
+      crayola_24_ct: [1.11603 -0.379779 1.39799 -0.00549373 0.0492341 -0.743589 0.666799]
+      woods_extension_cord: [1.20362 0.317988 0.9109 -0.381796 0.381913 -0.614586 0.575029]
+      laugh_out_loud_joke_book: [1.2033 -0.292623 1.22848 -0.361312 0.579921 0.599573 -0.416722]
+      command_hooks: [1.2065 -0.0 1.03209 -0.381934 0.382482 -0.614463 0.57469]
+      soft_white_lightbulb: [1.30379 0.3 1.39 0.533838 0.488035 0.464718 0.510761]
+      dove_beauty_bar: [1.30379 -0.1 0.67 0.533838 0.488035 0.464718 0.510761]
+      rawlings_baseball: [1.0479 0.426924 0.90353 0.18538 -0.359249 -0.723099 0.560091]
+      staples_index_cards: [1.08886 0.31172 1.17834 0.595897 0.43107 0.535307 0.41537]
+      dove_beauty_bar: [1.08886 -0.01172 0.66834 0.595897 0.43107 0.535307 0.41537]
+      barkely_hide_bones: [1.08886 0.351172 0.90834 0.595897 0.43107 0.535307 0.41537]
+      oral_b_toothbrush_red: [1.24393 -0.30 0.917068 0.508101 0.528505 -0.499691 0.46133 ]
+      dasani_water_bottle: [1.24393 -0.30 0.967068 0.508101 0.528505 -0.499691 0.46133]
+      cloud_b_plush_bear: [1.30379 -0.30 0.67 0.533838 0.488035 0.464718 0.510761]
+      <!-- elmers_washable_no_run_school_glue: [1.16745 -0.132364 1.39293 0.193148 0.684967 0.659674 -0.241546]
+      scotch_bubble_mailer: [1.29085 0.12635 1.44936 0.726246 0.685725 -0.0384377 0.0295269]
+      up_glucose_bottle: [ 1.23848 0.0064589 1.43344 -0.124179 0.638218 0.73425 -0.19528 ]
+      expo_dry_erase_board_eraser: [1.13216 0.34 0.63 0.0 0.0 0.0 1.0 ]
+      peva_shower_curtain_liner: [1.24393 0.211847 0.617068 0.508101 0.528505 -0.499691 0.46133 ]
+      kleenex_paper_towels: [ 1.1719 0.277417 1.17472 -0.559054 0.76101 -0.164988 -0.284782]
+      kleenex_tissue_box: [ 1.21852 0.290005 1.38587 0.0327662 0.701358 0.71145 -0.0293631]
+      creativity_chenille_stems: [ 1.25999 0.0900292 1.30017 -0.350742 0.345054 -0.616951 0.614239]
+      folgers_classic_roast_coffee: [1.36732 -0.384846 1.40097 0.31231 0.650946 0.643814 0.253447 ]
+      i_am_a_bunny_book: [1.24789 -0.190148 1.42132 0.429895 -0.531162 -0.496151 0.535623 ]
+      kyjen_squeakin_eggs_plush_puppies: [ 1.28687 -0.402032 1.31219 -0.35061 0.345524 -0.616812 0.61419]
+      dr_browns_bottle_brush: [ 1.27765 0.24645 1.33423 -0.207154 0.184571 0.694875 0.663453]
+      jane_eyre_dvd: [1.33595 -0.191757 1.40564 0.539411 0.494137 0.549154 0.404098]
+      ticonderoga_12_pencils: [1.2538 -0.415774 1.43295 0.589154 0.424337 0.564324 0.392906]
+      crayola_24_ct: [1.11603 0.379779 1.13799 -0.00549373 0.0492341 -0.743589 0.666799]
+      woods_extension_cord: [1.20362 -0.217988 1.04209 -0.381796 0.381913 -0.614586 0.575029]
+      laugh_out_loud_joke_book: [1.2033 0.092623 1.22848 -0.361312 0.579921 0.599573 -0.416722]
+      command_hooks: [1.2065 -0.499998 1.03209 -0.381934 0.382482 -0.614463 0.57469]
+      soft_white_lightbulb: [1.30379 -0.410264 1.14818 0.533838 0.488035 0.464718 0.510761]
+      rawlings_baseball: [1.0479 -0.226924 1.16353 0.18538 -0.359249 -0.723099 0.560091]
+      staples_index_cards: [1.08886 -0.01172 0.91834 0.595897 0.43107 0.535307 0.41537]
+      dove_beauty_bar: [1.08886 -0.01172 0.91834 0.595897 0.43107 0.535307 0.41537]
+      barkely_hide_bones: [1.08886 -0.401172 1.14834 0.595897 0.43107 0.535307 0.41537] -->
+  </rosparam>
+  <rosparam ns="simulation">
+    random_seed: 203114677
+    template: object_priorities_template
+    pose_template: object_pose_template
+    json_file: apc_pick_task_front.json
+    # json_file: first_five.json
+    # json_file: apc_pick_task_planning_test.json
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manipulator">
+<!--     initial_state: [0.4, 0.6,0.2,0.1,0.9,0.9,0.1,0.2, 0.1, 0.5,0.9,0.1,0.6,0.5,0.5,0.7  ,1.0000000000000000000000000,1.0000000000000000000000000]  -->
+     <!-- initial state: [-1.62,-0.34,-1.19,2.79,1.89,-0.84,-0.55,-2.91,0.80, -1.96754,0.69703,-0.22386,-0.98409,2.71441,-1.83541,-2.67347,1,1] -->
+  </rosparam>
+
+  <rosparam ns="planning">
+    # random_seed: 14391835
+    # random_seed: 968514651
+    random_seed: 1873853495
+    simulate: false
+    visualize: true
+    persistent: true
+    world_model:
+      type: manipulation_world_model
+      ignore_object_to_object_collisions: true
+      num_ik_seeds: 50
+      # IK_databases:
+      #   motoman_database:
+      #     distance_metric:
+      #       type: graph_distance_metric
+      #     manipulator: manipulator
+      #     samples: 20000
+      #     deserialize_file: motoman[20000].database
+    type: apc_planning_application
+    validity_checker: 
+      type: world_model_validity_checker
+    full_manipulator_context_name: manipulator_pc
+    template: object_priorities_template
+  </rosparam>
+
+  <rosparam ns="planning" file="$(find prx_input)/templates/spaces/space_types.yaml"/>  
+  <rosparam ns="planning/world_model" file="$(find manipulation)/input/manipulation_simulator.yaml"/>  
+  <rosparam ns="planning/world_model/simulator/subsystems/manipulator" file="$(find manipulation)/input/motoman/motoman_complete_kinect_unigripper_grippy.yaml"/>
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/right_front_vacuum_ffee" file="$(find manipulation)/input/motoman/new_unigripper.yaml"/>
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/right_parallel_ffee" file="$(find manipulation)/input/motoman/new_unigripper.yaml"/>
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/right_upper_vacuum_ffee" file="$(find manipulation)/input/motoman/new_unigripper.yaml"/>
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/left_arm_ffee" file="$(find manipulation)/input/motoman/grippy.yaml"/>
+
+  <rosparam ns="planning/world_model/simulator/obstacles" file="$(find manipulation)/input/shelf.yaml"/>
+  <rosparam ns="planning/world_model/simulator/obstacles" file="$(find apc)/input/bounding_boxes.yaml"/> 
+  <rosparam ns="planning/world_model/simulator/obstacles" file="$(find manipulation)/input/tote.yaml"/>
+
+  <rosparam ns="planning/world_model/planning_contexts">
+    manipulator_pc:
+      default:
+        type: "hide_mapping"
+    left_camera:  
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_arm"
+        end_effector_context_name: "left_end_effector"
+        start_link: "base_link"
+        end_link: "left_IR_camera"
+    left_full_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_arm"
+        end_effector_context_name: "left_end_effector"
+        start_link: "base_link"
+        end_link: "head_sponge"
+        left_arm_ik: true
+    left_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_arm"
+        end_effector_context_name: "left_end_effector"
+        start_link: "base_link"
+        end_link: "head_sponge"
+        left_arm_ik: true
+    left_arm_planning:
+      default:
+        type: "hide_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_arm"
+        end_effector_context_name: "left_end_effector"
+        start_link: "base_link"
+        end_link: "head_sponge"
+        left_arm_ik: true
+    left_end_effector:
+      default:
+        type: "hide_mapping"
+    right_camera:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "right_full_arm"
+        arm_context_name: "right_arm"
+        end_effector_context_name: "right_end_effector"
+        start_link: "base_link"
+        end_link: "right_IR_camera"
+    
+    
+    right_full_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "right_full_arm"
+        arm_context_name: "right_arm"
+        end_effector_context_name: "right_end_effector"
+        start_link: "base_link"
+        end_link: "front_vacuum"
+        left_arm_ik: false
+    right_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "right_full_arm"
+        arm_context_name: "right_arm"
+        end_effector_context_name: "right_end_effector"
+        start_link: "base_link"
+        end_link: "front_vacuum"
+        left_arm_ik: false
+    right_arm_planning:
+      default:
+        type: "hide_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "right_full_arm"
+        arm_context_name: "right_arm"
+        end_effector_context_name: "right_end_effector"
+        start_link: "base_link"
+        end_link: "front_vacuum"
+        left_arm_ik: false
+    right_end_effector:
+      default:
+        type: "hide_mapping"
+    
+    right_upper_vacuum_full_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "right_upper_vacuum_full_arm"
+        arm_context_name: "right_upper_vacuum_arm"
+        end_effector_context_name: "right_upper_vacuum_end_effector"
+        start_link: "base_link"
+        end_link: "upper_vacuum"
+        left_arm_ik: false
+    right_upper_vacuum_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "right_upper_vacuum_full_arm"
+        arm_context_name: "right_upper_vacuum_arm"
+        end_effector_context_name: "right_upper_vacuum_end_effector"
+        start_link: "base_link"
+        end_link: "upper_vacuum"
+        left_arm_ik: false
+    right_upper_vacuum_arm_planning:
+      default:
+        type: "hide_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "right_upper_vacuum_full_arm"
+        arm_context_name: "right_upper_vacuum_arm"
+        end_effector_context_name: "right_upper_vacuum_end_effector"
+        start_link: "base_link"
+        end_link: "upper_vacuum"
+        left_arm_ik: false
+    right_upper_vacuum_end_effector:
+      default:
+        type: "hide_mapping"
+
+
+    right_parallel_gripper_full_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        grasp_till_collision:
+          grasping_mode: 2
+          grasping_step: -0.2
+        full_arm_context_name: "right_parallel_gripper_full_arm"
+        arm_context_name: "right_parallel_gripper_arm"
+        end_effector_context_name: "right_parallel_gripper_end_effector"
+        start_link: "base_link"
+        end_link: "parallel_gripper"
+    right_parallel_gripper_arm:
+      default:
+       type: "obstacle_mapping"
+      manipulation_context_info:
+        grasp_till_collision:
+          grasping_mode: 2
+          grasping_step: -0.2
+        full_arm_context_name: "right_parallel_gripper_full_arm"
+        arm_context_name: "right_parallel_gripper_arm"
+        end_effector_context_name: "right_parallel_gripper_end_effector"
+        start_link: "base_link"
+        end_link: "parallel_gripper"
+    right_parallel_gripper_arm_planning:
+      default:
+        type: "hide_mapping"
+      manipulation_context_info:
+        grasp_till_collision:
+          grasping_mode: 2
+          grasping_step: -0.2
+        full_arm_context_name: "right_parallel_gripper_full_arm"
+        arm_context_name: "right_parallel_gripper_arm"
+        end_effector_context_name: "right_parallel_gripper_end_effector"
+        start_link: "base_link"
+        end_link: "parallel_gripper"
+    right_parallel_gripper_end_effector:
+      default:
+        type: "hide_mapping"
+
+    right_front_vacuum_ffee:
+      default:
+        type: "hide_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "right_front_vacuum_ffee"
+        arm_context_name: "right_front_vacuum_ffee"
+        end_effector_context_name: "right_front_vacuum_ffee"
+        start_link: "base_link"
+        end_link: "front_vacuum"
+    right_upper_vacuum_ffee:
+      default:
+        type: "hide_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "right_upper_vacuum_ffee"
+        arm_context_name: "right_upper_vacuum_ffee"
+        end_effector_context_name: "right_upper_vacuum_ffee"
+        start_link: "base_link"
+        end_link: "upper_vacuum"
+    right_parallel_ffee:
+      default:
+        type: "hide_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "right_parallel_ffee"
+        arm_context_name: "right_parallel_ffee"
+        end_effector_context_name: "right_parallel_ffee"
+        start_link: "base_link"
+        end_link: "parallel_gripper"
+    left_arm_ffee:
+      default:
+        type: "hide_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_arm_ffee"
+        arm_context_name: "left_arm_ffee"
+        end_effector_context_name: "left_arm_ffee"
+        start_link: "head_base"
+        end_link: "head_sponge"
+  </rosparam>
+
+
+  <rosparam ns="planning/world_model/simulator/subsystems/left_arm_ffee">
+<!--     plannable_manipulator: false
+    initial_state: [0, 0, 0, 0, 0, 0, 1, 1]
+    state_space: 
+      min: [-2, -2, -2, -1, -1, -1, -1, 1]
+      max: [2, 2, 2, 1, 1, 1, 1, 5]
+    input_control_space:
+      min: [-2, -2, -2, -1, -1, -1, -1,  0]
+      max: [2, 2, 2, 1, 1, 1, 1, 3] -->
+    planning_contexts:
+      left_arm_ffee:
+        type: "floating_hand_full_state_mapping"
+      manipulator_pc:
+        type: "hide_mapping"
+      left_camera:  
+        type: "hide_mapping"
+      left_full_arm:
+        type: "hide_mapping"
+      left_arm:
+        type: "hide_mapping"
+      left_arm_planning:
+        type: "hide_mapping"
+      left_end_effector:
+        type: "hide_mapping"
+      right_camera:
+        type: "hide_mapping"
+      right_full_arm:
+        type: "hide_mapping"
+      right_arm:
+        type: "hide_mapping"
+      right_arm_planning:
+        type: "hide_mapping"
+      right_end_effector:
+        type: "hide_mapping"
+      right_upper_vacuum_full_arm:
+        type: "hide_mapping"
+      right_upper_vacuum_arm:
+        type: "hide_mapping"
+      right_upper_vacuum_arm_planning:
+        type: "hide_mapping"
+      right_upper_vacuum_end_effector:
+        type: "hide_mapping"
+      right_parallel_gripper_full_arm:
+        type: "hide_mapping"
+      right_parallel_gripper_arm:
+        type: "hide_mapping"
+      right_parallel_gripper_arm_planning:
+        type: "hide_mapping"
+      right_parallel_gripper_end_effector:
+        type: "hide_mapping"
+  </rosparam>
+
+
+  <rosparam ns="planning/world_model/simulator/subsystems/right_parallel_ffee">
+<!--     plannable_manipulator: false
+    initial_state: [0, 0, 0, 0, 0, 0, 1, 1]
+    state_space: 
+      min: [-2, -2, -2, -1, -1, -1, -1, 1]
+      max: [2, 2, 2, 1, 1, 1, 1, 5]
+    input_control_space:
+      min: [-2, -2, -2, -1, -1, -1, -1,  0]
+      max: [2, 2, 2, 1, 1, 1, 1, 3] -->
+    planning_contexts:
+      right_parallel_ffee:
+        type: "floating_hand_full_state_mapping"
+      manipulator_pc:
+        type: "hide_mapping"
+      left_camera:  
+        type: "hide_mapping"
+      left_full_arm:
+        type: "hide_mapping"
+      left_arm:
+        type: "hide_mapping"
+      left_arm_planning:
+        type: "hide_mapping"
+      left_end_effector:
+        type: "hide_mapping"
+      right_camera:
+        type: "hide_mapping"
+      right_full_arm:
+        type: "hide_mapping"
+      right_arm:
+        type: "hide_mapping"
+      right_arm_planning:
+        type: "hide_mapping"
+      right_end_effector:
+        type: "hide_mapping"
+      right_upper_vacuum_full_arm:
+        type: "hide_mapping"
+      right_upper_vacuum_arm:
+        type: "hide_mapping"
+      right_upper_vacuum_arm_planning:
+        type: "hide_mapping"
+      right_upper_vacuum_end_effector:
+        type: "hide_mapping"
+      right_parallel_gripper_full_arm:
+        type: "hide_mapping"
+      right_parallel_gripper_arm:
+        type: "hide_mapping"
+      right_parallel_gripper_arm_planning:
+        type: "hide_mapping"
+      right_parallel_gripper_end_effector:
+        type: "hide_mapping"
+  </rosparam>
+
+  
+  <rosparam ns="planning/world_model/simulator/subsystems/right_front_vacuum_ffee">
+<!--     plannable_manipulator: false
+    initial_state: [0, 0, 0, 0, 0, 0, 1, 1]
+    state_space: 
+      min: [-2, -2, -2, -1, -1, -1, -1, 1]
+      max: [2, 2, 2, 1, 1, 1, 1, 5]
+    input_control_space:
+      min: [-2, -2, -2, -1, -1, -1, -1,  0]
+      max: [2, 2, 2, 1, 1, 1, 1, 3] -->
+    end_effectors: 
+      -
+        name: "front_vacuum"
+        local_config:
+          position: [0.0,0.0,0.0]
+          orientation: [0.0,0.0,0.0,1 ]
+    planning_contexts:
+      right_front_vacuum_ffee:
+        type: "floating_hand_full_state_mapping"
+      manipulator_pc:
+        type: "hide_mapping"
+      left_camera:  
+        type: "hide_mapping"
+      left_full_arm:
+        type: "hide_mapping"
+      left_arm:
+        type: "hide_mapping"
+      left_arm_planning:
+        type: "hide_mapping"
+      left_end_effector:
+        type: "hide_mapping"
+      right_camera:
+        type: "hide_mapping"
+      right_full_arm:
+        type: "hide_mapping"
+      right_arm:
+        type: "hide_mapping"
+      right_arm_planning:
+        type: "hide_mapping"
+      right_end_effector:
+        type: "hide_mapping"
+      right_upper_vacuum_full_arm:
+        type: "hide_mapping"
+      right_upper_vacuum_arm:
+        type: "hide_mapping"
+      right_upper_vacuum_arm_planning:
+        type: "hide_mapping"
+      right_upper_vacuum_end_effector:
+        type: "hide_mapping"
+      right_parallel_gripper_full_arm:
+        type: "hide_mapping"
+      right_parallel_gripper_arm:
+        type: "hide_mapping"
+      right_parallel_gripper_arm_planning:
+        type: "hide_mapping"
+      right_parallel_gripper_end_effector:
+        type: "hide_mapping"
+  </rosparam>
+
+  <rosparam ns="planning/world_model/simulator/subsystems/right_upper_vacuum_ffee">
+<!--     plannable_manipulator: false
+    initial_state: [0, 0, 0, 0, 0, 0, 1, 1]
+    state_space: 
+      min: [-2, -2, -2, -1, -1, -1, -1, 1]
+      max: [2, 2, 2, 1, 1, 1, 1, 5]
+    input_control_space:
+      min: [-2, -2, -2, -1, -1, -1, -1,  0]
+      max: [2, 2, 2, 1, 1, 1, 1, 3] -->
+    end_effectors: 
+      -
+        name: "upper_vacuum"
+        local_config:
+          position: [0.0,0.0,0.0]
+          orientation: [0.0,0.0,0.0,1 ]
+    planning_contexts:
+      right_upper_vacuum_ffee:
+        type: "floating_hand_full_state_mapping"
+      manipulator_pc:
+        type: "hide_mapping"
+      left_camera:  
+        type: "hide_mapping"
+      left_full_arm:
+        type: "hide_mapping"
+      left_arm:
+        type: "hide_mapping"
+      left_arm_planning:
+        type: "hide_mapping"
+      left_end_effector:
+        type: "hide_mapping"
+      right_camera:
+        type: "hide_mapping"
+      right_full_arm:
+        type: "hide_mapping"
+      right_arm:
+        type: "hide_mapping"
+      right_arm_planning:
+        type: "hide_mapping"
+      right_end_effector:
+        type: "hide_mapping"
+      right_upper_vacuum_full_arm:
+        type: "hide_mapping"
+      right_upper_vacuum_arm:
+        type: "hide_mapping"
+      right_upper_vacuum_arm_planning:
+        type: "hide_mapping"
+      right_upper_vacuum_end_effector:
+        type: "hide_mapping"
+      right_parallel_gripper_full_arm:
+        type: "hide_mapping"
+      right_parallel_gripper_arm:
+        type: "hide_mapping"
+      right_parallel_gripper_arm_planning:
+        type: "hide_mapping"
+      right_parallel_gripper_end_effector:
+        type: "hide_mapping"
+  </rosparam>
+
+
+  <rosparam ns="planning/world_model/simulator/subsystems/manipulator">
+    ik_timeout: .005
+    planning_contexts:
+      manipulator_pc:
+        type: "full_mapping"
+      left_full_arm:
+        type: "motoman_left_full_with_torso_state_mapping"
+      left_camera:
+        type: "motoman_left_full_with_torso_state_mapping"
+      left_arm:
+        type: "motoman_left_torso_state_mapping"
+      left_end_effector:
+        type: "motoman_left_gripper_state_mapping"
+      left_arm_planning:
+        type: "motoman_left_torso_state_mapping"
+      right_camera:
+        type: "motoman_pu_right_full_with_torso_state_mapping"
+      
+
+      right_full_arm:
+        type: "motoman_pu_right_full_with_torso_state_mapping"
+      right_arm:
+        type: "motoman_pu_right_torso_state_mapping"
+      right_end_effector:
+        type: "motoman_pu_right_front_vacuum_state_mapping"
+      right_arm_planning:
+        type: "motoman_pu_right_torso_state_mapping"
+
+      right_upper_vacuum_full_arm:
+        type: "motoman_pu_right_full_with_torso_state_mapping"
+      right_upper_vacuum_arm:
+        type: "motoman_pu_right_torso_state_mapping"
+      right_upper_vacuum_end_effector:
+        type: "motoman_pu_right_upper_vacuum_state_mapping"
+      right_upper_vacuum_arm_planning:
+        type: "motoman_pu_right_torso_state_mapping"
+
+      right_parallel_gripper_full_arm:
+        type: "motoman_pu_right_full_with_torso_state_mapping"
+      right_parallel_gripper_arm:
+        type: "motoman_pu_right_torso_state_mapping"
+      right_parallel_gripper_end_effector:
+        type: "motoman_pu_right_parallel_gripper_state_mapping"
+      right_parallel_gripper_arm_planning:
+        type: "motoman_pu_right_torso_state_mapping"
+  </rosparam>
+
+
+  <rosparam ns="planning/graph_query_template">
+    type: pose_based_mp_query
+    smooth_paths: false
+    search_mode: lazy_search
+    goal:
+      type: multiple_goal_states
+      distance_metric:
+        type: graph_distance_metric
+  </rosparam>
+  <rosparam ns="planning/motion_query_template">
+    type: pose_based_mp_query
+    search_mode: lazy_search
+    goal:
+      type: multiple_goal_states
+      distance_metric:
+        type: graph_distance_metric
+  </rosparam>
+
+  <rosparam ns="planning/graph_specification_template">
+    type: pose_based_mp_specification
+    validity_checker: 
+      type: world_model_validity_checker
+    sampler:
+      type: uniform_sampler
+      default_orientation: [0,1,0,1]
+      # min: [.95,-.43,.59]
+      # max: [1.38,.43,1.59]
+      #BIN B
+      # initial_sample: [1.35, 0, 1.47]
+      # min: [0.85,-.14,1.34]
+      # max: [1.40,0.14,1.58]
+      #BIN E
+      # initial_sample: [1.38, 0, 1.21]
+      # min: [0.85,-.15,1.35]
+      # max: [1.40,0.15,1.59]
+      #FRONT OF SHELF
+      initial_sample: [0.80, 0, 1.20]
+      min: [0.70,-.14,1.30]
+      max: [0.90,0.14,1.60]
+    distance_metric:
+      type: graph_distance_metric
+      distance_function: l_infinite_norm
+    local_planner:
+      type: bvp_local_planner
+    stopping_criteria:
+      elements:
+        criterion1:
+          type: iteration_criterion
+          condition: 100
+    heuristic_search:
+      type: constraints_astar_search
+  </rosparam>
+
+
+  <rosparam ns="planning/task_planner/">
+    type: apc_tp
+    stat_file: apc_stats.txt
+    specification:
+      type: apc_driver_stress_specification
+      sampler:
+        type: uniform_sampler
+    left_context_name: "left_full_arm"
+    right_context_name: "right_full_arm"
+    left_camera_context_name: "left_camera"
+    right_camera_context_name: "right_camera"
+    manipulation_task_planner_name: "manipulation_task_planner"
+    smooth_paths: false
+    planners:
+      manipulation_task_planner:
+        use_ee_dist_in_planners: false
+        constraints: 
+          type: null_constraints
+        specification:
+          type: manipulation_specification
+          validity_checker: 
+            <!-- type: world_model_validity_checker -->
+            type: manipulation_validity_checker
+            ee_resolution: 0.005
+            <!-- ee_resolution: 0.008 -->
+          sampler:
+            type: uniform_sampler
+          distance_metric:
+            type: graph_distance_metric
+          local_planner:
+            type: bvp_local_planner
+          stopping_criteria:
+            elements:
+              criterion1:
+                type: iteration_criterion
+                condition: 100
+        type: manipulation_tp
+        num_candidate_connections: 30
+        serialize_flag: false
+        IK_steer_grasping: false
+        skip_connectivity_check: true
+        apc_retract: true
+        planners:
+          left_arm_motion_planner:
+            type: "jacobian_prm_star"
+            map_metric:
+              type: graph_distance_metric
+            end_effector_names: ["head_sponge"]
+            sparsify: true
+            stretch_factor: 3
+            visualization_bodies: ["simulator/manipulator/head_sponge"]
+            visualize_graph: true
+            visualize: false
+            visualize_solutions: false 
+            <!-- deserialize_file: "left_jk.roadmap" -->
+            # deserialize_file: "left_arm_graph[8_k_top_middle_euclid].roadmap"
+            deserialize_file: "grippy_shelf.roadmap"
+            space_name: "left_arm_planning"
+            planning_context_name: "left_arm"
+            query:
+              template: motion_query_template
+              lazy_astar_iterations: 300
+            specification:
+              template: graph_specification_template
+              sampler:
+                manipulation_context: left_full_arm
+          right_arm_motion_planner:
+            type: "jacobian_prm_star"
+            map_metric:
+              type: graph_distance_metric
+            end_effector_names: ["front_vacuum"]
+            sparsify: false
+            stretch_factor: 3
+            visualization_bodies: ["simulator/manipulator/upper_vacuum"]
+            visualize_graph: true
+            visualize_solutions: false 
+            visualize: false
+            # deserialize_file: "right_arm_graph[8_k_top_middle_euclid]_new.roadmap"
+            deserialize_file: "right_shelf.roadmap"
+            space_name: "right_arm_planning"
+            planning_context_name: "right_arm"
+            query:
+              template: motion_query_template
+              lazy_astar_iterations: 300
+            specification:
+              template: graph_specification_template
+              sampler:
+                manipulation_context: right_full_arm
+          right_upper_vacuum_arm_motion_planner:
+            type: "jacobian_prm_star"
+            map_metric:
+              type: graph_distance_metric
+            end_effector_names: ["upper_vacuum"]
+            sparsify: false
+            stretch_factor: 3
+            visualization_bodies: ["simulator/manipulator/upper_vacuum"]
+            visualize_graph: true
+            visualize_solutions: false 
+            visualize: false
+            # deserialize_file: "right_arm_graph[8_k_top_middle_euclid]_new.roadmap"
+            deserialize_file: "right_shelf.roadmap"
+            space_name: "right_upper_vacuum_arm_planning"
+            planning_context_name: "right_upper_vacuum_arm"
+            query:
+              template: motion_query_template
+              lazy_astar_iterations: 100
+            specification:
+              template: graph_specification_template
+              sampler:
+                manipulation_context: right_upper_vacuum_full_arm
+          right_parallel_gripper_arm_motion_planner:
+            type: "jacobian_prm_star"
+            map_metric:
+              type: graph_distance_metric
+            end_effector_names: ["parallel_gripper"]
+            sparsify: false
+            stretch_factor: 3
+            visualization_bodies: ["simulator/manipulator/upper_vacuum"]
+            visualize_graph: true
+            visualize_solutions: false 
+            visualize: false
+            # deserialize_file: "right_arm_graph[8_k_top_middle_euclid]_new.roadmap"
+            deserialize_file: "right_shelf.roadmap"
+            space_name: "right_parallel_gripper_arm_planning"
+            planning_context_name: "right_parallel_gripper_arm"
+            query:
+              template: motion_query_template
+              lazy_astar_iterations: 100
+            specification:
+              template: graph_specification_template
+              sampler:
+                manipulation_context: right_parallel_gripper_full_arm
+          left_rrt_motion_planner:
+            type: rrt
+            goal_bias_rate: 0.5
+            visualization_bodies: ["simulator/manipulator/head_sponge"]
+            visualize_tree: false
+            visualize: false
+            visualize_solutions: false 
+            space_name: "left_arm_planning"
+            planning_context_name: "left_arm"
+            is_connection_planner: true
+            query:
+              type: motion_planning_query
+              goal:
+                type: multiple_goal_states
+                distance_metric:
+                  type: graph_distance_metric
+            specification:
+              template: tree_specification_template
+              sampler:
+                manipulation_context: left_full_arm 
+          right_rrt_motion_planner:
+            type: rrt
+            goal_bias_rate: 0.5
+            visualization_bodies: ["simulator/manipulator/upper_vacuum"]
+            visualize_tree: false
+            visualize: false
+            visualize_solutions: false 
+            space_name: "right_arm_planning"
+            planning_context_name: "right_arm"
+            is_connection_planner: true
+            query:
+              type: motion_planning_query
+              goal:
+                type: multiple_goal_states
+                distance_metric:
+                  type: graph_distance_metric
+            specification:
+              template: right_tree_specification_template
+              sampler:
+                manipulation_context: right_full_arm 
+          right_upper_vacuum_rrt_motion_planner:
+            type: rrt
+            goal_bias_rate: 0.5
+            visualization_bodies: ["simulator/manipulator/upper_vacuum"]
+            visualize_tree: false
+            visualize: false
+            visualize_solutions: false 
+            space_name: "right_upper_vacuum_arm_planning"
+            planning_context_name: "right_upper_vacuum_arm"
+            is_connection_planner: true
+            query:
+              type: motion_planning_query
+              goal:
+                type: multiple_goal_states
+                distance_metric:
+                  type: graph_distance_metric
+            specification:
+              template: right_tree_specification_template
+              sampler:
+                manipulation_context: right_upper_vacuum_full_arm 
+          right_parallel_gripper_rrt_motion_planner:
+            type: rrt
+            goal_bias_rate: 0.5
+            visualization_bodies: ["simulator/manipulator/upper_vacuum"]
+            visualize_tree: false
+            visualize: false
+            visualize_solutions: false 
+            space_name: "right_parallel_gripper_arm_planning"
+            planning_context_name: "right_parallel_gripper_arm"
+            is_connection_planner: true
+            query:
+              type: motion_planning_query
+              goal:
+                type: multiple_goal_states
+                distance_metric:
+                  type: graph_distance_metric
+            specification:
+              template: right_tree_specification_template
+              sampler:
+                manipulation_context: right_parallel_gripper_full_arm 
+          grasping_planner:
+            type: grasping_planner
+            specification:
+              type: grasping_specification
+              validity_checker:
+                type: world_model_validity_checker
+            grasp_generators:
+              left_full_arm:
+                template: grippy
+                ffee_context_name: left_arm_ffee
+                randomize_final_grasps: false
+              right_full_arm:
+                template: front_vacuum
+                ffee_context_name: right_front_vacuum_ffee
+                randomize_final_grasps: false
+              right_upper_vacuum_full_arm:
+                template: upper_vacuum   
+                ffee_context_name: right_upper_vacuum_ffee
+                randomize_final_grasps: false
+              right_parallel_gripper_full_arm:
+                template: parallel_gripper
+                ffee_context_name: right_parallel_ffee
+  </rosparam>
+
+  <rosparam ns="planning/grippy" file="$(find manipulation)/input/motoman/grasp_generators/grippy.yaml"/>
+  <rosparam ns="planning/front_vacuum" file="$(find manipulation)/input/motoman/grasp_generators/front_vacuum.yaml"/>
+  <rosparam ns="planning/upper_vacuum" file="$(find manipulation)/input/motoman/grasp_generators/upper_vacuum.yaml"/>
+  <rosparam ns="planning/parallel_gripper" file="$(find manipulation)/input/motoman/grasp_generators/parallel_gripper.yaml"/>
+
+  <rosparam ns="planning/tree_specification_template">
+    type: motion_planning_specification
+    validity_checker: 
+      type: world_model_validity_checker
+    sampler:
+      type: uniform_sampler
+    distance_metric:
+      type: graph_distance_metric
+      distance_function: l_infinite_norm
+    local_planner:
+      type: bvp_local_planner
+      max_prop_length: 0.05
+    stopping_criteria:
+      criteria_check_type: 2
+      elements:
+        criterion1:
+          type: iteration_criterion
+          condition: 5000
+        criterion2:
+          type: goal_criterion
+          criterion_type: goal
+    heuristic_search:
+      type: constraints_astar_search
+  </rosparam>
+
+  <rosparam ns="planning/right_tree_specification_template">
+    type: motion_planning_specification
+    validity_checker: 
+      type: world_model_validity_checker
+    sampler:
+      type: uniform_sampler
+    distance_metric:
+      type: graph_distance_metric
+      distance_function: l_infinite_norm
+    local_planner:
+      type: bvp_local_planner
+      max_prop_length: 0.075
+    stopping_criteria:
+      criteria_check_type: 2
+      elements:
+        criterion1:
+          type: iteration_criterion
+          condition: 7500
+        criterion2:
+          type: goal_criterion
+          criterion_type: goal
+    heuristic_search:
+      type: constraints_astar_search
+  </rosparam>
+
+ <node name="planning" pkg="prx_planning" type="prx_planning" clear_params="true" required="false" launch-prefix="" output="screen" args="planning"/>
+
+
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation"  clear_params="true" required="true" launch-prefix="" output="screen" args="simulation"/>
+
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+
+  <rosparam ns="visualization/viewer/">
+    windows:
+      window_1:
+        xpos: 920
+        ypos: 100
+        width: 800
+        height: 800
+        cameras:
+          perspective:
+            ortho: false
+            camera_type: 0
+            eye: [0, 0, 1.8]
+            center: [1, 0, 0]
+            speed: {move: 0.1, rotate: 0.001}
+          orthographic:
+            ortho: true
+            ortho_param:
+              left: -300
+              right: 300
+              bottom: -300
+              top: 300
+              zNear: 0
+              zFar: 1000
+            speed: {move: 0.2, rotate: 0.001}
+          smooth:
+            ortho: false
+            camera_type: 2
+            eye: [0, -20, 15]
+            center: [0, 1, 18]
+            speed: {move: 0.2, rotate: 0.001}
+  </rosparam>
+
+  <!-- <node pkg="tf" type="static_transform_publisher" name="kinect2_left_rgb_optical_frame" args = "0.0055686675 -0.013519095 0.016216975 -0.004697989505 -0.02222206321 -0.007958633453 0.9997103425 left_RGB_camera kinect2_left_rgb_optical_frame 0.001" />
+
+  <node pkg="tf" type="static_transform_publisher" name="kinect2_right_rgb_optical_frame" args = "-0.00399884 0.0009384862 0.0022325002 0.005786472698 0.003036849614 0.01031462707 0.9999254486 right_RGB_camera kinect2_right_rgb_optical_frame 0.001" />
+
+  <node pkg="tf" type="static_transform_publisher" name="kinect2_head_rgb_optical_frame" args = "0.0121328 0.0058047 -0.00261686 0.00310873 0.00261475 0.00441386 0.999982 head_RGB_camera kinect2_head_rgb_optical_frame 0.001" /> -->
+
+<!-- <node pkg="tf" type="static_transform_publisher" name="right_RGB_camera_corrected"   args = " 0.0031   -0.0024   -0.0134 -0.0059   -0.0090    0.0117   -0.9999   simulator/consumer/manipulator/right_RGB_camera right_RGB_camera_corrected 100" />
+
+<node pkg="tf" type="static_transform_publisher" name="left_RGB_camera_corrected"    args = "  -0.0017   -0.0146   -0.0018 -0.0101    0.0001    0.0224    0.9996   simulator/consumer/manipulator/left_RGB_camera  left_RGB_camera_corrected  100" /> -->
+
+<!-- <node pkg="tf" type="static_transform_publisher" name="head_RGB_camera_corrected"    args = " 0.0176    0.0214   -0.0059   0.0263    0.0017    0.0009    0.9997 simulator/consumer/manipulator/head_RGB_camera  head_RGB_camera_corrected  100" /> -->
+
+<!-- <node pkg="tf" type="static_transform_publisher" name="head_RGB_camera_corrected"    args = "  0.0978   -0.5017    0.1256  -0.5014    0.5055   -0.4946    0.4984 torso_link_b1  head_RGB_camera_corrected  100" /> -->
+
+
+<!-- <node pkg="tf" type="static_transform_publisher" name="head_RGB_camera_corrected"    args = "  0.0013    0.0015   -0.0198  0.0039    0.0070   -0.0001    0.9999 simulator/consumer/manipulator/head_RGB_camera  head_RGB_camera_corrected  100" />
+ -->
+
+</launch>

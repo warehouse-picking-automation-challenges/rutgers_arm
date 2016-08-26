@@ -1,0 +1,35 @@
+<launch>
+
+
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>      
+  <rosparam ns= "simulation" command="load" file="$(find two_dim_problems)/input/templates/homing_application.yaml"/>
+  <rosparam ns= "simulation" command="load" file="$(find prx_input)/templates/simulators/default_simulator.yaml"/>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/homing"
+     file="$(find two_dim_problems)/input/templates/homing_controller.yaml"/>
+
+  <rosparam ns="simulation/simulator/subsystems/homing">
+    vote_threshold: 2
+    error_threshold: 0.08
+  </rosparam>
+  
+  <rosparam command="load" ns="simulation/simulator/subsystems/homing/subsystems/car"
+     file="$(find prx_input)/templates/plants/wheeled_car.yaml"/>
+
+  <rosparam ns="simulation/simulator/subsystems/homing/subsystems/car">
+    state_space: 
+      min: [-1000, -1000, -4]
+      max: [1000, 1000, 4]
+    input_control_space: 
+      min: [-20, -3.141]
+      max: [40, 3.141]
+  </rosparam>
+  <rosparam command="load" ns="simulation/simulator/obstacles"
+     file="$(find two_dim_problems)/input/templates/homing_environment2.yaml"/>
+  
+        
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation"
+        required="true" launch-prefix="gdb --args" args= "simulation" output="screen"/>
+
+</launch>

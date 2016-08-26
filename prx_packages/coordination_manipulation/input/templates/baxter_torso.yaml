@@ -1,0 +1,44 @@
+baxter_torso:
+  type: obstacle
+  geometries:
+    -
+      name: pedestal1
+      collision_geometry:
+        type: box
+        dims: [0.90, 0.80, 0.05]
+        material: black
+      config:
+        position: [-0.04, 0.0, 0.31]
+        orientation: [0,0,0.0,1.0]
+      visualization_geometry:
+        type: mesh
+        filename: meshes/base/pedestal.osg
+        material: black
+    -
+      name: torso1
+      collision_geometry:
+        type: cylinder
+        radius: 0.15
+        height: 1.6
+        material: black
+      config:
+        position: [-0.065, 0.0, 1.085]
+        orientation: [0,0,0.0,1.0]
+      visualization_geometry:
+        type: mesh
+        filename: meshes/torso/base.osg
+        material: black
+    -
+      name: head1
+      collision_geometry:
+        type: cylinder
+        radius: 0.1
+        height: 0.25
+        material: black
+      config:
+        position: [0.04, 0.0, 1.585]
+        orientation: [0,0,0.0,1.0]
+      visualization_geometry:
+        type: box
+        dims: [0.01, 0.01, 0.01]
+        material: black

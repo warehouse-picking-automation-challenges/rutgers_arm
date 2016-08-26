@@ -1,0 +1,226 @@
+type: bullet_plant
+geometries:
+  -
+    name: chassis
+    collision_geometry:
+      type: box
+      dims: [3,1,1]
+      material: red
+    # visualization_geometry:
+    #   type: mesh
+    #   filename: vehicles/cars/vw_new.osg
+    config: 
+      position: [0,0,1]
+      orientation: [0,0,0,1]
+    mass: 4
+  -
+    name: front_axle
+    collision_geometry:
+      type: box
+      dims: [.1,1,.1]
+      material: red
+    # visualization_geometry:
+    #   type: box
+    #   dims: [.00001,.00001,.00001]
+    #   material: red
+    config: 
+      position: [1,0,.35]
+      orientation: [0,0,0,1]
+    mass: 1
+  -
+    name: rear_axle
+    collision_geometry:
+      type: box
+      dims: [.1,1,.1]
+      material: red
+    # visualization_geometry:
+    #   type: box
+    #   dims: [.00001,.00001,.00001]
+    #   material: red
+    config: 
+      position: [-1,0,.35]
+      orientation: [0,0,0,1]
+    mass: 1
+  -
+    name: wheel1
+    collision_geometry:
+      type: cylinder
+      radius: .4
+      height: .2
+      material: blue
+    # visualization_geometry:
+    #   type: box
+    #   dims: [.00001,.00001,.00001]
+      material: red
+    config: 
+      position: [1,.65,.45]
+      orientation: [0.707,0,0,0.707]
+    mass: 2
+  -
+    name: wheel2
+    collision_geometry:
+      type: cylinder
+      radius: .4
+      height: .2
+      material: blue
+    # visualization_geometry:
+    #   type: box
+    #   dims: [.00001,.00001,.00001]
+    #   material: red
+    config: 
+      position: [1,-.65, .45]
+      orientation: [0.707,0,0,0.707]
+    mass: 2
+  -
+    name: wheel3
+    collision_geometry:
+      type: cylinder
+      radius: .4
+      height: .2
+      material: blue
+    # visualization_geometry:
+    #   type: box
+    #   dims: [.00001,.00001,.00001]
+    #   material: red
+    config: 
+      position: [-1,.65,.45]
+      orientation: [0.707,0,0,0.707]
+    mass: 2
+  -
+    name: wheel4
+    collision_geometry:
+      type: cylinder
+      radius: .4
+      height: .2
+      material: blue
+    # visualization_geometry:
+    #   type: box
+    #   dims: [.00001,.00001,.00001]
+    #   material: red
+    config: 
+      position: [-1,-.65,.45]
+      orientation: [0.707,0,0,0.707]
+    mass: 2
+  # -
+  #   name: counter
+  #   collision_geometry:
+  #     type: box
+  #     dims: [.00001,.00001,.00001]
+  #     material: red
+  #   config: 
+  #     position: [0,-3,1]
+  #     orientation: [0,0,0,1]
+  #   mass: .1
+  # -
+  #   name: counter2
+  #   collision_geometry:
+  #     type: box
+  #     dims: [.00001,.00001,.00001]
+  #     material: red
+  #   config: 
+  #     position: [0,3,1]
+  #     orientation: [0,0,0,1]
+  #   mass: .1
+  -
+    name: counter3
+    collision_geometry:
+      type: box
+      dims: [.00001,.00001,.00001]
+      material: red
+    # visualization_geometry:
+    #   type: box
+    #   dims: [.00001,.00001,.00001]
+    #   material: red
+    config: 
+      position: [-400,0,40]
+      orientation: [0,0,0,1]
+    mass: .01
+controls:
+  -
+    name: chassis
+    bounds: [-50, 150]
+    direction: [1,0,0]
+    relative_position: [0,0,0]
+    type: body_force
+    object: chassis
+  -
+    name: steering
+    bounds: [-40, 40]
+    direction: [0,0,-1]
+    relative_position: [0,0,0]
+    type: body_torque
+    object: front_axle
+joints:
+  -
+    type: generic
+    root_body: chassis
+    child_body: front_axle
+    linear_lower_limits: [0,0,0]
+    linear_upper_limits: [0,0,0]
+    angular_lower_limits: [0,0,-20]
+    angular_upper_limits: [0,0,20]
+  -
+    type: generic
+    root_body: chassis
+    child_body: rear_axle
+    linear_lower_limits: [0,0,0]
+    linear_upper_limits: [0,0,0]
+    angular_lower_limits: [0,0,0]
+    angular_upper_limits: [0,0,0]
+  # -
+  #   type: generic
+  #   root_body: chassis
+  #   child_body: counter
+  #   linear_lower_limits: [0,0,0]
+  #   linear_upper_limits: [0,0,0]
+  #   angular_lower_limits: [0,0,0]
+  #   angular_upper_limits: [0,0,0]
+  # -
+  #   type: generic
+  #   root_body: chassis
+  #   child_body: counter2
+  #   linear_lower_limits: [0,0,0]
+  #   linear_upper_limits: [0,0,0]
+  #   angular_lower_limits: [0,0,0]
+  #   angular_upper_limits: [0,0,0]
+  -
+    type: generic
+    root_body: chassis
+    child_body: counter3
+    linear_lower_limits: [0,0,0]
+    linear_upper_limits: [0,0,0]
+    angular_lower_limits: [0,0,0]
+    angular_upper_limits: [0,0,0]
+  -
+    type: generic
+    root_body: front_axle
+    child_body: wheel1
+    linear_lower_limits: [0,0,0]
+    linear_upper_limits: [0,0,0]
+    angular_lower_limits: [0,40,0]
+    angular_upper_limits: [0,-40,0]
+  -
+    type: generic
+    root_body: front_axle
+    child_body: wheel2
+    linear_lower_limits: [0,0,0]
+    linear_upper_limits: [0,0,0]
+    angular_lower_limits: [0,40,0]
+    angular_upper_limits: [0,-40,0]
+  -
+    type: generic
+    root_body: rear_axle
+    child_body: wheel3
+    linear_lower_limits: [0,0,0]
+    linear_upper_limits: [0,0,0]
+    angular_lower_limits: [0,40,0]
+    angular_upper_limits: [0,-40,0]
+  -
+    type: generic
+    root_body: rear_axle
+    child_body: wheel4
+    linear_lower_limits: [0,0,0]
+    linear_upper_limits: [0,0,0]
+    angular_lower_limits: [0,40,0]
+    angular_upper_limits: [0,-40,0]
+

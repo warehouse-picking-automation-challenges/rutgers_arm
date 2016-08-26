@@ -1,0 +1,11 @@
+<rosparam command="load" ns="simulation/simulator/subsystems/cup#ID#">
+  template: "cup"
+  initial_state: [#POSE#]
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: box
+        dims: [0.04, 0.02, 0.14]
+        material: #COLOR#
+</rosparam>

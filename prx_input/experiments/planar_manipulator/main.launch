@@ -1,0 +1,26 @@
+<launch>
+  <rosparam command="load" ns="simulation" file="$(find prx_input)/templates/applications/empty_application.yaml" />
+  <rosparam command="load" ns="simulation" file="$(find prx_input)/templates/simulators/collision_stop_simulator.yaml" />
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml" />
+  
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer" file="$(find prx_input)/templates/controllers/consumer.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer">
+    keep_last_control: false
+  </rosparam>
+  
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer/subsystems/manipulator" file="$(find prx_input)/templates/plants/planar_manipulator.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer/subsystems/manipulator">
+    initial_state: [10, 10, 0, 0, 0]
+  </rosparam>
+  <rosparam command="load" ns="consumer_controllers">
+    system_paths: [simulators/consumer]
+  </rosparam>
+  
+  <rosparam command="load" ns="simulation/simulator/obstacles" file="$(find prx_input)/experiments/planar_manipulator/obstacles/building1.yaml" />
+  
+  <node name="simulation" args="simulation" pkg="prx_simulation" type="prx_simulation" required="true" launch-prefix="" output="screen" />
+  
+  <include file="$(find prx_input)/experiments/planar_manipulator/planning/planning.launch" />
+  
+  <include file="$(find prx_input)/templates/visualization/visualization.launch" />
+</launch>

@@ -1,0 +1,8 @@
+<package>
+  <description brief="Manipulation Problems">
+    This package deals with manipulation problems.
+  </description>
+  <author>Athanasios Krontiris</author>
+  <license>BSD</license>
+  <url>http://www.pracsyslab.org</url>
+</package>

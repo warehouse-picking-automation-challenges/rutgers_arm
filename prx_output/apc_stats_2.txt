@@ -1,0 +1,282 @@
+
+
+
+********************************************************************
+Planning statistics for execution on Fri Jun 24 18:48:35 2016
+
+********************************************************************
+
+
+
+********************************************************************
+Planning statistics for execution on Fri Jun 24 18:54:09 2016
+
+********************************************************************
+
+Resolved the grasp query in...1.8813749999999998
+   ---Pick
+++ SUCCESSFUL PICK ++
+motion plan success time for kleenex_tissue_box using right_full_arm: 0.53773000000000004
+Total Time for kleenex_tissue_box using right_full_arm: 2.4194100000000001
+Total grasp_ik_fail: 0, total grasp_coliision_counter: 0, total motion_plan_fail: 0
+ grasp planning succeeded
+
+kleenex_tissue_box using right_full_arm
+
+
+
+********************************************************************
+Planning statistics for execution on Fri Jun 24 18:59:28 2016
+
+********************************************************************
+
+Resolved the grasp query in...1.6350039999999999
+   ---Pick
+++ SUCCESSFUL PICK ++
+motion plan success time for kleenex_tissue_box using right_full_arm: 0.53792799999999996
+Total Time for kleenex_tissue_box using right_full_arm: 2.1732469999999999
+Total grasp_ik_fail: 0, total grasp_coliision_counter: 0, total motion_plan_fail: 0
+ grasp planning succeeded
+
+kleenex_tissue_box using right_full_arm
+
+
+
+********************************************************************
+Planning statistics for execution on Fri Jun 24 19:04:04 2016
+
+********************************************************************
+
+Resolved the grasp query in...1.725508
+   ---Pick
+++ SUCCESSFUL PICK ++
+motion plan success time for kleenex_tissue_box using right_full_arm: 0.526223
+Total Time for kleenex_tissue_box using right_full_arm: 2.2520600000000002
+Total grasp_ik_fail: 0, total grasp_coliision_counter: 0, total motion_plan_fail: 0
+ grasp planning succeeded
+
+kleenex_tissue_box using right_full_arm
+
+
+
+********************************************************************
+Planning statistics for execution on Fri Jun 24 19:06:47 2016
+
+********************************************************************
+
+Resolved the grasp query in...1.858217
+   ---Pick
+++ SUCCESSFUL PICK ++
+motion plan success time for kleenex_tissue_box using right_full_arm: 0.52674500000000002
+Total Time for kleenex_tissue_box using right_full_arm: 2.3852880000000001
+Total grasp_ik_fail: 0, total grasp_coliision_counter: 0, total motion_plan_fail: 0
+ grasp planning succeeded
+
+kleenex_tissue_box using right_full_arm
+
+
+
+********************************************************************
+Planning statistics for execution on Fri Jun 24 19:09:17 2016
+
+********************************************************************
+
+Resolved the grasp query in...1.9517329999999999
+   ---Pick
+++ SUCCESSFUL PICK ++
+motion plan success time for kleenex_tissue_box using right_full_arm: 0.52454400000000001
+Total Time for kleenex_tissue_box using right_full_arm: 2.4765829999999998
+Total grasp_ik_fail: 0, total grasp_coliision_counter: 0, total motion_plan_fail: 0
+ grasp planning succeeded
+
+kleenex_tissue_box using right_full_arm
+
+
+
+********************************************************************
+Planning statistics for execution on Fri Jun 24 19:10:53 2016
+
+********************************************************************
+
+Resolved the grasp query in...1.6701699999999999
+   ---Pick
+++ SUCCESSFUL PICK ++
+motion plan success time for kleenex_tissue_box using right_full_arm: 0.52300999999999997
+Total Time for kleenex_tissue_box using right_full_arm: 2.1935020000000001
+Total grasp_ik_fail: 0, total grasp_coliision_counter: 0, total motion_plan_fail: 0
+ grasp planning succeeded
+
+kleenex_tissue_box using right_full_arm
+
+
+
+********************************************************************
+Planning statistics for execution on Fri Jun 24 19:13:32 2016
+
+********************************************************************
+
+Resolved the grasp query in...1.9145160000000001
+   ---Pick
+++ SUCCESSFUL PICK ++
+motion plan success time for kleenex_tissue_box using right_full_arm: 0.52656100000000006
+Total Time for kleenex_tissue_box using right_full_arm: 2.441411
+Total grasp_ik_fail: 0, total grasp_coliision_counter: 0, total motion_plan_fail: 0
+ grasp planning succeeded
+
+kleenex_tissue_box using right_full_arm
+
+
+
+********************************************************************
+Planning statistics for execution on Fri Jun 24 19:16:46 2016
+
+********************************************************************
+
+Resolved the grasp query in...1.9517610000000001
+   ---Pick
+++ SUCCESSFUL PICK ++
+motion plan success time for kleenex_tissue_box using right_full_arm: 0.53648200000000001
+Total Time for kleenex_tissue_box using right_full_arm: 2.4885679999999999
+Total grasp_ik_fail: 0, total grasp_coliision_counter: 0, total motion_plan_fail: 0
+ grasp planning succeeded
+
+kleenex_tissue_box using right_full_arm
+
+
+
+********************************************************************
+Planning statistics for execution on Fri Jun 24 19:26:02 2016
+
+********************************************************************
+
+Resolved the grasp query in...1.766861
+   ---Pick
+++ SUCCESSFUL PICK ++
+motion plan success time for kleenex_tissue_box using right_full_arm: 0.526586
+Total Time for kleenex_tissue_box using right_full_arm: 2.2937650000000001
+Total grasp_ik_fail: 0, total grasp_coliision_counter: 0, total motion_plan_fail: 0
+ grasp planning succeeded
+
+kleenex_tissue_box using right_full_arm
+
+
+
+********************************************************************
+Planning statistics for execution on Fri Jun 24 19:29:22 2016
+
+********************************************************************
+
+Resolved the grasp query in...1.7743040000000001
+   ---Pick
+++ SUCCESSFUL PICK ++
+motion plan success time for kleenex_tissue_box using right_full_arm: 0.52554699999999999
+Total Time for kleenex_tissue_box using right_full_arm: 2.3001749999999999
+Total grasp_ik_fail: 0, total grasp_coliision_counter: 0, total motion_plan_fail: 0
+ grasp planning succeeded
+
+kleenex_tissue_box using right_full_arm
+
+
+
+********************************************************************
+Planning statistics for execution on Fri Jun 24 19:38:37 2016
+
+********************************************************************
+
+Resolved the grasp query in...1.855442
+   ---Pick
+++ SUCCESSFUL PICK ++
+motion plan success time for kleenex_tissue_box using right_full_arm: 0.53364299999999998
+Total Time for kleenex_tissue_box using right_full_arm: 2.3894120000000001
+Total grasp_ik_fail: 0, total grasp_coliision_counter: 0, total motion_plan_fail: 0
+ grasp planning succeeded
+
+kleenex_tissue_box using right_full_arm
+
+
+
+********************************************************************
+Planning statistics for execution on Fri Jun 24 19:41:46 2016
+
+********************************************************************
+
+Resolved the grasp query in...1.8159860000000001
+   ---Pick
+       Retracting with object
+     ___IK.Steering
++++ Connection plan Success.
+       Retracting without object
+     ___IK.Steering
++++ Connection plan Success.
+motion plan success time for kleenex_tissue_box using right_full_arm: 1.3106420000000001
+Total Time for kleenex_tissue_box using right_full_arm: 3.1269550000000002
+Total grasp_ik_fail: 0, total grasp_coliision_counter: 0, total motion_plan_fail: 0
+ grasp planning succeeded
+
+kleenex_tissue_box using right_full_arm
+
+
+
+********************************************************************
+Planning statistics for execution on Fri Jun 24 19:45:47 2016
+
+********************************************************************
+
+Resolved the grasp query in...1.7664819999999999
+   ---Pick
+       Retracting with object
+     ___IK.Steering
++++ Connection plan Success.
+       Retracting without object
+     ___IK.Steering
++++ Connection plan Success.
+motion plan success time for kleenex_tissue_box using right_full_arm: 1.3084090000000002
+Total Time for kleenex_tissue_box using right_full_arm: 3.0752199999999998
+Total grasp_ik_fail: 0, total grasp_coliision_counter: 0, total motion_plan_fail: 0
+ grasp planning succeeded
+
+kleenex_tissue_box using right_full_arm
+
+
+
+********************************************************************
+Planning statistics for execution on Fri Jun 24 19:50:29 2016
+
+********************************************************************
+
+Resolved the grasp query in...1.9376960000000001
+   ---Pick
+       Retracting with object
+     ___IK.Steering
++++ Connection plan Success.
+       Retracting without object
+     ___IK.Steering
++++ Connection plan Success.
+motion plan success time for kleenex_tissue_box using right_full_arm: 1.3149150000000001
+Total Time for kleenex_tissue_box using right_full_arm: 3.252942
+Total grasp_ik_fail: 0, total grasp_coliision_counter: 0, total motion_plan_fail: 0
+ grasp planning succeeded
+
+kleenex_tissue_box using right_full_arm
+
+
+
+********************************************************************
+Planning statistics for execution on Fri Jun 24 19:52:46 2016
+
+********************************************************************
+
+Resolved the grasp query in...1.8833090000000001
+   ---Pick
+       Retracting with object
+     ___IK.Steering
++++ Connection plan Success.
+       Retracting without object
+     ___IK.Steering
++++ Connection plan Success.
+motion plan success time for kleenex_tissue_box using right_full_arm: 0.90472799999999998
+Total Time for kleenex_tissue_box using right_full_arm: 2.7883469999999999
+Total grasp_ik_fail: 0, total grasp_coliision_counter: 0, total motion_plan_fail: 0
+ grasp planning succeeded
+
+kleenex_tissue_box using right_full_arm

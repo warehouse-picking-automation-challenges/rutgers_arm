@@ -1,0 +1,8 @@
+
+<class name="prx_utilities/poses_distance"
+    type="prx::packages::distance_functions::poses_distance_t"
+    base_class_type="prx::util::distance_function_t">
+    <description>
+        Works on a sequence of x,y positions and finds difference among two lists of these poses.
+    </description>
+</class>

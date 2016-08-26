@@ -1,0 +1,202 @@
+<launch>
+
+  <rosparam command="load" file="$(find GTA)/input/templates/applications/GTA_application.yaml"/> 
+  <!-- <rosparam command="load" file="$(find prx_input)/templates/applications/empty_application.yaml"/> -->
+  <rosparam command="load" file="$(find prx_input)/templates/simulators/null_response_simulator.yaml"/>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+  <rosparam command="load" ns="consumer_controller" file="$(find GTA)/input/templates/controllers/replanning_waypoints.yaml"/>
+  <rosparam command="load" ns="plant" file="$(find prx_input)/templates/plants/disk.yaml"/>
+  <rosparam command="load" ns="vo_controller" file="$(find VO)/input/templates/vo_controller.yaml"/>
+  <rosparam command="load" ns="simulator/obstacles" file="$(find prx_input)/templates/environments/circle_grid.yaml"/>
+
+  <rosparam ns="application">
+    automatic: false
+    synchronized: true
+    timeout: 2000
+    wait_time: 10
+    consumer_paths: [simulator/consumer00,simulator/consumer01,simulator/consumer02,simulator/consumer03]
+    sserialize_sim_file: saved_states/TEST_SIM
+    experiment_filename: generic_name
+  </rosparam>
+  <rosparam ns="consumer_controller">
+    offline_planning: true
+    planning_cycle: 0.5
+  </rosparam>
+
+  <rosparam ns="plant">
+    state_space: 
+      min: [-300,-300]
+      max: [300,300]
+    input_control_space: 
+      min: [0, -4]
+      max: [25, 4]
+  </rosparam>
+
+  <rosparam ns="vo_controller">
+    state_space: 
+      min: [-300,-300]
+      max: [300,300]
+    inactive: false
+    radius: 18.0
+    minimally_invasive: false
+  </rosparam>
+
+  <rosparam command="load" ns="simulator">
+    simulation_step: 0.02
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer00">
+    template: consumer_controller
+    planning_node: /planning0
+    keep_last_control: false
+    keep_last_state: true
+    proximity_threshold: 1.9
+    filename: 4agents_GTA_0
+    goals:
+      -
+        goal:
+          type: "radial_goal_region"
+          distance_metric: 
+            type: linear_distance_metric
+          goal_state: [0,-180]
+          radius: 1
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer00/subsystems/vo_controller00">
+    template: vo_controller
+  </rosparam>
+
+  <rosparam ns="simulator/subsystems/consumer00/subsystems/vo_controller00/subsystems/disk00">
+    template: "plant"
+    initial_state: [0,178.161596779]
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 18.0
+          height: 2.0
+          material:  blue
+       <!-- visualization_geometry:
+          type: mesh
+          filename: vehicles/cars/vw.osg
+          material: blue -->
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer01">
+    template: consumer_controller
+    planning_node: /planning1
+    keep_last_control: false
+    keep_last_state: true
+    proximity_threshold: 1.9
+    filename: 4agents_GTA_1
+    goals:
+      -
+        goal:
+          type: "radial_goal_region"
+          distance_metric: 
+            type: linear_distance_metric
+          goal_state: [0,180]
+          radius: 1
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer01/subsystems/vo_controller01">
+    template: vo_controller
+  </rosparam>
+
+  <rosparam ns="simulator/subsystems/consumer01/subsystems/vo_controller01/subsystems/disk01">
+    template: "plant"
+    initial_state: [0,-202.451125699]
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 18.0
+          height: 2.0
+          material:  blue
+      <!--  visualization_geometry:
+          type: mesh
+          filename: vehicles/cars/vw.osg
+          material: blue -->
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer02">
+    template: consumer_controller
+    planning_node: /planning2
+    keep_last_control: false
+    keep_last_state: true
+    proximity_threshold: 1.9
+    filename: 4agents_GTA_2
+    goals:
+      -
+        goal:
+          type: "radial_goal_region"
+          distance_metric: 
+            type: linear_distance_metric
+          goal_state: [200,0]
+          radius: 1
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer02/subsystems/vo_controller02">
+    template: vo_controller
+  </rosparam>
+
+  <rosparam ns="simulator/subsystems/consumer02/subsystems/vo_controller02/subsystems/disk02">
+    template: "plant"
+    initial_state: [-214.968396176,0]
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 18.0
+          height: 2.0
+          material:  blue
+       <!-- visualization_geometry:
+          type: mesh
+          filename: vehicles/cars/vw.osg
+          material: blue -->
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer03">
+    template: consumer_controller
+    planning_node: /planning3
+    keep_last_control: false
+    keep_last_state: true
+    proximity_threshold: 1.9
+    filename: 4agents_GTA_3
+    goals:
+      -
+        goal:
+          type: "radial_goal_region"
+          distance_metric: 
+            type: linear_distance_metric
+          goal_state: [-200,0]
+          radius: 1
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer03/subsystems/vo_controller03">
+    template: vo_controller
+  </rosparam>
+
+  <rosparam ns="simulator/subsystems/consumer03/subsystems/vo_controller03/subsystems/disk03">
+    template: "plant"
+    initial_state: [165.460551986,0]
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 18.0
+          height: 2.0
+          material:  blue
+        <!-- visualization_geometry:
+          type: mesh
+          filename: vehicles/cars/vw.osg
+          material: blue -->
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/obstacles" file="$(find prx_input)/templates/environments/grid.yaml"/>
+
+</launch>

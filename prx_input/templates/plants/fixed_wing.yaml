@@ -1,0 +1,46 @@
+type: fixed_wing
+integrator:
+  type: rk4
+#x y z v roll pitch yaw flight thrust
+state_space: 
+  min: [-15,-15, 3,   1,-1.4,-1,-3.14,-1,0]
+  max: [ 15, 15, 5,   4, 1.4, 1, 3.14, 1,8]
+  scale: [1, 1, 1, 0, 0, 0, 0, 0, 0]
+#thrust angle_of_attack roll
+input_control_space:
+  min: [4, -1.4, -1]
+  max: [8, 1.4, 1]
+root_geom: body
+geometries:
+  -
+    name: chassis
+    collision_geometry:
+      type: box
+      dims: [.0001, .0001, .0001]
+      material: baxter_red
+    relative_configuration:
+      position: [.125, 0, 0]
+      orientation: [0,0,0,1]
+  -
+    name: body
+    collision_geometry:
+      type: box
+      dims: [.25, .04, .02]
+      material: baxter_red
+    # visualization_geometry:
+    #   type: mesh
+    #   filename: meshes/plane.osg
+    #   material: baxter_red
+  -
+    name: wings
+    collision_geometry:
+      type: box
+      dims: [.07, .32, .01]
+      material: baxter_red
+    relative_configuration:
+      position: [.05, 0, -.028]
+      orientation: [0,0,0,1]
+    # visualization_geometry:
+    #   type: box
+    #   dims: [.0001, .0001, .0001]
+    #   material: baxter_red

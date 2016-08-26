@@ -1,0 +1,5 @@
+<launch>
+
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml" />
+  <node name="metric_test" pkg="prx_utilities" type="metric_test" required="true" launch-prefix="" output="screen" />
+</launch>

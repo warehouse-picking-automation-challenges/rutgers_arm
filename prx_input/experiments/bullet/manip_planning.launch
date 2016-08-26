@@ -1,0 +1,251 @@
+<launch>  
+  <rosparam ns="simulation" command="load" file="$(find prx_input)/templates/applications/empty_application.yaml" />
+  <rosparam ns="simulation" command="load" file="$(find prx_input)/templates/simulators/bullet_simulator.yaml"/>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+<rosparam ns="simulation/controller" file="$(find prx_input)/templates/controllers/consumer.yaml"/>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer/subsystems/manip" file="$(find prx_input)/templates/plants/disk.yaml"/>
+  <rosparam command="load" ns="simulation/simulator/subsystems/object">
+    type: bullet_plant
+    geometries:
+      -
+        name: ball
+        collision_geometry:
+          type: box
+          dims: [.5 .5 .5]
+          material: blue
+        config: 
+          position: [8 8 1]
+          orientation: [0,0,0,1]
+        mass: 80000.0
+  </rosparam>
+  <rosparam command="load" ns="simulation/simulator/subsystems/object2">
+    type: bullet_plant
+    geometries:
+      -
+        name: ball
+        collision_geometry:
+          type: box
+          dims: [.5 .5 .5]
+          material: green
+        config: 
+          position: [4 4 1]
+          orientation: [0,0,0,1]
+        mass: 80000.0
+  </rosparam>
+  <rosparam command="load" ns="simulation/simulator/subsystems/object3">
+    type: bullet_plant
+    geometries:
+      -
+        name: ball
+        collision_geometry:
+          type: box
+          dims: [.5 .5 .5]
+          material: green
+        config: 
+          position: [8 4 1]
+          orientation: [0,0,0,1]
+        mass: 80000.0
+  </rosparam>
+  <rosparam command="load" ns="simulation/simulator/subsystems/object4">
+    type: bullet_plant
+    geometries:
+      -
+        name: ball
+        collision_geometry:
+          type: box
+          dims: [.5 .5 .5]
+          material: green
+        config: 
+          position: [4 8 1]
+          orientation: [0,0,0,1]
+        mass: 80000.0
+  </rosparam>
+
+<rosparam ns="simulation/simulator/subsystems/consumer">
+  template: "controller"
+  keep_last_control: false
+  keep_last_state: false
+</rosparam>
+
+  <rosparam ns="planning" file="$(find prx_input)/templates/planning_applications/single_query_application.yaml"/>
+<rosparam ns="planning">
+random_seed: 5165
+consumer_mapping:
+  - 
+    pair: [simulator/consumer, space1]
+</rosparam>
+        
+  <!-- Load template files -->
+       
+  <rosparam ns="planning/motion_planner/" file="$(find prx_input)/templates/motion_planners/sst.yaml"/>
+ 
+  <rosparam ns="planning/task_planner/" file="$(find prx_input)/templates/task_planners/single_shot.yaml"/>
+
+  <rosparam ns="planning/task_planner/" >
+  </rosparam>
+
+<rosparam ns="planning/task_planner/planners/" >
+planner1:
+  template: "motion_planner"
+  type: isst
+  space_name: space1
+  visualization_body: "simulator/object/ball"
+  visualize_tree: true
+  visualize_solution: false
+  sample_metric:
+    type: graph_distance_metric
+  max_points: 90001
+  delta_drain: .3
+  steering: false
+  delta_near: 0
+  collision_checking: true
+  use_heuristic: false
+  branch_and_bound: true
+  rrt_first: true
+  goal_bias_rate: .5
+</rosparam>
+       
+  <rosparam ns="planning/query_type" file="$(find prx_input)/templates/queries/motion_planning_query.yaml"/>
+<rosparam ns="planning/problems">
+problem1:
+  specification:
+    type: motion_planning_specification
+    validity_checker: 
+      type: temporal_validity_checker
+      cost_function: duration_cost
+    sampler:
+      type: uniform_sampler
+    distance_metric:
+      type: graph_distance_metric
+    local_planner:
+      type: time_varying_local_planner
+      lower_multiple: 50
+      upper_multiple: 400
+    seeds:
+      -
+        state: [0 0 8 8 1]
+    stopping_criteria:
+      elements:
+        criterion1:
+          type: timed_criterion
+          condition: 180
+  query:
+    template: "query_type"
+    start_state: [0 0 8 8 1]
+    goal:
+      type: "radial_goal_region"
+      distance_metric:
+        type: ann_distance_metric
+      radius: .5
+      goal_state: [4.2 4.2 4 4 .25]
+</rosparam>
+
+  <rosparam ns="planning/world_model">
+    black_list:
+      - [simulator/manip, [simulator/object4,simulator/object3,simulator/object2,simulator/object]]
+      - [simulator/object, [simulator/object4,simulator/object3,simulator/object2]]
+      - [simulator/object2, [simulator/object4,simulator/object3]]
+      - [simulator/objec3, [simulator/object4]]
+  </rosparam>
+<rosparam ns="planning">
+  system_mapping:
+  - 
+    pair: [simulator/consumer/manip, world_model/simulator/manip]
+
+  consumer: simulator/consumer
+</rosparam>
+<rosparam command="load" ns="planning/world_model/planning_contexts" >
+space1:
+  use_embedded_space: true
+  default:
+    type: hide_mapping
+</rosparam>
+  <rosparam ns="planning/world_model" file="$(find prx_input)/templates/simulators/bullet_simulator.yaml"/>
+
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/manip" file="$(find prx_input)/templates/plants/disk.yaml"/>
+  <rosparam ns="planning/world_model/simulator/subsystems/manip">
+    planning_contexts:
+      space1:
+        type: full_mapping
+  </rosparam>
+
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/object">
+    planning_contexts:
+      space1:
+        type: position_from_rigid_body_mapping
+    type: bullet_plant
+    geometries:
+      -
+        name: ball
+        collision_geometry:
+          type: box
+          dims: [.5 .5 .5]
+          material: blue
+        config: 
+          position: [8 8 1]
+          orientation: [0,0,0,1]
+        mass: 80000.0
+  </rosparam>
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/object2">
+    planning_contexts:
+      space1:
+        type: hide_mapping
+    type: bullet_plant
+    geometries:
+      -
+        name: ball
+        collision_geometry:
+          type: box
+          dims: [.5 .5 .5]
+          material: green
+        config: 
+          position: [4 4 1]
+          orientation: [0,0,0,1]
+        mass: 80000.0
+  </rosparam>
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/object3">
+    planning_contexts:
+      space1:
+        type: hide_mapping
+    type: bullet_plant
+    geometries:
+      -
+        name: ball
+        collision_geometry:
+          type: box
+          dims: [.5 .5 .5]
+          material: green
+        config: 
+          position: [8 4 1]
+          orientation: [0,0,0,1]
+        mass: 80000.0
+  </rosparam>
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/object4">
+    planning_contexts:
+      space1:
+        type: hide_mapping
+    type: bullet_plant
+    geometries:
+      -
+        name: ball
+        collision_geometry:
+          type: box
+          dims: [.5 .5 .5]
+          material: green
+        config: 
+          position: [4 8 1]
+          orientation: [0,0,0,1]
+        mass: 80000.0
+  </rosparam>
+
+
+  <node name="planning" pkg="prx_planning" type="prx_planning"
+        required="false" launch-prefix="" output="screen" args="planning" />
+
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation"
+        required="true"   launch-prefix="" output="screen" />
+
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+
+</launch>

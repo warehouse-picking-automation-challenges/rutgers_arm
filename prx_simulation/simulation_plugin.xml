@@ -1,0 +1,741 @@
+<library path="lib/libprx_simulation_lib">
+
+    <!-- Cost functions -->
+
+    <class name="prx_simulation/default_uniform"
+        type="prx::sim::default_uniform_t"
+        base_class_type="prx::sim::cost_function_t">
+        <description>
+            Default cost function where entire world is uniform.
+        </description>
+    </class>
+    <class name="prx_simulation/trrt_cost_function"
+        type="prx::sim::trrt_cost_function_t"
+        base_class_type="prx::sim::cost_function_t">
+        <description>
+            Cost function from T-RRT* paper.
+        </description>
+    </class>
+    <class name="prx_simulation/duration_cost"
+        type="prx::sim::duration_cost_function_t"
+        base_class_type="prx::sim::cost_function_t">
+        <description>
+            Duration of trajectory is the cost.
+        </description>
+    </class>
+    <class name="prx_simulation/distance_from_goal"
+        type="prx::sim::distance_from_goal_t"
+        base_class_type="prx::sim::cost_function_t">
+        <description>
+            Distance from the goal is the cost.
+        </description>
+    </class>
+    <class name="prx_simulation/baxter_end_effector_cost"
+        type="prx::sim::baxter_end_effector_cost_t"
+        base_class_type="prx::sim::cost_function_t">
+        <description>
+            Dynamic Baxter end effector cost (cost is proportional to velocity of end effector)
+        </description>        
+    </class>
+
+    <!-- COMMUNICATION CLASSES -->
+
+    <class name="prx_simulation/visualization_comm"
+        type="prx::sim::comm::visualization_comm_t"
+        base_class_type="prx::sim::sim_base_communication_t">
+        <description>
+            Default communication between simulation and visualization.
+        </description>
+    </class>
+
+    <class name="prx_simulation/simulation_comm"
+        type="prx::sim::comm::simulation_comm_t"
+        base_class_type="prx::sim::sim_base_communication_t">
+        <description>
+            Default communication initiated by the simulation node.
+        </description>
+    </class>
+
+    <class name="prx_simulation/planning_comm"
+        type="prx::sim::comm::planning_comm_t"
+        base_class_type="prx::sim::sim_base_communication_t">
+        <description>
+            Default communication between simulation and planning.
+        </description>
+    </class>
+
+    <!-- APPLICATIONS -->
+
+    <class name="prx_simulation/empty_application"
+        type="prx::sim::empty_application_t"
+        base_class_type="prx::sim::application_t">
+        <description>
+            An empty application.
+        </description>
+    </class>
+
+    <class name="prx_simulation/manual_application"
+        type="prx::sim::manual_application_t"
+        base_class_type="prx::sim::application_t">
+        <description>
+            An application that handles manually controlling multiple systems
+        </description>
+    </class>
+
+    <class name="prx_simulation/ode_debug_application"
+        type="prx::sim::ode_application_t"
+        base_class_type="prx::sim::application_t">
+        <description>
+            An application that helps debug ODE classes.
+        </description>
+    </class>
+
+    <class name="prx_simulation/apc_sim_application"
+        type="prx::packages::apc::apc_sim_application_t"
+        base_class_type="prx::sim::application_t">
+        <description>
+            APC 2016 simulation application
+        </description>
+    </class>
+
+        <class name="prx_simulation/apc_sim_no_sensing"
+        type="prx::packages::apc::apc_sim_no_sensing_t"
+        base_class_type="prx::sim::application_t">
+        <description>
+            APC 2016 simulation application without sensing
+        </description>
+    </class>
+
+    <class name="prx_simulation/apc_sim_app_stowing"
+        type="prx::packages::apc::apc_sim_app_stowing_t"
+        base_class_type="prx::sim::application_t">
+        <description>
+            Stowing APC 2016 simulation application
+        </description>
+    </class>
+
+    <class name="prx_simulation/apc_sim_app_stowing_no_sensing"
+        type="prx::packages::apc::apc_sim_app_stowing_no_sensing_t"
+        base_class_type="prx::sim::application_t">
+        <description>
+            Stowing APC 2016 simulation application without sensing
+        </description>
+    </class>
+    
+    <class name="prx_simulation/apc_generate_bin_traj"
+        type="prx::packages::apc::apc_generate_bin_traj_t"
+        base_class_type="prx::sim::application_t">
+        <description>
+            simulation application to generate and save bin trajectories
+        </description>
+    </class>
+
+    <!-- COLLISION CHECKERS -->
+
+    <class name="prx_simulation/pqp"
+        type="prx::sim::pqp_collision_checker_t"
+        base_class_type="prx::sim::collision_checker_t">
+        <description>
+            Uses the PQP collision library.
+        </description>
+    </class>
+
+    <class name="prx_simulation/circular"
+        type="prx::sim::circle_collision_checker_t"
+        base_class_type="prx::sim::collision_checker_t">
+        <description>
+            Uses the circle-to-circle collision checking
+        </description>
+    </class>
+
+    <class name="prx_simulation/ode"
+        type="prx::sim::ode_collision_checker_t"
+        base_class_type="prx::sim::collision_checker_t">
+        <description>
+            Uses the ode collision checking
+        </description>
+    </class>
+
+    <class name="prx_simulation/bullet"
+        type="prx::sim::bullet_collision_checker_t"
+        base_class_type="prx::sim::collision_checker_t">
+        <description>
+            Uses the bullet collision checking
+        </description>
+    </class>
+
+    <class name="prx_simulation/fcl"
+        type="prx::sim::fcl_collision_checker_t"
+        base_class_type="prx::sim::collision_checker_t">
+        <description>
+            FCL
+        </description>
+    </class>
+    <class name="prx_simulation/parallel_pqp"
+        type="prx::sim::parallel_collision_checker_t"
+        base_class_type="prx::sim::collision_checker_t">
+        <description>
+            Parallel PQP with CUDA
+        </description>
+    </class>
+
+    <!-- COLLISION LISTS -->
+
+    <class name="prx_simulation/vector_collision_list"
+        type="prx::sim::vector_collision_list_t"
+        base_class_type="prx::sim::collision_list_t">
+        <description>
+            Calls down to ODE to report collisions encountered.
+        </description>
+    </class>
+
+    <!-- SIMULATORS -->
+
+    <class name="prx_simulation/default_simulator"
+        type="prx::sim::default_simulator_t"
+        base_class_type="prx::sim::simulator_t">
+        <description>
+            Default simulator implementation for collision detection and response
+        </description>
+    </class>
+
+    <class name="prx_simulation/bullet_simulator"
+        type="prx::sim::bullet_simulator_t"
+        base_class_type="prx::sim::simulator_t">
+        <description>
+            A simulator for Bullet.
+        </description>
+    </class>
+    <class name="prx_simulation/uncertain_bullet_simulator"
+        type="prx::sim::uncertain_bullet_simulator_t"
+        base_class_type="prx::sim::simulator_t">
+        <description>
+            A simulator for Bullet with uncertainty.
+        </description>
+    </class>
+
+    <!-- CONTROLLERS -->
+
+    <class name="prx_simulation/router"
+        type="prx::sim::router_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            Router
+        </description>
+    </class>
+
+    <class name="prx_simulation/manual_controller"
+        type="prx::sim::manual_controller_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            Manual controller
+        </description>
+    </class>
+
+    <class name="prx_simulation/target_controller"
+        type="prx::sim::target_controller_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            Target controller
+        </description>
+    </class>
+
+    <class name="prx_simulation/consumer_controller"
+        type="prx::sim::consumer_controller_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            Consumer controller
+        </description>
+    </class>
+
+    <class name="prx_simulation/replanning_controller"
+        type="prx::sim::replanning_controller_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            Replanning consumer controller
+        </description>
+    </class>
+
+    <class name="prx_simulation/waypoint_controller"
+        type="prx::sim::waypoint_controller_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            Controller to take a plant through a series of waypoints.
+        </description>
+    </class>
+
+    <class name="prx_simulation/multigoal_controller"
+        type="prx::sim::multigoal_controller_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            Controller that passes down a control from a series of X-Y waypoints.
+        </description>
+    </class>
+
+    <class name="prx_simulation/minimal_avoidance_controller"
+        type="prx::sim::minimal_avoidance_controller_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            A minimalistic collision avoidance controller based on proximity
+        </description>
+    </class>
+
+    <class name="prx_simulation/converter"
+        type="prx::sim::converter_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            Controller that uses mapping functions to convert control spaces.
+        </description>
+    </class>
+
+    <class name="prx_simulation/goal_to_direction"
+        type="prx::sim::goal_to_direction_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            Controller that turns an X,Y goal into a V, THETA
+        </description>
+    </class>
+
+
+
+    <!-- SENSING MODELS -->
+    <class name="prx_simulation/sensing_model"
+        type="prx::sim::sensing_model_t"
+        base_class_type="prx::sim::sensing_model_t">
+        <description>
+            The default sensing model, which does not do anything special.
+        </description>
+    </class>
+
+
+    <class name="prx_simulation/proximity_sensing_model"
+        type="prx::sim::proximity_sensing_model_t"
+        base_class_type="prx::sim::sensing_model_t">
+        <description>
+            A sensing model used to provide proximity information.
+        </description>
+    </class>
+
+    <!-- SENSING INFO -->
+    <class name="prx_simulation/twoD_prox_info"
+        type="prx::sim::twoD_proximity_sensing_info_t"
+        base_class_type="prx::sim::sensing_info_t">
+        <description>
+            Sensing information that provides proximity information
+        </description>
+    </class>
+
+    <class name="prx_simulation/point_cloud_sensing_info"
+        type="prx::sim::point_cloud_sensing_info_t"
+        base_class_type="prx::sim::sensing_info_t">
+        <description>
+            Sensing info for reading point_clouds into collision checkers.
+        </description>
+    </class>
+
+    <!-- SENSORS -->
+    <class name="prx_simulation/config_sensor"
+        type="prx::sim::config_sensor_t"
+        base_class_type="prx::sim::sensor_t">
+        <description>
+            A simulated-sensor which provides configurations from plants and obstacles.
+        </description>
+    </class>
+
+    <class name="prx_simulation/geom_sensor"
+        type="prx::sim::geometry_sensor_t"
+        base_class_type="prx::sim::sensor_t">
+        <description>
+            A simulated-sensor which provides geometries from the simulator.
+        </description>
+    </class>
+
+    <class name="prx_simulation/velocity_sensor"
+        type="prx::sim::velocity_sensor_t"
+        base_class_type="prx::sim::sensor_t">
+        <description>
+            A simulated-sensor which provides velocities
+        </description>
+    </class>
+
+    <class name="prx_simulation/grasp_sensor"
+        type="prx::sim::grasp_sensor_t"
+        base_class_type="prx::sim::sensor_t">
+        <description>
+            A simulated-sensor which grasp (collision) detection
+        </description>
+    </class>
+
+    <class name="prx_simulation/point_cloud_sensor"
+        type="prx::sim::point_cloud_sensor_t"
+        base_class_type="prx::sim::sensor_t">
+        <description>
+            The sensor that reads point cloud information.
+        </description>
+    </class>
+
+
+    <!-- PLANTS -->
+    <class name="prx_simulation/euclidean_point"
+        type="prx::sim::euclidean_point_plant_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            A Point in d-dimensional Euclidean space.
+        </description>
+    </class>
+
+    <class name="prx_simulation/toroidal_point"
+        type="prx::sim::toroidal_point_plant_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            A Point in d-dimensional toroidal space.
+        </description>
+    </class>
+
+    <class name="prx_simulation/kinematic"
+        type="prx::sim::kinematic_plant_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            A general kinematic body used to build 2D/3D Rigid body plants
+        </description>
+    </class>
+
+    <class name="prx_simulation/rigid_body"
+        type="prx::sim::rigid_body_plant_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            A 2D rigid_body
+        </description>
+    </class>
+
+    <class name="prx_simulation/ping_pong_ball"
+        type="prx::sim::ping_pong_ball_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            ping_pong_ball
+        </description>        
+    </class>
+    
+    <class name="prx_simulation/sliding_rigid_body"
+        type="prx::sim::sliding_rigid_body_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            A 2D rigid_body with no orientation in state or control
+        </description>
+    </class>
+
+    <class name="prx_simulation/rigid_body_3d"
+        type="prx::sim::rigid_body_plant_3d_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            A 3D rigid_body
+        </description>
+    </class>
+
+    <class name="prx_simulation/disk"
+        type="prx::sim::disk_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            A two dimensional disk
+        </description>
+    </class>
+
+    <class name="prx_simulation/second_order_car"
+        type="prx::sim::second_order_car_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            A car with dynamic constraints on its motion.
+        </description>
+    </class>
+
+    <class name="prx_simulation/second_order_car_learned"
+        type="prx::sim::second_order_car_learned_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            A deeply learned car with dynamic constraints on its motion.
+        </description>
+    </class>
+
+    <class name="prx_simulation/helicopter"
+        type="prx::sim::helicopter_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            A helicopter.
+        </description>
+    </class>
+
+    <class name="prx_simulation/fixed_wing"
+        type="prx::sim::fixed_wing_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            A fixed wing airplane.
+        </description>
+    </class>
+
+    <class name="prx_simulation/simple_pendulum"
+        type="prx::sim::simple_pendulum_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            A one link pendulum.
+        </description>
+    </class>
+
+    <class name="prx_simulation/two_link_acrobot"
+        type="prx::sim::two_link_acrobot_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            A two link acrobot
+        </description>
+    </class>
+
+    <class name="prx_simulation/double_integrator_2d"
+        type="prx::sim::double_integrator_2d_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            Two-dimensional point mass.
+        </description>
+    </class>
+
+    <class name="prx_simulation/double_integrator"
+        type="prx::sim::double_integrator_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            One dimensional double integrator.
+        </description>
+    </class>
+
+    <class name="prx_simulation/ode_plant"
+        type="prx::sim::ode_plant_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            A plant encompassing all ode functionality.
+        </description>
+    </class>
+
+    <class name="prx_simulation/bullet_plant"
+        type="prx::sim::bullet_plant_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            A plant encompassing all bullet functionality.
+        </description>
+    </class>
+
+    <class name="prx_simulation/first_order_car"
+        type="prx::sim::first_order_car_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            A first order car.
+        </description>
+    </class>
+
+    <class name="prx_simulation/cart_pole"
+        type="prx::sim::cart_pole_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            A cart pole.
+        </description>
+    </class>
+
+    <class name="prx_simulation/rally_car"
+        type="prx::sim::rally_car_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            Car with drift.
+        </description>
+    </class>
+
+    <class name="prx_simulation/quadrotor"
+        type="prx::sim::quadrotor_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            A quadrotor approximation system.
+        </description>
+    </class>
+
+    <class name="prx_simulation/planar_manipulator"
+        type="prx::sim::planar_manipulator_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            A quadrotor approximation system.
+        </description>
+    </class>
+    <class name="prx_simulation/two_link_cart"
+        type="prx::sim::two_link_cart_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            A cart with a passive two-link pendulum.
+        </description>
+    </class>
+
+    <!-- OBSTACLES -->
+
+    <class name="prx_simulation/obstacle"
+        type="prx::sim::obstacle_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            Represents the obstacles.
+        </description>
+    </class>
+
+    <class name="prx_simulation/ode_obstacle"
+        type="prx::sim::ode_obstacle_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            Represents the obstacles in ODE.
+        </description>
+    </class>
+
+    <class name="prx_simulation/bullet_obstacle"
+        type="prx::sim::bullet_obstacle_t"
+        base_class_type="prx::sim::system_t">
+        <description>
+            Represents the obstacles in Bullet.
+        </description>
+    </class>
+
+    <!-- INTEGRATORS -->
+
+    <class name="prx_simulation/euler"
+        type="prx::sim::euler_integrator_t"
+        base_class_type="prx::sim::integrator_t">
+        <description>
+            Euler integration technique.
+        </description>
+    </class>
+
+    <class name="prx_simulation/rk4"
+        type="prx::sim::rk4_integrator_t"
+        base_class_type="prx::sim::integrator_t">
+        <description>
+            Runge-Kutta integration technique.
+        </description>
+    </class>
+
+
+    <!-- PACKAGES -->
+<class name="prx_simulation/apc_controller"
+    type="prx::packages::apc::apc_controller_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        The controller that receives the plans from the apc application.
+    </description>        
+</class>
+
+<class name="prx_simulation/manipulation_simulator"
+    type="prx::packages::manipulation::manipulation_simulator_t"
+    base_class_type="prx::sim::simulator_t">
+    <description>
+        A simulator which deals with the manipulation problems.
+    </description>        
+</class>
+
+<class name="prx_simulation/manipulation_simulator_system"
+    type="prx::packages::manipulation::manipulation_simulator_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        A simulator which deals with the manipulation problems.
+    </description>        
+</class>
+
+<class name="prx_simulation/manipulator"
+    type="prx::packages::manipulation::manipulator_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        A plant that represent a manipulator.
+    </description>        
+</class>
+
+<class name="prx_simulation/motoman"
+    type="prx::packages::manipulation::motoman_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        Motoman plant for use in PRACSYS.
+    </description>        
+</class>
+
+<class name="prx_simulation/motoman_parallel_unigripper"
+    type="prx::packages::manipulation::motoman_parallel_unigripper_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        Motoman plant for use in PRACSYS, with the parallel unigripper.
+    </description>        
+</class>
+
+
+<class name="prx_simulation/ff_end_effector"
+    type="prx::packages::manipulation::ff_end_effector_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        Free-flying end-effector manipulator plant
+    </description>        
+</class>
+
+
+<class name="prx_simulation/reflex"
+    type="prx::packages::manipulation::reflex_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        Free-flying Reflex hand 
+    </description>        
+</class>
+
+
+
+<class name="prx_simulation/baxter"
+    type="prx::packages::manipulation::baxter_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        Baxter plant for use in PRACSYS.
+    </description>        
+</class>
+
+<class name="prx_simulation/movable_body"
+    type="prx::packages::manipulation::movable_body_plant_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        A plant that represent a movable body that is not controllable.
+    </description>        
+</class>
+<class name="prx_simulation/grasp_visualizer"
+    type="prx::packages::manipulation::grasp_visualizer_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        Loops over a database and places manipulator grasping an object.
+    </description>        
+</class>
+
+<class name="prx_simulation/grasp_sensing_info"
+    type="prx::packages::manipulation::grasp_sensing_info_t"
+    base_class_type="prx::sim::sensing_info_t">
+    <description>
+        Sensing info for grasping.
+    </description>        
+</class>
+
+<class name="prx_simulation/simulated_grasp_sensor"
+    type="prx::packages::manipulation::simulated_grasp_sensor_t"
+    base_class_type="prx::sim::sensor_t">
+    <description>
+        Simulated grasp sensor.
+    </description>        
+</class>
+
+<class name="prx_simulation/collidable_movable_bodies_list"
+    type="prx::packages::manipulation::collidable_movable_bodies_list_t"
+    base_class_type="prx::sim::collision_list_t">
+    <description>
+        Allows collisions between movable bodies and static obstacles
+    </description>
+</class>
+
+<class name="prx_simulation/apc_shelf"
+    type="prx::packages::manipulation::apc_shelf_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        APC Shelf obstacle.
+    </description>        
+</class>
+
+    <!-- END PACKAGES -->
+
+</library>

@@ -1,0 +1,299 @@
+type: bullet_plant
+#initial_state: [0.25684,-1.34394,0.42624,2.61800,2.84100,2.09400,-0.06762,0]
+geometries:
+  -
+    name: left_upper_shoulder
+    mass: 5.70044
+    inertial_matrix: [0.04709102262,0.03766976455,0.03595988478]
+    config: 
+      position: [0 0 3]
+      orientation: [0 0 0.382683 0.92388]
+    collision_geometry:
+      type: cylinder
+      radius: 0.06
+      height: 0.2722
+      material: baxter_red
+    visualization_geometry:
+        type: mesh
+        filename: meshes/upper_shoulder/S0.osg
+        material: baxter_grey
+        local_transform:
+          position: [0 0 -0.1361]
+          orientation: [0,0,0,1]
+  -
+    name: left_lower_shoulder
+    mass: 3.22698
+    inertial_matrix: [0.01175209419, 0.0278859752, 0.02078749298]
+    config: 
+      # position: [0.112818 0.307818 3.39998]
+      # position: [0.069 0 0.27035]
+      position: [0.069 0 0]
+      orientation: [0.7071067812, 0.0, 0.0, 0.7071067812]
+    relative_to: left_upper_shoulder
+    collision_geometry:
+      type: cylinder
+      radius: 0.06
+      height: 0.12
+      material: baxter_red
+    visualization_geometry:
+        type: mesh
+        filename: meshes/lower_shoulder/S1.osg
+        local_transform:
+          position: [0,0,0]
+          orientation: [0,0,0,1]
+  -
+    name: left_upper_elbow
+    mass: 4.31272
+    inertial_matrix: [0.02661733557,0.02844355207,0.01248008322]
+    config: 
+      position: [0.102 0 0]
+      orientation: [.5 .5 .5 .5]
+    relative_to: left_lower_shoulder
+    collision_geometry:
+      type: cylinder
+      radius: 0.06
+      height: 0.304
+      material: baxter_red
+    visualization_geometry:
+        type: mesh
+        filename: meshes/upper_elbow/E0.osg
+        material: baxter_grey
+        local_transform:
+          position: [0.025,0,0.07]
+          orientation: [0,0,0,1]
+  # -
+  #   name: left_lower_elbow
+  #   mass: 2.07206
+  #   inertial_matrix: [0.00711582686,0.01318227876,0.00926852064]
+  #   config: 
+  #     position: [0.370502 0.565502 3.33098]
+  #     orientation: [-0.653282 -0.270598 0.270598 0.653282]
+  #   collision_geometry:
+  #     type: cylinder
+  #     radius: 0.06
+  #     height: 0.1
+  #     material: baxter_red
+  #   visualization_geometry:
+  #       type: mesh
+  #       filename: meshes/lower_elbow/E1.osg
+  #       material: baxter_grey
+  #       local_transform:
+  #         position: [0,0,0]
+  #         orientation: [0,0,0,1]
+  # -
+  #   name: left_upper_forearm
+  #   mass: 2.24665
+  #   inertial_matrix: [0.01667742825,0.01675457264,0.0037463115]
+  #   config: 
+  #     position: [0.500319 0.695319 3.33098]
+  #     orientation: [-0.270598 0.653282 0.270598 0.653282]
+  #   collision_geometry:
+  #     type: cylinder
+  #     radius: 0.06
+  #     height: 0.276
+  #     material: baxter_red
+  #   visualization_geometry:
+  #       type: mesh
+  #       filename: meshes/upper_forearm/W0.osg
+  #       material: baxter_grey
+  #       local_transform:
+  #         position: [0,0,0.08]
+  #         orientation: [0,0,0,1]
+  # -
+  #   name: left_lower_forearm
+  #   mass: 1.60979
+  #   inertial_matrix: [0.00387607152,0.00700537914,0.0055275524]
+  #   config: 
+  #     position: [0.635165 0.830165 3.32098]
+  #     orientation: [-0.653282 -0.270598 0.270598 0.653282]
+  #   collision_geometry:
+  #     type: cylinder
+  #     radius: 0.06
+  #     height: 0.1
+  #     material: baxter_red
+  #   visualization_geometry:
+  #       type: mesh
+  #       filename: meshes/lower_forearm/W1.osg
+  #       material: baxter_grey
+  #       local_transform:
+  #         position: [0.035,0.0,0]
+  #         orientation: [0,0,0,1]
+  # -
+  #   name: left_wrist
+  #   mass: 0.35093
+  #   inertial_matrix: [0.00025289155,0.0002688601,0.0003074118]
+  #   config: 
+  #     position: [0.7101 0.9051 3.32098]
+  #     orientation: [-0.270598 0.653282 0.270598 0.653282]
+  #   collision_geometry:
+  #     type: cylinder
+  #     radius: 0.06
+  #     height: 0.1371
+  #     material: baxter_grey
+  #   visualization_geometry:
+  #       type: mesh
+  #       filename: meshes/wrist/W2.osg
+  #       material: baxter_grey
+  #       local_transform:
+  #         position: [0,0,0.09]
+  #         orientation: [0,0,0,1]
+  # -
+  #   name: left_hand
+  #   mass: 0.19125
+  #   inertial_matrix: [0.00017588,0.00021166377,0.00023745397]
+  #   config: 
+  #     position: [0.778018 0.973018 3.32098]
+  #     orientation: [-0.270598 0.653282 0.270598 0.653282]
+  #   collision_geometry:
+  #     type: cylinder
+  #     radius: 0.04
+  #     height: 0.055
+  #     material: baxter_grey
+  # -
+  #   name: left_gripper
+  #   mass: 0.00094542
+  #   inertial_matrix: [2e-08, 3e-08, 2e-08]
+  #   config: 
+  #     position: [ 0.815141 1.01014 3.32098]
+  #     orientation: [-0.270598 0.653282 0.270598 0.653282]
+  #   collision_geometry:
+  #     type: box
+  #     dims: [0.05, 0.102, 0.05]
+  #     material: baxter_red
+  # -
+  #   name: left_gripper_left_finger
+  #   mass: 0.00094542
+  #   inertial_matrix: [2e-08, 3e-08, 2e-08]
+  #   config: 
+  #     position: [0.828222 1.08545 3.32098]
+  #     orientation: [-0.270598 0.653282 0.270598 0.653282]
+  #   collision_geometry:
+  #     type: box
+  #     dims: [0.012, 0.012, 0.075]
+  #     material: baxter_grey
+  # -
+  #   name: left_gripper_right_finger
+  #   mass: 0.00094542
+  #   inertial_matrix: [2e-08, 3e-08, 2e-08]
+  #   config: 
+  #     position: [0.890448 1.02322 3.32098]
+  #     orientation: [-0.270598 0.653282 0.270598 0.653282]
+  #   collision_geometry:
+  #     type: box
+  #     dims: [0.012, 0.012, 0.075]
+  #     material: baxter_grey
+  #############
+  # -
+  #   name: test_point
+  #   mass: 0.00094542
+  #   inertial_matrix: [2e-08, 3e-08, 2e-08]
+  #   config: 
+  #     position: [.133 0.25907 3.5356]
+  #     orientation: [0,0,0,1]
+  #   collision_geometry:
+  #     type: sphere
+  #     radius: .02
+  #     material: baxter_grey
+  # -
+  #   name: test_point2
+  #   mass: 0.00094542
+  #   inertial_matrix: [2e-08, 3e-08, 2e-08]
+  #   config: 
+  #     position: [0.112818 0.1617 3.39998]
+  #     orientation: [0,0,0,1]
+  #   collision_geometry:
+  #     type: sphere
+  #     radius: .02
+  #     material: baxter_grey
+  # -
+  #   type: generic
+  #   root_body: left_lower_forearm
+  #   child_body: left_wrist
+  #   origin: [0.115975 0 0]
+  #   axis: [0 0 1]
+  #   limit: [0 0]
+joints:
+  -
+    type: hinge
+    root_body: world
+    child_body: left_upper_shoulder
+    origin: [0 0 0]
+    axis: [0 0 1]
+    limit: [-1.70167993878,1.70167993878]
+  -
+    type: hinge
+    root_body: left_upper_shoulder
+    child_body: left_lower_shoulder
+    # origin: [0.069 0 0.27035]
+    # rpy: [-1.57079632679 0 0]
+    origin: [0 0 0]
+    axis: [0 0 1]
+    limit: [-2.147,1.047]
+  -
+    type: hinge
+    root_body: left_lower_shoulder
+    child_body: left_upper_elbow
+    origin: [0 0 0]
+    # rpy: [1.57079632679 0 1.57079632679 ]
+    axis: [0 0 1]
+    limit: [-3.05417993878,3.05417993878]
+  # -
+  #   type: hinge
+  #   root_body: left_upper_elbow
+  #   child_body: left_lower_elbow
+  #   origin: [0.069 0 0.26242]
+  #   axis: [0 0 1]
+  #   limit: [-0.05,2.618]
+  # -
+  #   type: hinge
+  #   root_body: left_lower_elbow
+  #   child_body: left_upper_forearm
+  #   origin: [0.10359 0 0]
+  #   axis: [0 0 1]
+  #   limit: [-3.059,3.059]
+  # -
+  #   type: hinge
+  #   root_body: left_upper_forearm
+  #   child_body: left_lower_forearm
+  #   origin: [0.01 0 0.2707]
+  #   axis: [0 0 1]
+  #   limit: [-1.57079632679,2.094]
+  # -
+  #   type: hinge
+  #   root_body: left_lower_forearm
+  #   child_body: left_wrist
+  #   origin: [0.115975 0 0]
+  #   axis: [0 0 1]
+  #   limit: [-3.059,3.059]
+  # -
+  #   type: generic
+  #   root_body: left_wrist
+  #   child_body: left_hand
+  #   linear_lower_limits: [0,0,0]
+  #   linear_upper_limits: [0,0,0]
+  #   angular_lower_limits: [0,0,0]
+  #   angular_upper_limits: [0,0,0]
+  # -
+  #   type: generic
+  #   root_body: left_hand
+  #   child_body: left_gripper
+  #   linear_lower_limits: [0,0,0]
+  #   linear_upper_limits: [0,0,0]
+  #   angular_lower_limits: [0,0,0]
+  #   angular_upper_limits: [0,0,0]
+  # -
+  #   type: generic
+  #   root_body: left_gripper
+  #   child_body: left_gripper_left_finger
+  #   linear_lower_limits: [0,0,0]
+  #   linear_upper_limits: [0,0,0]
+  #   angular_lower_limits: [0,0,0]
+  #   angular_upper_limits: [0,0,0]
+  # -
+  #   type: generic
+  #   root_body: left_gripper
+  #   child_body: left_gripper_right_finger
+  #   linear_lower_limits: [0,0,0]
+  #   linear_upper_limits: [0,0,0]
+  #   angular_lower_limits: [0,0,0]
+  #   angular_upper_limits: [0,0,0]

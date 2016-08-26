@@ -1,0 +1,23 @@
+building1:
+    type: ode_obstacle
+    geometries:
+      -
+        name: ramp1
+        collision_geometry: 
+          type: box
+          dims: [50, 50, 1]      
+          material: light_blue       
+        config:
+          position: [25, 25, 1]
+          orientation: [0.38268343236, 0, 0, 0.92387953251]
+        dims: [50, 50, 1]   
+      -
+        name: ramp2
+        collision_geometry: 
+          type: box
+          dims: [50, 50, 1]      
+          material: light_blue       
+        config:
+          position: [25, -25, 1]
+          orientation: [-0.38268343236 , 0, 0, 0.92387953251]
+        dims: [50, 50, 1]                 

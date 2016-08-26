@@ -1,0 +1,113 @@
+<launch>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+  <rosparam command="load" ns="prx/obstacles/" file="/home/tdk/research/pracsys/src/prx_packages/crowd_simulation/input/exports/full_model_with_queues/full_model_with_queues.yaml" />
+
+  <include ns="simulation_node1" file="$(find crowd_simulation)/input/exports/parallel_node.launch"/>
+  <rosparam command="load" ns="simulation_node1" file="/home/tdk/research/pracsys/src/prx_packages/crowd_simulation/input/exports/full_model_with_queues/full_model_with_queues_semantics.yaml"/>
+
+  <rosparam ns="simulation_node1">
+    folder_path: "/users/akrontiris/pabt"
+    paths_filename: "/full_model_with_queues_paths.csv"
+    navigation_graph: "/full_model_with_queues_navmesh.txt"
+    semantic_filename: "/full_model_with_queues_semantics.yaml"
+    statistics_filename: "/stats_node1.csv"
+    node_id: 0
+    num_of_nodes: 6
+    visualize: false
+    persistent: false
+    end_frame_id: 36000000
+    simulator:
+      -simulation_step: 0.05
+  </rosparam>
+
+  <include ns="simulation_node2" file="$(find crowd_simulation)/input/exports/parallel_node.launch"/>
+  <rosparam command="load" ns="simulation_node2" file="/home/tdk/research/pracsys/src/prx_packages/crowd_simulation/input/exports/full_model_with_queues/full_model_with_queues_semantics.yaml"/>
+
+  <rosparam ns="simulation_node2">
+    folder_path: "/users/akrontiris/pabt"
+    paths_filename: "/full_model_with_queues_paths.csv"
+    navigation_graph: "/full_model_with_queues_navmesh.txt"
+    semantic_filename: "/full_model_with_queues_semantics.yaml"
+    statistics_filename: "/stats_node2.csv"
+    node_id: 1
+    num_of_nodes: 6
+    visualize: false
+    persistent: false
+    end_frame_id: 36000000
+    simulator:
+      -simulation_step: 0.05
+  </rosparam>
+
+  <include ns="simulation_node3" file="$(find crowd_simulation)/input/exports/parallel_node.launch"/>
+  <rosparam command="load" ns="simulation_node3" file="/home/tdk/research/pracsys/src/prx_packages/crowd_simulation/input/exports/full_model_with_queues/full_model_with_queues_semantics.yaml"/>
+
+  <rosparam ns="simulation_node3">
+    folder_path: "/users/akrontiris/pabt"
+    paths_filename: "/full_model_with_queues_paths.csv"
+    navigation_graph: "/full_model_with_queues_navmesh.txt"
+    semantic_filename: "/full_model_with_queues_semantics.yaml"
+    statistics_filename: "/stats_node3.csv"
+    node_id: 2
+    num_of_nodes: 6
+    visualize: false
+    persistent: false
+    end_frame_id: 36000000
+    simulator:
+      -simulation_step: 0.05
+  </rosparam>
+
+  <include ns="simulation_node4" file="$(find crowd_simulation)/input/exports/parallel_node.launch"/>
+  <rosparam command="load" ns="simulation_node4" file="/home/tdk/research/pracsys/src/prx_packages/crowd_simulation/input/exports/full_model_with_queues/full_model_with_queues_semantics.yaml"/>
+
+  <rosparam ns="simulation_node4">
+    folder_path: "/users/akrontiris/pabt"
+    paths_filename: "/full_model_with_queues_paths.csv"
+    navigation_graph: "/full_model_with_queues_navmesh.txt"
+    semantic_filename: "/full_model_with_queues_semantics.yaml"
+    statistics_filename: "/stats_node4.csv"
+    node_id: 3
+    num_of_nodes: 6
+    visualize: false
+    persistent: false
+    end_frame_id: 36000000
+    simulator:
+      -simulation_step: 0.05
+  </rosparam>
+
+  <include ns="simulation_node5" file="$(find crowd_simulation)/input/exports/parallel_node.launch"/>
+  <rosparam command="load" ns="simulation_node5" file="/home/tdk/research/pracsys/src/prx_packages/crowd_simulation/input/exports/full_model_with_queues/full_model_with_queues_semantics.yaml"/>
+
+  <rosparam ns="simulation_node5">
+    folder_path: "/users/akrontiris/pabt"
+    paths_filename: "/full_model_with_queues_paths.csv"
+    navigation_graph: "/full_model_with_queues_navmesh.txt"
+    semantic_filename: "/full_model_with_queues_semantics.yaml"
+    statistics_filename: "/stats_node5.csv"
+    node_id: 4
+    num_of_nodes: 6
+    visualize: false
+    persistent: false
+    end_frame_id: 36000000
+    simulator:
+      -simulation_step: 0.05
+  </rosparam>
+
+  <include ns="simulation_node6" file="$(find crowd_simulation)/input/exports/parallel_node.launch"/>
+  <rosparam command="load" ns="simulation_node6" file="/home/tdk/research/pracsys/src/prx_packages/crowd_simulation/input/exports/full_model_with_queues/full_model_with_queues_semantics.yaml"/>
+
+  <rosparam ns="simulation_node6">
+    folder_path: "/users/akrontiris/pabt"
+    paths_filename: "/full_model_with_queues_paths.csv"
+    navigation_graph: "/full_model_with_queues_navmesh.txt"
+    semantic_filename: "/full_model_with_queues_semantics.yaml"
+    statistics_filename: "/stats_node6.csv"
+    node_id: 5
+    num_of_nodes: 6
+    visualize: false
+    persistent: false
+    end_frame_id: 36000000
+    simulator:
+      -simulation_step: 0.05
+  </rosparam>
+
+</launch>

@@ -1,0 +1,326 @@
+<launch>  
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <rosparam ns="planning/world_model/simulator/obstacles">
+    open_table:
+      type: obstacle 
+      geometries:
+        -
+          name: top1
+          collision_geometry:
+            type: box
+            dims: [1.0,1.6,0.06]
+            material: white
+          config:
+            position: [0.8, 0, 0.77]
+            orientation: [0,0,0,1]
+        -
+          name: leg_1_1
+          collision_geometry:
+            type: box
+            dims: [0.06,0.06,0.78]
+            material: gold
+          config:
+            position: [1.265, 0.465, 0.39]
+            orientation: [0,0,0,1]
+        -
+          name: leg_2_1
+          collision_geometry:
+            type: box
+            dims: [0.06,0.06,0.78]
+            material: gold
+          config:
+            position: [0.335, 0.465, 0.39]
+            orientation: [0,0,0,1]
+        -
+          name: leg_3_1
+          collision_geometry:
+            type: box
+            dims: [0.06,0.06,0.78]
+            material: gold
+          config:
+            position: [0.335, -0.465, 0.39]
+            orientation: [0,0,0,1]
+        -
+          name: leg_4_1
+          collision_geometry:
+            type: box
+            dims: [0.06,0.06,0.78]
+            material: gold
+          config:
+            position: [1.265, -0.465, 0.39]
+            orientation: [0,0,0,1]
+        -
+          name: foundation_lefttable
+          collision_geometry:
+            type: box
+            dims: [.65, 0.4, 0.7]
+            material: shelf_grey
+          config:
+            position: [0.0, 0.8, 0.2425]
+            orientation: [0, 0, 0, 1]
+        -
+          name: box_left_wall_lefttable
+          collision_geometry:
+            type: box
+            dims: [0.3, 0.03, 0.15]
+            material: blue
+          config:
+            position: [0.3, 0.8, 0.6675]
+            orientation: [0 0 0.70710678118 0.70710678118]
+        -
+          name: box_right_wall_lefttable
+          collision_geometry:
+            type: box
+            dims: [0.3, 0.03, 0.15]
+            material: blue
+          config:
+            position: [-0.3, 0.8, 0.6675]
+            orientation: [0 0 0.70710678118 0.70710678118]
+        -
+          name: box_front_wall_lefttable
+          collision_geometry:
+            type: box
+            dims: [0.03, 0.6, 0.15]
+            material: blue
+          config:
+            position: [0.0, 0.65, 0.6675]
+            orientation: [0 0 0.70710678118 0.70710678118]
+        -
+          name: box_back_wall_lefttable
+          collision_geometry:
+            type: box
+            dims: [0.03, 0.6, 0.15]
+            material: blue
+          config:
+            position: [0.0, 0.95, 0.6675]
+            orientation: [0 0 0.70710678118 0.70710678118]
+        -
+          name: foundation_righttable
+          collision_geometry:
+            type: box
+            dims: [.65, 0.4, 0.7]
+            material: shelf_grey
+          config:
+            position: [0.0, -0.8, 0.2425]
+            orientation: [0, 0, 0, 1]
+        -
+          name: box_left_wall_righttable
+          collision_geometry:
+            type: box
+            dims: [0.3, 0.03, 0.15]
+            material: red
+          config:
+            position: [0.3, -0.8, 0.6675]
+            orientation: [0 0 0.70710678118 0.70710678118]
+        -
+          name: box_right_wall_righttable
+          collision_geometry:
+            type: box
+            dims: [0.3, 0.03, 0.15]
+            material: red
+          config:
+            position: [-0.3, -0.8, 0.6675]
+            orientation: [0 0 0.70710678118 0.70710678118]
+        -
+          name: box_front_wall_righttable
+          collision_geometry:
+            type: box
+            dims: [0.03, 0.6, 0.15]
+            material: red
+          config:
+            position: [0.0, -0.65, 0.6675]
+            orientation: [0 0 0.70710678118 0.70710678118]
+        -
+          name: box_back_wall_righttable
+          collision_geometry:
+            type: box
+            dims: [0.03, 0.6, 0.15]
+            material: red
+          config:
+            position: [0.0, -0.95, 0.6675]
+            orientation: [0 0 0.70710678118 0.70710678118]
+      </rosparam>
+
+
+  <rosparam command="load" ns="planning" file="$(find prx_input)/templates/spaces/space_types.yaml"/>  
+  <rosparam command="load" ns="planning" file="$(find prx_input)/templates/planning_applications/single_query_application.yaml" />
+  <rosparam command="load" ns="planning/world_model" file="$(find manipulation)/input/manipulation_simulator.yaml"/>  
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/manipulator" file="$(find manipulation)/input/baxter/baxter.yaml"/>
+  <rosparam command="load" ns="planning/cup_object" file="$(find manipulation)/input/objects/cup.yaml"/>
+  <rosparam command="load" ns="planning/crayola_object" file="$(find manipulation)/input/objects/crayola.yaml"/>
+  
+  <rosparam command="load" ns="planning">
+    # # random_seed: 5646
+    # random_seed: 14391835
+    simulate: false
+    visualize: false
+    world_model:
+      type: manipulation_world_model
+      num_ik_seeds: 10
+      IK_databases:
+        baxter_database:
+          distance_metric:
+            type: linear_distance_metric
+          manipulator: manipulator
+          samples: 20000
+          deserialize_file: baxter[20000].database
+  </rosparam>
+
+  <!-- ARM CONTEXTS -->
+  <rosparam ns="planning/world_model/planning_contexts">
+    manipulator_pc:
+      default:
+        type: "hide_mapping"
+    left_full_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_arm"
+        end_effector_context_name: "left_end_effector"
+        start_link: "base"
+        end_link: "end_effector_left"
+        ik_database: baxter_database
+        left_arm_ik: true
+    left_arm:
+      default:
+       type: "obstacle_mapping"
+    left_arm_planning:
+      default:
+        type: "hide_mapping"
+    left_end_effector:
+      default:
+       type: "hide_mapping"
+    right_full_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "right_full_arm"
+        arm_context_name: "right_arm"
+        end_effector_context_name: "right_end_effector"
+        start_link: "base"
+        end_link: "end_effector_right"
+        ik_database: baxter_database
+        left_arm_ik: false
+    right_arm:
+      default:
+       type: "obstacle_mapping"
+    right_arm_planning:
+      default:
+        type: "hide_mapping"
+    right_end_effector:
+      default:
+       type: "hide_mapping"
+  </rosparam>
+
+  <rosparam ns="planning/world_model/simulator/subsystems/manipulator">
+    initial_state: [1.5681561256801836989893673,-0.6933267886173464233934283,-0.8849957765343199334040492,1.9000335039215263677192524,-2.2107340224187499444497007,-0.8368545446250841290947164,0.9573491235931878007292539,-1.6812774859126198290226739,-0.5125644883535177553923745,1.0773961507954412653020881,1.8738453488311539452126908,1.9879612960600967497271085,-0.9987250827246928475133814,-0.8436528393489071131483570, 1,1]
+    planning_contexts:
+      manipulator_pc:
+        type: "full_mapping"
+      left_full_arm:
+        type: "baxter_left_full_arm_state_mapping"
+      left_arm:
+        type: "baxter_left_arm_state_mapping"
+      left_end_effector:
+        type: "baxter_left_gripper_state_mapping"
+      left_arm_planning:
+        type: "baxter_left_arm_state_mapping"
+      right_full_arm:
+        type: "baxter_right_full_arm_state_mapping"
+      right_arm:
+        type: "baxter_right_arm_state_mapping"
+      right_end_effector:
+        type: "baxter_right_gripper_state_mapping"
+      right_arm_planning:
+        type: "baxter_right_arm_state_mapping"
+  </rosparam>
+
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/box1">
+    template: "cup_object"
+    initial_state: [0.43270700,-0.02544752,0.86000000,0.60881596,-0.35964305,-0.60881596,-0.35964305]
+    state_space:
+      min: [0.3, -0.8, 0.86, -1, -1, -1, -1]
+      max: [1.3, 0.8, 0.86, 1, 1, 1, 1]
+      scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  </rosparam>
+
+  <rosparam ns="planning/graph_query_template">
+    type: manipulation_query
+    query_type: add_query_points_collisions
+    query_collision_type: lazy_collisions
+    goal:
+      type: multiple_goal_states
+      distance_metric:
+        type: ann_distance_metric
+  </rosparam>
+
+  <rosparam ns="planning/graph_specification_template">
+    type: motion_planning_specification
+    validity_checker: 
+      type: world_model_validity_checker
+    sampler:
+      type: uniform_sampler
+    distance_metric:
+      type: graph_distance_metric
+    local_planner:
+      type: bvp_local_planner
+    stopping_criteria:
+      elements:
+        criterion1:
+          type: iteration_criterion
+          condition: 1
+    heuristic_search:
+      type: prm_astar
+  </rosparam>
+
+  <rosparam ns="planning/task_planner/">
+    type: pag_evaluation_tp
+    left_context_name: "left_full_arm"
+    right_context_name: "right_full_arm"
+    nr_object_poses: 2000
+    left_filename: "cup_table_left.valid_grasps"
+    right_filename: "cup_table_right.valid_grasps"
+    left_placement_state: [0.10000000,0.80000000,0.80000000,0.70710678,0.00000000,-0.70710678,0.00000000]
+    right_placement_state: [0.10000000,-0.80000000,0.80000000,0.70710678,0.00000000,-0.70710678,0.00000000]
+    initial_rotation: [0.0,1.5708.0,0.0]
+    #initial_rotation: [0.0,0.0,0.0]
+    min_rotation_range: [-3.14159,-3.14159,-3.14159]
+    max_rotation_range: [3.14159,3.14159,3.14159]
+    rotation_axis: [1.0,0.0,0.0]
+    planners:
+      temp_planner:
+        type: "prm_star"
+        visualization_bodies: ["blah"]
+        visualize_graph: false
+        visualize_solutions: false 
+        space_name: "right_arm_planning"
+        planning_context_name: "right_arm"
+        query:
+          template: graph_query_template
+        specification:
+          template: graph_specification_template
+    grasping_planner:
+      type: grasping_planner
+      validity_checker: 
+        type: world_model_validity_checker
+      sampler:
+        type: uniform_sampler
+      data_folders: 
+        left_full_arm: "prx_packages/manipulation/input/grasp_data/baxter_parallel_gripper/"
+        right_full_arm: "prx_packages/manipulation/input/grasp_data/baxter_parallel_gripper/"
+      max_ik_tries: 50
+  </rosparam>
+
+  <rosparam ns="planning/problems">
+    pick_and_place_problem:
+      specification:
+        template: graph_specification_template      
+      query:
+        template: graph_query_template
+  </rosparam>
+
+  <node name="planning" pkg="prx_planning" type="prx_planning" required="false" launch-prefix="" output="screen" args="planning"/>
+
+</launch>

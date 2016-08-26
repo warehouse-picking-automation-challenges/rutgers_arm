@@ -1,0 +1,8 @@
+<package>
+  <description brief="Amazon Picking Challenge Code">
+    This package deals with manipulation problems in the Amazon Picking Challenge.
+  </description>
+  <author>PRACSYS</author>
+  <license>BSD</license>
+  <url>http://www.pracsyslab.org</url>
+</package>

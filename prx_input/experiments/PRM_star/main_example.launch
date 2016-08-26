@@ -1,0 +1,82 @@
+<!-- This file has been tested on PRACSYS revision  -->
+
+<launch>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+  <include ns="simulation" file="$(find prx_input)/experiments/PRM_star/simulation/simulation.launch"/>
+  <include file="$(find prx_input)/experiments/PRM_star/planning/planning.launch"/>
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+
+
+  <rosparam ns="simulation/simulator/obstacles">
+    boxes_for_test:
+      type: obstacle
+      geometries:
+        -
+          name: bottom
+          collision_geometry: 
+            type: box
+            dims: [10, 10, 10]
+            material: blue
+          config:
+            position: [0, 0, 0]
+            orientation: [0, 0, 0, 1]
+        -
+          name: bottom2
+          collision_geometry: 
+            type: box
+            dims: [15, 15, 10]
+            material: red
+          config:
+            position: [10, -15, 0]
+            orientation: [0, 0, 0, 1]
+        -
+          name: bottom3
+          collision_geometry: 
+            type: box
+            dims: [20, 20, 10]
+            material: green
+          config:
+            position: [-10, 10, 0]
+            orientation: [0, 0, 0, 1]
+  </rosparam>
+
+  <rosparam ns="planning/world_model/simulator/obstacles">
+    boxes_for_test:
+      type: obstacle
+      geometries:
+        -
+          name: bottom
+          collision_geometry: 
+            type: box
+            dims: [10, 10, 10]
+            material: blue
+          config:
+            position: [0, 0, 0]
+            orientation: [0, 0, 0, 1]
+        -
+          name: bottom2
+          collision_geometry: 
+            type: box
+            dims: [15, 15, 10]
+            material: red
+          config:
+            position: [10, -15, 0]
+            orientation: [0, 0, 0, 1]
+        -
+          name: bottom3
+          collision_geometry: 
+            type: box
+            dims: [20, 20, 10]
+            material: green
+          config:
+            position: [-10, 10, 0]
+            orientation: [0, 0, 0, 1]
+  </rosparam>
+
+  <!-- Define the planning node -->
+  <node name="planning" pkg="prx_planning" type="prx_planning" required="true" launch-prefix="gdb --args" output="screen" args="planning" />
+
+  <!-- Define the simulation node -->
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation" required="true" launch-prefix="" output="screen" args="simulation"/>
+
+</launch>

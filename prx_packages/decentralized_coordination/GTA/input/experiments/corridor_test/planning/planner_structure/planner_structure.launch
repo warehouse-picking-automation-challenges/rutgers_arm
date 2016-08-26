@@ -1,0 +1,91 @@
+<launch>
+
+  <rosparam command="load" file="$(find GTA)/input/templates/planning_applications/replanning_gta_application.yaml"/>
+  
+  <rosparam command="load" ns="h_graph_planner" file="$(find homotopies)/input/templates/motion_planners/h_graph_planner.yaml"/>
+  <rosparam command="load" ns="irs_motion_planner" file="$(find GTA)/input/templates/motion_planners/special_irs.yaml"/>
+  <rosparam command="load" ns="prm_motion_planner" file="$(find GTA)/input/templates/motion_planners/special_prm.yaml"/>
+  <rosparam command="load" ns="task_planner" file="$(find GTA)/input/templates/task_planners/replanning_gta.yaml"/>
+  <rosparam ns="">
+    planning_duration: 0.5
+  </rosparam>
+
+  <rosparam ns="task_planner" >
+    prm_max_iterations: 1500
+    max_exploratory_actions: 2
+    action_limit: 2
+    visualize_actions: true
+    visualize_neighbors: false
+    turn_off_regret: true
+    d_prox: 100
+    compute_action_type: irs
+    discount_factor: 0.99
+    use_worst_regret: false
+    randomized: false
+    strictly_positive_regret: false
+    use_path_costs: true
+    use_old_method: false
+    disk_radius: 10.5
+  </rosparam>  
+
+  <rosparam ns="h_graph_planner" >
+    local_planner:
+      type: bvp_local_planner
+  </rosparam>  
+
+  <rosparam ns="irs_motion_planner" > 
+    local_planner:
+      type: bvp_local_planner
+  </rosparam>  
+  <rosparam ns="task_planner/planners/" >
+    irs_motion_planner:
+      template: "irs_motion_planner" 
+      space_name: "space1"
+      visualization_body: ["simulator/disk/body"]
+      visualize: false
+      visualize_graph: false 
+      graph_color: green
+      visualize_solution: false
+      store_interpolated_edges: false
+      distance_metric: 
+        type: graph_distance_metric
+      radius_solution: false
+      deserialize_file: roadmaps/1_5k_corridor.txt  
+      weight_factor: 1000.0
+      check_infinite_cost_path: false
+    h_graph_planner:
+      template: "h_graph_planner"
+      space_name: "space1"
+      visualization_body: ["simulator/disk/body"]
+      visualize: false
+      visualize_graph: false
+      visualize_solutions: false
+      visualize_homotopies: false
+      distance_metric:
+        type: graph_distance_metric
+      representative_points:
+        - point: [0,0]
+        - point: [0,-55]
+        - point: [0,55]
+      number_explored_homotopies: 2
+      homotopy_threshold: 5.5
+      TR: [130,35]
+      BL: [-130,-35]
+      custom_graph: 0
+      deserialize_file: roadmaps/1_5k_corridor.txt 
+    prm_motion_planner:
+      template: "prm_motion_planner" 
+      space_name: "space1"
+      visualization_body: ["simulator/disk/body"]
+      visualize_graph: true
+      visualize: true
+      graph_color: green
+      visualize_solution: false
+      store_interpolated_edges: false
+      distance_metric: 
+        type: graph_distance_metric
+      radius_solution: false
+      serialize_file: PRM_1_5k_grid.txt  
+  </rosparam>
+
+</launch>

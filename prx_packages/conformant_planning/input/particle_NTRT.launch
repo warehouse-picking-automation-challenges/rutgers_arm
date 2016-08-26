@@ -1,0 +1,424 @@
+<!--
+<launch>
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation"
+        required="true" launch-prefix="" args= "simulation" output="screen"/>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>     
+
+
+  <rosparam ns="simulation" command="load" file="$(find prx_input)/templates/applications/empty_application.yaml"/>
+  <rosparam ns="simulation/simulator">
+  type: ntrt_simulator
+  simulated_particles: true
+  simulation_step: 0.002
+  collision_checker:
+    type: bullet
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_0" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_1" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_2" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_3" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_4" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_5" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_6" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_7" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_8" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_9" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_10" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_11" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_12" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_13" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_14" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_15" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_16" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_17" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_18" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_19" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_20" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_21" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_22" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_23" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_24" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_25" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_26" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_27" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_28" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_29" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_30" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_31" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_32" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_33" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_34" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_35" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_36" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_37" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_38" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_39" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_40" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_41" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_42" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_43" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_44" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_45" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_46" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_47" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_48" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/p_49" file="$(find NTRT_interface)/input/ntrt_plant.yaml" />
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_0" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_1" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_2" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_3" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_4" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_5" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_6" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_7" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_8" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_9" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_10" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_11" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_12" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_13" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_14" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_15" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_16" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_17" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_18" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_19" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_20" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_21" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_22" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_23" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_24" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_25" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_26" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_27" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_28" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_29" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_30" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_31" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_32" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_33" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_34" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_35" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_36" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_37" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_38" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_39" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_40" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_41" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_42" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_43" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_44" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_45" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_46" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_47" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_48" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+  <rosparam command="load" ns="simulation/simulator/subsystems/s_49" file="$(find NTRT_interface)/input/ntrt_plant2.yaml" />
+
+
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+
+
+  <rosparam ns="simulation/application">
+    visualize: true
+  </rosparam>
+  
+</launch>
+-->
+
+
+
+<launch>  
+  <rosparam ns="simulation" command="load" file="$(find prx_input)/templates/applications/empty_application.yaml" />
+
+  <rosparam ns="simulation/simulator" command="load" >  
+  type: ntrt_simulator
+  simulated_particles: false
+  simulation_step: 0.001
+  collision_checker:
+    type: bullet
+  </rosparam>
+  <!--
+<rosparam ns="simulation/simulator/obstacles">
+floor:
+  type: bullet_obstacle
+  geometries:
+    -
+      name: ground
+      collision_geometry:
+        type: box
+        dims: [10.0,20.0,.002]
+        material: red
+      config:
+        position: [15 0 0]
+        orientation: [0 0 0 1]
+</rosparam>
+<rosparam ns="simulation/simulator/obstacles">
+floor:
+  type: bullet_obstacle
+  geometries:
+    -
+      name: ground
+      collision_geometry:
+        type: heightmap
+        filename: "heightmap.txt"
+        material: viridian
+      config:
+        position: [0 0 0]
+        orientation: [0 0 0 1]
+</rosparam>
+<rosparam ns="planning/world_model/simulator/obstacles">
+floor:
+  type: bullet_obstacle
+  geometries:
+    -
+      name: ground
+      collision_geometry:
+        type: heightmap
+        filename: "heightmap.txt"
+        material: viridian
+      config:
+        position: [0 0 0]
+        orientation: [0 0 0 1]
+</rosparam>-->
+
+  <rosparam ns="planning/world_model" command="load" >  
+  simulator:
+    type: ntrt_simulator
+    simulation_step: 0.001
+    collision_checker:
+      type: bullet
+  </rosparam>
+
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+<rosparam ns="simulation/controller" file="$(find prx_input)/templates/controllers/consumer.yaml"/>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer/subsystems/rover"
+    file="$(find NTRT_interface)/input/ntrt_plant.yaml"/>
+
+<rosparam ns="simulation/simulator/subsystems/consumer">
+  template: "controller"
+  keep_last_control: true
+  keep_last_state: false
+</rosparam>
+
+  <rosparam ns="planning" file="$(find prx_input)/templates/planning_applications/single_query_application.yaml"/>
+<rosparam ns="planning">
+random_seed: 5165
+simulate: false
+consumer_mapping:
+  - 
+    pair: [simulator/consumer, space1]
+world_model:
+  type: default_world_model
+visualize: false
+</rosparam>
+       
+  <rosparam ns="planning/motion_planner/" file="$(find prx_input)/templates/motion_planners/sst.yaml"/>
+ 
+  <rosparam ns="planning/task_planner/" file="$(find prx_input)/templates/task_planners/single_shot.yaml"/>
+
+  <rosparam ns="planning/task_planner/" >
+    specification:
+      type: single_shot_specification
+    query:
+      type: single_shot_query
+      search_mode: lazy_search
+  </rosparam>
+
+<rosparam ns="planning/task_planner/planners/" >
+planner1:
+  template: "motion_planner"
+  type: esst
+  stat_file: "reduction_points.txt"
+  space_name: "space1"
+  visualization_body: "simulator/rover/rod0"
+  visualize_tree: true
+  goal_bias_rate: .6
+  visualize_solution: true
+  sample_metric:
+    type: naive_octree
+    threshold: .2
+    distance_function: emd_distance
+  max_points: 20000
+  delta_drain: .2
+  steering: false
+  delta_near: 0
+  probability_threshold: 0.8
+  path_cost_weight: 1
+  collision_weight: 0
+  selection_weight: 1
+  density_weight: 0
+  order_weight: 1
+  cost_weight: 1
+  particle_tree: false
+  num_particles: 100
+  specification:
+    type: motion_planning_specification
+    validity_checker: 
+      type: esst_validity_checker
+      cost_function: duration_cost
+      collision_threshold: .2
+    sampler:
+      type: esst_sampler
+    distance_metric:
+      type: naive_octree
+      threshold: .2
+      distance_function: emd_distance
+    local_planner:
+      type: esst_local_planner
+      #parallel_props: ["planning1"]
+      #parallel_props: ["planning1","planning2","planning3","planning4","planning5"]
+      parallel_props: ["planning1","planning2","planning3","planning4","planning5","planning6","planning7","planning8","planning9","planning10"]
+      lower_multiple: 500
+      upper_multiple: 900
+      control_variance: [.003,.003,.003,.003,.003,.003,.003,.003,.003,.003,.003,.003]
+    stopping_criteria:
+      elements:
+        criterion1:
+          type: iteration_criterion
+          condition: 1000
+  query:
+    template: "query_type"
+    start_state: [0.717,0.393,8.125]
+    search_mode: lazy_search
+    goal:
+      type: particle_goal
+      distance_metric:
+        type: ann_distance_metric
+      radius: 5
+      accepted_threshold: .8
+      state_size: 5
+      goal_state: [40,0,7]
+</rosparam>
+       
+  <rosparam ns="planning/task_planner/" >
+    stats_criteria:
+      elements:
+        criterion1:
+          condition: 500
+          type: iteration_criterion
+  </rosparam>
+  <rosparam ns="planning/query_type" file="$(find prx_input)/templates/queries/motion_planning_query.yaml"/>
+
+<rosparam ns="planning">
+  system_mapping:
+  - 
+    pair: [simulator/consumer/rover, world_model/simulator/rover]
+
+  consumer: simulator/consumer
+</rosparam>
+<rosparam command="load" ns="planning/world_model/planning_contexts" >
+space1:
+  use_embedded_space: true
+  default:
+    type: superball_center
+</rosparam>
+   
+  <rosparam ns="planning/world_model/simulator/subsystems/rover" file="$(find NTRT_interface)/input/ntrt_plant.yaml"/>
+<!--
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation"
+        required="true"   launch-prefix="" output="screen" />
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+-->
+  <node name="planning" pkg="prx_planning" type="prx_planning"
+        required="false" launch-prefix="" output="screen" args="planning" />
+
+<rosparam ns="planning1">
+  type: parallel_propagation_application
+  base_planning: planning
+  simulate: false
+  visualize: false
+  persistent: true
+</rosparam>
+  <node name="planning1" pkg="prx_planning" type="prx_planning"
+        required="false" launch-prefix="" output="screen" args="planning1" />
+
+<rosparam ns="planning2">
+  type: parallel_propagation_application
+  base_planning: planning
+  simulate: false
+  visualize: false
+  persistent: true
+</rosparam>
+  <node name="planning2" pkg="prx_planning" type="prx_planning"
+        required="false" launch-prefix="" output="screen" args="planning2" />
+
+<rosparam ns="planning3">
+  type: parallel_propagation_application
+  base_planning: planning
+  simulate: false
+  visualize: false
+  persistent: true
+</rosparam>
+  <node name="planning3" pkg="prx_planning" type="prx_planning"
+        required="false" launch-prefix="" output="screen" args="planning3" />
+
+<rosparam ns="planning4">
+  type: parallel_propagation_application
+  base_planning: planning
+  simulate: false
+  visualize: false
+  persistent: true
+</rosparam>
+  <node name="planning4" pkg="prx_planning" type="prx_planning"
+        required="false" launch-prefix="" output="screen" args="planning4" />
+
+<rosparam ns="planning5">
+  type: parallel_propagation_application
+  base_planning: planning
+  simulate: false
+  visualize: false
+  persistent: true
+</rosparam>
+  <node name="planning5" pkg="prx_planning" type="prx_planning"
+        required="false" launch-prefix="" output="screen" args="planning5" /><!--
+<rosparam ns="planning6">
+  type: parallel_propagation_application
+  base_planning: planning
+  simulate: false
+  visualize: false
+  persistent: true
+</rosparam>
+  <node name="planning6" pkg="prx_planning" type="prx_planning"
+        required="false" launch-prefix="" output="screen" args="planning6" />
+
+<rosparam ns="planning7">
+  type: parallel_propagation_application
+  base_planning: planning
+  simulate: false
+  visualize: false
+  persistent: true
+</rosparam>
+  <node name="planning7" pkg="prx_planning" type="prx_planning"
+        required="false" launch-prefix="" output="screen" args="planning7" />
+<rosparam ns="planning8">
+  type: parallel_propagation_application
+  base_planning: planning
+  simulate: false
+  visualize: false
+  persistent: true
+</rosparam>
+  <node name="planning8" pkg="prx_planning" type="prx_planning"
+        required="false" launch-prefix="" output="screen" args="planning8" />
+<rosparam ns="planning9">
+  type: parallel_propagation_application
+  base_planning: planning
+  simulate: false
+  visualize: false
+  persistent: true
+</rosparam>
+  <node name="planning9" pkg="prx_planning" type="prx_planning"
+        required="false" launch-prefix="" output="screen" args="planning9" />
+<rosparam ns="planning10">
+  type: parallel_propagation_application
+  base_planning: planning
+  simulate: false
+  visualize: false
+  persistent: true
+</rosparam>
+  <node name="planning10" pkg="prx_planning" type="prx_planning"
+        required="false" launch-prefix="" output="screen" args="planning10" />
+-->
+</launch>

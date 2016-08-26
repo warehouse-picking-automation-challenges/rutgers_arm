@@ -1,0 +1,93 @@
+building1:
+  type: obstacle
+  geometries:
+    -
+      name: right_wall
+      collision_geometry:
+        type: box
+        dims: [10,620,2]
+        material: black
+      config:
+        position: [300,0,1]
+        orientation: [0,0,0,1]
+    -
+      name: upper_wall
+      collision_geometry:
+        type: box
+        dims: [620,10,2]
+        material: black
+      config:
+        position: [0,300,1]
+        orientation: [0,0,0,1]
+    -
+      name: lower_wall
+      collision_geometry:
+        type: box
+        dims: [620,10,2]
+        material: black
+      config:
+        position: [0,-300,1]
+        orientation: [0,0,0,1]
+    -
+      name: left_wall
+      collision_geometry:
+        type: box
+        dims: [10,620,2]
+        material: black
+      config:
+        position: [-300,0,1]
+        orientation: [0,0,0,1]
+    -
+      name: box1
+      collision_geometry:
+        type: box
+        dims: [150,10,1]
+        material: black
+      config:
+        position: [0,195,1]
+        orientation: [0,0,0,1]
+    -
+      name: box2
+      collision_geometry:
+        type: box
+        dims: [375,10,1]
+        material: black
+      config:
+        position: [112.5,95,1]
+        orientation: [0,0,0,1]
+    -
+      name: box3
+      collision_geometry:
+        type: box
+        dims: [10,110,1]
+        material: black
+      config:
+        position: [-75,145,1]
+        orientation: [0,0,0,1]
+    -
+      name: box4
+      collision_geometry:
+        type: box
+        dims: [150,10,1]
+        material: black
+      config:
+        position: [0,-195,1]
+        orientation: [0,0,0,1]
+    -
+      name: box5
+      collision_geometry:
+        type: box
+        dims: [375,10,1]
+        material: black
+      config:
+        position: [-112.5,-95,1]
+        orientation: [0,0,0,1]
+    -
+      name: box6
+      collision_geometry:
+        type: box
+        dims: [10,110,1]
+        material: black
+      config:
+        position: [75,-145,1]
+        orientation: [0,0,0,1]

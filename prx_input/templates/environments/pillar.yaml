@@ -1,0 +1,15 @@
+env:
+  type: obstacle
+  geometries:
+    -
+      name: pillar
+      collision_geometry:
+        type: box
+        dims: [0.3, 0.3, 3]
+        material: gold
+      config:
+        position: [0.62, 0.62, 2.9]
+        orientation: [0, 0, 0, 1]
+
+
+      

@@ -1,0 +1,27 @@
+<package>
+  <description brief="prx_utilities">
+
+     prx_utilities
+
+  </description>
+  <author>PRACSYS group</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://www.pracsyslab.org/software</url>
+
+  <depend package="roscpp"/>
+  <depend package="rosconsole"/>
+  <depend package="geometry_msgs"/>
+  <depend package="tf"/>
+  <depend package="pluginlib"/>
+  
+  <rosdep name="boost"/>
+
+  <export>
+      <cpp cflags="-I${prefix}/ -I${prefix}/srv_gen/cpp/include/ -I${prefix}/msg_gen/cpp/include/" lflags="-L${prefix}/lib -lprx_utilities"/>
+      <prx_utilities plugin="${prefix}/utilities_plugin.xml"/>
+  </export>
+
+</package>
+
+

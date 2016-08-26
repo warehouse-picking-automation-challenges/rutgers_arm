@@ -1,0 +1,58 @@
+type: first_order_car
+z: 1.5
+integrator:
+  type: rk4
+state_space: 
+  min: [-100, -100, -4]
+  max: [100, 100, 4]
+input_control_space: 
+  min: [-10, -0.1]
+  max: [50, 0.1]
+root_geom: chassis
+geometries:
+  -
+    name: chassis
+    collision_geometry:
+      type: box
+      dims: [10, 6, 2]
+      material: blue
+  -
+    name: frwheel
+    collision_geometry:
+      type: cylinder
+      radius: 1.5
+      height: 1.0
+      material: black
+    relative_configuration:
+      position: [3, -3.4, 0]
+      orientation: [0.707106781, 0, 0, 0.707106781]
+  -
+    name: flwheel
+    collision_geometry:
+      type: cylinder
+      radius: 1.5
+      height: 1.0
+      material: black
+    relative_configuration:
+      position: [3, 3.4, 0]
+      orientation: [0.707106781, 0, 0, 0.707106781]
+  -
+    name: brwheel
+    collision_geometry:
+      type: cylinder
+      radius: 1.5
+      height: 1.0
+      material: black
+    relative_configuration:
+      position: [-3, -3.4, 0]
+      orientation: [0.707106781, 0, 0, 0.707106781]
+  -
+    name: blwheel
+    collision_geometry:
+      type: cylinder
+      radius: 1.5
+      height: 1.0
+      material: black
+    relative_configuration:
+      position: [-3, 3.4, 0]
+      orientation: [0.707106781, 0, 0, 0.707106781]

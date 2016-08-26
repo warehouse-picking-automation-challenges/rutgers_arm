@@ -1,0 +1,6199 @@
+<launch>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+  <rosparam command="load" file="$(find VO)/input/templates/vo_application.yaml"/>
+  <rosparam command="load" file="$(find prx_input)/templates/simulators/collision_stop_simulator.yaml"/>
+  <rosparam command="load" ns="controller" file="$(find prx_input)/templates/controllers/multigoal_controller.yaml"/>
+  <rosparam command="load" ns="vo_controller" file="$(find VO)/input/templates/vo_controller.yaml"/>
+  <rosparam command="load" ns="skeleton" file="$(find motion_capture_data)/input/skeleton/walk_new.yaml"/>
+
+  <rosparam ns="vo_controller">
+    input_control_space:
+      min: [-500, -500]
+      max: [500, 500]
+    radius: 10
+  </rosparam>
+
+  <rosparam ns="sensing">
+    type: VO_sensing_model
+    sensors:
+        conf_sensor1:
+          type: config_sensor
+          source: "conf_sensor1"
+          sensor_delay: 0.02
+        geom_sensor1:
+          type: geom_sensor
+          source: "geom_sensor1"
+          sensor_delay: 0.02
+        vel_sensor1:
+          type: velocity_sensor
+          source: "vel_sensor1"
+          sensor_delay: 0.02
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller1">
+    template: "controller"
+    goal_radius: 10
+    multigoals:
+    
+     -
+        state: [255, 455]
+     -
+        state: [150, 350]
+     -
+        state: [50, 455]
+     -
+        state: [-45, 350]
+     -
+        state: [-150, 460]
+     -
+        state: [-190, 275]
+     -
+        state: [320, 225]
+     -
+        state: [155, 50]
+     -
+        state: [55, 160]
+     -
+        state: [-45, 50]
+     -
+        state: [-145, 155]
+     -
+        state: [-195, -50]
+     -
+        state: [300, -65]
+     -
+        state: [300, -455]
+     -
+        state: [-300, -455]
+     -
+        state: [-400, -355]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller1/subsystems/vo1">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller1/vo1/skeleton1/root"
+            max_num_neighbors: 15
+            sensing_radius: 15
+            obstacle_sensing_radius: 10
+  </rosparam>
+
+
+
+  <rosparam command="load" ns="simulator/subsystems/controller1/subsystems/vo1/subsystems/skeleton1">
+    template: "skeleton"
+    initial_state: [350,480]
+    state_space:
+      min: [-550,-550]
+      max: [550, 550]
+    input_control_space:
+      min: [9, -4]
+      max: [50, 4]
+    geometries:
+      -
+        name: root
+        dof: XYZxyz
+        parent: -1
+        direction: [0, 0, 0]
+        global_to_local: [0, 0, 0, 1]
+        collision_geometry:
+          type: sphere
+          radius: .1
+          material: green
+        configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: lhipjoint
+        parent: -1
+        direction: [0.655637, -0.713449, 0.247245]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.13711
+        frame_offset: 6
+        collision_geometry:
+          type: cylinder
+          radius: 0.213711
+          height: 1.13711
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: lfemur
+        dof: xyz
+        parent: 0
+        direction: [0.34202, -0.939693, 0]
+        global_to_local: [0, 0, 0.173648, 0.984808]
+        length: 3.41717
+        frame_offset: 6
+        collision_geometry:
+          type: cylinder
+          radius: 0.441717
+          height: 3.41717
+          material: green
+        relative_configuration:
+          position: [4.93194,17.9552,6.33324]
+          orientation: [0.407672,0.0475755,-0.200095,0.889664]
+      -
+        name: ltibia
+        dof: x
+        parent: 1
+        direction: [0.34202, -0.939693, 0]
+        global_to_local: [0, 0, 0.173648, 0.984808]
+        length: 3.27923
+        frame_offset: 9
+        collision_geometry:
+          type: cylinder
+          radius: 0.427923
+          height: 3.27923
+          material: green
+        relative_configuration:
+          position: [4.73398,15.6978,3.7755]
+          orientation: [0.687116,0.0837734,-0.156798,0.704463]
+      -
+        name: lfoot
+        dof: xz
+        parent: 2
+        direction: [0.0886837, -0.243657, 0.965798]
+        global_to_local: [-0.696364, -0.122788, 0.122788, 0.696364]
+        length: 0.99981
+        frame_offset: 10
+        collision_geometry:
+          type: cylinder
+          radius: 0.199981
+          height: 0.99981
+          material: green
+        relative_configuration:
+          position: [4.74916,15.5589,0.499252]
+          orientation: [0.609367,0.128482,-0.1088,0.774808]
+      -
+        name: ltoes
+        dof: x
+        parent: 3
+        direction: [1.53547e-11, -4.22004e-11, 1]
+        global_to_local: [-0.696364, -0.122788, 0.122788, 0.696364]
+        length: 0.500621
+        frame_offset: 12
+        collision_geometry:
+          type: cylinder
+          radius: 0.150062
+          height: 0.500621
+          material: green
+        relative_configuration:
+          position: [4.81779,14.5621,0.46323]
+          orientation: [0.539454,0.113617,-0.116113,0.826195]
+      -
+        name: lowerback
+        dof: xyz
+        parent: -1
+        direction: [0.00952301, 0.997604, -0.0685217]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.926743
+        frame_offset: 13
+        collision_geometry:
+          type: cylinder
+          radius: 0.192674
+          height: 0.926743
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.774685,-0.0436555,-0.0154338,0.63065]
+      -
+        name: upperback
+        dof: xyz
+        parent: 5
+        direction: [0.00494399, 0.999577, -0.0286701]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.929354
+        frame_offset: 16
+        collision_geometry:
+          type: cylinder
+          radius: 0.192935
+          height: 0.929354
+          material: green
+        relative_configuration:
+          position: [4.27006,18.1875,8.12711]
+          orientation: [0.791638,-0.0394463,0.00222021,0.609711]
+      -
+        name: thorax
+        dof: xyz
+        parent: 6
+        direction: [0.000729686, 0.999992, 0.00388603]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.930632
+        frame_offset: 19
+        collision_geometry:
+          type: cylinder
+          radius: 0.193063
+          height: 0.930632
+          material: green
+        relative_configuration:
+          position: [4.2153,17.9776,9.03078]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: lclavicle
+        dof: yz
+        parent: 7
+        direction: [0.967826, 0.247107, -0.0474446]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.64691
+        frame_offset: 22
+        collision_geometry:
+          type: cylinder
+          radius: 0.264691
+          height: 1.64691
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: lhumerus
+        dof: xyz
+        parent: 8
+        direction: [1, -4.48971e-11, -2.90544e-27]
+        global_to_local: [0.683013, -0.683013, 0.183013, 0.183013]
+        length: 2.18931
+        frame_offset: 24
+        collision_geometry:
+          type: cylinder
+          radius: 0.318931
+          height: 2.18931
+          material: green
+        relative_configuration:
+          position: [5.80955,17.7392,10.3495]
+          orientation: [0.532603,0.643915,-0.313221,0.451221]
+      -
+        name: lradius
+        dof: x
+        parent: 9
+        direction: [1, -4.48958e-11, 1.79638e-26]
+        global_to_local: [0.683013, -0.683013, 0.183013, 0.183013]
+        length: 1.50999
+        frame_offset: 27
+        collision_geometry:
+          type: cylinder
+          radius: 0.250999
+          height: 1.50999
+          material: green
+        relative_configuration:
+          position: [5.7538,18.622,8.34684]
+          orientation: [0.53475,0.556118,-0.340381,0.537509]
+      -
+        name: lwrist
+        dof: y
+        parent: 10
+        direction: [1, -4.48952e-11, 3.34345e-26]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.754996
+        frame_offset: 28
+        collision_geometry:
+          type: cylinder
+          radius: 0.1755
+          height: 0.754996
+          material: green
+        relative_configuration:
+          position: [5.97992,18.9676,6.89442]
+          orientation: [0.473762,0.589536,-0.278519,0.591966]
+      -
+        name: lhand
+        dof: xz
+        parent: 11
+        direction: [1, -4.49055e-11, 6.6869e-26]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.297529
+        frame_offset: 29
+        collision_geometry:
+          type: cylinder
+          radius: 0.129753
+          height: 0.297529
+          material: green
+        relative_configuration:
+          position: [6.09297,19.1404,6.1682]
+          orientation: [0.651301,0.54987,-0.0833424,0.516241]
+      -
+        name: lfingers
+        dof: x
+        parent: 12
+        direction: [1, -4.48731e-11, 1.33738e-25]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.239876
+        frame_offset: 31
+        collision_geometry:
+          type: cylinder
+          radius: 0.123988
+          height: 0.239876
+          material: green
+        relative_configuration:
+          position: [6.20645,19.3279,5.96699]
+          orientation: [0.615875,0.589277,-0.115259,0.510065]
+      -
+        name: lthumb
+        dof: xz
+        parent: 11
+        direction: [0.707107, -6.35005e-11, 0.707107]
+        global_to_local: [-0.653281, 0.270598, 0.270598, 0.653281]
+        length: 0.344415
+        frame_offset: 32
+        collision_geometry:
+          type: cylinder
+          radius: 0.134441
+          height: 0.344415
+          material: green
+        relative_configuration:
+          position: [6.09297,19.1404,6.1682]
+          orientation: [0.543697,0.785502,-0.0624657,0.288926]
+      -
+        name: lowerneck
+        dof: xyz
+        parent: 7
+        direction: [0.00452882, 0.995459, 0.0950816]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.708417
+        frame_offset: 34
+        collision_geometry:
+          type: cylinder
+          radius: 0.170842
+          height: 0.708417
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.70197,-0.00599333,-0.00222384,0.712177]
+      -
+        name: upperneck
+        dof: xyz
+        parent: 15
+        direction: [0.021922, 0.997711, -0.0639762]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.703796
+        frame_offset: 37
+        collision_geometry:
+          type: cylinder
+          radius: 0.17038
+          height: 0.703796
+          material: green
+        relative_configuration:
+          position: [4.21329,17.7333,10.6485]
+          orientation: [0.658581,0.0342885,-0.0227559,0.751383]
+      -
+        name: head
+        dof: xyz
+        parent: 16
+        direction: [0.008024, 0.999444, -0.0323691]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.731925
+        frame_offset: 40
+        collision_geometry:
+          type: sphere
+          radius: 0.731925
+          material: green
+        relative_configuration:
+          position: [4.28342,17.8704,11.3353]
+          orientation: [0.657868,0.0474051,-0.0293925,0.751065]
+      -
+        name: rclavicle
+        dof: yz
+        parent: 7
+        direction: [-0.973174, 0.211421, -0.0907389]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.6175
+        frame_offset: 43
+        collision_geometry:
+          type: cylinder
+          radius: 0.26175
+          height: 1.6175
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: rhumerus
+        dof: xyz
+        parent: 18
+        direction: [-1, -4.48964e-11, 1.56311e-27]
+        global_to_local: [0.683013, 0.683013, -0.183013, 0.183013]
+        length: 2.26192
+        frame_offset: 45
+        collision_geometry:
+          type: cylinder
+          radius: 0.326192
+          height: 2.26192
+          material: green
+        relative_configuration:
+          position: [2.64513,17.9139,10.3138]
+          orientation: [0.704917,-0.183672,0.607372,0.316949]
+      -
+        name: rradius
+        dof: x
+        parent: 19
+        direction: [-1, -4.48948e-11, 2.01724e-26]
+        global_to_local: [0.683013, 0.683013, -0.183013, 0.183013]
+        length: 1.51394
+        frame_offset: 48
+        collision_geometry:
+          type: cylinder
+          radius: 0.251394
+          height: 1.51394
+          material: green
+        relative_configuration:
+          position: [2.20467,17.6287,8.11361]
+          orientation: [0.408201,0.141401,0.750049,0.500803]
+      -
+        name: rwrist
+        dof: y
+        parent: 20
+        direction: [-1, -4.49008e-11, 3.34345e-26]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.756972
+        frame_offset: 49
+        collision_geometry:
+          type: cylinder
+          radius: 0.175697
+          height: 0.756972
+          material: green
+        relative_configuration:
+          position: [2.45468,16.3166,7.40097]
+          orientation: [0.307455,-0.00121221,0.76326,0.568246]
+      -
+        name: rhand
+        dof: xz
+        parent: 21
+        direction: [-1, -4.49013e-11, 6.6869e-26]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.328683
+        frame_offset: 50
+        collision_geometry:
+          type: cylinder
+          radius: 0.132868
+          height: 0.328683
+          material: green
+        relative_configuration:
+          position: [2.57968,15.6605,7.04466]
+          orientation: [0.125741,0.14375,0.628245,0.754211]
+      -
+        name: rfingers
+        dof: x
+        parent: 22
+        direction: [-1, -4.48867e-11, 1.33738e-25]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.264992
+        frame_offset: 52
+        collision_geometry:
+          type: cylinder
+          radius: 0.126499
+          height: 0.264992
+          material: green
+        relative_configuration:
+          position: [2.52404,15.3372,7.064]
+          orientation: [0.13443,0.135659,0.673895,0.713716]
+      -
+        name: rthumb
+        dof: xz
+        parent: 21
+        direction: [-0.707107, -6.34907e-11, 0.707107]
+        global_to_local: [-0.653281, -0.270598, -0.270598, 0.653281]
+        length: 0.380478
+        frame_offset: 53
+        collision_geometry:
+          type: cylinder
+          radius: 0.138048
+          height: 0.380478
+          material: green
+        relative_configuration:
+          position: [2.57968,15.6605,7.04466]
+          orientation: [0.348433,-0.0529896,0.721766,0.595685]
+      -
+        name: rhipjoint
+        parent: -1
+        direction: [-0.645062, -0.722004, 0.250209]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.12364
+        frame_offset: 55
+        collision_geometry:
+          type: cylinder
+          radius: 0.212364
+          height: 1.12364
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: rfemur
+        dof: xyz
+        parent: 25
+        direction: [-0.34202, -0.939693, 0]
+        global_to_local: [0, 0, -0.173648, 0.984808]
+        length: 3.4143
+        frame_offset: 55
+        collision_geometry:
+          type: cylinder
+          radius: 0.44143
+          height: 3.4143
+          material: green
+        relative_configuration:
+          position: [3.47582,18.1008,6.47618]
+          orientation: [0.763339,-0.183743,0.117995,0.607971]
+      -
+        name: rtibia
+        dof: x
+        parent: 26
+        direction: [-0.34202, -0.939693, 0]
+        global_to_local: [0, 0, -0.173648, 0.984808]
+        length: 3.24692
+        frame_offset: 58
+        collision_geometry:
+          type: cylinder
+          radius: 0.424692
+          height: 3.24692
+          material: green
+        relative_configuration:
+          position: [3.77976,18.8808,3.16608]
+          orientation: [0.812359,-0.191297,0.110091,0.539777]
+      -
+        name: rfoot
+        dof: xz
+        parent: 27
+        direction: [-0.102907, -0.282735, 0.953662]
+        global_to_local: [-0.696364, 0.122788, -0.122788, 0.696364]
+        length: 1.00681
+        frame_offset: 59
+        collision_geometry:
+          type: cylinder
+          radius: 0.200681
+          height: 1.00681
+          material: green
+        relative_configuration:
+          position: [4.08836,20.1438,0.190847]
+          orientation: [0.703534,-0.193612,0.0809526,0.678971]
+      -
+        name: rtoes
+        dof: x
+        parent: 28
+        direction: [-1.5354e-11, -4.21751e-11, 1]
+        global_to_local: [-0.696364, 0.122788, -0.122788, 0.696364]
+        length: 0.502061
+        frame_offset: 61
+        collision_geometry:
+          type: cylinder
+          radius: 0.150206
+          height: 0.502061
+          material: green
+        relative_configuration:
+          position: [3.95965,19.2141,-0.173528]
+          orientation: [0.714179,-0.196105,0.0799956,0.667152]
+
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller2">
+    template: "controller"
+    goal_radius: 10
+    multigoals:
+
+     -
+        state: [255, 445]
+     -
+        state: [150, 340]
+     -
+        state: [50, 445]
+     -
+        state: [-45, 340]
+     -
+        state: [-150, 450]
+     -
+        state: [-190, 265]
+     -
+        state: [320, 215]
+     -
+        state: [155, 40]
+     -
+        state: [55, 150]
+     -
+        state: [-45, 40]
+     -
+        state: [-145, 145]
+     -
+        state: [-195, -40]
+     -
+        state: [300, -55]
+     -
+        state: [300, -445]
+     -
+        state: [-300, -445]
+     -
+        state: [-400, -345]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller2/subsystems/vo2">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller2/vo2/skeleton2/root"
+            max_num_neighbors: 15
+            sensing_radius: 15
+            obstacle_sensing_radius: 10
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller2/subsystems/vo2/subsystems/skeleton2">
+    template: "skeleton"
+    initial_state: [350,450]
+    state_space:
+      min: [-550,-550]
+      max: [550, 550]
+    input_control_space:
+      min: [9, -4]
+      max: [50, 4]
+    geometries:
+      -
+        name: root
+        dof: XYZxyz
+        parent: -1
+        direction: [0, 0, 0]
+        global_to_local: [0, 0, 0, 1]
+        collision_geometry:
+          type: sphere
+          radius: .1
+          material: green
+        configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: lhipjoint
+        parent: -1
+        direction: [0.655637, -0.713449, 0.247245]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.13711
+        frame_offset: 6
+        collision_geometry:
+          type: cylinder
+          radius: 0.213711
+          height: 1.13711
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: lfemur
+        dof: xyz
+        parent: 0
+        direction: [0.34202, -0.939693, 0]
+        global_to_local: [0, 0, 0.173648, 0.984808]
+        length: 3.41717
+        frame_offset: 6
+        collision_geometry:
+          type: cylinder
+          radius: 0.441717
+          height: 3.41717
+          material: green
+        relative_configuration:
+          position: [4.93194,17.9552,6.33324]
+          orientation: [0.407672,0.0475755,-0.200095,0.889664]
+      -
+        name: ltibia
+        dof: x
+        parent: 1
+        direction: [0.34202, -0.939693, 0]
+        global_to_local: [0, 0, 0.173648, 0.984808]
+        length: 3.27923
+        frame_offset: 9
+        collision_geometry:
+          type: cylinder
+          radius: 0.427923
+          height: 3.27923
+          material: green
+        relative_configuration:
+          position: [4.73398,15.6978,3.7755]
+          orientation: [0.687116,0.0837734,-0.156798,0.704463]
+      -
+        name: lfoot
+        dof: xz
+        parent: 2
+        direction: [0.0886837, -0.243657, 0.965798]
+        global_to_local: [-0.696364, -0.122788, 0.122788, 0.696364]
+        length: 0.99981
+        frame_offset: 10
+        collision_geometry:
+          type: cylinder
+          radius: 0.199981
+          height: 0.99981
+          material: green
+        relative_configuration:
+          position: [4.74916,15.5589,0.499252]
+          orientation: [0.609367,0.128482,-0.1088,0.774808]
+      -
+        name: ltoes
+        dof: x
+        parent: 3
+        direction: [1.53547e-11, -4.22004e-11, 1]
+        global_to_local: [-0.696364, -0.122788, 0.122788, 0.696364]
+        length: 0.500621
+        frame_offset: 12
+        collision_geometry:
+          type: cylinder
+          radius: 0.150062
+          height: 0.500621
+          material: green
+        relative_configuration:
+          position: [4.81779,14.5621,0.46323]
+          orientation: [0.539454,0.113617,-0.116113,0.826195]
+      -
+        name: lowerback
+        dof: xyz
+        parent: -1
+        direction: [0.00952301, 0.997604, -0.0685217]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.926743
+        frame_offset: 13
+        collision_geometry:
+          type: cylinder
+          radius: 0.192674
+          height: 0.926743
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.774685,-0.0436555,-0.0154338,0.63065]
+      -
+        name: upperback
+        dof: xyz
+        parent: 5
+        direction: [0.00494399, 0.999577, -0.0286701]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.929354
+        frame_offset: 16
+        collision_geometry:
+          type: cylinder
+          radius: 0.192935
+          height: 0.929354
+          material: green
+        relative_configuration:
+          position: [4.27006,18.1875,8.12711]
+          orientation: [0.791638,-0.0394463,0.00222021,0.609711]
+      -
+        name: thorax
+        dof: xyz
+        parent: 6
+        direction: [0.000729686, 0.999992, 0.00388603]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.930632
+        frame_offset: 19
+        collision_geometry:
+          type: cylinder
+          radius: 0.193063
+          height: 0.930632
+          material: green
+        relative_configuration:
+          position: [4.2153,17.9776,9.03078]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: lclavicle
+        dof: yz
+        parent: 7
+        direction: [0.967826, 0.247107, -0.0474446]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.64691
+        frame_offset: 22
+        collision_geometry:
+          type: cylinder
+          radius: 0.264691
+          height: 1.64691
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: lhumerus
+        dof: xyz
+        parent: 8
+        direction: [1, -4.48971e-11, -2.90544e-27]
+        global_to_local: [0.683013, -0.683013, 0.183013, 0.183013]
+        length: 2.18931
+        frame_offset: 24
+        collision_geometry:
+          type: cylinder
+          radius: 0.318931
+          height: 2.18931
+          material: green
+        relative_configuration:
+          position: [5.80955,17.7392,10.3495]
+          orientation: [0.532603,0.643915,-0.313221,0.451221]
+      -
+        name: lradius
+        dof: x
+        parent: 9
+        direction: [1, -4.48958e-11, 1.79638e-26]
+        global_to_local: [0.683013, -0.683013, 0.183013, 0.183013]
+        length: 1.50999
+        frame_offset: 27
+        collision_geometry:
+          type: cylinder
+          radius: 0.250999
+          height: 1.50999
+          material: green
+        relative_configuration:
+          position: [5.7538,18.622,8.34684]
+          orientation: [0.53475,0.556118,-0.340381,0.537509]
+      -
+        name: lwrist
+        dof: y
+        parent: 10
+        direction: [1, -4.48952e-11, 3.34345e-26]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.754996
+        frame_offset: 28
+        collision_geometry:
+          type: cylinder
+          radius: 0.1755
+          height: 0.754996
+          material: green
+        relative_configuration:
+          position: [5.97992,18.9676,6.89442]
+          orientation: [0.473762,0.589536,-0.278519,0.591966]
+      -
+        name: lhand
+        dof: xz
+        parent: 11
+        direction: [1, -4.49055e-11, 6.6869e-26]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.297529
+        frame_offset: 29
+        collision_geometry:
+          type: cylinder
+          radius: 0.129753
+          height: 0.297529
+          material: green
+        relative_configuration:
+          position: [6.09297,19.1404,6.1682]
+          orientation: [0.651301,0.54987,-0.0833424,0.516241]
+      -
+        name: lfingers
+        dof: x
+        parent: 12
+        direction: [1, -4.48731e-11, 1.33738e-25]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.239876
+        frame_offset: 31
+        collision_geometry:
+          type: cylinder
+          radius: 0.123988
+          height: 0.239876
+          material: green
+        relative_configuration:
+          position: [6.20645,19.3279,5.96699]
+          orientation: [0.615875,0.589277,-0.115259,0.510065]
+      -
+        name: lthumb
+        dof: xz
+        parent: 11
+        direction: [0.707107, -6.35005e-11, 0.707107]
+        global_to_local: [-0.653281, 0.270598, 0.270598, 0.653281]
+        length: 0.344415
+        frame_offset: 32
+        collision_geometry:
+          type: cylinder
+          radius: 0.134441
+          height: 0.344415
+          material: green
+        relative_configuration:
+          position: [6.09297,19.1404,6.1682]
+          orientation: [0.543697,0.785502,-0.0624657,0.288926]
+      -
+        name: lowerneck
+        dof: xyz
+        parent: 7
+        direction: [0.00452882, 0.995459, 0.0950816]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.708417
+        frame_offset: 34
+        collision_geometry:
+          type: cylinder
+          radius: 0.170842
+          height: 0.708417
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.70197,-0.00599333,-0.00222384,0.712177]
+      -
+        name: upperneck
+        dof: xyz
+        parent: 15
+        direction: [0.021922, 0.997711, -0.0639762]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.703796
+        frame_offset: 37
+        collision_geometry:
+          type: cylinder
+          radius: 0.17038
+          height: 0.703796
+          material: green
+        relative_configuration:
+          position: [4.21329,17.7333,10.6485]
+          orientation: [0.658581,0.0342885,-0.0227559,0.751383]
+      -
+        name: head
+        dof: xyz
+        parent: 16
+        direction: [0.008024, 0.999444, -0.0323691]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.731925
+        frame_offset: 40
+        collision_geometry:
+          type: sphere
+          radius: 0.731925
+          material: green
+        relative_configuration:
+          position: [4.28342,17.8704,11.3353]
+          orientation: [0.657868,0.0474051,-0.0293925,0.751065]
+      -
+        name: rclavicle
+        dof: yz
+        parent: 7
+        direction: [-0.973174, 0.211421, -0.0907389]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.6175
+        frame_offset: 43
+        collision_geometry:
+          type: cylinder
+          radius: 0.26175
+          height: 1.6175
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: rhumerus
+        dof: xyz
+        parent: 18
+        direction: [-1, -4.48964e-11, 1.56311e-27]
+        global_to_local: [0.683013, 0.683013, -0.183013, 0.183013]
+        length: 2.26192
+        frame_offset: 45
+        collision_geometry:
+          type: cylinder
+          radius: 0.326192
+          height: 2.26192
+          material: green
+        relative_configuration:
+          position: [2.64513,17.9139,10.3138]
+          orientation: [0.704917,-0.183672,0.607372,0.316949]
+      -
+        name: rradius
+        dof: x
+        parent: 19
+        direction: [-1, -4.48948e-11, 2.01724e-26]
+        global_to_local: [0.683013, 0.683013, -0.183013, 0.183013]
+        length: 1.51394
+        frame_offset: 48
+        collision_geometry:
+          type: cylinder
+          radius: 0.251394
+          height: 1.51394
+          material: green
+        relative_configuration:
+          position: [2.20467,17.6287,8.11361]
+          orientation: [0.408201,0.141401,0.750049,0.500803]
+      -
+        name: rwrist
+        dof: y
+        parent: 20
+        direction: [-1, -4.49008e-11, 3.34345e-26]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.756972
+        frame_offset: 49
+        collision_geometry:
+          type: cylinder
+          radius: 0.175697
+          height: 0.756972
+          material: green
+        relative_configuration:
+          position: [2.45468,16.3166,7.40097]
+          orientation: [0.307455,-0.00121221,0.76326,0.568246]
+      -
+        name: rhand
+        dof: xz
+        parent: 21
+        direction: [-1, -4.49013e-11, 6.6869e-26]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.328683
+        frame_offset: 50
+        collision_geometry:
+          type: cylinder
+          radius: 0.132868
+          height: 0.328683
+          material: green
+        relative_configuration:
+          position: [2.57968,15.6605,7.04466]
+          orientation: [0.125741,0.14375,0.628245,0.754211]
+      -
+        name: rfingers
+        dof: x
+        parent: 22
+        direction: [-1, -4.48867e-11, 1.33738e-25]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.264992
+        frame_offset: 52
+        collision_geometry:
+          type: cylinder
+          radius: 0.126499
+          height: 0.264992
+          material: green
+        relative_configuration:
+          position: [2.52404,15.3372,7.064]
+          orientation: [0.13443,0.135659,0.673895,0.713716]
+      -
+        name: rthumb
+        dof: xz
+        parent: 21
+        direction: [-0.707107, -6.34907e-11, 0.707107]
+        global_to_local: [-0.653281, -0.270598, -0.270598, 0.653281]
+        length: 0.380478
+        frame_offset: 53
+        collision_geometry:
+          type: cylinder
+          radius: 0.138048
+          height: 0.380478
+          material: green
+        relative_configuration:
+          position: [2.57968,15.6605,7.04466]
+          orientation: [0.348433,-0.0529896,0.721766,0.595685]
+      -
+        name: rhipjoint
+        parent: -1
+        direction: [-0.645062, -0.722004, 0.250209]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.12364
+        frame_offset: 55
+        collision_geometry:
+          type: cylinder
+          radius: 0.212364
+          height: 1.12364
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: rfemur
+        dof: xyz
+        parent: 25
+        direction: [-0.34202, -0.939693, 0]
+        global_to_local: [0, 0, -0.173648, 0.984808]
+        length: 3.4143
+        frame_offset: 55
+        collision_geometry:
+          type: cylinder
+          radius: 0.44143
+          height: 3.4143
+          material: green
+        relative_configuration:
+          position: [3.47582,18.1008,6.47618]
+          orientation: [0.763339,-0.183743,0.117995,0.607971]
+      -
+        name: rtibia
+        dof: x
+        parent: 26
+        direction: [-0.34202, -0.939693, 0]
+        global_to_local: [0, 0, -0.173648, 0.984808]
+        length: 3.24692
+        frame_offset: 58
+        collision_geometry:
+          type: cylinder
+          radius: 0.424692
+          height: 3.24692
+          material: green
+        relative_configuration:
+          position: [3.77976,18.8808,3.16608]
+          orientation: [0.812359,-0.191297,0.110091,0.539777]
+      -
+        name: rfoot
+        dof: xz
+        parent: 27
+        direction: [-0.102907, -0.282735, 0.953662]
+        global_to_local: [-0.696364, 0.122788, -0.122788, 0.696364]
+        length: 1.00681
+        frame_offset: 59
+        collision_geometry:
+          type: cylinder
+          radius: 0.200681
+          height: 1.00681
+          material: green
+        relative_configuration:
+          position: [4.08836,20.1438,0.190847]
+          orientation: [0.703534,-0.193612,0.0809526,0.678971]
+      -
+        name: rtoes
+        dof: x
+        parent: 28
+        direction: [-1.5354e-11, -4.21751e-11, 1]
+        global_to_local: [-0.696364, 0.122788, -0.122788, 0.696364]
+        length: 0.502061
+        frame_offset: 61
+        collision_geometry:
+          type: cylinder
+          radius: 0.150206
+          height: 0.502061
+          material: green
+        relative_configuration:
+          position: [3.95965,19.2141,-0.173528]
+          orientation: [0.714179,-0.196105,0.0799956,0.667152] 
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller3">
+    template: "controller"
+    goal_radius: 10
+    multigoals:
+   
+     -
+        state: [255, 450]
+     -
+        state: [150, 345]
+     -
+        state: [50, 450]
+     -
+        state: [-45, 345]
+     -
+        state: [-150, 455]
+     -
+        state: [-190, 270]
+     -
+        state: [320, 220]
+     -
+        state: [155, 45]
+     -
+        state: [55, 155]
+     -
+        state: [-45, 45]
+     -
+        state: [-145, 150]
+     -
+        state: [-195, -45]
+     -
+        state: [300, -60]
+     -
+        state: [300, -450]
+     -
+        state: [-300, -450]
+     -
+        state: [-400, -350]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller3/subsystems/vo3">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller3/vo3/skeleton3/root"
+            max_num_neighbors: 15
+            sensing_radius: 15
+            obstacle_sensing_radius: 10
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller3/subsystems/vo3/subsystems/skeleton3">
+    template: "skeleton"
+    initial_state: [350,420]
+    state_space:
+      min: [-550,-550]
+      max: [550, 550]
+    input_control_space:
+      min: [9, -4]
+      max: [50, 4]
+    geometries:
+      -
+        name: root
+        dof: XYZxyz
+        parent: -1
+        direction: [0, 0, 0]
+        global_to_local: [0, 0, 0, 1]
+        collision_geometry:
+          type: sphere
+          radius: .1
+          material: green
+        configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: lhipjoint
+        parent: -1
+        direction: [0.655637, -0.713449, 0.247245]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.13711
+        frame_offset: 6
+        collision_geometry:
+          type: cylinder
+          radius: 0.213711
+          height: 1.13711
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: lfemur
+        dof: xyz
+        parent: 0
+        direction: [0.34202, -0.939693, 0]
+        global_to_local: [0, 0, 0.173648, 0.984808]
+        length: 3.41717
+        frame_offset: 6
+        collision_geometry:
+          type: cylinder
+          radius: 0.441717
+          height: 3.41717
+          material: green
+        relative_configuration:
+          position: [4.93194,17.9552,6.33324]
+          orientation: [0.407672,0.0475755,-0.200095,0.889664]
+      -
+        name: ltibia
+        dof: x
+        parent: 1
+        direction: [0.34202, -0.939693, 0]
+        global_to_local: [0, 0, 0.173648, 0.984808]
+        length: 3.27923
+        frame_offset: 9
+        collision_geometry:
+          type: cylinder
+          radius: 0.427923
+          height: 3.27923
+          material: green
+        relative_configuration:
+          position: [4.73398,15.6978,3.7755]
+          orientation: [0.687116,0.0837734,-0.156798,0.704463]
+      -
+        name: lfoot
+        dof: xz
+        parent: 2
+        direction: [0.0886837, -0.243657, 0.965798]
+        global_to_local: [-0.696364, -0.122788, 0.122788, 0.696364]
+        length: 0.99981
+        frame_offset: 10
+        collision_geometry:
+          type: cylinder
+          radius: 0.199981
+          height: 0.99981
+          material: green
+        relative_configuration:
+          position: [4.74916,15.5589,0.499252]
+          orientation: [0.609367,0.128482,-0.1088,0.774808]
+      -
+        name: ltoes
+        dof: x
+        parent: 3
+        direction: [1.53547e-11, -4.22004e-11, 1]
+        global_to_local: [-0.696364, -0.122788, 0.122788, 0.696364]
+        length: 0.500621
+        frame_offset: 12
+        collision_geometry:
+          type: cylinder
+          radius: 0.150062
+          height: 0.500621
+          material: green
+        relative_configuration:
+          position: [4.81779,14.5621,0.46323]
+          orientation: [0.539454,0.113617,-0.116113,0.826195]
+      -
+        name: lowerback
+        dof: xyz
+        parent: -1
+        direction: [0.00952301, 0.997604, -0.0685217]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.926743
+        frame_offset: 13
+        collision_geometry:
+          type: cylinder
+          radius: 0.192674
+          height: 0.926743
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.774685,-0.0436555,-0.0154338,0.63065]
+      -
+        name: upperback
+        dof: xyz
+        parent: 5
+        direction: [0.00494399, 0.999577, -0.0286701]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.929354
+        frame_offset: 16
+        collision_geometry:
+          type: cylinder
+          radius: 0.192935
+          height: 0.929354
+          material: green
+        relative_configuration:
+          position: [4.27006,18.1875,8.12711]
+          orientation: [0.791638,-0.0394463,0.00222021,0.609711]
+      -
+        name: thorax
+        dof: xyz
+        parent: 6
+        direction: [0.000729686, 0.999992, 0.00388603]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.930632
+        frame_offset: 19
+        collision_geometry:
+          type: cylinder
+          radius: 0.193063
+          height: 0.930632
+          material: green
+        relative_configuration:
+          position: [4.2153,17.9776,9.03078]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: lclavicle
+        dof: yz
+        parent: 7
+        direction: [0.967826, 0.247107, -0.0474446]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.64691
+        frame_offset: 22
+        collision_geometry:
+          type: cylinder
+          radius: 0.264691
+          height: 1.64691
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: lhumerus
+        dof: xyz
+        parent: 8
+        direction: [1, -4.48971e-11, -2.90544e-27]
+        global_to_local: [0.683013, -0.683013, 0.183013, 0.183013]
+        length: 2.18931
+        frame_offset: 24
+        collision_geometry:
+          type: cylinder
+          radius: 0.318931
+          height: 2.18931
+          material: green
+        relative_configuration:
+          position: [5.80955,17.7392,10.3495]
+          orientation: [0.532603,0.643915,-0.313221,0.451221]
+      -
+        name: lradius
+        dof: x
+        parent: 9
+        direction: [1, -4.48958e-11, 1.79638e-26]
+        global_to_local: [0.683013, -0.683013, 0.183013, 0.183013]
+        length: 1.50999
+        frame_offset: 27
+        collision_geometry:
+          type: cylinder
+          radius: 0.250999
+          height: 1.50999
+          material: green
+        relative_configuration:
+          position: [5.7538,18.622,8.34684]
+          orientation: [0.53475,0.556118,-0.340381,0.537509]
+      -
+        name: lwrist
+        dof: y
+        parent: 10
+        direction: [1, -4.48952e-11, 3.34345e-26]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.754996
+        frame_offset: 28
+        collision_geometry:
+          type: cylinder
+          radius: 0.1755
+          height: 0.754996
+          material: green
+        relative_configuration:
+          position: [5.97992,18.9676,6.89442]
+          orientation: [0.473762,0.589536,-0.278519,0.591966]
+      -
+        name: lhand
+        dof: xz
+        parent: 11
+        direction: [1, -4.49055e-11, 6.6869e-26]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.297529
+        frame_offset: 29
+        collision_geometry:
+          type: cylinder
+          radius: 0.129753
+          height: 0.297529
+          material: green
+        relative_configuration:
+          position: [6.09297,19.1404,6.1682]
+          orientation: [0.651301,0.54987,-0.0833424,0.516241]
+      -
+        name: lfingers
+        dof: x
+        parent: 12
+        direction: [1, -4.48731e-11, 1.33738e-25]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.239876
+        frame_offset: 31
+        collision_geometry:
+          type: cylinder
+          radius: 0.123988
+          height: 0.239876
+          material: green
+        relative_configuration:
+          position: [6.20645,19.3279,5.96699]
+          orientation: [0.615875,0.589277,-0.115259,0.510065]
+      -
+        name: lthumb
+        dof: xz
+        parent: 11
+        direction: [0.707107, -6.35005e-11, 0.707107]
+        global_to_local: [-0.653281, 0.270598, 0.270598, 0.653281]
+        length: 0.344415
+        frame_offset: 32
+        collision_geometry:
+          type: cylinder
+          radius: 0.134441
+          height: 0.344415
+          material: green
+        relative_configuration:
+          position: [6.09297,19.1404,6.1682]
+          orientation: [0.543697,0.785502,-0.0624657,0.288926]
+      -
+        name: lowerneck
+        dof: xyz
+        parent: 7
+        direction: [0.00452882, 0.995459, 0.0950816]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.708417
+        frame_offset: 34
+        collision_geometry:
+          type: cylinder
+          radius: 0.170842
+          height: 0.708417
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.70197,-0.00599333,-0.00222384,0.712177]
+      -
+        name: upperneck
+        dof: xyz
+        parent: 15
+        direction: [0.021922, 0.997711, -0.0639762]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.703796
+        frame_offset: 37
+        collision_geometry:
+          type: cylinder
+          radius: 0.17038
+          height: 0.703796
+          material: green
+        relative_configuration:
+          position: [4.21329,17.7333,10.6485]
+          orientation: [0.658581,0.0342885,-0.0227559,0.751383]
+      -
+        name: head
+        dof: xyz
+        parent: 16
+        direction: [0.008024, 0.999444, -0.0323691]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.731925
+        frame_offset: 40
+        collision_geometry:
+          type: sphere
+          radius: 0.731925
+          material: green
+        relative_configuration:
+          position: [4.28342,17.8704,11.3353]
+          orientation: [0.657868,0.0474051,-0.0293925,0.751065]
+      -
+        name: rclavicle
+        dof: yz
+        parent: 7
+        direction: [-0.973174, 0.211421, -0.0907389]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.6175
+        frame_offset: 43
+        collision_geometry:
+          type: cylinder
+          radius: 0.26175
+          height: 1.6175
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: rhumerus
+        dof: xyz
+        parent: 18
+        direction: [-1, -4.48964e-11, 1.56311e-27]
+        global_to_local: [0.683013, 0.683013, -0.183013, 0.183013]
+        length: 2.26192
+        frame_offset: 45
+        collision_geometry:
+          type: cylinder
+          radius: 0.326192
+          height: 2.26192
+          material: green
+        relative_configuration:
+          position: [2.64513,17.9139,10.3138]
+          orientation: [0.704917,-0.183672,0.607372,0.316949]
+      -
+        name: rradius
+        dof: x
+        parent: 19
+        direction: [-1, -4.48948e-11, 2.01724e-26]
+        global_to_local: [0.683013, 0.683013, -0.183013, 0.183013]
+        length: 1.51394
+        frame_offset: 48
+        collision_geometry:
+          type: cylinder
+          radius: 0.251394
+          height: 1.51394
+          material: green
+        relative_configuration:
+          position: [2.20467,17.6287,8.11361]
+          orientation: [0.408201,0.141401,0.750049,0.500803]
+      -
+        name: rwrist
+        dof: y
+        parent: 20
+        direction: [-1, -4.49008e-11, 3.34345e-26]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.756972
+        frame_offset: 49
+        collision_geometry:
+          type: cylinder
+          radius: 0.175697
+          height: 0.756972
+          material: green
+        relative_configuration:
+          position: [2.45468,16.3166,7.40097]
+          orientation: [0.307455,-0.00121221,0.76326,0.568246]
+      -
+        name: rhand
+        dof: xz
+        parent: 21
+        direction: [-1, -4.49013e-11, 6.6869e-26]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.328683
+        frame_offset: 50
+        collision_geometry:
+          type: cylinder
+          radius: 0.132868
+          height: 0.328683
+          material: green
+        relative_configuration:
+          position: [2.57968,15.6605,7.04466]
+          orientation: [0.125741,0.14375,0.628245,0.754211]
+      -
+        name: rfingers
+        dof: x
+        parent: 22
+        direction: [-1, -4.48867e-11, 1.33738e-25]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.264992
+        frame_offset: 52
+        collision_geometry:
+          type: cylinder
+          radius: 0.126499
+          height: 0.264992
+          material: green
+        relative_configuration:
+          position: [2.52404,15.3372,7.064]
+          orientation: [0.13443,0.135659,0.673895,0.713716]
+      -
+        name: rthumb
+        dof: xz
+        parent: 21
+        direction: [-0.707107, -6.34907e-11, 0.707107]
+        global_to_local: [-0.653281, -0.270598, -0.270598, 0.653281]
+        length: 0.380478
+        frame_offset: 53
+        collision_geometry:
+          type: cylinder
+          radius: 0.138048
+          height: 0.380478
+          material: green
+        relative_configuration:
+          position: [2.57968,15.6605,7.04466]
+          orientation: [0.348433,-0.0529896,0.721766,0.595685]
+      -
+        name: rhipjoint
+        parent: -1
+        direction: [-0.645062, -0.722004, 0.250209]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.12364
+        frame_offset: 55
+        collision_geometry:
+          type: cylinder
+          radius: 0.212364
+          height: 1.12364
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: rfemur
+        dof: xyz
+        parent: 25
+        direction: [-0.34202, -0.939693, 0]
+        global_to_local: [0, 0, -0.173648, 0.984808]
+        length: 3.4143
+        frame_offset: 55
+        collision_geometry:
+          type: cylinder
+          radius: 0.44143
+          height: 3.4143
+          material: green
+        relative_configuration:
+          position: [3.47582,18.1008,6.47618]
+          orientation: [0.763339,-0.183743,0.117995,0.607971]
+      -
+        name: rtibia
+        dof: x
+        parent: 26
+        direction: [-0.34202, -0.939693, 0]
+        global_to_local: [0, 0, -0.173648, 0.984808]
+        length: 3.24692
+        frame_offset: 58
+        collision_geometry:
+          type: cylinder
+          radius: 0.424692
+          height: 3.24692
+          material: green
+        relative_configuration:
+          position: [3.77976,18.8808,3.16608]
+          orientation: [0.812359,-0.191297,0.110091,0.539777]
+      -
+        name: rfoot
+        dof: xz
+        parent: 27
+        direction: [-0.102907, -0.282735, 0.953662]
+        global_to_local: [-0.696364, 0.122788, -0.122788, 0.696364]
+        length: 1.00681
+        frame_offset: 59
+        collision_geometry:
+          type: cylinder
+          radius: 0.200681
+          height: 1.00681
+          material: green
+        relative_configuration:
+          position: [4.08836,20.1438,0.190847]
+          orientation: [0.703534,-0.193612,0.0809526,0.678971]
+      -
+        name: rtoes
+        dof: x
+        parent: 28
+        direction: [-1.5354e-11, -4.21751e-11, 1]
+        global_to_local: [-0.696364, 0.122788, -0.122788, 0.696364]
+        length: 0.502061
+        frame_offset: 61
+        collision_geometry:
+          type: cylinder
+          radius: 0.150206
+          height: 0.502061
+          material: green
+        relative_configuration:
+          position: [3.95965,19.2141,-0.173528]
+          orientation: [0.714179,-0.196105,0.0799956,0.667152]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller4">
+    template: "controller"
+    goal_radius: 10
+    multigoals:
+
+     -
+        state: [255, 450]
+     -
+        state: [150, 345]
+     -
+        state: [50, 450]
+     -
+        state: [-45, 345]
+     -
+        state: [-150, 455]
+     -
+        state: [-190, 270]
+     -
+        state: [320, 220]
+     -
+        state: [155, 45]
+     -
+        state: [55, 155]
+     -
+        state: [-45, 45]
+     -
+        state: [-145, 150]
+     -
+        state: [-195, -45]
+     -
+        state: [300, -60]
+     -
+        state: [300, -450]
+     -
+        state: [-300, -450]
+     -
+        state: [-400, -350]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller4/subsystems/vo4">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller4/vo4/skeleton4/root"
+            max_num_neighbors: 15
+            sensing_radius: 15
+            obstacle_sensing_radius: 10
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller4/subsystems/vo4/subsystems/skeleton4">
+    template: "skeleton"
+    initial_state: [390,475]
+    state_space:
+      min: [-550,-550]
+      max: [550, 550]
+    input_control_space:
+      min: [9, -4]
+      max: [50, 4] 
+    geometries:
+      -
+        name: root
+        dof: XYZxyz
+        parent: -1
+        direction: [0, 0, 0]
+        global_to_local: [0, 0, 0, 1]
+        collision_geometry:
+          type: sphere
+          radius: .1
+          material: green
+        configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: lhipjoint
+        parent: -1
+        direction: [0.655637, -0.713449, 0.247245]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.13711
+        frame_offset: 6
+        collision_geometry:
+          type: cylinder
+          radius: 0.213711
+          height: 1.13711
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: lfemur
+        dof: xyz
+        parent: 0
+        direction: [0.34202, -0.939693, 0]
+        global_to_local: [0, 0, 0.173648, 0.984808]
+        length: 3.41717
+        frame_offset: 6
+        collision_geometry:
+          type: cylinder
+          radius: 0.441717
+          height: 3.41717
+          material: green
+        relative_configuration:
+          position: [4.93194,17.9552,6.33324]
+          orientation: [0.407672,0.0475755,-0.200095,0.889664]
+      -
+        name: ltibia
+        dof: x
+        parent: 1
+        direction: [0.34202, -0.939693, 0]
+        global_to_local: [0, 0, 0.173648, 0.984808]
+        length: 3.27923
+        frame_offset: 9
+        collision_geometry:
+          type: cylinder
+          radius: 0.427923
+          height: 3.27923
+          material: green
+        relative_configuration:
+          position: [4.73398,15.6978,3.7755]
+          orientation: [0.687116,0.0837734,-0.156798,0.704463]
+      -
+        name: lfoot
+        dof: xz
+        parent: 2
+        direction: [0.0886837, -0.243657, 0.965798]
+        global_to_local: [-0.696364, -0.122788, 0.122788, 0.696364]
+        length: 0.99981
+        frame_offset: 10
+        collision_geometry:
+          type: cylinder
+          radius: 0.199981
+          height: 0.99981
+          material: green
+        relative_configuration:
+          position: [4.74916,15.5589,0.499252]
+          orientation: [0.609367,0.128482,-0.1088,0.774808]
+      -
+        name: ltoes
+        dof: x
+        parent: 3
+        direction: [1.53547e-11, -4.22004e-11, 1]
+        global_to_local: [-0.696364, -0.122788, 0.122788, 0.696364]
+        length: 0.500621
+        frame_offset: 12
+        collision_geometry:
+          type: cylinder
+          radius: 0.150062
+          height: 0.500621
+          material: green
+        relative_configuration:
+          position: [4.81779,14.5621,0.46323]
+          orientation: [0.539454,0.113617,-0.116113,0.826195]
+      -
+        name: lowerback
+        dof: xyz
+        parent: -1
+        direction: [0.00952301, 0.997604, -0.0685217]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.926743
+        frame_offset: 13
+        collision_geometry:
+          type: cylinder
+          radius: 0.192674
+          height: 0.926743
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.774685,-0.0436555,-0.0154338,0.63065]
+      -
+        name: upperback
+        dof: xyz
+        parent: 5
+        direction: [0.00494399, 0.999577, -0.0286701]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.929354
+        frame_offset: 16
+        collision_geometry:
+          type: cylinder
+          radius: 0.192935
+          height: 0.929354
+          material: green
+        relative_configuration:
+          position: [4.27006,18.1875,8.12711]
+          orientation: [0.791638,-0.0394463,0.00222021,0.609711]
+      -
+        name: thorax
+        dof: xyz
+        parent: 6
+        direction: [0.000729686, 0.999992, 0.00388603]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.930632
+        frame_offset: 19
+        collision_geometry:
+          type: cylinder
+          radius: 0.193063
+          height: 0.930632
+          material: green
+        relative_configuration:
+          position: [4.2153,17.9776,9.03078]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: lclavicle
+        dof: yz
+        parent: 7
+        direction: [0.967826, 0.247107, -0.0474446]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.64691
+        frame_offset: 22
+        collision_geometry:
+          type: cylinder
+          radius: 0.264691
+          height: 1.64691
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: lhumerus
+        dof: xyz
+        parent: 8
+        direction: [1, -4.48971e-11, -2.90544e-27]
+        global_to_local: [0.683013, -0.683013, 0.183013, 0.183013]
+        length: 2.18931
+        frame_offset: 24
+        collision_geometry:
+          type: cylinder
+          radius: 0.318931
+          height: 2.18931
+          material: green
+        relative_configuration:
+          position: [5.80955,17.7392,10.3495]
+          orientation: [0.532603,0.643915,-0.313221,0.451221]
+      -
+        name: lradius
+        dof: x
+        parent: 9
+        direction: [1, -4.48958e-11, 1.79638e-26]
+        global_to_local: [0.683013, -0.683013, 0.183013, 0.183013]
+        length: 1.50999
+        frame_offset: 27
+        collision_geometry:
+          type: cylinder
+          radius: 0.250999
+          height: 1.50999
+          material: green
+        relative_configuration:
+          position: [5.7538,18.622,8.34684]
+          orientation: [0.53475,0.556118,-0.340381,0.537509]
+      -
+        name: lwrist
+        dof: y
+        parent: 10
+        direction: [1, -4.48952e-11, 3.34345e-26]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.754996
+        frame_offset: 28
+        collision_geometry:
+          type: cylinder
+          radius: 0.1755
+          height: 0.754996
+          material: green
+        relative_configuration:
+          position: [5.97992,18.9676,6.89442]
+          orientation: [0.473762,0.589536,-0.278519,0.591966]
+      -
+        name: lhand
+        dof: xz
+        parent: 11
+        direction: [1, -4.49055e-11, 6.6869e-26]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.297529
+        frame_offset: 29
+        collision_geometry:
+          type: cylinder
+          radius: 0.129753
+          height: 0.297529
+          material: green
+        relative_configuration:
+          position: [6.09297,19.1404,6.1682]
+          orientation: [0.651301,0.54987,-0.0833424,0.516241]
+      -
+        name: lfingers
+        dof: x
+        parent: 12
+        direction: [1, -4.48731e-11, 1.33738e-25]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.239876
+        frame_offset: 31
+        collision_geometry:
+          type: cylinder
+          radius: 0.123988
+          height: 0.239876
+          material: green
+        relative_configuration:
+          position: [6.20645,19.3279,5.96699]
+          orientation: [0.615875,0.589277,-0.115259,0.510065]
+      -
+        name: lthumb
+        dof: xz
+        parent: 11
+        direction: [0.707107, -6.35005e-11, 0.707107]
+        global_to_local: [-0.653281, 0.270598, 0.270598, 0.653281]
+        length: 0.344415
+        frame_offset: 32
+        collision_geometry:
+          type: cylinder
+          radius: 0.134441
+          height: 0.344415
+          material: green
+        relative_configuration:
+          position: [6.09297,19.1404,6.1682]
+          orientation: [0.543697,0.785502,-0.0624657,0.288926]
+      -
+        name: lowerneck
+        dof: xyz
+        parent: 7
+        direction: [0.00452882, 0.995459, 0.0950816]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.708417
+        frame_offset: 34
+        collision_geometry:
+          type: cylinder
+          radius: 0.170842
+          height: 0.708417
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.70197,-0.00599333,-0.00222384,0.712177]
+      -
+        name: upperneck
+        dof: xyz
+        parent: 15
+        direction: [0.021922, 0.997711, -0.0639762]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.703796
+        frame_offset: 37
+        collision_geometry:
+          type: cylinder
+          radius: 0.17038
+          height: 0.703796
+          material: green
+        relative_configuration:
+          position: [4.21329,17.7333,10.6485]
+          orientation: [0.658581,0.0342885,-0.0227559,0.751383]
+      -
+        name: head
+        dof: xyz
+        parent: 16
+        direction: [0.008024, 0.999444, -0.0323691]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.731925
+        frame_offset: 40
+        collision_geometry:
+          type: sphere
+          radius: 0.731925
+          material: green
+        relative_configuration:
+          position: [4.28342,17.8704,11.3353]
+          orientation: [0.657868,0.0474051,-0.0293925,0.751065]
+      -
+        name: rclavicle
+        dof: yz
+        parent: 7
+        direction: [-0.973174, 0.211421, -0.0907389]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.6175
+        frame_offset: 43
+        collision_geometry:
+          type: cylinder
+          radius: 0.26175
+          height: 1.6175
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: rhumerus
+        dof: xyz
+        parent: 18
+        direction: [-1, -4.48964e-11, 1.56311e-27]
+        global_to_local: [0.683013, 0.683013, -0.183013, 0.183013]
+        length: 2.26192
+        frame_offset: 45
+        collision_geometry:
+          type: cylinder
+          radius: 0.326192
+          height: 2.26192
+          material: green
+        relative_configuration:
+          position: [2.64513,17.9139,10.3138]
+          orientation: [0.704917,-0.183672,0.607372,0.316949]
+      -
+        name: rradius
+        dof: x
+        parent: 19
+        direction: [-1, -4.48948e-11, 2.01724e-26]
+        global_to_local: [0.683013, 0.683013, -0.183013, 0.183013]
+        length: 1.51394
+        frame_offset: 48
+        collision_geometry:
+          type: cylinder
+          radius: 0.251394
+          height: 1.51394
+          material: green
+        relative_configuration:
+          position: [2.20467,17.6287,8.11361]
+          orientation: [0.408201,0.141401,0.750049,0.500803]
+      -
+        name: rwrist
+        dof: y
+        parent: 20
+        direction: [-1, -4.49008e-11, 3.34345e-26]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.756972
+        frame_offset: 49
+        collision_geometry:
+          type: cylinder
+          radius: 0.175697
+          height: 0.756972
+          material: green
+        relative_configuration:
+          position: [2.45468,16.3166,7.40097]
+          orientation: [0.307455,-0.00121221,0.76326,0.568246]
+      -
+        name: rhand
+        dof: xz
+        parent: 21
+        direction: [-1, -4.49013e-11, 6.6869e-26]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.328683
+        frame_offset: 50
+        collision_geometry:
+          type: cylinder
+          radius: 0.132868
+          height: 0.328683
+          material: green
+        relative_configuration:
+          position: [2.57968,15.6605,7.04466]
+          orientation: [0.125741,0.14375,0.628245,0.754211]
+      -
+        name: rfingers
+        dof: x
+        parent: 22
+        direction: [-1, -4.48867e-11, 1.33738e-25]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.264992
+        frame_offset: 52
+        collision_geometry:
+          type: cylinder
+          radius: 0.126499
+          height: 0.264992
+          material: green
+        relative_configuration:
+          position: [2.52404,15.3372,7.064]
+          orientation: [0.13443,0.135659,0.673895,0.713716]
+      -
+        name: rthumb
+        dof: xz
+        parent: 21
+        direction: [-0.707107, -6.34907e-11, 0.707107]
+        global_to_local: [-0.653281, -0.270598, -0.270598, 0.653281]
+        length: 0.380478
+        frame_offset: 53
+        collision_geometry:
+          type: cylinder
+          radius: 0.138048
+          height: 0.380478
+          material: green
+        relative_configuration:
+          position: [2.57968,15.6605,7.04466]
+          orientation: [0.348433,-0.0529896,0.721766,0.595685]
+      -
+        name: rhipjoint
+        parent: -1
+        direction: [-0.645062, -0.722004, 0.250209]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.12364
+        frame_offset: 55
+        collision_geometry:
+          type: cylinder
+          radius: 0.212364
+          height: 1.12364
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: rfemur
+        dof: xyz
+        parent: 25
+        direction: [-0.34202, -0.939693, 0]
+        global_to_local: [0, 0, -0.173648, 0.984808]
+        length: 3.4143
+        frame_offset: 55
+        collision_geometry:
+          type: cylinder
+          radius: 0.44143
+          height: 3.4143
+          material: green
+        relative_configuration:
+          position: [3.47582,18.1008,6.47618]
+          orientation: [0.763339,-0.183743,0.117995,0.607971]
+      -
+        name: rtibia
+        dof: x
+        parent: 26
+        direction: [-0.34202, -0.939693, 0]
+        global_to_local: [0, 0, -0.173648, 0.984808]
+        length: 3.24692
+        frame_offset: 58
+        collision_geometry:
+          type: cylinder
+          radius: 0.424692
+          height: 3.24692
+          material: green
+        relative_configuration:
+          position: [3.77976,18.8808,3.16608]
+          orientation: [0.812359,-0.191297,0.110091,0.539777]
+      -
+        name: rfoot
+        dof: xz
+        parent: 27
+        direction: [-0.102907, -0.282735, 0.953662]
+        global_to_local: [-0.696364, 0.122788, -0.122788, 0.696364]
+        length: 1.00681
+        frame_offset: 59
+        collision_geometry:
+          type: cylinder
+          radius: 0.200681
+          height: 1.00681
+          material: green
+        relative_configuration:
+          position: [4.08836,20.1438,0.190847]
+          orientation: [0.703534,-0.193612,0.0809526,0.678971]
+      -
+        name: rtoes
+        dof: x
+        parent: 28
+        direction: [-1.5354e-11, -4.21751e-11, 1]
+        global_to_local: [-0.696364, 0.122788, -0.122788, 0.696364]
+        length: 0.502061
+        frame_offset: 61
+        collision_geometry:
+          type: cylinder
+          radius: 0.150206
+          height: 0.502061
+          material: green
+        relative_configuration:
+          position: [3.95965,19.2141,-0.173528]
+          orientation: [0.714179,-0.196105,0.0799956,0.667152]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller5">
+    template: "controller"
+    goal_radius: 10
+    multigoals:
+  
+     -
+        state: [250, 450]
+     -
+        state: [155, 345]
+     -
+        state: [55, 450]
+     -
+        state: [-45, 345]
+     -
+        state: [-155, 455]
+     -
+        state: [-190, 270]
+     -
+        state: [320, 220]
+     -
+        state: [150, 45]
+     -
+        state: [55, 155]
+     -
+        state: [-45, 45]
+     -
+        state: [-140, 150]
+     -
+        state: [-195, -45]
+     -
+        state: [300, -60]
+     -
+        state: [300, -450]
+     -
+        state: [-300, -450]
+     -
+        state: [-400, -350]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller5/subsystems/vo5">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller5/vo5/skeleton5/root"
+            max_num_neighbors: 15
+            sensing_radius: 15
+            obstacle_sensing_radius: 10
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller5/subsystems/vo5/subsystems/skeleton5">
+    template: "skeleton"
+    initial_state: [390,435]
+    state_space:
+      min: [-550,-550]
+      max: [550, 550]
+    input_control_space:
+      min: [9, -4]
+      max: [50, 4] 
+    geometries:
+      -
+        name: root
+        dof: XYZxyz
+        parent: -1
+        direction: [0, 0, 0]
+        global_to_local: [0, 0, 0, 1]
+        collision_geometry:
+          type: sphere
+          radius: .1
+          material: green
+        configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: lhipjoint
+        parent: -1
+        direction: [0.655637, -0.713449, 0.247245]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.13711
+        frame_offset: 6
+        collision_geometry:
+          type: cylinder
+          radius: 0.213711
+          height: 1.13711
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: lfemur
+        dof: xyz
+        parent: 0
+        direction: [0.34202, -0.939693, 0]
+        global_to_local: [0, 0, 0.173648, 0.984808]
+        length: 3.41717
+        frame_offset: 6
+        collision_geometry:
+          type: cylinder
+          radius: 0.441717
+          height: 3.41717
+          material: green
+        relative_configuration:
+          position: [4.93194,17.9552,6.33324]
+          orientation: [0.407672,0.0475755,-0.200095,0.889664]
+      -
+        name: ltibia
+        dof: x
+        parent: 1
+        direction: [0.34202, -0.939693, 0]
+        global_to_local: [0, 0, 0.173648, 0.984808]
+        length: 3.27923
+        frame_offset: 9
+        collision_geometry:
+          type: cylinder
+          radius: 0.427923
+          height: 3.27923
+          material: green
+        relative_configuration:
+          position: [4.73398,15.6978,3.7755]
+          orientation: [0.687116,0.0837734,-0.156798,0.704463]
+      -
+        name: lfoot
+        dof: xz
+        parent: 2
+        direction: [0.0886837, -0.243657, 0.965798]
+        global_to_local: [-0.696364, -0.122788, 0.122788, 0.696364]
+        length: 0.99981
+        frame_offset: 10
+        collision_geometry:
+          type: cylinder
+          radius: 0.199981
+          height: 0.99981
+          material: green
+        relative_configuration:
+          position: [4.74916,15.5589,0.499252]
+          orientation: [0.609367,0.128482,-0.1088,0.774808]
+      -
+        name: ltoes
+        dof: x
+        parent: 3
+        direction: [1.53547e-11, -4.22004e-11, 1]
+        global_to_local: [-0.696364, -0.122788, 0.122788, 0.696364]
+        length: 0.500621
+        frame_offset: 12
+        collision_geometry:
+          type: cylinder
+          radius: 0.150062
+          height: 0.500621
+          material: green
+        relative_configuration:
+          position: [4.81779,14.5621,0.46323]
+          orientation: [0.539454,0.113617,-0.116113,0.826195]
+      -
+        name: lowerback
+        dof: xyz
+        parent: -1
+        direction: [0.00952301, 0.997604, -0.0685217]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.926743
+        frame_offset: 13
+        collision_geometry:
+          type: cylinder
+          radius: 0.192674
+          height: 0.926743
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.774685,-0.0436555,-0.0154338,0.63065]
+      -
+        name: upperback
+        dof: xyz
+        parent: 5
+        direction: [0.00494399, 0.999577, -0.0286701]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.929354
+        frame_offset: 16
+        collision_geometry:
+          type: cylinder
+          radius: 0.192935
+          height: 0.929354
+          material: green
+        relative_configuration:
+          position: [4.27006,18.1875,8.12711]
+          orientation: [0.791638,-0.0394463,0.00222021,0.609711]
+      -
+        name: thorax
+        dof: xyz
+        parent: 6
+        direction: [0.000729686, 0.999992, 0.00388603]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.930632
+        frame_offset: 19
+        collision_geometry:
+          type: cylinder
+          radius: 0.193063
+          height: 0.930632
+          material: green
+        relative_configuration:
+          position: [4.2153,17.9776,9.03078]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: lclavicle
+        dof: yz
+        parent: 7
+        direction: [0.967826, 0.247107, -0.0474446]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.64691
+        frame_offset: 22
+        collision_geometry:
+          type: cylinder
+          radius: 0.264691
+          height: 1.64691
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: lhumerus
+        dof: xyz
+        parent: 8
+        direction: [1, -4.48971e-11, -2.90544e-27]
+        global_to_local: [0.683013, -0.683013, 0.183013, 0.183013]
+        length: 2.18931
+        frame_offset: 24
+        collision_geometry:
+          type: cylinder
+          radius: 0.318931
+          height: 2.18931
+          material: green
+        relative_configuration:
+          position: [5.80955,17.7392,10.3495]
+          orientation: [0.532603,0.643915,-0.313221,0.451221]
+      -
+        name: lradius
+        dof: x
+        parent: 9
+        direction: [1, -4.48958e-11, 1.79638e-26]
+        global_to_local: [0.683013, -0.683013, 0.183013, 0.183013]
+        length: 1.50999
+        frame_offset: 27
+        collision_geometry:
+          type: cylinder
+          radius: 0.250999
+          height: 1.50999
+          material: green
+        relative_configuration:
+          position: [5.7538,18.622,8.34684]
+          orientation: [0.53475,0.556118,-0.340381,0.537509]
+      -
+        name: lwrist
+        dof: y
+        parent: 10
+        direction: [1, -4.48952e-11, 3.34345e-26]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.754996
+        frame_offset: 28
+        collision_geometry:
+          type: cylinder
+          radius: 0.1755
+          height: 0.754996
+          material: green
+        relative_configuration:
+          position: [5.97992,18.9676,6.89442]
+          orientation: [0.473762,0.589536,-0.278519,0.591966]
+      -
+        name: lhand
+        dof: xz
+        parent: 11
+        direction: [1, -4.49055e-11, 6.6869e-26]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.297529
+        frame_offset: 29
+        collision_geometry:
+          type: cylinder
+          radius: 0.129753
+          height: 0.297529
+          material: green
+        relative_configuration:
+          position: [6.09297,19.1404,6.1682]
+          orientation: [0.651301,0.54987,-0.0833424,0.516241]
+      -
+        name: lfingers
+        dof: x
+        parent: 12
+        direction: [1, -4.48731e-11, 1.33738e-25]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.239876
+        frame_offset: 31
+        collision_geometry:
+          type: cylinder
+          radius: 0.123988
+          height: 0.239876
+          material: green
+        relative_configuration:
+          position: [6.20645,19.3279,5.96699]
+          orientation: [0.615875,0.589277,-0.115259,0.510065]
+      -
+        name: lthumb
+        dof: xz
+        parent: 11
+        direction: [0.707107, -6.35005e-11, 0.707107]
+        global_to_local: [-0.653281, 0.270598, 0.270598, 0.653281]
+        length: 0.344415
+        frame_offset: 32
+        collision_geometry:
+          type: cylinder
+          radius: 0.134441
+          height: 0.344415
+          material: green
+        relative_configuration:
+          position: [6.09297,19.1404,6.1682]
+          orientation: [0.543697,0.785502,-0.0624657,0.288926]
+      -
+        name: lowerneck
+        dof: xyz
+        parent: 7
+        direction: [0.00452882, 0.995459, 0.0950816]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.708417
+        frame_offset: 34
+        collision_geometry:
+          type: cylinder
+          radius: 0.170842
+          height: 0.708417
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.70197,-0.00599333,-0.00222384,0.712177]
+      -
+        name: upperneck
+        dof: xyz
+        parent: 15
+        direction: [0.021922, 0.997711, -0.0639762]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.703796
+        frame_offset: 37
+        collision_geometry:
+          type: cylinder
+          radius: 0.17038
+          height: 0.703796
+          material: green
+        relative_configuration:
+          position: [4.21329,17.7333,10.6485]
+          orientation: [0.658581,0.0342885,-0.0227559,0.751383]
+      -
+        name: head
+        dof: xyz
+        parent: 16
+        direction: [0.008024, 0.999444, -0.0323691]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.731925
+        frame_offset: 40
+        collision_geometry:
+          type: sphere
+          radius: 0.731925
+          material: green
+        relative_configuration:
+          position: [4.28342,17.8704,11.3353]
+          orientation: [0.657868,0.0474051,-0.0293925,0.751065]
+      -
+        name: rclavicle
+        dof: yz
+        parent: 7
+        direction: [-0.973174, 0.211421, -0.0907389]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.6175
+        frame_offset: 43
+        collision_geometry:
+          type: cylinder
+          radius: 0.26175
+          height: 1.6175
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: rhumerus
+        dof: xyz
+        parent: 18
+        direction: [-1, -4.48964e-11, 1.56311e-27]
+        global_to_local: [0.683013, 0.683013, -0.183013, 0.183013]
+        length: 2.26192
+        frame_offset: 45
+        collision_geometry:
+          type: cylinder
+          radius: 0.326192
+          height: 2.26192
+          material: green
+        relative_configuration:
+          position: [2.64513,17.9139,10.3138]
+          orientation: [0.704917,-0.183672,0.607372,0.316949]
+      -
+        name: rradius
+        dof: x
+        parent: 19
+        direction: [-1, -4.48948e-11, 2.01724e-26]
+        global_to_local: [0.683013, 0.683013, -0.183013, 0.183013]
+        length: 1.51394
+        frame_offset: 48
+        collision_geometry:
+          type: cylinder
+          radius: 0.251394
+          height: 1.51394
+          material: green
+        relative_configuration:
+          position: [2.20467,17.6287,8.11361]
+          orientation: [0.408201,0.141401,0.750049,0.500803]
+      -
+        name: rwrist
+        dof: y
+        parent: 20
+        direction: [-1, -4.49008e-11, 3.34345e-26]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.756972
+        frame_offset: 49
+        collision_geometry:
+          type: cylinder
+          radius: 0.175697
+          height: 0.756972
+          material: green
+        relative_configuration:
+          position: [2.45468,16.3166,7.40097]
+          orientation: [0.307455,-0.00121221,0.76326,0.568246]
+      -
+        name: rhand
+        dof: xz
+        parent: 21
+        direction: [-1, -4.49013e-11, 6.6869e-26]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.328683
+        frame_offset: 50
+        collision_geometry:
+          type: cylinder
+          radius: 0.132868
+          height: 0.328683
+          material: green
+        relative_configuration:
+          position: [2.57968,15.6605,7.04466]
+          orientation: [0.125741,0.14375,0.628245,0.754211]
+      -
+        name: rfingers
+        dof: x
+        parent: 22
+        direction: [-1, -4.48867e-11, 1.33738e-25]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.264992
+        frame_offset: 52
+        collision_geometry:
+          type: cylinder
+          radius: 0.126499
+          height: 0.264992
+          material: green
+        relative_configuration:
+          position: [2.52404,15.3372,7.064]
+          orientation: [0.13443,0.135659,0.673895,0.713716]
+      -
+        name: rthumb
+        dof: xz
+        parent: 21
+        direction: [-0.707107, -6.34907e-11, 0.707107]
+        global_to_local: [-0.653281, -0.270598, -0.270598, 0.653281]
+        length: 0.380478
+        frame_offset: 53
+        collision_geometry:
+          type: cylinder
+          radius: 0.138048
+          height: 0.380478
+          material: green
+        relative_configuration:
+          position: [2.57968,15.6605,7.04466]
+          orientation: [0.348433,-0.0529896,0.721766,0.595685]
+      -
+        name: rhipjoint
+        parent: -1
+        direction: [-0.645062, -0.722004, 0.250209]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.12364
+        frame_offset: 55
+        collision_geometry:
+          type: cylinder
+          radius: 0.212364
+          height: 1.12364
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: rfemur
+        dof: xyz
+        parent: 25
+        direction: [-0.34202, -0.939693, 0]
+        global_to_local: [0, 0, -0.173648, 0.984808]
+        length: 3.4143
+        frame_offset: 55
+        collision_geometry:
+          type: cylinder
+          radius: 0.44143
+          height: 3.4143
+          material: green
+        relative_configuration:
+          position: [3.47582,18.1008,6.47618]
+          orientation: [0.763339,-0.183743,0.117995,0.607971]
+      -
+        name: rtibia
+        dof: x
+        parent: 26
+        direction: [-0.34202, -0.939693, 0]
+        global_to_local: [0, 0, -0.173648, 0.984808]
+        length: 3.24692
+        frame_offset: 58
+        collision_geometry:
+          type: cylinder
+          radius: 0.424692
+          height: 3.24692
+          material: green
+        relative_configuration:
+          position: [3.77976,18.8808,3.16608]
+          orientation: [0.812359,-0.191297,0.110091,0.539777]
+      -
+        name: rfoot
+        dof: xz
+        parent: 27
+        direction: [-0.102907, -0.282735, 0.953662]
+        global_to_local: [-0.696364, 0.122788, -0.122788, 0.696364]
+        length: 1.00681
+        frame_offset: 59
+        collision_geometry:
+          type: cylinder
+          radius: 0.200681
+          height: 1.00681
+          material: green
+        relative_configuration:
+          position: [4.08836,20.1438,0.190847]
+          orientation: [0.703534,-0.193612,0.0809526,0.678971]
+      -
+        name: rtoes
+        dof: x
+        parent: 28
+        direction: [-1.5354e-11, -4.21751e-11, 1]
+        global_to_local: [-0.696364, 0.122788, -0.122788, 0.696364]
+        length: 0.502061
+        frame_offset: 61
+        collision_geometry:
+          type: cylinder
+          radius: 0.150206
+          height: 0.502061
+          material: green
+        relative_configuration:
+          position: [3.95965,19.2141,-0.173528]
+          orientation: [0.714179,-0.196105,0.0799956,0.667152]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller6">
+    template: "controller"
+    goal_radius: 10
+    multigoals:
+
+     -
+        state: [255, 455]
+     -
+        state: [150, 345]
+     -
+        state: [50, 450]
+     -
+        state: [-45, 345]
+     -
+        state: [-150, 455]
+     -
+        state: [-190, 275]
+     -
+        state: [320, 225]
+     -
+        state: [155, 45]
+     -
+        state: [55, 155]
+     -
+        state: [-45, 45]
+     -
+        state: [-145, 155]
+     -
+        state: [-195, -45]
+     -
+        state: [300, -60]
+     -
+        state: [300, -455]
+     -
+        state: [-300, -450]
+     -
+        state: [-400, -350]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller6/subsystems/vo6">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller6/vo6/skeleton6/root"
+            max_num_neighbors: 15
+            sensing_radius: 15
+            obstacle_sensing_radius: 10
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller6/subsystems/vo6/subsystems/skeleton6">
+    template: "skeleton"
+    initial_state: [430,480]
+    state_space:
+      min: [-550,-550]
+      max: [550, 550]
+    input_control_space:
+      min: [9, -4]
+      max: [50, 4]  
+    geometries:
+      -
+        name: root
+        dof: XYZxyz
+        parent: -1
+        direction: [0, 0, 0]
+        global_to_local: [0, 0, 0, 1]
+        collision_geometry:
+          type: sphere
+          radius: .1
+          material: green
+        configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: lhipjoint
+        parent: -1
+        direction: [0.655637, -0.713449, 0.247245]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.13711
+        frame_offset: 6
+        collision_geometry:
+          type: cylinder
+          radius: 0.213711
+          height: 1.13711
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: lfemur
+        dof: xyz
+        parent: 0
+        direction: [0.34202, -0.939693, 0]
+        global_to_local: [0, 0, 0.173648, 0.984808]
+        length: 3.41717
+        frame_offset: 6
+        collision_geometry:
+          type: cylinder
+          radius: 0.441717
+          height: 3.41717
+          material: green
+        relative_configuration:
+          position: [4.93194,17.9552,6.33324]
+          orientation: [0.407672,0.0475755,-0.200095,0.889664]
+      -
+        name: ltibia
+        dof: x
+        parent: 1
+        direction: [0.34202, -0.939693, 0]
+        global_to_local: [0, 0, 0.173648, 0.984808]
+        length: 3.27923
+        frame_offset: 9
+        collision_geometry:
+          type: cylinder
+          radius: 0.427923
+          height: 3.27923
+          material: green
+        relative_configuration:
+          position: [4.73398,15.6978,3.7755]
+          orientation: [0.687116,0.0837734,-0.156798,0.704463]
+      -
+        name: lfoot
+        dof: xz
+        parent: 2
+        direction: [0.0886837, -0.243657, 0.965798]
+        global_to_local: [-0.696364, -0.122788, 0.122788, 0.696364]
+        length: 0.99981
+        frame_offset: 10
+        collision_geometry:
+          type: cylinder
+          radius: 0.199981
+          height: 0.99981
+          material: green
+        relative_configuration:
+          position: [4.74916,15.5589,0.499252]
+          orientation: [0.609367,0.128482,-0.1088,0.774808]
+      -
+        name: ltoes
+        dof: x
+        parent: 3
+        direction: [1.53547e-11, -4.22004e-11, 1]
+        global_to_local: [-0.696364, -0.122788, 0.122788, 0.696364]
+        length: 0.500621
+        frame_offset: 12
+        collision_geometry:
+          type: cylinder
+          radius: 0.150062
+          height: 0.500621
+          material: green
+        relative_configuration:
+          position: [4.81779,14.5621,0.46323]
+          orientation: [0.539454,0.113617,-0.116113,0.826195]
+      -
+        name: lowerback
+        dof: xyz
+        parent: -1
+        direction: [0.00952301, 0.997604, -0.0685217]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.926743
+        frame_offset: 13
+        collision_geometry:
+          type: cylinder
+          radius: 0.192674
+          height: 0.926743
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.774685,-0.0436555,-0.0154338,0.63065]
+      -
+        name: upperback
+        dof: xyz
+        parent: 5
+        direction: [0.00494399, 0.999577, -0.0286701]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.929354
+        frame_offset: 16
+        collision_geometry:
+          type: cylinder
+          radius: 0.192935
+          height: 0.929354
+          material: green
+        relative_configuration:
+          position: [4.27006,18.1875,8.12711]
+          orientation: [0.791638,-0.0394463,0.00222021,0.609711]
+      -
+        name: thorax
+        dof: xyz
+        parent: 6
+        direction: [0.000729686, 0.999992, 0.00388603]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.930632
+        frame_offset: 19
+        collision_geometry:
+          type: cylinder
+          radius: 0.193063
+          height: 0.930632
+          material: green
+        relative_configuration:
+          position: [4.2153,17.9776,9.03078]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: lclavicle
+        dof: yz
+        parent: 7
+        direction: [0.967826, 0.247107, -0.0474446]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.64691
+        frame_offset: 22
+        collision_geometry:
+          type: cylinder
+          radius: 0.264691
+          height: 1.64691
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: lhumerus
+        dof: xyz
+        parent: 8
+        direction: [1, -4.48971e-11, -2.90544e-27]
+        global_to_local: [0.683013, -0.683013, 0.183013, 0.183013]
+        length: 2.18931
+        frame_offset: 24
+        collision_geometry:
+          type: cylinder
+          radius: 0.318931
+          height: 2.18931
+          material: green
+        relative_configuration:
+          position: [5.80955,17.7392,10.3495]
+          orientation: [0.532603,0.643915,-0.313221,0.451221]
+      -
+        name: lradius
+        dof: x
+        parent: 9
+        direction: [1, -4.48958e-11, 1.79638e-26]
+        global_to_local: [0.683013, -0.683013, 0.183013, 0.183013]
+        length: 1.50999
+        frame_offset: 27
+        collision_geometry:
+          type: cylinder
+          radius: 0.250999
+          height: 1.50999
+          material: green
+        relative_configuration:
+          position: [5.7538,18.622,8.34684]
+          orientation: [0.53475,0.556118,-0.340381,0.537509]
+      -
+        name: lwrist
+        dof: y
+        parent: 10
+        direction: [1, -4.48952e-11, 3.34345e-26]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.754996
+        frame_offset: 28
+        collision_geometry:
+          type: cylinder
+          radius: 0.1755
+          height: 0.754996
+          material: green
+        relative_configuration:
+          position: [5.97992,18.9676,6.89442]
+          orientation: [0.473762,0.589536,-0.278519,0.591966]
+      -
+        name: lhand
+        dof: xz
+        parent: 11
+        direction: [1, -4.49055e-11, 6.6869e-26]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.297529
+        frame_offset: 29
+        collision_geometry:
+          type: cylinder
+          radius: 0.129753
+          height: 0.297529
+          material: green
+        relative_configuration:
+          position: [6.09297,19.1404,6.1682]
+          orientation: [0.651301,0.54987,-0.0833424,0.516241]
+      -
+        name: lfingers
+        dof: x
+        parent: 12
+        direction: [1, -4.48731e-11, 1.33738e-25]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.239876
+        frame_offset: 31
+        collision_geometry:
+          type: cylinder
+          radius: 0.123988
+          height: 0.239876
+          material: green
+        relative_configuration:
+          position: [6.20645,19.3279,5.96699]
+          orientation: [0.615875,0.589277,-0.115259,0.510065]
+      -
+        name: lthumb
+        dof: xz
+        parent: 11
+        direction: [0.707107, -6.35005e-11, 0.707107]
+        global_to_local: [-0.653281, 0.270598, 0.270598, 0.653281]
+        length: 0.344415
+        frame_offset: 32
+        collision_geometry:
+          type: cylinder
+          radius: 0.134441
+          height: 0.344415
+          material: green
+        relative_configuration:
+          position: [6.09297,19.1404,6.1682]
+          orientation: [0.543697,0.785502,-0.0624657,0.288926]
+      -
+        name: lowerneck
+        dof: xyz
+        parent: 7
+        direction: [0.00452882, 0.995459, 0.0950816]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.708417
+        frame_offset: 34
+        collision_geometry:
+          type: cylinder
+          radius: 0.170842
+          height: 0.708417
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.70197,-0.00599333,-0.00222384,0.712177]
+      -
+        name: upperneck
+        dof: xyz
+        parent: 15
+        direction: [0.021922, 0.997711, -0.0639762]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.703796
+        frame_offset: 37
+        collision_geometry:
+          type: cylinder
+          radius: 0.17038
+          height: 0.703796
+          material: green
+        relative_configuration:
+          position: [4.21329,17.7333,10.6485]
+          orientation: [0.658581,0.0342885,-0.0227559,0.751383]
+      -
+        name: head
+        dof: xyz
+        parent: 16
+        direction: [0.008024, 0.999444, -0.0323691]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.731925
+        frame_offset: 40
+        collision_geometry:
+          type: sphere
+          radius: 0.731925
+          material: green
+        relative_configuration:
+          position: [4.28342,17.8704,11.3353]
+          orientation: [0.657868,0.0474051,-0.0293925,0.751065]
+      -
+        name: rclavicle
+        dof: yz
+        parent: 7
+        direction: [-0.973174, 0.211421, -0.0907389]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.6175
+        frame_offset: 43
+        collision_geometry:
+          type: cylinder
+          radius: 0.26175
+          height: 1.6175
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: rhumerus
+        dof: xyz
+        parent: 18
+        direction: [-1, -4.48964e-11, 1.56311e-27]
+        global_to_local: [0.683013, 0.683013, -0.183013, 0.183013]
+        length: 2.26192
+        frame_offset: 45
+        collision_geometry:
+          type: cylinder
+          radius: 0.326192
+          height: 2.26192
+          material: green
+        relative_configuration:
+          position: [2.64513,17.9139,10.3138]
+          orientation: [0.704917,-0.183672,0.607372,0.316949]
+      -
+        name: rradius
+        dof: x
+        parent: 19
+        direction: [-1, -4.48948e-11, 2.01724e-26]
+        global_to_local: [0.683013, 0.683013, -0.183013, 0.183013]
+        length: 1.51394
+        frame_offset: 48
+        collision_geometry:
+          type: cylinder
+          radius: 0.251394
+          height: 1.51394
+          material: green
+        relative_configuration:
+          position: [2.20467,17.6287,8.11361]
+          orientation: [0.408201,0.141401,0.750049,0.500803]
+      -
+        name: rwrist
+        dof: y
+        parent: 20
+        direction: [-1, -4.49008e-11, 3.34345e-26]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.756972
+        frame_offset: 49
+        collision_geometry:
+          type: cylinder
+          radius: 0.175697
+          height: 0.756972
+          material: green
+        relative_configuration:
+          position: [2.45468,16.3166,7.40097]
+          orientation: [0.307455,-0.00121221,0.76326,0.568246]
+      -
+        name: rhand
+        dof: xz
+        parent: 21
+        direction: [-1, -4.49013e-11, 6.6869e-26]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.328683
+        frame_offset: 50
+        collision_geometry:
+          type: cylinder
+          radius: 0.132868
+          height: 0.328683
+          material: green
+        relative_configuration:
+          position: [2.57968,15.6605,7.04466]
+          orientation: [0.125741,0.14375,0.628245,0.754211]
+      -
+        name: rfingers
+        dof: x
+        parent: 22
+        direction: [-1, -4.48867e-11, 1.33738e-25]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.264992
+        frame_offset: 52
+        collision_geometry:
+          type: cylinder
+          radius: 0.126499
+          height: 0.264992
+          material: green
+        relative_configuration:
+          position: [2.52404,15.3372,7.064]
+          orientation: [0.13443,0.135659,0.673895,0.713716]
+      -
+        name: rthumb
+        dof: xz
+        parent: 21
+        direction: [-0.707107, -6.34907e-11, 0.707107]
+        global_to_local: [-0.653281, -0.270598, -0.270598, 0.653281]
+        length: 0.380478
+        frame_offset: 53
+        collision_geometry:
+          type: cylinder
+          radius: 0.138048
+          height: 0.380478
+          material: green
+        relative_configuration:
+          position: [2.57968,15.6605,7.04466]
+          orientation: [0.348433,-0.0529896,0.721766,0.595685]
+      -
+        name: rhipjoint
+        parent: -1
+        direction: [-0.645062, -0.722004, 0.250209]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.12364
+        frame_offset: 55
+        collision_geometry:
+          type: cylinder
+          radius: 0.212364
+          height: 1.12364
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: rfemur
+        dof: xyz
+        parent: 25
+        direction: [-0.34202, -0.939693, 0]
+        global_to_local: [0, 0, -0.173648, 0.984808]
+        length: 3.4143
+        frame_offset: 55
+        collision_geometry:
+          type: cylinder
+          radius: 0.44143
+          height: 3.4143
+          material: green
+        relative_configuration:
+          position: [3.47582,18.1008,6.47618]
+          orientation: [0.763339,-0.183743,0.117995,0.607971]
+      -
+        name: rtibia
+        dof: x
+        parent: 26
+        direction: [-0.34202, -0.939693, 0]
+        global_to_local: [0, 0, -0.173648, 0.984808]
+        length: 3.24692
+        frame_offset: 58
+        collision_geometry:
+          type: cylinder
+          radius: 0.424692
+          height: 3.24692
+          material: green
+        relative_configuration:
+          position: [3.77976,18.8808,3.16608]
+          orientation: [0.812359,-0.191297,0.110091,0.539777]
+      -
+        name: rfoot
+        dof: xz
+        parent: 27
+        direction: [-0.102907, -0.282735, 0.953662]
+        global_to_local: [-0.696364, 0.122788, -0.122788, 0.696364]
+        length: 1.00681
+        frame_offset: 59
+        collision_geometry:
+          type: cylinder
+          radius: 0.200681
+          height: 1.00681
+          material: green
+        relative_configuration:
+          position: [4.08836,20.1438,0.190847]
+          orientation: [0.703534,-0.193612,0.0809526,0.678971]
+      -
+        name: rtoes
+        dof: x
+        parent: 28
+        direction: [-1.5354e-11, -4.21751e-11, 1]
+        global_to_local: [-0.696364, 0.122788, -0.122788, 0.696364]
+        length: 0.502061
+        frame_offset: 61
+        collision_geometry:
+          type: cylinder
+          radius: 0.150206
+          height: 0.502061
+          material: green
+        relative_configuration:
+          position: [3.95965,19.2141,-0.173528]
+          orientation: [0.714179,-0.196105,0.0799956,0.667152]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller7">
+    template: "controller"
+    goal_radius: 10
+    multigoals:
+  
+     -
+        state: [255, 450]
+     -
+        state: [150, 345]
+     -
+        state: [50, 450]
+     -
+        state: [-45, 345]
+     -
+        state: [-150, 455]
+     -
+        state: [-190, 270]
+     -
+        state: [320, 220]
+     -
+        state: [155, 45]
+     -
+        state: [55, 155]
+     -
+        state: [-45, 45]
+     -
+        state: [-145, 150]
+     -
+        state: [-195, 110]
+     -
+        state: [-195, -45]
+     -
+        state: [300, -60]
+     -
+        state: [300, -450]
+     -
+        state: [-300, -450]
+     -
+        state: [-400, -350]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller7/subsystems/vo7">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller7/vo7/skeleton7/root"
+            max_num_neighbors: 15
+            sensing_radius: 15
+            obstacle_sensing_radius: 10
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller7/subsystems/vo7/subsystems/skeleton7">
+    template: "skeleton"
+    initial_state: [430,450]
+    state_space:
+      min: [-550,-550]
+      max: [550, 550]
+    input_control_space:
+      min: [9, -4]
+      max: [50, 4]
+    geometries:
+      -
+        name: root
+        dof: XYZxyz
+        parent: -1
+        direction: [0, 0, 0]
+        global_to_local: [0, 0, 0, 1]
+        collision_geometry:
+          type: sphere
+          radius: .1
+          material: green
+        configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: lhipjoint
+        parent: -1
+        direction: [0.655637, -0.713449, 0.247245]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.13711
+        frame_offset: 6
+        collision_geometry:
+          type: cylinder
+          radius: 0.213711
+          height: 1.13711
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: lfemur
+        dof: xyz
+        parent: 0
+        direction: [0.34202, -0.939693, 0]
+        global_to_local: [0, 0, 0.173648, 0.984808]
+        length: 3.41717
+        frame_offset: 6
+        collision_geometry:
+          type: cylinder
+          radius: 0.441717
+          height: 3.41717
+          material: green
+        relative_configuration:
+          position: [4.93194,17.9552,6.33324]
+          orientation: [0.407672,0.0475755,-0.200095,0.889664]
+      -
+        name: ltibia
+        dof: x
+        parent: 1
+        direction: [0.34202, -0.939693, 0]
+        global_to_local: [0, 0, 0.173648, 0.984808]
+        length: 3.27923
+        frame_offset: 9
+        collision_geometry:
+          type: cylinder
+          radius: 0.427923
+          height: 3.27923
+          material: green
+        relative_configuration:
+          position: [4.73398,15.6978,3.7755]
+          orientation: [0.687116,0.0837734,-0.156798,0.704463]
+      -
+        name: lfoot
+        dof: xz
+        parent: 2
+        direction: [0.0886837, -0.243657, 0.965798]
+        global_to_local: [-0.696364, -0.122788, 0.122788, 0.696364]
+        length: 0.99981
+        frame_offset: 10
+        collision_geometry:
+          type: cylinder
+          radius: 0.199981
+          height: 0.99981
+          material: green
+        relative_configuration:
+          position: [4.74916,15.5589,0.499252]
+          orientation: [0.609367,0.128482,-0.1088,0.774808]
+      -
+        name: ltoes
+        dof: x
+        parent: 3
+        direction: [1.53547e-11, -4.22004e-11, 1]
+        global_to_local: [-0.696364, -0.122788, 0.122788, 0.696364]
+        length: 0.500621
+        frame_offset: 12
+        collision_geometry:
+          type: cylinder
+          radius: 0.150062
+          height: 0.500621
+          material: green
+        relative_configuration:
+          position: [4.81779,14.5621,0.46323]
+          orientation: [0.539454,0.113617,-0.116113,0.826195]
+      -
+        name: lowerback
+        dof: xyz
+        parent: -1
+        direction: [0.00952301, 0.997604, -0.0685217]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.926743
+        frame_offset: 13
+        collision_geometry:
+          type: cylinder
+          radius: 0.192674
+          height: 0.926743
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.774685,-0.0436555,-0.0154338,0.63065]
+      -
+        name: upperback
+        dof: xyz
+        parent: 5
+        direction: [0.00494399, 0.999577, -0.0286701]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.929354
+        frame_offset: 16
+        collision_geometry:
+          type: cylinder
+          radius: 0.192935
+          height: 0.929354
+          material: green
+        relative_configuration:
+          position: [4.27006,18.1875,8.12711]
+          orientation: [0.791638,-0.0394463,0.00222021,0.609711]
+      -
+        name: thorax
+        dof: xyz
+        parent: 6
+        direction: [0.000729686, 0.999992, 0.00388603]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.930632
+        frame_offset: 19
+        collision_geometry:
+          type: cylinder
+          radius: 0.193063
+          height: 0.930632
+          material: green
+        relative_configuration:
+          position: [4.2153,17.9776,9.03078]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: lclavicle
+        dof: yz
+        parent: 7
+        direction: [0.967826, 0.247107, -0.0474446]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.64691
+        frame_offset: 22
+        collision_geometry:
+          type: cylinder
+          radius: 0.264691
+          height: 1.64691
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: lhumerus
+        dof: xyz
+        parent: 8
+        direction: [1, -4.48971e-11, -2.90544e-27]
+        global_to_local: [0.683013, -0.683013, 0.183013, 0.183013]
+        length: 2.18931
+        frame_offset: 24
+        collision_geometry:
+          type: cylinder
+          radius: 0.318931
+          height: 2.18931
+          material: green
+        relative_configuration:
+          position: [5.80955,17.7392,10.3495]
+          orientation: [0.532603,0.643915,-0.313221,0.451221]
+      -
+        name: lradius
+        dof: x
+        parent: 9
+        direction: [1, -4.48958e-11, 1.79638e-26]
+        global_to_local: [0.683013, -0.683013, 0.183013, 0.183013]
+        length: 1.50999
+        frame_offset: 27
+        collision_geometry:
+          type: cylinder
+          radius: 0.250999
+          height: 1.50999
+          material: green
+        relative_configuration:
+          position: [5.7538,18.622,8.34684]
+          orientation: [0.53475,0.556118,-0.340381,0.537509]
+      -
+        name: lwrist
+        dof: y
+        parent: 10
+        direction: [1, -4.48952e-11, 3.34345e-26]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.754996
+        frame_offset: 28
+        collision_geometry:
+          type: cylinder
+          radius: 0.1755
+          height: 0.754996
+          material: green
+        relative_configuration:
+          position: [5.97992,18.9676,6.89442]
+          orientation: [0.473762,0.589536,-0.278519,0.591966]
+      -
+        name: lhand
+        dof: xz
+        parent: 11
+        direction: [1, -4.49055e-11, 6.6869e-26]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.297529
+        frame_offset: 29
+        collision_geometry:
+          type: cylinder
+          radius: 0.129753
+          height: 0.297529
+          material: green
+        relative_configuration:
+          position: [6.09297,19.1404,6.1682]
+          orientation: [0.651301,0.54987,-0.0833424,0.516241]
+      -
+        name: lfingers
+        dof: x
+        parent: 12
+        direction: [1, -4.48731e-11, 1.33738e-25]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.239876
+        frame_offset: 31
+        collision_geometry:
+          type: cylinder
+          radius: 0.123988
+          height: 0.239876
+          material: green
+        relative_configuration:
+          position: [6.20645,19.3279,5.96699]
+          orientation: [0.615875,0.589277,-0.115259,0.510065]
+      -
+        name: lthumb
+        dof: xz
+        parent: 11
+        direction: [0.707107, -6.35005e-11, 0.707107]
+        global_to_local: [-0.653281, 0.270598, 0.270598, 0.653281]
+        length: 0.344415
+        frame_offset: 32
+        collision_geometry:
+          type: cylinder
+          radius: 0.134441
+          height: 0.344415
+          material: green
+        relative_configuration:
+          position: [6.09297,19.1404,6.1682]
+          orientation: [0.543697,0.785502,-0.0624657,0.288926]
+      -
+        name: lowerneck
+        dof: xyz
+        parent: 7
+        direction: [0.00452882, 0.995459, 0.0950816]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.708417
+        frame_offset: 34
+        collision_geometry:
+          type: cylinder
+          radius: 0.170842
+          height: 0.708417
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.70197,-0.00599333,-0.00222384,0.712177]
+      -
+        name: upperneck
+        dof: xyz
+        parent: 15
+        direction: [0.021922, 0.997711, -0.0639762]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.703796
+        frame_offset: 37
+        collision_geometry:
+          type: cylinder
+          radius: 0.17038
+          height: 0.703796
+          material: green
+        relative_configuration:
+          position: [4.21329,17.7333,10.6485]
+          orientation: [0.658581,0.0342885,-0.0227559,0.751383]
+      -
+        name: head
+        dof: xyz
+        parent: 16
+        direction: [0.008024, 0.999444, -0.0323691]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.731925
+        frame_offset: 40
+        collision_geometry:
+          type: sphere
+          radius: 0.731925
+          material: green
+        relative_configuration:
+          position: [4.28342,17.8704,11.3353]
+          orientation: [0.657868,0.0474051,-0.0293925,0.751065]
+      -
+        name: rclavicle
+        dof: yz
+        parent: 7
+        direction: [-0.973174, 0.211421, -0.0907389]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.6175
+        frame_offset: 43
+        collision_geometry:
+          type: cylinder
+          radius: 0.26175
+          height: 1.6175
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: rhumerus
+        dof: xyz
+        parent: 18
+        direction: [-1, -4.48964e-11, 1.56311e-27]
+        global_to_local: [0.683013, 0.683013, -0.183013, 0.183013]
+        length: 2.26192
+        frame_offset: 45
+        collision_geometry:
+          type: cylinder
+          radius: 0.326192
+          height: 2.26192
+          material: green
+        relative_configuration:
+          position: [2.64513,17.9139,10.3138]
+          orientation: [0.704917,-0.183672,0.607372,0.316949]
+      -
+        name: rradius
+        dof: x
+        parent: 19
+        direction: [-1, -4.48948e-11, 2.01724e-26]
+        global_to_local: [0.683013, 0.683013, -0.183013, 0.183013]
+        length: 1.51394
+        frame_offset: 48
+        collision_geometry:
+          type: cylinder
+          radius: 0.251394
+          height: 1.51394
+          material: green
+        relative_configuration:
+          position: [2.20467,17.6287,8.11361]
+          orientation: [0.408201,0.141401,0.750049,0.500803]
+      -
+        name: rwrist
+        dof: y
+        parent: 20
+        direction: [-1, -4.49008e-11, 3.34345e-26]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.756972
+        frame_offset: 49
+        collision_geometry:
+          type: cylinder
+          radius: 0.175697
+          height: 0.756972
+          material: green
+        relative_configuration:
+          position: [2.45468,16.3166,7.40097]
+          orientation: [0.307455,-0.00121221,0.76326,0.568246]
+      -
+        name: rhand
+        dof: xz
+        parent: 21
+        direction: [-1, -4.49013e-11, 6.6869e-26]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.328683
+        frame_offset: 50
+        collision_geometry:
+          type: cylinder
+          radius: 0.132868
+          height: 0.328683
+          material: green
+        relative_configuration:
+          position: [2.57968,15.6605,7.04466]
+          orientation: [0.125741,0.14375,0.628245,0.754211]
+      -
+        name: rfingers
+        dof: x
+        parent: 22
+        direction: [-1, -4.48867e-11, 1.33738e-25]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.264992
+        frame_offset: 52
+        collision_geometry:
+          type: cylinder
+          radius: 0.126499
+          height: 0.264992
+          material: green
+        relative_configuration:
+          position: [2.52404,15.3372,7.064]
+          orientation: [0.13443,0.135659,0.673895,0.713716]
+      -
+        name: rthumb
+        dof: xz
+        parent: 21
+        direction: [-0.707107, -6.34907e-11, 0.707107]
+        global_to_local: [-0.653281, -0.270598, -0.270598, 0.653281]
+        length: 0.380478
+        frame_offset: 53
+        collision_geometry:
+          type: cylinder
+          radius: 0.138048
+          height: 0.380478
+          material: green
+        relative_configuration:
+          position: [2.57968,15.6605,7.04466]
+          orientation: [0.348433,-0.0529896,0.721766,0.595685]
+      -
+        name: rhipjoint
+        parent: -1
+        direction: [-0.645062, -0.722004, 0.250209]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.12364
+        frame_offset: 55
+        collision_geometry:
+          type: cylinder
+          radius: 0.212364
+          height: 1.12364
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: rfemur
+        dof: xyz
+        parent: 25
+        direction: [-0.34202, -0.939693, 0]
+        global_to_local: [0, 0, -0.173648, 0.984808]
+        length: 3.4143
+        frame_offset: 55
+        collision_geometry:
+          type: cylinder
+          radius: 0.44143
+          height: 3.4143
+          material: green
+        relative_configuration:
+          position: [3.47582,18.1008,6.47618]
+          orientation: [0.763339,-0.183743,0.117995,0.607971]
+      -
+        name: rtibia
+        dof: x
+        parent: 26
+        direction: [-0.34202, -0.939693, 0]
+        global_to_local: [0, 0, -0.173648, 0.984808]
+        length: 3.24692
+        frame_offset: 58
+        collision_geometry:
+          type: cylinder
+          radius: 0.424692
+          height: 3.24692
+          material: green
+        relative_configuration:
+          position: [3.77976,18.8808,3.16608]
+          orientation: [0.812359,-0.191297,0.110091,0.539777]
+      -
+        name: rfoot
+        dof: xz
+        parent: 27
+        direction: [-0.102907, -0.282735, 0.953662]
+        global_to_local: [-0.696364, 0.122788, -0.122788, 0.696364]
+        length: 1.00681
+        frame_offset: 59
+        collision_geometry:
+          type: cylinder
+          radius: 0.200681
+          height: 1.00681
+          material: green
+        relative_configuration:
+          position: [4.08836,20.1438,0.190847]
+          orientation: [0.703534,-0.193612,0.0809526,0.678971]
+      -
+        name: rtoes
+        dof: x
+        parent: 28
+        direction: [-1.5354e-11, -4.21751e-11, 1]
+        global_to_local: [-0.696364, 0.122788, -0.122788, 0.696364]
+        length: 0.502061
+        frame_offset: 61
+        collision_geometry:
+          type: cylinder
+          radius: 0.150206
+          height: 0.502061
+          material: green
+        relative_configuration:
+          position: [3.95965,19.2141,-0.173528]
+          orientation: [0.714179,-0.196105,0.0799956,0.667152]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller8">
+    template: "controller"
+    goal_radius: 10
+    multigoals:
+     
+     -
+        state: [255, 450]
+     -
+        state: [150, 345]
+     -
+        state: [50, 450]
+     -
+        state: [-45, 345]
+     -
+        state: [-150, 455]
+     -
+        state: [-190, 270]
+     -
+        state: [320, 220]
+     -
+        state: [155, 45]
+     -
+        state: [55, 150]
+     -
+        state: [-45, 45]
+     -
+        state: [-145, 150]
+     -
+        state: [-195, -45]
+     -
+        state: [305, -60]
+     -
+        state: [300, -450]
+     -
+        state: [-300, -450]
+     -
+        state: [-400, -350]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller8/subsystems/vo8">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller8/vo8/skeleton8/root"
+            max_num_neighbors: 15
+            sensing_radius: 15
+            obstacle_sensing_radius: 10
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller8/subsystems/vo8/subsystems/skeleton8">
+    template: "skeleton"
+    initial_state: [430,420]
+    state_space:
+      min: [-550,-550]
+      max: [550, 550]
+    input_control_space:
+      min: [9, -4]
+      max: [50, 4] 
+    geometries:
+      -
+        name: root
+        dof: XYZxyz
+        parent: -1
+        direction: [0, 0, 0]
+        global_to_local: [0, 0, 0, 1]
+        collision_geometry:
+          type: sphere
+          radius: .1
+          material: green
+        configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: lhipjoint
+        parent: -1
+        direction: [0.655637, -0.713449, 0.247245]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.13711
+        frame_offset: 6
+        collision_geometry:
+          type: cylinder
+          radius: 0.213711
+          height: 1.13711
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: lfemur
+        dof: xyz
+        parent: 0
+        direction: [0.34202, -0.939693, 0]
+        global_to_local: [0, 0, 0.173648, 0.984808]
+        length: 3.41717
+        frame_offset: 6
+        collision_geometry:
+          type: cylinder
+          radius: 0.441717
+          height: 3.41717
+          material: green
+        relative_configuration:
+          position: [4.93194,17.9552,6.33324]
+          orientation: [0.407672,0.0475755,-0.200095,0.889664]
+      -
+        name: ltibia
+        dof: x
+        parent: 1
+        direction: [0.34202, -0.939693, 0]
+        global_to_local: [0, 0, 0.173648, 0.984808]
+        length: 3.27923
+        frame_offset: 9
+        collision_geometry:
+          type: cylinder
+          radius: 0.427923
+          height: 3.27923
+          material: green
+        relative_configuration:
+          position: [4.73398,15.6978,3.7755]
+          orientation: [0.687116,0.0837734,-0.156798,0.704463]
+      -
+        name: lfoot
+        dof: xz
+        parent: 2
+        direction: [0.0886837, -0.243657, 0.965798]
+        global_to_local: [-0.696364, -0.122788, 0.122788, 0.696364]
+        length: 0.99981
+        frame_offset: 10
+        collision_geometry:
+          type: cylinder
+          radius: 0.199981
+          height: 0.99981
+          material: green
+        relative_configuration:
+          position: [4.74916,15.5589,0.499252]
+          orientation: [0.609367,0.128482,-0.1088,0.774808]
+      -
+        name: ltoes
+        dof: x
+        parent: 3
+        direction: [1.53547e-11, -4.22004e-11, 1]
+        global_to_local: [-0.696364, -0.122788, 0.122788, 0.696364]
+        length: 0.500621
+        frame_offset: 12
+        collision_geometry:
+          type: cylinder
+          radius: 0.150062
+          height: 0.500621
+          material: green
+        relative_configuration:
+          position: [4.81779,14.5621,0.46323]
+          orientation: [0.539454,0.113617,-0.116113,0.826195]
+      -
+        name: lowerback
+        dof: xyz
+        parent: -1
+        direction: [0.00952301, 0.997604, -0.0685217]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.926743
+        frame_offset: 13
+        collision_geometry:
+          type: cylinder
+          radius: 0.192674
+          height: 0.926743
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.774685,-0.0436555,-0.0154338,0.63065]
+      -
+        name: upperback
+        dof: xyz
+        parent: 5
+        direction: [0.00494399, 0.999577, -0.0286701]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.929354
+        frame_offset: 16
+        collision_geometry:
+          type: cylinder
+          radius: 0.192935
+          height: 0.929354
+          material: green
+        relative_configuration:
+          position: [4.27006,18.1875,8.12711]
+          orientation: [0.791638,-0.0394463,0.00222021,0.609711]
+      -
+        name: thorax
+        dof: xyz
+        parent: 6
+        direction: [0.000729686, 0.999992, 0.00388603]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.930632
+        frame_offset: 19
+        collision_geometry:
+          type: cylinder
+          radius: 0.193063
+          height: 0.930632
+          material: green
+        relative_configuration:
+          position: [4.2153,17.9776,9.03078]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: lclavicle
+        dof: yz
+        parent: 7
+        direction: [0.967826, 0.247107, -0.0474446]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.64691
+        frame_offset: 22
+        collision_geometry:
+          type: cylinder
+          radius: 0.264691
+          height: 1.64691
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: lhumerus
+        dof: xyz
+        parent: 8
+        direction: [1, -4.48971e-11, -2.90544e-27]
+        global_to_local: [0.683013, -0.683013, 0.183013, 0.183013]
+        length: 2.18931
+        frame_offset: 24
+        collision_geometry:
+          type: cylinder
+          radius: 0.318931
+          height: 2.18931
+          material: green
+        relative_configuration:
+          position: [5.80955,17.7392,10.3495]
+          orientation: [0.532603,0.643915,-0.313221,0.451221]
+      -
+        name: lradius
+        dof: x
+        parent: 9
+        direction: [1, -4.48958e-11, 1.79638e-26]
+        global_to_local: [0.683013, -0.683013, 0.183013, 0.183013]
+        length: 1.50999
+        frame_offset: 27
+        collision_geometry:
+          type: cylinder
+          radius: 0.250999
+          height: 1.50999
+          material: green
+        relative_configuration:
+          position: [5.7538,18.622,8.34684]
+          orientation: [0.53475,0.556118,-0.340381,0.537509]
+      -
+        name: lwrist
+        dof: y
+        parent: 10
+        direction: [1, -4.48952e-11, 3.34345e-26]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.754996
+        frame_offset: 28
+        collision_geometry:
+          type: cylinder
+          radius: 0.1755
+          height: 0.754996
+          material: green
+        relative_configuration:
+          position: [5.97992,18.9676,6.89442]
+          orientation: [0.473762,0.589536,-0.278519,0.591966]
+      -
+        name: lhand
+        dof: xz
+        parent: 11
+        direction: [1, -4.49055e-11, 6.6869e-26]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.297529
+        frame_offset: 29
+        collision_geometry:
+          type: cylinder
+          radius: 0.129753
+          height: 0.297529
+          material: green
+        relative_configuration:
+          position: [6.09297,19.1404,6.1682]
+          orientation: [0.651301,0.54987,-0.0833424,0.516241]
+      -
+        name: lfingers
+        dof: x
+        parent: 12
+        direction: [1, -4.48731e-11, 1.33738e-25]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.239876
+        frame_offset: 31
+        collision_geometry:
+          type: cylinder
+          radius: 0.123988
+          height: 0.239876
+          material: green
+        relative_configuration:
+          position: [6.20645,19.3279,5.96699]
+          orientation: [0.615875,0.589277,-0.115259,0.510065]
+      -
+        name: lthumb
+        dof: xz
+        parent: 11
+        direction: [0.707107, -6.35005e-11, 0.707107]
+        global_to_local: [-0.653281, 0.270598, 0.270598, 0.653281]
+        length: 0.344415
+        frame_offset: 32
+        collision_geometry:
+          type: cylinder
+          radius: 0.134441
+          height: 0.344415
+          material: green
+        relative_configuration:
+          position: [6.09297,19.1404,6.1682]
+          orientation: [0.543697,0.785502,-0.0624657,0.288926]
+      -
+        name: lowerneck
+        dof: xyz
+        parent: 7
+        direction: [0.00452882, 0.995459, 0.0950816]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.708417
+        frame_offset: 34
+        collision_geometry:
+          type: cylinder
+          radius: 0.170842
+          height: 0.708417
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.70197,-0.00599333,-0.00222384,0.712177]
+      -
+        name: upperneck
+        dof: xyz
+        parent: 15
+        direction: [0.021922, 0.997711, -0.0639762]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.703796
+        frame_offset: 37
+        collision_geometry:
+          type: cylinder
+          radius: 0.17038
+          height: 0.703796
+          material: green
+        relative_configuration:
+          position: [4.21329,17.7333,10.6485]
+          orientation: [0.658581,0.0342885,-0.0227559,0.751383]
+      -
+        name: head
+        dof: xyz
+        parent: 16
+        direction: [0.008024, 0.999444, -0.0323691]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.731925
+        frame_offset: 40
+        collision_geometry:
+          type: sphere
+          radius: 0.731925
+          material: green
+        relative_configuration:
+          position: [4.28342,17.8704,11.3353]
+          orientation: [0.657868,0.0474051,-0.0293925,0.751065]
+      -
+        name: rclavicle
+        dof: yz
+        parent: 7
+        direction: [-0.973174, 0.211421, -0.0907389]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.6175
+        frame_offset: 43
+        collision_geometry:
+          type: cylinder
+          radius: 0.26175
+          height: 1.6175
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: rhumerus
+        dof: xyz
+        parent: 18
+        direction: [-1, -4.48964e-11, 1.56311e-27]
+        global_to_local: [0.683013, 0.683013, -0.183013, 0.183013]
+        length: 2.26192
+        frame_offset: 45
+        collision_geometry:
+          type: cylinder
+          radius: 0.326192
+          height: 2.26192
+          material: green
+        relative_configuration:
+          position: [2.64513,17.9139,10.3138]
+          orientation: [0.704917,-0.183672,0.607372,0.316949]
+      -
+        name: rradius
+        dof: x
+        parent: 19
+        direction: [-1, -4.48948e-11, 2.01724e-26]
+        global_to_local: [0.683013, 0.683013, -0.183013, 0.183013]
+        length: 1.51394
+        frame_offset: 48
+        collision_geometry:
+          type: cylinder
+          radius: 0.251394
+          height: 1.51394
+          material: green
+        relative_configuration:
+          position: [2.20467,17.6287,8.11361]
+          orientation: [0.408201,0.141401,0.750049,0.500803]
+      -
+        name: rwrist
+        dof: y
+        parent: 20
+        direction: [-1, -4.49008e-11, 3.34345e-26]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.756972
+        frame_offset: 49
+        collision_geometry:
+          type: cylinder
+          radius: 0.175697
+          height: 0.756972
+          material: green
+        relative_configuration:
+          position: [2.45468,16.3166,7.40097]
+          orientation: [0.307455,-0.00121221,0.76326,0.568246]
+      -
+        name: rhand
+        dof: xz
+        parent: 21
+        direction: [-1, -4.49013e-11, 6.6869e-26]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.328683
+        frame_offset: 50
+        collision_geometry:
+          type: cylinder
+          radius: 0.132868
+          height: 0.328683
+          material: green
+        relative_configuration:
+          position: [2.57968,15.6605,7.04466]
+          orientation: [0.125741,0.14375,0.628245,0.754211]
+      -
+        name: rfingers
+        dof: x
+        parent: 22
+        direction: [-1, -4.48867e-11, 1.33738e-25]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.264992
+        frame_offset: 52
+        collision_geometry:
+          type: cylinder
+          radius: 0.126499
+          height: 0.264992
+          material: green
+        relative_configuration:
+          position: [2.52404,15.3372,7.064]
+          orientation: [0.13443,0.135659,0.673895,0.713716]
+      -
+        name: rthumb
+        dof: xz
+        parent: 21
+        direction: [-0.707107, -6.34907e-11, 0.707107]
+        global_to_local: [-0.653281, -0.270598, -0.270598, 0.653281]
+        length: 0.380478
+        frame_offset: 53
+        collision_geometry:
+          type: cylinder
+          radius: 0.138048
+          height: 0.380478
+          material: green
+        relative_configuration:
+          position: [2.57968,15.6605,7.04466]
+          orientation: [0.348433,-0.0529896,0.721766,0.595685]
+      -
+        name: rhipjoint
+        parent: -1
+        direction: [-0.645062, -0.722004, 0.250209]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.12364
+        frame_offset: 55
+        collision_geometry:
+          type: cylinder
+          radius: 0.212364
+          height: 1.12364
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: rfemur
+        dof: xyz
+        parent: 25
+        direction: [-0.34202, -0.939693, 0]
+        global_to_local: [0, 0, -0.173648, 0.984808]
+        length: 3.4143
+        frame_offset: 55
+        collision_geometry:
+          type: cylinder
+          radius: 0.44143
+          height: 3.4143
+          material: green
+        relative_configuration:
+          position: [3.47582,18.1008,6.47618]
+          orientation: [0.763339,-0.183743,0.117995,0.607971]
+      -
+        name: rtibia
+        dof: x
+        parent: 26
+        direction: [-0.34202, -0.939693, 0]
+        global_to_local: [0, 0, -0.173648, 0.984808]
+        length: 3.24692
+        frame_offset: 58
+        collision_geometry:
+          type: cylinder
+          radius: 0.424692
+          height: 3.24692
+          material: green
+        relative_configuration:
+          position: [3.77976,18.8808,3.16608]
+          orientation: [0.812359,-0.191297,0.110091,0.539777]
+      -
+        name: rfoot
+        dof: xz
+        parent: 27
+        direction: [-0.102907, -0.282735, 0.953662]
+        global_to_local: [-0.696364, 0.122788, -0.122788, 0.696364]
+        length: 1.00681
+        frame_offset: 59
+        collision_geometry:
+          type: cylinder
+          radius: 0.200681
+          height: 1.00681
+          material: green
+        relative_configuration:
+          position: [4.08836,20.1438,0.190847]
+          orientation: [0.703534,-0.193612,0.0809526,0.678971]
+      -
+        name: rtoes
+        dof: x
+        parent: 28
+        direction: [-1.5354e-11, -4.21751e-11, 1]
+        global_to_local: [-0.696364, 0.122788, -0.122788, 0.696364]
+        length: 0.502061
+        frame_offset: 61
+        collision_geometry:
+          type: cylinder
+          radius: 0.150206
+          height: 0.502061
+          material: green
+        relative_configuration:
+          position: [3.95965,19.2141,-0.173528]
+          orientation: [0.714179,-0.196105,0.0799956,0.667152]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller9">
+    template: "controller"
+    goal_radius: 10
+    multigoals:
+
+     -
+        state: [255, 450]
+     -
+        state: [150, 345]
+     -
+        state: [50, 450]
+     -
+        state: [-45, 345]
+     -
+        state: [-150, 455]
+     -
+        state: [-190, 270]
+     -
+        state: [320, 220]
+     -
+        state: [155, 45]
+     -
+        state: [55, 155]
+     -
+        state: [-45, 45]
+     -
+        state: [-145, 150]
+     -
+        state: [-195, -45]
+     -
+        state: [300, -60]
+     -
+        state: [300, -450]
+     -
+        state: [-300, -450]
+     -
+        state: [-400, -350]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller9/subsystems/vo9">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller9/vo9/skeleton9/root"
+            max_num_neighbors: 15
+            sensing_radius: 15
+            obstacle_sensing_radius: 10
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller9/subsystems/vo9/subsystems/skeleton9">
+    template: "skeleton"
+    initial_state: [470,475]
+    state_space:
+      min: [-550,-550]
+      max: [550, 550]
+    input_control_space:
+      min: [9, -4]
+      max: [50, 4]  
+    geometries:
+      -
+        name: root
+        dof: XYZxyz
+        parent: -1
+        direction: [0, 0, 0]
+        global_to_local: [0, 0, 0, 1]
+        collision_geometry:
+          type: sphere
+          radius: .1
+          material: green
+        configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: lhipjoint
+        parent: -1
+        direction: [0.655637, -0.713449, 0.247245]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.13711
+        frame_offset: 6
+        collision_geometry:
+          type: cylinder
+          radius: 0.213711
+          height: 1.13711
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: lfemur
+        dof: xyz
+        parent: 0
+        direction: [0.34202, -0.939693, 0]
+        global_to_local: [0, 0, 0.173648, 0.984808]
+        length: 3.41717
+        frame_offset: 6
+        collision_geometry:
+          type: cylinder
+          radius: 0.441717
+          height: 3.41717
+          material: green
+        relative_configuration:
+          position: [4.93194,17.9552,6.33324]
+          orientation: [0.407672,0.0475755,-0.200095,0.889664]
+      -
+        name: ltibia
+        dof: x
+        parent: 1
+        direction: [0.34202, -0.939693, 0]
+        global_to_local: [0, 0, 0.173648, 0.984808]
+        length: 3.27923
+        frame_offset: 9
+        collision_geometry:
+          type: cylinder
+          radius: 0.427923
+          height: 3.27923
+          material: green
+        relative_configuration:
+          position: [4.73398,15.6978,3.7755]
+          orientation: [0.687116,0.0837734,-0.156798,0.704463]
+      -
+        name: lfoot
+        dof: xz
+        parent: 2
+        direction: [0.0886837, -0.243657, 0.965798]
+        global_to_local: [-0.696364, -0.122788, 0.122788, 0.696364]
+        length: 0.99981
+        frame_offset: 10
+        collision_geometry:
+          type: cylinder
+          radius: 0.199981
+          height: 0.99981
+          material: green
+        relative_configuration:
+          position: [4.74916,15.5589,0.499252]
+          orientation: [0.609367,0.128482,-0.1088,0.774808]
+      -
+        name: ltoes
+        dof: x
+        parent: 3
+        direction: [1.53547e-11, -4.22004e-11, 1]
+        global_to_local: [-0.696364, -0.122788, 0.122788, 0.696364]
+        length: 0.500621
+        frame_offset: 12
+        collision_geometry:
+          type: cylinder
+          radius: 0.150062
+          height: 0.500621
+          material: green
+        relative_configuration:
+          position: [4.81779,14.5621,0.46323]
+          orientation: [0.539454,0.113617,-0.116113,0.826195]
+      -
+        name: lowerback
+        dof: xyz
+        parent: -1
+        direction: [0.00952301, 0.997604, -0.0685217]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.926743
+        frame_offset: 13
+        collision_geometry:
+          type: cylinder
+          radius: 0.192674
+          height: 0.926743
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.774685,-0.0436555,-0.0154338,0.63065]
+      -
+        name: upperback
+        dof: xyz
+        parent: 5
+        direction: [0.00494399, 0.999577, -0.0286701]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.929354
+        frame_offset: 16
+        collision_geometry:
+          type: cylinder
+          radius: 0.192935
+          height: 0.929354
+          material: green
+        relative_configuration:
+          position: [4.27006,18.1875,8.12711]
+          orientation: [0.791638,-0.0394463,0.00222021,0.609711]
+      -
+        name: thorax
+        dof: xyz
+        parent: 6
+        direction: [0.000729686, 0.999992, 0.00388603]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.930632
+        frame_offset: 19
+        collision_geometry:
+          type: cylinder
+          radius: 0.193063
+          height: 0.930632
+          material: green
+        relative_configuration:
+          position: [4.2153,17.9776,9.03078]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: lclavicle
+        dof: yz
+        parent: 7
+        direction: [0.967826, 0.247107, -0.0474446]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.64691
+        frame_offset: 22
+        collision_geometry:
+          type: cylinder
+          radius: 0.264691
+          height: 1.64691
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: lhumerus
+        dof: xyz
+        parent: 8
+        direction: [1, -4.48971e-11, -2.90544e-27]
+        global_to_local: [0.683013, -0.683013, 0.183013, 0.183013]
+        length: 2.18931
+        frame_offset: 24
+        collision_geometry:
+          type: cylinder
+          radius: 0.318931
+          height: 2.18931
+          material: green
+        relative_configuration:
+          position: [5.80955,17.7392,10.3495]
+          orientation: [0.532603,0.643915,-0.313221,0.451221]
+      -
+        name: lradius
+        dof: x
+        parent: 9
+        direction: [1, -4.48958e-11, 1.79638e-26]
+        global_to_local: [0.683013, -0.683013, 0.183013, 0.183013]
+        length: 1.50999
+        frame_offset: 27
+        collision_geometry:
+          type: cylinder
+          radius: 0.250999
+          height: 1.50999
+          material: green
+        relative_configuration:
+          position: [5.7538,18.622,8.34684]
+          orientation: [0.53475,0.556118,-0.340381,0.537509]
+      -
+        name: lwrist
+        dof: y
+        parent: 10
+        direction: [1, -4.48952e-11, 3.34345e-26]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.754996
+        frame_offset: 28
+        collision_geometry:
+          type: cylinder
+          radius: 0.1755
+          height: 0.754996
+          material: green
+        relative_configuration:
+          position: [5.97992,18.9676,6.89442]
+          orientation: [0.473762,0.589536,-0.278519,0.591966]
+      -
+        name: lhand
+        dof: xz
+        parent: 11
+        direction: [1, -4.49055e-11, 6.6869e-26]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.297529
+        frame_offset: 29
+        collision_geometry:
+          type: cylinder
+          radius: 0.129753
+          height: 0.297529
+          material: green
+        relative_configuration:
+          position: [6.09297,19.1404,6.1682]
+          orientation: [0.651301,0.54987,-0.0833424,0.516241]
+      -
+        name: lfingers
+        dof: x
+        parent: 12
+        direction: [1, -4.48731e-11, 1.33738e-25]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.239876
+        frame_offset: 31
+        collision_geometry:
+          type: cylinder
+          radius: 0.123988
+          height: 0.239876
+          material: green
+        relative_configuration:
+          position: [6.20645,19.3279,5.96699]
+          orientation: [0.615875,0.589277,-0.115259,0.510065]
+      -
+        name: lthumb
+        dof: xz
+        parent: 11
+        direction: [0.707107, -6.35005e-11, 0.707107]
+        global_to_local: [-0.653281, 0.270598, 0.270598, 0.653281]
+        length: 0.344415
+        frame_offset: 32
+        collision_geometry:
+          type: cylinder
+          radius: 0.134441
+          height: 0.344415
+          material: green
+        relative_configuration:
+          position: [6.09297,19.1404,6.1682]
+          orientation: [0.543697,0.785502,-0.0624657,0.288926]
+      -
+        name: lowerneck
+        dof: xyz
+        parent: 7
+        direction: [0.00452882, 0.995459, 0.0950816]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.708417
+        frame_offset: 34
+        collision_geometry:
+          type: cylinder
+          radius: 0.170842
+          height: 0.708417
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.70197,-0.00599333,-0.00222384,0.712177]
+      -
+        name: upperneck
+        dof: xyz
+        parent: 15
+        direction: [0.021922, 0.997711, -0.0639762]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.703796
+        frame_offset: 37
+        collision_geometry:
+          type: cylinder
+          radius: 0.17038
+          height: 0.703796
+          material: green
+        relative_configuration:
+          position: [4.21329,17.7333,10.6485]
+          orientation: [0.658581,0.0342885,-0.0227559,0.751383]
+      -
+        name: head
+        dof: xyz
+        parent: 16
+        direction: [0.008024, 0.999444, -0.0323691]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.731925
+        frame_offset: 40
+        collision_geometry:
+          type: sphere
+          radius: 0.731925
+          material: green
+        relative_configuration:
+          position: [4.28342,17.8704,11.3353]
+          orientation: [0.657868,0.0474051,-0.0293925,0.751065]
+      -
+        name: rclavicle
+        dof: yz
+        parent: 7
+        direction: [-0.973174, 0.211421, -0.0907389]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.6175
+        frame_offset: 43
+        collision_geometry:
+          type: cylinder
+          radius: 0.26175
+          height: 1.6175
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: rhumerus
+        dof: xyz
+        parent: 18
+        direction: [-1, -4.48964e-11, 1.56311e-27]
+        global_to_local: [0.683013, 0.683013, -0.183013, 0.183013]
+        length: 2.26192
+        frame_offset: 45
+        collision_geometry:
+          type: cylinder
+          radius: 0.326192
+          height: 2.26192
+          material: green
+        relative_configuration:
+          position: [2.64513,17.9139,10.3138]
+          orientation: [0.704917,-0.183672,0.607372,0.316949]
+      -
+        name: rradius
+        dof: x
+        parent: 19
+        direction: [-1, -4.48948e-11, 2.01724e-26]
+        global_to_local: [0.683013, 0.683013, -0.183013, 0.183013]
+        length: 1.51394
+        frame_offset: 48
+        collision_geometry:
+          type: cylinder
+          radius: 0.251394
+          height: 1.51394
+          material: green
+        relative_configuration:
+          position: [2.20467,17.6287,8.11361]
+          orientation: [0.408201,0.141401,0.750049,0.500803]
+      -
+        name: rwrist
+        dof: y
+        parent: 20
+        direction: [-1, -4.49008e-11, 3.34345e-26]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.756972
+        frame_offset: 49
+        collision_geometry:
+          type: cylinder
+          radius: 0.175697
+          height: 0.756972
+          material: green
+        relative_configuration:
+          position: [2.45468,16.3166,7.40097]
+          orientation: [0.307455,-0.00121221,0.76326,0.568246]
+      -
+        name: rhand
+        dof: xz
+        parent: 21
+        direction: [-1, -4.49013e-11, 6.6869e-26]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.328683
+        frame_offset: 50
+        collision_geometry:
+          type: cylinder
+          radius: 0.132868
+          height: 0.328683
+          material: green
+        relative_configuration:
+          position: [2.57968,15.6605,7.04466]
+          orientation: [0.125741,0.14375,0.628245,0.754211]
+      -
+        name: rfingers
+        dof: x
+        parent: 22
+        direction: [-1, -4.48867e-11, 1.33738e-25]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.264992
+        frame_offset: 52
+        collision_geometry:
+          type: cylinder
+          radius: 0.126499
+          height: 0.264992
+          material: green
+        relative_configuration:
+          position: [2.52404,15.3372,7.064]
+          orientation: [0.13443,0.135659,0.673895,0.713716]
+      -
+        name: rthumb
+        dof: xz
+        parent: 21
+        direction: [-0.707107, -6.34907e-11, 0.707107]
+        global_to_local: [-0.653281, -0.270598, -0.270598, 0.653281]
+        length: 0.380478
+        frame_offset: 53
+        collision_geometry:
+          type: cylinder
+          radius: 0.138048
+          height: 0.380478
+          material: green
+        relative_configuration:
+          position: [2.57968,15.6605,7.04466]
+          orientation: [0.348433,-0.0529896,0.721766,0.595685]
+      -
+        name: rhipjoint
+        parent: -1
+        direction: [-0.645062, -0.722004, 0.250209]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.12364
+        frame_offset: 55
+        collision_geometry:
+          type: cylinder
+          radius: 0.212364
+          height: 1.12364
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: rfemur
+        dof: xyz
+        parent: 25
+        direction: [-0.34202, -0.939693, 0]
+        global_to_local: [0, 0, -0.173648, 0.984808]
+        length: 3.4143
+        frame_offset: 55
+        collision_geometry:
+          type: cylinder
+          radius: 0.44143
+          height: 3.4143
+          material: green
+        relative_configuration:
+          position: [3.47582,18.1008,6.47618]
+          orientation: [0.763339,-0.183743,0.117995,0.607971]
+      -
+        name: rtibia
+        dof: x
+        parent: 26
+        direction: [-0.34202, -0.939693, 0]
+        global_to_local: [0, 0, -0.173648, 0.984808]
+        length: 3.24692
+        frame_offset: 58
+        collision_geometry:
+          type: cylinder
+          radius: 0.424692
+          height: 3.24692
+          material: green
+        relative_configuration:
+          position: [3.77976,18.8808,3.16608]
+          orientation: [0.812359,-0.191297,0.110091,0.539777]
+      -
+        name: rfoot
+        dof: xz
+        parent: 27
+        direction: [-0.102907, -0.282735, 0.953662]
+        global_to_local: [-0.696364, 0.122788, -0.122788, 0.696364]
+        length: 1.00681
+        frame_offset: 59
+        collision_geometry:
+          type: cylinder
+          radius: 0.200681
+          height: 1.00681
+          material: green
+        relative_configuration:
+          position: [4.08836,20.1438,0.190847]
+          orientation: [0.703534,-0.193612,0.0809526,0.678971]
+      -
+        name: rtoes
+        dof: x
+        parent: 28
+        direction: [-1.5354e-11, -4.21751e-11, 1]
+        global_to_local: [-0.696364, 0.122788, -0.122788, 0.696364]
+        length: 0.502061
+        frame_offset: 61
+        collision_geometry:
+          type: cylinder
+          radius: 0.150206
+          height: 0.502061
+          material: green
+        relative_configuration:
+          position: [3.95965,19.2141,-0.173528]
+          orientation: [0.714179,-0.196105,0.0799956,0.667152]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller10">
+    template: "controller"
+    goal_radius: 10
+    multigoals:
+
+     -
+        state: [255, 450]
+     -
+        state: [150, 345]
+     -
+        state: [50, 450]
+     -
+        state: [-45, 345]
+     -
+        state: [-150, 450]
+     -
+        state: [-190, 270]
+     -
+        state: [320, 225]
+     -
+        state: [155, 45]
+     -
+        state: [55, 155]
+     -
+        state: [-45, 45]
+     -
+        state: [-145, 155]
+     -
+        state: [-195, -45]
+     -
+        state: [300, -60]
+     -
+        state: [300, -455]
+     -
+        state: [-300, -445]
+     -
+        state: [-400, -350]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller10/subsystems/vo10">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller10/vo10/skeleton10/root"
+            max_num_neighbors: 15
+            sensing_radius: 15
+            obstacle_sensing_radius: 10
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller10/subsystems/vo10/subsystems/skeleton10">
+    template: "skeleton"
+    initial_state: [470,435]
+    state_space:
+      min: [-550,-550]
+      max: [550, 550]
+    input_control_space:
+      min: [9, -4]
+      max: [50, 4]
+    geometries:
+      -
+        name: root
+        dof: XYZxyz
+        parent: -1
+        direction: [0, 0, 0]
+        global_to_local: [0, 0, 0, 1]
+        collision_geometry:
+          type: sphere
+          radius: .1
+          material: green
+        configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: lhipjoint
+        parent: -1
+        direction: [0.655637, -0.713449, 0.247245]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.13711
+        frame_offset: 6
+        collision_geometry:
+          type: cylinder
+          radius: 0.213711
+          height: 1.13711
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: lfemur
+        dof: xyz
+        parent: 0
+        direction: [0.34202, -0.939693, 0]
+        global_to_local: [0, 0, 0.173648, 0.984808]
+        length: 3.41717
+        frame_offset: 6
+        collision_geometry:
+          type: cylinder
+          radius: 0.441717
+          height: 3.41717
+          material: green
+        relative_configuration:
+          position: [4.93194,17.9552,6.33324]
+          orientation: [0.407672,0.0475755,-0.200095,0.889664]
+      -
+        name: ltibia
+        dof: x
+        parent: 1
+        direction: [0.34202, -0.939693, 0]
+        global_to_local: [0, 0, 0.173648, 0.984808]
+        length: 3.27923
+        frame_offset: 9
+        collision_geometry:
+          type: cylinder
+          radius: 0.427923
+          height: 3.27923
+          material: green
+        relative_configuration:
+          position: [4.73398,15.6978,3.7755]
+          orientation: [0.687116,0.0837734,-0.156798,0.704463]
+      -
+        name: lfoot
+        dof: xz
+        parent: 2
+        direction: [0.0886837, -0.243657, 0.965798]
+        global_to_local: [-0.696364, -0.122788, 0.122788, 0.696364]
+        length: 0.99981
+        frame_offset: 10
+        collision_geometry:
+          type: cylinder
+          radius: 0.199981
+          height: 0.99981
+          material: green
+        relative_configuration:
+          position: [4.74916,15.5589,0.499252]
+          orientation: [0.609367,0.128482,-0.1088,0.774808]
+      -
+        name: ltoes
+        dof: x
+        parent: 3
+        direction: [1.53547e-11, -4.22004e-11, 1]
+        global_to_local: [-0.696364, -0.122788, 0.122788, 0.696364]
+        length: 0.500621
+        frame_offset: 12
+        collision_geometry:
+          type: cylinder
+          radius: 0.150062
+          height: 0.500621
+          material: green
+        relative_configuration:
+          position: [4.81779,14.5621,0.46323]
+          orientation: [0.539454,0.113617,-0.116113,0.826195]
+      -
+        name: lowerback
+        dof: xyz
+        parent: -1
+        direction: [0.00952301, 0.997604, -0.0685217]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.926743
+        frame_offset: 13
+        collision_geometry:
+          type: cylinder
+          radius: 0.192674
+          height: 0.926743
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.774685,-0.0436555,-0.0154338,0.63065]
+      -
+        name: upperback
+        dof: xyz
+        parent: 5
+        direction: [0.00494399, 0.999577, -0.0286701]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.929354
+        frame_offset: 16
+        collision_geometry:
+          type: cylinder
+          radius: 0.192935
+          height: 0.929354
+          material: green
+        relative_configuration:
+          position: [4.27006,18.1875,8.12711]
+          orientation: [0.791638,-0.0394463,0.00222021,0.609711]
+      -
+        name: thorax
+        dof: xyz
+        parent: 6
+        direction: [0.000729686, 0.999992, 0.00388603]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.930632
+        frame_offset: 19
+        collision_geometry:
+          type: cylinder
+          radius: 0.193063
+          height: 0.930632
+          material: green
+        relative_configuration:
+          position: [4.2153,17.9776,9.03078]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: lclavicle
+        dof: yz
+        parent: 7
+        direction: [0.967826, 0.247107, -0.0474446]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.64691
+        frame_offset: 22
+        collision_geometry:
+          type: cylinder
+          radius: 0.264691
+          height: 1.64691
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: lhumerus
+        dof: xyz
+        parent: 8
+        direction: [1, -4.48971e-11, -2.90544e-27]
+        global_to_local: [0.683013, -0.683013, 0.183013, 0.183013]
+        length: 2.18931
+        frame_offset: 24
+        collision_geometry:
+          type: cylinder
+          radius: 0.318931
+          height: 2.18931
+          material: green
+        relative_configuration:
+          position: [5.80955,17.7392,10.3495]
+          orientation: [0.532603,0.643915,-0.313221,0.451221]
+      -
+        name: lradius
+        dof: x
+        parent: 9
+        direction: [1, -4.48958e-11, 1.79638e-26]
+        global_to_local: [0.683013, -0.683013, 0.183013, 0.183013]
+        length: 1.50999
+        frame_offset: 27
+        collision_geometry:
+          type: cylinder
+          radius: 0.250999
+          height: 1.50999
+          material: green
+        relative_configuration:
+          position: [5.7538,18.622,8.34684]
+          orientation: [0.53475,0.556118,-0.340381,0.537509]
+      -
+        name: lwrist
+        dof: y
+        parent: 10
+        direction: [1, -4.48952e-11, 3.34345e-26]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.754996
+        frame_offset: 28
+        collision_geometry:
+          type: cylinder
+          radius: 0.1755
+          height: 0.754996
+          material: green
+        relative_configuration:
+          position: [5.97992,18.9676,6.89442]
+          orientation: [0.473762,0.589536,-0.278519,0.591966]
+      -
+        name: lhand
+        dof: xz
+        parent: 11
+        direction: [1, -4.49055e-11, 6.6869e-26]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.297529
+        frame_offset: 29
+        collision_geometry:
+          type: cylinder
+          radius: 0.129753
+          height: 0.297529
+          material: green
+        relative_configuration:
+          position: [6.09297,19.1404,6.1682]
+          orientation: [0.651301,0.54987,-0.0833424,0.516241]
+      -
+        name: lfingers
+        dof: x
+        parent: 12
+        direction: [1, -4.48731e-11, 1.33738e-25]
+        global_to_local: [-0.5, 0.5, 0.5, 0.5]
+        length: 0.239876
+        frame_offset: 31
+        collision_geometry:
+          type: cylinder
+          radius: 0.123988
+          height: 0.239876
+          material: green
+        relative_configuration:
+          position: [6.20645,19.3279,5.96699]
+          orientation: [0.615875,0.589277,-0.115259,0.510065]
+      -
+        name: lthumb
+        dof: xz
+        parent: 11
+        direction: [0.707107, -6.35005e-11, 0.707107]
+        global_to_local: [-0.653281, 0.270598, 0.270598, 0.653281]
+        length: 0.344415
+        frame_offset: 32
+        collision_geometry:
+          type: cylinder
+          radius: 0.134441
+          height: 0.344415
+          material: green
+        relative_configuration:
+          position: [6.09297,19.1404,6.1682]
+          orientation: [0.543697,0.785502,-0.0624657,0.288926]
+      -
+        name: lowerneck
+        dof: xyz
+        parent: 7
+        direction: [0.00452882, 0.995459, 0.0950816]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.708417
+        frame_offset: 34
+        collision_geometry:
+          type: cylinder
+          radius: 0.170842
+          height: 0.708417
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.70197,-0.00599333,-0.00222384,0.712177]
+      -
+        name: upperneck
+        dof: xyz
+        parent: 15
+        direction: [0.021922, 0.997711, -0.0639762]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.703796
+        frame_offset: 37
+        collision_geometry:
+          type: cylinder
+          radius: 0.17038
+          height: 0.703796
+          material: green
+        relative_configuration:
+          position: [4.21329,17.7333,10.6485]
+          orientation: [0.658581,0.0342885,-0.0227559,0.751383]
+      -
+        name: head
+        dof: xyz
+        parent: 16
+        direction: [0.008024, 0.999444, -0.0323691]
+        global_to_local: [0, 0, 0, 1]
+        length: 0.731925
+        frame_offset: 40
+        collision_geometry:
+          type: sphere
+          radius: 0.731925
+          material: green
+        relative_configuration:
+          position: [4.28342,17.8704,11.3353]
+          orientation: [0.657868,0.0474051,-0.0293925,0.751065]
+      -
+        name: rclavicle
+        dof: yz
+        parent: 7
+        direction: [-0.973174, 0.211421, -0.0907389]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.6175
+        frame_offset: 43
+        collision_geometry:
+          type: cylinder
+          radius: 0.26175
+          height: 1.6175
+          material: green
+        relative_configuration:
+          position: [4.21457,17.7905,9.94242]
+          orientation: [0.773608,-0.0101007,-0.0112337,0.633485]
+      -
+        name: rhumerus
+        dof: xyz
+        parent: 18
+        direction: [-1, -4.48964e-11, 1.56311e-27]
+        global_to_local: [0.683013, 0.683013, -0.183013, 0.183013]
+        length: 2.26192
+        frame_offset: 45
+        collision_geometry:
+          type: cylinder
+          radius: 0.326192
+          height: 2.26192
+          material: green
+        relative_configuration:
+          position: [2.64513,17.9139,10.3138]
+          orientation: [0.704917,-0.183672,0.607372,0.316949]
+      -
+        name: rradius
+        dof: x
+        parent: 19
+        direction: [-1, -4.48948e-11, 2.01724e-26]
+        global_to_local: [0.683013, 0.683013, -0.183013, 0.183013]
+        length: 1.51394
+        frame_offset: 48
+        collision_geometry:
+          type: cylinder
+          radius: 0.251394
+          height: 1.51394
+          material: green
+        relative_configuration:
+          position: [2.20467,17.6287,8.11361]
+          orientation: [0.408201,0.141401,0.750049,0.500803]
+      -
+        name: rwrist
+        dof: y
+        parent: 20
+        direction: [-1, -4.49008e-11, 3.34345e-26]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.756972
+        frame_offset: 49
+        collision_geometry:
+          type: cylinder
+          radius: 0.175697
+          height: 0.756972
+          material: green
+        relative_configuration:
+          position: [2.45468,16.3166,7.40097]
+          orientation: [0.307455,-0.00121221,0.76326,0.568246]
+      -
+        name: rhand
+        dof: xz
+        parent: 21
+        direction: [-1, -4.49013e-11, 6.6869e-26]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.328683
+        frame_offset: 50
+        collision_geometry:
+          type: cylinder
+          radius: 0.132868
+          height: 0.328683
+          material: green
+        relative_configuration:
+          position: [2.57968,15.6605,7.04466]
+          orientation: [0.125741,0.14375,0.628245,0.754211]
+      -
+        name: rfingers
+        dof: x
+        parent: 22
+        direction: [-1, -4.48867e-11, 1.33738e-25]
+        global_to_local: [-0.5, -0.5, -0.5, 0.5]
+        length: 0.264992
+        frame_offset: 52
+        collision_geometry:
+          type: cylinder
+          radius: 0.126499
+          height: 0.264992
+          material: green
+        relative_configuration:
+          position: [2.52404,15.3372,7.064]
+          orientation: [0.13443,0.135659,0.673895,0.713716]
+      -
+        name: rthumb
+        dof: xz
+        parent: 21
+        direction: [-0.707107, -6.34907e-11, 0.707107]
+        global_to_local: [-0.653281, -0.270598, -0.270598, 0.653281]
+        length: 0.380478
+        frame_offset: 53
+        collision_geometry:
+          type: cylinder
+          radius: 0.138048
+          height: 0.380478
+          material: green
+        relative_configuration:
+          position: [2.57968,15.6605,7.04466]
+          orientation: [0.348433,-0.0529896,0.721766,0.595685]
+      -
+        name: rhipjoint
+        parent: -1
+        direction: [-0.645062, -0.722004, 0.250209]
+        global_to_local: [0, 0, 0, 1]
+        length: 1.12364
+        frame_offset: 55
+        collision_geometry:
+          type: cylinder
+          radius: 0.212364
+          height: 1.12364
+          material: green
+        relative_configuration:
+          position: [4.30079,18.3119,7.20927]
+          orientation: [0.702308,-0.000347108,-0.0695595,0.708466]
+      -
+        name: rfemur
+        dof: xyz
+        parent: 25
+        direction: [-0.34202, -0.939693, 0]
+        global_to_local: [0, 0, -0.173648, 0.984808]
+        length: 3.4143
+        frame_offset: 55
+        collision_geometry:
+          type: cylinder
+          radius: 0.44143
+          height: 3.4143
+          material: green
+        relative_configuration:
+          position: [3.47582,18.1008,6.47618]
+          orientation: [0.763339,-0.183743,0.117995,0.607971]
+      -
+        name: rtibia
+        dof: x
+        parent: 26
+        direction: [-0.34202, -0.939693, 0]
+        global_to_local: [0, 0, -0.173648, 0.984808]
+        length: 3.24692
+        frame_offset: 58
+        collision_geometry:
+          type: cylinder
+          radius: 0.424692
+          height: 3.24692
+          material: green
+        relative_configuration:
+          position: [3.77976,18.8808,3.16608]
+          orientation: [0.812359,-0.191297,0.110091,0.539777]
+      -
+        name: rfoot
+        dof: xz
+        parent: 27
+        direction: [-0.102907, -0.282735, 0.953662]
+        global_to_local: [-0.696364, 0.122788, -0.122788, 0.696364]
+        length: 1.00681
+        frame_offset: 59
+        collision_geometry:
+          type: cylinder
+          radius: 0.200681
+          height: 1.00681
+          material: green
+        relative_configuration:
+          position: [4.08836,20.1438,0.190847]
+          orientation: [0.703534,-0.193612,0.0809526,0.678971]
+      -
+        name: rtoes
+        dof: x
+        parent: 28
+        direction: [-1.5354e-11, -4.21751e-11, 1]
+        global_to_local: [-0.696364, 0.122788, -0.122788, 0.696364]
+        length: 0.502061
+        frame_offset: 61
+        collision_geometry:
+          type: cylinder
+          radius: 0.150206
+          height: 0.502061
+          material: green
+        relative_configuration:
+          position: [3.95965,19.2141,-0.173528]
+          orientation: [0.714179,-0.196105,0.0799956,0.667152]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller11">
+    template: "controller"
+    goal_radius: 10
+    multigoals:
+     -
+        state: [-300, -460]
+     -
+        state: [300, -460]
+     -
+        state: [300, -60]
+     -
+        state: [-195, -45]
+     -
+        state: [-145, 150]
+     -
+        state: [-45, 45]
+     -
+        state: [55, 155]
+     -
+        state: [150, 45]
+     -
+        state: [320, 220]
+     -
+        state: [-190, 270]
+     -
+        state: [-155, 455]
+     -
+        state: [-45, 345]
+     -
+        state: [50, 450]
+     -
+        state: [150, 345]
+     -
+        state: [255, 450]
+     -
+        state: [420, 455]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller11/subsystems/vo11">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller11/vo11/skeleton11/root"
+            max_num_neighbors: 15
+            sensing_radius: 15
+            obstacle_sensing_radius: 10
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller11/subsystems/vo11/subsystems/skeleton11">
+    template: "skeleton"
+    initial_state: [-360,-320]
+    state_space:
+      min: [-550,-550]
+      max: [550, 550]
+    input_control_space:
+      min: [0, -4]
+      max: [50, 4]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller12">
+    template: "controller"
+    goal_radius: 10
+    multigoals:
+     -
+        state: [-314, -412]
+     -
+        state: [320, -416]
+     -
+        state: [319 -30]
+     -
+        state: [-224, -25]
+     -
+        state: [-151, 163]
+     -
+        state: [-45, 70]
+     -
+        state: [55, 175]
+     -
+        state: [155, 70]
+     -
+        state: [330, 230]
+     -
+        state: [-210, 300]
+     -
+        state: [-150, 480]
+     -
+        state: [-45, 375]
+     -
+        state: [50, 480]
+     -
+        state: [150, 375]
+     -
+        state: [255, 470]
+     -
+        state: [430, 475]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller12/subsystems/vo12">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller12/vo12/skeleton12/root"
+            max_num_neighbors: 15
+            sensing_radius: 15
+            obstacle_sensing_radius: 10
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller12/subsystems/vo12/subsystems/skeleton12">
+    template: "skeleton"
+    initial_state: [-360,-350]
+    state_space:
+      min: [-550,-550]
+      max: [550, 550]
+    input_control_space:
+      min: [0, -4]
+      max: [50, 4]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller13">
+    template: "controller"
+    goal_radius: 10
+    multigoals:
+     -
+        state: [-300, -455]
+     -
+        state: [300, -455]
+     -
+        state: [300, -70]
+     -
+        state: [-195, -40]
+     -
+        state: [-145, 150]
+     -
+        state: [-45, 45]
+     -
+        state: [55, 155]
+     -
+        state: [155, 45]
+     -
+        state: [320, 220]
+     -
+        state: [-190, 270]
+     -
+        state: [-150, 455]
+     -
+        state: [-45, 345]
+     -
+        state: [50, 450]
+     -
+        state: [150, 345]
+     -
+        state: [255, 450]
+     -
+        state: [420, 455]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller13/subsystems/vo13">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller13/vo13/skeleton13/root"
+            max_num_neighbors: 15
+            sensing_radius: 15
+            obstacle_sensing_radius: 10
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller13/subsystems/vo13/subsystems/skeleton13">
+    template: "skeleton"
+    initial_state: [-360,-380]
+    state_space:
+      min: [-550,-550]
+      max: [550, 550]
+    input_control_space:
+      min: [0, -4]
+      max: [50, 4]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller14">
+    template: "controller"
+    goal_radius: 10
+    multigoals:
+     -
+        state: [-240, -490]
+     -
+        state: [270, -480]
+     -
+        state: [262, -85]
+     -
+        state: [-165, -25]
+     -
+        state: [-175, 140]
+     -
+        state: [-45, 45]
+     -
+        state: [55, 155]
+     -
+        state: [155, 45]
+     -
+        state: [320, 240]
+     -
+        state: [-180, 260]
+     -
+        state: [-150, 455]
+     -
+        state: [-45, 345]
+     -
+        state: [50, 450]
+     -
+        state: [150, 345]
+     -
+        state: [255, 450]
+     -
+        state: [355, 470]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller14/subsystems/vo14">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller14/vo14/skeleton14/root"
+            max_num_neighbors: 15
+            sensing_radius: 15
+            obstacle_sensing_radius: 10
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller14/subsystems/vo14/subsystems/skeleton14">
+    template: "skeleton"
+    initial_state: [-400,-335]
+    state_space:
+      min: [-550,-550]
+      max: [550, 550]
+    input_control_space:
+      min: [0, -4]
+      max: [50, 4]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller15">
+    template: "controller"
+    goal_radius: 10
+    multigoals:
+     -
+        state: [-300, -440]
+     -
+        state: [300, -450]
+     -
+        state: [265, -80]
+     -
+        state: [-195, -45]
+     -
+        state: [-145, 150]
+     -
+        state: [-45, 45]
+     -
+        state: [55, 155]
+     -
+        state: [155, 45]
+     -
+        state: [320, 220]
+     -
+        state: [-190, 270]
+     -
+        state: [-150, 455]
+     -
+        state: [-45, 345]
+     -
+        state: [50, 450]
+     -
+        state: [150, 345]
+     -
+        state: [255, 450]
+     -
+        state: [370, 465]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller15/subsystems/vo15">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller15/vo15/skeleton15/root"
+            max_num_neighbors: 15
+            sensing_radius: 15
+            obstacle_sensing_radius: 10
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller15/subsystems/vo15/subsystems/skeleton15">
+    template: "skeleton"
+    initial_state: [-400,-360]
+    state_space:
+      min: [-550,-550]
+      max: [550, 550]
+    input_control_space:
+      min: [0, -4]
+      max: [50, 4]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller16">
+    template: "controller"
+    goal_radius: 10
+    multigoals:
+     -
+        state: [-260, -415]
+     -
+        state: [320, -460]
+     -
+        state: [300, -90]
+     -
+        state: [-195, -45]
+     -
+        state: [-145, 150]
+     -
+        state: [-45, 45]
+     -
+        state: [55, 155]
+     -
+        state: [155, 45]
+     -
+        state: [320, 220]
+     -
+        state: [-190, 270]
+     -
+        state: [-150, 455]
+     -
+        state: [-45, 345]
+     -
+        state: [50, 450]
+     -
+        state: [150, 345]
+     -
+        state: [255, 450]
+     -
+        state: [400, 455]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller16/subsystems/vo16">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller16/vo16/skeleton16/root"
+            max_num_neighbors: 15
+            sensing_radius: 15
+            obstacle_sensing_radius: 10
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller16/subsystems/vo16/subsystems/skeleton16">
+    template: "skeleton"
+    initial_state: [-440,-320]
+    state_space:
+      min: [-550,-550]
+      max: [550, 550]
+    input_control_space:
+      min: [0, -4]
+      max: [50, 4]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller17">
+    template: "controller"
+    goal_radius: 10
+    multigoals:
+     -
+        state: [-300, -445]
+     -
+        state: [300, -450]
+     -
+        state: [270, -75]
+     -
+        state: [-195, -45]
+     -
+        state: [-145, 150]
+     -
+        state: [-45, 45]
+     -
+        state: [55, 155]
+     -
+        state: [155, 45]
+     -
+        state: [320, 220]
+     -
+        state: [-190, 270]
+     -
+        state: [-150, 455]
+     -
+        state: [-45, 345]
+     -
+        state: [50, 450]
+     -
+        state: [150, 345]
+     -
+        state: [255, 450]
+     -
+        state: [380, 470]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller17/subsystems/vo17">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller17/vo17/skeleton17/root"
+            max_num_neighbors: 15
+            sensing_radius: 15
+            obstacle_sensing_radius: 10
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller17/subsystems/vo17/subsystems/skeleton17">
+    template: "skeleton"
+    initial_state: [-440,-350]
+    state_space:
+      min: [-550,-550]
+      max: [550, 550]
+    input_control_space:
+      min: [0, -4]
+      max: [50, 4]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller18">
+    template: "controller"
+    goal_radius: 10
+    multigoals:
+     -
+        state: [-300, -420]
+     -
+        state: [265, -410]
+     -
+        state: [300, -60]
+     -
+        state: [-195, -45]
+     -
+        state: [-145, 150]
+     -
+        state: [-45, 45]
+     -
+        state: [55, 155]
+     -
+        state: [155, 45]
+     -
+        state: [320, 220]
+     -
+        state: [-190, 270]
+     -
+        state: [-150, 455]
+     -
+        state: [-45, 345]
+     -
+        state: [50, 450]
+     -
+        state: [150, 345]
+     -
+        state: [255, 450]
+     -
+        state: [420, 455]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller18/subsystems/vo18">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller18/vo18/skeleton18/root"
+            max_num_neighbors: 15
+            sensing_radius: 15
+            obstacle_sensing_radius: 10
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller18/subsystems/vo18/subsystems/skeleton18">
+    template: "skeleton"
+    initial_state: [-440,-380]
+    state_space:
+      min: [-550,-550]
+      max: [550, 550]
+    input_control_space:
+      min: [0, -4]
+      max: [50, 4]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller19">
+    template: "controller"
+    goal_radius: 10
+    multigoals:
+     -
+        state: [-300, -450]
+     -
+        state: [280, -455]
+     -
+        state: [270, -80]
+     -
+        state: [-195, -45]
+     -
+        state: [-145, 150]
+     -
+        state: [-45, 45]
+     -
+        state: [55, 155]
+     -
+        state: [155, 45]
+     -
+        state: [320, 220]
+     -
+        state: [-190, 270]
+     -
+        state: [-150, 455]
+     -
+        state: [-45, 345]
+     -
+        state: [50, 450]
+     -
+        state: [150, 345]
+     -
+        state: [255, 450]
+     -
+        state: [420, 455]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller19/subsystems/vo19">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller19/vo19/skeleton19/root"
+            max_num_neighbors: 15
+            sensing_radius: 15
+            obstacle_sensing_radius: 10
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller19/subsystems/vo19/subsystems/skeleton19">
+    template: "skeleton"
+    initial_state: [-480,-335]
+    state_space:
+      min: [-550,-550]
+      max: [550, 550]
+    input_control_space:
+      min: [0, -4]
+      max: [50, 4]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller20">
+    template: "controller"
+    goal_radius: 10
+    multigoals:
+     -
+        state: [-233, -465]
+     -
+        state: [300, -460]
+     -
+        state: [300, -60]
+     -
+        state: [-195, -45]
+     -
+        state: [-145, 150]
+     -
+        state: [-45, 45]
+     -
+        state: [55, 155]
+     -
+        state: [155, 45]
+     -
+        state: [320, 220]
+     -
+        state: [-190, 270]
+     -
+        state: [-150, 455]
+     -
+        state: [-45, 345]
+     -
+        state: [50, 450]
+     -
+        state: [150, 345]
+     -
+        state: [255, 450]
+     -
+        state: [420, 455]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller20/subsystems/vo20">
+    template: "vo_controller"
+    sensing_info:
+        vo_sensing:
+            type: VO_sensing_info
+            sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+            update_delay: 0.02
+            system_path: "simulator/controller20/vo20/skeleton20/root"
+            max_num_neighbors: 15
+            sensing_radius: 15
+            obstacle_sensing_radius: 10
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller20/subsystems/vo20/subsystems/skeleton20">
+    template: "skeleton"
+    initial_state: [-480,-360]
+    state_space:
+      min: [-550,-550]
+      max: [550, 550]
+    input_control_space:
+      min: [0, -4]
+      max: [50, 4]
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/obstacles" file="$(find REU_2014_VO)/input/templates/environments/large_maze.yaml" />
+</launch>

@@ -1,0 +1,57 @@
+<class name="prx_utilities/particle_distance"
+    type="prx::packages::conformant::particle_distance_t"
+    base_class_type="prx::util::distance_function_t">
+    <description>
+        Performs a distance check between particle sets.
+    </description>        
+</class>
+<class name="prx_utilities/emd_distance"
+    type="prx::packages::conformant::emd_distance_t"
+    base_class_type="prx::util::distance_function_t">
+    <description>
+        Earth Mover's Distance
+    </description>
+</class>
+<class name="prx_utilities/l1_distance"
+    type="prx::packages::conformant::l1_distance_t"
+    base_class_type="prx::util::distance_function_t">
+    <description>
+        L1 distance between point sets
+    </description>
+</class>
+
+<class name="prx_utilities/kl_distance"
+    type="prx::packages::conformant::kl_distance_t"
+    base_class_type="prx::util::distance_function_t">
+    <description>
+        KL distance between point sets
+    </description>
+</class>
+<class name="prx_utilities/hausdorff_distance"
+    type="prx::packages::conformant::hausdorff_distance_t"
+    base_class_type="prx::util::distance_function_t">
+    <description>
+        Hausdorff Distance
+    </description>
+</class>
+<class name="prx_utilities/kl_closed_distance"
+    type="prx::packages::conformant::kl_closed_distance_t"
+    base_class_type="prx::util::distance_function_t">
+    <description>
+            Closed form KL
+    </description>
+</class>
+<class name="prx_utilities/particle_goal"
+    type="prx::packages::conformant::particle_goal_t"
+    base_class_type="prx::util::goal_t">
+    <description>
+        Goal for particle sets.
+    </description>
+</class>
+<class name="prx_utilities/naive_octree"
+    type="prx::packages::conformant::naive_octree_t"
+    base_class_type="prx::util::distance_metric_t">
+    <description>
+        Stupid
+    </description>
+</class>

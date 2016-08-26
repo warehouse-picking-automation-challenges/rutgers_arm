@@ -1,0 +1,20 @@
+
+  consumer: simulator/consumer
+  </rosparam>
+
+
+  <rosparam ns="world_model/embeddings">
+  single_robot_space:
+    default:
+      type: "hide_mapping"
+  </rosparam>
+
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <rosparam ns="world_model" command="load" file="$(find prx_input)/templates/simulators/no_collision_simulator.yaml"/>
+
+  <rosparam ns="world_model/simulator/">
+    simulation_step: 0.08
+  </rosparam>
+
+  <rosparam command="load" ns="world_model/simulator/subsystems/router" file="$(find prx_input)/templates/controllers/router.yaml"/>   

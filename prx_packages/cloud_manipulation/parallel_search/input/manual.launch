@@ -1,0 +1,8 @@
+<launch>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml" />
+  
+  <include ns="simulation" file="$(find parallel_search)/input/simulation/manual_sim.launch" />
+  <include file="$(find parallel_search)/input/visualization/visualization.launch" />
+  
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation" required="true" launch-prefix="" output="screen" args="simulation" />
+</launch>

@@ -1,0 +1,38 @@
+<launch>
+
+
+  <include file="$(find pebble_motion)/input/common/simulation/simulation_4robots.launch"/>
+
+  <include ns="planning" file="$(find pebble_motion)/input/common/planning/world_models/world_model_4robots.launch"/>
+
+  <include ns="planning" file="$(find pebble_motion)/input/common/planning/planner_structures/loop4ears.launch"/>
+
+  <rosparam command="load" ns="planning/task_planner/" file="$(find pebble_motion)/input/common/task_planners/pebble_solver_task_planner.yaml"/>
+
+  <rosparam ns="planning/task_planner/" >
+    pebble_solver: 
+        type: ppmt_solver
+    visualization_body: "simulator/router/disk3/body"
+    test_name: loop4ears
+    output_file: "ppmt/tests"
+    with_push_and_swap: false
+    parallel_version: true
+  </rosparam> 
+
+  <rosparam ns="planning/">
+    simulate: true 
+    visualize: true 
+  </rosparam> 
+  
+  <include ns="planning" file="$(find pebble_motion)/input/ppmt_solver/queries/loop4ears_query.launch"/>
+
+  <include file="$(find pebble_motion)/input/common/visualization.launch"/>
+
+  <node name="planning" pkg="prx_planning" type="prx_planning"
+        required="true" launch-prefix="gdb" output="screen" args="planning"/>
+
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation"
+        required="true" launch-prefix="" output="screen" />
+
+
+</launch>

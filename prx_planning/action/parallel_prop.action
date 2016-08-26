@@ -1,0 +1,9 @@
+float64[] initial_state
+float64[] initial_control
+float64 duration
+string planning_context
+---
+bool collision_free
+float64[] final_state
+---
+float64 progress

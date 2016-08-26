@@ -1,0 +1,241 @@
+materials:
+  red1: 
+    diffuse: 
+      faces: front_back
+      color: [1.0 ,0.0, 0.0, 1.0]
+    specular:
+      faces: front_back
+      color: [0.2 ,0.1, 0.1, 1.0]
+    shininess:
+      faces: front_back
+      value: 0.7
+    ambient:
+      faces: front_back
+      color: [0.0 ,0.2, 0.0, 1.0]
+    color_mode: ambient_diffuse
+    
+  red2: 
+    diffuse: 
+      faces: front_back
+      color: [0.8 ,0.0, 0.0, 1.0]
+    specular:
+      faces: front_back
+      color: [0.2 ,0.1, 0.1, 1.0]
+    shininess:
+      faces: front_back
+      value: 0.7
+    ambient:
+      faces: front_back
+      color: [0.0 ,0.2, 0.0, 1.0]
+    color_mode: ambient_diffuse
+    
+  red3: 
+    diffuse: 
+      faces: front_back
+      color: [0.6 ,0.0, 0.0, 1.0]
+    specular:
+      faces: front_back
+      color: [0.2 ,0.1, 0.1, 1.0]
+    shininess:
+      faces: front_back
+      value: 0.7
+    ambient:
+      faces: front_back
+      color: [0.0 ,0.2, 0.0, 1.0]
+    color_mode: ambient_diffuse
+    
+  red4: 
+    diffuse: 
+      faces: front_back
+      color: [0.4 ,0.0, 0.0, 1.0]
+    specular:
+      faces: front_back
+      color: [0.2 ,0.1, 0.1, 1.0]
+    shininess:
+      faces: front_back
+      value: 0.7
+    ambient:
+      faces: front_back
+      color: [0.0 ,0.2, 0.0, 1.0]
+    color_mode: ambient_diffuse
+    
+  red5: 
+    diffuse: 
+      faces: front_back
+      color: [0.2 ,0.0, 0.0, 1.0]
+    specular:
+      faces: front_back
+      color: [0.2 ,0.1, 0.1, 1.0]
+    shininess:
+      faces: front_back
+      value: 0.7
+    ambient:
+      faces: front_back
+      color: [0.0 ,0.2, 0.0, 1.0]
+    color_mode: ambient_diffuse
+    
+  red6: 
+    diffuse: 
+      faces: front_back
+      color: [0.1 ,0.0, 0.0, 1.0]
+    specular:
+      faces: front_back
+      color: [0.2 ,0.1, 0.1, 1.0]
+    shininess:
+      faces: front_back
+      value: 0.7
+    ambient:
+      faces: front_back
+      color: [0.0 ,0.2, 0.0, 1.0]
+    color_mode: ambient_diffuse
+    
+  green1:
+    diffuse: 
+      faces: front_back
+      color: [0.0 ,1.0, 0.0, 1.0]
+    specular:
+      faces: front_back
+      color: [0.1 ,0.2, 0.1, 1.0]
+    shininess:
+      faces: front_back
+      value: 0.7
+    ambient:
+      faces: front_back
+      color: [0.0 ,0.2, 0.0, 1.0]
+    color_mode: ambient_diffuse
+      
+  green2:
+    diffuse: 
+      faces: front_back
+      color: [0.0 ,0.8, 0.0, 1.0]
+    specular:
+      faces: front_back
+      color: [0.1 ,0.2, 0.1, 1.0]
+    shininess:
+      faces: front_back
+      value: 0.7
+    ambient:
+      faces: front_back
+      color: [0.0 ,0.2, 0.0, 1.0]
+    color_mode: ambient_diffuse
+    
+  green3:
+    diffuse: 
+      faces: front_back
+      color: [0.0 ,0.6, 0.0, 1.0]
+    specular:
+      faces: front_back
+      color: [0.1 ,0.2, 0.1, 1.0]
+    shininess:
+      faces: front_back
+      value: 0.7
+    ambient:
+      faces: front_back
+      color: [0.0 ,0.2, 0.0, 1.0]
+    color_mode: ambient_diffuse    
+    
+  green4:
+    diffuse: 
+      faces: front_back
+      color: [0.0 ,0.4, 0.0, 1.0]
+    specular:
+      faces: front_back
+      color: [0.1 ,0.2, 0.1, 1.0]
+    shininess:
+      faces: front_back
+      value: 0.7
+    ambient:
+      faces: front_back
+      color: [0.0 ,0.2, 0.0, 1.0]
+    color_mode: ambient_diffuse
+    
+  green5:
+    diffuse: 
+      faces: front_back
+      color: [0.0 ,0.2, 0.0, 1.0]
+    specular:
+      faces: front_back
+      color: [0.1 ,0.2, 0.1, 1.0]
+    shininess:
+      faces: front_back
+      value: 0.7
+    ambient:
+      faces: front_back
+      color: [0.0 ,0.2, 0.0, 1.0]
+    color_mode: ambient_diffuse       
+    
+  blue1:
+    diffuse: 
+      faces: front_back
+      color: [0.0 ,0.0, 1.0, 1.0]
+    specular:
+      faces: front_back
+      color: [0.1 ,0.1, 0.2, 1.0]
+    shininess:
+      faces: front_back
+      value: 0.7
+    ambient:
+      faces: front_back
+      color: [0.0 ,0.2, 0.0, 1.0]
+    color_mode: ambient_diffuse
+      
+  blue2:
+    diffuse: 
+      faces: front_back
+      color: [0.0 ,0.0, 0.8, 1.0]
+    specular:
+      faces: front_back
+      color: [0.1 ,0.1, 0.2, 1.0]
+    shininess:
+      faces: front_back
+      value: 0.7
+    ambient:
+      faces: front_back
+      color: [0.0 ,0.2, 0.0, 1.0]
+    color_mode: ambient_diffuse
+    
+  blue3:
+    diffuse: 
+      faces: front_back
+      color: [0.0 ,0.0, 0.6, 1.0]
+    specular:
+      faces: front_back
+      color: [0.1 ,0.1, 0.2, 1.0]
+    shininess:
+      faces: front_back
+      value: 0.7
+    ambient:
+      faces: front_back
+      color: [0.0 ,0.2, 0.0, 1.0]
+    color_mode: ambient_diffuse    
+    
+  blue4:
+    diffuse: 
+      faces: front_back
+      color: [0.0 ,0.0, 0.4, 1.0]
+    specular:
+      faces: front_back
+      color: [0.1 ,0.1, 0.2, 1.0]
+    shininess:
+      faces: front_back
+      value: 0.7
+    ambient:
+      faces: front_back
+      color: [0.0 ,0.2, 0.0, 1.0]
+    color_mode: ambient_diffuse
+    
+  blue5:
+    diffuse: 
+      faces: front_back
+      color: [0.0 ,0.0, 0.2, 1.0]
+    specular:
+      faces: front_back
+      color: [0.1 ,0.1, 0.2, 1.0]
+    shininess:
+      faces: front_back
+      value: 0.7
+    ambient:
+      faces: front_back
+      color: [0.0 ,0.2, 0.0, 1.0]
+    color_mode: ambient_diffuse   
+ 

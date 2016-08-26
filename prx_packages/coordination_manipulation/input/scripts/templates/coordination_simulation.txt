@@ -1,0 +1,74 @@
+  <!-- = = = = = = = -->
+  <!--   Simulation  -->
+  <!-- = = = = = = = -->
+  <!-- Load independent files -->
+  <rosparam command="load" ns="simulation" file="$(find prx_input)/templates/applications/empty_application.yaml"/>
+  <rosparam command="load" ns="simulation" file="$(find manipulation)/input/simulation/manipulation_simulator.yaml"/>
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer/" file="$(find prx_input)/templates/controllers/consumer.yaml"/>
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer/subsystems/router/" file="$(find prx_input)/templates/controllers/router.yaml"/>
+  <rosparam command="load" ns="simulation/simulator/obstacles" file="$(find coordination_manipulation)/input/templates/baxter_torso#BAXTER#.yaml" />
+  <rosparam command="load" ns="simulation/simulator/obstacles" file="$(find coordination_manipulation)/input/environments/#ENVIRONMENT#.yaml" />
+
+  <rosparam command="load" ns="simulation/application">
+    type: coord_manip_application
+    left_arm_dropoff: #LEFT_ARM_DROPOFF#
+    right_arm_dropoff: #RIGHT_ARM_DROPOFF#
+    <!-- num_assigned_objects: #NUM_OBJECTS# -->
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/plant" file="$(find coordination_manipulation)/input/templates/baxter.yaml"/>
+
+  <rosparam command="load" ns="simulation/simulator">
+    manipulator_names:
+      -
+        simulator/consumer/router/baxter_1_left
+      -
+        simulator/consumer/router/baxter_1_right
+    sensing_info:
+      type: grasp_sensing_info
+      sources: ["simulation_grasp_sensor"]
+      update_delay: 0.02
+    grasp_sensor_source: "simulation_grasp_sensor"
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/sensing">
+    type: sensing_model
+    sensors:
+      grasp_sensor1:
+        type: simulated_grasp_sensor
+        source: "simulation_grasp_sensor"
+        sensor_delay: 0.02
+  </rosparam>
+  
+  <!-- Baxter 1-->
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer/subsystems/router/subsystems/baxter_1_left">
+    template: "plant"
+    initial_state: #LEFT_SAFE_STATE#
+    hand: left
+    forward_transform_rotation: #BAXTER_ROTATION#
+    forward_transform_translation: #BAXTER_TRANSLATION# 
+  </rosparam>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer/subsystems/router/subsystems/baxter_1_right">
+    template: "plant"
+    initial_state: #RIGHT_SAFE_STATE#
+    hand: right
+    forward_transform_rotation: #BAXTER_ROTATION#
+    forward_transform_translation: #BAXTER_TRANSLATION#  
+  </rosparam>
+
+  <!-- Define the simulation node -->
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation" required="true" launch-prefix="" output="screen" args="simulation"/>
+
+
+  <rosparam command="load" ns="#PLAN_NODE#">
+    system_mapping:
+    -
+      pair: [simulator/consumer/router/baxter_1_left, world_model/simulator/baxter_1_left]
+    -
+      pair: [simulator/consumer/router/baxter_1_right, world_model/simulator/baxter_1_right]
+    consumer_mapping:
+      -
+        pair: [simulator/consumer, full_space]
+    consumer: simulator/consumer
+  </rosparam>

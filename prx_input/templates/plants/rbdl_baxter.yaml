@@ -1,0 +1,187 @@
+type: rbdl_plant
+urdf_file: /Users/zlittlefield/prx/pracsys/prx_packages/baxter/input/urdf/baxter.urdf
+# urdf_file: /Users/zlittlefield/repos/apc-hg/src/baxter_common/baxter_description/urdf/baxter.urdf
+integrator: 
+  type: euler
+config_offsets:
+  left_upper_shoulder: 
+    offset: [0, 0, 0.1361]
+  left_lower_shoulder: 
+    offset:  [0, 0, 0]
+  left_upper_elbow: 
+    offset:  [0, 0, .08]
+  left_lower_elbow:  
+    offset: [0, 0, 0]
+  left_upper_forearm: 
+    offset:  [0, 0, .08]
+  left_lower_forearm: 
+    offset:  [0, 0, 0]
+  left_wrist: 
+    offset:  [0, 0, -0.010]
+  left_hand: 
+    offset: [0 0 0]
+  left_paddle: 
+    offset: [0 0 0]
+  torso: 
+    offset: [-0.065 0 0.2861]
+  pedestal: 
+    offset: [-.04 0 -.625]
+initial_state: [0, 0.25684,-1.34394,0.42624,2.61800,2.84100,2.09400,-0.06762, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+initial_control: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+state_space: 
+  min: [-1.57079632679, -1.70167993878, -2.147, -3.05417993878, -0.05 , -3.059, -1.57079632679, -3.059,
+                        -1.70167993878, -2.147, -3.05417993878, -0.05 , -3.059, -1.57079632679, -3.059,
+        -10000,         -2.5, -2.5, -2.5, -2.5, -5, -5, -5,
+                        -2.5, -2.5, -2.5, -2.5, -5, -5, -5 ]
+  max: [ 1.57079632679,  1.70167993878,  1.047,  3.05417993878,  2.618,  3.059,  2.094,          3.059,
+                         1.70167993878,  1.047,  3.05417993878,  2.618,  3.059,  2.094,          3.059,
+        10000,         2.5, 2.5, 2.5, 2.5, 5, 5, 5,
+                       2.5, 2.5, 2.5, 2.5, 5, 5, 5]
+  # scale: [0, .5, .4, .1, .3, .1, .2, .05, 0, 0, 0, 0, 0, 0, 0, 0, 1, .8, .2, .6, .2, .4, .1, 0, 0, 0, 0, 0, 0, 0]
+  scale: [0, 1, .8, .2, .6, .2, .4, .1, 0, 0, 0, 0, 0, 0, 0, 0, 1, .8, .2, .6, .2, .4, .1, 0, 0, 0, 0, 0, 0, 0]
+  # scale:   [0, 1, .8, .2, .6, .2, .4, .1, 0, 0, 0, 0, 0, 0, 0, 0, 0,  0,  0,  0,  0,  0,  0, 0, 0, 0, 0, 0, 0, 0]
+input_control_space:
+  # min: [0 -60 -60 -60 -60 -20 -20 -20 -60 -60 -60 -60 -20 -20 -20]
+  # max: [0 60 60 60 60 20 20 20 60 60 60 60 20 20 20]
+  # min: [0 -60 -60 -60 -60 -20 -20 -20 0 0 0 0 0 0 0]
+  # max: [0  60  60  60  60  20  20  20 0 0 0 0 0 0 0]
+  min: [0 -30 -30 -30 -30 -10 -10 -10 0 0 0 0 0 0 0]
+  max: [0  30  30  30  30  10  10  10 0 0 0 0 0 0 0]
+geometries:
+  -
+    name: torso
+    collision_geometry:
+      type: cylinder
+      radius: 0.25
+      height: 1.6
+      material: black
+    visualization_geometry:
+      type: mesh
+      filename: meshes/torso/base.osg
+      material: black
+  -
+    name: pedestal
+    collision_geometry:
+      type: box
+      dims: [0.90, 0.80, 0.05]
+      material: black
+    visualization_geometry:
+      type: mesh
+      filename: meshes/base/pedestal.osg
+      material: black
+  -
+    name: left_upper_shoulder
+    collision_geometry:
+      type: cylinder
+      radius: 0.12
+      height: 0.2722
+      material: baxter_red
+    visualization_geometry:
+        type: mesh
+        filename: meshes/upper_shoulder/S0.osg
+        material: baxter_grey
+        local_transform:
+          position: [0,0,0]
+          orientation: [0,0,0,1]
+  -
+    name: left_lower_shoulder
+    collision_geometry:
+      type: cylinder
+      radius: 0.06
+      height: 0.26
+      material: baxter_red
+    visualization_geometry:
+        type: mesh
+        filename: meshes/lower_shoulder/S1.osg
+        local_transform:
+          position: [0,0,0]
+          orientation: [0,0,0,1]
+  -
+    name: left_upper_elbow
+    collision_geometry:
+      type: cylinder
+      radius: 0.06
+      height: 0.304
+      material: baxter_red
+    visualization_geometry:
+        type: mesh
+        filename: meshes/upper_elbow/E0.osg
+        material: baxter_grey
+        local_transform:
+          position: [0.025,0,0.07]
+          orientation: [0,0,0,1]
+  -
+    name: left_lower_elbow
+    collision_geometry:
+      type: cylinder
+      radius: 0.06
+      height: 0.1
+      material: baxter_red
+    visualization_geometry:
+        type: mesh
+        filename: meshes/lower_elbow/E1.osg
+        material: baxter_grey
+        local_transform:
+          position: [0,0,0]
+          orientation: [0,0,0,1]
+  -
+    name: left_upper_forearm
+    collision_geometry:
+      type: cylinder
+      radius: 0.06
+      height: 0.276
+      material: baxter_red
+    visualization_geometry:
+        type: mesh
+        filename: meshes/upper_forearm/W0.osg
+        material: baxter_grey
+        local_transform:
+          position: [0,0,0.08]
+          orientation: [0,0,0,1]
+  -
+    name: left_lower_forearm
+    collision_geometry:
+      type: cylinder
+      radius: 0.06
+      height: 0.1
+      material: baxter_red
+    visualization_geometry:
+        type: mesh
+        filename: meshes/lower_forearm/W1.osg
+        material: baxter_grey
+        local_transform:
+          position: [0.035,0.0,0]
+          orientation: [0,0,0,1]
+  -
+    name: left_wrist
+    collision_geometry:
+      type: cylinder
+      radius: 0.06
+      height: 0.1371
+      material: baxter_grey
+    visualization_geometry:
+        type: mesh
+        filename: meshes/wrist/W2.osg
+        material: baxter_grey
+        local_transform:
+          position: [0,0,0.09]
+          orientation: [0,0,0,1]
+  -
+    name: left_hand
+    collision_geometry:
+      type: cylinder
+      radius: 0.04
+      height: 0.055
+      material: baxter_grey
+  -
+    name: left_paddle
+    collision_geometry:
+      type: box
+      dims: [.1 .01 .1 ]
+      material: baxter_grey
+white_list:
+    - [left_hand, [left_lower_shoulder, left_upper_elbow,left_upper_shoulder]]
+    - [left_wrist, [left_lower_shoulder, left_upper_elbow,left_upper_shoulder]]
+    - [left_paddle, [left_lower_shoulder, left_upper_elbow,left_upper_shoulder]]
+    - [torso, [left_paddle, left_wrist,left_hand, left_lower_forearm, left_upper_forearm, left_lower_elbow, left_upper_elbow]]
+    - [pedestal, [left_paddle, left_wrist,left_hand, left_lower_forearm, left_upper_forearm, left_lower_elbow, left_lower_shoulder, left_upper_elbow,left_upper_shoulder]]

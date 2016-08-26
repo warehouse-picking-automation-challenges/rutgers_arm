@@ -1,0 +1,41 @@
+<class name="prx_planning/brute_force_manip_tp"
+    type="prx::packages::multi_arm::brute_force_manip_tp_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A task planner for brute force multi-arm manipulation.
+    </description>
+</class>
+
+<class name="prx_planning/gmam_tp"
+    type="prx::packages::multi_arm::gmam_tp_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A task planner for solving general many arm manipulation problems.
+    </description>
+</class>
+
+<class name="prx_planning/multi_modal_forward_tp"
+    type="prx::packages::multi_arm::multi_modal_forward_tp_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A task planner corresponding to the MM-PRM method by Hauser.
+    </description>
+</class>
+
+<class name="prx_planning/hand_off_sampler"
+    type="prx::packages::multi_arm::hand_off_sampler_t"
+    base_class_type="prx::plan::sampler_t">
+    <description>
+        A sampler which samples hand-off poses and arm configurations.
+    </description>
+</class>
+
+<class name="prx_planning/stable_pose_sampler"
+    type="prx::packages::multi_arm::stable_pose_sampler_t"
+    base_class_type="prx::plan::sampler_t">
+    <description>
+        A sampler which samples stable poses and arm configurations.
+    </description>
+</class>
+
+

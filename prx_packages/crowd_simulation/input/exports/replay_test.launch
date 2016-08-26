@@ -1,0 +1,27 @@
+<launch>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+  <rosparam ns="simulation" command="load" file="$(find prx_input)/templates/applications/empty_application.yaml" />
+
+  <rosparam command="load" ns="prx/common_plant" file="$(find crowd_simulation)/input/templates/plants/pedestrian_cylinder.yaml"/>
+
+  <rosparam command="load" ns="prx/obstacles/" file="/home/tdk/research/pracsys/src/prx_packages/crowd_simulation/input/exports/small_mall_new/small_mall_new.yaml" />
+
+  <rosparam ns="simulation">    
+    random_seed: 2451358
+    autostart: true    
+    simulator:
+      type: advanced_replay_simulator
+      simulation_step: 0.02
+      trajectories_folder_path: "/home/tdk/research/pracsys/src/prx_packages/crowd_simulation/input/exports/trajectories"
+      start_time: 19000
+      end_time: 42000
+  </rosparam>
+
+
+  <!-- Nodes -->
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation" required="true" launch-prefix="" args="simulation" output="screen" />  
+
+  <include file="$(find crowd_simulation)/input/templates/visualization/pabt_visualization.launch"/>
+
+</launch>
+

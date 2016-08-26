@@ -1,0 +1,97 @@
+<class name="prx_utilities/kornhauser_tester"
+    type="prx::packages::pebble_motion::kornhauser_tester_t"
+    base_class_type="prx::packages::pebble_motion::pebble_tester_t">
+    <description>
+        The algorithm for testing the feasibility of a pebble
+        problem using Kornhauser's algorithm.
+    </description>        
+</class>
+
+<class name="prx_utilities/tree_feasibility_tester"
+    type="prx::packages::pebble_motion::tree_feasibility_tester_t"
+    base_class_type="prx::packages::pebble_motion::pebble_tester_t">
+    <description>
+        The algorithm for testing the feasibility of a pebble
+        problem using Auletta's algorithm on trees.
+    </description>        
+</class>
+
+<class name="prx_utilities/graph_feasibility_tester"
+    type="prx::packages::pebble_motion::graph_feasibility_tester_t"
+    base_class_type="prx::packages::pebble_motion::pebble_tester_t">
+    <description>
+        The algorithm for testing the feasibility of a pebble
+        problem using Jingjin's algorithm on graphs
+    </description>        
+</class>
+
+<class name="prx_utilities/pebble_tree_solver"
+    type="prx::packages::pebble_motion::pebble_tree_solver_t"
+    base_class_type="prx::packages::pebble_motion::pebble_solver_t">
+    <description>
+        The algorithm for solving the path planning of a pebble
+        problem on trees using Auleta's algorithm.
+    </description>        
+</class>
+
+<class name="prx_utilities/pebble_graph_solver"
+    type="prx::packages::pebble_motion::pebble_graph_solver_t"
+    base_class_type="prx::packages::pebble_motion::pebble_solver_t">
+    <description>
+        The algorithm for solving the path planning of a pebble
+        problem on graphs, using Goraly/Hassin algorithm.
+    </description>        
+</class>
+
+<class name="prx_utilities/khorshid_solver"
+    type="prx::packages::pebble_motion::khorshid_t"
+    base_class_type="prx::packages::pebble_motion::pebble_solver_t">
+    <description>
+        The algorithm for solving the path planning of a pebble
+        motion problem on trees, using Khorshid's method.
+    </description>        
+</class>
+
+<class name="prx_utilities/pmt_solver"
+    type="prx::packages::pebble_motion::pmt_solver_t"
+    base_class_type="prx::packages::pebble_motion::pebble_solver_t">
+    <description>
+        The algorithm for solving the path planning of a pebble
+        motion problem on trees
+    </description>        
+</class>
+
+<class name="prx_utilities/ppmt_solver"
+    type="prx::packages::pebble_motion::ppmt_solver_t"
+    base_class_type="prx::packages::pebble_motion::pebble_solver_t">
+    <description>
+        The algorithm for solving the path planning of a pebble
+        motion problem on trees in parallel motion.
+    </description>        
+</class>
+
+<class name="prx_utilities/pmg_solver"
+    type="prx::packages::pebble_motion::pmg_solver_t"
+    base_class_type="prx::packages::pebble_motion::pebble_solver_t">
+    <description>
+        The algorithm for solving the path planning of a pebble
+        motion problem on graphs.
+    </description>        
+</class>
+
+<class name="prx_utilities/rpmg_solver"
+    type="prx::packages::pebble_motion::rpmg_solver_t"
+    base_class_type="prx::packages::pebble_motion::pebble_solver_t">
+    <description>
+        The algorithm for solving the path planning of a pebble
+        motion problem on graphs with revert whenever it is mandatory.
+    </description>        
+</class>
+
+<class name="prx_utilities/new_pgs"
+    type="prx::packages::pebble_motion::new_pgs_t"
+    base_class_type="prx::packages::pebble_motion::pebble_solver_t">
+    <description>
+        Combination of Goraly/Hassin with my new tree algorithm
+    </description>        
+</class>

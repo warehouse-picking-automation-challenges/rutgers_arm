@@ -1,0 +1,28 @@
+<launch>
+  <rosparam>
+  system_mapping:
+  -
+    pair: [simulator/consumer/manipulator, world_model/simulator/manipulator]
+  
+  consumer: simulator/consumer
+  consumer_mapping:
+  -
+    pair: [simulator/consumer, space1]
+  </rosparam>
+  
+  <rosparam ns="world_model/planning_contexts">
+  space1:
+    default:
+      type: "full_mapping"
+  </rosparam>
+  
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+  <rosparam ns="world_model" command="load" file="$(find prx_input)/templates/simulators/collision_stop_simulator.yaml" />
+  
+  <rosparam command="load" ns="world_model/simulator/subsystems/manipulator" file="$(find prx_input)/templates/plants/planar_manipulator.yaml" />
+  <rosparam command="load" ns="world_model/simulator/subsystems/manipulator">
+    initial_state: [10, 10, 0, 0, 0]
+  </rosparam>
+  
+  <rosparam command="load" ns="world_model/simulator/obstacles" file="$(find prx_input)/experiments/planar_manipulator/obstacles/building1.yaml" />
+</launch>

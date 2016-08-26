@@ -1,0 +1,4 @@
+type: prm_star
+heuristic_search: 
+  type: constraints_astar_search
+

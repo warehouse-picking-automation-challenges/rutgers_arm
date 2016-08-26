@@ -1,0 +1,23 @@
+type: ode_plant
+
+geometries:
+  -
+    name: chassis
+    collision_geometry:
+      type: box
+      dims: [3, 3, 3]
+      material: blue
+    config:
+      position: [0, 0, 100]
+      orientation: [0.0, 0.0, 0.0, 1.0]
+    dims: [10, 6, 3]
+
+controls:
+  -
+    name: thrust
+    bounds: [0, 50]
+    type: body
+    ode_object: chassis
+    direction: [0, 0, 1]
+    is_torque: false
+

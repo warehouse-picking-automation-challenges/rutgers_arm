@@ -1,0 +1,5 @@
+application:
+  type: VO_application
+sensor: thing
+agent_radius: 0.35
+

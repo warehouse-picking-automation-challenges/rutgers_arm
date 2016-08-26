@@ -1,0 +1,13 @@
+building1:
+    type: obstacle
+    geometries:
+      -
+        name: tree0
+        collision_geometry:
+          type: cylinder
+          radius: 30
+          height: 2.0
+          material: red
+        config:
+          position: [0,0,1]
+          orientation: [0,0,0,1]

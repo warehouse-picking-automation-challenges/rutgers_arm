@@ -1,0 +1,22 @@
+simulator:
+  type: bullet_simulator
+  simulation_step: 0.001
+  collision_checker:
+    type: bullet
+  iterations: 10
+  gravity: [0,0,-9.81]
+  heightmap: false
+  # obstacles:
+  #   floor:
+  #     type: bullet_obstacle
+  #     geometries:
+  #       -
+  #         name: ground
+  #         collision_geometry:
+  #           type: heightmap
+  #           filename: "heightmap.txt"
+  #           material: dark_red
+  #         config:
+  #           position: [0 0 0.01]
+  #           orientation: [0 0 0 1]
+

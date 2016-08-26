@@ -1,0 +1,117 @@
+<launch>
+
+  <rosparam command="load" file="$(find GTA)/input/templates/applications/GTA_application.yaml"/> 
+  <!-- <rosparam command="load" file="$(find prx_input)/templates/applications/empty_application.yaml"/> -->
+  <rosparam command="load" file="$(find prx_input)/templates/simulators/null_response_simulator.yaml"/>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+  <rosparam command="load" ns="consumer_controller" file="$(find GTA)/input/templates/controllers/replanning_waypoints.yaml"/>
+  <rosparam command="load" ns="plant" file="$(find prx_input)/templates/plants/disk.yaml"/>
+  <rosparam command="load" ns="vo_controller" file="$(find VO)/input/templates/vo_controller.yaml"/>
+
+
+  <rosparam ns="application">
+    automatic: false
+    timeout: 2000
+    wait_time: 10
+    consumer_paths: [simulator/consumer00,simulator/consumer01]
+    sserialize_sim_file: saved_states/TEST_SIM
+    eexperiment_filename: results/TEST_RESULT
+  </rosparam>
+  <rosparam ns="consumer_controller">
+    offline_planning: true
+    planning_cycle: 0.5
+  </rosparam>
+
+  <rosparam ns="plant">
+    state_space: 
+      min: [-300,-300]
+      max: [300,300]
+    input_control_space: 
+      min: [0, -4]
+      max: [25, 4]
+  </rosparam>
+
+  <rosparam ns="vo_controller">
+    state_space: 
+      min: [-300,-300]
+      max: [300,300]
+    inactive: false
+    radius: 10.5
+    vo_radius: 10.6
+  </rosparam>
+
+  <rosparam command="load" ns="simulator">
+    simulation_step: 0.02
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer00">
+    template: consumer_controller
+    planning_node: /planning0
+    keep_last_control: false
+    keep_last_state: true
+    proximity_threshold: 1.9
+    filename: 2agents_GTA_cor_0
+    goals:
+      -
+        goal:
+          type: "radial_goal_region"
+          distance_metric: 
+            type: linear_distance_metric
+          goal_state: [130,27.5]
+          radius: 1
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer00/subsystems/vo_controller00">
+    template: vo_controller
+  </rosparam>
+
+  <rosparam ns="simulator/subsystems/consumer00/subsystems/vo_controller00/subsystems/disk00">
+    template: "plant"
+    initial_state: [-130,27.5]
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 10.5
+          height: 2.0
+          material:  blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer01">
+    template: consumer_controller
+    planning_node: /planning1
+    keep_last_control: false
+    keep_last_state: true
+    proximity_threshold: 1.9
+    filename: 4agents_GTA_1
+    goals:
+      -
+        goal:
+          type: "radial_goal_region"
+          distance_metric: 
+            type: linear_distance_metric
+          goal_state: [-130,27.5]
+          radius: 1
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer01/subsystems/vo_controller01">
+    template: vo_controller
+  </rosparam>
+
+  <rosparam ns="simulator/subsystems/consumer01/subsystems/vo_controller01/subsystems/disk01">
+    template: "plant"
+    initial_state: [130, 27.5]
+    geometries:
+      -
+        name: body
+        collision_geometry:
+          type: cylinder
+          radius: 10.5
+          height: 2.0
+          material:  blue
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/obstacles" file="$(find prx_input)/templates/environments/crowded_rows.yaml"/>
+
+</launch>

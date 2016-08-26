@@ -1,0 +1,15 @@
+<!-- This file has been tested on PRACSYS revision  -->
+
+<launch>
+
+  <include file="$(find prx_input)/experiments/PRM_star/simulation/simulation.launch"/>
+  <include file="$(find prx_input)/experiments/PRM_star/planning/planning.launch"/>
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+
+  <rosparam command="load" ns="planning/world_model/simulator/obstacles"
+  file="$(find prx_input)/templates/environments/forest.yaml"/>
+
+ <rosparam command="load" ns="simulator/obstacles" file="$(find
+ prx_input)/templates/environments/forest.yaml"/>
+
+</launch>

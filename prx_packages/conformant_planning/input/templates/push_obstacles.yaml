@@ -1,0 +1,107 @@
+environment:
+    type: obstacle
+    geometries:
+      -
+        name: shelf
+        collision_geometry: 
+          type: box
+          material: black 
+          dims: [3,1,.25]      
+        config:
+          position: [3,4,0]
+          orientation: [0, 0, 0, 1]
+      -
+        name: shelf_entry1
+        collision_geometry: 
+          type: box
+          material: black 
+          dims: [.1,2,.25]      
+        config:
+          position: [1.55,2,0]
+          orientation: [0, 0, 0, 1]
+      -
+        name: shelf_entry2
+        collision_geometry: 
+          type: box
+          material: black 
+          dims: [.1,2,.25]      
+        config:
+          position: [4.45,2,0]
+          orientation: [0, 0, 0, 1]
+      -
+        name: obs1
+        collision_geometry: 
+          type: box
+          material: black 
+          dims: [1.0,1.0,.25]      
+        config:
+          position: [2,-2,0]
+          orientation: [0, 0, 0, 1]
+      -
+        name: obs2
+        collision_geometry: 
+          type: box
+          material: black 
+          dims: [1.0,1.0,.25]      
+        config:
+          position: [-1.5,2,0]
+          orientation: [0, 0, 0, 1]
+      # -
+      #   name: obs3
+      #   collision_geometry: 
+      #     type: box
+      #     material: black 
+      #     dims: [1.0,1.0,.25]      
+      #   config:
+      #     position: [4,0,0]
+      #     orientation: [0, 0, 0, 1]
+      -
+        name: obs4
+        collision_geometry: 
+          type: box
+          material: black 
+          dims: [1.0,1.0,.25]      
+        config:
+          position: [-1.5,-2,0]
+          orientation: [0, 0, 0, 1]
+      -
+        name: top
+        collision_geometry: 
+          type: box
+          material: black 
+          dims: [10,.1,.25]
+        config:
+          position: [0,4.8,0]
+          orientation: [0, 0, 0, 1]
+      -
+        name: bottom
+        collision_geometry: 
+          type: box
+          material: black 
+          dims: [10,.1,.25]
+        config:
+          position: [0,-4.8,0]
+          orientation: [0, 0, 0, 1]
+      -
+        name: left
+        collision_geometry: 
+          type: box
+          material: black 
+          dims: [.1,10,.25]
+        config:
+          position: [-4.8,0,0]
+          orientation: [0, 0, 0, 1]
+      -
+        name: right
+        collision_geometry: 
+          type: box
+          material: black 
+          dims: [.1,10,.25]
+        config:
+          position: [4.8,0,0]
+          orientation: [0, 0, 0, 1]
+
+
+
+
+

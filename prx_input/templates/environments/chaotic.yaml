@@ -1,0 +1,272 @@
+start_zone:
+    type: obstacle
+    geometries:
+    -
+        name: wall1
+        collision_geometry: 
+            type: box
+            dims: [2, 0.2, 2.2]      
+            material: green    
+        config:
+            position: [-4, -2.9, 1.1]
+            orientation: [0,0,0,1]
+    -
+        name: wall2
+        collision_geometry:
+            type: box
+            dims: [2,2,0.2]
+            material: green
+        config:
+            position: [-4, -4, 2.1]
+            orientation: [0,0,0,1]
+
+goal_zone:
+    type: obstacle
+    geometries:
+    -
+        name: wall1
+        collision_geometry: 
+            type: box
+            dims: [2, 0.2, 2.2]      
+            material: teal   
+        config:
+            position: [4, 2.9, 6.9]
+            orientation: [0,0,0,1]
+    -
+        name: wall2
+        collision_geometry:
+            type: box
+            dims: [2,2,0.2]
+            material: teal
+        config:
+            position: [4, 4, 5.9]
+            orientation: [0,0,0,1]
+            
+some_chaos:
+    type: obstacle
+    geometries:
+    -
+        name: center
+        collision_geometry:
+            type: sphere
+            radius: [0.04]
+            material: white
+        config:
+            position: [0,0,4]
+            orientation: [0,0,0,1]
+    -
+        name: ball1
+        collision_geometry:
+            type: sphere
+            radius: [0.6]
+            material: grey
+        config:
+            position: [-2, 3, 1.4]
+            orientation: [0,0,0,1]
+    -
+        name: ball2
+        collision_geometry:
+            type: sphere
+            radius: [0.5]
+            material: grey
+        config:
+            position: [4, 1, 2.7]
+            orientation: [0,0,0,1]
+    -
+        name: ball3
+        collision_geometry:
+            type: sphere
+            radius: [0.7]
+            material: grey
+        config:
+            position: [2.3, -1.7, 2.4]
+            orientation: [0,0,0,1]
+    -
+        name: ball4
+        collision_geometry:
+            type: sphere
+            radius: [0.46]
+            material: grey
+        config:
+            position: [-2.7, -2.7, 2.4]
+            orientation: [0,0,0,1]
+    -
+        name: ball5
+        collision_geometry:
+            type: sphere
+            radius: [0.76]
+            material: grey
+        config:
+            position: [-1.1, 2.2, 5.8]
+            orientation: [0,0,0,1]
+    -
+        name: ball6
+        collision_geometry:
+            type: sphere
+            radius: [0.55]
+            material: grey
+        config:
+            position: [0.3,1.2,2.2]
+            orientation: [0,0,0,1]
+            
+            
+x_impeders:
+    type: obstacle
+    geometries:
+    -
+        name: impeder1
+        collision_geometry:
+            type: box
+            dims: [0.2,3,3.4]
+            material: grey
+        config:
+            position: [-1.4,-2,1.9]
+            orientation: [0,0,0,1]
+    -
+        name: impeder2
+        collision_geometry:
+            type: box
+            dims: [0.2,2.1,5]
+            material: grey
+        config:
+            position: [1.1,4,4]
+            orientation: [0,0,0,1]
+    -
+        name: impeder3
+        collision_geometry:
+            type: box
+            dims: [0.2,1.3,2.3]
+            material: grey
+        config:
+            position: [1.1,-2.2,2]
+            orientation: [0,0,0,1]
+    -
+        name: impeder4
+        collision_geometry:
+            type: box
+            dims: [0.2,1.5,4]
+            material: grey
+        config:
+            position: [-2.4,2,4]
+            orientation: [0,0,0,1]
+    -
+        name: impeder5
+        collision_geometry:
+            type: box
+            dims: [0.2,2.6,1.7]
+            material: grey
+        config:
+            position: [3.2,1.2,6.4]
+            orientation: [0,0,0,1]
+    -
+        name: impeder6
+        collision_geometry:
+            type: box
+            dims: [0.2,1.5,2.3]
+            material: grey
+        config:
+            position: [-3.8,-1.8,3]
+            orientation: [0,0,0,1]
+
+y_impeders:
+    type: obstacle
+    geometries:
+    -
+        name: blocker1
+        collision_geometry:
+            type: box
+            dims: [3,0.2,2]
+            material: grey
+        config:
+            position: [-2,0,3]
+            orientation: [0,0,0,1]
+    -
+        name: blocker2
+        collision_geometry:
+            type: box
+            dims: [1.1,0.2,5]
+            material: grey
+        config:
+            position: [2,3.2,3]
+            orientation: [0,0,0,1]
+    -
+        name: blocker3
+        collision_geometry:
+            type: box
+            dims: [2.9,0.2,4.4]
+            material: grey
+        config:
+            position: [1.6,1.2,5.7]
+            orientation: [0,0,0,1]
+    -
+        name: blocker4
+        collision_geometry:
+            type: box
+            dims: [3.4,0.2,0.8]
+            material: grey
+        config:
+            position: [-1.4,3,3]
+            orientation: [0,0,0,1]
+    -
+        name: blocker5
+        collision_geometry:
+            type: box
+            dims: [2.4,0.2,5.9]
+            material: grey
+        config:
+            position: [0.3,-1.0,3]
+            orientation: [0,0,0,1]
+            
+z_impeders:
+    type: obstacle
+    geometries:
+    -
+        name: stop_guy1
+        collision_geometry:
+            type: box
+            dims: [1.5,3.6,0.2]
+            material: grey
+        config:
+            position: [-2.2,-2.6,3.4]
+            orientation: [0,0,0,1]
+    -
+        name: stop_guy2
+        collision_geometry:
+            type: box
+            dims: [3.2,2.2,0.2]
+            material: grey
+        config:
+            position: [0.6,2.5,6.9]
+            orientation: [0,0,0,1]
+    -
+        name: stop_guy3
+        collision_geometry:
+            type: box
+            dims: [1.9,4.3,0.2]
+            material: grey
+        config:
+            position: [-0.8,2,4.2]
+            orientation: [0,0,0,1]
+    -
+        name: stop_guy4
+        collision_geometry:
+            type: box
+            dims: [3.1,1.2.2]
+            material: grey
+        config:
+            position: [-3.1,-1.2,1.4]
+            orientation: [0,0,0,1]
+    -
+        name: stop_guy5
+        collision_geometry:
+            type: box
+            dims: [4.9,2.4,0.2]
+            material: grey
+        config:
+            position: [-2.0,1.7,1.45]
+            orientation: [0,0,0,1]
+    
+
+
+
+

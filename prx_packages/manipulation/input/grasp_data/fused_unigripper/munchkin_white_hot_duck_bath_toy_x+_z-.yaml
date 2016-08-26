@@ -1,0 +1,952 @@
+-
+  relative_config: [ 0, 0, -0.03, 0, 0, 0.707107, 0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.02, -0.03, 0, 0, 0.707107, 0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0, -0.03, 0, 0, 0.92388, 0.382683 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.02, -0.03, 0, 0, 0.92388, 0.382683 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0, -0.03, 0, 0, 1, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.02, -0.03, 0, 0, 1, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0, -0.03, 0, 0, 0.92388, -0.382683 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.02, -0.03, 0, 0, 0.92388, -0.382683 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0, -0.03, 0, 0, 0.707107, -0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.02, -0.03, 0, 0, 0.707107, -0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0, -0.03, 0, 0, 0.382683, -0.92388 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.02, -0.03, 0, 0, 0.382683, -0.92388 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0, -0.03, 0, 0, 0, -1 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.02, -0.03, 0, 0, 0, -1 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0, -0.03, 0, 0, -0.382683, -0.92388 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.02, -0.03, 0, 0, -0.382683, -0.92388 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.06, 0, -0.653281, -0.270598, 0.270598, -0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.06, -0.01, -0.653281, -0.270598, 0.270598, -0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.06, 0, -0.5, -0.5, 0.5, -0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.06, -0.01, -0.5, -0.5, 0.5, -0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.06, 0, -0.270598, -0.653281, 0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.06, -0.01, -0.270598, -0.653281, 0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0, 0, -0.653281, 0.270598, 0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0.02, 0, -0.653281, 0.270598, 0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0.02, -0.01, -0.653281, 0.270598, 0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0, 0, -0.707107, -0, 0.707107, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0.02, 0, -0.707107, -0, 0.707107, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0.02, -0.01, -0.707107, -0, 0.707107, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0, 0, -0.653281, -0.270598, 0.653281, 0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0.02, 0, -0.653281, -0.270598, 0.653281, 0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0.02, -0.01, -0.653281, -0.270598, 0.653281, 0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.06, 0, 0.707107, -0, -0, 0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0.06, 0, 0.707107, -0, -0, 0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0.06, 0, 0.653281, 0.270598, -0.270598, 0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0.06, 0, 0.5, 0.5, -0.5, 0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0.06, 0, 0.270598, 0.653281, -0.653281, 0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.06, 0, 0, 0.707107, -0.707107, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0.06, 0, 0, 0.707107, -0.707107, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.06, 0, -0.270598, 0.653281, -0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0.06, 0, -0.270598, 0.653281, -0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.06, 0, -0.5, 0.5, -0.5, -0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0.06, 0, -0.5, 0.5, -0.5, -0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.06, 0, -0.653281, 0.270598, -0.270598, -0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0.06, 0, -0.653281, 0.270598, -0.270598, -0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0, 0, 0.5, 0.5, -0.5, -0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0.02, 0, 0.5, 0.5, -0.5, -0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0, 0, 0.270598, 0.653281, -0.270598, -0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0.02, 0, 0.270598, 0.653281, -0.270598, -0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0, -0.03, 0, 0, -0.382683, -0.92388 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0.02, -0.03, 0, 0, -0.382683, -0.92388 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0, -0.03, 0, 0, -0.707107, -0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0.02, -0.03, 0, 0, -0.707107, -0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0, -0.03, -0, 0, -0.92388, -0.382683 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0.02, -0.03, -0, 0, -0.92388, -0.382683 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.06, 0.01, 0.5, -0.5, 0.5, 0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.06, 0.01, 0.653281, -0.270598, 0.270598, 0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.06, 0.01, 0.707107, 0, -0, 0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.06, 0.01, 0.653281, 0.270598, -0.270598, 0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.06, 0.01, 0.5, 0.5, -0.5, 0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.06, 0.01, 0.270598, 0.653281, -0.653281, 0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.06, 0.01, 0, 0.707107, -0.707107, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.06, 0.01, -0.270598, 0.653281, -0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0, 0, 0, -0.707107, 0, 0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0.02, 0, 0, -0.707107, 0, 0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0, 0, 0.270598, -0.653281, -0.270598, 0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0.02, 0, 0.270598, -0.653281, -0.270598, 0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0, 0, 0.5, -0.5, -0.5, 0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0.02, 0, 0.5, -0.5, -0.5, 0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0.02, -0.03, -0, -0, -0.382683, 0.92388 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0.02, -0.03, 0, -0, 0, 1 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0.02, 0.01, 0.270598, 0.653281, -0.270598, -0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0.02, 0.01, -0, 0.707107, 0, -0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0.02, 0.01, -0.270598, 0.653281, 0.270598, -0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0.06, 0, -0, 0.707107, -0.707107, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0.06, 0, -0.270598, 0.653281, -0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0.06, 0, -0.5, 0.5, -0.5, -0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0.06, 0, -0.653281, 0.270598, -0.270598, -0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0.06, 0, -0.707107, 0, 0, -0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0.06, 0, -0.653281, -0.270598, 0.270598, -0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0.06, 0, -0.5, -0.5, 0.5, -0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0.06, 0, -0.270598, -0.653281, 0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0, -0.03, -0, -0, -0.382683, -0.92388 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0.02, -0.03, -0, -0, -0.382683, -0.92388 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0, -0.03, 0, -0, -0.707107, -0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0.02, -0.03, 0, -0, -0.707107, -0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0, -0.03, 0, -0, -0.92388, -0.382683 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0.02, -0.03, 0, -0, -0.92388, -0.382683 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0, 0.01, -0, 0.707107, 0, -0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0, 0.01, -0.270598, 0.653281, 0.270598, -0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0, 0.01, -0.5, 0.5, 0.5, -0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0, 0.01, -0.653281, 0.270598, 0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0, 0.01, -0.707107, 0, 0.707107, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0, 0.01, -0.653281, -0.270598, 0.653281, 0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0, 0.01, -0.5, -0.5, 0.5, 0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0, 0.01, -0.270598, -0.653281, 0.270598, 0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.06, 0, -0.653281, -0.270598, -0.270598, 0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.06, 0.01, -0.653281, -0.270598, -0.270598, 0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, -0.06, 0.01, -0.653281, -0.270598, -0.270598, 0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.06, 0, -0.707107, 0, 0, 0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.06, 0.01, -0.707107, 0, 0, 0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, -0.06, 0.01, -0.707107, 0, 0, 0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.06, 0, -0.653281, 0.270598, 0.270598, 0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.06, 0.01, -0.653281, 0.270598, 0.270598, 0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, -0.06, 0.01, -0.653281, 0.270598, 0.270598, 0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0.06, 0.01, -0.653281, 0.270598, -0.270598, -0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0.06, 0.01, -0.707107, 0, 0, -0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0.06, 0.01, -0.653281, -0.270598, 0.270598, -0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0.02, -0.03, 0, 0, 1, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0.02, -0.03, 0, 0, 0.92388, -0.382683 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, -0.06, 0, -0.707107, -0, 0, 0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, -0.06, 0, -0.653281, 0.270598, 0.270598, 0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.06, 0, -0.5, 0.5, 0.5, 0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, -0.06, 0, -0.5, 0.5, 0.5, 0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.06, 0, -0.270598, 0.653281, 0.653281, 0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, -0.06, 0, -0.270598, 0.653281, 0.653281, 0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.06, 0, 0, 0.707107, 0.707107, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, -0.06, 0, 0, 0.707107, 0.707107, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.06, 0, 0.270598, 0.653281, 0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, -0.06, 0, 0.270598, 0.653281, 0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.06, 0, 0.5, 0.5, 0.5, -0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, -0.06, 0, 0.5, 0.5, 0.5, -0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, -0.06, 0, 0.653281, 0.270598, 0.270598, -0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, -0.02, 0, -0.270598, 0.653281, 0.270598, -0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, -0.02, 0, -0.5, 0.5, 0.5, -0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, -0.02, 0, -0.653281, 0.270598, 0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0, -0.03, 0, 0, 0.92388, -0.382683 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, -0.02, -0.03, 0, 0, 0.92388, -0.382683 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0, -0.03, -0, 0, 0.707107, -0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, -0.02, -0.03, -0, 0, 0.707107, -0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0, -0.03, -0, 0, 0.382683, -0.92388 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, -0.02, -0.03, -0, 0, 0.382683, -0.92388 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, -0.02, 0, -0.707107, 0, 0.707107, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, -0.02, 0, -0.653281, -0.270598, 0.653281, 0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, -0.02, 0, -0.5, -0.5, 0.5, 0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, -0.02, 0, -0.270598, -0.653281, 0.270598, 0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, -0.02, 0, -0, -0.707107, 0, 0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.02, -0.03, -0, 0, -0.382683, 0.92388 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.02, -0.03, -0, 0, 0, 1 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, -0.02, -0.03, -0, 0, 0, 1 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.02, -0.03, -0, -0, 0.382683, 0.92388 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, -0.02, -0.03, -0, -0, 0.382683, 0.92388 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0, -0.03, 0, 0, 1, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0, -0.03, 0, 0, 0.92388, -0.382683 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.06, -0.01, -0.270598, 0.653281, 0.653281, 0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, -0.06, -0.01, -0.270598, 0.653281, 0.653281, 0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.06, -0.01, 0, 0.707107, 0.707107, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, -0.06, -0.01, 0, 0.707107, 0.707107, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.06, -0.01, 0.270598, 0.653281, 0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, -0.06, -0.01, 0.270598, 0.653281, 0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0.06, -0.01, -0.270598, -0.653281, 0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.06, -0.01, 0, -0.707107, 0.707107, -0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0.06, -0.01, 0, -0.707107, 0.707107, -0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.06, -0.01, 0.270598, -0.653281, 0.653281, 0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0.06, -0.01, 0.270598, -0.653281, 0.653281, 0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.06, 0.01, -0.270598, -0.653281, -0.653281, 0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.06, 0.01, -0.5, -0.5, -0.5, 0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, -0.02, 0.01, -0.270598, -0.653281, 0.270598, 0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, -0.02, 0.01, -0, -0.707107, -0, 0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, -0.02, 0.01, 0.270598, -0.653281, -0.270598, 0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.06, -0.01, -0.5, 0.5, 0.5, 0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.06, -0.01, 0.5, 0.5, 0.5, -0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.06, -0.01, 0.653281, 0.270598, 0.270598, -0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.06, -0.01, 0.707107, 0, 0, -0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.06, -0.01, 0.653281, -0.270598, -0.270598, -0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.02, -0.03, 0, 0, 0.92388, -0.382683 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.02, -0.03, 0, 0, 0.707107, -0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0, -0.01, -0.270598, 0.653281, 0.270598, -0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, -0.02, -0.01, -0.270598, 0.653281, 0.270598, -0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0, -0.01, -0.5, 0.5, 0.5, -0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, -0.02, -0.01, -0.5, 0.5, 0.5, -0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0, -0.01, -0.653281, 0.270598, 0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, -0.02, -0.01, -0.653281, 0.270598, 0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, -0.06, 0, 0, 0.707107, 0.707107, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, -0.06, 0, 0.270598, 0.653281, 0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, -0.06, 0, 0.5, 0.5, 0.5, -0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, -0.06, 0, 0.653281, 0.270598, 0.270598, -0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, -0.06, 0, 0.707107, 0, 0, -0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, -0.06, 0, 0.653281, -0.270598, -0.270598, -0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, -0.06, 0, 0.5, -0.5, -0.5, -0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, -0.06, 0, 0.270598, -0.653281, -0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, -0.02, -0.03, -0, -0, 0.92388, -0.382683 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0, -0.03, -0, -0, 0.707107, -0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, -0.02, -0.03, -0, -0, 0.707107, -0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0, -0.03, 0, -0, 0.382683, -0.92388 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, -0.02, -0.03, 0, -0, 0.382683, -0.92388 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0.06, 0.01, 0.270598, 0.653281, -0.653281, 0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0.06, 0.01, -0, 0.707107, -0.707107, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0.06, 0.01, -0.270598, 0.653281, -0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.06, 0.01, -0.270598, 0.653281, 0.653281, 0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, -0.06, 0.01, -0.270598, 0.653281, 0.653281, 0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.06, 0.01, 0, 0.707107, 0.707107, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, -0.06, 0.01, 0, 0.707107, 0.707107, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, -0.06, 0.01, 0.270598, 0.653281, 0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0.06, 0.01, -0.270598, 0.653281, -0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0.06, 0.01, -0.5, 0.5, -0.5, -0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, -0.06, 0.01, 0.270598, 0.653281, 0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, -0.06, 0.01, 0.5, 0.5, 0.5, -0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0, -0.03, 0, 0, 0, 1 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0.06, -0.01, 0.653281, 0.270598, -0.270598, 0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0.06, -0.01, 0.5, 0.5, -0.5, 0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, -0.06, -0.01, -0.653281, 0.270598, 0.270598, 0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, -0.06, -0.01, -0.5, 0.5, 0.5, 0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.02, -0.03, 0, 0, 0.92388, 0.382683 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, -0.02, -0.03, 0, 0, 0.92388, 0.382683 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.02, -0.03, 0, 0, 1, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, -0.02, -0.03, 0, 0, 1, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0, -0.03, 0, 0, 0, 1 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0, -0.03, 0, 0, 1, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0, -0.01, -0.707107, 0, 0.707107, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0, -0.01, -0.653281, -0.270598, 0.653281, 0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, -0.06, -0.01, -0.653281, 0.270598, 0.270598, 0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, -0.06, -0.01, -0.5, 0.5, 0.5, 0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, -0.06, -0.01, -0.270598, 0.653281, 0.653281, 0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0.06, -0.01, -0.653281, -0.270598, 0.270598, -0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0.06, -0.01, -0.5, -0.5, 0.5, -0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0.06, -0.01, -0.270598, -0.653281, 0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.02, -0.03, 0, 0, 0.707107, 0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, -0.02, -0.01, -0.707107, 0, 0.707107, 0 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, -0.02, -0.01, -0.653281, -0.270598, 0.653281, 0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, -0.06, 0.01, -0.5, -0.5, -0.5, 0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, -0.06, 0.01, -0.653281, -0.270598, -0.270598, 0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0.06, 0.01, -0.5, 0.5, -0.5, -0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ -0.015, 0.06, 0.01, -0.653281, 0.270598, -0.270598, -0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, -0.06, 0.01, -0.5, 0.5, 0.5, 0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, -0.02, 0.01, -0.5, 0.5, 0.5, -0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, -0.02, 0.01, -0.653281, 0.270598, 0.653281, -0.270598 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0, -0.01, -0.5, -0.5, 0.5, 0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0, -0.01, -0.270598, -0.653281, 0.270598, 0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0, -0.01, 0, -0.707107, 0, 0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.06, -0.01, 0.653281, -0.270598, 0.270598, 0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0.06, -0.01, 0.653281, -0.270598, 0.270598, 0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.06, -0.01, 0.707107, -0, 0, 0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, 0.06, -0.01, 0.707107, -0, 0, 0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, -0.06, -0.01, -0.653281, -0.270598, -0.270598, 0.653281 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.015, -0.06, -0.01, -0.707107, -0, 0, 0.707107 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0, 0.06, -0.01, -0.5, 0.5, -0.5, -0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0.02, -0.01, 0.5, 0.5, -0.5, -0.5 ]
+  grasp_mode:  2
+  release_mode:  1
+-
+  relative_config: [ 0.045, 0.02, -0.01, 0.270598, 0.653281, -0.270598, -0.653281 ]
+  grasp_mode:  2
+  release_mode:  1

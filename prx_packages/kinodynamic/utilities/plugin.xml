@@ -1,0 +1,72 @@
+
+<class name="prx_utilities/acrobot_as_pendulum"
+    type="prx::packages::distance_functions::acrobot_as_pendulum_t"
+    base_class_type="prx::util::distance_function_t">
+    <description>
+        Looks at an acrobot and approximates distance as if it was a single-link pendulum.
+    </description>
+</class>
+
+<class name="prx_utilities/acrobot_task_mapping"
+    type="prx::packages::mapping_functions::acrobot_task_mapping_t"
+    base_class_type="prx::util::mapping_function_t">
+    <description>
+        Acrobot embedding for removing velocity terms.
+    </description>
+</class>
+<class name="prx_utilities/bullet_car_to_se2"
+    type="prx::packages::mapping_functions::bullet_car_to_se2_t"
+    base_class_type="prx::util::mapping_function_t">
+    <description>
+        Embeds a bullet car into SE2.
+    </description>
+</class>
+<class name="prx_utilities/position_from_rigid_body_mapping"
+    type="prx::packages::mapping_functions::position_from_rigid_body_mapping_t"
+    base_class_type="prx::util::mapping_function_t">
+    <description>
+        Embeds a dynamic rigid body into xyz.
+    </description>
+</class>
+<class name="prx_utilities/bullet_manip_to_se2"
+    type="prx::packages::mapping_functions::bullet_manip_to_se2_t"
+    base_class_type="prx::util::mapping_function_t">
+    <description>
+        Embeds a bullet manipulator into SE2.
+    </description>
+</class>
+<class name="prx_utilities/dynamic_baxter_end_effector"
+    type="prx::packages::mapping_functions::dynamic_baxter_end_effector_t"
+    base_class_type="prx::util::mapping_function_t">
+    <description>
+        Embeds the Baxter arm into it's xyz end effector location. Only works with the dynamic baxter arm.
+    </description>
+</class>
+<class name="prx_utilities/pendulum_task_mapping"
+    type="prx::packages::mapping_functions::pendulum_task_mapping_t"
+    base_class_type="prx::util::mapping_function_t">
+    <description>
+        Pendulum embedding for removing velocity terms.
+    </description>
+</class>
+<class name="prx_utilities/quad_task"
+    type="prx::packages::mapping_functions::quad_task_t"
+    base_class_type="prx::util::mapping_function_t">
+    <description>
+        Full quadrotor space to xyz.
+    </description>
+</class>
+<class name="prx_utilities/rally_car_mapping"
+    type="prx::packages::mapping_functions::rally_car_mapping_t"
+    base_class_type="prx::util::mapping_function_t">
+    <description>
+        Embeds a rally car into SE2.
+    </description>
+</class>
+<class name="prx_utilities/superball_center"
+    type="prx::packages::mapping_functions::superball_center_t"
+    base_class_type="prx::util::mapping_function_t">
+    <description>
+        Embed superball to center.
+    </description>
+</class>

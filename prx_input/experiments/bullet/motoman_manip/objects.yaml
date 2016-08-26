@@ -1,0 +1,52 @@
+object:
+    type: bullet_plant
+    geometries:
+      -
+        name: ball
+        collision_geometry:
+          type: box
+          dims: [.04 .04 .2]
+          material: green
+        config: 
+          position: [.7 0.05 .78]
+          orientation: [0,0,0,1]
+        mass: 8.0
+object2:
+    type: bullet_plant
+    geometries:
+      -
+        name: ball
+        collision_geometry:
+          type: box
+          dims: [.04 .04 .2]
+          material: blue
+        config: 
+          position: [.7 0 .78]
+          orientation: [0,0,0,1]
+        mass: 8.0
+object3:
+    type: bullet_plant
+    geometries:
+      -
+        name: ball
+        collision_geometry:
+          type: box
+          dims: [.04 .04 .2]
+          material: blue
+        config: 
+          position: [.7 -.05 .78]
+          orientation: [0,0,0,1]
+        mass: 8.0
+object4:
+    type: bullet_plant
+    geometries:
+      -
+        name: ball
+        collision_geometry:
+          type: box
+          dims: [.04 .04 .2]
+          material: blue
+        config: 
+          position: [.7 -.1 .78]
+          orientation: [0,0,0,1]
+        mass: 8.0

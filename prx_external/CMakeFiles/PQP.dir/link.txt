@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -std=c++11   -shared -Wl,-soname,libPQP.so -o lib/libPQP.so CMakeFiles/PQP.dir/parallel_pqp/PQP/Build.cpp.o CMakeFiles/PQP.dir/parallel_pqp/PQP/BV.cpp.o CMakeFiles/PQP.dir/parallel_pqp/PQP/PQP.cpp.o CMakeFiles/PQP.dir/parallel_pqp/PQP/TriDist.cpp.o 

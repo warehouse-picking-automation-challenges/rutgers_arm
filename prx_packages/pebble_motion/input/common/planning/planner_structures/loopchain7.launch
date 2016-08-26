@@ -1,0 +1,67 @@
+<launch>
+  <rosparam command="load" file="$(find prx_input)/templates/planning_applications/single_query_application.yaml"/>
+  <rosparam ns="task_planner/" >
+
+  </rosparam>
+  <rosparam ns="task_planner/" >
+    template: "task_planner"
+    visualize_graph: true
+    points:
+      -
+        point: [0,0,0]
+        id: 0
+      -
+        point: [10,0,0]
+        id: 1
+      -
+        point: [20,0,0]
+        id: 2
+      -
+        point: [20,10,0]
+        id: 3
+      -
+        point: [20,20,0]
+        id: 4
+      -
+        point: [10,20,0]
+        id: 5
+      -
+        point: [0,20,0]
+        id: 6
+      -
+        point: [0,10,0]
+        id: 7
+      -
+        point: [30,20,0]
+        id: 8
+    edges:
+      -
+        source: 0
+        target: 1
+      -
+        source: 1
+        target: 2
+      -
+        source: 2
+        target: 3
+      -
+        source: 3
+        target: 4
+      -
+        source: 4
+        target: 5
+      -
+        source: 5
+        target: 6
+      -
+        source: 6
+        target: 7
+      -
+        source: 7
+        target: 0
+      -
+        source: 2
+        target: 8
+  </rosparam>
+
+</launch>

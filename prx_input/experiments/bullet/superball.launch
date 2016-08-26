@@ -1,0 +1,34 @@
+<launch>  
+  <rosparam ns="simulation" command="load" file="$(find prx_input)/templates/applications/empty_application.yaml" />
+  <rosparam ns="simulation" command="load" file="$(find prx_input)/templates/simulators/bullet_simulator.yaml"/>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <rosparam command="load" ns="simulation/simulator/subsystems/rover"
+    file="$(find prx_input)/templates/plants/bullet/superball.yaml"/>
+
+<rosparam ns="simulation/simulator" >
+gravity: [0,0,-9.81]
+heightmap: true
+</rosparam>
+
+<rosparam ns="simulation/simulator/obstacles">
+floor:
+  type: bullet_obstacle
+  geometries:
+    -
+      name: ground
+      collision_geometry:
+        type: heightmap
+        filename: "heightmap.txt"
+        material: dark_red
+      config:
+        position: [0 0 0.02]
+        orientation: [0 0 0 1]
+</rosparam>
+
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation"
+        required="true"   launch-prefix="" output="screen" />
+
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+
+</launch>

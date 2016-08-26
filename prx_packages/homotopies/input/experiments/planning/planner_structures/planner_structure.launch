@@ -1,0 +1,138 @@
+<launch>
+  <!-- Load the planning application -->
+  <rosparam command="load" file="$(find prx_input)/templates/planning_applications/single_query_application.yaml"/>
+
+  <rosparam>
+    consumer_mapping:
+      - 
+        pair: [simulator/consumer, space1]
+  </rosparam>
+        
+  <!-- Load template files -->
+       
+  <rosparam command="load" ns="motion_planner/" file="$(find homotopies)/input/templates/motion_planners/h_graph_planner.yaml"/>
+ 
+  <!-- We currently only support one task planner. It will be future work to bring task planners that work on task planners. -->
+  <rosparam command="load" ns="task_planner/" file="$(find prx_input)/templates/task_planners/single_shot.yaml"/>
+
+  <!-- Overwrite any parameters for the template or the task planner -->
+  <rosparam ns="task_planner/" >
+  </rosparam>
+
+  <!-- Set up the motion planners used in the task planner. 
+	 1) can either be from template or loading a yaml and rewriting the values
+	 2) the space name needs to correspond to the names in the world_model file -->
+  <rosparam ns="task_planner/planners/" >
+  planner1:
+    template: "motion_planner"
+    space_name: "space1"
+    visualization_bodies: ["simulator/disk/body"]
+    visualize_graph: false
+    visualize_solutions: false
+    visualize_homotopies: true
+    distance_metric:
+      type: linear_distance_metric
+
+    number_explored_homotopies: 15
+    homotopy_threshold: 70.5
+          
+    representative_points:
+        - point: [125.573337534,-209.015059934]
+        - point: [-5.46171284845,12.0986653916]
+        - point: [97.2791773288,253.125984307]
+        - point: [16.914534512,0.404633862664]
+        - point: [-150.012074792,-3.21301265795]
+        - point: [-199.907246498,-28.9639224455]
+        - point: [-247.310947403,165.617366894]
+        - point: [33.6998106404,187.078062741]
+        - point: [176.068393438,-161.967736035]
+        - point: [211.081879515,-164.127014374]
+        - point: [-210.81448565,191.555456804]
+        - point: [-157.535159081,-59.3927060512]
+        - point: [118.15804796,285.382935279]
+        - point: [-96.677196595,-67.9356315657]
+        - point: [122.297619535,53.1733833826]
+        - point: [104.142514508,-213.186736579]
+        - point: [191.6314366,134.866983917]
+        - point: [-261.496862809,-169.98518408]
+        - point: [225.443584198,-236.4083927]
+        - point: [117.11958122,-272.338597612]
+        - point: [-273.98680198,49.3328217604]
+        - point: [-110.315813298,74.0149364477]
+        - point: [293.25960826,295.211820977]
+        - point: [-135.758446884,-223.27652681]
+        - point: [-252.545330369,15.2671690215]
+        - point: [285.48301877,-202.397724972]
+        - point: [209.272078323,167.157086449]
+        - point: [221.770875672,-99.700652273]
+        - point: [57.0843200494,266.815763276]
+        - point: [-251.165786829,-236.868471873]
+        - point: [-196.938286455,-202.016610477]
+        - point: [-215.544997278,-158.411431129]
+        - point: [-245.910090152,-147.397552564]
+        - point: [-28.419546713,-31.1188707812]
+        - point: [-111.779801307,-36.6503125126]
+        - point: [-184.752004686,-1.74143966677]
+        - point: [-46.2215071049,-278.852899908]
+        - point: [-296.627514306,-255.211676588]
+        - point: [-5.03394203255,280.866213763]
+        - point: [-183.624799777,95.6355362683]
+        - point: [-245.258858047,37.6440627026]
+        - point: [-239.607226798,-94.414737747]
+        - point: [272.767977802,227.478377054]
+        - point: [248.057104234,282.443867951]
+        - point: [-217.385107419,55.9019137653]
+        - point: [40.9446615143,-54.8248597973]
+        - point: [95.933663661,267.730846488]
+        - point: [-49.7324899385,59.3379228346]
+        - point: [258.488944639,-165.273708948]
+        - point: [109.677402903,-160.426271196]
+        - point: [261.3636221,263.838109647]
+        - point: [-201.532167802,-102.165619734]
+        - point: [34.5604384691,217.106394345]
+        - point: [156.054371639,132.462502311]
+        - point: [3.1676153804,270.0889789]
+        - point: [-99.8321368748,189.028179586]
+        - point: [231.81791561,-241.146691584]
+        - point: [157.450292819,124.944386951]
+        - point: [-228.717414835,62.6293232555]
+        - point: [102.947414536,210.247650678]
+        - point: [88.076550217,-124.523987207]
+        - point: [1.34376160698,142.669497983]
+        - point: [75.205307599,-213.071118787]
+        - point: [93.9622640203,-62.4794553278]
+        - point: [-126.449303461,133.773977882]
+        - point: [187.449687431,294.932465351]
+        - point: [-185.297182329,178.300853106]
+        - point: [137.594676304,240.909803542]
+        - point: [-125.152300271,247.99889384]
+        - point: [-146.168043871,119.969295103]
+        - point: [155.475462143,179.314979529]
+        - point: [225.853074061,-47.9006156679]
+        - point: [25.0551219788,-243.756112834]
+        - point: [153.72961136,250.474633266]
+        - point: [-173.002960231,105.731139907]
+        - point: [-106.816097547,-183.62723277]
+        - point: [-186.535165563,-115.560722104]
+        - point: [-12.1777110285,278.917003809]
+        - point: [182.240016466,11.41536354]
+        - point: [262.503052455,-217.039236076]
+
+
+    bombermanrepresentative_points:
+      - point: [45,45]
+      - point: [45,-45]
+      - point: [-45,45]
+      - point: [-45,-45]
+      - point: [0,150]
+      - point: [0,-150]
+      - point: [150,0]
+      - point: [-150,0]
+    twocirclerepresentative_points:
+      - point: [-60,0]
+      - point: [60,0]
+    
+  </rosparam>
+
+
+</launch>

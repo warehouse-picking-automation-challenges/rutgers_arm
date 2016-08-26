@@ -1,0 +1,43 @@
+<launch>
+  
+  <!--       SIMULATION        -->          <!--       SIMULATION        -->       <!--       SIMULATION        -->
+
+  <rosparam command="load" file="$(find prx_input)/templates/applications/empty_application.yaml"/> 
+  <rosparam command="load" file="$(find rearrangement_manipulation)/input/simulation/manipulation_simulator.yaml"/>  
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>  
+
+  <rosparam command="load" ns="baxter" file="$(find baxter)/input/urdf/baxter.yaml"/>
+  <rosparam command="load" ns="simulator/obstacles" file="$(find baxter)/input/simulation/baxter_torso.yaml" />
+
+  <rosparam command="load" ns="simulator">
+    fake_planning: false
+    manipulator_names:
+      -
+        simulator/consumer/manipulator
+    sensing_info:
+      type: grasp_sensing_info
+      sources: ["grasp_sensor1"]
+      update_delay: 0.02
+    grasp_sensor_source: "grasp_sensor1"
+  </rosparam>
+
+  <rosparam ns="simulator/sensing">
+    type: sensing_model
+    sensors:
+      grasp_sensor1:
+        type: simulated_grasp_sensor
+        source: "grasp_sensor1"
+        sensor_delay: 0.02
+  </rosparam>
+
+
+  <rosparam command="load" ns="simulator/subsystems/consumer" file="$(find prx_input)/templates/controllers/consumer.yaml"/>
+
+  <rosparam command="load" ns="simulator/subsystems/consumer/subsystems/manipulator">
+    template: "baxter"
+    hand: left
+    forward_transform_rotation: [0,1.0,0,-1.0,0,0,0,0,1]
+    forward_transform_translation: [0,0,3]
+  </rosparam>
+
+</launch> 

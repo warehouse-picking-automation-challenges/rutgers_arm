@@ -1,0 +1,792 @@
+# =-=-=-=-=-=-=
+#  The Stadium
+# =-=-=-=-=-=-=
+stadium:
+    type: obstacle
+    geometries:
+      # =-=-=-=-=-=
+      #  Top Wall
+      # =-=-=-=-=-=
+      -
+        name: stadbox1
+        collision_geometry:
+          type: box
+          dims: [ 8,1,2 ]
+          material: black
+        config:
+          position: [ 0, 17.5, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox2
+        collision_geometry:
+          type: box
+          dims: [ 8,1,2 ]
+          material: black
+        config:
+          position: [ 6, 17.5, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox3
+        collision_geometry:
+          type: box
+          dims: [ 8,1,2 ]
+          material: black
+        config:
+          position: [ 12, 17.5, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox4
+        collision_geometry:
+          type: box
+          dims: [ 8,1,2 ]
+          material: black
+        config:
+          position: [ 18, 17.5, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox5
+        collision_geometry:
+          type: box
+          dims: [ 8,1,2 ]
+          material: black
+        config:
+          position: [ -6, 17.5, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox6
+        collision_geometry:
+          type: box
+          dims: [ 8,1,2 ]
+          material: black
+        config:
+          position: [ -12, 17.5, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox7
+        collision_geometry:
+          type: box
+          dims: [ 8,1,2 ]
+          material: black
+        config:
+          position: [ -18, 17.5, 1 ]
+          orientation: [0,0,0,1]
+      # =-=-=-=-=-=
+      # Bottom Wall
+      # =-=-=-=-=-=
+      -
+        name: stadbox11
+        collision_geometry:
+          type: box
+          dims: [ 8,1,2 ]
+          material: black
+        config:
+          position: [ 0, -17.5, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox12
+        collision_geometry:
+          type: box
+          dims: [ 8,1,2 ]
+          material: black
+        config:
+          position: [ 6, -17.5, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox13
+        collision_geometry:
+          type: box
+          dims: [ 8,1,2 ]
+          material: black
+        config:
+          position: [ 12, -17.5, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox14
+        collision_geometry:
+          type: box
+          dims: [ 8,1,2 ]
+          material: black
+        config:
+          position: [ 18, -17.5, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox15
+        collision_geometry:
+          type: box
+          dims: [ 8,1,2 ]
+          material: black
+        config:
+          position: [ -6, -17.5, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox16
+        collision_geometry:
+          type: box
+          dims: [ 8,1,2 ]
+          material: black
+        config:
+          position: [ -12, -17.5, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox17
+        collision_geometry:
+          type: box
+          dims: [ 8,1,2 ]
+          material: black
+        config:
+          position: [ -18, -17.5, 1 ]
+          orientation: [0,0,0,1]
+      # =-=-=-=-=-=
+      # Left Entry
+      # =-=-=-=-=-=
+      -
+        name: stadbox21
+        collision_geometry:
+          type: box
+          dims: [ 1,8,2 ]
+          material: black
+        config:
+          position: [ -21.5, 13, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox22
+        collision_geometry:
+          type: box
+          dims: [ 1,8,2 ]
+          material: black
+        config:
+          position: [ -21.5, -13, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox23
+        collision_geometry:
+          type: box
+          dims: [ 2,1,2 ]
+          material: black
+        config:
+          position: [ -22, 8.5, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox24
+        collision_geometry:
+          type: box
+          dims: [ 2,1,2 ]
+          material: black
+        config:
+          position: [ -22, -8.5, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox25
+        collision_geometry:
+          type: box
+          dims: [ 2,1,2 ]
+          material: black
+        config:
+          position: [ -26, 8.5, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox26
+        collision_geometry:
+          type: box
+          dims: [ 2,1,2 ]
+          material: black
+        config:
+          position: [ -26, -8.5, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox27
+        collision_geometry:
+          type: box
+          dims: [ 1,8,2 ]
+          material: black
+        config:
+          position: [ -29.5, 5, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox28
+        collision_geometry:
+          type: box
+          dims: [ 1,8,2 ]
+          material: black
+        config:
+          position: [ -29.5, -5, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox29
+        collision_geometry:
+          type: box
+          dims: [ 1,8,2 ]
+          material: black
+        config:
+          position: [ -29.5, 0, 1 ]
+          orientation: [0,0,0,1]
+      # =-=-=-=-=-=
+      # Right Entry
+      # =-=-=-=-=-=
+      -
+        name: stadbox31
+        collision_geometry:
+          type: box
+          dims: [ 1,8,2 ]
+          material: black
+        config:
+          position: [ 21.5, 13, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox32
+        collision_geometry:
+          type: box
+          dims: [ 1,8,2 ]
+          material: black
+        config:
+          position: [ 21.5, -13, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox33
+        collision_geometry:
+          type: box
+          dims: [ 2,1,2 ]
+          material: black
+        config:
+          position: [ 22, 8.5, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox34
+        collision_geometry:
+          type: box
+          dims: [ 2,1,2 ]
+          material: black
+        config:
+          position: [ 22, -8.5, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox35
+        collision_geometry:
+          type: box
+          dims: [ 2,1,2 ]
+          material: black
+        config:
+          position: [ 26, 8.5, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox36
+        collision_geometry:
+          type: box
+          dims: [ 2,1,2 ]
+          material: black
+        config:
+          position: [ 26, -8.5, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox37
+        collision_geometry:
+          type: box
+          dims: [ 1,8,2 ]
+          material: black
+        config:
+          position: [ 29.5, 5, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox38
+        collision_geometry:
+          type: box
+          dims: [ 1,8,2 ]
+          material: black
+        config:
+          position: [ 29.5, -5, 1 ]
+          orientation: [0,0,0,1]
+      -
+        name: stadbox39
+        collision_geometry:
+          type: box
+          dims: [ 1,8,2 ]
+          material: black
+        config:
+          position: [ 29.5, 0, 1 ]
+          orientation: [0,0,0,1]
+# =-=-=-=-=-=-=
+#  East Garage
+# =-=-=-=-=-=-=
+east:
+    type: obstacle
+    geometries:
+      -
+        name: egbox1
+        collision_geometry: 
+          type: box
+          dims: [8, 1, 2]      
+          material: blue       
+        config:
+          position: [ 46, -30.5, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: egpost
+        collision_geometry: 
+          type: box
+          dims: [1, 1, 2]      
+          material: blue       
+        config:
+          position: [ 50.5, -30.5, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: egbox2
+        collision_geometry: 
+          type: box
+          dims: [1, 8, 2]      
+          material: blue       
+        config:
+          position: [ 50.5, -26, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: egbox3
+        collision_geometry: 
+          type: box
+          dims: [1, 8, 2]      
+          material: blue       
+        config:
+          position: [ 50.5, -20, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: egbox4
+        collision_geometry: 
+          type: box
+          dims: [8, 1, 2]      
+          material: blue       
+        config:
+          position: [ 54, -11.5, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: egbox5
+        collision_geometry: 
+          type: box
+          dims: [8, 1, 2]      
+          material: blue       
+        config:
+          position: [ 60, -11.5, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: egbox6
+        collision_geometry: 
+          type: box
+          dims: [1, 8, 2]      
+          material: blue       
+        config:
+          position: [ 63.5, -16, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: egbox7
+        collision_geometry: 
+          type: box
+          dims: [1, 8, 2]      
+          material: blue       
+        config:
+          position: [ 63.5, -22, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: egbox8
+        collision_geometry: 
+          type: box
+          dims: [1, 8, 2]      
+          material: blue       
+        config:
+          position: [ 63.5, -28, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: egboxlst
+        collision_geometry: 
+          type: box
+          dims: [1, 8, 2]      
+          material: blue       
+        config:
+          position: [ 37.5, -34, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: egbox9
+        collision_geometry: 
+          type: box
+          dims: [1, 8, 2]      
+          material: blue       
+        config:
+          position: [ 63.5, -34, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: egbox10
+        collision_geometry: 
+          type: box
+          dims: [1, 8, 2]      
+          material: blue       
+        config:
+          position: [ 63.5, -40, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: egbox11
+        collision_geometry: 
+          type: box
+          dims: [8, 1, 2]      
+          material: blue       
+        config:
+          position: [ 60, -43.5, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: egbox12
+        collision_geometry: 
+          type: box
+          dims: [8, 1, 2]      
+          material: blue       
+        config:
+          position: [ 54, -43.5, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: egbox13
+        collision_geometry: 
+          type: box
+          dims: [8, 1, 2]      
+          material: blue       
+        config:
+          position: [ 48, -43.5, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: egbox14
+        collision_geometry: 
+          type: box
+          dims: [8, 1, 2]      
+          material: blue       
+        config:
+          position: [ 42, -43.5, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: egbox15
+        collision_geometry: 
+          type: box
+          dims: [1, 8, 2]      
+          material: blue       
+        config:
+          position: [ 37.5, -40, 1]
+          orientation: [ 0,0,0,1 ]
+# =-=-=-=-=-=-=
+#  West Garage
+# =-=-=-=-=-=-=
+west:
+    type: obstacle
+    geometries:
+      -
+        name: wgbox1
+        collision_geometry: 
+          type: box
+          dims: [1, 8, 2]      
+          material: red       
+        config:
+          position: [ -50.5, -10, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: wgbox2
+        collision_geometry: 
+          type: box
+          dims: [1, 8, 2]      
+          material: red       
+        config:
+          position: [ -50.5, -22, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: wgbox3
+        collision_geometry: 
+          type: box
+          dims: [1, 8, 2]      
+          material: red       
+        config:
+          position: [ -50.5, -28, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: wgbox4
+        collision_geometry: 
+          type: box
+          dims: [8, 1, 2]      
+          material: red       
+        config:
+          position: [ -54, -31.5, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: wgbox5
+        collision_geometry: 
+          type: box
+          dims: [8, 1, 2]      
+          material: red       
+        config:
+          position: [ -60, -31.5, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: wgbox6
+        collision_geometry: 
+          type: box
+          dims: [1, 8, 2]      
+          material: red       
+        config:
+          position: [ -63.5, -28, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: wgbox7
+        collision_geometry: 
+          type: box
+          dims: [1, 8, 2]      
+          material: red       
+        config:
+          position: [ -63.5, -22, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: wgbox8
+        collision_geometry: 
+          type: box
+          dims: [1, 8, 2]      
+          material: red       
+        config:
+          position: [ -63.5, -16, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: wgbox9
+        collision_geometry: 
+          type: box
+          dims: [1, 8, 2]      
+          material: red       
+        config:
+          position: [ -63.5, -10, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: wgbox10
+        collision_geometry: 
+          type: box
+          dims: [1, 8, 2]      
+          material: red       
+        config:
+          position: [ -63.5, -4, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: wgbox11
+        collision_geometry: 
+          type: box
+          dims: [8, 1, 2]      
+          material: red       
+        config:
+          position: [ -60, -0.5, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: wgbox12
+        collision_geometry: 
+          type: box
+          dims: [8, 1, 2]      
+          material: red       
+        config:
+          position: [ -54, -0.5, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: wgbox13
+        collision_geometry: 
+          type: box
+          dims: [1, 2, 2]      
+          material: red       
+        config:
+          position: [ -50.5, -1, 1]
+          orientation: [ 0,0,0,1 ]
+# =-=-=-=-=-=-=
+# Train Station
+# =-=-=-=-=-=-=
+train:
+    type: obstacle
+    geometries:
+      -
+        name: trainbox2
+        collision_geometry: 
+          type: box
+          dims: [8, 1, 2]      
+          material: green       
+        config:
+          position: [ 18, 36.5, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: trainbox3
+        collision_geometry: 
+          type: box
+          dims: [1, 8, 2]      
+          material: green       
+        config:
+          position: [ 14.5, 40, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: trainbox4
+        collision_geometry: 
+          type: box
+          dims: [8, 1, 2]      
+          material: green       
+        config:
+          position: [ 18, 43.5, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: trainbox5
+        collision_geometry: 
+          type: box
+          dims: [8, 1, 2]      
+          material: green       
+        config:
+          position: [ 24, 43.5, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: trainbox6
+        collision_geometry: 
+          type: box
+          dims: [8, 1, 2]      
+          material: green       
+        config:
+          position: [ 32, 43.5, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: trainbox7
+        collision_geometry: 
+          type: box
+          dims: [8, 1, 2]      
+          material: green       
+        config:
+          position: [ 38, 43.5, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: trainbox8
+        collision_geometry: 
+          type: box
+          dims: [1, 8, 2]      
+          material: green       
+        config:
+          position: [ 41.5, 40, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: trainbox9
+        collision_geometry: 
+          type: box
+          dims: [8, 1, 2]      
+          material: green       
+        config:
+          position: [ 38, 36.5, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: trainbox1
+        collision_geometry: 
+          type: box
+          dims: [8, 1, 2]      
+          material: green       
+        config:
+          position: [ 32, 36.5, 1]
+          orientation: [ 0,0,0,1 ]
+
+
+# =-=-=-=-=-=-=
+# Perimeter
+# =-=-=-=-=-=-=
+perimeter:
+    type: obstacle
+    geometries:
+      -
+        name: perimwall1
+        collision_geometry: 
+          type: box
+          dims: [0.2, 22, 2]      
+          material: grey       
+        config:
+          position: [ 38, 0, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: perimwall2
+        collision_geometry: 
+          type: box
+          dims: [0.2, 22, 2]      
+          material: grey       
+        config:
+          position: [ -38, 0, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: perimwall3
+        collision_geometry: 
+          type: box
+          dims: [44, 0.2, 2]      
+          material: grey       
+        config:
+          position: [ 0, 27, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: perimwall4
+        collision_geometry: 
+          type: box
+          dims: [44, 0.2, 2]      
+          material: grey       
+        config:
+          position: [ 0, -27, 1]
+          orientation: [ 0,0,0,1 ]
+      -
+        name: perimwall11
+        collision_geometry: 
+          type: box
+          dims: [0.2, 10, 2]      
+          material: grey       
+        config:
+          position: [ 25.5, 23.5, 1]
+          orientation: [ 0,0,0.38268343,0.92387953 ]
+      -
+        name: perimwall12
+        collision_geometry: 
+          type: box
+          dims: [0.2, 10, 2]      
+          material: grey       
+        config:
+          position: [ 34.5, 14.5, 1]
+          orientation: [ 0,0,0.38268343,0.92387953 ]
+      -
+        name: perimwall13
+        collision_geometry: 
+          type: box
+          dims: [0.2, 10, 2]      
+          material: grey       
+        config:
+          position: [ -25.5, -23.5, 1]
+          orientation: [ 0,0,0.38268343,0.92387953 ]
+      -
+        name: perimwall14
+        collision_geometry: 
+          type: box
+          dims: [0.2, 10, 2]      
+          material: grey       
+        config:
+          position: [ -34.5, -14.5, 1]
+          orientation: [ 0,0,0.38268343,0.92387953 ]
+      -
+        name: perimwall15
+        collision_geometry: 
+          type: box
+          dims: [9, 0.2, 2]      
+          material: grey       
+        config:
+          position: [ 25.5, -23.5, 1]
+          orientation: [ 0,0,0.38268343,0.92387953 ]
+      -
+        name: perimwall16
+        collision_geometry: 
+          type: box
+          dims: [10, 0.2, 2]      
+          material: grey       
+        config:
+          position: [ 34.5, -14.5, 1]
+          orientation: [ 0,0,0.38268343,0.92387953 ]          
+      -
+        name: perimwall17
+        collision_geometry: 
+          type: box
+          dims: [10, 0.2, 2]      
+          material: grey       
+        config:
+          position: [ -25.5, 23.5, 1]
+          orientation: [ 0,0,0.38268343,0.92387953 ]
+      -
+        name: perimwall18
+        collision_geometry: 
+          type: box
+          dims: [10, 0.2, 2]      
+          material: grey       
+        config:
+          position: [ -34.5, 14.5, 1]
+          orientation: [ 0,0,0.38268343,0.92387953 ] 
+

@@ -1,0 +1,48 @@
+open_table:
+  type: obstacle 
+  geometries:
+    -
+      name: top1
+      collision_geometry:
+        type: box
+        dims: [1.0,1.6,0.06]
+        material: white
+      config:
+        position: [1.1, 0, 0.77]
+        orientation: [0,0,0,1]
+    -
+      name: leg_1_1
+      collision_geometry:
+        type: box
+        dims: [0.06,0.06,0.78]
+        material: gold
+      config:
+        position: [1.565, 0.465, 0.39]
+        orientation: [0,0,0,1]
+    -
+      name: leg_2_1
+      collision_geometry:
+        type: box
+        dims: [0.06,0.06,0.78]
+        material: gold
+      config:
+        position: [0.635, 0.465, 0.39]
+        orientation: [0,0,0,1]
+    -
+      name: leg_3_1
+      collision_geometry:
+        type: box
+        dims: [0.06,0.06,0.78]
+        material: gold
+      config:
+        position: [0.635, -0.465, 0.39]
+        orientation: [0,0,0,1]
+    -
+      name: leg_4_1
+      collision_geometry:
+        type: box
+        dims: [0.06,0.06,0.78]
+        material: gold
+      config:
+        position: [1.565, -0.465, 0.39]
+        orientation: [0,0,0,1]

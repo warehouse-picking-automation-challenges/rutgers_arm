@@ -1,0 +1,14 @@
+<class name="prx_simulation/ntrt_simulator"
+    type="prx::sim::ntrt_simulator_t"
+    base_class_type="prx::sim::simulator_t">
+    <description>
+        A simulator to wrap the NTRT functionality
+    </description>        
+</class>
+<class name="prx_simulation/ntrt_plant"
+    type="prx::sim::ntrt_plant_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        A plant to enclose NTRT structures
+    </description>        
+</class>

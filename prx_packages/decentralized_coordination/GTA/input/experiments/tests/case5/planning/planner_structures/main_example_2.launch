@@ -1,0 +1,66 @@
+<launch>
+  <!-- Load the planning application -->
+  <rosparam command="load" file="$(find GTA)/input/templates/planning_applications/replanning_gta_application.yaml"/>
+  
+  <rosparam>
+    consumer_mapping:
+      - 
+        pair: [simulator/consumer2, space1]
+    my_plant: simulator/consumer2/vo_controller2/disk2
+  </rosparam>
+
+  <!-- Load template files -->
+       
+  <rosparam command="load" ns="rrt_motion_planner/" file="$(find prx_input)/templates/motion_planners/rrt.yaml"/>
+  <rosparam command="load" ns="prm_motion_planner/" file="$(find GTA)/input/templates/motion_planners/special_prm.yaml"/>
+        
+  <!-- We currently only support one task planner. It will be future work to bring task planners that work on task planners. -->
+  <rosparam command="load" ns="task_planner/" file="$(find GTA)/input/templates/task_planners/replanning_gta.yaml"/>
+
+  <!-- Overwrite any parameters for the template or the task planner -->
+  <rosparam ns="task_planner/" >
+    epsilon: 5
+  </rosparam>
+            
+  <rosparam ns="rrt_motion_planner/" >
+    local_planner:
+      type: bvp_local_planner
+  </rosparam>  
+      
+  <rosparam ns="prm_motion_planner/" >
+    local_planner:
+      type: bvp_local_planner
+  </rosparam>  
+
+  <!-- Set up the motion planners used in the task planner. 
+	 1) can either be from template or loading a yaml and rewriting the values
+	 2) the space name needs to correspond to the names in the world_model file -->
+  <rosparam ns="task_planner/planners/" >
+  prm_motion_planner:
+    template: "prm_motion_planner"
+    space_name: "space1"
+    visualization_body: ["simulator/disk/body"]
+    visualize_graph: false
+    graph_color: yellow
+    visualize_solution: true
+    store_interpolated_edges: true      
+    distance_metric:
+      type: linear_distance_metric
+    radius_solution: false
+    deserialize_fie: roadmaps/500_corridors.txt      
+  rrt_reconnection_strategy:
+    template: "rrt_motion_planner"
+    space_name: "space1"
+    visualization_body: ["simulator/disk/body"]
+    visualization_bodies: ["simulator/disk/body"]
+    visualize_tree: true
+    visualize_graph: true
+    graph_color: yellow
+    visualize_solution: true
+    distance_metric:
+      type: linear_distance_metric
+    radius_solution: false
+  </rosparam>
+
+
+</launch>

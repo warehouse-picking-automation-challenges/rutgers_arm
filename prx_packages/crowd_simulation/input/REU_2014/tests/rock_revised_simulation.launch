@@ -1,0 +1,384 @@
+<!-- -->
+<launch>
+
+  <rosparam command="load" file="$(find VO)/input/templates/vo_application.yaml"/>
+  <rosparam command="load" file="$(find prx_input)/templates/simulators/collision_stop_simulator.yaml"/>
+  <rosparam command="load" ns="simulator/obstacles" file="$(find REU_2014_VO)/input/templates/environments/rock_cafe_revised.yaml" />
+  <rosparam command="load" ns="controller" file="$(find prx_input)/templates/controllers/multigoal_controller.yaml"/>
+  <rosparam command="load" ns="vo_controller" file="$(find VO)/input/templates/vo_controller.yaml"/>
+  <rosparam command="load" ns="disk" file="$(find prx_input)/templates/plants/disk.yaml"/> 
+  <rosparam command="load" ns="skeleton" file="$(find motion_capture_data)/input/skeleton/walk_new.yaml"/>
+  <!--last agent finishes in approximately 41 seconds -->
+  <rosparam ns="vo_controller">
+    input_control_space:
+      min: [-500, -500]
+      max: [500, 500]
+    sensing_info:
+        type: VO_sensing_info
+        sources: ["conf_sensor1", "geom_sensor1", "vel_sensor1"]
+        update_delay: 0.02
+        system_path: "simulator/controller1/vo1/skeleton1/body"
+        max_num_neighbors: 3
+        sensing_radius: 5
+    num_samples: 50
+  </rosparam>
+              
+  <rosparam ns="simulator/sensing">
+    type: VO_sensing_model
+    sensors:
+        conf_sensor1:
+          type: config_sensor
+          source: "conf_sensor1"
+          sensor_delay: 0.02
+        geom_sensor1:
+          type: geom_sensor
+          source: "geom_sensor1"
+          sensor_delay: 0.02
+        vel_sensor1:
+          type: velocity_sensor
+          source: "vel_sensor1"
+          sensor_delay: 0.02
+  </rosparam>
+
+<!-- enters, gets in panini line, orders, joins clump -->
+  <rosparam command="load" ns="simulator/subsystems/controller1">
+    template: "controller"
+    goal_radius: 3
+    multigoals: 
+    -
+        state: [-112, -173.5]
+    -
+        state: [-113, -100]
+    -
+        state: [-113, 154]
+    -
+        state: [45, 150]
+
+</rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller1/subsystems/vo1">
+    template: "vo_controller"
+    
+  </rosparam>
+
+            
+  <rosparam command="load" ns="simulator/subsystems/controller1/subsystems/vo1/subsystems/skeleton1">
+    template: "skeleton"
+    initial_state: [-145,-190]
+    state_space:
+      min: [-550, -550]
+      max: [550, 550]
+    input_control_space:
+      min: [0, -4]
+      max: [25, 4]
+  </rosparam>
+
+
+
+<!--enters, gets grapes, drink, pays, leaves -->
+  <rosparam command="load" ns="simulator/subsystems/controller2">
+    template: "controller"
+    goal_radius: 3
+    multigoals: 
+    -
+        state: [-145, -200]
+    -
+        state: [-31, -170]
+    -
+        state: [-31, -95]
+    -
+        state: [-40, -45]
+    -
+        state: [-15,-25]
+    -
+        state: [85, 25]
+    -
+        state: [70, -60]
+    -
+        state: [50, -90]
+    -
+        state: [20, -45]
+    -
+        state: [0, -60]
+    -
+        state: [5,-175]
+    -
+        state: [55, -145]
+    -
+        state: [115, -155]
+    -
+        state: [115, -215]
+  </rosparam>     
+ 
+  <rosparam command="load" ns="simulator/subsystems/controller2/subsystems/vo2">
+    template: "vo_controller"
+    sensing_info:
+        system_path: "simulator/vo2/skeleton2/body"
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller2/subsystems/vo2/subsystems/skeleton2">
+    template: "skeleton"
+    initial_state: [-145,-200]
+    state_space:
+      min: [-550, -550]
+      max: [550, 550]
+    input_control_space:
+      min: [0, -4]
+      max: [25, 4]
+  </rosparam>
+
+<!--enters, gets into grill line, orders, joins clump -->
+  <rosparam command="load" ns="simulator/subsystems/controller3">
+    template: "controller"
+    goal_radius: 3
+    multigoals: 
+    -
+        state: [-80, -190]
+    -
+        state: [-25, -175]
+    -
+        state: [-25, -160]
+    -
+        state: [-23, 88]
+    -
+        state: [85, 30]
+    -
+        state: [70, -60]
+    -
+        state: [50, -90]
+    -
+        state: [20, -45]
+    -
+        state: [0, -60]
+    -
+        state: [5,-175]
+    -
+        state: [55, -157]
+    -
+        state: [115, -160]
+    -
+        state: [115, -215]
+
+
+</rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller3/subsystems/vo3">
+    template: "vo_controller"
+    
+  </rosparam>
+
+            
+  <rosparam command="load" ns="simulator/subsystems/controller3/subsystems/vo3/subsystems/skeleton3">
+    template: "skeleton"
+    initial_state: [-150,-200]
+    state_space:
+      min: [-550, -550]
+      max: [550, 550]
+    input_control_space:
+      min: [0, -4]
+      max: [25, 4]
+  </rosparam>
+
+<!--enters, gets hot food and drink, pays, leaves -->
+<rosparam command="load" ns="simulator/subsystems/controller4">
+    template: "controller"
+    goal_radius: 3
+    multigoals: 
+    -
+        state: [-85, -175]
+    -
+        state: [-85, -150]
+    -
+        state: [-85, 110]
+    -
+        state: [-50, 115]
+    -
+        state: [-50, 157]
+    -
+        state: [26, 155]
+    -
+        state: [80, 115]
+    -
+        state: [60, 130]
+
+
+</rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller4/subsystems/vo4">
+    template: "vo_controller"
+    
+  </rosparam>
+
+            
+  <rosparam command="load" ns="simulator/subsystems/controller4/subsystems/vo4/subsystems/skeleton4">
+    template: "skeleton"
+    initial_state: [-140,-190]
+    state_space:
+      min: [-550, -550]
+      max: [550, 550]
+    input_control_space:
+      min: [0, -4]
+      max: [25, 4]
+  </rosparam>
+
+<!--leaves clump to pick up order -->
+  <rosparam command="load" ns="simulator/subsystems/controller5">
+    template: "controller"
+    goal_radius: 3
+    multigoals: 
+    -
+        state: [45, 130]
+    -
+        state: [50, 157]
+    -
+        state: [70, -60]
+    -
+        state: [50, -90]
+    -
+        state: [20, -45]
+    -
+        state: [0, -60]
+    -
+        state: [5,-175]
+    -
+        state: [55, -157]
+    -
+        state: [115, -157]
+    -
+        state: [115, -215]
+
+
+    </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller5/subsystems/vo5">
+    template: "vo_controller"
+    
+  </rosparam>
+
+            
+  <rosparam command="load" ns="simulator/subsystems/controller5/subsystems/vo5/subsystems/skeleton5">
+    template: "skeleton"
+    initial_state: [45,130]
+    state_space:
+      min: [-550, -550]
+      max: [550, 550]
+    input_control_space:
+      min: [0, -4]
+      max: [25, 4]
+  </rosparam>
+
+<!--stays in clump -->
+  <rosparam command="load" ns="simulator/subsystems/controller6">
+    template: "controller"
+    goal_radius: 3
+    multigoals: 
+    -
+        state: [36, 130]
+
+
+    </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller6/subsystems/vo6">
+    template: "vo_controller"
+    
+  </rosparam>
+
+            
+  <rosparam command="load" ns="simulator/subsystems/controller6/subsystems/vo6/subsystems/skeleton6">
+    template: "skeleton"
+    initial_state: [36,130]
+    state_space:
+      min: [-550, -550]
+      max: [550, 550]
+    input_control_space:
+      min: [0, -4]
+      max: [25, 4]
+  </rosparam>
+
+<!--stays in clump -->
+  <rosparam command="load" ns="simulator/subsystems/controller7">
+    template: "controller"
+    goal_radius: 3
+    multigoals: 
+    -
+        state: [60, 137]
+
+
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller7/subsystems/vo7">
+    template: "vo_controller"
+    
+  </rosparam>
+
+            
+  <rosparam command="load" ns="simulator/subsystems/controller7/subsystems/vo7/subsystems/skeleton7">
+    template: "skeleton"
+    initial_state: [60,137]
+    state_space:
+      min: [-550, -550]
+      max: [550, 550]
+    input_control_space:
+      min: [0, -4]
+      max: [25, 4]
+  </rosparam>
+
+<!-- stays in clump -->
+  <rosparam command="load" ns="simulator/subsystems/controller8">
+    template: "controller"
+    goal_radius: 3
+    multigoals: 
+    -
+        state: [40, 125]
+
+
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller8/subsystems/vo8">
+    template: "vo_controller"
+    
+  </rosparam>
+
+            
+  <rosparam command="load" ns="simulator/subsystems/controller8/subsystems/vo8/subsystems/skeleton8">
+    template: "skeleton"
+    initial_state: [40,125]
+    state_space:
+      min: [-550, -550]
+      max: [550, 550]
+    input_control_space:
+      min: [0, -4]
+      max: [25, 4]
+  </rosparam>
+
+
+<!-- stays in clump-->
+  <rosparam command="load" ns="simulator/subsystems/controller9">
+    template: "controller"
+    goal_radius: 3
+    multigoals: 
+    -
+        state: [70,145]
+
+
+  </rosparam>
+
+  <rosparam command="load" ns="simulator/subsystems/controller9/subsystems/vo9">
+    template: "vo_controller"
+    
+  </rosparam>
+
+            
+  <rosparam command="load" ns="simulator/subsystems/controller9/subsystems/vo9/subsystems/skeleton9">
+    template: "skeleton"
+    initial_state: [70,145]
+    state_space:
+      min: [-550, -550]
+      max: [550, 550]
+    input_control_space:
+      min: [0, -4]
+      max: [25, 4]
+  </rosparam>
+
+
+</launch>

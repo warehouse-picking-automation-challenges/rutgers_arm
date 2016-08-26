@@ -1,0 +1,19 @@
+type: disk
+z: 1
+integrator: 
+  type: euler
+state_space: 
+  min: [-10, -10]
+  max: [10, 10]
+input_control_space:
+  min: [0, -3.1416]
+  max: [10, 3.1416]
+root_geom: body
+geometries:
+  -
+    name: body
+    collision_geometry:
+      type: cylinder
+      radius: .5
+      height: 2
+      material: red

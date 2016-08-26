@@ -1,0 +1,147 @@
+building1:
+    type: obstacle
+    geometries:
+    -
+        name: GridBoxAa
+        collision_geometry: 
+            type: box
+            dims: [30, 30, 2.6]      
+            material: red    
+        config:
+            position: [-135, 135, 0]
+            orientation: [0,0,0,1]
+    -
+        name: GridBoxAb
+        collision_geometry: 
+            type: box
+            dims: [30, 30, 2.6]      
+            material: red    
+        config:
+            position: [45, 135, 0]
+            orientation: [0,0,0,1]
+    -
+        name: GridBoxAc
+        collision_geometry: 
+            type: box
+            dims: [30, 30, 2.6]      
+            material: red    
+        config:
+            position: [-45, 135, 0]
+            orientation: [0,0,0,1]
+    -
+        name: GridBoxAd
+        collision_geometry: 
+            type: box
+            dims: [30, 30, 2.6]      
+            material: red    
+        config:
+            position: [135, 135, 0]
+            orientation: [0,0,0,1]
+    -
+        name: GridBoxBa
+        collision_geometry: 
+            type: box
+            dims: [30, 30, 2.6]      
+            material: red    
+        config:
+            position: [45, 45, 0]
+            orientation: [0,0,0,1]
+    -
+        name: GridBoxBb
+        collision_geometry: 
+            type: box
+            dims: [30, 30, 2.6]      
+            material: red    
+        config:
+            position: [-135, 45, 0]
+            orientation: [0,0,0,1]
+    -
+        name: GridBoxBc
+        collision_geometry: 
+            type: box
+            dims: [30, 30, 2.6]      
+            material: red    
+        config:
+            position: [-45, 45, 0]
+            orientation: [0,0,0,1]
+    -
+        name: GridBoxBd
+        collision_geometry: 
+            type: box
+            dims: [30, 30, 2.6]     
+            material: red    
+        config:
+            position: [135, 45, 0]
+            orientation: [0,0,0,1]
+    -
+        name: GridBoxCa
+        collision_geometry: 
+            type: box
+            dims: [30, 30, 2.6]      
+            material: red    
+        config:
+            position: [-135, -45, 0]
+            orientation: [0,0,0,1]
+    -
+        name: GridBoxCb
+        collision_geometry: 
+            type: box
+            dims: [30, 30, 2.6]      
+            material: red    
+        config:
+            position: [45, -45, 0]
+            orientation: [0,0,0,1]
+    -
+        name: GridBoxCc
+        collision_geometry: 
+            type: box
+            dims: [30, 30, 2.6]      
+            material: red    
+        config:
+            position: [-45, -45, 0]
+            orientation: [0,0,0,1]
+    -
+        name: GridBoxCd
+        collision_geometry: 
+            type: box
+            dims: [30, 30, 2.6]     
+            material: red    
+        config:
+            position: [135, -45, 0]
+            orientation: [0,0,0,1]
+    -
+        name: GridBoxDa
+        collision_geometry: 
+            type: box
+            dims: [30, 30, 2.6]      
+            material: red    
+        config:
+            position: [-135, -135, 0]
+            orientation: [0,0,0,1]
+    -
+        name: GridBoxDb
+        collision_geometry: 
+            type: box
+            dims: [30, 30, 2.6]      
+            material: red    
+        config:
+            position: [45, -135, 0]
+            orientation: [0,0,0,1]
+    -
+        name: GridBoxDc
+        collision_geometry: 
+            type: box
+            dims: [30, 30, 2.6]      
+            material: red    
+        config:
+            position: [-45, -135, 0]
+            orientation: [0,0,0,1]
+    -
+        name: GridBoxDd
+        collision_geometry: 
+            type: box
+            dims: [30, 30, 2.6]      
+            material: red    
+        config:
+            position: [135, -135, 0]
+            orientation: [0,0,0,1]

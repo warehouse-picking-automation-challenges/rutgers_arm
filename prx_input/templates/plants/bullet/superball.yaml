@@ -1,0 +1,538 @@
+type: bullet_plant
+geometries:
+  -
+    name: ball
+    collision_geometry:
+      type: sphere
+      radius: .001
+      material: green
+    config: 
+      position: [80 -80 40.7]
+      orientation: [0,0,0,1]
+      # orientation: [0.6565737254439724,0.16992415613928194,0.31804830657217603,0.6624816970328669]
+      # orientation: [0.5829881872440723,-0.2033007521395079,0.37598910184524803,0.690960037199681]
+      # orientation: [0,-0.707,0,0.707]
+    mass: .0005
+  -
+    name: node0
+    collision_geometry:
+      type: sphere
+      radius: .2
+      material: white
+    relative_to: ball
+    config: 
+      position: [-7.5 -7.5 0]
+      orientation: [0 0 0 1]
+    mass: .05
+  -
+    name: node1
+    collision_geometry:
+      type: sphere
+      radius: .2
+      material: white
+    relative_to: ball
+    config: 
+      position: [-7.5 7.5 0]
+      orientation: [0 0 0 1]
+    mass: .05
+  -
+    name: node2
+    collision_geometry:
+      type: sphere
+      radius: .2
+      material: white
+    relative_to: ball
+    config: 
+      position: [7.5 -7.5 0 ]
+      orientation: [0 0 0 1]
+    mass: .05
+  -
+    name: node3
+    collision_geometry:
+      type: sphere
+      radius: .2
+      material: white
+    relative_to: ball
+    config: 
+      position: [7.5 7.5 0]
+      orientation: [0 0 0 1]
+    mass: .05
+  -
+    name: node4
+    collision_geometry:
+      type: sphere
+      radius: .2
+      material: white
+    relative_to: ball
+    config: 
+      position: [0 -7.5 -7.5]
+      orientation: [0 0 0 1]
+    mass: .05
+  -
+    name: node5
+    collision_geometry:
+      type: sphere
+      radius: .2
+      material: white
+    relative_to: ball
+    config: 
+      position: [0 -7.5 7.5]
+      orientation: [0 0 0 1]
+    mass: .05
+  -
+    name: node6
+    collision_geometry:
+      type: sphere
+      radius: .2
+      material: white
+    relative_to: ball
+    config: 
+      position: [0 7.5 -7.5]
+      orientation: [0 0 0 1]
+    mass: .05
+  -
+    name: node7
+    collision_geometry:
+      type: sphere
+      radius: .2
+      material: white
+    relative_to: ball
+    config: 
+      position: [0 7.5 7.5]
+      orientation: [0 0 0 1]
+    mass: .05
+  -
+    name: node8
+    collision_geometry:
+      type: sphere
+      radius: .2
+      material: white
+    relative_to: ball
+    config: 
+      position: [-7.5 0 7.5]
+      orientation: [0 0 0 1]
+    mass: .05
+  -
+    name: node9
+    collision_geometry:
+      type: sphere
+      radius: .2
+      material: white
+    relative_to: ball
+    config: 
+      position: [7.5 0 7.5]
+      orientation: [0 0 0 1]
+    mass: .05
+  -
+    name: node10
+    collision_geometry:
+      type: sphere
+      radius: .2
+      material: white
+    relative_to: ball
+    config: 
+      position: [-7.5 0 -7.5]
+      orientation: [0 0 0 1]
+    mass: .05
+  -
+    name: node11
+    collision_geometry:
+      type: sphere
+      radius: .2
+      material: white
+    relative_to: ball
+    config: 
+      position: [7.5 0 -7.5]
+      orientation: [0 0 0 1]
+    mass: .05
+  -
+    name: rod0
+    collision_geometry:
+      type: cylinder
+      radius: .31
+      height: 15
+      material: blue
+    between: ["node0", "node1"]
+    mass: 3.6
+  -
+    name: rod1
+    collision_geometry:
+      type: cylinder
+      radius: .31
+      height: 15
+      material: blue
+    between: ["node2", "node3"]
+    mass: 3.6
+  -
+    name: rod2
+    collision_geometry:
+      type: cylinder
+      radius: .31
+      height: 15
+      material: blue
+    between: ["node4", "node5"]
+    mass: 3.6
+  -
+    name: rod3
+    collision_geometry:
+      type: cylinder
+      radius: .31
+      height: 15
+      material: red
+    between: ["node6", "node7"]
+    mass: 3.6
+  -
+    name: rod4
+    collision_geometry:
+      type: cylinder
+      radius: .31
+      height: 15
+      material: red
+    between: ["node8", "node9"]
+    mass: 3.6
+  -
+    name: rod5
+    collision_geometry:
+      type: cylinder
+      radius: .31
+      height: 15
+      material: red
+    between: ["node10", "node11"]
+    mass: 3.6
+joints:
+  -
+    type: generic
+    root_body: rod0
+    child_body: node0
+    linear_lower_limits: [0,0,0]
+    linear_upper_limits: [0,0,0]
+    angular_lower_limits: [0,0,0]
+    angular_upper_limits: [0,0,0]
+  -
+    type: generic
+    root_body: rod0
+    child_body: node1
+    linear_lower_limits: [0,0,0]
+    linear_upper_limits: [0,0,0]
+    angular_lower_limits: [0,0,0]
+    angular_upper_limits: [0,0,0]
+  -
+    type: generic
+    root_body: rod1
+    child_body: node2
+    linear_lower_limits: [0,0,0]
+    linear_upper_limits: [0,0,0]
+    angular_lower_limits: [0,0,0]
+    angular_upper_limits: [0,0,0]
+  -
+    type: generic
+    root_body: rod1
+    child_body: node3
+    linear_lower_limits: [0,0,0]
+    linear_upper_limits: [0,0,0]
+    angular_lower_limits: [0,0,0]
+    angular_upper_limits: [0,0,0]
+  -
+    type: generic
+    root_body: rod2
+    child_body: node4
+    linear_lower_limits: [0,0,0]
+    linear_upper_limits: [0,0,0]
+    angular_lower_limits: [0,0,0]
+    angular_upper_limits: [0,0,0]
+  -
+    type: generic
+    root_body: rod2
+    child_body: node5
+    linear_lower_limits: [0,0,0]
+    linear_upper_limits: [0,0,0]
+    angular_lower_limits: [0,0,0]
+    angular_upper_limits: [0,0,0]
+  -
+    type: generic
+    root_body: rod3
+    child_body: node6
+    linear_lower_limits: [0,0,0]
+    linear_upper_limits: [0,0,0]
+    angular_lower_limits: [0,0,0]
+    angular_upper_limits: [0,0,0]
+  -
+    type: generic
+    root_body: rod3
+    child_body: node7
+    linear_lower_limits: [0,0,0]
+    linear_upper_limits: [0,0,0]
+    angular_lower_limits: [0,0,0]
+    angular_upper_limits: [0,0,0]
+  -
+    type: generic
+    root_body: rod4
+    child_body: node8
+    linear_lower_limits: [0,0,0]
+    linear_upper_limits: [0,0,0]
+    angular_lower_limits: [0,0,0]
+    angular_upper_limits: [0,0,0]
+  -
+    type: generic
+    root_body: rod4
+    child_body: node9
+    linear_lower_limits: [0,0,0]
+    linear_upper_limits: [0,0,0]
+    angular_lower_limits: [0,0,0]
+    angular_upper_limits: [0,0,0]
+  -
+    type: generic
+    root_body: rod5
+    child_body: node10
+    linear_lower_limits: [0,0,0]
+    linear_upper_limits: [0,0,0]
+    angular_lower_limits: [0,0,0]
+    angular_upper_limits: [0,0,0]
+  -
+    type: generic
+    root_body: rod5
+    child_body: node11
+    linear_lower_limits: [0,0,0]
+    linear_upper_limits: [0,0,0]
+    angular_lower_limits: [0,0,0]
+    angular_upper_limits: [0,0,0]
+  -
+    type: spring_cable
+    root_body: node0
+    root_link: rod0
+    child_body: node4
+    child_link: rod2
+    damping_coefficient: 200
+    stiffness: 613
+    pretension: 0
+    limit: [5,11]
+  -
+    type: spring_cable
+    root_body: node0
+    root_link: rod0
+    child_body: node5
+    child_link: rod2
+    damping_coefficient: 200
+    stiffness: 613
+    pretension: 0
+    limit: [5,11]
+  -
+    type: spring_cable
+    root_body: node0
+    root_link: rod0
+    child_body: node8
+    child_link: rod4
+    damping_coefficient: 200
+    stiffness: 613
+    pretension: 0
+    limit: [5,11]
+  -
+    type: spring_cable
+    root_body: node0
+    root_link: rod0
+    child_body: node10
+    child_link: rod5
+    damping_coefficient: 200
+    stiffness: 613
+    pretension: 0
+    limit: [5,11]
+  -
+    type: spring_cable
+    root_body: node1
+    root_link: rod0
+    child_body: node6
+    child_link: rod3
+    damping_coefficient: 200
+    stiffness: 613
+    pretension: 0
+    limit: [5,11]
+  -
+    type: spring_cable
+    root_body: node1
+    root_link: rod0
+    child_body: node7
+    child_link: rod3
+    damping_coefficient: 200
+    stiffness: 613
+    pretension: 0
+    limit: [5,11]
+  -
+    type: spring_cable
+    root_body: node1
+    root_link: rod0
+    child_body: node8
+    child_link: rod4
+    damping_coefficient: 200
+    stiffness: 613
+    pretension: 0
+    limit: [5,11]
+  -
+    type: spring_cable
+    root_body: node1
+    root_link: rod0
+    child_body: node10
+    child_link: rod5
+    damping_coefficient: 200
+    stiffness: 613
+    pretension: 0
+    limit: [5,11]
+  -
+    type: spring_cable
+    root_body: node2
+    root_link: rod1
+    child_body: node4
+    child_link: rod2
+    damping_coefficient: 200
+    stiffness: 613
+    pretension: 0
+    limit: [5,11]
+  -
+    type: spring_cable
+    root_body: node2
+    root_link: rod1
+    child_body: node5
+    child_link: rod2
+    damping_coefficient: 200
+    stiffness: 613
+    pretension: 0
+    limit: [5,11]
+  -
+    type: spring_cable
+    root_body: node2
+    root_link: rod1
+    child_body: node9
+    child_link: rod4
+    damping_coefficient: 200
+    stiffness: 613
+    pretension: 0
+    limit: [5,11]
+  -
+    type: spring_cable
+    root_body: node2
+    root_link: rod1
+    child_body: node11
+    child_link: rod5
+    damping_coefficient: 200
+    stiffness: 613
+    pretension: 0
+    limit: [5,11]
+  -
+    type: spring_cable
+    root_body: node3
+    root_link: rod1
+    child_body: node7
+    child_link: rod3
+    damping_coefficient: 200
+    stiffness: 613
+    pretension: 0
+    limit: [5,11]
+  -
+    type: spring_cable
+    root_body: node3
+    root_link: rod1
+    child_body: node6
+    child_link: rod3
+    damping_coefficient: 200
+    stiffness: 613
+    pretension: 0
+    limit: [5,11]
+  -
+    type: spring_cable
+    root_body: node3
+    root_link: rod1
+    child_body: node9
+    child_link: rod4
+    damping_coefficient: 200
+    stiffness: 613
+    pretension: 0
+    limit: [5,11]
+  -
+    type: spring_cable
+    root_body: node3
+    root_link: rod1
+    child_body: node11
+    child_link: rod5
+    damping_coefficient: 200
+    stiffness: 613
+    pretension: 0
+    limit: [5,11]
+  -
+    type: spring_cable
+    root_body: node4
+    root_link: rod2
+    child_body: node10
+    child_link: rod5
+    damping_coefficient: 200
+    stiffness: 613
+    pretension: 0
+    limit: [5,11]
+  -
+    type: spring_cable
+    root_body: node4
+    root_link: rod2
+    child_body: node11
+    child_link: rod5
+    damping_coefficient: 200
+    stiffness: 613
+    pretension: 0
+    limit: [5,11]
+  -
+    type: spring_cable
+    root_body: node5
+    root_link: rod2
+    child_body: node8
+    child_link: rod4
+    damping_coefficient: 200
+    stiffness: 613
+    pretension: 0
+    limit: [5,11]
+  -
+    type: spring_cable
+    root_body: node5
+    root_link: rod2
+    child_body: node9
+    child_link: rod4
+    damping_coefficient: 200
+    stiffness: 613
+    pretension: 0
+    limit: [5,11]
+  -
+    type: spring_cable
+    root_body: node6
+    root_link: rod3
+    child_body: node10
+    child_link: rod5
+    damping_coefficient: 200
+    stiffness: 613
+    pretension: 0
+    limit: [5,11]
+  -
+    type: spring_cable
+    root_body: node6
+    root_link: rod3
+    child_body: node11
+    child_link: rod5
+    damping_coefficient: 200
+    stiffness: 613
+    pretension: 0
+    limit: [5,11]
+  -
+    type: spring_cable
+    root_body: node7
+    root_link: rod3
+    child_body: node8
+    child_link: rod4
+    damping_coefficient: 200
+    stiffness: 613
+    pretension: 0
+    limit: [5,11]
+  -
+    type: spring_cable
+    root_body: node7
+    root_link: rod3
+    child_body: node9
+    child_link: rod4
+    damping_coefficient: 200
+    stiffness: 613
+    pretension: 0
+    limit: [5,11]

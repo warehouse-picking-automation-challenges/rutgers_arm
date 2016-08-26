@@ -1,0 +1,98 @@
+<launch>
+  <rosparam command="load" file="$(find prx_input)/templates/planning_applications/single_query_application.yaml"/>
+  <rosparam ns="task_planner/" >
+
+  </rosparam>
+  <rosparam ns="task_planner/" >
+    template: "task_planner"
+    visualization_body: "simulator/router/disk01/body"
+    visualize_graph: true
+    points:
+      -
+        point: [0,30,0]
+        id: 0
+      -
+        point: [10,40,0]
+        id: 1
+      -
+        point: [10,20,0]
+        id: 2
+      -
+        point: [20,30,0]
+        id: 3
+      -
+        point: [30,30,0]
+        id: 4
+      -
+        point: [30,40,0]
+        id: 5
+      -
+        point: [40,30,0]
+        id: 6
+      -
+        point: [50,30,0]
+        id: 7
+      -
+        point: [60,30,0]
+        id: 8
+      -
+        point: [70,40,0]
+        id: 9
+      -
+        point: [70,20,0]
+        id: 10
+      -
+        point: [60,10,0]
+        id: 11
+      -
+        point: [70,0,0]
+        id: 12
+    edges:
+      -
+        source: 0
+        target: 1
+      -
+        source: 0
+        target: 2
+      -
+        source: 1
+        target: 3
+      -
+        source: 2
+        target: 3
+      -
+        source: 3
+        target: 4
+      -
+        source: 4
+        target: 5
+      -
+        source: 4
+        target: 6
+      -
+        source: 6
+        target: 7
+      -
+        source: 7
+        target: 8
+      -
+        source: 8
+        target: 9
+      -
+        source: 8
+        target: 10
+      -
+        source: 9
+        target: 10
+      -
+        source: 10
+        target: 11
+      -
+        source: 10
+        target: 12
+      -
+        source: 11
+        target: 12
+  </rosparam>
+
+</launch>

@@ -1,0 +1,24 @@
+    
+    <class name="prx_planning/h_graph_application"
+        type="prx::packages::homotopies::h_graph_application_t"
+        base_class_type="prx::plan::planning_application_t">
+        <description>
+            H graph applications
+        </description>        
+    </class>
+
+    <class name="prx_planning/h_graph_planner"
+        type="prx::packages::homotopies::h_graph_planner_t"
+        base_class_type="prx::plan::planner_t">
+        <description>
+            Computes H-signatures on a roadmap
+        </description>        
+    </class>
+    
+    <class name="prx_planning/h_graph_query"
+        type="prx::packages::homotopies::h_graph_query_t"
+        base_class_type="prx::packages::query_t">
+        <description>
+            A query for multiple motion_planning_query's.
+        </description>        
+    </class>

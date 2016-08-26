@@ -1,0 +1,12 @@
+wall:
+    type: obstacle
+    geometries:
+    -
+        name: body
+        collision_geometry: 
+            type: box
+            dims: [2, 50, 30]      
+            material: purple    
+        config:
+            position: [0, 0, 15]
+            orientation: [0,0,0,1]

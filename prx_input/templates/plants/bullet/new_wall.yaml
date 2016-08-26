@@ -1,0 +1,267 @@
+type: bullet_plant
+geometries:
+  -
+    name: box1
+    collision_geometry: 
+      type: box
+      dims: [5, 5, 5]
+      material: blue
+    config: 
+      position: [110, -17.5, 11.5]
+      orientation: [0,0,0,1]
+    dims: [5, 5, 5]
+    mass: .05
+  -
+    name: box2
+    collision_geometry: 
+      type: box
+      dims: [5, 5, 5]
+      material: blue
+    config: 
+      position: [110, -12.5, 11.5]
+      orientation: [0,0,0,1]
+    dims: [5, 5, 5]
+    mass: .05
+  -
+    name: box3
+    collision_geometry: 
+      type: box
+      dims: [5, 5, 5]
+      material: blue
+    config: 
+      position: [110, -7.5, 11.5]
+      orientation: [0,0,0,1]
+    dims: [5, 5, 5]
+    mass: .05
+  -
+    name: box4
+    collision_geometry: 
+      type: box
+      dims: [5, 5, 5]
+      material: blue
+    config: 
+      position: [110, -2.5, 11.5]
+      orientation: [0,0,0,1]
+    dims: [5, 5, 5]
+    mass: .05
+  -
+    name: box5
+    collision_geometry: 
+      type: box
+      dims: [5, 5, 5]
+      material: blue
+    config: 
+      position: [110, 2.5, 11.5]
+      orientation: [0,0,0,1]
+    dims: [5, 5, 5]
+    mass: .05
+  -
+    name: box6
+    collision_geometry: 
+      type: box
+      dims: [5, 5, 5]
+      material: blue
+    config: 
+      position: [110, 7.5, 11.5]
+      orientation: [0,0,0,1]
+    dims: [5, 5, 5]
+    mass: .05
+  -
+    name: box7
+    collision_geometry: 
+      type: box
+      dims: [5, 5, 5]
+      material: blue
+    config: 
+      position: [110, 12.5, 11.5]
+      orientation: [0,0,0,1]
+    dims: [5, 5, 5]
+    mass: .05
+  -
+    name: box8
+    collision_geometry: 
+      type: box
+      dims: [5, 5, 5]
+      material: blue
+    config: 
+      position: [110, 17.5, 11.5]
+      orientation: [0,0,0,1]
+    dims: [5, 5, 5]
+    mass: .05
+  -
+    name: box9
+    collision_geometry: 
+      type: box
+      dims: [5, 5, 5]
+      material: blue
+    config: 
+      position: [110, -17.5, 16.5]
+      orientation: [0,0,0,1]
+    dims: [5, 5, 5]
+    mass: .05
+  -
+    name: box10
+    collision_geometry: 
+      type: box
+      dims: [5, 5, 5]
+      material: blue
+    config: 
+      position: [110, -12.5, 16.5]
+      orientation: [0,0,0,1]
+    dims: [5, 5, 5]
+    mass: .05
+  -
+    name: box11
+    collision_geometry: 
+      type: box
+      dims: [5, 5, 5]
+      material: blue
+    config: 
+      position: [110, -7.5, 16.5]
+      orientation: [0,0,0,1]
+    dims: [5, 5, 5]
+    mass: .05
+  -
+    name: box12
+    collision_geometry: 
+      type: box
+      dims: [5, 5, 5]
+      material: blue
+    config: 
+      position: [110, -2.5, 16.5]
+      orientation: [0,0,0,1]
+    dims: [5, 5, 5]
+    mass: .05
+  -
+    name: box13
+    collision_geometry: 
+      type: box
+      dims: [5, 5, 5]
+      material: blue
+    config: 
+      position: [110, 2.5, 16.5]
+      orientation: [0,0,0,1]
+    dims: [5, 5, 5]
+    mass: .05
+  -
+    name: box14
+    collision_geometry: 
+      type: box
+      dims: [5, 5, 5]
+      material: blue
+    config: 
+      position: [110, 7.5, 16.5]
+      orientation: [0,0,0,1]
+    dims: [5, 5, 5]
+    mass: .05
+  -
+    name: box15
+    collision_geometry: 
+      type: box
+      dims: [5, 5, 5]
+      material: blue
+    config: 
+      position: [110, 12.5, 16.5]
+      orientation: [0,0,0,1]
+    dims: [5, 5, 5]
+    mass: .05
+  -
+    name: box16
+    collision_geometry: 
+      type: box
+      dims: [5, 5, 5]
+      material: blue
+    config: 
+      position: [110, 17.5, 16.5]
+      orientation: [0,0,0,1]
+    dims: [5, 5, 5]
+    mass: .05
+  -
+    name: box17
+    collision_geometry: 
+      type: box
+      dims: [5, 5, 5]
+      material: blue
+    config: 
+      position: [110, -17.5, 21.5]
+      orientation: [0,0,0,1]
+    dims: [5, 5, 5]
+    mass: .05
+  -
+    name: box18
+    collision_geometry: 
+      type: box
+      dims: [5, 5, 5]
+      material: blue
+    config: 
+      position: [110, -12.5, 21.5]
+      orientation: [0,0,0,1]
+    dims: [5, 5, 5]
+    mass: .05
+  -
+    name: box19
+    collision_geometry: 
+      type: box
+      dims: [5, 5, 5]
+      material: blue
+    config: 
+      position: [110, -7.5, 21.5]
+      orientation: [0,0,0,1]
+    dims: [5, 5, 5]
+    mass: .05
+  -
+    name: box20
+    collision_geometry: 
+      type: box
+      dims: [5, 5, 5]
+      material: blue
+    config: 
+      position: [110, -2.5, 21.5]
+      orientation: [0,0,0,1]
+    dims: [5, 5, 5]
+    mass: .05
+  -
+    name: box21
+    collision_geometry: 
+      type: box
+      dims: [5, 5, 5]
+      material: blue
+    config: 
+      position: [110, 2.5, 21.5]
+      orientation: [0,0,0,1]
+    dims: [5, 5, 5]
+    mass: .05
+  -
+    name: box22
+    collision_geometry: 
+      type: box
+      dims: [5, 5, 5]
+      material: blue
+    config: 
+      position: [110, 7.5, 21.5]
+      orientation: [0,0,0,1]
+    dims: [5, 5, 5]
+    mass: .05
+  -
+    name: box23
+    collision_geometry: 
+      type: box
+      dims: [5, 5, 5]
+      material: blue
+    config: 
+      position: [110, 12.5, 21.5]
+      orientation: [0,0,0,1]
+    dims: [5, 5, 5]
+    mass: .05
+  -
+    name: box24
+    collision_geometry: 
+      type: box
+      dims: [5, 5, 5]
+      material: blue
+    config: 
+      position: [110, 17.5, 21.5]
+      orientation: [0,0,0,1]
+    dims: [5, 5, 5]
+    mass: .05
+collide_all: true

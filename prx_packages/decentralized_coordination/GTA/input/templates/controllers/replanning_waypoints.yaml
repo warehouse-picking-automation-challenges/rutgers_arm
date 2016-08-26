@@ -1,0 +1,7 @@
+type: GTA_replanning_controller
+keep_last_control: false
+smooth: false
+proximity_threshold: 1.9
+planning_cycle: 0.96
+planning_node: /planning
+homogeneous_setup: false

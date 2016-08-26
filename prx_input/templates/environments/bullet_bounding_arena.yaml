@@ -1,0 +1,58 @@
+arena:
+  type: bullet_obstacle
+  geometries:
+    # -
+    #   name: right_wall
+    #   collision_geometry:
+    #     type: box
+    #     dims: [2,26,10]
+    #     material: baxter_red
+    #   config:
+    #     position: [11,0,10]
+    #     orientation: [0,0,0,1]
+    # -
+    #   name: upper_wall
+    #   collision_geometry:
+    #     type: box
+    #     dims: [21,2,10]
+    #     material: baxter_red
+    #   config:
+    #     position: [0,13.5,10]
+    #     orientation: [0,0,0,1]
+    # -
+    #   name: lower_wall
+    #   collision_geometry:
+    #     type: box
+    #     dims: [21,2,10]
+    #     material: baxter_red
+    #   config:
+    #     position: [0,-13.5,10]
+    #     orientation: [0,0,0,1]
+    # -
+    #   name: left_wall
+    #   collision_geometry:
+    #     type: box
+    #     dims: [2,26,10]
+    #     material: baxter_red
+    #   config:
+    #     position: [-11,0,10]
+    #     orientation: [0,0,0,1]
+    # -
+    #   name: top
+    #   collision_geometry:
+    #     type: box
+    #     dims: [21,21,.5]
+    #     material: baxter_red
+    #   config:
+    #     position: [0,0,5]
+    #     orientation: [0,0,0,1]
+    -
+      name: floor
+      collision_geometry:
+        type: box
+        dims: [19.5,19.5,1]
+        material: black
+      config:
+        position: [0,0,11]
+        # orientation: [-0.008726535498373935,0,0,0.9999619230641713]
+        orientation: [0 0 0 1]

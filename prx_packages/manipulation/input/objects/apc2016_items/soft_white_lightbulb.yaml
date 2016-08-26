@@ -1,0 +1,60 @@
+type: movable_body
+max_step: 0.01
+object_type: soft_white_lightbulb
+state_space:
+  min: [-100 -100 -100 -1 -1 -1 -1]
+  max: [100 100 100 1 1 1 1]
+  scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+initial_state: [0 0 -99 0 0 0 1]
+input_control_space:
+  none: 4
+root_geom: body
+geometries:
+  -
+    name: body
+    collision_geometry:
+      type: mesh
+      filename: objects/apc_2016/soft_white_lightbulb.stl
+      material: blue
+    # visualization_geometry:
+    #   type: mesh
+    #   filename: objects/apc_2016/soft_white_lightbulb.3ds
+grasp_descriptor:
+  surfaces:
+    -
+      triangles:  [ 0.032, 0.06, 0.032, 0.032, -0.06, 0.032, 0.032, 0.06, -0.032, 0.032, -0.06, 0.032, 0.032, -0.06, -0.032, 0.032, 0.06, -0.032]
+      valid_end_effectors: ["head_sponge","upper_vacuum", "front_vacuum"]
+    -
+      triangles:  [ -0.032, -0.06, 0.032, -0.032, 0.06, 0.032, -0.032, -0.06, -0.032, -0.032, 0.06, 0.032, -0.032, 0.06, -0.032, -0.032, -0.06, -0.032]
+      valid_end_effectors: ["head_sponge","upper_vacuum", "front_vacuum"]
+    -
+      triangles:  [ -0.031, 0.061, 0.032, 0.031, 0.061, 0.032, 0.031, 0.061, -0.032, -0.031, 0.061, 0.032, 0.031, 0.061, -0.032, -0.031, 0.061, -0.032]
+      valid_end_effectors: ["upper_vacuum", "front_vacuum"]
+    -
+      triangles:  [ -0.031, -0.061, 0.032, -0.031, -0.061, -0.032, 0.031, -0.061, 0.032, -0.031, -0.061, -0.032, 0.031, -0.061, -0.032, 0.031, -0.061, 0.032]
+      valid_end_effectors: ["upper_vacuum", "front_vacuum"]
+    -
+      triangles:  [ -0.031, -0.06, 0.033, 0.031, -0.06, 0.033, 0.031, 0.06, 0.033, -0.031, -0.06, 0.033, 0.031, 0.06, 0.033, -0.031, 0.06, 0.033]
+      valid_end_effectors: ["head_sponge","upper_vacuum", "front_vacuum"]
+    -
+      triangles:  [ -0.031, -0.06, -0.033, -0.031, 0.06, -0.033, 0.031, 0.06, -0.033, -0.031, -0.06, -0.033, 0.031, 0.06, -0.033, 0.031, -0.06, -0.033]
+      valid_end_effectors: ["head_sponge","upper_vacuum", "front_vacuum"]
+  volumes:
+    -
+      height: 0.024
+      radius: 0.003
+      position: [0, 0, 0]
+      orientation: [0, 0, 0, 1]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.08
+      radius: 0.003
+      position: [0, 0, 0]
+      orientation: [0.70712, 0, 0, 0.70712]
+      valid_end_effectors: ["parallel_gripper"]
+    -
+      height: 0.022
+      radius: 0.003
+      position: [0, 0, 0]
+      orientation: [0, 0.70712, 0, 0.70712]
+      valid_end_effectors: ["parallel_gripper"]

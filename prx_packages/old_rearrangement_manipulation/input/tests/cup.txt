@@ -1,0 +1,18 @@
+<rosparam command="load" ns="simulation/simulator/subsystems/cup#ID#">
+  template: "cup"
+  initial_state: [#POSE#]
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: #COLOR#
+      visualization_geometry:
+        type: mesh
+        filename: meshes/cans/duff_taller.osg
+        local_transform:
+          position: [0,0,-0.08]
+          orientation: [0,0,0,1]
+</rosparam>

@@ -1,0 +1,20 @@
+<!-- This file has been tested on PRACSYS revision  -->
+
+<launch>
+           
+  <!-- Define simulation parameters -->      
+  <include file="$(find GTA)/input/experiments/tests/1corridor_4agents/simulation_node.launch"/>
+        
+  <!-- Define planning parameters -->           
+  <include ns="planning" file="$(find GTA)/input/experiments/tests/1corridor_4agents/planning_node1.launch"/>
+
+  <!-- Define planning parameters -->           
+  <include ns="planning2" file="$(find GTA)/input/experiments/tests/1corridor_4agents/planning_node2.launch"/>
+        
+  <!-- Define planning parameters -->           
+  <include ns="planning3" file="$(find GTA)/input/experiments/tests/1corridor_4agents/planning_node3.launch"/>
+        
+  <!-- Define planning parameters -->           
+  <include ns="planning4" file="$(find GTA)/input/experiments/tests/1corridor_4agents/planning_node4.launch"/>
+
+</launch>

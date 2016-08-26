@@ -1,0 +1,57 @@
+covering_set:
+    type: obstacle
+    geometries:
+    -
+        name: wall1
+        collision_geometry:
+            type: box
+            dims: [2, 0.5, 3]
+            material: pink
+        config:
+            position: [-5.5,-5,1]
+            orientation: [0,0,0,1]
+    -
+        name: wall2
+        collision_geometry:
+            type: box
+            dims: [2, 0.5, 3]
+            material: white
+        config:
+            position: [5.5,5,1]
+            orientation: [0,0,0,1]
+    -
+        name: wall3
+        collision_geometry:
+            type: box
+            dims: [2, 0.5, 3]
+            material: pink
+        config:
+            position: [1.5,7.5,1]
+            orientation: [0,0,0,1]
+    -
+        name: wall4
+        collision_geometry:
+            type: box
+            dims: [2, 0.5, 3]
+            material: white
+        config:
+            position: [2,-7,1]
+            orientation: [0,0,0,1]
+    -
+        name: wall5
+        collision_geometry:
+            type: box
+            dims: [2, 0.5, 3]
+            material: pink
+        config:
+            position: [8,-3,1]
+            orientation: [0,0,0,1]
+    -
+        name: wall6
+        collision_geometry:
+            type: box
+            dims: [2, 0.5, 3]
+            material: white
+        config:
+            position: [-6,4.5,1]
+            orientation: [0,0,0,1]

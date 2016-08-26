@@ -1,0 +1,317 @@
+<class name="prx_planning/manipulation_world_model"
+    type="prx::packages::manipulation::manipulation_world_model_t"
+    base_class_type="prx::plan::world_model_t">
+    <description>
+        A world model which deals with the manipulation problems.
+    </description>        
+</class>
+
+<class name="prx_planning/simple_pap_tp"
+    type="prx::packages::manipulation::simple_pap_tp_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A task planner for a simple pick and place manipulation problem.
+    </description>        
+</class>
+
+<class name="prx_planning/simple_place_tp"
+    type="prx::packages::manipulation::simple_place_tp_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A task planner for a simple placement manipulation problem.
+    </description>        
+</class>
+
+<class name="prx_planning/suggested_grasp_tp"
+    type="prx::packages::manipulation::suggested_grasp_tp_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A task planner for testing suggested grasps in the manipulation problem.
+    </description>        
+</class>
+
+<class name="prx_planning/multi_pap_tp"
+    type="prx::packages::manipulation::multi_pap_tp_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A task planner for dual-arm multiple pick and place manipulation problems.
+    </description>        
+</class>
+
+<class name="prx_planning/pap_trajectory_generator_tp"
+    type="prx::packages::manipulation::pap_trajectory_generator_tp_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A task planner for generating pick and place trajectories for both arms for multiple object poses.
+    </description>        
+</class>
+
+
+<class name="prx_planning/manipulation_tp"
+    type="prx::packages::manipulation::manipulation_tp_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A task planner for a simple manipulation problem.
+    </description>        
+</class>
+
+<class name="prx_planning/jk_tracking_tp"
+    type="prx::packages::manipulation::jk_tracking_tp_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A task planner for the JK-tracking trees algorithm
+    </description>        
+</class>
+
+
+<class name="prx_planning/grasp_rrt_tp"
+    type="prx::packages::manipulation::grasp_rrt_tp_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A task planner for the manipulation problem using a grasp rrt.
+    </description>        
+</class>
+
+<class name="prx_planning/grasp_rrt"
+    type="prx::packages::manipulation::grasp_rrt_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        Grasp RRT.
+    </description>
+</class>
+
+<class name="prx_planning/tsm_prm_star"
+    type="prx::packages::manipulation::tsm_prm_star_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+       Task Space Metric Incremental Roadmap Spanner
+    </description>
+</class>
+
+<class name="prx_planning/jacobian_prm_star"
+    type="prx::packages::manipulation::jacobian_prm_star_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        PRM* variant which plans to target poses rather than configruations.
+    </description>
+</class>
+
+<class name="prx_planning/grasp_evaluation_tp"
+    type="prx::packages::manipulation::grasp_evaluation_tp_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A task planner for a evaluating all grasps.
+    </description>        
+</class>
+
+<class name="prx_planning/pag_evaluation_tp"
+    type="prx::packages::manipulation::pag_evaluation_tp_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A task planner for a evaluating grasps on multiple poses of an object.
+    </description>        
+</class>
+
+<class name="prx_planning/astar_test_tp"
+    type="prx::packages::manipulation::astar_test_tp_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A task planner for testing the validity of the constraints A*.
+    </description>        
+</class>
+
+<class name="prx_planning/grasping_planner"
+    type="prx::packages::manipulation::grasping_planner_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A planner for dealing with grasping an object.
+    </description>        
+</class>
+
+<class name="prx_planning/grasp_evaluator"
+    type="prx::packages::manipulation::grasp_evaluator_t"
+    base_class_type="prx::packages::manipulation::grasp_evaluator_t">
+    <description>
+        Grasp evaluator module
+    </description>        
+</class>
+<class name="prx_planning/unigripper_grasp_evaluator"
+    type="prx::packages::manipulation::unigripper_grasp_evaluator_t"
+    base_class_type="prx::packages::manipulation::grasp_evaluator_t">
+    <description>
+        UniGripper Grasp evaluator module
+    </description>        
+</class>
+
+
+<class name="prx_planning/grasp_generator"
+    type="prx::packages::manipulation::grasp_generator_t"
+    base_class_type="prx::packages::manipulation::grasp_generator_t">
+    <description>
+        Grasp generator module
+    </description>        
+</class>
+<class name="prx_planning/unigripper_grasp_generator"
+    type="prx::packages::manipulation::unigripper_grasp_generator_t"
+    base_class_type="prx::packages::manipulation::grasp_generator_t">
+    <description>
+        UniGripper Grasp Generator module
+    </description>        
+</class>
+
+<class name="prx_planning/parallel_grasp_generator"
+    type="prx::packages::manipulation::parallel_grasp_generator_t"
+    base_class_type="prx::packages::manipulation::grasp_generator_t">
+    <description>
+        Parallel Grasp Generator module
+    </description>        
+</class>
+
+
+
+<class name="prx_planning/apc_grasping_planner"
+    type="prx::packages::manipulation::apc_grasping_planner_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A grasping planner that reasons about the different objects faces.
+    </description>        
+</class>
+
+<class name="prx_planning/grasp_db_fusion_tp"
+    type="prx::packages::manipulation::grasp_db_fusion_tp_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A grasping planner that fuses the databases
+    </description>        
+</class>
+
+
+<class name="prx_planning/rrt_grasping_planner"
+    type="prx::packages::manipulation::rrt_grasping_planner_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A planner for dealing with grasping an object with additional motion planning primitives.
+    </description>        
+</class>
+
+<class name="prx_planning/face_hidden_grasping_planner"
+    type="prx::packages::manipulation::face_hidden_grasping_planner_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A planner for dealing with grasping an object, where the face of the object on the surface is removed.
+    </description>        
+</class>
+
+<class name="prx_planning/manipulation_query"
+    type="prx::packages::manipulation::manipulation_query_t"
+    base_class_type="prx::plan::query_t">
+    <description>
+        The query for the manipulation problem.
+    </description>        
+</class>
+
+<class name="prx_planning/object_constraints_checker"
+    type="prx::packages::manipulation::object_constraints_checker_t"
+    base_class_type="prx::plan::validity_checker_t">
+    <description>
+        The validity checker for the minimum constraint problem. Knows about constraints with objects in the world.
+    </description>        
+</class>
+
+<class name="prx_planning/manipulation_validity_checker"
+    type="prx::packages::manipulation::manipulation_validity_checker_t"
+    base_class_type="prx::plan::validity_checker_t">
+    <description>
+        A validity checker class for manipulation, extends interface to use end-effector metrics for cc resolution.
+    </description>        
+</class>
+
+<class name="prx_planning/grasping_specification"
+    type="prx::packages::manipulation::grasping_specification_t"
+    base_class_type="prx::plan::specification_t">
+    <description>
+        The specification for the grasping planner.
+    </description>        
+</class>
+
+<class name="prx_planning/grasp_rrt_specification"
+    type="prx::plan::grasp_rrt_specification_t"
+    base_class_type="prx::plan::specification_t">
+    <description>
+        The specification for the grasp RRT
+    </description>        
+</class>
+
+
+<class name="prx_planning/pose_based_mp_query"
+    type="prx::packages::manipulation::pose_based_mp_query_t"
+    base_class_type="prx::plan::query_t">
+    <description>
+        A motion planning query for reaching a target pose.
+    </description>        
+</class>
+
+<class name="prx_planning/pose_based_mp_specification"
+    type="prx::packages::manipulation::pose_based_mp_specification_t"
+    base_class_type="prx::plan::specification_t">
+    <description>
+        A motion planning specification for reaching a target pose.
+    </description>
+</class>
+
+
+<class name="prx_planning/tsm_prm_specification"
+    type="prx::plan::tsm_prm_specification_t"
+    base_class_type="prx::plan::specification_t">
+    <description>
+        The specification for the Task Space Metric PRM
+    </description>
+</class>
+
+<class name="prx_planning/manipulation_specification"
+    type="prx::packages::manipulation::manipulation_specification_t"
+    base_class_type="prx::plan::specification_t">
+    <description>
+        The specification for the manipulation task planner.
+    </description>        
+</class>
+
+<class name="prx_planning/simple_pap_specification"
+    type="prx::packages::manipulation::simple_pap_specification_t"
+    base_class_type="prx::plan::specification_t">
+    <description>
+        The specification for the simple pick and place task planner.
+    </description>        
+</class>
+
+<class name="prx_planning/simple_place_specification"
+    type="prx::packages::manipulation::simple_place_specification_t"
+    base_class_type="prx::plan::specification_t">
+    <description>
+        The specification for the simple place task planner.
+    </description>
+</class>
+
+<class name="prx_planning/ee_bound_sampler"
+    type="prx::packages::manipulation::ee_bound_sampler_t"
+    base_class_type="prx::plan::sampler_t">
+    <description>
+        Samples points while ensuring that the manipulator's end-effector stays inside given bounds.
+    </description>        
+</class>
+
+<!-- <class name="prx_utilities/end_effector_distance"
+    type="prx::packages::manipulation::end_effector_distance_t"
+    base_class_type="prx::util::distance_function_t">
+    <description>
+        A distance function which uses the end-effector configuration to compute distance.
+    </description>
+</class> -->
+
+<class name="prx_planning/ik_steering_local_planner"
+    type="prx::plan::ik_steering_local_planner_t"
+    base_class_type="prx::plan::local_planner_t">
+    <description>
+        Local Planning using IK steering
+    </description>        
+</class>

@@ -1,0 +1,8 @@
+<launch>
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+
+  <rosparam ns="visualization/viewer/scene">
+    line_thickness: 3
+  </rosparam>
+
+</launch>

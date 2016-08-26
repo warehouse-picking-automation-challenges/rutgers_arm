@@ -1,0 +1,9 @@
+<launch>
+
+  <include ns="generic_name" file="$(find GTA)/input/experiments/test/4_experiment/simulation/simulation0.launch"/>
+  <rosparam command="load" ns="simulator/obstacles" file="$(find prx_input)/templates/environments/circle_grid.yaml"/>
+<rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+  <node name="generic_name" pkg="prx_simulation" type="prx_simulation" required="true" launch-prefix="" output="screen" args="generic_name" /> 
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+</launch>
+

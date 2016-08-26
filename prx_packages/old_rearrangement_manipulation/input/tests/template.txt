@@ -1,0 +1,57 @@
+<launch>
+
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>  
+  <include ns="simulation" file="$(find #FOLDER#)/input/common_simulation.launch"/>
+  <include ns="planning" file="$(find #FOLDER#)/input/common_planning.launch"/>
+
+  <rosparam command="load" ns="simulation/simulator/obstacles" file="$(find #FOLDER#)/input/environments/shelf.yaml" />    
+
+  <rosparam command="load" ns="planning/world_model/simulator/obstacles" file="$(find #FOLDER#)/input/environments/shelf.yaml" />  
+
+  <rosparam ns="planning/" >
+    random_seed: 14391835
+  </rosparam>
+
+  <include ns="planning" file="$(find #FOLDER#)/input/planning/world_models/world_model_#Kval#k.launch"/>
+
+
+  <rosparam command="load" ns="planning/problems/rearrangement_manipulation_problem/specification">
+    k: #Kval#
+    b: #Bval#
+    initial_poses:      
+#SPOSES#
+    target_poses:
+#FPOSES#
+  </rosparam>
+
+  <!--  SIMULATION  -->
+  <rosparam command="load" ns="simulation/cup">
+    type: movable_body
+    integrator: rk4
+    max_step: 0.01
+    state_space: 
+      min: [-10, -10, -100, -1, -1, -1, -1]
+      max: [10, 10, 100, 1, 1, 1, 1]
+      scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+    input_control_space: 
+      none: 4
+    root_geom: body
+  </rosparam>
+
+
+#OBJECTS#
+
+
+  <!-- Define the planning node -->
+
+  <node name="planning" pkg="prx_planning" type="prx_planning" 
+    required="true" launch-prefix="gdb --args" output="screen" args="planning" />
+
+  <!-- Define the simulation node -->
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation" 
+    required="true" launch-prefix="" output="screen" args="simulation"/>
+
+  <include file="$(find #FOLDER#)/input/visualization.launch"/>
+
+</launch>
+

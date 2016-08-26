@@ -1,0 +1,503 @@
+building1:
+  type: obstacle
+  geometries:
+    -
+      name: column0
+      collision_geometry:
+        type: cylinder
+        radius: 5.80415687884
+        height: 52.3541262536
+        material: red
+      config:
+        position: [-11.4691837834,10.0658561845,26.1770631268]
+        orientation: [0,0,0,1]
+    -
+      name: column1
+      collision_geometry:
+        type: cylinder
+        radius: 7.42391933663
+        height: 85.5541673037
+        material: red
+      config:
+        position: [49.5607574813,113.010840256,42.7770836518]
+        orientation: [0,0,0,1]
+    -
+      name: column2
+      collision_geometry:
+        type: cylinder
+        radius: 5.46155581108
+        height: 93.3486177952
+        material: red
+      config:
+        position: [-179.465320691,-70.056246406,46.6743088976]
+        orientation: [0,0,0,1]
+    -
+      name: column3
+      collision_geometry:
+        type: cylinder
+        radius: 9.15583197422
+        height: 95.1362875182
+        material: red
+      config:
+        position: [186.285411111,62.5451377816,47.5681437591]
+        orientation: [0,0,0,1]
+    -
+      name: column4
+      collision_geometry:
+        type: cylinder
+        radius: 4.70451441317
+        height: 39.658207696
+        material: red
+      config:
+        position: [-31.6065376888,26.9794498043,19.829103848]
+        orientation: [0,0,0,1]
+    -
+      name: column5
+      collision_geometry:
+        type: cylinder
+        radius: 5.12081320728
+        height: 52.9154479568
+        material: red
+      config:
+        position: [-99.0032494849,46.8966318944,26.4577239784]
+        orientation: [0,0,0,1]
+    -
+      name: column6
+      collision_geometry:
+        type: cylinder
+        radius: 9.93207403518
+        height: 15.3076702784
+        material: red
+      config:
+        position: [28.0701334856,-130.090085927,7.65383513921]
+        orientation: [0,0,0,1]
+    -
+      name: column7
+      collision_geometry:
+        type: cylinder
+        radius: 4.3732999937
+        height: 84.7947372128
+        material: red
+      config:
+        position: [-73.0137628038,-177.212767832,42.3973686064]
+        orientation: [0,0,0,1]
+    -
+      name: column8
+      collision_geometry:
+        type: cylinder
+        radius: 7.95034286668
+        height: 5.83478866455
+        material: red
+      config:
+        position: [-196.975019971,-35.8925160643,2.91739433227]
+        orientation: [0,0,0,1]
+    -
+      name: column9
+      collision_geometry:
+        type: cylinder
+        radius: 3.19530491451
+        height: 26.7165880322
+        material: red
+      config:
+        position: [169.631436773,-120.231603248,13.3582940161]
+        orientation: [0,0,0,1]
+    -
+      name: column10
+      collision_geometry:
+        type: cylinder
+        radius: 7.10802384497
+        height: 41.6719600479
+        material: red
+      config:
+        position: [-31.5632606974,-106.364653698,20.8359800239]
+        orientation: [0,0,0,1]
+    -
+      name: column11
+      collision_geometry:
+        type: cylinder
+        radius: 3.82586674653
+        height: 42.3083859712
+        material: red
+      config:
+        position: [-74.7627475586,32.6190361588,21.1541929856]
+        orientation: [0,0,0,1]
+    -
+      name: column12
+      collision_geometry:
+        type: cylinder
+        radius: 7.67554647755
+        height: 73.1700472864
+        material: red
+      config:
+        position: [13.2991887609,-175.516776423,36.5850236432]
+        orientation: [0,0,0,1]
+    -
+      name: column13
+      collision_geometry:
+        type: cylinder
+        radius: 8.77346720957
+        height: 82.288890084
+        material: red
+      config:
+        position: [-175.646290322,150.635449969,41.144445042]
+        orientation: [0,0,0,1]
+    -
+      name: column14
+      collision_geometry:
+        type: cylinder
+        radius: 7.15264054594
+        height: 60.6610422875
+        material: red
+      config:
+        position: [161.972034508,-162.206992655,30.3305211438]
+        orientation: [0,0,0,1]
+    -
+      name: column15
+      collision_geometry:
+        type: cylinder
+        radius: 7.40384621065
+        height: 3.39824834711
+        material: red
+      config:
+        position: [-139.311052676,84.4011531809,1.69912417355]
+        orientation: [0,0,0,1]
+    -
+      name: column16
+      collision_geometry:
+        type: cylinder
+        radius: 4.31740905346
+        height: 39.7827614085
+        material: red
+      config:
+        position: [-37.0029261196,156.520893209,19.8913807043]
+        orientation: [0,0,0,1]
+    -
+      name: column17
+      collision_geometry:
+        type: cylinder
+        radius: 9.62468176138
+        height: 83.1793369399
+        material: red
+      config:
+        position: [-60.0887024367,-58.573553455,41.58966847]
+        orientation: [0,0,0,1]
+    -
+      name: column18
+      collision_geometry:
+        type: cylinder
+        radius: 5.96133315755
+        height: 72.8254849748
+        material: red
+      config:
+        position: [83.8303109651,55.9992847515,36.4127424874]
+        orientation: [0,0,0,1]
+    -
+      name: column19
+      collision_geometry:
+        type: cylinder
+        radius: 4.50780728941
+        height: 17.3628759596
+        material: red
+      config:
+        position: [-12.499107636,-178.86596963,8.68143797981]
+        orientation: [0,0,0,1]
+    -
+      name: column20
+      collision_geometry:
+        type: cylinder
+        radius: 3.16072413642
+        height: 65.8405861163
+        material: red
+      config:
+        position: [26.2648103414,-72.5370186047,32.9202930581]
+        orientation: [0,0,0,1]
+    -
+      name: column21
+      collision_geometry:
+        type: cylinder
+        radius: 5.40146233291
+        height: 90.7507476163
+        material: red
+      config:
+        position: [-46.2661648972,32.5915749632,45.3753738081]
+        orientation: [0,0,0,1]
+    -
+      name: column22
+      collision_geometry:
+        type: cylinder
+        radius: 9.488197451
+        height: 39.8235162176
+        material: red
+      config:
+        position: [-63.7079095504,-33.6236556059,19.9117581088]
+        orientation: [0,0,0,1]
+    -
+      name: column23
+      collision_geometry:
+        type: cylinder
+        radius: 6.80343783644
+        height: 38.8087729075
+        material: red
+      config:
+        position: [-77.8827782184,65.8629795899,19.4043864538]
+        orientation: [0,0,0,1]
+    -
+      name: column24
+      collision_geometry:
+        type: cylinder
+        radius: 6.4637707426
+        height: 33.9390110472
+        material: red
+      config:
+        position: [-66.9656667382,9.22690082961,16.9695055236]
+        orientation: [0,0,0,1]
+    -
+      name: column25
+      collision_geometry:
+        type: cylinder
+        radius: 8.06214107461
+        height: 86.1600726644
+        material: red
+      config:
+        position: [73.6159424705,84.4533421902,43.0800363322]
+        orientation: [0,0,0,1]
+    -
+      name: column26
+      collision_geometry:
+        type: cylinder
+        radius: 4.23927231134
+        height: 41.9892157777
+        material: red
+      config:
+        position: [-18.4874093143,4.1531826405,20.9946078889]
+        orientation: [0,0,0,1]
+    -
+      name: column27
+      collision_geometry:
+        type: cylinder
+        radius: 5.904912542
+        height: 67.6121150735
+        material: red
+      config:
+        position: [-152.48101133,-197.816931616,33.8060575368]
+        orientation: [0,0,0,1]
+    -
+      name: column28
+      collision_geometry:
+        type: cylinder
+        radius: 7.98936751332
+        height: 59.2471880253
+        material: red
+      config:
+        position: [-41.0084887216,-18.5798470249,29.6235940127]
+        orientation: [0,0,0,1]
+    -
+      name: column29
+      collision_geometry:
+        type: cylinder
+        radius: 3.07297373741
+        height: 3.98040470994
+        material: red
+      config:
+        position: [-193.576277411,111.814495712,1.99020235497]
+        orientation: [0,0,0,1]
+    -
+      name: column30
+      collision_geometry:
+        type: cylinder
+        radius: 4.40237017138
+        height: 27.7676617299
+        material: red
+      config:
+        position: [63.7615336847,-197.95817139,13.8838308649]
+        orientation: [0,0,0,1]
+    -
+      name: column31
+      collision_geometry:
+        type: cylinder
+        radius: 9.86622334158
+        height: 39.9179408886
+        material: red
+      config:
+        position: [90.2870272508,-57.846522825,19.9589704443]
+        orientation: [0,0,0,1]
+    -
+      name: column32
+      collision_geometry:
+        type: cylinder
+        radius: 5.6008939154
+        height: 55.894704429
+        material: red
+      config:
+        position: [97.3444955001,-197.469723932,27.9473522145]
+        orientation: [0,0,0,1]
+    -
+      name: column33
+      collision_geometry:
+        type: cylinder
+        radius: 9.6003447536
+        height: 55.5504157989
+        material: red
+      config:
+        position: [-58.3686782061,164.251345299,27.7752078995]
+        orientation: [0,0,0,1]
+    -
+      name: column34
+      collision_geometry:
+        type: cylinder
+        radius: 9.66606963504
+        height: 29.1821593146
+        material: red
+      config:
+        position: [-138.767147751,-129.56176061,14.5910796573]
+        orientation: [0,0,0,1]
+    -
+      name: column35
+      collision_geometry:
+        type: cylinder
+        radius: 6.69585936015
+        height: 69.6286646133
+        material: red
+      config:
+        position: [48.5069028877,-21.7238794874,34.8143323067]
+        orientation: [0,0,0,1]
+    -
+      name: column36
+      collision_geometry:
+        type: cylinder
+        radius: 3.14539541167
+        height: 55.7392453549
+        material: red
+      config:
+        position: [128.392384272,-69.8367891625,27.8696226775]
+        orientation: [0,0,0,1]
+    -
+      name: column37
+      collision_geometry:
+        type: cylinder
+        radius: 4.75282723087
+        height: 30.8579131881
+        material: red
+      config:
+        position: [-22.6886399514,-104.330319216,15.4289565941]
+        orientation: [0,0,0,1]
+    -
+      name: column38
+      collision_geometry:
+        type: cylinder
+        radius: 7.27991621955
+        height: 94.3320976832
+        material: red
+      config:
+        position: [113.11624589,131.499667842,47.1660488416]
+        orientation: [0,0,0,1]
+    -
+      name: column39
+      collision_geometry:
+        type: cylinder
+        radius: 5.57884821351
+        height: 86.5210847304
+        material: red
+      config:
+        position: [89.2243673857,-43.6093641105,43.2605423652]
+        orientation: [0,0,0,1]
+    -
+      name: column40
+      collision_geometry:
+        type: cylinder
+        radius: 4.68120142617
+        height: 62.7062433435
+        material: red
+      config:
+        position: [-86.4426936138,46.0300115446,31.3531216718]
+        orientation: [0,0,0,1]
+    -
+      name: column41
+      collision_geometry:
+        type: cylinder
+        radius: 4.3210632134
+        height: 98.4752915425
+        material: red
+      config:
+        position: [194.369063035,-2.4522491553,49.2376457713]
+        orientation: [0,0,0,1]
+    -
+      name: column42
+      collision_geometry:
+        type: cylinder
+        radius: 7.33059965577
+        height: 69.1105569599
+        material: red
+      config:
+        position: [-34.2611258784,176.595624019,34.5552784799]
+        orientation: [0,0,0,1]
+    -
+      name: column43
+      collision_geometry:
+        type: cylinder
+        radius: 3.5733032683
+        height: 43.744805433
+        material: red
+      config:
+        position: [-175.910939948,80.3261069736,21.8724027165]
+        orientation: [0,0,0,1]
+    -
+      name: column44
+      collision_geometry:
+        type: cylinder
+        radius: 6.22108168421
+        height: 7.84368811605
+        material: red
+      config:
+        position: [-99.7304119554,-90.5407371865,3.92184405802]
+        orientation: [0,0,0,1]
+    -
+      name: column45
+      collision_geometry:
+        type: cylinder
+        radius: 9.34362034464
+        height: 19.240543679
+        material: red
+      config:
+        position: [104.610700212,47.16222309,9.62027183952]
+        orientation: [0,0,0,1]
+    -
+      name: column46
+      collision_geometry:
+        type: cylinder
+        radius: 7.98292889395
+        height: 31.6084444254
+        material: red
+      config:
+        position: [154.32728569,130.419087227,15.8042222127]
+        orientation: [0,0,0,1]
+    -
+      name: column47
+      collision_geometry:
+        type: cylinder
+        radius: 4.11164025364
+        height: 49.5874763343
+        material: red
+      config:
+        position: [-18.5767153565,181.827269709,24.7937381671]
+        orientation: [0,0,0,1]
+    -
+      name: column48
+      collision_geometry:
+        type: cylinder
+        radius: 5.39816673698
+        height: 95.488404857
+        material: red
+      config:
+        position: [99.473915425,79.5943577449,47.7442024285]
+        orientation: [0,0,0,1]
+    -
+      name: column49
+      collision_geometry:
+        type: cylinder
+        radius: 3.07005030104
+        height: 43.1765737017
+        material: red
+      config:
+        position: [-80.4475209218,-96.7657036048,21.5882868509]
+        orientation: [0,0,0,1]

@@ -1,0 +1,38 @@
+<launch>
+
+
+  <include file="$(find pebble_motion)/input/common/simulation/simulation_9robots.launch"/>
+
+  <include ns="planning" file="$(find pebble_motion)/input/common/planning/world_models/world_model_9robots.launch"/>
+
+  <include ns="planning" file="$(find pebble_motion)/input/common/planning/planner_structures/loopchain10.launch"/>
+
+  <rosparam command="load" ns="planning/task_planner/" file="$(find pebble_motion)/input/common/task_planners/pebble_solver_task_planner.yaml"/>
+
+  <rosparam ns="planning/task_planner/" >
+    pebble_solver: 
+        type: rpmg_solver
+    visualization_body: "simulator/router/disk8/body"
+    test_name: loopchain_10
+    output_file: "pmg/tests"
+    with_push_and_swap: true
+  </rosparam> 
+
+  <rosparam ns="planning/">
+    simulate: true 
+    visualize: true 
+  </rosparam> 
+  
+
+  <include ns="planning" file="$(find pebble_motion)/input/rpmg_solver/queries/loopchain_10_query.launch"/>
+
+  <include file="$(find pebble_motion)/input/common/visualization.launch"/>
+
+  <node name="planning" pkg="prx_planning" type="prx_planning"
+        required="true" launch-prefix="gdb" output="screen" args="planning"/>
+
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation"
+        required="true" launch-prefix="" output="screen" />
+
+
+</launch>

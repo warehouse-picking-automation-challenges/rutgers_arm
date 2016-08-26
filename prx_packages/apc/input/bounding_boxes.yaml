@@ -1,0 +1,35 @@
+bounding:
+  type: obstacle
+  root_configuration:
+    #width .86 height .994 depth .43
+    # x = depth/2 + (offset=.95) , z = height/2+(offset=.593)
+    position: [0.0, 0, 0]
+    orientation: [0, 0, 0, 1]
+  geometries:
+  -
+    name: back
+    collision_geometry: 
+      type: box
+      dims: [0.1, 2, 3]
+      material: silver
+    config:
+      position: [-.8,0,.8]
+      orientation: [0, 0, 0, 1]
+  # -
+  #   name: front
+  #   collision_geometry: 
+  #     type: box
+  #     dims: [0.01, 2, 3]
+  #     material: silver
+  #   config:
+  #     position: [.89,0,.8]
+  #     orientation: [0, 0, 0, 1]
+  -
+    name: top
+    collision_geometry: 
+      type: box
+      dims: [0.1, 2, 2]
+      material: silver
+    config:
+      position: [0,0,2]
+      orientation: [0.7071067811865476, 0, -0.7071067811865476, 0]

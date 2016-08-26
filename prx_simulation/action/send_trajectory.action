@@ -1,0 +1,12 @@
+prx_simulation/state_msg[] traj
+prx_simulation/control_msg[] plan
+prx_simulation/control_msg[] reaching
+prx_simulation/control_msg[] grasping
+prx_simulation/control_msg[] retracting
+float64 reaching_plan_time
+float64 grasping_plan_time
+float64 retracting_plan_time
+---
+bool success
+---
+float64 progress

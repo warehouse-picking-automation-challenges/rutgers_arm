@@ -1,0 +1,165 @@
+ <!-- Search Algorithms -->
+<class name="prx_planning/single_search"
+    type="prx::packages::labeled_rearrangement_manipulation::rearrangement_search_algorithm_t"
+    base_class_type="prx::plan::planner_t"> 
+    <description>
+        A task planner for the monotone Rearrangement Search algorithm.
+    </description>        
+</class>
+
+<class name="prx_planning/rearrangement_birrt"
+    type="prx::packages::labeled_rearrangement_manipulation::rearrangement_birrt_t"
+    base_class_type="prx::plan::planner_t"> 
+    <description>
+        A task planner for implementing the BiRRT version using as local planner one of the primitives.
+    </description>        
+</class>
+
+<class name="prx_planning/rearrangement_prm"
+    type="prx::packages::labeled_rearrangement_manipulation::rearrangement_prm_t"
+    base_class_type="prx::plan::planner_t"> 
+    <description>
+        A task planner for implementing the PRM* version using as local planner one of the primitives.
+    </description>        
+</class>
+
+<class name="prx_planning/mcr"
+    type="prx::packages::labeled_rearrangement_manipulation::mcr_t"
+    base_class_type="prx::plan::planner_t"> 
+    <description>
+        A task planner for testing the mcr.
+    </description>
+</class>
+
+<class name="prx_planning/crs"
+    type="prx::packages::labeled_rearrangement_manipulation::crs_t"
+    base_class_type="prx::plan::planner_t"> 
+    <description>
+        A task planner for the Complete Rearrangment Search with monotone as local planner.
+    </description>        
+</class>
+
+<class name="prx_planning/cnmrs"
+    type="prx::packages::labeled_rearrangement_manipulation::cnmrs_t"
+    base_class_type="prx::plan::planner_t"> 
+    <description>
+        A task planner for the Complete Rearrangment Search with non-monotone as local planner.
+    </description>        
+</class>
+
+<class name="prx_planning/cfmrs"
+    type="prx::packages::labeled_rearrangement_manipulation::cfmrs_t"
+    base_class_type="prx::plan::planner_t"> 
+    <description>
+        A task planner for the Complete Rearrangment Search with fast-monotone as local planner.
+    </description>        
+</class>
+
+<!-- Primitives -->
+
+<class name="prx_planning/pap"
+    type="prx::packages::labeled_rearrangement_manipulation::pap_t"
+    base_class_type="prx::plan::planner_t"> 
+    <description>
+        A task planner for the monotone Rearrangement Search algorithm.
+    </description>        
+</class>
+
+<class name="prx_planning/mrs"
+    type="prx::packages::labeled_rearrangement_manipulation::mrs_t"
+    base_class_type="prx::plan::planner_t"> 
+    <description>
+        A task planner for the monotone Rearrangement Search algorithm.
+    </description>        
+</class>
+
+<class name="prx_planning/nmrs"
+    type="prx::packages::labeled_rearrangement_manipulation::nmrs_t"
+    base_class_type="prx::plan::planner_t"> 
+    <description>
+        A task planner for the non-monotone Rearrangement Search algorithm.
+    </description>        
+</class>
+
+<class name="prx_planning/fmrs"
+    type="prx::packages::labeled_rearrangement_manipulation::fmrs_t"
+    base_class_type="prx::plan::planner_t"> 
+    <description>
+        A task planner for the fast-monotone Rearrangement Search algorithm. 
+    </description>        
+</class>
+
+<class name="prx_planning/mcr_test"
+    type="prx::packages::labeled_rearrangement_manipulation::mcr_test_t"
+    base_class_type="prx::plan::planner_t"> 
+    <description>
+        A task planner for test the mcr A*. 
+    </description>        
+</class>
+
+
+<!-- Path Planner / Smoother -->
+
+<class name="prx_planning/rearrangement_path_planner"
+    type="prx::packages::labeled_rearrangement_manipulation::rearrangement_path_planner_t"
+    base_class_type="prx::plan::planner_t"> 
+    <description>
+        A task planner for the path_planner/smoother of the rearrangement problem.
+    </description>        
+</class>
+
+<!-- Specificaitons -->
+
+<class name="prx_planning/rearrangement_search_specification"
+    type="prx::packages::labeled_rearrangement_manipulation::rearrangement_search_specification_t"
+    base_class_type="prx::plan::specification_t">
+    <description>
+        The problem specification for the search task planner.
+    </description>        
+</class>
+
+<class name="prx_planning/rearrangement_primitive_specification"
+    type="prx::packages::labeled_rearrangement_manipulation::rearrangement_primitive_specification_t"
+    base_class_type="prx::plan::specification_t">
+    <description>
+        The problem specification for the search task planner.
+    </description>        
+</class>
+
+<!-- Queries -->
+
+<class name="prx_planning/rearrangement_search_query"
+    type="prx::packages::labeled_rearrangement_manipulation::rearrangement_search_query_t"
+    base_class_type="prx::plan::query_t">
+    <description>
+        The query for the search task planner.
+    </description>        
+</class>
+
+<class name="prx_planning/rearrangement_query"
+    type="prx::packages::labeled_rearrangement_manipulation::rearrangement_query_t"
+    base_class_type="prx::plan::query_t">
+    <description>
+        The query for the primitive of the search algorithm. 
+    </description>        
+</class>
+
+<!-- Samplers -->
+
+<class name="prx_planning/motoman_sampler"
+    type="prx::packages::labeled_rearrangement_manipulation::motoman_sampler_t"
+    base_class_type="prx::plan::sampler_t">
+    <description>
+        A sampler for the motoman.
+    </description>        
+</class>
+
+<!-- Local Planners -->
+
+<class name="prx_planning/manipulation_local_planner"
+    type="prx::packages::labeled_rearrangement_manipulation::manipulation_local_planner_t"
+    base_class_type="prx::plan::local_planner_t">
+    <description>
+        A sampler for the motoman.
+    </description>        
+</class>

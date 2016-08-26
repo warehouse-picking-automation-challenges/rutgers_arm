@@ -1,0 +1,27 @@
+<launch>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+  <rosparam ns="planning0">
+    state_mapping:
+      - 
+        pair: [simulator/consumer00/vo_controller00/disk00, world_model/simulator/disk]
+    control_mapping:
+      - 
+        pair: [simulator/consumer00/vo_controller00, world_model/simulator/disk]
+      - 
+        pair: [simulator/consumer00/vo_controller00/disk00, world_model/simulator/disk]
+    consumer_mapping:
+      - 
+        pair: [simulator/consumer00, space1]
+    consumer: simulator/consumer00
+    my_plant: simulator/consumer00/vo_controller00/disk00
+    planning_duration: 0.5
+    rrandom_seed: 123456
+    visualize: true
+  </rosparam>
+
+  <include ns="planning0" file="$(find GTA)/input/experiments/corridor_test/planning/world_models/world_model.launch"/>
+  <include ns="planning0" file="$(find GTA)/input/experiments/corridor_test/planning/planner_structure/planner_structure.launch"/>
+  <node name="planning0"  pkg="prx_planning" type="prx_planning" required="true" launch-prefix="" output="screen" args="planning0"/>
+
+</launch>
+

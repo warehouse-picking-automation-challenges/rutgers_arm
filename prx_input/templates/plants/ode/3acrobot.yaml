@@ -1,0 +1,68 @@
+type: ode_plant
+
+geometries:
+  -
+    name: link0
+    collision_geometry:
+      type: box
+      dims: [2, 2, 5]
+      material: red
+    config:
+      position: [0, 0, 35.5]
+      orientation: [0.0, 0.0, 0, 1]
+    dims: [2, 2, 5]
+  -
+    name: link1
+    collision_geometry:
+      type: box
+      dims: [2, 2, 10]
+      material: white
+    config:
+      position: [0, 0, 28]
+      orientation: [0.0, 0.0, 0, 1]
+    dims: [2, 2, 10]
+  -
+    name: link2
+    collision_geometry:
+      type: box
+      dims: [2, 2, 20]
+      material: blue
+    config:
+      position: [0, 0, 13]
+      orientation: [0.0, 0.0, 0.0, 1.0]
+    dims: [2, 2, 20]
+
+joints:
+  -
+    name: root
+    type: hinge
+    parent: _world
+    child: link0
+    params: [0, 0, 38, 0, -1, 0]
+  -
+    name: joint0
+    type: hinge
+    parent: link0
+    child: link1
+    params: [0, 0, 33, 0, -1, 0]
+  -
+    name: joint1
+    type: hinge
+    parent: link1
+    child: link2
+    params: [0, 0, 23, 0, -1, 0]
+
+controls:
+  -
+    name: torque
+    bounds: [-100, 100]
+    type: joint
+    ode_object: joint0
+    component: 0
+  -
+    name: torque2
+    bounds: [-100, 100]
+    type: joint
+    ode_object: joint1
+    component: 0
+

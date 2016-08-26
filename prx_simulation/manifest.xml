@@ -1,0 +1,30 @@
+<package>
+  <description brief="prx_simulation">
+
+     prx_simulation
+
+  </description>
+  <author>Kostas Bekris</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://redmine.cse.unr.edu/projects/show/pracsys</url>
+
+  <depend package="prx_utilities"/>
+  <depend package="tf"/>
+  <depend package="geometry_msgs"/>
+  <depend package="sensor_msgs"/>
+  <depend package="pluginlib"/>
+  <depend package="urdf"/>
+  <depend package="kdl_parser"/>
+  <rosdep name="cmake_modules"/>
+    <rosdep name="pqp"/>
+    <rosdep name="fcl"/>
+  
+  <export>
+      <cpp cflags="-I${prefix}/" lflags="-L${prefix}/lib -lprx_simulation_lib"/>
+      <prx_simulation plugin="${prefix}/simulation_plugin.xml"/>
+  </export>
+
+</package>
+
+

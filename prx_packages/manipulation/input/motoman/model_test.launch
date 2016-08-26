@@ -1,0 +1,55 @@
+<launch>
+ <rosparam file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <rosparam ns="planning" file="$(find prx_input)/templates/planning_applications/single_query_application.yaml"/>
+
+<rosparam ns="planning">
+random_seed: 56849
+simulate: false
+visualize: false
+persistent: false
+world_model:
+  type: default_world_model
+</rosparam>
+
+<rosparam ns="planning/world_model/planning_contexts">
+disk:
+  default:
+    type: "hide_mapping"
+</rosparam>
+  <rosparam ns="planning/world_model" file="$(find manipulation)/input/manipulation_simulator.yaml"/>
+
+<rosparam command="load" ns="planning/world_model/simulator/subsystems/cup1">
+  type: movable_body
+  max_step: 0.01
+  state_space: 
+    min: [-5, -5, -100, -1, -1, -1, -1]
+    max: [5, 5, 100, 1, 1, 1, 1]
+    scale: [0.025, 0.025, 0.05, 0.5, 0.5, 0.5, 0.5]
+  input_control_space: 
+    none: 4
+  root_geom: body
+  initial_state: [0.5, 0, 1, 0, 0, 0, 1]
+  geometries:
+    -
+      name: body
+      collision_geometry:
+        type: cylinder
+        radius: 0.02
+        height: 0.14
+        material: red
+  
+</rosparam>
+
+  <rosparam ns="planning/world_model/simulator/subsystems/rover" file="$(find manipulation)/input/motoman/motoman_complete_kinect.yaml"/>  
+  <rosparam ns="planning/world_model/simulator/subsystems/rover" >
+  planning_contexts:
+    disk:
+      type: motoman_left_torso_state_mapping
+  </rosparam>
+
+<node name="planning" pkg="prx_planning" type="prx_planning" required="false" launch-prefix="gdb --args" output="screen" args="planning" />
+
+
+
+</launch>

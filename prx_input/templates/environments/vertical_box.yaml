@@ -1,0 +1,12 @@
+building1:
+    type: obstacle
+    geometries:
+    -
+        name: spike1_a
+        collision_geometry: 
+            type: box
+            dims: [1,4,2]      
+            material: black    
+        config:
+            position: [0, 0, 1]
+            orientation: [0,0,0,1]

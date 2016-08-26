@@ -1,0 +1,287 @@
+<launch>
+
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>  
+ 
+ #SIMULATION#
+
+  #WORLD_MODEL#
+
+  <rosparam ns="#PLAN_NODE#/world_model/planning_contexts">
+    manipulator_pc:
+     default:
+      type: "hide_mapping"
+  </rosparam>
+
+  <rosparam command="load" ns="#PLAN_NODE#/" file="$(find prx_input)/templates/planning_applications/single_query_application.yaml"/>
+  <rosparam command="load" ns="#PLAN_NODE#/world_model" file="$(find #PACKAGE#)/input/simulation/manipulation_simulator.yaml"/> 
+  <rosparam command="load" ns="#PLAN_NODE#/" file="$(find prx_input)/templates/spaces/space_types.yaml"/>  
+
+  <rosparam command="load" ns="#PLAN_NODE#/baxter" file="$(find baxter)/input/urdf/baxter.yaml"/>
+  <rosparam command="load" ns="#PLAN_NODE#/world_model/simulator/obstacles" file="$(find #PACKAGE#)/input/templates/baxter_torso#BAXTER##BAXTER_VIDEO#.yaml" />
+  <rosparam command="load" ns="#PLAN_NODE#/world_model/simulator/obstacles" file="$(find #PACKAGE#)/input/environments/#ENVIRONMENT#.yaml" />
+
+  <rosparam ns="#PLAN_NODE#/world_model/simulator">
+    simulation_step: 0.02
+    manipulator_names:
+      -
+        simulator/manipulator
+    sensing_info:
+      type: grasp_sensing_info
+      sources: ["grasp_sensor1"]
+      update_delay: 0.02
+    grasp_sensor_source: "grasp_sensor1"
+  </rosparam>
+
+  <rosparam ns="#PLAN_NODE#/world_model/simulator/sensing">
+    type: sensing_model
+    sensors:
+      grasp_sensor1:
+        type: simulated_grasp_sensor
+        source: "grasp_sensor1"
+        sensor_delay: 0.02
+  </rosparam>
+
+  <rosparam ns="#PLAN_NODE#/world_model/simulator/subsystems/manipulator">
+    template: "baxter"
+    planning_contexts:
+      manipulator_pc:
+        type: "full_mapping"
+    initial_state: #SAFE_STATE# 
+    hand: #BAXTER_ARM#
+    forward_transform_rotation: #BAXTER_ROTATION#
+    forward_transform_translation: #BAXTER_TRANSLATION#  
+  </rosparam>
+
+  <rosparam ns="#PLAN_NODE#/">
+    random_seed: 14391835
+    simulate: #SIMULATE#
+    visualize: #VISUALIZE#
+    persistent: #PESISTENT#
+    consumer_mapping:
+      - 
+        pair: [simulator/consumer, manipulator_pc]
+  </rosparam> 
+
+
+  <rosparam ns="#PLAN_NODE#/motion_planner">
+    type: manipulation_mp
+    visualization_bodies: ["simulator/manipulator/end_effector"]
+    visualize_graph: false
+    visualize_solutions: false        
+    delta_prm: false
+  </rosparam>
+
+  <rosparam ns="#PLAN_NODE#/manip_spec_template">
+    type: manipulation_mp_specification
+    distance_metric:
+      type: linear_distance_metric
+    local_planner:
+      type: bvp_local_planner
+    stopping_criteria:
+      elements:
+        criterion1:
+          type: iteration_criterion
+          condition: 100
+    heuristic_search:
+      type: obstacle_aware_astar
+      minimum_conflict: #MIN_CONFLICT#
+      shortest_path: #SHORTEST_PATH#
+      collision_penalty: 100000   
+      new_constraint_penalty: 300
+      max_length: 40
+  </rosparam>
+
+  <rosparam ns="#PLAN_NODE#/spec_template">
+    type: motion_planning_specification
+    distance_metric:
+      type: linear_distance_metric
+    stopping_criteria:
+      elements:
+        criterion1:
+          type: iteration_criterion
+          condition: 100
+  </rosparam>
+
+  <rosparam ns="#PLAN_NODE#/graph_query_template">
+    type: manipulator_mp_query
+    query_type: add_query_points_collisions
+    query_collision_type: active_collisions_reuse_edges
+    goal:
+        type: multiple_goal_states
+        distance_metric:
+          type: linear_distance_metric
+  </rosparam>
+
+  <rosparam ns="#PLAN_NODE#/manipulator_query_template">
+    type: manipulator_query
+    goal:
+      type: multiple_goal_states
+      distance_metric:
+          type: linear_distance_metric
+  </rosparam>
+
+  <rosparam ns="#PLAN_NODE#/primitive_template">
+    
+  </rosparam>
+
+  <rosparam ns="#PLAN_NODE#/task_planner/" >
+    type: #ALGORITHM#    
+    visualization_body: "simulator/manipulator/end_effector"  
+    pc_name_manipulator_only: manipulator_pc  
+    rearrangement_query:
+      type: rearrangement_query
+      goal:
+        type: multiple_goal_states
+        distance_metric:
+          type: linear_distance_metric
+    primitive_specification:
+      type: rearrangement_primitive_specification
+    target_metric:
+      type: graph_distance_metric
+      distance_function: poses_distance
+    primitive_timer: 20
+    planners:
+      primitive:
+        type: #PRIMITIVE#
+        pc_name_manipulator_only: manipulator_pc
+        pc_name_object_only: object_pc
+        pc_name_manipulator_with_object: manip_object_pc
+        pc_name_manipulator_with_active_object: manip_active_object_pc
+        pc_name_all_objects: all_object_pc
+        pc_name_real_world: real_world_pc
+        pc_name_grasp_planning: grasp_planning_pc 
+        manipulation_tp_name: manipulation_planner
+        manip_specification:
+          type: manipulator_specification
+          distance_metric:
+            type: linear_distance_metric
+        manip_sampler:
+          type: manip_sampler
+        manip_validity_checker:
+          type: system_name_validity_checker
+        transfer_query:
+          template: manipulator_query_template
+        transit_query:
+          template: manipulator_query_template
+        planners_specifications:
+          transit:
+            template: manip_spec_template      
+          transfer:
+            template: manip_spec_template
+        planners:
+          manipulation_planner:
+            type: manipulator_tp
+            ungrasped_name: ungrasped
+            grasped_name: grasped
+            phase_queries:
+              reach_phase:
+                template: graph_query_template
+              transfer_phase:
+                template: graph_query_template
+              retract_phase:
+                template: graph_query_template
+              smoothing_phase:
+                template: graph_query_template
+            planners:
+              ungrasped:
+                template: "motion_planner"
+                space_name: "manipulator_pc"          
+              grasped:
+                template: "motion_planner"
+                space_name: "manip_object_pc" 
+        #EXTRAS#
+      path_planner:
+        type: #SMOOTHER#
+        pc_name_manipulator_only: manipulator_pc
+        pc_name_object_only: object_pc
+        pc_name_manipulator_with_object: manip_object_pc
+        pc_name_manipulator_with_active_object: manip_active_object_pc
+        pc_name_all_objects: all_object_pc
+        pc_name_real_world: real_world_pc
+        pc_name_grasp_planning: grasp_planning_pc 
+        manipulation_tp_name: manipulation_planner
+        manip_specification:
+          type: manipulator_specification
+          distance_metric:
+            type: linear_distance_metric
+        manip_sampler:
+          type: manip_sampler
+        manip_validity_checker:
+          type: system_name_validity_checker
+        transfer_query:
+          template: manipulator_query_template
+        transit_query:
+          template: manipulator_query_template
+        planners_specifications:
+          transit:
+            template: manip_spec_template      
+          transfer:
+            template: manip_spec_template
+        planners:
+          manipulation_planner:
+            type: manipulator_tp
+            ungrasped_name: ungrasped
+            grasped_name: grasped
+            phase_queries:
+              reach_phase:
+                template: graph_query_template
+              transfer_phase:
+                template: graph_query_template
+              retract_phase:
+                template: graph_query_template
+              smoothing_phase:
+                template: graph_query_template
+            planners:
+              ungrasped:
+                template: "motion_planner"
+                space_name: "manipulator_pc"          
+              grasped:
+                template: "motion_planner"
+                space_name: "manip_object_pc" 
+        apply_smoothing: #SMOOTHING#
+ </rosparam>
+
+  <rosparam ns="#PLAN_NODE#/problems">
+    rearrangement_search_problem:
+      specification:
+        type: rearrangement_search_specification
+        validity_checker: 
+          type: world_model_validity_checker
+        sampler:
+          type: uniform_sampler
+        distance_metric:
+          type: graph_distance_metric
+          distance_function: poses_distance
+        transfer_metric:
+          type: linear_distance_metric
+        local_planner:
+          type: bvp_local_planner
+        heuristic_search:
+          type: super_graph_astar
+        k: #Kval#
+        safe_position: #SAFE_STATE# 
+        goal_biasing: #BIASING#
+        time_limit: #TIME_LIMIT#
+        poses_constraints_file: #TEST_NAME#poses_constraints.txt
+        poses_file: #TEST_NAME#poses.txt
+        transit_graph_file: #TEST_NAME#informed_transit.txt
+        transfer_graph_file: #TEST_NAME#informed_transfer.txt        
+        gather_statistics: #GATHER_STATISTICS#
+        #STATISTICS_FILE#        
+      query:
+        type: rearrangement_search_query
+        initial_poses:
+#SPOSES#
+        target_poses:
+#FPOSES#
+  </rosparam>
+
+  <!--  SIMULATION  -->
+#OBJECTS#
+
+#PLANNING#
+
+#VISUALIZATION#
+
+</launch>
+

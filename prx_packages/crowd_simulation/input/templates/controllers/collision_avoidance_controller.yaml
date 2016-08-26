@@ -1,0 +1,7 @@
+type: collision_avoidance_controller
+minimally_invasive: true
+max_num_neighbors: 16
+input_control_space:
+  min: [-500, -500]
+  max: [500, 500]
+num_samples: 30

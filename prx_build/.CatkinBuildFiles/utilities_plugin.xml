@@ -1,0 +1,149 @@
+<library path="lib/libprx_utilities">
+        
+    <!-- Distance functions -->
+    
+    <class name="prx_utilities/default_euclidean"
+        type="prx::util::default_euclidean_t"
+        base_class_type="prx::util::distance_function_t">
+        <description>
+            Default euclidean distance as defined by space_t.
+        </description>        
+    </class>
+
+    <class name="prx_utilities/manhattan_distance"
+        type="prx::util::manhattan_distance_t"
+        base_class_type="prx::util::distance_function_t">
+        <description>
+            L1 distance (Manhattan distance)
+        </description>        
+    </class>
+
+    <class name="prx_utilities/l_infinite_norm"
+        type="prx::util::l_infinite_norm_t"
+        base_class_type="prx::util::distance_function_t">
+        <description>
+            L-infinite distance.
+        </description>        
+    </class>
+    
+    <!-- Distance Metrics -->
+    
+    <class name="prx_utilities/linear_distance_metric"
+        type="prx::util::linear_distance_metric_t"
+        base_class_type="prx::util::distance_metric_t">
+        <description>
+            Simple linear search proximity metric.
+        </description>        
+    </class>
+
+    <class name="prx_utilities/ann_distance_metric"
+        type="prx::util::ann_distance_metric_t"
+        base_class_type="prx::util::distance_metric_t">
+        <description>
+            Uses ANN to do nearest neighbor queries.
+        </description>        
+    </class>
+    <class name="prx_utilities/graph_distance_metric"
+        type="prx::util::graph_distance_metric_t"
+        base_class_type="prx::util::distance_metric_t">
+        <description>
+            Creates a neighborhood graph for distance queries.
+        </description>        
+    </class>
+
+    <!-- Heuristic Search -->
+
+    <class name="prx_utilities/null_constraints"
+        type="prx::util::null_constraints_t"
+        base_class_type="prx::util::constraints_t">
+        <description>
+            The default constraints class which represents having no constraints.
+        </description>        
+    </class>
+
+    <class name="prx_utilities/object_collision_constraints"
+        type="prx::util::object_collision_constraints_t"
+        base_class_type="prx::util::constraints_t">
+        <description>
+            The constraints class for collisions with objects.
+        </description>        
+    </class>
+
+     
+    <!-- Goals -->
+          
+    <class name="prx_utilities/goal_state"
+        type="prx::util::goal_state_t"
+        base_class_type="prx::util::goal_t">
+        <description>
+            Simple goal with a state that we want to reach.
+        </description>        
+    </class>    
+    
+    <class name="prx_utilities/multiple_goal_states"
+        type="prx::util::multiple_goal_states_t"
+        base_class_type="prx::util::goal_t">
+        <description>
+            Multiple goal states.
+        </description>        
+    </class>   
+    
+    <class name="prx_utilities/radial_goal_region"
+        type="prx::util::radial_goal_region_t"
+        base_class_type="prx::util::goal_t">
+        <description>
+            A goal region defined by a point and radius.
+        </description>        
+    </class>   
+    <class name="prx_utilities/bounded_goal_region"
+        type="prx::util::bounded_goal_region_t"
+        base_class_type="prx::util::goal_t">
+        <description>
+            A goal region that is bounded.
+        </description>        
+    </class>   
+    <class name="prx_utilities/goal_plane"
+        type="prx::util::goal_plane_t"
+        base_class_type="prx::util::goal_t">
+        <description>
+            A goal that reasons about planes
+        </description>        
+    </class> 
+    <class name="prx_utilities/aggregate_goal"
+        type="prx::util::aggregate_goal_t"
+        base_class_type="prx::util::goal_t">
+        <description>
+            A goal container class for satisfying multiple goals
+        </description>        
+    </class>
+    
+    <!-- Mapping Functions -->
+    
+    <class name="prx_utilities/obstacle_mapping"
+        type="prx::util::obstacle_mapping_t"
+        base_class_type="prx::util::mapping_function_t">
+        <description>
+            Mapping for hiding a system while allowing collisions with it.
+        </description>        
+    </class>        
+    
+    <class name="prx_utilities/full_mapping"
+        type="prx::util::full_mapping_t"
+        base_class_type="prx::util::mapping_function_t">
+        <description>
+            Copies the space information into embedded space.
+        </description>        
+    </class>    
+    
+    <class name="prx_utilities/hide_mapping"
+        type="prx::util::hide_mapping_t"
+        base_class_type="prx::util::mapping_function_t">
+        <description>
+            Mapping for hiding a system.
+        </description>        
+    </class> 
+        
+    <!-- PACKAGES -->
+    <!-- END PACKAGES -->
+    
+</library>

@@ -1,0 +1,2639 @@
+AttractionTypes:
+  -
+    Name: Vendor-Retail
+  -
+    Name: Vendor-Food
+  -
+    Name: Ticket
+  -
+    Name: Restroom
+  -
+    Name: Office
+  -
+    Name: Destination
+  -
+    Name: Meeting_Area
+  -
+    Name: ATM
+  -
+    Name: Evacuation_Area
+  -
+    Name: Bench
+  -
+    Name: Security_Posts
+  -
+    Name: Information_Kiosk
+
+AgentTypes:
+  -
+    Name: Commuters
+    PercentThroughAgents: 0.99
+    percent_with_luggage: 0.0
+    percent_with_disabilities: 0.0
+    walking_speed_distribution: [0.9, 1.1]
+    AttractionStrengths:
+      -
+        Name: Vendor-Food
+        Distribution: [0.0, 1.0]
+      -
+        Name: Information_Kiosk
+        Distribution: [0.0, 1.0]
+      -
+        Name: Ticket
+        Distribution: [0.5, 1.0]
+      -
+        Name: Security_Posts
+        Distribution: [0.0, 1.0]
+      -
+        Name: Destination
+        Distribution: [0.0, 1.0]
+      -
+        Name: Vendor-Retail
+        Distribution: [1.0, 2.0]
+      -
+        Name: Bench
+        Distribution: [0.0, 1.0]
+      -
+        Name: Meeting_Area
+        Distribution: [0.0, 1.0]
+      -
+        Name: Restroom
+        Distribution: [0.9, 1.2]
+      -
+        Name: Office
+        Distribution: [0.0, 0.01]
+      -
+        Name: Evacuation_Area
+        Distribution: [0.0, 1.0]
+      -
+        Name: ATM
+        Distribution: [0.0, 1.0]
+  -
+    Name: Employee
+    PercentThroughAgents: 0.05
+    percent_with_luggage: 0.0
+    percent_with_disabilities: 0.0
+    walking_speed_distribution: [0.9, 1.1]
+    AttractionStrengths:
+      -
+        Name: Vendor-Food
+        Distribution: [0.0, 1.0]
+      -
+        Name: Information_Kiosk
+        Distribution: [0.0, 1.0]
+      -
+        Name: Ticket
+        Distribution: [0.0, 0.01]
+      -
+        Name: Security_Posts
+        Distribution: [0.0, 1.0]
+      -
+        Name: Destination
+        Distribution: [0.0, 1.0]
+      -
+        Name: Vendor-Retail
+        Distribution: [0.5, 1.0]
+      -
+        Name: Bench
+        Distribution: [0.0, 1.0]
+      -
+        Name: Meeting_Area
+        Distribution: [0.0, 1.0]
+      -
+        Name: Restroom
+        Distribution: [0.0, 0.0]
+      -
+        Name: Office
+        Distribution: [10.0, 15.0]
+      -
+        Name: Evacuation_Area
+        Distribution: [0.0, 1.0]
+      -
+        Name: ATM
+        Distribution: [0.0, 1.0]
+  -
+    Name: LongCommuter
+    PercentThroughAgents: 0.0
+    percent_with_luggage: 0.0
+    percent_with_disabilities: 0.0
+    walking_speed_distribution: [0.9, 1.1]
+    AttractionStrengths:
+      -
+        Name: Vendor-Food
+        Distribution: [0.0, 1.0]
+      -
+        Name: Information_Kiosk
+        Distribution: [0.0, 1.0]
+      -
+        Name: Ticket
+        Distribution: [0.0, 1.0]
+      -
+        Name: Security_Posts
+        Distribution: [0.0, 1.0]
+      -
+        Name: Destination
+        Distribution: [0.0, 1.0]
+      -
+        Name: Vendor-Retail
+        Distribution: [0.0, 1.0]
+      -
+        Name: Bench
+        Distribution: [0.0, 1.0]
+      -
+        Name: Meeting_Area
+        Distribution: [0.0, 1.0]
+      -
+        Name: Restroom
+        Distribution: [0.0, 1.0]
+      -
+        Name: Office
+        Distribution: [0.0, 1.0]
+      -
+        Name: Evacuation_Area
+        Distribution: [0.0, 1.0]
+      -
+        Name: ATM
+        Distribution: [0.0, 1.0]
+  -
+    Name: Security
+    PercentThroughAgents: 0.0
+    percent_with_luggage: 0.0
+    percent_with_disabilities: 0.0
+    walking_speed_distribution: [0.9, 1.1]
+    AttractionStrengths:
+      -
+        Name: Vendor-Food
+        Distribution: [0.0, 1.0]
+      -
+        Name: Information_Kiosk
+        Distribution: [0.0, 1.0]
+      -
+        Name: Ticket
+        Distribution: [0.0, 1.0]
+      -
+        Name: Security_Posts
+        Distribution: [0.0, 1.0]
+      -
+        Name: Destination
+        Distribution: [0.0, 1.0]
+      -
+        Name: Vendor-Retail
+        Distribution: [0.0, 1.0]
+      -
+        Name: Bench
+        Distribution: [0.0, 1.0]
+      -
+        Name: Meeting_Area
+        Distribution: [0.0, 1.0]
+      -
+        Name: Restroom
+        Distribution: [0.0, 1.0]
+      -
+        Name: Office
+        Distribution: [0.0, 1.0]
+      -
+        Name: Evacuation_Area
+        Distribution: [0.0, 1.0]
+      -
+        Name: ATM
+        Distribution: [0.0, 1.0]
+  -
+    Name: Homeless
+    PercentThroughAgents: 0.0
+    percent_with_luggage: 0.0
+    percent_with_disabilities: 0.0
+    walking_speed_distribution: [0.9, 1.1]
+    AttractionStrengths:
+      -
+        Name: Vendor-Food
+        Distribution: [0.0, 1.0]
+      -
+        Name: Information_Kiosk
+        Distribution: [0.0, 1.0]
+      -
+        Name: Ticket
+        Distribution: [0.0, 1.0]
+      -
+        Name: Security_Posts
+        Distribution: [0.0, 1.0]
+      -
+        Name: Destination
+        Distribution: [0.0, 1.0]
+      -
+        Name: Vendor-Retail
+        Distribution: [0.0, 1.0]
+      -
+        Name: Bench
+        Distribution: [0.0, 1.0]
+      -
+        Name: Meeting_Area
+        Distribution: [0.0, 1.0]
+      -
+        Name: Restroom
+        Distribution: [0.0, 1.0]
+      -
+        Name: Office
+        Distribution: [0.0, 1.0]
+      -
+        Name: Evacuation_Area
+        Distribution: [0.0, 1.0]
+      -
+        Name: ATM
+        Distribution: [0.0, 1.0]
+
+OriginTypes:
+  -
+    Name: BusGate
+    AgentTypes:
+      -
+        Name: Employee
+        Percent: 0.0
+      -
+        Name: Security
+        Percent: 0.0
+      -
+        Name: Commuters
+        Percent: 1.0
+      -
+        Name: Homeless
+        Percent: 0.0
+      -
+        Name: LongCommuter
+        Percent: 0.0
+    ThroughAgentDestinationRatios:
+      -
+        Name: Parking
+        Percent: 0.0
+      -
+        Name: BusGate
+        Percent: 0.0
+      -
+        Name: Outside
+        Percent: 1.0
+      -
+        Name: Subway
+        Percent: 0.0
+    ThroughAgentDurationAmounts:
+      -
+        Name: Employee
+        Distribution: [0.0, 1.0]
+      -
+        Name: Commuters
+        Distribution: [0.0, 1.0]
+  -
+    Name: Outside
+    AgentTypes:
+      -
+        Name: Employee
+        Percent: 0.02
+      -
+        Name: Security
+        Percent: 0.0
+      -
+        Name: Commuters
+        Percent: 0.98
+      -
+        Name: Homeless
+        Percent: 0.0
+      -
+        Name: LongCommuter
+        Percent: 0.0
+    ThroughAgentDestinationRatios:
+      -
+        Name: Parking
+        Percent: 0.0
+      -
+        Name: BusGate
+        Percent: 0.0
+      -
+        Name: Outside
+        Percent: 0.4
+      -
+        Name: Subway
+        Percent: 0.6
+    ThroughAgentDurationAmounts:
+      -
+        Name: Employee
+        Distribution: [0.0, 1.0]
+      -
+        Name: Commuters
+        Distribution: [0.0, 1.0]
+  -
+    Name: Subway
+    AgentTypes:
+      -
+        Name: Employee
+        Percent: 0.01
+      -
+        Name: Security
+        Percent: 0.0
+      -
+        Name: Commuters
+        Percent: 0.99
+      -
+        Name: Homeless
+        Percent: 0.0
+      -
+        Name: LongCommuter
+        Percent: 0.0
+    ThroughAgentDestinationRatios:
+      -
+        Name: Parking
+        Percent: 0.0
+      -
+        Name: BusGate
+        Percent: 0.0
+      -
+        Name: Outside
+        Percent: 1.0
+      -
+        Name: Subway
+        Percent: 0.0
+    ThroughAgentDurationAmounts:
+      -
+        Name: Employee
+        Distribution: [0.0, 1.0]
+      -
+        Name: Commuters
+        Distribution: [0.0, 1.0]
+  -
+    Name: Parking
+    AgentTypes:
+      -
+        Name: Employee
+        Percent: 1.0
+      -
+        Name: Security
+        Percent: 0.0
+      -
+        Name: Commuters
+        Percent: 0.0
+      -
+        Name: Homeless
+        Percent: 0.0
+      -
+        Name: LongCommuter
+        Percent: 0.0
+    ThroughAgentDestinationRatios:
+      -
+        Name: Parking
+        Percent: 0.0
+      -
+        Name: BusGate
+        Percent: 0.0
+      -
+        Name: Outside
+        Percent: 0.0
+      -
+        Name: Subway
+        Percent: 1.0
+    ThroughAgentDurationAmounts:
+      -
+        Name: Employee
+        Distribution: [0.0, 1.0]
+      -
+        Name: Commuters
+        Distribution: [0.0, 1.0]
+
+Local:
+  -
+    Name: hudson_news_3263
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        111.63333333333333, -4.413333333333333, 9.0
+        114.86666666666667, -5.383333333333333, 9.0
+        111.63333333333333, -2.6166666666666663, 9.0
+        111.63333333333333, -0.4933333333333332, 9.0
+        111.63333333333333, 3.0466666666666664, 9.0
+        111.63333333333333, 6.27, 9.0
+    ]
+    Doorways: [
+        108.4, 0.9449999999999998, 9.0
+        108.4, -7.549999999999999, 9.0
+    ]
+  -
+    Name: men_s_room276
+    AttractionType: Restroom
+    Capacity: [0.0, 16.0]
+    Max_Capacity: 16.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        46.169999999999995, -19.526666666666667, 9.0
+        46.169999999999995, -21.593333333333334, 9.0
+        46.169999999999995, -17.53333333333333, 9.0
+        50.43666666666667, -16.176666666666666, 9.0
+    ]
+    Doorways: [
+        41.9, -17.79, 9.0
+    ]
+  -
+    Name: hudson_news_2670
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        99.90666666666668, 12.233333333333334, 6.0
+        98.47666666666667, 10.153333333333334, 6.0
+        100.18666666666667, 15.246666666666664, 6.0
+        101.85666666666667, 15.633333333333333, 6.0
+        101.87666666666667, 19.499999999999996, 6.0
+    ]
+    Doorways: [
+        101.05, 20.9, 6.0
+    ]
+  -
+    Name: Munchy_s778
+    AttractionType: Vendor-Food
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -16.45, -71.29, 9.0
+        -11.183333333333332, -68.58, 9.0
+        -21.71666666666667, -70.12333333333333, 9.0
+        -21.71666666666667, -67.92333333333333, 9.0
+        -20.48333333333333, -66.38000000000001, 9.0
+        -24.366666666666664, -66.38000000000001, 9.0
+    ]
+    Doorways: [
+        -17.924999999999997, -65.87, 9.0
+    ]
+  -
+    Name: hudson_news_2862
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        32.04, -70.72333333333334, 9.0
+        33.10333333333333, -73.44333333333334, 9.0
+        28.853333333333335, -70.15666666666668, 9.0
+        32.083333333333336, -68.57333333333334, 9.0
+        33.73666666666667, -68.56333333333333, 9.0
+        35.803333333333335, -70.11333333333333, 9.0
+        35.82, -67.39, 9.0
+    ]
+    Doorways: [
+        31.950000000000003, -65.845, 9.0
+    ]
+  -
+    Name: display_1972
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -60.71333333333333, -44.61666666666667, 6.0
+        -57.13333333333333, -45.21, 6.0
+        -67.11, -44.82, 6.0
+        -54.13666666666666, -43.89000000000001, 6.0
+        -55.97666666666667, -43.876666666666665, 6.0
+        -57.81, -42.526666666666664, 6.0
+    ]
+    Doorways: [
+        -53.745000000000005, -43.705, 6.0
+    ]
+  -
+    Name: lottery1426
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        39.34333333333333, -65.83333333333333, 9.0
+        38.74666666666666, -67.39666666666666, 9.0
+        40.11333333333334, -68.95333333333333, 9.0
+    ]
+    Doorways: [
+        40.334999999999994, -65.83500000000001, 9.0
+    ]
+  -
+    Name: Bolton_s1531
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 54.0]
+    Max_Capacity: 54.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        89.43666666666667, -26.95, 6.0
+        88.25666666666667, -24.326666666666668, 6.0
+        90.57, -28.62, 6.0
+        85.24666666666667, -25.99666666666667, 6.0
+        82.12666666666667, -25.99666666666667, 6.0
+        83.36, -21.709999999999997, 6.0
+        79.11, -20.806666666666665, 6.0
+        81.63000000000001, -15.61, 6.0
+    ]
+    Doorways: [
+        83.2, -30.29, 6.0
+    ]
+  -
+    Name: strawberry1556
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 46.0]
+    Max_Capacity: 46.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        67.28666666666666, -22.25, 6.0
+        68.66666666666667, -23.179999999999996, 6.0
+        65.94, -17.0, 6.0
+        72.64666666666666, -18.91333333333333, 6.0
+        70.03333333333333, -25.093333333333334, 6.0
+        73.98, -25.093333333333334, 6.0
+    ]
+    Doorways: [
+        72.67500000000001, -30.29, 6.0
+    ]
+  -
+    Name: cafe_metro1631
+    AttractionType: Vendor-Food
+    Capacity: [0.0, 28.0]
+    Max_Capacity: 28.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        54.84333333333333, -68.94, 9.0
+        54.84333333333333, -71.18666666666667, 9.0
+        57.446666666666665, -69.50666666666666, 9.0
+        59.78666666666667, -69.50666666666666, 9.0
+        59.78333333333334, -70.46333333333332, 9.0
+        63.67666666666668, -69.17666666666666, 9.0
+        58.5, -72.71, 9.0
+    ]
+    Doorways: [
+        59.519999999999996, -67.26, 9.0
+        64.965, -68.7, 9.0
+    ]
+  -
+    Name: ticket1643
+    AttractionType: Ticket
+    Capacity: [0.0, 4.0]
+    Max_Capacity: 4.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        64.98, -43.73333333333333, 9.0
+        65.49666666666667, -44.96666666666667, 9.0
+    ]
+    Doorways: [
+        65.225, -42.5, 9.0
+        64.47, -44.35, 9.0
+        65.245, -46.2, 9.0
+    ]
+  -
+    Name: shortline_tickets1652
+    AttractionType: Ticket
+    Capacity: [0.0, 8.0]
+    Max_Capacity: 8.0
+    Duration: [20.0, 30.0]
+    DefiningTriangles: [
+        99.33666666666666, -6.739999999999999, 9.0
+        101.92666666666666, -10.723333333333334, 9.0
+        95.43, -5.763333333333333, 9.0
+        98.69999999999999, -3.733333333333333, 9.0
+        101.82, -5.603333333333333, 9.0
+        103.43333333333334, -8.196666666666667, 9.0
+        104.20333333333333, -9.493333333333334, 9.0
+    ]
+    Doorways: [
+        102.9, -6.445, 9.0
+    ]
+  -
+    Name: Women_s_room1682
+    AttractionType: Restroom
+    Capacity: [0.0, 18.0]
+    Max_Capacity: 18.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -32.25666666666667, -67.64333333333333, 6.0
+        -31.573333333333334, -66.02, 6.0
+        -38.88333333333333, -70.29333333333334, 6.0
+        -38.876666666666665, -72.56333333333333, 6.0
+        -44.28666666666667, -69.54333333333334, 6.0
+    ]
+    Doorways: [
+        -30.630000000000003, -65.42, 6.0
+    ]
+  -
+    Name: Men_s_room_21710
+    AttractionType: Restroom
+    Capacity: [0.0, 4.0]
+    Max_Capacity: 4.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        107.51333333333334, -58.93333333333334, 9.0
+        106.31333333333333, -58.93333333333334, 9.0
+        105.60000000000001, -59.46666666666667, 9.0
+    ]
+    Doorways: [
+        107.27000000000001, -58.4, 9.0
+    ]
+  -
+    Name: hudson_news_and_storage1728
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -29.683333333333334, -50.800000000000004, 9.0
+        -28.349999999999998, -46.68, 9.0
+        -31.66, -50.800000000000004, 9.0
+        -32.86666666666667, -49.07333333333333, 9.0
+        -32.85333333333333, -52.24333333333333, 9.0
+        -32.85, -53.97, 9.0
+    ]
+    Doorways: [
+        -30.765, -54.9, 9.0
+        -33.415, -50.915, 9.0
+    ]
+  -
+    Name: Mcann_s_cafe1730
+    AttractionType: Vendor-Food
+    Capacity: [0.0, 36.0]
+    Max_Capacity: 36.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        12.156666666666666, -35.46666666666667, 9.0
+        12.173333333333334, -30.166666666666668, 9.0
+        10.120000000000001, -30.833333333333332, 9.0
+        10.120000000000001, -30.0, 9.0
+        10.136666666666667, -27.53333333333333, 9.0
+        5.533333333333334, -32.0, 9.0
+        2.9999999999999996, -30.099999999999998, 9.0
+        10.153333333333334, -25.066666666666666, 9.0
+        7.603333333333333, -24.5, 9.0
+        4.403333333333333, -24.5, 9.0
+        6.953333333333333, -22.733333333333334, 9.0
+        2.3499999999999996, -22.96666666666667, 9.0
+        -0.85, -22.96666666666667, 9.0
+        10.153333333333334, -20.400000000000002, 9.0
+    ]
+    Doorways: [
+        14.21, -35.0, 9.0
+    ]
+  -
+    Name: book_corner1754
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 55.0]
+    Max_Capacity: 55.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -21.400000000000002, -39.47, 9.0
+        -21.0, -38.90333333333333, 9.0
+        -21.0, -41.803333333333335, 9.0
+        -18.400000000000002, -44.26666666666667, 9.0
+        -21.0, -43.56999999999999, 9.0
+        -21.400000000000002, -44.13666666666666, 9.0
+        -21.400000000000002, -45.82666666666666, 9.0
+        -21.846666666666668, -47.626666666666665, 9.0
+        -19.12, -53.56, 9.0
+        -18.58, -54.23666666666666, 9.0
+        -22.99, -48.303333333333335, 9.0
+        -24.743333333333336, -44.18333333333334, 9.0
+        -24.743333333333336, -50.78, 9.0
+        -23.2, -34.70333333333333, 9.0
+        -20.599999999999998, -32.4, 9.0
+    ]
+    Doorways: [
+        -21.585, -54.9, 9.0
+    ]
+  -
+    Name: NoName4985
+    AttractionType: Restroom
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -90.91333333333334, -43.54333333333333, 15.0
+        -92.52, -42.03333333333333, 15.0
+        -94.13333333333333, -43.35666666666666, 15.0
+    ]
+    Doorways: [
+        -93.8, -44.775, 15.0
+    ]
+  -
+    Name: NoName4986
+    AttractionType: Restroom
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -96.23333333333333, -41.836666666666666, 15.0
+        -97.64999999999999, -43.06, 15.0
+        -96.39999999999999, -44.88333333333333, 15.0
+    ]
+    Doorways: [
+        -95.07499999999999, -45.230000000000004, 15.0
+    ]
+  -
+    Name: NoName5052
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 21.0]
+    Max_Capacity: 21.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        95.75333333333333, -62.086666666666666, 15.0
+        95.75333333333333, -61.01333333333333, 15.0
+        95.75333333333333, -63.39333333333334, 15.0
+        92.16000000000001, -61.25666666666666, 15.0
+        95.21333333333332, -56.84666666666667, 15.0
+        98.15333333333332, -52.60666666666666, 15.0
+        99.5, -51.94333333333333, 15.0
+        100.22666666666667, -53.07333333333333, 15.0
+        100.22666666666667, -55.24, 15.0
+    ]
+    Doorways: [
+        92.78, -55.81, 15.0
+    ]
+  -
+    Name: SB-trailways5942
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        121.56333333333333, 51.913333333333334, 3.0
+        122.84666666666665, 51.833333333333336, 3.0
+        119.19000000000001, 51.96, 3.0
+        116.43, 51.96666666666667, 3.0
+        117.13666666666666, 54.82, 3.0
+        113.16666666666667, 56.589999999999996, 3.0
+        114.99666666666667, 61.163333333333334, 3.0
+    ]
+    Doorways: [
+        120.695, 49.11, 3.0
+        112.995, 49.19, 3.0
+    ]
+  -
+    Name: SB-retail6021
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        96.11333333333333, -47.26666666666667, 3.0
+        96.11333333333333, -45.36666666666667, 3.0
+        93.67333333333333, -48.81333333333333, 3.0
+        91.21333333333332, -46.913333333333334, 3.0
+    ]
+    Doorways: [
+        95.27, -45.0, 3.0
+    ]
+  -
+    Name: SB-hudson_news26036
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        106.74333333333334, -33.88333333333333, 3.0
+        109.60333333333334, -33.88333333333333, 3.0
+        109.42666666666666, -32.096666666666664, 3.0
+        112.26666666666667, -31.646666666666665, 3.0
+    ]
+    Doorways: [
+        111.375, -35.22, 3.0
+    ]
+  -
+    Name: SB-Au_bon_pain6075
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        111.48333333333333, -43.47333333333333, 3.0
+        109.83, -43.47333333333333, 3.0
+        113.00666666666666, -43.47333333333333, 3.0
+        114.47666666666667, -43.47333333333333, 3.0
+        115.74666666666667, -43.47333333333333, 3.0
+        111.25666666666666, -45.02333333333333, 3.0
+        108.57666666666667, -44.97, 3.0
+        107.22333333333334, -46.71666666666667, 3.0
+        106.29666666666667, -48.53333333333333, 3.0
+        105.36666666666667, -46.65, 3.0
+    ]
+    Doorways: [
+        113.565, -41.9, 3.0
+        109.075, -41.9, 3.0
+    ]
+  -
+    Name: Women6651
+    AttractionType: Restroom
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        72.08333333333333, 30.00666666666667, 12.0
+        73.06, 30.77333333333333, 12.0
+        72.08333333333333, 27.52, 12.0
+    ]
+    Doorways: [
+        71.08, 32.135000000000005, 12.0
+    ]
+  -
+    Name: Mens6680
+    AttractionType: Restroom
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        56.46666666666667, 30.036666666666665, 12.0
+        56.46, 32.60666666666666, 12.0
+        55.586666666666666, 28.333333333333332, 12.0
+        54.68666666666667, 29.61, 12.0
+    ]
+    Doorways: [
+        57.355000000000004, 32.21, 12.0
+    ]
+  -
+    Name: SB-hudson_news16761
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 26.0]
+    Max_Capacity: 26.0
+    Duration: [30.0, 120.0]
+    DefiningTriangles: [
+        99.92333333333333, 32.89333333333334, 3.0
+        97.62666666666667, 32.19, 3.0
+        97.10666666666667, 29.37, 3.0
+        97.67, 26.653333333333336, 3.0
+        99.91333333333334, 26.05333333333333, 3.0
+        102.17, 26.689999999999998, 3.0
+    ]
+    Doorways: [
+        98.52, 33.51, 3.0
+        98.505, 23.25, 3.0
+    ]
+  -
+    Name: SB-boa_atm6782
+    AttractionType: ATM
+    Capacity: [0.0, 2.0]
+    Max_Capacity: 2.0
+    Duration: [30.0, 120.0]
+    DefiningTriangles: [
+        86.0, 22.683333333333337, 3.0
+        87.0, 21.76666666666667, 3.0
+    ]
+    Doorways: [
+        88.0, 22.225, 3.0
+    ]
+  -
+    Name: NoName7563
+    AttractionType: Office
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -112.62333333333333, -71.33333333333333, 0.0
+        -115.65666666666665, -72.96666666666667, 0.0
+    ]
+    Doorways: [
+        -109.585, -72.15, 0.0
+        -118.7, -72.15, 0.0
+    ]
+  -
+    Name: NoName7679
+    AttractionType: Security_Posts
+    Capacity: [0.0, 2.0]
+    Max_Capacity: 2.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -60.666666666666664, -73.38666666666667, 0.0
+        -59.98666666666667, -73.91666666666667, 0.0
+        -59.339999999999996, -73.40333333333334, 0.0
+    ]
+    Doorways: [
+        -59.004999999999995, -73.825, 0.0
+        -60.995000000000005, -73.8, 0.0
+    ]
+  -
+    Name: LL-hudson_news8471
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -33.766666666666666, -37.019999999999996, 0.0
+        -34.53333333333333, -38.21, 0.0
+    ]
+    Doorways: [
+        -33.0, -37.614999999999995, 0.0
+    ]
+  -
+    Name: Mens_N_Lower_18488
+    AttractionType: Restroom
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        76.18666666666667, 28.953333333333333, 0.0
+        76.18666666666667, 32.050000000000004, 0.0
+        75.25, 26.596666666666664, 0.0
+        74.30666666666667, 27.213333333333335, 0.0
+        73.72666666666667, 27.830000000000002, 0.0
+        73.15333333333332, 28.886666666666667, 0.0
+        72.57, 29.933333333333334, 0.0
+        71.98666666666666, 31.356666666666666, 0.0
+    ]
+    Doorways: [
+        75.78, 32.79, 0.0
+    ]
+  -
+    Name: womens_restroom8512
+    AttractionType: Restroom
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        16.8, -38.556666666666665, 0.0
+        18.650000000000002, -38.556666666666665, 0.0
+        19.3, -37.07333333333333, 0.0
+    ]
+    Doorways: [
+        20.174999999999997, -40.04, 0.0
+    ]
+  -
+    Name: men_s_restroom8514
+    AttractionType: Restroom
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        11.433333333333335, -38.54333333333333, 0.0
+        13.200000000000001, -37.07333333333333, 0.0
+        9.033333333333333, -38.53, 0.0
+    ]
+    Doorways: [
+        9.350000000000001, -40.0, 0.0
+    ]
+  -
+    Name: NoName8721
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        58.49666666666667, 27.296666666666667, 12.0
+        57.93333333333334, 28.976666666666663, 12.0
+    ]
+    Doorways: [
+        59.055, 28.045, 12.0
+    ]
+  -
+    Name: LL-vending8784
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 3.0]
+    Max_Capacity: 3.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        99.39999999999999, 30.02333333333333, 0.0
+        98.97000000000001, 31.426666666666666, 0.0
+    ]
+    Doorways: [
+        99.83, 30.745, 0.0
+    ]
+  -
+    Name: LL-vending8786
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        83.7, 21.613333333333333, 0.0
+        84.36666666666666, 22.55666666666667, 0.0
+    ]
+    Doorways: [
+        83.0, 22.085, 0.0
+    ]
+  -
+    Name: trailways10435
+    AttractionType: Ticket
+    Capacity: [0.0, 20.0]
+    Max_Capacity: 20.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        74.75, -53.13333333333333, 6.0
+        74.75, -49.846666666666664, 6.0
+        72.13666666666667, -53.18, 6.0
+        70.38666666666667, -57.199999999999996, 6.0
+        70.38666666666667, -58.666666666666664, 6.0
+        68.68666666666667, -54.64666666666667, 6.0
+        69.29333333333334, -49.89333333333334, 6.0
+        66.20333333333333, -49.89333333333334, 6.0
+        63.01, -49.89333333333334, 6.0
+    ]
+    Doorways: [
+        73.49000000000001, -45.14, 6.0
+        64.065, -45.14, 6.0
+    ]
+  -
+    Name: GNC10467
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 32.0]
+    Max_Capacity: 32.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        25.820000000000004, -19.34, 6.0
+        26.2, -16.403333333333332, 6.0
+        24.743333333333336, -21.83666666666667, 6.0
+        22.69333333333333, -23.55, 6.0
+        20.55, -23.55, 6.0
+        18.363333333333333, -23.55, 6.0
+        16.926666666666666, -20.623333333333335, 6.0
+        16.86, -15.39, 6.0
+        20.21666666666667, -12.833333333333334, 6.0
+    ]
+    Doorways: [
+        19.025, -28.2, 6.0
+        26.93, -21.884999999999998, 6.0
+    ]
+  -
+    Name: NoName10542
+    AttractionType: Bench
+    Capacity: [0.0, 32.0]
+    Max_Capacity: 32.0
+    Duration: [1.0, 15.0]
+    DefiningTriangles: [
+        63.36666666666667, 24.7, 0.0
+        64.08333333333333, 28.75, 0.0
+        60.73, 24.7, 0.0
+        58.85666666666666, 28.75, 0.0
+    ]
+    Doorways: [
+        63.724999999999994, 20.65, 0.0
+        63.724999999999994, 32.8, 0.0
+    ]
+  -
+    Name: Snack_n_Wheels10557
+    AttractionType: Vendor-Food
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        91.91333333333334, 31.426666666666666, 0.0
+        90.24666666666667, 31.426666666666666, 0.0
+        93.48, 31.426666666666666, 0.0
+        95.88, 31.426666666666666, 0.0
+        98.09333333333335, 31.426666666666666, 0.0
+        94.02666666666669, 29.286666666666665, 0.0
+        94.02666666666669, 27.94333333333334, 0.0
+        94.02666666666669, 26.623333333333335, 0.0
+        94.02666666666669, 25.330000000000002, 0.0
+        91.18, 24.73, 0.0
+        87.39999999999999, 24.73, 0.0
+        85.76666666666667, 24.73, 0.0
+        85.03333333333333, 28.070000000000004, 0.0
+        85.03333333333333, 24.953333333333333, 0.0
+    ]
+    Doorways: [
+        88.6, 20.67, 0.0
+        98.54, 27.505, 0.0
+        88.6, 32.85, 0.0
+    ]
+  -
+    Name: Bench_Lower_S_110704
+    AttractionType: Bench
+    Capacity: [0.0, 16.0]
+    Max_Capacity: 16.0
+    Duration: [1.0, 15.0]
+    DefiningTriangles: [
+        -67.33333333333333, -37.300000000000004, 0.0
+        -64.66666666666667, -37.699999999999996, 0.0
+    ]
+    Doorways: [
+        -66.0, -38.1, 0.0
+        -66.0, -36.9, 0.0
+    ]
+  -
+    Name: Bench_Lower_S_210721
+    AttractionType: Bench
+    Capacity: [0.0, 8.0]
+    Max_Capacity: 8.0
+    Duration: [1.0, 15.0]
+    DefiningTriangles: [
+        -53.333333333333336, -37.699999999999996, 0.0
+        -54.666666666666664, -37.300000000000004, 0.0
+    ]
+    Doorways: [
+        -54.0, -38.1, 0.0
+        -54.0, -36.9, 0.0
+    ]
+  -
+    Name: Benches_Lower_S_310748
+    AttractionType: Bench
+    Capacity: [0.0, 8.0]
+    Max_Capacity: 8.0
+    Duration: [1.0, 15.0]
+    DefiningTriangles: [
+        -27.906666666666666, -37.300000000000004, 0.0
+        -26.50666666666667, -37.699999999999996, 0.0
+    ]
+    Doorways: [
+        -27.22, -36.9, 0.0
+        -27.200000000000003, -38.1, 0.0
+    ]
+  -
+    Name: Benches_Lower_S_310760
+    AttractionType: Bench
+    Capacity: [0.0, 24.0]
+    Max_Capacity: 24.0
+    Duration: [1.0, 15.0]
+    DefiningTriangles: [
+        43.0, -37.300000000000004, 0.0
+        47.0, -37.699999999999996, 0.0
+    ]
+    Doorways: [
+        45.0, -38.1, 0.0
+        45.0, -36.9, 0.0
+    ]
+  -
+    Name: Benches_Lower_N_110777
+    AttractionType: Bench
+    Capacity: [0.0, 3.0]
+    Max_Capacity: 3.0
+    Duration: [1.0, 15.0]
+    DefiningTriangles: [
+        51.0, 46.44, 0.0
+        50.0, 46.07, 0.0
+    ]
+    Doorways: [
+        50.5, 45.7, 0.0
+    ]
+  -
+    Name: Benches_Lower_N_110785
+    AttractionType: Bench
+    Capacity: [0.0, 3.0]
+    Max_Capacity: 3.0
+    Duration: [1.0, 15.0]
+    DefiningTriangles: [
+        57.5, 46.473333333333336, 0.0
+        58.5, 46.089999999999996, 0.0
+    ]
+    Doorways: [
+        58.0, 45.7, 0.0
+    ]
+  -
+    Name: Benches_Lower_N_310794
+    AttractionType: Bench
+    Capacity: [0.0, 6.0]
+    Max_Capacity: 6.0
+    Duration: [1.0, 15.0]
+    DefiningTriangles: [
+        37.410000000000004, 40.86666666666667, 0.0
+        37.806666666666665, 39.03333333333334, 0.0
+    ]
+    Doorways: [
+        38.2, 39.95, 0.0
+    ]
+  -
+    Name: Tickets_Lower_N10809
+    AttractionType: Ticket
+    Capacity: [0.0, 2.0]
+    Max_Capacity: 2.0
+    Duration: [10.0, 15.0]
+    DefiningTriangles: [
+        52.26666666666667, 39.46666666666667, 0.0
+        52.93333333333334, 38.53333333333333, 0.0
+    ]
+    Doorways: [
+        53.6, 39.0, 0.0
+    ]
+  -
+    Name: Benches_Lower_N_410821
+    AttractionType: Bench
+    Capacity: [0.0, 6.0]
+    Max_Capacity: 6.0
+    Duration: [1.0, 15.0]
+    DefiningTriangles: [
+        93.66666666666667, 33.23333333333333, 0.0
+        95.43333333333334, 33.61666666666667, 0.0
+    ]
+    Doorways: [
+        94.55000000000001, 34.0, 0.0
+    ]
+  -
+    Name: Green_Trees11068
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 30.0]
+    Max_Capacity: 30.0
+    Duration: [10.0, 20.0]
+    DefiningTriangles: [
+        115.53666666666668, 17.586666666666666, 3.0
+        118.21, 23.189999999999998, 3.0
+        118.96333333333332, 15.276666666666666, 3.0
+        121.01333333333334, 11.983333333333334, 3.0
+        112.86333333333334, 15.786666666666667, 3.0
+        112.25999999999999, 17.28, 3.0
+        111.65666666666668, 18.330000000000002, 3.0
+        110.76333333333332, 19.34, 3.0
+        109.79333333333334, 20.80666666666667, 3.0
+        109.68, 23.103333333333335, 3.0
+        109.73, 24.700000000000003, 3.0
+        109.81666666666666, 27.736666666666668, 3.0
+        111.38, 29.96666666666667, 3.0
+        114.25999999999999, 29.96666666666667, 3.0
+        115.57666666666667, 28.7, 3.0
+    ]
+    Doorways: [
+        109.305, 32.2, 3.0
+        106.755, 21.905, 3.0
+    ]
+  -
+    Name: Subway_Entrance11076
+    OriginsType: Subway
+    DefiningTriangles: [
+        129.53333333333333, -29.830000000000002, 3.0
+        129.53333333333333, -37.1, 3.0
+        129.53333333333333, -25.44666666666667, 3.0
+        129.53333333333333, -21.183333333333334, 3.0
+        129.53333333333333, -16.2, 3.0
+        129.53333333333333, -13.366666666666667, 3.0
+        134.26666666666668, -6.100000000000001, 3.0
+        136.0, 23.200000000000003, 3.0
+        136.0, 41.07666666666667, 3.0
+        136.0, 47.01, 3.0
+        137.26666666666668, -20.46666666666667, 3.0
+    ]
+    Doorways: [
+        133.0, 36.615, 3.0
+        127.8, -38.445, 3.0
+    ]
+  -
+    Name: Womens_Lower_111102
+    AttractionType: Restroom
+    Capacity: [0.0, 15.0]
+    Max_Capacity: 15.0
+    Duration: [10.0, 30.0]
+    DefiningTriangles: [
+        67.06666666666666, 26.823333333333334, 0.0
+        67.89999999999999, 28.933333333333334, 0.0
+        65.93333333333334, 24.706666666666667, 0.0
+        67.55000000000001, 30.866666666666664, 0.0
+        69.51666666666667, 29.429999999999996, 0.0
+        69.51666666666667, 31.36, 0.0
+    ]
+    Doorways: [
+        65.975, 32.8, 0.0
+    ]
+  -
+    Name: Greyhound11117
+    AttractionType: Ticket
+    Capacity: [0.0, 16.0]
+    Max_Capacity: 16.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        86.45, -53.120000000000005, 6.0
+        91.21666666666665, -53.22, 6.0
+        81.48333333333333, -53.120000000000005, 6.0
+        87.41666666666667, -50.336666666666666, 6.0
+        92.39999999999999, -49.25333333333333, 6.0
+        97.0, -50.70333333333334, 6.0
+        97.0, -47.31666666666666, 6.0
+    ]
+    Doorways: [
+        89.7, -46.230000000000004, 6.0
+    ]
+  -
+    Name: Duane_Reade11160
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 120.0]
+    Max_Capacity: 120.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        101.10333333333334, -70.77333333333334, 6.0
+        112.39666666666666, -71.45, 6.0
+        97.63333333333333, -70.09666666666668, 6.0
+        93.28666666666668, -70.09666666666668, 6.0
+        84.58, -70.76333333333334, 6.0
+        66.30333333333333, -73.33333333333333, 6.0
+        74.15333333333332, -73.33333333333333, 6.0
+        72.52333333333333, -71.43, 6.0
+        67.2, -71.43, 6.0
+        66.10333333333334, -67.77, 6.0
+        67.17666666666666, -64.11, 6.0
+        69.82333333333334, -64.11, 6.0
+        79.2, -63.903333333333336, 6.0
+        54.35999999999999, -60.53666666666667, 6.0
+        59.576666666666675, -59.330000000000005, 6.0
+        53.080000000000005, -53.57666666666666, 6.0
+        54.68000000000001, -49.89333333333334, 6.0
+        58.589999999999996, -49.89333333333334, 6.0
+        66.07333333333334, -60.4, 6.0
+        102.88, -63.696666666666665, 6.0
+        121.22333333333334, -64.17, 6.0
+        121.22333333333334, -62.873333333333335, 6.0
+    ]
+    Doorways: [
+        123.69, -65.055, 6.0
+        57.435, -45.14, 6.0
+    ]
+  -
+    Name: 8th_Ave_South_Entrance111166
+    OriginsType: Outside
+    DefiningTriangles: [
+        126.76333333333334, -33.99, 6.0
+        129.83666666666667, -35.10666666666666, 6.0
+        126.76333333333334, -27.716538703044254, 6.0
+        126.76333333333334, -21.423205369710924, 6.0
+        126.76333333333334, -19.313333333333333, 6.0
+        126.76333333333334, -14.473333333333334, 6.0
+    ]
+    Doorways: [
+        128.3, -10.035, 6.0
+        123.69, -24.810000000000002, 6.0
+        123.69, -37.41480805456638, 6.0
+        128.3, -48.5, 6.0
+    ]
+  -
+    Name: 41st_Street_Entrance_South211171
+    OriginsType: Outside
+    DefiningTriangles: [
+        90.02, -9.403333333333334, 6.0
+        65.92, -10.546666666666667, 6.0
+        98.18333333333332, -10.606666666666667, 6.0
+        102.49666666666667, -10.606666666666667, 6.0
+        105.11000000000001, -10.606666666666667, 6.0
+        108.79666666666667, -10.606666666666667, 6.0
+        112.94333333333333, -10.606666666666667, 6.0
+        115.15666666666668, -10.606666666666667, 6.0
+        121.28000000000002, -10.606666666666667, 6.0
+    ]
+    Doorways: [
+        60.58, -9.945, 6.0
+        96.72999999999999, -8.23, 6.0
+        128.3, -10.035, 6.0
+        106.28, -11.75, 6.0
+        96.74, -11.75, 6.0
+        87.29, -11.75, 6.0
+    ]
+  -
+    Name: 41st_Street_Entrance_South111172
+    OriginsType: Outside
+    DefiningTriangles: [
+        39.56333333333333, -10.333333333333334, 6.0
+        42.53, -10.333333333333334, 6.0
+        38.29333333333333, -10.333333333333334, 6.0
+        34.373333333333335, -10.333333333333334, 6.0
+        30.056666666666672, -10.346666666666666, 6.0
+        27.50666666666667, -10.346666666666666, 6.0
+        25.496666666666666, -10.333333333333334, 6.0
+        24.436666666666667, -10.333333333333334, 6.0
+        23.5, -10.333333333333334, 6.0
+        21.66, -10.333333333333334, 6.0
+        16.976666666666667, -10.583333333333334, 6.0
+        45.01333333333333, -9.13, 6.0
+    ]
+    Doorways: [
+        60.58, -9.945, 6.0
+        37.214999999999996, -7.82, 6.0
+        13.665, -10.0, 6.0
+        31.305, -11.75, 6.0
+        34.32, -11.77, 6.0
+        50.5, -11.75, 6.0
+    ]
+  -
+    Name: 8th_Ave_North_Entrance11187
+    OriginsType: Outside
+    DefiningTriangles: [
+        128.96, 28.379999999999995, 6.0
+        132.04999999999998, 27.899999999999995, 6.0
+        126.75999999999999, 34.11333333333334, 6.0
+        126.55333333333333, 40.39, 6.0
+        126.33666666666666, 44.346666666666664, 6.0
+        126.32, 51.43333333333334, 6.0
+        126.32000000000001, 57.169999999999995, 6.0
+        126.33, 61.54333333333333, 6.0
+        126.29, 66.57333333333334, 6.0
+    ]
+    Doorways: [
+        127.935, 69.72, 6.0
+        123.00999999999999, 39.68, 6.0
+        123.36, 23.115, 6.0
+        126.97, 5.1, 6.0
+        131.60500000000002, 4.38, 6.0
+    ]
+  -
+    Name: 42nd_Street_Entrance11196
+    OriginsType: Outside
+    DefiningTriangles: [
+        66.06666666666668, 71.32666666666667, 6.0
+        55.14666666666667, 67.88666666666667, 6.0
+        76.25, 67.94, 6.0
+        80.51333333333334, 67.94, 6.0
+        82.88666666666667, 67.94, 6.0
+        85.07666666666667, 67.94, 6.0
+    ]
+    Doorways: [
+        51.415, 69.58, 6.0
+        87.765, 69.66, 6.0
+        80.83500000000001, 64.5, 6.0
+        67.595, 64.5, 6.0
+    ]
+  -
+    Name: 41st_Street_Entrance_North211202
+    OriginsType: Outside
+    DefiningTriangles: [
+        92.46666666666665, 7.223333333333334, 6.0
+        90.50666666666666, 5.996666666666667, 6.0
+        96.21, 7.223333333333334, 6.0
+        100.02333333333333, 7.223333333333334, 6.0
+        104.53666666666668, 7.090000000000001, 6.0
+        106.12, 6.38, 6.0
+        111.41000000000001, 5.7700000000000005, 6.0
+        118.74666666666667, 4.423333333333333, 6.0
+    ]
+    Doorways: [
+        84.61, 7.460000000000001, 6.0
+        105.655, 9.100000000000001, 6.0
+        126.97, 5.1, 6.0
+        116.30000000000001, 3.0999999999999996, 6.0
+        94.25999999999999, 4.345, 6.0
+    ]
+  -
+    Name: 41st_Street_Entranc_e_North111226
+    OriginsType: Outside
+    DefiningTriangles: [
+        74.08666666666666, 8.073333333333334, 6.0
+        61.833333333333336, 8.073333333333334, 6.0
+        54.01666666666667, 6.826666666666667, 6.0
+        39.35666666666667, 8.053333333333333, 6.0
+        35.856666668653496, 8.053333333333333, 6.0
+        33.043333335320156, 8.053333333333333, 6.0
+        31.156666666666666, 8.053333333333333, 6.0
+    ]
+    Doorways: [
+        84.61, 7.460000000000001, 6.0
+        57.905, 5.59, 6.0
+        29.835, 7.43, 6.0
+        44.24, 9.3, 6.0
+        49.64, 9.3, 6.0
+    ]
+  -
+    Name: PNC_Bank11270
+    AttractionType: ATM
+    Capacity: [0.0, 4.0]
+    Max_Capacity: 4.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        108.3, 20.973333333333333, 6.0
+        108.3, 19.349999999999998, 6.0
+        108.3, 22.583333333333332, 6.0
+        110.0, 23.429999999999996, 6.0
+    ]
+    Doorways: [
+        109.95, 25.9, 6.0
+        107.4, 22.215, 6.0
+    ]
+  -
+    Name: Heartland_Brewery11276
+    AttractionType: Vendor-Food
+    Capacity: [0.0, 76.0]
+    Max_Capacity: 76.0
+    Duration: [80.0, 120.0]
+    DefiningTriangles: [
+        112.08333333333333, -15.616666666666667, 6.0
+        109.87, -15.616666666666667, 6.0
+        118.20666666666666, -15.616666666666667, 6.0
+        115.99333333333334, -20.456666666666667, 6.0
+        115.99333333333334, -22.566538703044255, 6.0
+        112.09666666666665, -23.699872036377588, 6.0
+        106.78666666666668, -23.906666666666666, 6.0
+        104.16000000000001, -24.116666666666664, 6.0
+        101.77333333333333, -19.686666666666667, 6.0
+        101.77333333333333, -23.433333333333334, 6.0
+        101.77333333333333, -27.863333333333333, 6.0
+    ]
+    Doorways: [
+        106.28, -11.75, 6.0
+        105.94, -30.3, 6.0
+        123.69, -24.810000000000002, 6.0
+    ]
+  -
+    Name: Aunt_Annies11285
+    AttractionType: Vendor-Food
+    Capacity: [0.0, 4.0]
+    Max_Capacity: 4.0
+    Duration: [20.0, 60.0]
+    DefiningTriangles: [
+        80.31666666666666, -48.37, 6.0
+        80.30333333333333, -46.97, 6.0
+        77.80333333333333, -46.56666666666666, 6.0
+    ]
+    Doorways: [
+        82.205, -45.754999999999995, 6.0
+    ]
+  -
+    Name: NoName11293
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 6.0]
+    Max_Capacity: 6.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        73.87, -34.803333333333335, 6.0
+        67.27666666666666, -34.14666666666667, 6.0
+    ]
+    Doorways: [
+        70.56, -33.480000000000004, 6.0
+        80.45, -34.465, 6.0
+        60.69, -34.489999999999995, 6.0
+    ]
+  -
+    Name: NoName11303
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 6.0]
+    Max_Capacity: 6.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        73.91333333333334, -41.41, 6.0
+        67.36, -40.849999999999994, 6.0
+    ]
+    Doorways: [
+        70.645, -41.985, 6.0
+        80.455, -41.099999999999994, 6.0
+        60.815, -41.144999999999996, 6.0
+    ]
+  -
+    Name: Jamba_Juice11310
+    AttractionType: Vendor-Food
+    Capacity: [0.0, 12.0]
+    Max_Capacity: 12.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        11.86, -25.2, 6.0
+        10.06, -22.303333333333338, 6.0
+        11.9, -28.943030371665955, 6.0
+        10.18, -29.759697038332618, 6.0
+        7.403333333333333, -29.389999999999997, 6.0
+        6.346666666666667, -28.5, 6.0
+    ]
+    Doorways: [
+        11.07, -30.64954555749893, 6.0
+        6.905, -30.095, 6.0
+    ]
+  -
+    Name: Deli_Plus11311
+    AttractionType: Vendor-Food
+    Capacity: [0.0, 64.0]
+    Max_Capacity: 64.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        1.2299999999999998, -25.676666666666666, 6.0
+        7.323333333333333, -25.156666666666666, 6.0
+        0.25333333333333324, -29.02, 6.0
+        -3.8366666666666673, -20.51666666666667, 6.0
+        3.9399999999999995, -14.836666666666668, 6.0
+        11.743333333333334, -17.143333333333334, 6.0
+    ]
+    Doorways: [
+        -2.2800000000000002, -29.54, 6.0
+    ]
+  -
+    Name: Villa_Pizza11313
+    AttractionType: Vendor-Food
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        14.776666666666666, -53.78666666666666, 6.0
+        19.12333333333333, -54.97666666666666, 6.0
+        12.203333333333333, -51.21, 6.0
+        12.75, -49.31, 6.0
+        14.383333333333335, -47.623333333333335, 6.0
+        15.153333333333334, -46.85333333333333, 6.0
+        16.06, -46.51, 6.0
+        19.05, -46.51, 6.0
+    ]
+    Doorways: [
+        10.835, -46.57, 6.0
+        17.835, -44.9, 6.0
+    ]
+  -
+    Name: Operation_Control_Center11317
+    AttractionType: Office
+    Capacity: [0.0, 10.0]
+    Max_Capacity: 10.0
+    Duration: [600.0, 3600.0]
+    DefiningTriangles: [
+        23.423333333333336, -60.49333333333333, 6.0
+        22.25666666666667, -62.31999999999999, 6.0
+        24.03333333333333, -52.82666666666666, 6.0
+        24.49, -58.666666666666664, 6.0
+        25.756666666666664, -58.666666666666664, 6.0
+        26.49, -59.74666666666667, 6.0
+        26.47666666666667, -63.75333333333334, 6.0
+        29.28, -66.68, 6.0
+        28.143333333333334, -70.34, 6.0
+        33.35666666666667, -70.34, 6.0
+    ]
+    Doorways: [
+        22.55, -56.48, 6.0
+    ]
+  -
+    Name: Womens_Restroom11332
+    AttractionType: Restroom
+    Capacity: [0.0, 6.0]
+    Max_Capacity: 6.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        8.563333333333333, -68.32000000000001, 6.0
+        8.556666666666667, -66.10333333333334, 6.0
+        7.183333333333334, -66.67333333333333, 6.0
+        7.183333333333334, -64.8, 6.0
+        8.56, -62.48333333333333, 6.0
+        10.549999999999999, -61.56333333333333, 6.0
+    ]
+    Doorways: [
+        9.934999999999999, -64.255, 6.0
+    ]
+  -
+    Name: Mens_Restroom11333
+    AttractionType: Restroom
+    Capacity: [0.0, 6.0]
+    Max_Capacity: 6.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        13.133333333333333, -66.46, 6.0
+        11.99, -66.86, 6.0
+        13.983333333333334, -65.72, 6.0
+        11.396666666666667, -68.37333333333333, 6.0
+    ]
+    Doorways: [
+        12.55, -64.71000000000001, 6.0
+    ]
+  -
+    Name: Academy_Tickets11347
+    AttractionType: Ticket
+    Capacity: [0.0, 4.0]
+    Max_Capacity: 4.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -27.74333333333333, -42.04333333333333, 6.0
+        -28.900000000000002, -43.870000000000005, 6.0
+    ]
+    Doorways: [
+        -30.57, -45.21, 6.0
+        -26.06, -40.724999999999994, 6.0
+        -27.795, -43.465, 6.0
+    ]
+  -
+    Name: Ticket_Booths11358
+    AttractionType: Ticket
+    Capacity: [0.0, 7.0]
+    Max_Capacity: 7.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -35.56, -53.20666666666667, 6.0
+        -33.01, -54.98, 6.0
+    ]
+    Doorways: [
+        -37.59, -50.93, 6.0
+        -30.965, -57.275, 6.0
+        -33.765, -53.59, 6.0
+    ]
+  -
+    Name: NoName11367
+    AttractionType: Office
+    Capacity: [0.0, 2.0]
+    Max_Capacity: 2.0
+    Duration: [3600.0, 7200.0]
+    DefiningTriangles: [
+        -16.713333333333335, -62.65333333333333, 6.0
+        -17.826666666666668, -63.74666666666667, 6.0
+        -16.69666666666667, -64.85333333333334, 6.0
+    ]
+    Doorways: [
+        -15.565000000000001, -64.59, 6.0
+    ]
+  -
+    Name: Book_Corner11372
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 36.0]
+    Max_Capacity: 36.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -18.89, -71.69333333333333, 6.0
+        -15.450000000000001, -70.87, 6.0
+        -20.073333333333334, -68.82000000000001, 6.0
+        -23.506666666666664, -67.15666666666667, 6.0
+        -22.97, -63.166666666666664, 6.0
+        -20.680000000000003, -63.173333333333325, 6.0
+        -16.673333333333336, -65.94333333333333, 6.0
+    ]
+    Doorways: [
+        -21.54, -62.07, 6.0
+    ]
+  -
+    Name: NJ_Transit_Coach_USA_Tickets11381
+    AttractionType: Ticket
+    Capacity: [0.0, 14.0]
+    Max_Capacity: 14.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -5.4433333333333325, -61.656666666666666, 6.0
+        1.2433333333333332, -59.06333333333333, 6.0
+        -9.409999999999998, -61.14666666666667, 6.0
+        3.5466666666666664, -56.06333333333333, 6.0
+    ]
+    Doorways: [
+        6.414999999999999, -53.755, 6.0
+        1.7899999999999998, -56.925, 6.0
+        -7.614999999999999, -60.66, 6.0
+        -13.02, -61.379999999999995, 6.0
+    ]
+  -
+    Name: Police_Office_111384
+    AttractionType: Office
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -100.28333333333335, -31.76666666666667, 6.0
+        -90.16000000000001, -31.76666666666667, 6.0
+        -105.78000000000002, -31.76666666666667, 6.0
+        -111.44666666666666, -31.76666666666667, 6.0
+        -115.46, -24.53333333333333, 6.0
+        -105.96, -17.3, 6.0
+        -83.85000000000001, -30.73, 6.0
+        -82.29666666666667, -28.296666666666663, 6.0
+        -74.43333333333334, -29.139999999999997, 6.0
+        -74.14, -30.526666666666667, 6.0
+    ]
+    Doorways: [
+        -110.435, -34.2, 6.0
+    ]
+  -
+    Name: Au_Bon_Pain11401
+    AttractionType: Vendor-Food
+    Capacity: [0.0, 60.0]
+    Max_Capacity: 60.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        31.703333333333337, -56.08666666666667, 6.0
+        31.69, -60.093333333333334, 6.0
+        31.703333333333337, -52.74, 6.0
+        32.50333333333333, -50.45333333333334, 6.0
+        34.46, -50.419999999999995, 6.0
+        36.45000000000001, -54.57333333333333, 6.0
+        36.48, -48.300000000000004, 6.0
+        37.35666666666666, -50.6, 6.0
+        38.156666666666666, -52.86666666666667, 6.0
+        39.49, -52.86666666666667, 6.0
+        40.55666666666667, -52.86666666666667, 6.0
+        43.14666666666667, -50.913333333333334, 6.0
+        45.05666666666667, -46.78, 6.0
+        45.20333333333334, -52.64333333333334, 6.0
+        43.14666666666667, -56.46, 6.0
+        45.80666666666667, -58.6, 6.0
+        44.07333333333333, -59.84, 6.0
+    ]
+    Doorways: [
+        46.085, -44.67, 6.0
+        33.035000000000004, -44.120000000000005, 6.0
+    ]
+  -
+    Name: Jays_Hallmark11464
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 52.0]
+    Max_Capacity: 52.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        23.680000000000003, 15.043333333333331, 9.0
+        20.786666666666665, 17.013333333333332, 9.0
+        23.673333333333332, 12.49, 9.0
+        23.663333333333338, 8.166666666666666, 9.0
+        23.653333333333332, 3.86, 9.0
+        23.646666666666665, -1.43, 9.0
+        22.7, -6.153333333333333, 9.0
+        20.790000000000003, -6.153333333333333, 9.0
+        19.823333333333334, -7.8566666666666665, 9.0
+        19.823333333333334, -10.793333333333331, 9.0
+        17.643333333333334, -12.006666666666666, 9.0
+        15.423333333333334, -9.32, 9.0
+        12.876666666666667, -6.32, 9.0
+    ]
+    Doorways: [
+        26.575, 16.215, 9.0
+        26.545, 3.27, 9.0
+        17.53, -20.53, 9.0
+    ]
+  -
+    Name: PA_Offices11506
+    AttractionType: Office
+    Capacity: [0.0, 36.0]
+    Max_Capacity: 36.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        36.64, 51.333333333333336, 9.0
+        40.93333333333334, 53.56666666666666, 9.0
+        31.17, 51.333333333333336, 9.0
+        29.126666666666665, 51.333333333333336, 9.0
+        25.47, 51.333333333333336, 9.0
+        22.679999999999996, 56.446666666666665, 9.0
+        26.64, 61.56333333333333, 9.0
+    ]
+    Doorways: [
+        28.39, 49.1, 9.0
+    ]
+  -
+    Name: USO_Office11507
+    AttractionType: Office
+    Capacity: [0.0, 32.0]
+    Max_Capacity: 32.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        45.833333333333336, 61.583333333333336, 9.0
+        35.76666666666667, 58.68333333333334, 9.0
+        55.9, 56.93333333333334, 9.0
+        55.9, 51.800000000000004, 9.0
+        53.79333333333333, 51.333333333333336, 9.0
+        50.81666666666666, 51.333333333333336, 9.0
+        48.02333333333333, 51.333333333333336, 9.0
+    ]
+    Doorways: [
+        53.175, 49.1, 9.0
+    ]
+  -
+    Name: Womens_Restroom11552
+    AttractionType: Restroom
+    Capacity: [0.0, 14.0]
+    Max_Capacity: 14.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        46.169999999999995, -2.526666666666667, 9.0
+        46.169999999999995, -4.133333333333334, 9.0
+        46.169999999999995, -0.81, 9.0
+        50.43666666666667, -5.03, 9.0
+    ]
+    Doorways: [
+        41.9, -3.915, 9.0
+    ]
+  -
+    Name: Second_North_Tickets11571
+    AttractionType: Ticket
+    Capacity: [0.0, 5.0]
+    Max_Capacity: 5.0
+    Duration: [20.0, 30.0]
+    DefiningTriangles: [
+        43.873333333333335, 18.94, 9.0
+        42.18000000000001, 18.94, 9.0
+        41.28666666666667, 18.37333333333333, 9.0
+    ]
+    Doorways: [
+        39.595, 18.65, 9.0
+        42.13, 17.810000000000002, 9.0
+        44.675, 18.66, 9.0
+    ]
+  -
+    Name: PNC_Second11579
+    AttractionType: ATM
+    Capacity: [0.0, 6.0]
+    Max_Capacity: 6.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        110.72666666666667, 20.103333333333335, 9.0
+        110.72666666666667, 18.06, 9.0
+        110.73, 21.97, 9.0
+        112.10000000000001, 23.236666666666665, 9.0
+        114.43333333333334, 23.236666666666665, 9.0
+    ]
+    Doorways: [
+        108.39, 21.86, 9.0
+    ]
+  -
+    Name: NoName11595
+    AttractionType: ATM
+    Capacity: [0.0, 2.0]
+    Max_Capacity: 2.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        105.99666666666667, 11.246666666666668, 9.0
+        105.41000000000001, 12.299999999999999, 9.0
+    ]
+    Doorways: [
+        105.695, 10.17, 9.0
+        105.72, 13.379999999999999, 9.0
+        104.815, 11.75, 9.0
+    ]
+  -
+    Name: Offices11599
+    AttractionType: Office
+    Capacity: [0.0, 20.0]
+    Max_Capacity: 20.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        109.75666666666666, -25.720000000000002, 9.0
+        114.89666666666666, -25.720000000000002, 9.0
+        113.46333333333332, -21.180000000000003, 9.0
+        113.48333333333333, -19.123333333333335, 9.0
+        116.73, -17.69, 9.0
+        121.82666666666667, -17.69, 9.0
+    ]
+    Doorways: [
+        108.35, -16.935000000000002, 9.0
+    ]
+  -
+    Name: Drago_Shoes11621
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 8.0]
+    Max_Capacity: 8.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        71.50000000000001, -67.99, 9.0
+        71.50000000000001, -70.62, 9.0
+        71.50000000000001, -66.50333333333333, 9.0
+        74.10000000000001, -65.96666666666665, 9.0
+    ]
+    Doorways: [
+        68.9, -65.83500000000001, 9.0
+    ]
+  -
+    Name: Offices11631
+    AttractionType: Office
+    Capacity: [0.0, 16.0]
+    Max_Capacity: 16.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        80.23333333333333, -69.53333333333335, 9.0
+        82.89999999999999, -68.8, 9.0
+        78.46666666666667, -69.7, 9.0
+        78.46666666666667, -73.43333333333334, 9.0
+        83.17666666666666, -65.8, 9.0
+        86.67666666666666, -65.8, 9.0
+        92.03666666666668, -65.8, 9.0
+        95.94666666666667, -68.8, 9.0
+    ]
+    Doorways: [
+        85.015, -62.8, 9.0
+    ]
+  -
+    Name: BoA_ATMs11648
+    AttractionType: ATM
+    Capacity: [0.0, 3.0]
+    Max_Capacity: 3.0
+    Duration: [10.0, 15.0]
+    DefiningTriangles: [
+        57.666666666666664, -46.199999999999996, 9.0
+        55.833333333333336, -47.0, 9.0
+    ]
+    Doorways: [
+        59.5, -46.599999999999994, 9.0
+        56.75, -45.4, 9.0
+        54.0, -46.599999999999994, 9.0
+    ]
+  -
+    Name: Saks_Florist11650
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 8.0]
+    Max_Capacity: 8.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        48.4, -68.01333333333334, 9.0
+        47.51, -70.15666666666668, 9.0
+        50.13666666666666, -68.01333333333334, 9.0
+        51.949999999999996, -68.01333333333334, 9.0
+        52.86666666666667, -68.47666666666667, 9.0
+        52.86666666666667, -70.62, 9.0
+    ]
+    Doorways: [
+        49.205, -65.87, 9.0
+    ]
+  -
+    Name: NoName11696
+    AttractionType: Ticket
+    Capacity: [0.0, 4.0]
+    Max_Capacity: 4.0
+    Duration: [20.0, 30.0]
+    DefiningTriangles: [
+        -45.36666666666667, -36.96666666666667, 9.0
+        -43.53, -36.629999999999995, 9.0
+    ]
+    Doorways: [
+        -44.445, -37.305, 9.0
+    ]
+  -
+    Name: NoName11712
+    AttractionType: Ticket
+    Capacity: [0.0, 3.0]
+    Max_Capacity: 3.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -66.23333333333333, -32.24666666666667, 9.0
+        -65.71666666666665, -33.56, 9.0
+    ]
+    Doorways: [
+        -65.975, -30.935000000000002, 9.0
+        -65.2, -32.905, 9.0
+    ]
+  -
+    Name: NoName11723
+    AttractionType: Ticket
+    Capacity: [0.0, 3.0]
+    Max_Capacity: 3.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -9.6, -45.10999999999999, 9.0
+        -9.200000000000001, -46.083333333333336, 9.0
+    ]
+    Doorways: [
+        -9.4, -47.06, 9.0
+        -9.4, -44.14, 9.0
+        -8.8, -45.6, 9.0
+    ]
+  -
+    Name: NoName11729
+    AttractionType: Ticket
+    Capacity: [0.0, 2.0]
+    Max_Capacity: 2.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -0.5166666666666667, -30.099999999999998, 9.0
+        -0.03333333333333335, -32.0, 9.0
+    ]
+    Doorways: [
+        -0.275, -33.9, 9.0
+        -1.0, -31.049999999999997, 9.0
+    ]
+  -
+    Name: Tickets11732
+    AttractionType: Ticket
+    Capacity: [0.0, 3.0]
+    Max_Capacity: 3.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        52.69522270699341, 20.48877770843605, 12.0
+        54.17522270699342, 19.815444375102718, 12.0
+    ]
+    Doorways: [
+        51.18, 20.189999999999998, 12.0
+        53.400000000000006, 19.18, 12.0
+        55.71283406049013, 20.108166562654077, 12.0
+    ]
+  -
+    Name: NoName11742
+    AttractionType: Bench
+    Capacity: [0.0, 3.0]
+    Max_Capacity: 3.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        37.61333333333334, 47.68, 12.0
+        37.17333333333334, 48.51333333333333, 12.0
+    ]
+    Doorways: [
+        38.065, 48.085, 12.0
+    ]
+  -
+    Name: 11753
+    AttractionType: Bench
+    Capacity: [0.0, 4.0]
+    Max_Capacity: 4.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        36.943333333333335, 38.64666666666667, 12.0
+        37.440000000000005, 37.48666666666667, 12.0
+    ]
+    Doorways: [
+        37.93, 38.08, 12.0
+    ]
+  -
+    Name: NoName11759
+    AttractionType: Bench
+    Capacity: [0.0, 8.0]
+    Max_Capacity: 8.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        34.18, 19.709999999999997, 12.0
+        34.196666666666665, 17.753333333333334, 12.0
+        34.67333333333334, 16.603333333333335, 12.0
+    ]
+    Doorways: [
+        35.155, 17.585, 12.0
+    ]
+  -
+    Name: NoName11765
+    AttractionType: Bench
+    Capacity: [0.0, 4.0]
+    Max_Capacity: 4.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        38.906666666666666, 13.283333333333331, 12.0
+        37.546666666666674, 12.883333333333335, 12.0
+    ]
+    Doorways: [
+        38.239999999999995, 13.725, 12.0
+    ]
+  -
+    Name: NoName11772
+    AttractionType: Bench
+    Capacity: [0.0, 4.0]
+    Max_Capacity: 4.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        108.04, 17.19666666666667, 12.0
+        106.95333333333333, 17.58666666666667, 12.0
+    ]
+    Doorways: [
+        107.495, 17.98, 12.0
+    ]
+  -
+    Name: NoName11782
+    AttractionType: Ticket
+    Capacity: [0.0, 6.0]
+    Max_Capacity: 6.0
+    Duration: [20.0, 30.0]
+    DefiningTriangles: [
+        81.39666666666666, 33.67333333333333, 12.0
+        83.38000000000001, 34.14333333333334, 12.0
+    ]
+    Doorways: [
+        79.43, 33.9, 12.0
+        85.36500000000001, 33.925, 12.0
+        82.405, 34.605000000000004, 12.0
+    ]
+  -
+    Name: NoName11819
+    AttractionType: Bench
+    Capacity: [0.0, 4.0]
+    Max_Capacity: 4.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -70.74, -63.60666666666666, 15.0
+        -69.42, -63.196666666666665, 15.0
+    ]
+    Doorways: [
+        -70.09, -62.785, 15.0
+    ]
+  -
+    Name: NoName11829
+    AttractionType: Bench
+    Capacity: [0.0, 4.0]
+    Max_Capacity: 4.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -56.123333333333335, -63.586666666666666, 15.0
+        -55.04666666666666, -63.15333333333333, 15.0
+    ]
+    Doorways: [
+        -55.575, -62.72, 15.0
+    ]
+  -
+    Name: NoName11839
+    AttractionType: Bench
+    Capacity: [0.0, 4.0]
+    Max_Capacity: 4.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -48.90666666666667, -63.55333333333332, 15.0
+        -47.77333333333333, -63.096666666666664, 15.0
+    ]
+    Doorways: [
+        -48.34, -62.635, 15.0
+    ]
+  -
+    Name: NoName11849
+    AttractionType: Bench
+    Capacity: [0.0, 4.0]
+    Max_Capacity: 4.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -41.92333333333334, -63.589999999999996, 15.0
+        -40.81666666666667, -63.14666666666667, 15.0
+    ]
+    Doorways: [
+        -41.38, -62.709999999999994, 15.0
+    ]
+  -
+    Name: NoName11859
+    AttractionType: Bench
+    Capacity: [0.0, 4.0]
+    Max_Capacity: 4.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -20.416666666666668, -63.56666666666666, 15.0
+        -19.36, -63.10333333333333, 15.0
+    ]
+    Doorways: [
+        -19.89, -62.644999999999996, 15.0
+    ]
+  -
+    Name: NoName11869
+    AttractionType: Bench
+    Capacity: [0.0, 4.0]
+    Max_Capacity: 4.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -13.13, -63.56999999999999, 15.0
+        -12.12, -63.13333333333333, 15.0
+    ]
+    Doorways: [
+        -12.635, -62.69, 15.0
+    ]
+  -
+    Name: NoName11879
+    AttractionType: Bench
+    Capacity: [0.0, 4.0]
+    Max_Capacity: 4.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -6.0633333333333335, -63.61666666666667, 15.0
+        -5.2, -63.22, 15.0
+    ]
+    Doorways: [
+        -5.640000000000001, -62.82, 15.0
+    ]
+  -
+    Name: NoName11889
+    AttractionType: Bench
+    Capacity: [0.0, 4.0]
+    Max_Capacity: 4.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        0.7633333333333333, -63.586666666666666, 15.0
+        1.78, -63.15, 15.0
+    ]
+    Doorways: [
+        1.2599999999999998, -62.715, 15.0
+    ]
+  -
+    Name: NoName11899
+    AttractionType: Bench
+    Capacity: [0.0, 4.0]
+    Max_Capacity: 4.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        15.036666666666667, -63.623333333333335, 15.0
+        16.036666666666665, -63.24, 15.0
+    ]
+    Doorways: [
+        15.555, -62.849999999999994, 15.0
+    ]
+  -
+    Name: NoName11909
+    AttractionType: Bench
+    Capacity: [0.0, 4.0]
+    Max_Capacity: 4.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        22.103333333333335, -63.61666666666667, 15.0
+        23.126666666666665, -63.223333333333336, 15.0
+    ]
+    Doorways: [
+        22.595, -62.825, 15.0
+    ]
+  -
+    Name: NoName11919
+    AttractionType: Bench
+    Capacity: [0.0, 4.0]
+    Max_Capacity: 4.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        43.51333333333333, -63.586666666666666, 15.0
+        44.596666666666664, -63.169999999999995, 15.0
+    ]
+    Doorways: [
+        44.055, -62.745000000000005, 15.0
+    ]
+  -
+    Name: NoName11929
+    AttractionType: Bench
+    Capacity: [0.0, 4.0]
+    Max_Capacity: 4.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        50.583333333333336, -63.59333333333333, 15.0
+        51.64333333333334, -63.173333333333325, 15.0
+    ]
+    Doorways: [
+        51.105000000000004, -62.75, 15.0
+    ]
+  -
+    Name: NoName11939
+    AttractionType: Bench
+    Capacity: [0.0, 4.0]
+    Max_Capacity: 4.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        57.71666666666666, -63.589999999999996, 15.0
+        58.776666666666664, -63.15, 15.0
+    ]
+    Doorways: [
+        58.25, -62.715, 15.0
+    ]
+  -
+    Name: NoName11949
+    AttractionType: Bench
+    Capacity: [0.0, 8.0]
+    Max_Capacity: 8.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        65.51666666666667, -63.6, 15.0
+        67.32000000000001, -63.18333333333334, 15.0
+    ]
+    Doorways: [
+        66.405, -62.765, 15.0
+    ]
+  -
+    Name: NoName11959
+    AttractionType: Bench
+    Capacity: [0.0, 4.0]
+    Max_Capacity: 4.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        74.19, -63.626666666666665, 15.0
+        75.59666666666668, -63.23333333333333, 15.0
+    ]
+    Doorways: [
+        74.88, -62.84, 15.0
+    ]
+  -
+    Name: NoName11969
+    AttractionType: Bench
+    Capacity: [0.0, 4.0]
+    Max_Capacity: 4.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        82.49333333333333, -63.61333333333332, 15.0
+        83.66333333333334, -63.21666666666666, 15.0
+    ]
+    Doorways: [
+        83.045, -62.815, 15.0
+    ]
+  -
+    Name: NoName11976
+    AttractionType: Ticket
+    Capacity: [0.0, 2.0]
+    Max_Capacity: 2.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        79.70333333333333, -63.6, 15.0
+        80.48333333333333, -63.19333333333333, 15.0
+    ]
+    Doorways: [
+        80.06, -62.78, 15.0
+    ]
+  -
+    Name: NoName11980
+    AttractionType: Ticket
+    Capacity: [0.0, 1.0]
+    Max_Capacity: 1.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        86.30999999999999, -63.20666666666667, 15.0
+        85.61333333333334, -63.623333333333335, 15.0
+    ]
+    Doorways: [
+        87.04499999999999, -63.394999999999996, 15.0
+        85.91499999999999, -62.8, 15.0
+    ]
+  -
+    Name: NoName12043
+    AttractionType: Restroom
+    Capacity: [0.0, 8.0]
+    Max_Capacity: 8.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -78.09, -28.173333333333332, 9.0
+        -75.59333333333333, -29.066666666666666, 9.0
+        -78.08666666666666, -26.49333333333333, 9.0
+        -75.59333333333332, -26.386666666666667, 9.0
+        -75.59333333333332, -25.116666666666664, 9.0
+    ]
+    Doorways: [
+        -80.58, -25.64, 9.0
+    ]
+  -
+    Name: NoName12044
+    AttractionType: Restroom
+    Capacity: [0.0, 6.0]
+    Max_Capacity: 6.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -78.11333333333333, -31.683333333333334, 9.0
+        -75.61, -32.406666666666666, 9.0
+        -78.09666666666668, -30.23, 9.0
+    ]
+    Doorways: [
+        -80.625, -32.775, 9.0
+    ]
+  -
+    Name: Lotto12213
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 12.0]
+    Max_Capacity: 12.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        -12.883333333333335, -53.1, 9.0
+        -10.85, -53.1, 9.0
+        -14.56, -53.1, 9.0
+        -15.066666666666668, -52.43666666666667, 9.0
+        -15.606666666666667, -51.76, 9.0
+        -16.133333333333333, -50.623333333333335, 9.0
+    ]
+    Doorways: [
+        -16.84, -54.9, 9.0
+    ]
+  -
+    Name: Jewel_Box12437
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 6.0]
+    Max_Capacity: 6.0
+    Duration: [20.0, 90.0]
+    DefiningTriangles: [
+        60.4, -57.0, 9.0
+        59.800000000000004, -57.48333333333333, 9.0
+        62.1, -57.0, 9.0
+        63.6, -57.0, 9.0
+    ]
+    Doorways: [
+        60.85, -57.975, 9.0
+    ]
+  -
+    Name: women_s_room_212458
+    AttractionType: Restroom
+    Capacity: [0.0, 3.0]
+    Max_Capacity: 3.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        102.07, -59.46666666666667, 9.0
+        100.88999999999999, -60.53333333333333, 9.0
+        102.56333333333333, -60.0, 9.0
+        103.15666666666668, -58.93333333333334, 9.0
+        103.80666666666667, -59.46666666666667, 9.0
+    ]
+    Doorways: [
+        101.795, -58.4, 9.0
+    ]
+  -
+    Name: NJ_Transit_Office12467
+    AttractionType: Office
+    Capacity: [0.0, 56.0]
+    Max_Capacity: 56.0
+    Duration: [0.0, 1.0]
+    DefiningTriangles: [
+        111.16666666666667, -66.60000000000001, 9.0
+        108.31, -70.3, 9.0
+        114.02999999999999, -65.10000000000001, 9.0
+        116.55333333333333, -63.6, 9.0
+        119.06, -62.416666666666664, 9.0
+        121.37, -61.203333333333326, 9.0
+    ]
+    Doorways: [
+        116.745, -56.625, 9.0
+    ]
+  -
+    Name: Main_North_Info_Booth13210
+    AttractionType: Information_Kiosk
+    Capacity: [0.0, 3.0]
+    Max_Capacity: 3.0
+    Duration: [30.0, 120.0]
+    DefiningTriangles: [
+        106.73666666666668, 37.910000000000004, 6.0
+        106.75, 37.163333333333334, 6.0
+        106.78333333333335, 38.52333333333333, 6.0
+        106.79333333333334, 36.449999999999996, 6.0
+    ]
+    Doorways: [
+        106.205, 35.915, 6.0
+        107.36, 36.47, 6.0
+        107.36500000000001, 38.46, 6.0
+        106.19, 39.025, 6.0
+    ]
+  -
+    Name: South_Tickets_Info_Booth13217
+    AttractionType: Information_Kiosk
+    Capacity: [0.0, 2.0]
+    Max_Capacity: 2.0
+    Duration: [30.0, 120.0]
+    DefiningTriangles: [
+        -16.743333333333336, -61.20333333333334, 6.0
+        -17.83666666666667, -61.64333333333334, 6.0
+    ]
+    Doorways: [
+        -15.64, -61.43, 6.0
+        -17.305, -60.754999999999995, 6.0
+        -18.945, -61.415, 6.0
+    ]
+  -
+    Name: Main_South_Info_Booth13228
+    AttractionType: Information_Kiosk
+    Capacity: [0.0, 3.0]
+    Max_Capacity: 3.0
+    Duration: [30.0, 120.0]
+    DefiningTriangles: [
+        104.06333333333333, -38.1, 6.0
+        103.74333333333334, -38.75666666666667, 6.0
+        104.03000000000002, -37.11000000000001, 6.0
+        103.33, -36.31333333333333, 6.0
+        104.40666666666668, -36.99, 6.0
+        103.73, -39.38666666666666, 6.0
+    ]
+    Doorways: [
+        103.175, -39.69, 6.0
+        104.235, -39.53, 6.0
+        104.825, -37.775000000000006, 6.0
+        104.19, -36.095, 6.0
+        103.155, -35.905, 6.0
+    ]
+  -
+    Name: Blood_Center13233
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 10.0]
+    Max_Capacity: 10.0
+    Duration: [120.0, 360.0]
+    DefiningTriangles: [
+        -30.373333333333335, -30.150000000000002, 6.0
+        -28.216666666666665, -30.63, 6.0
+        -30.903333333333336, -23.963333333333335, 6.0
+        -29.333333333333332, -18.256666666666664, 6.0
+        -26.8, -18.256666666666664, 6.0
+    ]
+    Doorways: [
+        -32.71, -30.34, 6.0
+    ]
+  -
+    Name: Post_Office13238
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 12.0]
+    Max_Capacity: 12.0
+    Duration: [120.0, 660.0]
+    DefiningTriangles: [
+        -13.100000000000001, -31.313333333333333, 6.0
+        -12.233333333333334, -24.74666666666667, 6.0
+        -14.94, -19.066666666666666, 6.0
+        -17.646666666666665, -25.150000000000002, 6.0
+    ]
+    Doorways: [
+        -17.47, -31.475, 6.0
+    ]
+  -
+    Name: Mariella_Barber13239
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 12.0]
+    Max_Capacity: 12.0
+    Duration: [200.0, 660.0]
+    DefiningTriangles: [
+        -20.566666666666666, -18.583333333333332, 6.0
+        -23.133333333333336, -24.34, 6.0
+        -22.5, -30.423333333333332, 6.0
+    ]
+    Doorways: [
+        -24.75, -30.259999999999998, 6.0
+    ]
+  -
+    Name: Starbucks13241
+    AttractionType: Vendor-Retail
+    Capacity: [0.0, 16.0]
+    Max_Capacity: 16.0
+    Duration: [120.0, 360.0]
+    DefiningTriangles: [
+        45.13, -21.05666666666667, 6.0
+        49.51333333333333, -22.823333333333334, 6.0
+        44.339999999999996, -18.536666666666665, 6.0
+        43.14333333333334, -17.766666666666666, 6.0
+        41.93333333333333, -14.763333333333334, 6.0
+        47.050000000000004, -11.763333333333334, 6.0
+        45.78, -11.763333333333334, 6.0
+        41.86000000000001, -11.763333333333334, 6.0
+    ]
+    Doorways: [
+        47.72, -28.36, 6.0
+        50.5, -11.75, 6.0
+    ]
+  -
+    Name: Police_Offices13287
+    AttractionType: Office
+    Capacity: [0.0, 26.0]
+    Max_Capacity: 26.0
+    Duration: [120.0, 360.0]
+    DefiningTriangles: [
+        77.84333333333332, 51.080000000000005, 9.0
+        77.84666666666666, 49.67000000000001, 9.0
+        77.84666666666666, 53.93666666666667, 9.0
+        77.82666666666667, 57.60333333333333, 9.0
+        93.91000000000001, 59.39666666666667, 9.0
+        110.01333333333332, 54.28666666666667, 9.0
+        106.28000000000002, 49.196666666666665, 9.0
+        96.85333333333334, 49.21, 9.0
+        101.95333333333333, 49.19333333333333, 9.0
+        88.97666666666667, 49.23, 9.0
+    ]
+    Doorways: [
+        96.70500000000001, 49.205, 9.0
+        85.78, 49.239999999999995, 9.0
+    ]
+  -
+    Name: Men_s_Room13332
+    AttractionType: Restroom
+    Capacity: [0.0, 14.0]
+    Max_Capacity: 14.0
+    Duration: [50.0, 250.0]
+    DefiningTriangles: [
+        -44.21333333333333, -63.79333333333333, 6.0
+        -46.96, -63.38333333333333, 6.0
+        -41.38333333333333, -64.41000000000001, 6.0
+        -38.04333333333333, -65.11666666666666, 6.0
+        -38.199999999999996, -66.45333333333333, 6.0
+    ]
+    Doorways: [
+        -32.215, -63.985, 6.0
+    ]
+

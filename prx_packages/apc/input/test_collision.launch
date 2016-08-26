@@ -1,0 +1,19 @@
+<launch>  
+  <rosparam file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <rosparam ns="planning">
+    random_seed: 14391835
+    simulate: false
+    visualize: true
+    persistent: true
+    world_model:
+      type: manipulation_world_model
+    type: single_query_application
+    full_manipulator_context_name: manipulator_pc
+  </rosparam>
+
+  <rosparam ns="planning/world_model" file="$(find manipulation)/input/manipulation_simulator.yaml"/>  
+
+  <node name="planning" pkg="prx_planning" type="planning_experiment" required="true" launch-prefix="" output="screen" args="planning"/>
+  
+</launch>

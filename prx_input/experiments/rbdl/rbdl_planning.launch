@@ -1,0 +1,153 @@
+<!-- This file has been tested on PRACSYS revision ???? -->
+
+<launch>
+<rosparam ns="simulation" file="$(find prx_input)/templates/applications/empty_application.yaml"/>
+<rosparam ns="simulation" file="$(find prx_input)/templates/simulators/collision_stop_simulator.yaml"/>
+<rosparam ns="simulation/controller" file="$(find prx_input)/templates/controllers/consumer.yaml"/>
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <rosparam command="load" ns="simulation/baxter" file="$(find prx_input)/templates/plants/rbdl_baxter.yaml"/>
+
+<rosparam ns="simulation/simulator/subsystems/consumer">
+  template: "controller"
+  keep_last_control: false
+  keep_last_state: false
+</rosparam>
+<rosparam ns="simulation/simulator/subsystems/ping_pong_ball" file="$(find prx_input)/templates/plants/ping_pong_ball.yaml"/>
+
+<rosparam ns="simulation/simulator/subsystems/consumer/subsystems/rover">
+template: "baxter"
+</rosparam>
+
+  <rosparam ns="planning" file="$(find prx_input)/templates/planning_applications/single_query_application.yaml"/>
+<rosparam ns="planning">
+random_seed: 1111
+consumer_mapping:
+  - 
+    pair: [simulator/consumer, ee_space]
+</rosparam>
+        
+  <!-- Load template files -->
+       
+  <rosparam ns="planning/motion_planner/" file="$(find prx_input)/templates/motion_planners/sst.yaml"/>
+ 
+  <rosparam ns="planning/task_planner/" file="$(find prx_input)/templates/task_planners/single_shot.yaml"/>
+
+  <rosparam ns="planning/task_planner/" >
+  </rosparam>
+
+<rosparam ns="planning/task_planner/planners/" >
+planner1:
+  template: "motion_planner"
+  type: isst
+  space_name: ee_space
+  visualization_body: "simulator/rover/left_paddle"
+  visualize_tree: false
+  visualize_solution: true
+  sample_metric:
+    type: graph_distance_metric
+  max_points: 100001
+  delta_drain: .1
+  steering: false
+  delta_near: 0
+  collision_checking: true
+  use_heuristic: false
+  branch_and_bound: true
+  rrt_first: true
+  goal_bias_rate: .9
+  reset_count: 5000
+</rosparam>
+       
+  <rosparam ns="planning/query_type" file="$(find prx_input)/templates/queries/motion_planning_query.yaml"/>
+<rosparam ns="planning/problems">
+problem1:
+  specification:
+    type: motion_planning_specification
+    validity_checker: 
+      type: world_model_validity_checker
+      cost_function: duration_cost
+    sampler:
+      type: uniform_sampler
+    distance_metric:
+      type: graph_distance_metric
+    local_planner:
+      type: time_varying_local_planner
+      lower_multiple: 5
+      upper_multiple: 20
+    seeds:
+      -
+        state: [0.0885444 0.789145 0.626831 0 0 0 0]
+        # state: [0, 0.25684,-1.34394,0.42624,2.61800,2.84100,2.09400,-0.06762, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    stopping_criteria:
+      elements:
+        criterion1:
+          type: timed_criterion
+          condition: 180
+  query:
+    template: "query_type"
+    start_state: [0.0885444 0.789145 0.626831 0 0 0 0]
+    # start_state: [0, 0.25684,-1.34394,0.42624,2.61800,2.84100,2.09400,-0.06762, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    goal:
+      type: bounded_goal_region
+      # goal_state: [.5 0 0 0 0 0 1]
+      # radius: .2
+      min: [.08 .58 -.05 -.05 -.05 -.05 .8]
+      max: [.12 .62  1  .05  .05  .05  1]
+      distance_metric:
+        type: ann_distance_metric
+      # type: "end_effector_goal"
+      # distance_metric:
+      #   type: ann_distance_metric
+      # # goal_state: [0, 1.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+      # # min: [0, -.3, -.3, -.3, -.3, -.3, -.3, -.3, 0,0,0,0,0,0,0,0,-5,-5,-5,-5,-5,-5,-5,0,0,0,0,0,0,0]
+      # # max: [0,  .3,  .3,  .3,  .3,  .3,  .3,  .3, 0,0,0,0,0,0,0,0, 5,5,5,5,5,5,5, 0,0,0,0,0,0,0]
+      # # radius: 6
+      # ee_position: [.5 0 0]
+      # min: [-.05 -.05 -.05]
+      # max: [.05 .05 .05]
+      # orientation: .8
+      # vel_tolerance: .1
+      # urdf_file: /Users/zlittlefield/prx/pracsys/prx_packages/baxter/input/urdf/baxter.urdf
+</rosparam>
+
+<rosparam command="load" ns="planning/world_model/planning_contexts" >
+ee_space:
+  use_embedded_space: true
+  default:
+    type: dynamic_baxter_end_effector
+    urdf_file: /Users/zlittlefield/prx/pracsys/prx_packages/baxter/input/urdf/baxter.urdf
+
+</rosparam>
+<rosparam ns="planning">
+  system_mapping:
+  - 
+    pair: [simulator/consumer/rover, world_model/simulator/rover]
+
+  consumer: simulator/consumer
+</rosparam>
+
+  <rosparam ns="planning/world_model" file="$(find prx_input)/templates/simulators/collision_stop_simulator.yaml"/>
+   
+  <rosparam ns="planning/world_model/simulator/subsystems/rover" file="$(find prx_input)/templates/plants/rbdl_baxter.yaml"/>
+
+<rosparam ns="planning/world_model/simulator/obstacles" >
+map:
+  type: obstacle
+  geometries:
+    - collision_geometry: {material: white,
+        type: box, dims: [.00001,.000001,.0000001]}
+      config:
+        orientation: [0, 0, 0, 1]
+        position: [0,0,-500]
+      name: point_cloud
+</rosparam>
+
+  <!-- Define the simulation node -->
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation"
+    required="true" launch-prefix="" output="screen" args="simulation"/>
+
+  <node name="planning" pkg="prx_planning" type="prx_planning" required="false" launch-prefix="" output="screen" args="planning" />
+
+  <include file="$(find baxter)/input/visualization.launch"/>
+
+</launch>

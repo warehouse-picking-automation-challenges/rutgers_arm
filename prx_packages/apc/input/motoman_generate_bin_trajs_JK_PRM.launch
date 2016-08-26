@@ -1,0 +1,883 @@
+<launch>  
+  <rosparam file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <rosparam ns="simulation" file="$(find prx_input)/templates/applications/empty_application.yaml" />
+  <rosparam ns="simulation" file="$(find manipulation)/input/manipulation_simulator.yaml"/>  
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manipulator" file="$(find manipulation)/input/motoman/motoman_complete_kinect_parallel_unigripper.yaml"/>
+
+  <rosparam ns="simulation/simulator/obstacles" file="$(find manipulation)/input/shelf.yaml"/>
+  <rosparam ns="simulation/simulator/obstacles" file="$(find apc)/input/bounding_boxes.yaml"/>
+
+    <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/jane_eyre_dvd" file="$(find manipulation)/input/objects/apc2016_items/jane_eyre_dvd.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/elmers_washable_no_run_school_glue" file="$(find manipulation)/input/objects/apc2016_items/elmers_washable_no_run_school_glue.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/expo_dry_erase_board_eraser" file="$(find manipulation)/input/objects/apc_items/expo_dry_erase_board_eraser.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/kleenex_tissue_box" file="$(find manipulation)/input/objects/apc2016_items/kleenex_tissue_box.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/dove_beauty_bar" file="$(find manipulation)/input/objects/apc2016_items/dove_beauty_bar.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/soft_white_lightbulb" file="$(find manipulation)/input/objects/apc2016_items/soft_white_lightbulb.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/crayola_24_ct" file="$(find manipulation)/input/objects/apc2016_items/crayola_24_ct.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/laugh_out_loud_joke_book" file="$(find manipulation)/input/objects/apc2016_items/laugh_out_loud_joke_book.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/ticonderoga_12_pencils" file="$(find manipulation)/input/objects/apc2016_items/ticonderoga_12_pencils.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/i_am_a_bunny_book" file="$(find manipulation)/input/objects/apc2016_items/i_am_a_bunny_book.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/staples_index_cards" file="$(find manipulation)/input/objects/apc2016_items/staples_index_cards.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/barkely_hide_bones" file="$(find manipulation)/input/objects/apc2016_items/barkely_hide_bones.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/cherokee_easy_tee_shirt" file="$(find manipulation)/input/objects/apc2016_items/cherokee_easy_tee_shirt.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/command_hooks" file="$(find manipulation)/input/objects/apc2016_items/command_hooks.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/cool_shot_glue_sticks" file="$(find manipulation)/input/objects/apc2016_items/cool_shot_glue_sticks.yaml" />
+  <!-- <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/creativity_chenille_stems_1" file="$(find manipulation)/input/objects/apc2016_items/creativity_chenille_stems_1.yaml" /> -->
+  <!-- <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/creativity_chenille_stems_2" file="$(find manipulation)/input/objects/apc2016_items/creativity_chenille_stems_2.yaml" /> -->
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/folgers_classic_roast_coffee" file="$(find manipulation)/input/objects/apc2016_items/folgers_classic_roast_coffee.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/hanes_tube_socks" file="$(find manipulation)/input/objects/apc2016_items/hanes_tube_socks.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/kleenex_paper_towels" file="$(find manipulation)/input/objects/apc2016_items/kleenex_paper_towels.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/oral_b_toothbrush_green" file="$(find manipulation)/input/objects/apc2016_items/oral_b_toothbrush_green.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/oral_b_toothbrush_red" file="$(find manipulation)/input/objects/apc2016_items/oral_b_toothbrush_red.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/peva_shower_curtain_liner" file="$(find manipulation)/input/objects/apc2016_items/peva_shower_curtain_liner.yaml" />
+ <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/rawlings_baseball" file="$(find manipulation)/input/objects/apc2016_items/rawlings_baseball.yaml" />
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/safety_first_outlet_plugs" file="$(find manipulation)/input/objects/apc2016_items/safety_first_outlet_plugs.yaml" />
+ <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/scotch_bubble_mailer" file="$(find manipulation)/input/objects/apc2016_items/scotch_bubble_mailer.yaml" />
+ <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/scotch_duct_tape" file="$(find manipulation)/input/objects/apc2016_items/scotch_duct_tape.yaml" />
+ <!-- <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/up_glucose_bottle" file="$(find manipulation)/input/objects/apc2016_items/up_glucose_bottle.yaml" /> -->
+ <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/woods_extension_cord" file="$(find manipulation)/input/objects/apc2016_items/woods_extension_cord.yaml" />
+ <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/dr_browns_bottle_brush" file="$(find manipulation)/input/objects/apc_items/dr_browns_bottle_brush.yaml" />
+ <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/kyjen_squeakin_eggs_plush_puppies" file="$(find manipulation)/input/objects/apc_items/kyjen_squeakin_eggs_plush_puppies.yaml" />
+ 
+
+
+
+  
+
+  <rosparam ns="planning/world_model/simulator/subsystems/jane_eyre_dvd" file="$(find manipulation)/input/objects/apc2016_items/jane_eyre_dvd.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/elmers_washable_no_run_school_glue" file="$(find manipulation)/input/objects/apc2016_items/elmers_washable_no_run_school_glue.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/expo_dry_erase_board_eraser" file="$(find manipulation)/input/objects/apc_items/expo_dry_erase_board_eraser.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/kleenex_tissue_box" file="$(find manipulation)/input/objects/apc2016_items/kleenex_tissue_box.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/dove_beauty_bar" file="$(find manipulation)/input/objects/apc2016_items/dove_beauty_bar.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/soft_white_lightbulb" file="$(find manipulation)/input/objects/apc2016_items/soft_white_lightbulb.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/crayola_24_ct" file="$(find manipulation)/input/objects/apc2016_items/crayola_24_ct.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/laugh_out_loud_joke_book" file="$(find manipulation)/input/objects/apc2016_items/laugh_out_loud_joke_book.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/ticonderoga_12_pencils" file="$(find manipulation)/input/objects/apc2016_items/ticonderoga_12_pencils.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/i_am_a_bunny_book" file="$(find manipulation)/input/objects/apc2016_items/i_am_a_bunny_book.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/staples_index_cards" file="$(find manipulation)/input/objects/apc2016_items/staples_index_cards.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/barkely_hide_bones" file="$(find manipulation)/input/objects/apc2016_items/barkely_hide_bones.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/cherokee_easy_tee_shirt" file="$(find manipulation)/input/objects/apc2016_items/cherokee_easy_tee_shirt.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/command_hooks" file="$(find manipulation)/input/objects/apc2016_items/command_hooks.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/cool_shot_glue_sticks" file="$(find manipulation)/input/objects/apc2016_items/cool_shot_glue_sticks.yaml" /> 
+  <!-- <rosparam ns="planning/world_model/simulator/subsystems/creativity_chenille_stems_1" file="$(find manipulation)/input/objects/apc2016_items/creativity_chenille_stems_1.yaml" />  -->
+  <!-- <rosparam ns="planning/world_model/simulator/subsystems/creativity_chenille_stems_2" file="$(find manipulation)/input/objects/apc2016_items/creativity_chenille_stems_2.yaml" />  -->
+  <rosparam ns="planning/world_model/simulator/subsystems/folgers_classic_roast_coffee" file="$(find manipulation)/input/objects/apc2016_items/folgers_classic_roast_coffee.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/hanes_tube_socks" file="$(find manipulation)/input/objects/apc2016_items/hanes_tube_socks.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/kleenex_paper_towels" file="$(find manipulation)/input/objects/apc2016_items/kleenex_paper_towels.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/oral_b_toothbrush_green" file="$(find manipulation)/input/objects/apc2016_items/oral_b_toothbrush_green.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/oral_b_toothbrush_red" file="$(find manipulation)/input/objects/apc2016_items/oral_b_toothbrush_red.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/peva_shower_curtain_liner" file="$(find manipulation)/input/objects/apc2016_items/peva_shower_curtain_liner.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/rawlings_baseball" file="$(find manipulation)/input/objects/apc2016_items/rawlings_baseball.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/safety_first_outlet_plugs" file="$(find manipulation)/input/objects/apc2016_items/safety_first_outlet_plugs.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/scotch_bubble_mailer" file="$(find manipulation)/input/objects/apc2016_items/scotch_bubble_mailer.yaml" /> 
+  <rosparam ns="planning/world_model/simulator/subsystems/scotch_duct_tape" file="$(find manipulation)/input/objects/apc2016_items/scotch_duct_tape.yaml" /> 
+  <!-- <rosparam ns="planning/world_model/simulator/subsystems/up_glucose_bottle" file="$(find manipulation)/input/objects/apc2016_items/up_glucose_bottle.yaml" /> -->
+  <rosparam ns="planning/world_model/simulator/subsystems/woods_extension_cord" file="$(find manipulation)/input/objects/apc2016_items/woods_extension_cord.yaml" />
+  <rosparam ns="planning/world_model/simulator/subsystems/dr_browns_bottle_brush" file="$(find manipulation)/input/objects/apc_items/dr_browns_bottle_brush.yaml" />   
+  <rosparam ns="planning/world_model/simulator/subsystems/kyjen_squeakin_eggs_plush_puppies" file="$(find manipulation)/input/objects/apc_items/kyjen_squeakin_eggs_plush_puppies.yaml" />  
+
+  <rosparam ns="planning/object_priorities_template">
+    planning_budget_time: 60.0
+    object_to_prioritized_end_effector_context:
+      jane_eyre_dvd: ["right_full_arm", "left_full_arm"]
+      elmers_washable_no_run_school_glue: ["right_full_arm", "left_full_arm"]
+      expo_dry_erase_board_eraser: ["right_full_arm", "left_full_arm"]
+      kleenex_tissue_box: ["right_full_arm", "left_full_arm"]
+      dove_beauty_bar: ["right_full_arm", "left_full_arm"]
+      soft_white_lightbulb: ["right_full_arm", "left_full_arm"]
+      crayola_24_ct: ["right_full_arm", "left_full_arm"]
+      laugh_out_loud_joke_book: ["right_full_arm", "left_full_arm"]
+      ticonderoga_12_pencils: ["right_full_arm", "left_full_arm"]
+      i_am_a_bunny_book: ["right_full_arm", "left_full_arm"]
+      staples_index_cards: ["right_full_arm", "left_full_arm"]
+      barkely_hide_bones: ["right_full_arm", "left_full_arm"]
+      cherokee_easy_tee_shirt: ["right_full_arm", "left_full_arm"]
+      command_hooks: ["right_full_arm", "left_full_arm"]
+      cool_shot_glue_sticks: ["right_full_arm", "left_full_arm"]
+      folgers_classic_roast_coffee: ["right_full_arm", "left_full_arm"]
+      hanes_tube_socks: ["right_full_arm", "left_full_arm"]
+      kleenex_paper_towels: ["right_full_arm", "left_full_arm"]
+      oral_b_toothbrush_green: ["right_full_arm", "left_full_arm"]
+      oral_b_toothbrush_red: ["right_full_arm", "left_full_arm"]
+      peva_shower_curtain_liner: ["right_full_arm", "left_full_arm"]
+      rawlings_baseball: ["right_full_arm", "left_full_arm"]
+      safety_first_outlet_plugs: ["right_full_arm", "left_full_arm"]
+      scotch_bubble_mailer: ["right_full_arm", "left_full_arm"]
+      scotch_duct_tape: ["right_full_arm", "left_full_arm"]
+      up_glucose_bottle: ["right_full_arm", "left_full_arm"]
+      woods_extension_cord: ["right_full_arm", "left_full_arm"]
+      dr_browns_bottle_brush: ["right_full_arm", "left_full_arm"]
+      kyjen_squeakin_eggs_plush_puppies: ["right_full_arm", "left_full_arm"]
+      fitness_gear_3lb_dumbbell: ["right_full_arm", "left_full_arm"]
+      creativity_chenille_stems_2: ["right_full_arm", "left_full_arm"]
+      clorox_utility_brush: ["right_full_arm", "left_full_arm"]
+      cloud_b_plush_bear: ["right_full_arm", "left_full_arm"]
+      dasani_water_bottle: ["right_full_arm", "left_full_arm"]
+      easter_turtle_sippy_cup: ["right_full_arm", "left_full_arm"]
+      fiskars_scissors_red: ["right_full_arm", "left_full_arm"]
+      platinum_pets_dog_bowl: ["right_full_arm", "left_full_arm"]
+      womens_knit_gloves: ["right_full_arm", "left_full_arm"]
+  </rosparam>
+
+  <rosparam ns="simulation/object_priorities_template">
+    object_to_prioritized_end_effector_context:
+      jane_eyre_dvd: ["right_full_arm", "left_full_arm"]
+      elmers_washable_no_run_school_glue: ["right_full_arm", "left_full_arm"]
+      expo_dry_erase_board_eraser: ["right_full_arm", "left_full_arm"]
+      kleenex_tissue_box: ["right_full_arm", "left_full_arm"]
+      dove_beauty_bar: ["right_full_arm", "left_full_arm"]
+      soft_white_lightbulb: ["right_full_arm", "left_full_arm"]
+      crayola_24_ct: ["right_full_arm", "left_full_arm"]
+      laugh_out_loud_joke_book: ["right_full_arm", "left_full_arm"]
+      ticonderoga_12_pencils: ["right_full_arm", "left_full_arm"]
+      i_am_a_bunny_book: ["right_full_arm", "left_full_arm"]
+      staples_index_cards: ["right_full_arm", "left_full_arm"]
+      barkely_hide_bones: ["right_full_arm", "left_full_arm"]
+      cherokee_easy_tee_shirt: ["right_full_arm", "left_full_arm"]
+      command_hooks: ["right_full_arm", "left_full_arm"]
+      cool_shot_glue_sticks: ["right_full_arm", "left_full_arm"]
+      folgers_classic_roast_coffee: ["right_full_arm", "left_full_arm"]
+      hanes_tube_socks: ["right_full_arm", "left_full_arm"]
+      kleenex_paper_towels: ["right_full_arm", "left_full_arm"]
+      oral_b_toothbrush_green: ["right_full_arm", "left_full_arm"]
+      oral_b_toothbrush_red: ["right_full_arm", "left_full_arm"]
+      peva_shower_curtain_liner: ["right_full_arm", "left_full_arm"]
+      rawlings_baseball: ["right_full_arm", "left_full_arm"]
+      safety_first_outlet_plugs: ["right_full_arm", "left_full_arm"]
+      scotch_bubble_mailer: ["right_full_arm", "left_full_arm"]
+      scotch_duct_tape: ["right_full_arm", "left_full_arm"]
+      up_glucose_bottle: ["right_full_arm", "left_full_arm"]
+      woods_extension_cord: ["right_full_arm", "left_full_arm"]
+      dr_browns_bottle_brush: ["right_full_arm", "left_full_arm"]
+      kyjen_squeakin_eggs_plush_puppies: ["right_full_arm", "left_full_arm"]
+      fitness_gear_3lb_dumbbell: ["right_full_arm", "left_full_arm"]
+      creativity_chenille_stems_2: ["right_full_arm", "left_full_arm"]
+      clorox_utility_brush: ["right_full_arm", "left_full_arm"]
+      cloud_b_plush_bear: ["right_full_arm", "left_full_arm"]
+      dasani_water_bottle: ["right_full_arm", "left_full_arm"]
+      easter_turtle_sippy_cup: ["right_full_arm", "left_full_arm"]
+      fiskars_scissors_red: ["right_full_arm", "left_full_arm"]
+      platinum_pets_dog_bowl: ["right_full_arm", "left_full_arm"]
+      womens_knit_gloves: ["right_full_arm", "left_full_arm"]
+  </rosparam>
+
+
+  <rosparam ns="simulation/application">
+    type: apc_generate_bin_traj
+    start_simulation: false
+    has_dynamic_obstacles: true
+    real_robot: false
+    visualize_plans: false
+    jk_prm_star: true
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/subsystems/consumer">
+    type: apc_controller
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manipulator">
+    # initial_state: [0.4, 0.6,0.2,0.1,0.9,0.9,0.1,0.2, 0.1, 0.5,0.9,0.1,0.6,0.5,0.5,0.7  ,1.0,1.0, 1.0, 1.0] 
+  </rosparam>
+
+  <rosparam command="load" ns="planning/motion_planner" file="$(find prx_input)/templates/motion_planners/prm_star.yaml"/> 
+  <rosparam command="load" ns="planning/query_type" file="$(find prx_input)/templates/queries/motion_planning_query.yaml"/>
+  <rosparam command="load" ns="planning/specification_type" file="$(find prx_input)/templates/specifications/motion_planning_specification.yaml"/>
+
+   <rosparam ns="simulation">
+    random_seed: 203114677
+    template: object_priorities_template
+    template: object_pose_template
+  </rosparam>
+  
+
+  <rosparam ns="planning">
+    random_seed: 14391835
+    # random_seed: 968514651
+    simulate: false
+    visualize: true
+    persistent: true
+    record_plans: true
+    world_model:
+      type: manipulation_world_model
+      num_ik_seeds: 35
+      # IK_databases:
+      #   motoman_database:
+      #     distance_metric:
+      #       type: graph_distance_metric
+      #     manipulator: manipulator
+      #     samples: 20000
+      #     deserialize_file: motoman[20000].database
+    validity_checker: 
+      type: world_model_validity_checker
+    type: apc_planning_application
+    validity_checker: 
+      type: world_model_validity_checker
+    full_manipulator_context_name: manipulator_pc
+    template: object_priorities_template
+  </rosparam>
+
+  <rosparam ns="planning" file="$(find prx_input)/templates/spaces/space_types.yaml"/>  
+  <rosparam ns="planning/world_model" file="$(find manipulation)/input/manipulation_simulator.yaml"/>  
+  <rosparam ns="planning/world_model/simulator/subsystems/manipulator" file="$(find manipulation)/input/motoman/motoman_complete_kinect_parallel_unigripper.yaml"/>
+
+  <rosparam ns="planning/world_model/simulator/obstacles" file="$(find manipulation)/input/shelf.yaml"/>
+  <rosparam ns="planning/world_model/simulator/obstacles" file="$(find apc)/input/bounding_boxes.yaml"/> 
+
+  <rosparam ns="planning/world_model/planning_contexts">
+    manipulator_pc:
+      default:
+        type: "hide_mapping"
+    left_camera:  
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_camera"
+        end_effector_context_name: "left_end_effector"
+        start_link: "base_link"
+        end_link: "left_IR_camera"
+        left_arm_ik: true
+    left_camera_jac:  
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_arm"
+        end_effector_context_name: "left_end_effector"
+        start_link: "base_link"
+        end_link: "left_IR_camera"
+        left_arm_ik: true
+    left_full_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_arm"
+        end_effector_context_name: "left_end_effector"
+        start_link: "base_link"
+        end_link: "head_sponge"
+        ik_database: motoman_database
+        left_arm_ik: true
+    left_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_arm"
+        end_effector_context_name: "left_end_effector"
+        start_link: "base_link"
+        end_link: "head_sponge"
+        ik_database: motoman_database
+        left_arm_ik: true
+    left_arm_planning:
+      default:
+        type: "hide_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_arm"
+        end_effector_context_name: "left_end_effector"
+        start_link: "base_link"
+        end_link: "head_sponge"
+        ik_database: motoman_database
+        left_arm_ik: true
+    left_camera_planning:
+      default:
+        type: "hide_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_camera"
+        end_effector_context_name: "left_end_effector"
+        start_link: "base_link"
+        end_link: "left_IR_camera"
+        ik_database: motoman_database
+        left_arm_ik: true
+    left_end_effector:
+      default:
+        type: "hide_mapping"
+    right_camera:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "right_full_arm"
+        arm_context_name: "right_camera"
+        end_effector_context_name: "right_end_effector"
+        start_link: "base_link"
+        end_link: "right_IR_camera"
+    right_camera_jac:  
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "right_full_arm"
+        arm_context_name: "right_arm"
+        end_effector_context_name: "right_end_effector"
+        start_link: "base_link"
+        end_link: "right_IR_camera"
+    right_full_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "right_full_arm"
+        arm_context_name: "right_arm"
+        end_effector_context_name: "right_end_effector"
+        start_link: "base_link"
+        end_link: "upper_vacuum"
+        ik_database: motoman_database
+        left_arm_ik: false
+    right_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "right_full_arm"
+        arm_context_name: "right_arm"
+        end_effector_context_name: "right_end_effector"
+        start_link: "base_link"
+        end_link: "upper_vacuum"
+        ik_database: motoman_database
+        left_arm_ik: false
+    right_arm_planning:
+      default:
+        type: "hide_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "right_full_arm"
+        arm_context_name: "right_arm"
+        end_effector_context_name: "right_end_effector"
+        start_link: "base_link"
+        end_link: "upper_vacuum"
+        ik_database: motoman_database
+        right_arm_ik: true
+    right_camera_planning:
+      default:
+        type: "hide_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "right_full_arm"
+        arm_context_name: "right_camera"
+        end_effector_context_name: "right_end_effector"
+        start_link: "base_link"
+        end_link: "right_IR_camera"
+        ik_database: motoman_database
+        right_arm_ik: true
+    right_end_effector:
+      default:
+        type: "hide_mapping"
+  </rosparam>
+
+  <rosparam ns="planning/world_model/simulator/subsystems/manipulator">
+    ik_timeout: .005
+    planning_contexts:
+      manipulator_pc:
+        type: "full_mapping"
+
+      left_full_arm:
+        type: "motoman_left_full_with_torso_state_mapping"
+      left_camera:
+        type: "motoman_left_torso_state_mapping"
+      left_camera_jac:
+        type: "motoman_left_full_with_torso_state_mapping"
+      left_arm:
+        type: "motoman_left_torso_state_mapping"
+      left_end_effector:
+        type: "motoman_left_gripper_state_mapping"
+      left_arm_planning:
+        type: "motoman_left_torso_state_mapping"
+      left_camera_planning:
+        type: "motoman_left_torso_state_mapping"
+
+      right_full_arm:
+        type: "motoman_pu_right_full_with_torso_state_mapping"
+      right_camera:
+        type: "motoman_pu_right_torso_state_mapping"
+      right_camera_jac:
+        type: "motoman_pu_right_full_with_torso_state_mapping"
+      right_arm:
+        type: "motoman_pu_right_torso_state_mapping"
+      right_end_effector:
+        type: "motoman_pu_right_upper_vacuum_state_mapping"
+      right_arm_planning:
+        type: "motoman_pu_right_torso_state_mapping"
+      right_camera_planning:
+        type: "motoman_pu_right_torso_state_mapping"
+  </rosparam>
+
+
+  <rosparam ns="planning/graph_query_template">
+    type: manipulation_query
+    smooth_paths: false
+    search_mode: lazy_search
+    goal:
+      type: multiple_goal_states
+      distance_metric:
+        type: ann_distance_metric
+  </rosparam>
+  <rosparam ns="planning/motion_query_template">
+    type: motion_planning_query
+    search_mode: lazy_search
+    goal:
+      type: multiple_goal_states
+      distance_metric:
+        type: ann_distance_metric
+  </rosparam>
+
+  <rosparam ns="planning/graph_specification_template">
+    type: motion_planning_specification
+    validity_checker: 
+      type: world_model_validity_checker
+    sampler:
+      type: uniform_sampler
+      default_orientation: [0,1,0,1]
+      # min: [.95,-.43,.59]
+      # max: [1.38,.43,1.59]
+      #BIN B
+      # initial_sample: [1.35, 0, 1.47]
+      # min: [0.85,-.14,1.34]
+      # max: [1.40,0.14,1.58]
+      #BIN E
+      # initial_sample: [1.38, 0, 1.21]
+      # min: [0.85,-.15,1.35]
+      # max: [1.40,0.15,1.59]
+      #FRONT OF SHELF
+      initial_sample: [0.80, 0, 1.20]
+      min: [0.55,-0.47,0.6]
+      max: [0.95,0.47,1.8]
+    distance_metric:
+      type: graph_distance_metric
+      distance_function: l_infinite_norm
+    local_planner:
+      type: bvp_local_planner
+    stopping_criteria:
+      elements:
+        criterion1:
+          type: iteration_criterion
+          condition: 100
+    heuristic_search:
+      type: constraints_astar_search
+  </rosparam>
+
+  <rosparam ns="planning/task_planner/">
+    type: apc_tp
+    specification:
+      type: apc_driver_stress_specification
+      sampler:
+        type: uniform_sampler
+    bin_trajectories: true
+    left_context_name: "left_full_arm"
+    right_context_name: "right_full_arm"
+    left_camera_context_name: "left_camera"
+    left_camera_jac_context_name: "left_camera_jac"
+    right_camera_jac_context_name: "right_camera_jac"
+    right_camera_context_name: "right_camera"
+    manipulation_task_planner_name: "manipulation_task_planner"
+    jk_prm_star: true
+    planners:
+      manipulation_task_planner:
+        use_ee_dist_in_planners: false
+        constraints: 
+          type: null_constraints
+        specification:
+          type: manipulation_specification
+          validity_checker: 
+            type: manipulation_validity_checker
+          sampler:
+            type: uniform_sampler
+          distance_metric:
+            type: graph_distance_metric
+          local_planner:
+            type: bvp_local_planner
+          stopping_criteria:
+            elements:
+              criterion1:
+                type: iteration_criterion
+                condition: 1000
+        type: manipulation_tp
+        num_candidate_connections: 30
+        
+        serialize_flag: false
+        
+        IK_steer_grasping: false
+        skip_connectivity_check: true
+        planners:
+
+          left_arm_motion_planner:
+            template: "motion_planner"
+            type: "jacobian_prm_star"
+            map_metric:
+              type: ann_distance_metric
+
+            space_name: "left_arm_planning"
+            visualization_bodies: ["simulator/manipulator/head_sponge"]
+            visualize: false
+            visualize_graph: false
+            visualize_tree: true
+            goal_bias_rate: 0.15
+            visualize_solutions: false
+            planning_context_name: "left_arm"
+            end_effector_names: [ "head_sponge"]
+            # sparsify: true
+            stretch_factor: 3
+            deserialize_file: "left_arm_graph[8_k_top_middle_euclid].roadmap"
+            
+            delta_prm: false
+            specification:
+              template: "specification_type"
+              type: pose_based_mp_specification 
+              validity_checker: 
+                type: "manipulation_validity_checker"
+                use_bounds: false
+                # BIN E
+                min: [0.55,-0.47,0.6]
+                max: [0.95,0.47,1.8]
+              sampler:
+                type: "ee_bound_sampler"
+                rejection_sampling: true
+                initial_sample: [0]
+                default_orientation: [0,0,0,1]
+                euler_min: [-3.1416,-3.1416,-3.1416]
+                euler_max: [3.1416,3.1416,3.1416]
+                manipulation_context: left_arm
+                use_bounds: true
+                # SHELF
+                min: [0.55,-0.47,0.6]
+                max: [0.95,0.47,1.8]
+              local_planner:
+                type: bvp_local_planner
+                max_prop_length: 0.15
+              heuristic_search:
+                type: constraints_astar_search
+              stopping_criteria:
+                elements:
+                  criterion1:
+                    type: iteration_criterion
+                    condition: 100
+            query:
+              template: "query_type"
+              type: pose_based_mp_query
+              # end_effector: "left_IR_camera"
+              search_mode: standard_search
+              #start_state: [0.00, 1.57, 0.00, 0.00, -1.70, 0.00, 0.00, 0.00, 0.00]
+              #start_state: [-0.3696969,-1.8434239,-1.4583325,-1.8129914,2.0006464,0.8294958,-0.5998616,0.7427207,0.0856574]
+              goal:
+                type: "multiple_goal_states"
+                distance_metric:
+                  type: ann_distance_metric
+
+          right_arm_motion_planner:
+            template: motion_planner
+            type: "jacobian_prm_star"
+            map_metric:
+              type: ann_distance_metric
+
+            space_name: "right_arm_planning"
+            visualization_bodies: ["simulator/manipulator/upper_vacuum"]
+            visualize: false
+            visualize_graph: false
+            visualize_tree: true
+            goal_bias_rate: 0.15
+            visualize_solutions: false
+            planning_context_name: "right_arm"
+            end_effector_names: [ "upper_vacuum"]
+            sparsify: true
+            stretch_factor: 3
+            deserialize_file: "right_arm_graph[8_k_top_middle_euclid].roadmap"
+
+            delta_prm: false
+            specification:
+              template: "specification_type"
+              type: pose_based_mp_specification 
+              validity_checker: 
+                type: "manipulation_validity_checker"
+                use_bounds: false
+                # BIN Eleft_arm_planning
+                min: [0.55,-0.47,0.6]
+                max: [0.95,0.47,1.8]
+              sampler:
+                type: "ee_bound_sampler"
+                rejection_sampling: true
+                initial_sample: [0]
+                default_orientation: [0,0,0,1]
+                euler_min: [-3.1416,-3.1416,-3.1416]
+                euler_max: [3.1416,3.1416,3.1416]
+                manipulation_context: right_arm
+                use_bounds: true
+                # BIN E
+                min: [0.55,-0.47,0.6]
+                max: [0.95,0.47,1.8]
+              local_planner:
+                type: bvp_local_planner
+                max_prop_length: 0.15
+              heuristic_search:
+                type: constraints_astar_search
+              stopping_criteria:
+                elements:
+                  criterion1:
+                    type: iteration_criterion
+                    condition: 10
+            query:
+              template: "query_type"
+              type: pose_based_mp_query
+              # end_effector: "right_IR_camera"
+              search_mode: standard_search
+              #start_state: [0.00, 1.57, 0.00, 0.00, -1.70, 0.00, 0.00, 0.00, 0.00]
+              start_state: [-0.3696969,-1.8434239,-1.4583325,-1.8129914,2.0006464,0.8294958,-0.5998616,0.7427207,0.0856574]
+              goal:
+                type: "multiple_goal_states"
+                distance_metric:
+                  type: ann_distance_metric
+
+          
+
+          left_arm_camera_motion_planner:
+            template: motion_planner
+            type: "jacobian_prm_star"
+            map_metric:
+              type: ann_distance_metric
+
+            space_name: "left_camera_planning"
+            # visualization_bodies: ["simulator/manipulator/upper_vacuum"]
+            visualize: false
+            visualize_graph: false
+            visualize_tree: true
+            goal_bias_rate: 0.15
+            visualize_solutions: false
+            planning_context_name: "left_camera"
+            end_effector_names: [ "left_IR_camera"]
+            sparsify: true
+            stretch_factor: 3
+            deserialize_file: "left_arm_graph[8_k_top_middle_euclid].roadmap"
+
+            delta_prm: false
+            specification:
+              template: "specification_type"
+              type: pose_based_mp_specification 
+              validity_checker: 
+                type: "manipulation_validity_checker"
+                use_bounds: false
+                # BIN Eleft_arm_planning
+                min: [0.55,-0.47,0.6]
+                max: [0.95,0.47,1.8]
+              sampler:
+                type: "ee_bound_sampler"
+                rejection_sampling: true
+                initial_sample: [0]
+                default_orientation: [0,0,0,1]
+                euler_min: [-3.1416,-3.1416,-3.1416]
+                euler_max: [3.1416,3.1416,3.1416]
+                manipulation_context: left_arm
+                use_bounds: true
+                # BIN E
+                min: [0.55,-0.47,0.6]
+                max: [0.95,0.47,1.8]
+              local_planner:
+                type: bvp_local_planner
+                max_prop_length: 0.15
+              heuristic_search:
+                type: constraints_astar_search
+              stopping_criteria:
+                elements:
+                  criterion1:
+                    type: iteration_criterion
+                    condition: 10
+            query:
+              template: "query_type"
+              type: pose_based_mp_query
+              # end_effector: "right_IR_camera"
+              search_mode: standard_search
+              #start_state: [0.00, 1.57, 0.00, 0.00, -1.70, 0.00, 0.00, 0.00, 0.00]
+              start_state: [-0.3696969,-1.8434239,-1.4583325,-1.8129914,2.0006464,0.8294958,-0.5998616,0.7427207,0.0856574]
+              goal:
+                type: "multiple_goal_states"
+                distance_metric:
+                  type: ann_distance_metric
+
+
+          right_arm_camera_motion_planner:
+            template: motion_planner
+            type: "jacobian_prm_star"
+            map_metric:
+              type: ann_distance_metric
+
+            space_name: "right_camera_planning"
+            # visualization_bodies: ["simulator/manipulator/upper_vacuum"]
+            visualize: false
+            visualize_graph: false
+            visualize_tree: true
+            goal_bias_rate: 0.15
+            visualize_solutions: false
+            planning_context_name: "right_camera"
+            end_effector_names: [ "right_IR_camera"]
+            sparsify: true
+            stretch_factor: 3
+            deserialize_file: "right_arm_graph[8_k_top_middle_euclid].roadmap"
+
+            delta_prm: false
+            specification:
+              template: "specification_type"
+              type: pose_based_mp_specification 
+              validity_checker: 
+                type: "manipulation_validity_checker"
+                use_bounds: false
+                # BIN Eleft_arm_planning
+                min: [0.55,-0.47,0.6]
+                max: [0.95,0.47,1.8]
+              sampler:
+                type: "ee_bound_sampler"
+                rejection_sampling: true
+                initial_sample: [0]
+                default_orientation: [0,0,0,1]
+                euler_min: [-3.1416,-3.1416,-3.1416]
+                euler_max: [3.1416,3.1416,3.1416]
+                manipulation_context: right_arm
+                use_bounds: true
+                # BIN E
+                min: [0.55,-0.47,0.6]
+                max: [0.95,0.47,1.8]
+              local_planner:
+                type: bvp_local_planner
+                max_prop_length: 0.15
+              heuristic_search:
+                type: constraints_astar_search
+              stopping_criteria:
+                elements:
+                  criterion1:
+                    type: iteration_criterion
+                    condition: 10
+            query:
+              template: "query_type"
+              type: pose_based_mp_query
+              # end_effector: "right_IR_camera"
+              search_mode: standard_search
+              #start_state: [0.00, 1.57, 0.00, 0.00, -1.70, 0.00, 0.00, 0.00, 0.00]
+              start_state: [-0.3696969,-1.8434239,-1.4583325,-1.8129914,2.0006464,0.8294958,-0.5998616,0.7427207,0.0856574]
+              goal:
+                type: "multiple_goal_states"
+                distance_metric:
+                  type: ann_distance_metric
+
+
+
+
+          grasping_planner:
+            type: grasping_planner
+            specification:
+              type: grasping_specification
+              validity_checker:
+                type: world_model_validity_checker
+            grasp_generators:
+              left_full_arm:
+                template: unigripper_grasp_generator
+              right_full_arm:
+                template: unigripper_right_grasp_generator
+  </rosparam>
+
+  <rosparam ns="planning/unigripper_grasp_generator">
+    type: unigripper_grasp_generator
+    default_ee_normal: [0,0,1]
+    grasp_entire_mesh: false
+    save_grasps_to_file: true
+    restricted_normals:
+    -
+      normal: [0,0,-1]
+    -
+      normal: [1,0,0]
+    preferred_normals:
+    -
+      normal: [0,0,1]    
+    -
+      normal: [-1,0,0]
+    manual_grasp_mode: 2
+    manual_release_mode: 1
+    # nr_grasps_to_sample: 100
+    manual_angle_increment: 15.0
+  </rosparam>
+  <rosparam ns="planning/unigripper_right_grasp_generator">
+    type: unigripper_grasp_generator
+    default_ee_normal: [0,0,1]
+    grasp_entire_mesh: false
+    save_grasps_to_file: true
+    end_effector_name: upper_vacuum
+    limiting_normal: true
+    restricted_normals:
+    -
+      normal: [0,0,-1]
+    -
+      normal: [1,0,0]
+    -
+      normal: [-1,0,0]
+    preferred_normals:
+    -
+      normal: [0,0,1]
+    -
+      normal: [0,-1,0]
+    manual_grasp_mode: 2
+    manual_release_mode: 1
+    nr_grasps_to_sample: 100
+    # manual_angle_increment: 15.0
+  </rosparam>
+
+  <rosparam ns="planning/tree_specification_template">
+    type: motion_planning_specification
+    validity_checker: 
+      type: world_model_validity_checker
+    sampler:
+      type: uniform_sampler
+    distance_metric:
+      type: graph_distance_metric
+      distance_function: l_infinite_norm
+    local_planner:
+      type: bvp_local_planner
+      max_prop_length: 0.05
+    stopping_criteria:
+      criteria_check_type: 2
+      elements:
+        criterion1:
+          type: iteration_criterion
+          condition: 1500
+        criterion2:
+          type: goal_criterion
+          criterion_type: goal
+  </rosparam>
+
+  <node name="planning" pkg="prx_planning" type="prx_planning" required="false" launch-prefix="gdb --args" output="screen" args="planning"/>
+
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation" required="true" launch-prefix="" output="screen" args="simulation"/>
+
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+
+  <rosparam ns="visualization/viewer/">
+    windows:
+      window_1:
+        xpos: 920
+        ypos: 100
+        width: 800
+        height: 800
+        cameras:
+          perspective:
+            ortho: false
+            camera_type: 0
+            eye: [0, 0, 1.8]
+            center: [1, 0, 0]
+            speed: {move: 0.1, rotate: 0.001}
+          orthographic:
+            ortho: true
+            ortho_param:
+              left: -300
+              right: 300
+              bottom: -300
+              top: 300
+              zNear: 0
+              zFar: 1000
+            speed: {move: 0.2, rotate: 0.001}
+          smooth:
+            ortho: false
+            camera_type: 2
+            eye: [0, -20, 15]
+            center: [0, 1, 18]
+            speed: {move: 0.2, rotate: 0.001}
+  </rosparam>
+
+  <node pkg="tf" type="static_transform_publisher" name="right_RGB_camera_corrected"   args = " 0 0 0 0 0 0 1   simulator/consumer/manipulator/right_RGB_camera right_RGB_camera_corrected 100" />
+
+<node pkg="tf" type="static_transform_publisher" name="left_RGB_camera_corrected"    args = " 0 0 0 0 0 0 1   simulator/consumer/manipulator/left_RGB_camera  left_RGB_camera_corrected  100" />
+
+<node pkg="tf" type="static_transform_publisher" name="head_RGB_camera_corrected"    args = " 0.0176    0.0214   -0.0059   0.0263    0.0017    0.0009    0.9997 simulator/consumer/manipulator/head_RGB_camera  head_RGB_camera_corrected  100" />
+
+</launch>

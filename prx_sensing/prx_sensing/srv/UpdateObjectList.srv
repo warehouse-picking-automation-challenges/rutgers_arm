@@ -1,0 +1,6 @@
+bool reset_pose
+string[] object_list
+int64 camera_id
+int64 bin_id
+---
+bool response

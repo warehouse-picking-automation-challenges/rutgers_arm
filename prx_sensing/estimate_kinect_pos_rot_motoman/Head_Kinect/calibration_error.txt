@@ -1,0 +1,17 @@
+<Reporojection error>
+
+Color Error: 0.232697
+
+Ir Error: 0.176233
+
+Sync Error: 0.358614
+
+Depth:
+     avg: -0.0351918
+     var: 7.70077e-05
+  stddev: 0.0087754
+     rms: 0.0362694
+  median: -0.0349026
+
+
+<\Reprojection error>

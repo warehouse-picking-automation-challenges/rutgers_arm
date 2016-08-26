@@ -1,0 +1,38 @@
+type: planar_manipulator
+integrator:
+  type: rk4
+state_space:
+  min: [-100, -100, -3.14, -3.14, -3.14]
+  max: [ 100,  100,  3.14,  3.14,  3.14]
+  scale: [1, 1, 1, 1, 1]
+input_control_space:
+  min: [-80, -80, -2, -2,  -2]
+  max: [ 80,  80,  2,  2,  2]
+initial_state: [0, 0, 0, 0, 0]
+root_geom: base
+z: 2
+geometries:
+  -
+    name: base
+    collision_geometry:
+      type: box
+      dims: [8, 8, 0.5]
+      material: blue
+  -
+    name: link1
+    collision_geometry:
+      type: box
+      dims: [10, 1, 1]
+      material: red
+  -
+    name: link2
+    collision_geometry:
+      type: box
+      dims: [10, 1, 1]
+      material: green
+  -
+    name: link3
+    collision_geometry:
+      type: box
+      dims: [10, 1, 1]
+      material: red

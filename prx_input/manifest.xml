@@ -1,0 +1,13 @@
+<package>
+  <description brief="input files common to multiple prx packages">
+    Input files common to multiple prx packages.
+  </description>
+  <author>Kostas Bekris/bekris@cse.unr.edu</author>
+  <license>BSD</license>
+  <url>http://www.cse.unr.edu/robotics/pracsys</url>
+  <logo>http://www.cse.unr.edu/robotics/pracsys/sites/cse.unr.edu.robotics.pracsys/files/chameleon_logo.jpg</logo>
+
+  <depend package="rospy" />
+  <versioncontrol type="hg" url="ssh://cse.unr.edu/staff/bekris/repositories/pracsys.hg"/>
+
+</package>

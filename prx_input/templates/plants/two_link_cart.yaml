@@ -1,0 +1,42 @@
+type: two_link_cart
+integrator:
+  type: rk4
+state_space: 
+  min: [-3.14,-15.707,-3.14,-31.4159265,-2,-15]
+  max: [3.14,15.707,3.14,31.4159265,8,15]
+  #min: [-3.14,-5,-3.14,-10,-2,-15]
+  #max: [3.14,5,3.14,10,8,15]
+  #scale: [.8, 0.16, 0.8, 0.16, 1.0, 0.18]
+  #scale: [0.0253303, 0, 0.0253303, 0.00405285, 0.0330579, 0]
+  scale: [0.0253303, 0.00405285, 0.0253303, 0.00405285, 0.0330579, 0.00444444]
+input_control_space: 
+  min: [-150]
+  max: [ 150]
+  scale: [0.00044]
+root_geom: ball
+geometries:
+  -
+    name: ball
+    collision_geometry:
+      type: cylinder
+      radius: .1
+      height: 1
+      material: black
+  -
+    name: rod1
+    collision_geometry:
+      type: box
+      dims: [.5, .05, 1]
+      material: blue 
+  -
+    name: rod2
+    collision_geometry:
+      type: box
+      dims: [.5, .05, 1]
+      material: red 
+  -
+    name: cart
+    collision_geometry:
+      type: box
+      dims: [.2, .1, 1]
+      material: green 

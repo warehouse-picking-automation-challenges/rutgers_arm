@@ -1,0 +1,322 @@
+test_all_geoms:
+    type: obstacle
+    geometries:
+    -
+        name: backwall
+        collision_geometry: 
+            type: box
+            dims: [260, 5, 50]      
+            material: black    
+        config:
+            position: [0, 212.5, 0]
+            orientation: [0,0,0,1]
+    -
+        name: frontwall
+        collision_geometry: 
+            type: box
+            dims: [220, 5, 45]      
+            material: black    
+        config:
+            position: [-20, -212.5, 0]
+            orientation: [0,0,0,1]
+    -
+        name: rightwall
+        collision_geometry: 
+            type: box
+            dims: [5, 420, 50]      
+            material: black    
+        config:
+            position: [127.5, 0, 0]
+            orientation: [0,0,0,1]
+    -
+        name: leftwall
+        collision_geometry: 
+            type: box
+            dims: [5, 370, 50]      
+            material: black    
+        config:
+            position: [-127.5, 27, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: leftenttop
+        collision_geometry: 
+            type: box
+            dims: [40, 5, 50]      
+            material: black    
+        config:
+            position: [-145, -160, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: leftentbot
+        collision_geometry: 
+            type: box
+            dims: [40, 5, 50]      
+            material: black    
+        config:
+            position: [-145, -212.5, 0]
+            orientation: [0,0,0,1]
+
+ 
+    -       
+        name: countershort1
+        collision_geometry: 
+            type: box
+            dims: [50, 30, 24]      
+            material: pink    
+        config:
+            position: [80, -125, 0]
+            orientation: [0,0,0,1]    
+    -       
+        name: countershort2
+        collision_geometry: 
+            type: box
+            dims: [50, 30, 24]      
+            material: pink    
+        config:
+            position: [80, -180, 0]
+            orientation: [0,0,0,1]          
+            
+    -       
+        name: fruitstand
+        collision_geometry: 
+            type: box
+            dims: [30, 25, 20]      
+            material: blue    
+        config:
+            position: [-50, 85, 0]
+            orientation: [0,0,0,1]       
+    -       
+        name: drinkfridge
+        collision_geometry: 
+            type: box
+            dims: [25, 40, 32]      
+            material: blue    
+        config:
+            position: [105, -10, 0]
+            orientation: [0,0,0,1]       
+    -       
+        name: hotfoodstand
+        collision_geometry: 
+            type: box
+            dims: [25, 20, 28]      
+            material: blue    
+        config:
+            position: [-50, 59, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: cereal1
+        collision_geometry: 
+            type: cylinder
+            radius: 5
+            height: 25
+            material: yellow    
+        config:
+            position: [-60, 10, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: cereal2
+        collision_geometry: 
+            type: cylinder
+            radius: 5
+            height: 25
+            material: yellow    
+        config:
+            position: [-60, 0, 0]
+            orientation: [0,0,0,1]
+
+    -       
+        name: poptarts
+        collision_geometry: 
+            type: box
+            dims: [5, 30, 24]      
+            material: blue    
+        config:
+            position: [-60, 32, 0]
+            orientation: [0,0,0,1]
+
+    -       
+        name: waterfridge1
+        collision_geometry: 
+            type: box
+            dims: [25, 25, 33]      
+            material: red    
+        config:
+            position: [105, -25, 0]
+            orientation: [0, 0, 0, 0]
+   
+
+    -       
+        name: hotfriesetc
+        collision_geometry: 
+            type: box
+            dims: [20, 65, 32]      
+            material: blue    
+        config:
+            position: [-55, -40, 0]
+            orientation: [0,0,0,1]
+
+    -       
+        name: grapesfridge
+        collision_geometry: 
+            type: box
+            dims: [25, 30, 33]      
+            material: blue    
+        config:
+            position: [-55, -90, 0]
+            orientation: [0,0,0,1]
+
+    -       
+        name: sodafridge
+        collision_geometry: 
+            type: box
+            dims: [25, 45, 32]      
+            material: red    
+        config:
+            position: [105, 35, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: counter
+        collision_geometry: 
+            type: box
+            dims: [160, 30, 25]      
+            material: red    
+        config:
+            position: [-50, 175, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: hotcoffee
+        collision_geometry: 
+            type: box
+            dims: [35, 80, 34]      
+            material: red    
+        config:
+            position: [105, 100, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: foodfridge
+        collision_geometry: 
+            type: box
+            dims: [25, 45, 32]      
+            material: red    
+        config:
+            position: [-55, -130, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: vlinedivider1
+        collision_geometry: 
+            type: box
+            dims: [1, 290, 25]      
+            material: red    
+        config:
+            position: [-100, -10, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: vlinedivider2
+        collision_geometry: 
+            type: box
+            dims: [1, 255, 25]      
+            material: red    
+        config:
+            position: [-70, -27, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: vlinedivider3
+        collision_geometry: 
+            type: box
+            dims: [1, 35, 25]      
+            material: red    
+        config:
+            position: [-40, 115, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: hlinedivider1
+        collision_geometry: 
+            type: box
+            dims: [30, 1, 25]      
+            material: red    
+        config:
+            position: [-85, 135, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: hlinedivider2
+        collision_geometry: 
+            type: box
+            dims: [30, 1, 25]      
+            material: red    
+        config:
+            position: [-55, 100, 0]
+            orientation: [0,0,0,1]    
+    
+#    -       
+#        name: hlinedivider3
+#        collision_geometry: 
+#            type: box
+#            dims: [30, 1, 25]      
+#            material: red    
+#        config:
+#            position: [30, 120, 0]
+#            orientation: [0,0,0,1]
+    -       
+        name: pickupcounter
+        collision_geometry: 
+            type: box
+            dims: [60, 5, 25]      
+            material: red    
+        config:
+            position: [45, 162.5, 0]
+            orientation: [0,0,0,1]
+            
+    -       
+        name: vlinedivider4
+        collision_geometry: 
+            type: box
+            dims: [1, 160, 25]      
+            material: red    
+        config:
+            position: [-10, -110, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: vlinedivider5
+        collision_geometry: 
+            type: box
+            dims: [1, 100, 25]      
+            material: red    
+        config:
+            position: [20, -110, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: vlinedivider6
+        collision_geometry: 
+            type: box
+            dims: [1, 50, 25]      
+            material: red    
+        config:
+            position: [50, -55, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: hlinedivider4
+        collision_geometry: 
+            type: box
+            dims: [30, 1, 25]      
+            material: red    
+        config:
+            position: [5, -190, 0]
+            orientation: [0,0,0,1]
+    -       
+        name: hlinedivider5
+        collision_geometry: 
+            type: box
+            dims: [45, 1, 25]      
+            material: red    
+        config:
+            position: [42.5, -105, 0]
+            orientation: [0,0,0,1]    
+    -       
+        name: hlinedivider6
+        collision_geometry: 
+            type: box
+            dims: [60, 1, 25]      
+            material: red    
+        config:
+            position: [20, -30, 0]
+            orientation: [0,0,0,1]

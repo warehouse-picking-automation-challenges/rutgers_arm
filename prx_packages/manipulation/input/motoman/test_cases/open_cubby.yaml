@@ -1,0 +1,40 @@
+table:
+  type: obstacle
+  geometries:
+    -
+      name: foundation
+      collision_geometry:
+        type: box
+        dims: [0.5, 1.31, 1.4]
+        material: shelf_grey
+      config:
+        position: [0.9, 0.2, 0]
+        orientation: [0, 0, 0, 1]
+    -
+      name: side_wall
+      collision_geometry:
+        type: box
+        dims: [0.26, 0.02, 0.17]
+        material: grey
+      config:
+        position: [0.87, -0.1, 0.785]
+        configuration: [0, 0, 0, 1]
+    -
+      name: top
+      collision_geometry:
+        type: box
+        dims: [0.26, 0.22, 0.02]
+        material: grey
+      config:
+        position: [0.87, 0.0, 0.88]
+        configuration: [0, 0, 0, 1]
+    -
+      name: back_wall
+      collision_geometry:
+        type: box
+        dims: [0.02, 0.22, 0.19]
+        material: grey
+      config:
+        position: [1.01, 0.0, 0.795]
+        configuration: [0, 0, 0, 1]
+

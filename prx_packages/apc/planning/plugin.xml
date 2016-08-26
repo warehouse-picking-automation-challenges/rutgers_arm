@@ -1,0 +1,42 @@
+<class name="prx_planning/apc_tp"
+    type="prx::packages::apc::apc_task_planner_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        The task planner that handles the APC task.
+    </description>        
+</class>
+<class name="prx_planning/apc_planning_application"
+    type="prx::packages::apc::apc_planning_application_t"
+    base_class_type="prx::plan::planning_application_t">
+    <description>
+        The planning application for APC.
+    </description>        
+</class>
+<class name="prx_planning/apc_sampler"
+    type="prx::packages::apc::apc_sampler_t"
+    base_class_type="prx::plan::sampler_t">
+    <description>
+        Samples IK's in a bounded region.
+    </description>        
+</class>
+<class name="prx_planning/apc_driver_stress"
+    type="prx::packages::apc::apc_driver_stress_tp_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        A Task Planner designed to stress the driver.
+    </description>        
+</class>
+<class name="prx_planning/case_eval_task_planner"
+    type="prx::packages::apc::case_eval_task_planner_t"
+    base_class_type="prx::plan::planner_t">
+    <description>
+        Do the crap
+    </description>        
+</class>
+<class name="prx_planning/apc_driver_stress_specification"
+    type="prx::packages::apc::apc_driver_stress_specification_t"
+    base_class_type="prx::plan::specification_t">
+    <description>
+        A Task Planner designed to stress the driver.
+    </description>        
+</class>

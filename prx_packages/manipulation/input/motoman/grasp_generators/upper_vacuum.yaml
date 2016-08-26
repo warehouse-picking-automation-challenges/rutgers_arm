@@ -1,0 +1,26 @@
+type: unigripper_grasp_generator
+default_ee_normal: [0,0,1]
+end_effector_name: upper_vacuum
+grasp_entire_mesh: false
+save_grasps_to_file: true
+limiting_normal: true
+hand_long_axis: [1,0,0]
+minimum_overlap_area: 0.0016625
+restricted_normals:
+-
+  normal: [0,0,-1]
+-
+  normal: [1,0,0]
+-
+  normal: [-1,0,0]
+preferred_normals:
+-
+  normal: [0,0,1]
+# -
+#   normal: [0,1,0]
+# -
+#   normal: [0,-1,0]
+manual_grasp_mode: 2
+manual_release_mode: 1
+nr_grasps_to_sample: 300
+total_nr_grasps: 30

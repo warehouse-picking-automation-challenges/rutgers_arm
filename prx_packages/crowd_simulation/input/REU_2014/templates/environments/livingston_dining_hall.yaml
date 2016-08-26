@@ -1,0 +1,905 @@
+
+test_all_geoms:
+    type: obstacle
+    geometries:
+    -
+        name: outwall1
+        collision_geometry: 
+            type: box
+            dims: [500, 10, 50]      
+            material: red    
+        config:
+            position: [300, 0, 0]
+            orientation: [0,0,0,1]
+    -
+        name: outwall2
+        collision_geometry: 
+            type: box
+            dims: [100, 10, 50]      
+            material: red    
+        config:
+            position: [-100, 0, 0]
+            orientation: [0,0,0,1]   
+    -
+        name: outwall3
+        collision_geometry: 
+            type: box
+            dims: [10, 600, 50]      
+            material: red    
+        config:
+            position: [550, 300, 0]
+            orientation: [0,0,0,1]    
+    -
+        name: outwall4
+        collision_geometry: 
+            type: box
+            dims: [10, 300, 50]      
+            material: red    
+        config:
+            position: [-150, 150, 0]
+            orientation: [0,0,0,1]
+    -
+        name: outwall5
+        collision_geometry: 
+            type: box
+            dims: [300, 10, 50]      
+            material: red    
+        config:
+            position: [0, 300, 0]
+            orientation: [0,0,0,1]
+        
+    -
+        name: outwall6
+        collision_geometry: 
+            type: box
+            dims: [10, 300, 50]      
+            material: red    
+        config:
+            position: [150, 450, 0]
+            orientation: [0,0,0,1]
+    -
+        name: outwall7
+        collision_geometry: 
+            type: box
+            dims: [400, 10, 50]      
+            material: red    
+        config:
+            position: [350, 600, 0]
+            orientation: [0,0,0,1]
+    -
+        name: divider1
+        collision_geometry: 
+            type: box
+            dims: [100, 10, 50]      
+            material: yellow    
+        config:
+            position: [-100, 100, 0]
+            orientation: [0,0,0,1]
+    -
+        name: divider2
+        collision_geometry: 
+            type: box
+            dims: [290, 10, 50]      
+            material: yellow    
+        config:
+            position: [400, 200, 0]
+            orientation: [0,0,0,1]
+    -
+        name: divider3
+        collision_geometry: 
+            type: box
+            dims: [290, 10, 50]      
+            material: yellow    
+        config:
+            position: [400, 400, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box1
+        collision_geometry: 
+            type: box
+            dims: [30, 50, 20]      
+            material: red    
+        config:
+            position: [65, 25, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box2
+        collision_geometry: 
+            type: box
+            dims: [30, 50, 20]      
+            material: red    
+        config:
+            position: [-65, 25, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box3
+        collision_geometry: 
+            type: box
+            dims: [30, 40, 20]      
+            material: black    
+        config:
+            position: [0, 100, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box4
+        collision_geometry: 
+            type: box
+            dims: [100, 25, 20]      
+            material: black
+        config:
+            position: [100, 113, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box5
+        collision_geometry: 
+            type: box
+            dims: [30, 50, 20]      
+            material: black    
+        config:
+            position: [135, 125, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box6
+        collision_geometry: 
+            type: box
+            dims: [80, 25, 20]      
+            material: black    
+        config:
+            position: [110, 200, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box7
+        collision_geometry: 
+            type: box
+            dims: [25, 70, 20]      
+            material: black    
+        config:
+            position: [70, 200, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box8
+        collision_geometry: 
+            type: box
+            dims: [25, 55, 20]      
+            material: black    
+        config:
+            position: [140, 270, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box9
+        collision_geometry: 
+            type: box
+            dims: [300, 30, 20]      
+            material: black   
+        config:
+            position: [0, 285, 0]
+            orientation: [0,0,0,1]
+    -
+        name: pub
+        collision_geometry: 
+            type: sphere
+            radius: 100
+            material: blue    
+        config:
+            position: [300, 0, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box10
+        collision_geometry: 
+            type: box
+            dims: [30, 200, 50]      
+            material: black
+        config:
+            position: [-130, 200, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box11
+        collision_geometry: 
+            type: box
+            dims: [15, 100, 50]      
+            material: black
+        config:
+            position: [-115, 140, 0]
+            orientation: [-0.14645,0.35355,0.35355,0.85355]
+    -
+        name: sphere1
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [530, 575, 0]
+            orientation: [0,0,0,1]
+  
+    -
+        name: sphere2
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [530, 525, 0]
+            orientation: [0,0,0,1]           
+    -
+        name: sphere3
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [530, 475, 0]
+            orientation: [0,0,0,1]
+                        
+                        
+    -
+        name: sphere4
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [530, 425, 0]
+            orientation: [0,0,0,1]
+                        
+    -
+        name: sphere5
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [530, 375, 0]
+            orientation: [0,0,0,1]
+    
+    -
+        name: sphere6
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [530, 325, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere7
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [530, 275, 0]
+            orientation: [0,0,0,1]
+    
+    -
+        name: sphere8
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [530, 225, 0]
+            orientation: [0,0,0,1]
+    
+    -
+        name: sphere9
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [530, 175, 0]
+            orientation: [0,0,0,1]
+    
+    -
+        name: sphere10
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [530, 125, 0]
+            orientation: [0,0,0,1]
+    
+    -
+        name: sphere11
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [530, 75, 0]
+            orientation: [0,0,0,1]
+    
+    -
+        name: sphere12
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [530, 25, 0]
+            orientation: [0,0,0,1]
+    
+    -
+        name: sphere13
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [480, 425, 0]
+            orientation: [0,0,0,1]
+                        
+    -
+        name: sphere14
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [430, 425, 0]
+            orientation: [0,0,0,1]
+                        
+    -
+        name: sphere15
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [380, 425, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere16
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [330, 425, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere17
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [480, 575, 0]
+            orientation: [0,0,0,1]
+                        
+    -
+        name: sphere18
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [430, 575, 0]
+            orientation: [0,0,0,1]
+                        
+    -
+        name: sphere19
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [380, 575, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere20
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [330, 575, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere21
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [280, 575, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere22
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [280, 425, 0]
+            orientation: [0,0,0,1]
+   
+    -
+        name: sphere23
+        collision_geometry: 
+            type: sphere
+            radius: 15
+            material: blue    
+        config:
+            position: [490, 540, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere24
+        collision_geometry: 
+            type: sphere
+            radius: 15
+            material: blue    
+        config:
+            position: [440, 530, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere25
+        collision_geometry: 
+            type: sphere
+            radius: 15
+            material: blue    
+        config:
+            position: [390, 540, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere26
+        collision_geometry: 
+            type: sphere
+            radius: 15
+            material: blue    
+        config:
+            position: [340, 530, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere27
+        collision_geometry: 
+            type: sphere
+            radius: 15
+            material: blue    
+        config:
+            position: [290, 540, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere28
+        collision_geometry: 
+            type: sphere
+            radius: 15
+            material: blue    
+        config:
+            position: [290, 480, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere29
+        collision_geometry: 
+            type: sphere
+            radius: 15
+            material: blue    
+        config:
+            position: [340, 470, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere30
+        collision_geometry: 
+            type: sphere
+            radius: 15
+            material: blue    
+        config:
+            position: [390, 480, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere31
+        collision_geometry: 
+            type: sphere
+            radius: 15
+            material: blue    
+        config:
+            position: [440, 470, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere32
+        collision_geometry: 
+            type: sphere
+            radius: 15
+            material: blue    
+        config:
+            position: [490, 480, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere33
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [480, 175, 0]
+            orientation: [0,0,0,1]
+                        
+    -
+        name: sphere34
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [430, 175, 0]
+            orientation: [0,0,0,1]
+                        
+    -
+        name: sphere35
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [380, 175, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere36
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [330, 175, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere37
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [280, 175, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere38
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [480, 375, 0]
+            orientation: [0,0,0,1]
+                        
+    -
+        name: sphere39
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [430, 375, 0]
+            orientation: [0,0,0,1]
+                        
+    -
+        name: sphere40
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [380, 375, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere41
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [330, 375, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere42
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [280, 375, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere43
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [480, 225, 0]
+            orientation: [0,0,0,1]
+                        
+    -
+        name: sphere44
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [430, 225, 0]
+            orientation: [0,0,0,1]
+                        
+    -
+        name: sphere45
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [380, 225, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere46
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [330, 225, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere47
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [280, 225, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box12
+        collision_geometry: 
+            type: box
+            dims: [15, 40, 10]      
+            material: blue
+        config:
+            position: [500, 270, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box13
+        collision_geometry: 
+            type: box
+            dims: [15, 40, 10]      
+            material: blue
+        config:
+            position: [500, 330, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box14
+        collision_geometry: 
+            type: box
+            dims: [15, 40, 10]      
+            material: blue
+        config:
+            position: [460, 270, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box15
+        collision_geometry: 
+            type: box
+            dims: [15, 40, 10]      
+            material: blue
+        config:
+            position: [460, 330, 0]
+            orientation: [0,0,0,1]
+  
+    -
+        name: box17
+        collision_geometry: 
+            type: box
+            dims: [15, 15, 10]    
+            material: blue
+        config:
+            position: [415, 270, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box18
+        collision_geometry: 
+            type: box
+            dims: [15, 15, 10]     
+            material: blue
+        config:
+            position: [415, 330, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box19
+        collision_geometry: 
+            type: box
+            dims: [15, 15, 10]     
+            material: blue
+        config:
+            position: [415, 300, 0]
+            orientation: [0,0,0,1]
+   
+    -
+        name: box21
+        collision_geometry: 
+            type: box
+            dims: [15, 15, 10]   
+            material: blue
+        config:
+            position: [370, 270, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box22
+        collision_geometry: 
+            type: box
+            dims: [15, 15, 10]    
+            material: blue
+        config:
+            position: [370, 330, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box23
+        collision_geometry: 
+            type: box
+            dims: [15, 15, 10]      
+            material: blue
+        config:
+            position: [370, 300, 0]
+            orientation: [0,0,0,1] 
+ 
+    -
+        name: box25
+        collision_geometry: 
+            type: box
+            dims: [15, 15, 10]      
+            material: blue
+        config:
+            position: [325, 270, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box26
+        collision_geometry: 
+            type: box
+            dims: [15, 15, 10]     
+            material: blue
+        config:
+            position: [325, 330, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box27
+        collision_geometry: 
+            type: box
+            dims: [15, 15, 10]     
+            material: blue
+        config:
+            position: [325, 300, 0]
+            orientation: [0,0,0,1]
+  
+    -
+        name: box29
+        collision_geometry: 
+            type: box
+            dims: [15, 15, 10]      
+            material: blue
+        config:
+            position: [280, 270, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box30
+        collision_geometry: 
+            type: box
+            dims: [15, 15, 10]      
+            material: blue
+        config:
+            position: [280, 330, 0]
+            orientation: [0,0,0,1]
+    -
+        name: box31
+        collision_geometry: 
+            type: box
+            dims: [15, 15, 10]      
+            material: blue
+        config:
+            position: [280, 300, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere48
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [500, 135, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere49
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [460, 135, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere50
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [410, 135, 0]
+            orientation: [0,0,0,1]    
+    -
+        name: sphere51
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [360, 135, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere52
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [310, 135, 0]
+            orientation: [0,0,0,1]            
+    -
+        name: sphere53
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [500, 50, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere54
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [460, 50, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere55
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [410, 50, 0]
+            orientation: [0,0,0,1]  
+    -
+        name: sphere56
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [430, 95, 0]
+            orientation: [0,0,0,1]
+    -
+        name: sphere57
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [480, 95, 0]
+            orientation: [0,0,0,1]                        
+    -
+        name: sphere58
+        collision_geometry: 
+            type: sphere
+            radius: 10
+            material: blue    
+        config:
+            position: [380, 95, 0]
+            orientation: [0,0,0,1]
+    -
+        name: saladBar1
+        collision_geometry: 
+            type: sphere
+            radius: 40
+            material: black    
+        config:
+            position: [-25, 205, 0]
+            orientation: [0,0,0,1]
+      

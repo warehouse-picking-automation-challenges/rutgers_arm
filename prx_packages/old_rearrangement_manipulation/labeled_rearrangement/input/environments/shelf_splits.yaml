@@ -1,0 +1,22 @@
+shelf_splits:
+  type: obstacle
+  geometries:
+    -
+      name: left_wall
+      collision_geometry:
+        type: box
+        dims: [0.04, 0.48, 0.295]
+        material: shelf_grey
+      config:
+        position: [-0.15, 1.09, 3.505]
+        orientation: [0, 0, 0, 1]
+    -
+      name: right_wall
+      collision_geometry:
+        type: box
+        dims: [0.04, 0.48, 0.295]
+        material: shelf_grey
+      config:
+        position: [0.15, 1.09, 3.505]
+        orientation: [0, 0, 0, 1]
+

@@ -1,0 +1,7 @@
+<class name="prx_planning/superball_sampler"
+    type="prx::plan::superball_sampler_t"
+    base_class_type="prx::plan::sampler_t">
+    <description>
+        Sample a small amount of cord differences
+    </description>        
+</class>

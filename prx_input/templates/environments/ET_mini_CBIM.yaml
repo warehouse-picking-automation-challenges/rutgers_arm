@@ -1,0 +1,478 @@
+building1:
+    type: obstacle
+    geometries:
+    
+###############
+# Outer walls #
+###############
+      -
+        name: bottomWall
+        collision_geometry:
+          type: box
+          dims: [122, 2, 20]
+          material: off_white
+        config:
+          position: [60, 0, 10]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: rightWall
+        collision_geometry:
+          type: box
+          dims: [2, 202, 20]
+          material: off_white
+        config:
+          position: [120, 100, 10]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: leftWall1
+        collision_geometry:
+          type: box
+          dims: [2, 42, 20]
+          material: off_white
+        config:
+          position: [0, 180, 10]
+          orientation: [0, 0, 0, 1]
+      
+      -
+        name: leftWall2
+        collision_geometry:
+          type: box
+          dims: [2, 92, 20]
+          material: off_white
+        config:
+          position: [0, 95, 10]
+          orientation: [0, 0, 0, 1]
+      
+      -
+        name: leftWall3
+        collision_geometry:
+          type: box
+          dims: [2, 42, 20]
+          material: off_white
+        config:
+          position: [0, 20, 10]
+          orientation: [0, 0, 0, 1]
+      
+      -
+        name: topWall1
+        collision_geometry:
+          type: box
+          dims: [72, 2, 20]
+          material: off_white
+        config:
+          position: [35, 200, 10]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: topWall2
+        collision_geometry:
+          type: box
+          dims: [42, 2, 20]
+          material: off_white
+        config:
+          position: [100, 200, 10]
+          orientation: [0, 0, 0, 1]
+          
+###########
+# Offices #
+###########
+
+      -
+        name: officeA1
+        collision_geometry:
+          type: box
+          dims: [2, 22, 20]
+          material: off_white
+        config:
+          position: [60, 210, 10]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: officeA2
+        collision_geometry:
+          type: box
+          dims: [32, 2, 20]
+          material: off_white
+        config:
+          position: [75, 220, 10]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: officeA3
+        collision_geometry:
+          type: box
+          dims: [2, 22, 20]
+          material: off_white
+        config:
+          position: [90, 210, 10]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: officeB1
+        collision_geometry:
+          type: box
+          dims: [22, 2, 20]
+          material: off_white
+        config:
+          position: [-10, 60, 10]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: officeB2
+        collision_geometry:
+          type: box
+          dims: [2, 32, 20]
+          material: off_white
+        config:
+          position: [-20, 45, 10]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: officeB3
+        collision_geometry:
+          type: box
+          dims: [22, 2, 20]
+          material: off_white
+        config:
+          position: [-10, 30, 10]
+          orientation: [0, 0, 0, 1]
+
+############
+# Cubicles #
+############
+
+
+      -
+        name: C1left
+        collision_geometry:
+          type: box
+          dims: [1, 31, 8]
+          material: grey
+        config:
+          position: [20, 35, 4]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: C1top
+        collision_geometry:
+          type: box
+          dims: [21, 1, 8]
+          material: grey
+        config:
+          position: [30, 50, 4]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: C1bottom
+        collision_geometry:
+          type: box
+          dims: [21, 1, 8]
+          material: grey
+        config:
+          position: [30, 20, 4]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: C2left
+        collision_geometry:
+          type: box
+          dims: [1, 31, 8]
+          material: grey
+        config:
+          position: [50, 35, 4]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: C2top
+        collision_geometry:
+          type: box
+          dims: [21, 1, 8]
+          material: grey
+        config:
+          position: [60, 50, 4]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: C2bottom
+        collision_geometry:
+          type: box
+          dims: [21, 1, 8]
+          material: grey
+        config:
+          position: [60, 20, 4]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: C3top
+        collision_geometry:
+          type: box
+          dims: [21, 1, 8]
+          material: grey
+        config:
+          position: [90, 80, 4]
+          orientation: [0, 0, 0, 1]     
+
+      -
+        name: C3middle
+        collision_geometry:
+          type: box
+          dims: [21, 1, 8]
+          material: grey
+        config:
+          position: [90, 50, 4]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: C3bottom
+        collision_geometry:
+          type: box
+          dims: [21, 1, 8]
+          material: grey
+        config:
+          position: [90, 20, 4]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: C3right
+        collision_geometry:
+          type: box
+          dims: [1, 91, 8]
+          material: grey
+        config:
+          position: [100, 65, 4]
+          orientation: [0, 0, 0, 1]
+
+########
+# Misc #
+########
+
+      -
+        name: DoorsTop
+        collision_geometry:
+          type: box
+          dims: [22, 2, 20]
+          material: black
+        config:
+          position: [-10, 160, 10]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: DoorsBottom
+        collision_geometry:
+          type: box
+          dims: [22, 2, 20]
+          material: black
+        config:
+          position: [-10, 140, 10]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: BlockL
+        collision_geometry:
+          type: box
+          dims: [40, 60, 20]
+          material: off_white
+        config:
+          position: [30, 110, 10]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: BlockS
+        collision_geometry:
+          type: box
+          dims: [20, 20, 20]
+          material: off_white
+        config:
+          position: [60, 90, 10]
+          orientation: [0, 0, 0, 1]
+          
+      -
+        name: Column1
+        collision_geometry:
+          type: box
+          dims: [10, 10, 20]
+          material: off_white
+        config:
+          position: [75, 125, 10]
+          orientation: [0, 0, 0, 1]
+          
+#############
+# Furniture #
+#############
+
+      -
+        name: sofaSeat
+        collision_geometry:
+          type: box
+          dims: [10, 30, 4]
+          material: red
+        config:
+          position: [95, 95, 2]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: sofaBack
+        collision_geometry:
+          type: box
+          dims: [2, 30, 4]
+          material: red
+        config:
+          position: [99, 95, 6]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: sofaArmRight
+        collision_geometry:
+          type: box
+          dims: [10, 2, 2]
+          material: red
+        config:
+          position: [95, 109, 5]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: sofaArmLeft
+        collision_geometry:
+          type: box
+          dims: [10, 2, 2]
+          material: red
+        config:
+          position: [95, 81, 5]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: C1desktop
+        collision_geometry:
+          type: box
+          dims: [20, 6, 0.5]
+          material: shelf_grey
+        config:
+          position: [30, 47, 5]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: C1deskbottom
+        collision_geometry:
+          type: box
+          dims: [20, 6, 0.5]
+          material: shelf_grey
+        config:
+          position: [30, 23, 5]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: C1deskmiddle
+        collision_geometry:
+          type: box
+          dims: [6, 30, 0.5]
+          material: shelf_grey
+        config:
+          position: [23, 35, 5]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: C2desktop
+        collision_geometry:
+          type: box
+          dims: [20, 6, 0.5]
+          material: shelf_grey
+        config:
+          position: [60, 47, 5]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: C2deskbottom
+        collision_geometry:
+          type: box
+          dims: [20, 6, 0.5]
+          material: shelf_grey
+        config:
+          position: [60, 23, 5]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: C2deskmiddle
+        collision_geometry:
+          type: box
+          dims: [6, 30, 0.5]
+          material: shelf_grey
+        config:
+          position: [53, 35, 5]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: C3desktop1
+        collision_geometry:
+          type: box
+          dims: [20, 6, 0.5]
+          material: shelf_grey
+        config:
+          position: [90, 77, 5]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: C3deskbottom1
+        collision_geometry:
+          type: box
+          dims: [20, 6, 0.5]
+          material: shelf_grey
+        config:
+          position: [90, 53, 5]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: C3deskmiddle1
+        collision_geometry:
+          type: box
+          dims: [6, 30, 0.5]
+          material: shelf_grey
+        config:
+          position: [97, 65, 5]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: C3desktop2
+        collision_geometry:
+          type: box
+          dims: [20, 6, 0.5]
+          material: shelf_grey
+        config:
+          position: [90, 47, 5]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: C3deskbottom2
+        collision_geometry:
+          type: box
+          dims: [20, 6, 0.5]
+          material: shelf_grey
+        config:
+          position: [90, 23, 5]
+          orientation: [0, 0, 0, 1]
+
+      -
+        name: C3deskmiddle2
+        collision_geometry:
+          type: box
+          dims: [6, 30, 0.5]
+          material: shelf_grey
+        config:
+          position: [97, 35, 5]
+          orientation: [0, 0, 0, 1]
+
+#######################################
+ 
+############
+# Template #
+############        
+#      -
+#        name: 
+#        collision_geometry:
+#          type: box
+#          dims: []
+#          material: black
+#        config:
+#          position: []
+#          orientation: [0, 0, 0, 1]

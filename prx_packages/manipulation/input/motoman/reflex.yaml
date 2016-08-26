@@ -1,0 +1,190 @@
+type: reflex
+input_path: "/prx_packages/manipulation/input/motoman/"
+max_step: 0.01
+max_ik_step: 0.02
+urdf_file: reflex.urdf
+ignored_dofs:
+  swivel_1: 0
+  swivel_2: 0
+  proximal_1: 0
+  proximal_2: 0
+  proximal_3: 0
+  distal_1: 0
+  distal_2: 0
+  distal_3: 0
+  # arm_right_reflex_virtual: 0
+integrator: 
+  type: euler
+initial_state: [0, 0, 0, 0, 0, 0, 1]
+# initial_control: [0, 0, 0, 0, 0, 0, 1]
+root_frame: 
+  position: [0, 0, 0]
+  orientation: [0, 0, 0, 1]
+root_geometry: base
+state_space: 
+  min: [-2, -2, -2, -3.1416, -3.1416 ,-3.1416, 1]
+  max: [2, 2, 2, 3.1416, 3.1416 ,3.1416, 5]
+input_control_space:
+  min: [-2, -2, -2, -3.1416, -3.1416 ,-3.1416, 0]
+  max: [2, 2, 2, 3.1416, 3.1416 ,3.1416, 5]
+end_effectors: 
+  -
+    name: "arm_right_reflex_virtual"
+    local_config:
+      # position: [0, -.14, 0]
+      # orientation: [0, 0, 0, 1]
+      position: [0.01, 0, 0.1295]
+      orientation: [0, 0, 0, 1 ]
+config_offsets:
+  # Reflex
+  proximal_pad_1:
+    offset: [0.0, 0.012, -0.029]
+  distal_pad_1:
+    offset: [0.0, 0.012, -0.095]
+  proximal_pad_2:
+    offset: [0.0, 0.012, -0.029]
+  distal_pad_2:
+    offset: [0.0, 0.012, -0.095]
+  proximal_pad_3:
+    offset: [0.0, 0.012, -0.029]
+  distal_pad_3:
+    offset: [0.0, 0.012, -0.095]
+geometries:
+  - 
+    name: swivel_1
+    collision_geometry:
+      material: dark_grey
+      # type: box
+      # dims: [0.01, .02, .03]
+      type: mesh
+      filename: meshes/reflex/reflex-beta-pads-separate/collision/swivel_1.stl
+  -
+    name: proximal_1
+    collision_geometry:
+      material: black
+      # type: box
+      # dims: [0.01, .02, .03]
+      type: mesh
+      filename: meshes/reflex/reflex-beta-pads-separate/collision/proximal_1.stl
+  - 
+    name: proximal_pad_1
+    collision_geometry:
+      material: red
+      type: box
+      dims: [0.015, .0045, .057]
+      # type: mesh
+      # filename: meshes/reflex/reflex-beta-pads-separate/collision/proximal_pad_1.stl
+  -   
+    name: distal_1
+    collision_geometry:
+      material: black
+      # type: box
+      # dims: [0.01, .02, .03]
+      type: mesh
+      filename: meshes/reflex/reflex-beta-pads-separate/collision/distal_1.stl
+  -
+    name: distal_pad_1
+    collision_geometry:
+      material: red
+      type: box
+      dims: [0.015, .0045, .037]
+      # type: mesh
+      # filename: meshes/reflex/reflex-beta-pads-separate/collision/distal_pad_1.stl
+  -
+    name: swivel_2
+    collision_geometry:
+      material: dark_grey
+      # type: box
+      # dims: [0.01, .02, .03]
+      type: mesh
+      filename: meshes/reflex/reflex-beta-pads-separate/collision/swivel_2.stl
+  - 
+    name: proximal_2
+    collision_geometry:
+      material: black
+      # type: box
+      # dims: [0.01, .02, .03]
+      type: mesh
+      filename: meshes/reflex/reflex-beta-pads-separate/collision/proximal_2.stl
+  - 
+    name: proximal_pad_2
+    collision_geometry:
+      material: red
+      type: box
+      dims: [0.015, .0045, .057]
+      # type: mesh
+      # filename: meshes/reflex/reflex-beta-pads-separate/collision/proximal_pad_2.stl
+  -  
+    name: distal_2
+    collision_geometry:
+      material: black
+      # type: box
+      # dims: [0.01, .02, .03]
+      type: mesh
+      filename: meshes/reflex/reflex-beta-pads-separate/collision/distal_2.stl
+  -  
+    name: distal_pad_2
+    collision_geometry:
+      material: red
+      type: box
+      dims: [0.015, .0045, .037]
+      # type: mesh
+      # filename: meshes/reflex/reflex-beta-pads-separate/collision/distal_pad_2.stl
+  - 
+    name: proximal_3
+    collision_geometry:
+      material: black
+      # type: box
+      # dims: [0.01, .02, .03]
+      type: mesh
+      filename: meshes/reflex/reflex-beta-pads-separate/collision/proximal_3.stl
+  -  
+    name: proximal_pad_3
+    collision_geometry:
+      material: red
+      type: box
+      dims: [0.015, .0045, .057]
+      # type: mesh
+      # filename: meshes/reflex/reflex-beta-pads-separate/collision/proximal_pad_3.stl
+  -
+    name: distal_3
+    collision_geometry:
+      material: black
+      # type: box
+      # dims: [0.01, .02, .03]
+      type: mesh
+      filename: meshes/reflex/reflex-beta-pads-separate/collision/distal_3.stl
+  - 
+    name: distal_pad_3
+    collision_geometry:
+      material: red
+      type: box
+      dims: [0.015, .0045, .037]
+      # type: mesh
+      # filename: meshes/reflex/reflex-beta-pads-separate/collision/distal_pad_3.stl
+  -
+    name: pad
+    collision_geometry:
+      material: black
+      # type: box
+      # dims: [0.01, .02, .03]
+      type: mesh
+      filename: /meshes/reflex/reflex-beta/collision/pad.STL
+  -
+    name: base
+    collision_geometry:
+      material: black
+      # type: box
+      # dims: [0.01, .02, .03]
+      type: mesh
+      filename: /meshes/reflex/reflex-beta/collision/base_link.STL
+  -
+    name: arm_right_reflex_virtual
+    collision_geometry:
+      type: box
+      dims: [0.00, 0.0, 0.0]
+      material: neon
+    visualization_geometry:
+      type: box
+      dims: [0.09, 0.035, 0.11]
+      material: neon

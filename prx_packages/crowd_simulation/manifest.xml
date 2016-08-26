@@ -1,0 +1,8 @@
+<package>
+  <description brief="Package for performing crowd simulations in indoor environments">
+    This package contains the controllers and structures for doing crowd simulation.
+  </description>
+  <author>Andrew Dobson</author>
+  <license>BSD</license>
+  <url>http://www.pracsyslab.org</url>
+</package>

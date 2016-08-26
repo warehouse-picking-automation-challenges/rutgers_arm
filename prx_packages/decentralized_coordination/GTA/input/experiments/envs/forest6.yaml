@@ -1,0 +1,403 @@
+building1:
+    type: obstacle
+    geometries:
+      -
+        name: tree0
+        collision_geometry:
+          type: cylinder
+          radius: 5.53692296755
+          height: 2.0
+          material: red
+        config:
+          position: [-115.863948256,-8.16741235439,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree1
+        collision_geometry:
+          type: cylinder
+          radius: 8.95117655278
+          height: 2.0
+          material: red
+        config:
+          position: [10.6399646134,-115.356053651,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree2
+        collision_geometry:
+          type: cylinder
+          radius: 8.65596605265
+          height: 2.0
+          material: red
+        config:
+          position: [-125.637492292,-34.7476095549,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree3
+        collision_geometry:
+          type: cylinder
+          radius: 6.40480825456
+          height: 2.0
+          material: red
+        config:
+          position: [-4.81736463556,19.6389614973,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree4
+        collision_geometry:
+          type: cylinder
+          radius: 6.4528408049
+          height: 2.0
+          material: red
+        config:
+          position: [79.5173620144,-18.7993654849,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree5
+        collision_geometry:
+          type: cylinder
+          radius: 7.25172217507
+          height: 2.0
+          material: red
+        config:
+          position: [117.11593063,-113.70404829,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree6
+        collision_geometry:
+          type: cylinder
+          radius: 9.575922305
+          height: 2.0
+          material: red
+        config:
+          position: [127.224100358,50.630222363,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree7
+        collision_geometry:
+          type: cylinder
+          radius: 7.8273406529
+          height: 2.0
+          material: red
+        config:
+          position: [-61.1893861788,-4.70852905117,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree8
+        collision_geometry:
+          type: cylinder
+          radius: 5.37996090768
+          height: 2.0
+          material: red
+        config:
+          position: [-123.065070555,97.6176393462,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree9
+        collision_geometry:
+          type: cylinder
+          radius: 7.5831619664
+          height: 2.0
+          material: red
+        config:
+          position: [65.1104586564,-5.96392642114,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree10
+        collision_geometry:
+          type: cylinder
+          radius: 5.53842138972
+          height: 2.0
+          material: red
+        config:
+          position: [-88.6966174989,123.024962953,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree11
+        collision_geometry:
+          type: cylinder
+          radius: 9.68354488582
+          height: 2.0
+          material: red
+        config:
+          position: [-70.3382375207,108.826203156,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree12
+        collision_geometry:
+          type: cylinder
+          radius: 7.65004087787
+          height: 2.0
+          material: red
+        config:
+          position: [33.3231252349,-8.54963209016,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree13
+        collision_geometry:
+          type: cylinder
+          radius: 7.35227453612
+          height: 2.0
+          material: red
+        config:
+          position: [-0.532639285618,-76.2349330537,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree14
+        collision_geometry:
+          type: cylinder
+          radius: 9.83650625847
+          height: 2.0
+          material: red
+        config:
+          position: [-74.9037390445,89.3408144694,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree15
+        collision_geometry:
+          type: cylinder
+          radius: 6.59033775503
+          height: 2.0
+          material: red
+        config:
+          position: [-91.7236021899,-139.310108729,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree16
+        collision_geometry:
+          type: cylinder
+          radius: 6.81484841608
+          height: 2.0
+          material: red
+        config:
+          position: [123.346990981,114.10333268,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree17
+        collision_geometry:
+          type: cylinder
+          radius: 7.65274836178
+          height: 2.0
+          material: red
+        config:
+          position: [98.2883921747,135.509974608,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree18
+        collision_geometry:
+          type: cylinder
+          radius: 7.38782025863
+          height: 2.0
+          material: red
+        config:
+          position: [113.34285533,26.5858606324,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree19
+        collision_geometry:
+          type: cylinder
+          radius: 8.10063047334
+          height: 2.0
+          material: red
+        config:
+          position: [-81.0474264679,-14.3544403952,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree20
+        collision_geometry:
+          type: cylinder
+          radius: 8.05577268553
+          height: 2.0
+          material: red
+        config:
+          position: [107.262314479,-123.170635005,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree21
+        collision_geometry:
+          type: cylinder
+          radius: 6.81033168702
+          height: 2.0
+          material: red
+        config:
+          position: [-43.0693881664,57.7130215181,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree22
+        collision_geometry:
+          type: cylinder
+          radius: 7.11705637161
+          height: 2.0
+          material: red
+        config:
+          position: [-130.879402866,59.6303957668,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree23
+        collision_geometry:
+          type: cylinder
+          radius: 8.11737244061
+          height: 2.0
+          material: red
+        config:
+          position: [-138.719543016,47.3293750968,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree24
+        collision_geometry:
+          type: cylinder
+          radius: 6.23252154584
+          height: 2.0
+          material: red
+        config:
+          position: [-96.8414337968,-3.39690435622,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree25
+        collision_geometry:
+          type: cylinder
+          radius: 8.44050682252
+          height: 2.0
+          material: red
+        config:
+          position: [39.6093040688,-107.061956519,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree26
+        collision_geometry:
+          type: cylinder
+          radius: 7.55244198897
+          height: 2.0
+          material: red
+        config:
+          position: [-66.7337674327,-91.9202225083,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree27
+        collision_geometry:
+          type: cylinder
+          radius: 7.42893893869
+          height: 2.0
+          material: red
+        config:
+          position: [-52.8337411011,122.205127175,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree28
+        collision_geometry:
+          type: cylinder
+          radius: 6.67422480116
+          height: 2.0
+          material: red
+        config:
+          position: [-43.9167932964,135.042153182,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree29
+        collision_geometry:
+          type: cylinder
+          radius: 8.32080517057
+          height: 2.0
+          material: red
+        config:
+          position: [-28.1917038916,-49.699827666,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree30
+        collision_geometry:
+          type: cylinder
+          radius: 8.33734343305
+          height: 2.0
+          material: red
+        config:
+          position: [-60.2078131207,80.73207792,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree31
+        collision_geometry:
+          type: cylinder
+          radius: 7.4369899628
+          height: 2.0
+          material: red
+        config:
+          position: [-78.1634606403,-99.9601446527,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree32
+        collision_geometry:
+          type: cylinder
+          radius: 6.82834753385
+          height: 2.0
+          material: red
+        config:
+          position: [66.2675700285,139.928167965,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree33
+        collision_geometry:
+          type: cylinder
+          radius: 9.50788068058
+          height: 2.0
+          material: red
+        config:
+          position: [45.98015046,-129.13223015,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree34
+        collision_geometry:
+          type: cylinder
+          radius: 6.52234016575
+          height: 2.0
+          material: red
+        config:
+          position: [-126.885616432,0.557022740578,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree35
+        collision_geometry:
+          type: cylinder
+          radius: 5.44355243225
+          height: 2.0
+          material: red
+        config:
+          position: [22.3789846127,6.66650247058,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree36
+        collision_geometry:
+          type: cylinder
+          radius: 7.10421497416
+          height: 2.0
+          material: red
+        config:
+          position: [56.1625275174,-88.4896767668,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree37
+        collision_geometry:
+          type: cylinder
+          radius: 5.20656181878
+          height: 2.0
+          material: red
+        config:
+          position: [-117.586300139,17.8520222186,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree38
+        collision_geometry:
+          type: cylinder
+          radius: 9.33136361431
+          height: 2.0
+          material: red
+        config:
+          position: [110.839340056,-35.9157962517,1.1]
+          orientation: [0,0,0,1]
+      -
+        name: tree39
+        collision_geometry:
+          type: cylinder
+          radius: 8.54113746413
+          height: 2.0
+          material: red
+        config:
+          position: [-129.207924059,114.828464058,1.1]
+          orientation: [0,0,0,1]

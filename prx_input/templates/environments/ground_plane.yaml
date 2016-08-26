@@ -1,0 +1,185 @@
+ground:
+  type: obstacle
+  geometries:
+    -
+      name: plane
+      collision_geometry: 
+        type: box
+        dims: [200, 200, .04]
+        material: grey   
+      config:
+        position: [0, 0, 3]
+        orientation: [ 0, 0, 0, 1]
+      visualization_geometry:
+        type: box
+        dims: [0.0001, 0.0001, 0.0001]
+        material: black
+    -
+      name: plane2
+      collision_geometry: 
+        type: box
+        dims: [200, 200, .04]
+        material: grey   
+      config:
+        position: [0, 0, 5]
+        orientation: [ 0, 0, 0, 1]
+      visualization_geometry:
+        type: box
+        dims: [0.0001, 0.0001, 0.0001]
+        material: black
+    -
+      name: plane3
+      collision_geometry: 
+        type: box
+        dims: [20, 1, 2]
+        material: grey   
+      config:
+        position: [0, 9.5, 4]
+        orientation: [ 0, 0, 0, 1]
+    -
+      name: plane4
+      collision_geometry: 
+        type: box
+        dims: [20, 1, 2]
+        material: grey   
+      config:
+        position: [0, -9.5, 4]
+        orientation: [ 0, 0, 0, 1]
+    -
+      name: plane5
+      collision_geometry: 
+        type: box
+        dims: [1, 20, 2]
+        material: grey   
+      config:
+        position: [9.5, 0, 4]
+        orientation: [ 0, 0, 0, 1]
+    -
+      name: plane6
+      collision_geometry: 
+        type: box
+        dims: [1, 20, 2]
+        material: grey   
+      config:
+        position: [-9.5, 0, 4]
+        orientation: [ 0, 0, 0, 1]
+    -
+      name: tree_0
+      collision_geometry:
+        type: cylinder
+        height: 5
+        radius: .5
+        material: black
+      config:
+        position: [-9,5,4]
+        orientation: [0,0,0,1]
+    -
+      name: tree_1
+      collision_geometry:
+        type: cylinder
+        height: 5
+        radius: .5
+        material: black
+      config:
+        position: [-5,9,4]
+        orientation: [0,0,0,1]
+    -
+      name: tree_2
+      collision_geometry:
+        type: cylinder
+        height: 5
+        radius: .5
+        material: black
+      config:
+        position: [-5,0,4]
+        orientation: [0,0,0,1]
+    -
+      name: tree_3
+      collision_geometry:
+        type: cylinder
+        height: 5
+        radius: .5
+        material: black
+      config:
+        position: [-3,2,4]
+        orientation: [0,0,0,1]
+    -
+      name: tree_4
+      collision_geometry:
+        type: cylinder
+        height: 5
+        radius: .5
+        material: black
+      config:
+        position: [0,4,4]
+        orientation: [0,0,0,1]
+    -
+      name: tree_5
+      collision_geometry:
+        type: cylinder
+        height: 5
+        radius: .5
+        material: black
+      config:
+        position: [0,1,4]
+        orientation: [0,0,0,1]
+    -
+      name: tree_9
+      collision_geometry:
+        type: cylinder
+        height: 5
+        radius: .5
+        material: black
+      config:
+        position: [6,1,4]
+        orientation: [0,0,0,1]
+    -
+      name: tree_10
+      collision_geometry:
+        type: cylinder
+        height: 5
+        radius: .5
+        material: black
+      config:
+        position: [-5,-4,4]
+        orientation: [0,0,0,1]
+    -
+      name: tree_11
+      collision_geometry:
+        type: cylinder
+        height: 5
+        radius: .5
+        material: black
+      config:
+        position: [0,-3,4]
+        orientation: [0,0,0,1]
+    -
+      name: tree_13
+      collision_geometry:
+        type: cylinder
+        height: 5
+        radius: .5
+        material: black
+      config:
+        position: [4,-3,4]
+        orientation: [0,0,0,1]
+    -
+      name: tree_14
+      collision_geometry:
+        type: cylinder
+        height: 5
+        radius: .5
+        material: black
+      config:
+        position: [5,-9,4]
+        orientation: [0,0,0,1]
+    -
+      name: tree_15
+      collision_geometry:
+        type: cylinder
+        height: 5
+        radius: .5
+        material: black
+      config:
+        position: [9,-5,4]
+        orientation: [0,0,0,1]

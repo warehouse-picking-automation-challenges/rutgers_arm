@@ -1,0 +1,4 @@
+/home/zhusj/Github/pracsys/src/prx_external/CMakeFiles/ANN.dir
+/home/zhusj/Github/pracsys/src/prx_external/CMakeFiles/PQP.dir
+/home/zhusj/Github/pracsys/src/prx_external/CMakeFiles/PRXCLIPPER.dir
+/home/zhusj/Github/pracsys/src/prx_external/CMakeFiles/PRXPNG.dir

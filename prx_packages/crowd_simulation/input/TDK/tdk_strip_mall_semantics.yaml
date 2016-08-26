@@ -1,0 +1,246 @@
+AttractionTypes:
+  -
+    Name: Vendor
+  -
+    Name: Restroom
+  -
+    Name: Food
+  -
+    Name: Bench
+
+AgentTypes:
+  -
+    Name: Patron
+    PercentThroughAgents: 0.8
+    percent_with_luggage: 0.1
+    percent_with_disabilities: 0.0
+    walking_speed_distribution: [2.2, 2.21]
+    AttractionStrengths:
+      -
+        Name: Restroom
+        Distribution: [0.0, 1.0]
+      -
+        Name: Vendor
+        Distribution: [0.0, 1.0]
+      -
+        Name: Food
+        Distribution: [0.0, 1.0]
+      -
+        Name: Bench
+        Distribution: [0.0, 1.0]
+  -
+    Name: LongDistanceCommuter
+    PercentThroughAgents: 1.0
+    percent_with_luggage: 0.9
+    percent_with_disabilities: 0.01
+    walking_speed_distribution: [1.8, 2.4]
+    AttractionStrengths:
+      -
+        Name: Restroom
+        Distribution: [0.2, 0.9]
+      -
+        Name: Vendor
+        Distribution: [0.0, 0.4]
+      -
+        Name: Food
+        Distribution: [0.0, 1.0]
+      -
+        Name: Bench
+        Distribution: [0.0, 1.0]
+
+OriginTypes:
+  -
+    Name: Street
+    AgentTypes:
+      -
+        Name: Patron
+        Percent: 0.8
+      -
+        Name: LongDistanceCommuter
+        Percent: 0.2
+    ThroughAgentDestinationRatios:
+      -
+        Name: Street
+        Percent: 0.0
+    ThroughAgentDurationAmounts:
+      -
+        Name: Patron
+        Distribution: [0.0, 1.0]
+      -
+        Name: LongDistanceCommuter
+        Distribution: [0.0, 1.0]
+
+Local:
+  -
+    Name: Gate114
+    OriginsType: Street
+    DefiningTriangles: [
+        -72.0, 5.0, 0.0
+        -72.0, 11.333333333333334, 0.0
+        -72.0, -1.3333333333333333, 0.0
+        -81.0, -5.0, 0.0
+    ]
+    Doorways: [
+        -63.0, 0.0, 0.0
+    ]
+  -
+    Name: Gate225
+    OriginsType: Street
+    DefiningTriangles: [
+        72.0, -5.0, 0.0
+        72.0, -11.333333333333334, 0.0
+        72.0, 1.3333333333333333, 0.0
+        81.0, 5.0, 0.0
+    ]
+    Doorways: [
+        63.0, 0.0, 0.0
+    ]
+  -
+    Name: Hot_Topic30
+    AttractionType: Vendor
+    Capacity: [0.0, 20.0]
+    Max_Capacity: 20.0
+    Duration: [150.0, 3600.0]
+    DefiningTriangles: [
+        -57.333333333333336, 7.666666666666667, 0.0
+        -56.333333333333336, 11.333333333333334, 0.0
+        -59.666666666666664, 7.666666666666667, 0.0
+        -62.0, 7.666666666666667, 0.0
+    ]
+    Doorways: [
+        -58.0, 4.0, 0.0
+    ]
+  -
+    Name: Men_1_156
+    AttractionType: Restroom
+    Capacity: [0.0, 3.0]
+    Max_Capacity: 3.0
+    Duration: [60.0, 320.0]
+    DefiningTriangles: [
+        -50.333333333333336, 8.666666666666666, 0.0
+        -50.333333333333336, 12.333333333333334, 0.0
+        -51.666666666666664, 7.666666666666667, 0.0
+    ]
+    Doorways: [
+        -49.0, 5.5, 0.0
+    ]
+  -
+    Name: Women_1_163
+    AttractionType: Restroom
+    Capacity: [0.0, 3.0]
+    Max_Capacity: 3.0
+    Duration: [5.0, 15.0]
+    DefiningTriangles: [
+        -43.666666666666664, 10.333333333333334, 0.0
+        -42.333333333333336, 11.333333333333334, 0.0
+        -43.666666666666664, 6.666666666666667, 0.0
+    ]
+    Doorways: [
+        -45.0, 13.5, 0.0
+    ]
+  -
+    Name: Dominos75
+    AttractionType: Food
+    Capacity: [0.0, 30.0]
+    Max_Capacity: 30.0
+    Duration: [100.0, 300.0]
+    DefiningTriangles: [
+        -33.333333333333336, 7.666666666666667, 0.0
+        -32.333333333333336, 11.333333333333334, 0.0
+        -35.333333333333336, 7.666666666666667, 0.0
+        -38.666666666666664, 7.666666666666667, 0.0
+    ]
+    Doorways: [
+        -32.5, 4.0, 0.0
+    ]
+  -
+    Name: Spencers85
+    AttractionType: Vendor
+    Capacity: [0.0, 15.0]
+    Max_Capacity: 15.0
+    Duration: [400.0, 800.0]
+    DefiningTriangles: [
+        -25.0, 7.666666666666667, 0.0
+        -24.0, 11.346666666666666, 0.0
+        -27.0, 7.666666666666667, 0.0
+    ]
+    Doorways: [
+        -23.5, 4.0, 0.0
+    ]
+  -
+    Name: Sharper_Image93
+    AttractionType: Vendor
+    Capacity: [0.0, 30.0]
+    Max_Capacity: 30.0
+    Duration: [200.0, 800.0]
+    DefiningTriangles: [
+        57.0, -7.666666666666667, 0.0
+        55.666666666666664, -11.333333333333334, 0.0
+        59.333333333333336, -7.666666666666667, 0.0
+        61.666666666666664, -7.666666666666667, 0.0
+    ]
+    Doorways: [
+        57.5, -4.0, 0.0
+    ]
+  -
+    Name: Starbucks103
+    AttractionType: Food
+    Capacity: [0.0, 30.0]
+    Max_Capacity: 30.0
+    Duration: [300.0, 3600.0]
+    DefiningTriangles: [
+        -15.666666666666666, 7.68, 0.0
+        -14.666666666666666, 11.346666666666666, 0.0
+        -18.333333333333332, 7.68, 0.0
+        -21.0, 7.68, 0.0
+    ]
+    Doorways: [
+        -16.5, 4.0, 0.0
+    ]
+  -
+    Name: Women_1_2116
+    AttractionType: Restroom
+    Capacity: [0.0, 3.0]
+    Max_Capacity: 3.0
+    Duration: [150.0, 600.0]
+    DefiningTriangles: [
+        42.666666666666664, -10.333333333333334, 0.0
+        42.666666666666664, -6.666666666666667, 0.0
+        41.333333333333336, -11.333333333333334, 0.0
+    ]
+    Doorways: [
+        44.0, -13.5, 0.0
+    ]
+  -
+    Name: Men_1_2123
+    AttractionType: Restroom
+    Capacity: [0.0, 3.0]
+    Max_Capacity: 3.0
+    Duration: [60.0, 320.0]
+    DefiningTriangles: [
+        49.35999999999999, -9.046666666666667, 0.0
+        50.666666666666664, -7.666666666666667, 0.0
+        49.35999999999999, -12.713333333333333, 0.0
+    ]
+    Doorways: [
+        48.04, -6.07, 0.0
+    ]
+  -
+    Name: Hundson_News131
+    AttractionType: Vendor
+    Capacity: [0.0, 20.0]
+    Max_Capacity: 20.0
+    Duration: [120.0, 600.0]
+    DefiningTriangles: [
+        -53.333333333333336, -7.666666666666667, 0.0
+        -55.666666666666664, -7.666666666666667, 0.0
+        -50.333333333333336, -7.666666666666667, 0.0
+        -47.333333333333336, -7.666666666666667, 0.0
+        -45.0, -7.666666666666667, 0.0
+        -56.666666666666664, -11.333333333333334, 0.0
+    ]
+    Doorways: [
+        -58.0, -4.0, 0.0
+        -49.0, -4.0, 0.0
+    ]
+

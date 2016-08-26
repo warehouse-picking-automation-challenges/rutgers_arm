@@ -1,0 +1,569 @@
+<launch>  
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <rosparam ns="simulation" command="load" file="$(find prx_input)/templates/applications/empty_application.yaml" />
+  <rosparam ns="simulation" command="load" file="$(find manipulation)/input/manipulation_simulator.yaml"/>  
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer" file="$(find prx_input)/templates/controllers/consumer.yaml"/>
+  <!-- <rosparam command="load" ns="simulation/simulator/subsystems/consumer/subsystems/manipulator" file="$(find manipulation)/input/motoman/motoman_complete_kinect_reflex.yaml"/> -->
+  <rosparam command="load" ns="simulation/simulator/subsystems/consumer/subsystems/manipulator" file="$(find manipulation)/input/motoman/new_unigripper.yaml"/>
+
+  <rosparam ns="simulation/simulator/obstacles" file="$(find manipulation)/input/shelf.yaml"/>
+  <rosparam ns="simulation/simulator/obstacles" file="$(find apc)/input/bounding_boxes.yaml"/>
+
+  <rosparam ns="simulation/simulator/subsystems/consumer">
+    keep_last_control: false
+  </rosparam>
+
+  <rosparam ns="simulation/simulator/subsystems/consumer/subsystems/manipulator">
+    test_config:
+      position: [0.5, 0, 1]
+      orientation: [0, 0.70710678, 0, 0.70710678]
+    initial_state: [0.62, 0.26, 1.12, 0.0, 0.0, 0.0, 1]
+  </rosparam>
+
+  <node name="simulation" pkg="prx_simulation" type="prx_simulation" clear_params="true" required="true" launch-prefix="" output="screen" args="simulation"/>
+
+  <rosparam command="load" ns="planning">
+    system_mapping:
+      -
+        pair: [simulator/consumer/manipulator, world_model/simulator/manipulator]
+    consumer: simulator/consumer
+    simulate: true
+    visualize: true
+    persistent: false
+    #random_seed: 987543
+    consumer_mapping:
+      - 
+        pair: [simulator/consumer, full_space]
+    world_model:
+      type: manipulation_world_model
+      num_ik_seeds: 10
+  </rosparam>
+
+  <rosparam command="load" ns="planning" file="$(find prx_input)/templates/spaces/space_types.yaml"/>  
+  <rosparam command="load" ns="planning" file="$(find prx_input)/templates/planning_applications/single_query_application.yaml" />
+  <rosparam command="load" ns="planning/world_model" file="$(find manipulation)/input/manipulation_simulator.yaml"/>  
+  <!-- <rosparam command="load" ns="planning/world_model/simulator/subsystems/manipulator" file="$(find manipulation)/input/motoman/motoman_complete_kinect_reflex.yaml"/> -->
+  <rosparam command="load" ns="planning/world_model/simulator/subsystems/manipulator" file="$(find manipulation)/input/motoman/new_unigripper.yaml"/>
+
+  <rosparam ns="planning/world_model/simulator/obstacles" file="$(find manipulation)/input/shelf.yaml"/>
+  <rosparam ns="planning/world_model/simulator/obstacles" file="$(find apc)/input/bounding_boxes.yaml"/>
+
+  <rosparam ns="planning/world_model/planning_contexts">
+    manipulator_pc:
+      default:
+        type: "hide_mapping"
+    left_full_arm:
+      default:
+        type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_arm"
+        end_effector_context_name: "left_end_effector"
+        start_link: "upper_jaw"
+        end_link: "upper_vacuum"
+    left_arm:
+      default:
+       type: "obstacle_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_arm"
+        end_effector_context_name: "left_end_effector"
+        start_link: "upper_jaw"
+        end_link: "upper_vacuum"
+    left_arm_planning:
+      default:
+        type: "hide_mapping"
+      manipulation_context_info:
+        full_arm_context_name: "left_full_arm"
+        arm_context_name: "left_arm"
+        end_effector_context_name: "left_end_effector"
+        start_link: "upper_jaw"
+        end_link: "upper_vacuum"
+    left_end_effector:
+      default:
+       type: "hide_mapping"
+  </rosparam>
+
+  <rosparam ns="planning/world_model/simulator/subsystems/manipulator">
+    planning_contexts:
+      manipulator_pc:
+        type: "full_mapping"
+      left_full_arm:
+        type: "floating_hand_full_state_mapping"
+      left_arm:
+        type: "floating_hand_state_mapping"
+      left_end_effector:
+        type: "floating_hand_gripper_state_mapping"
+      left_arm_planning:
+        type: "floating_hand_state_mapping"
+    state_space: 
+      min: [-1.85, -1.75, -2.0, -3.2, -0.3, -0.3, 1]
+      max: [1.85, 1.75, 2.0, 3.2, 0.3, 0.3, 5]
+      scale: [1.0, 1.0, 1.0, 10.0, 10.0, 10.0, 0.0] 
+    input_control_space:
+      min: [-.1, -.1, -.1, -.7, -.7 ,-.7, 0]
+      max: [.1, .1, .1, .7, .7 ,.7, 2] 
+    initial_state: [0.50, 0.0, 1.17, 0.0, 0.0, 0.0, 1.0]
+  </rosparam>
+  
+  
+  <rosparam ns="planning/task_planner/">
+    type: single_shot
+    serialize_flag: true
+    num_candidate_connections: 30
+    append_statistics: true
+    visualize: true
+    stats_criteria:
+      elements:
+        itercrit:
+          type: iteration_criterion
+          condition: 100
+    specification:
+      type: single_shot_specification
+    query:
+      type: single_shot_query
+      search_mode: lazy_search
+      goal:
+        type: multiple_goal_states
+        distance_metric:
+          type: ann_distance_metric
+    planners:
+      left_arm_motion_planner:
+        
+        type: "prm_star"
+        # type: "rrg"
+        # type: "rrt"
+        
+        # visualization_bodies: ["simulator/manipulator/head_sponge"]
+        visualization_bodies: ["simulator/manipulator/upper_vacuum"]
+        visualize_graph: true
+        visualize_solutions: false 
+        visualize: true
+        serialize_flag: true
+        serialize_file: "uni_bin_L.roadmap"
+        space_name: "left_arm_planning"
+        planning_context_name: "left_arm"
+        query:
+          type: motion_planning_query
+          lazy_astar_iterations: 4
+          # start_state: [-0.3696969,-1.8434239,-1.4583325,-1.8129914,2.0006464,0.8294958,-0.5998616,0.7427207,0.0856574]
+          start_state: [0.50, 0.0, 1.17, 0.0, 0.0, 0.0, 1.0]
+          goal:
+            type: multiple_goal_states
+            distance_metric:
+              type: ann_distance_metric
+        specification:
+          type: motion_planning_specification
+          validity_checker: 
+            type: manipulation_validity_checker
+            use_bounds: true
+            
+            # BIN A
+            # min: [0.85,0.15,1.33]
+            # max: [1.35,0.45,1.57]            
+
+            # BIN B
+            # min: [0.85,-0.15,1.33]
+            # max: [1.35,0.15,1.57]
+
+            # BIN C
+            # min: [0.85,-0.45,1.33]
+            # max: [1.35,-0.15,1.57]
+
+            # BIN D
+            # min: [0.85,0.15,1.1]
+            # max: [1.35,0.45,1.32]
+
+            # BIN E
+            # min: [0.85,-0.15,1.1]
+            # max: [1.35,0.15,1.32]
+
+            # BIN F
+            # min: [0.85,-0.45,1.1]
+            # max: [1.35,-0.15,1.32]
+
+            # BIN G
+            # min: [0.85,0.15,0.88]
+            # max: [1.35,0.45,1.09]
+
+            # BIN H
+            # min: [0.85,-0.15,0.88]
+            # max: [1.35,0.15,1.09]
+
+            # BIN I
+            # min: [0.85,-0.45,0.88]
+            # max: [1.35,-0.15,1.09]
+
+            # BIN J
+            # min: [0.85,0.15,0.64]
+            # max: [1.35,0.45,0.87]
+
+            # BIN K
+            # min: [0.85,-0.15,0.64]
+            # max: [1.35,0.15,0.87]
+
+            # BIN L
+            # min: [0.85,-0.45,0.64]
+            # max: [1.35,-0.15,0.87]
+
+            # OUTSIDE
+            # min: [-0.3,-0.8,0.3]
+            # max: [0.98,0.8,1.8]
+            
+          sampler:
+            type: ee_bound_sampler
+            rejection_sampling: true
+            default_orientation: [0,0,0,1]
+
+            # BIN A
+            # min: [0.85,0.15,1.33]
+            # max: [1.35,0.45,1.57]
+
+            # BIN B
+            # min: [0.85,-0.15,1.33]
+            # max: [1.35,0.15,1.57]
+
+            # BIN C
+            # min: [0.85,-0.45,1.33]
+            # max: [1.35,-0.15,1.57]
+
+            # BIN D
+            # min: [0.85,0.15,1.1]
+            # max: [1.35,0.45,1.32]
+
+            # BIN E
+            # min: [0.85,-0.15,1.1]
+            # max: [1.35,0.15,1.32]
+
+            # BIN F
+            # min: [0.85,-0.45,1.1]
+            # max: [1.35,-0.15,1.32]
+
+            # BIN G
+            # min: [0.85,0.15,0.88]
+            # max: [1.35,0.45,1.09]
+
+            # BIN H
+            # min: [0.85,-0.15,0.88]
+            # max: [1.35,0.15,1.09]
+
+            # BIN I
+            # min: [0.85,-0.45,0.88]
+            # max: [1.35,-0.15,1.09]
+
+            # BIN J
+            # min: [0.85,0.15,0.64]
+            # max: [1.35,0.45,0.87]
+
+            # BIN K
+            # min: [0.85,-0.15,0.64]
+            # max: [1.35,0.15,0.87]
+
+            # BIN L
+            # min: [0.85,-0.45,0.64]
+            # max: [1.35,-0.15,0.87]
+
+            # OUTSIDE
+            # min: [-0.3,-0.8,0.3]
+            # max: [0.98,0.8,1.8]
+
+            euler_min: [-3.1416,-3.1416,-3.1416]
+            euler_max: [3.1416,3.1416,3.1416]
+            manipulation_context: left_arm
+          distance_metric:
+            type: graph_distance_metric
+          local_planner:
+            type: bvp_local_planner
+            max_prop_length: 0.2
+          seeds:
+            # BIN A
+            -
+              state: [0.62, 0.26, 1.40, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.30, 1.40, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.34, 1.40, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.26, 1.44, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.30, 1.44, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.34, 1.44, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.26, 1.36, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.30, 1.36, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.34, 1.36, 0.0, 0.0, 0.0, 1]
+
+            # BIN B
+            -
+              state: [0.62, -0.04, 1.40, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.00, 1.40, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.04, 1.40, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.04, 1.44, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.00, 1.44, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.04, 1.44, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.04, 1.36, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.00, 1.36, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.04, 1.36, 0.0, 0.0, 0.0, 1]
+
+            # BIN C
+            -
+              state: [0.62, -0.26, 1.40, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.30, 1.40, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.34, 1.40, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.26, 1.44, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.30, 1.44, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.34, 1.44, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.26, 1.36, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.30, 1.36, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.34, 1.36, 0.0, 0.0, 0.0, 1]
+
+            # BIN D
+            -
+              state: [0.62, 0.26, 1.12, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.30, 1.12, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.34, 1.12, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.26, 1.15, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.30, 1.15, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.34, 1.15, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.26, 1.09, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.30, 1.09, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.34, 1.09, 0.0, 0.0, 0.0, 1]
+
+            # BIN E
+            -
+              state: [0.62, -0.04, 1.12, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.00, 1.12, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.04, 1.12, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.04, 1.15, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.00, 1.15, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.04, 1.15, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.04, 1.09, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.00, 1.09, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.04, 1.09, 0.0, 0.0, 0.0, 1]
+
+            # BIN F
+            -
+              state: [0.62, -0.26, 1.12, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.30, 1.12, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.34, 1.12, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.26, 1.15, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.30, 1.15, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.34, 1.15, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.26, 1.09, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.30, 1.09, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.34, 1.09, 0.0, 0.0, 0.0, 1]
+
+            # BIN G
+            -
+              state: [0.62, 0.26, 0.91, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.30, 0.91, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.34, 0.91, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.26, 0.94, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.30, 0.94, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.34, 0.94, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.26, 0.88, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.30, 0.88, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.34, 0.88, 0.0, 0.0, 0.0, 1]
+
+            # BIN H
+            -
+              state: [0.62, -0.04, 0.91, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.00, 0.91, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.04, 0.91, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.04, 0.94, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.00, 0.94, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.04, 0.94, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.04, 0.88, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.00, 0.88, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.04, 0.88, 0.0, 0.0, 0.0, 1]
+
+            # BIN I
+            -
+              state: [0.62, -0.26, 0.91, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.30, 0.91, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.34, 0.91, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.26, 0.94, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.30, 0.94, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.34, 0.94, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.26, 0.88, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.30, 0.88, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.34, 0.88, 0.0, 0.0, 0.0, 1]
+
+            # BIN J
+            -
+              state: [0.62, 0.26, 0.68, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.30, 0.68, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.34, 0.68, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.26, 0.71, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.30, 0.71, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.34, 0.71, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.26, 0.65, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.30, 0.65, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.34, 0.65, 0.0, 0.0, 0.0, 1]
+              
+            # BIN K
+            -
+              state: [0.62, -0.04, 0.68, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.00, 0.68, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.04, 0.68, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.04, 0.71, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.00, 0.71, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.04, 0.71, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.04, 0.65, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.00, 0.65, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, 0.04, 0.65, 0.0, 0.0, 0.0, 1]
+
+            # BIN L
+            -
+              state: [0.62, -0.26, 0.68, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.30, 0.68, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.34, 0.68, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.26, 0.71, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.30, 0.71, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.34, 0.71, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.26, 0.65, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.30, 0.65, 0.0, 0.0, 0.0, 1]
+            -
+              state: [0.62, -0.34, 0.65, 0.0, 0.0, 0.0, 1]
+            
+          stopping_criteria:
+            elements:
+              criterion1:
+                type: iteration_criterion
+                condition: 1000
+          heuristic_search:
+            type: constraints_astar_search
+            mode: repropagate_info
+            mcr_mode: shortest
+  </rosparam>
+
+
+  <node name="planning" pkg="prx_planning" clear_params="true" type="prx_planning" required="false" launch-prefix="" output="screen" args="planning"/>
+
+
+  <include file="$(find prx_input)/templates/visualization/visualization.launch"/>
+
+  <rosparam ns="visualization/viewer/">
+    windows:
+      window_1:
+        xpos: 900
+        ypos: 10
+        width: 1000
+        height: 1000
+        cameras:
+          perspective:
+            ortho: false
+            camera_type: 0
+            eye: [0, 0, 1.8]
+            center: [1, 0, 0]
+            speed: {move: 0.1, rotate: 0.001}
+          orthographic:
+            ortho: true
+            ortho_param:
+              left: -10
+              right: 10
+              bottom: -10
+              top: 10
+              zNear: 0
+              zFar: 1000
+            speed: {move: 0.2, rotate: 0.001}
+          smooth:
+            ortho: false
+            camera_type: 2
+            eye: [0, -20, 15]
+            center: [0, 1, 18]
+            speed: {move: 0.2, rotate: 0.001}
+  </rosparam>
+
+</launch>

@@ -1,0 +1,9 @@
+int64 node_id
+int64 agent_id
+float64 x
+float64 y
+float64 v
+float64 w
+int64 triangle_id
+int64 queue_id
+bool has_luggage

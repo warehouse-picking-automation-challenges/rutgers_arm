@@ -1,0 +1,7 @@
+<class name="prx_simulation/apc_controller"
+    type="prx::packages::apc::apc_controller_t"
+    base_class_type="prx::sim::system_t">
+    <description>
+        The controller that receives the plans from the apc application.
+    </description>        
+</class>

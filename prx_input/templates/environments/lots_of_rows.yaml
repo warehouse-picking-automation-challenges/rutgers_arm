@@ -1,0 +1,84 @@
+building1:
+    type: obstacle
+    geometries:
+      -
+        name: middle
+        collision_geometry: 
+          type: box
+          dims: [1500, 2, 4]      
+          material: black       
+        config:
+          position: [0, 0, 2]
+          orientation: [0, 0, 0, 1]
+      -
+        name: top4
+        collision_geometry: 
+          type: box
+          dims: [1500, 15, 4]      
+          material: black       
+        config:
+          position: [0, 170, 2]
+          orientation: [0, 0, 0, 1]
+      -
+        name: top3
+        collision_geometry: 
+          type: box
+          dims: [1500, 15, 4]      
+          material: black       
+        config:
+          position: [0, 110, 2]
+          orientation: [0, 0, 0, 1]
+      -
+        name: top2
+        collision_geometry: 
+          type: box
+          dims: [1500, 15, 4]      
+          material: black       
+        config:
+          position: [0, 60, 2]
+          orientation: [0, 0, 0, 1]
+      -
+        name: top
+        collision_geometry: 
+          type: box
+          dims: [1500, 15, 4]      
+          material: black       
+        config:
+          position: [0, 20, 2]
+          orientation: [0, 0, 0, 1]
+      -
+        name: bottom
+        collision_geometry: 
+          type: box
+          dims: [1500, 15, 4]      
+          material: black       
+        config:
+          position: [0, -20, 2]
+          orientation: [0, 0, 0, 1]
+      -
+        name: bottom2
+        collision_geometry: 
+          type: box
+          dims: [1500, 15, 4]      
+          material: black       
+        config:
+          position: [0, -60, 2]
+          orientation: [0, 0, 0, 1]
+      -
+        name: bottom3
+        collision_geometry: 
+          type: box
+          dims: [1500, 15, 4]      
+          material: black       
+        config:
+          position: [0, -110, 2]
+          orientation: [0, 0, 0, 1]
+      -
+        name: bottom4
+        collision_geometry: 
+          type: box
+          dims: [1500, 15, 4]      
+          material: black       
+        config:
+          position: [0, -170, 2]
+          orientation: [0, 0, 0, 1]

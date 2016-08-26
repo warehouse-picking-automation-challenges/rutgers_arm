@@ -1,0 +1,150 @@
+<launch>
+ <rosparam>
+  system_mapping:
+  -
+    pair: [simulator/consumer/router, world_model/simulator/router]
+  -
+    pair: [simulator/consumer/router/disk00, world_model/simulator/router/disk00]
+  -
+    pair: [simulator/consumer/router/disk01, world_model/simulator/router/disk01]
+  -
+    pair: [simulator/consumer/router/disk02, world_model/simulator/router/disk02]
+  -
+    pair: [simulator/consumer/router/disk03, world_model/simulator/router/disk03]
+  -
+    pair: [simulator/consumer/router/disk04, world_model/simulator/router/disk04]
+  -
+    pair: [simulator/consumer/router/disk05, world_model/simulator/router/disk05]
+  -
+    pair: [simulator/consumer/router/disk06, world_model/simulator/router/disk06]
+  -
+    pair: [simulator/consumer/router/disk07, world_model/simulator/router/disk07]
+  -
+    pair: [simulator/consumer/router/disk08, world_model/simulator/router/disk08]
+  -
+    pair: [simulator/consumer/router/disk09, world_model/simulator/router/disk09]
+  -
+    pair: [simulator/consumer/router/disk10, world_model/simulator/router/disk10]
+  -
+    pair: [simulator/consumer/router/disk11, world_model/simulator/router/disk11]
+  -
+    pair: [simulator/consumer/router/disk12, world_model/simulator/router/disk12]
+  -
+    pair: [simulator/consumer/router/disk13, world_model/simulator/router/disk13]
+  -
+    pair: [simulator/consumer/router/disk14, world_model/simulator/router/disk14]
+  -
+    pair: [simulator/consumer/router/disk15, world_model/simulator/router/disk15]
+  -
+    pair: [simulator/consumer/router/disk16, world_model/simulator/router/disk16]
+  -
+    pair: [simulator/consumer/router/disk17, world_model/simulator/router/disk17]
+  -
+    pair: [simulator/consumer/router/disk18, world_model/simulator/router/disk18]
+  -
+    pair: [simulator/consumer/router/disk19, world_model/simulator/router/disk19]
+  -
+    pair: [simulator/consumer/router/disk20, world_model/simulator/router/disk20]
+  -
+    pair: [simulator/consumer/router/disk21, world_model/simulator/router/disk21]
+  -
+    pair: [simulator/consumer/router/disk22, world_model/simulator/router/disk22]
+  -
+    pair: [simulator/consumer/router/disk23, world_model/simulator/router/disk23]
+  -
+    pair: [simulator/consumer/router/disk24, world_model/simulator/router/disk24]
+  -
+    pair: [simulator/consumer/router/disk25, world_model/simulator/router/disk25]
+  -
+    pair: [simulator/consumer/router/disk26, world_model/simulator/router/disk26]
+  -
+    pair: [simulator/consumer/router/disk27, world_model/simulator/router/disk27]
+  -
+    pair: [simulator/consumer/router/disk28, world_model/simulator/router/disk28]
+  -
+    pair: [simulator/consumer/router/disk29, world_model/simulator/router/disk29]
+  -
+    pair: [simulator/consumer/router/disk30, world_model/simulator/router/disk30]
+  -
+    pair: [simulator/consumer/router/disk31, world_model/simulator/router/disk31]
+  -
+    pair: [simulator/consumer/router/disk32, world_model/simulator/router/disk32]
+  -
+    pair: [simulator/consumer/router/disk33, world_model/simulator/router/disk33]
+  -
+    pair: [simulator/consumer/router/disk34, world_model/simulator/router/disk34]
+  -
+    pair: [simulator/consumer/router/disk35, world_model/simulator/router/disk35]
+  -
+    pair: [simulator/consumer/router/disk36, world_model/simulator/router/disk36]
+  -
+    pair: [simulator/consumer/router/disk37, world_model/simulator/router/disk37]
+  -
+    pair: [simulator/consumer/router/disk38, world_model/simulator/router/disk38]
+
+
+  consumer: simulator/consumer
+  </rosparam>
+
+
+  <rosparam ns="world_model/embeddings">
+  single_robot_space:
+    default:
+      type: "hide_mapping"
+  </rosparam>
+
+  <rosparam command="load" file="$(find prx_input)/templates/spaces/space_types.yaml"/>
+
+  <rosparam ns="world_model" command="load" file="$(find prx_input)/templates/simulators/no_collision_simulator.yaml"/>
+
+  <rosparam ns="world_model/simulator/">
+    simulation_step: 0.08
+  </rosparam>
+
+  <rosparam command="load" ns="world_model/simulator/subsystems/router" file="$(find prx_input)/templates/controllers/router.yaml"/>   
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk00" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk01" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk02" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk03" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk04" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk05" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk06" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk07" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk08" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk09" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk10" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk11" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk12" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk13" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk14" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk15" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk16" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk17" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk18" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk19" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk20" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk21" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk22" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk23" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk24" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk25" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk26" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk27" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk28" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk29" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk30" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk31" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk32" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk33" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk34" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk35" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk36" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk37" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+  <rosparam command="load" ns="world_model/simulator/subsystems/router/subsystems/disk38" file="$(find pebble_motion)/input/common/pebble.yaml"/>
+
+  <rosparam ns="world_model/simulator/subsystems/router/subsystems/disk38">
+    embeddings:
+      single_robot_space:
+        type: "full_mapping"
+  </rosparam>
+</launch>
